@@ -1,0 +1,200 @@
+{
+  "title": "AP CSP — Lesson 01 Homework: Bits, Binary, and Representation",
+  "durationMinutes": 40,
+  "totalMarks": 30,
+  "notice": "All questions are original. Q1–Q6 are AP-style multiple-choice practice, not official or past AP questions. Q7–Q12 are classroom written practice, not official exam FRQs. These 30 marks are teacher-assigned and do not represent AP exam scoring. For Q5, select exactly TWO answers; earn its one mark only when both correct choices and no other choices are selected. Show reasoning in written answers. Binary integer encodings in this worksheet are nonnegative; ignore storage padding unless stated.",
+  "questions": [
+    {
+      "id": "Q1",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Bits and bytes（位与字节）",
+      "prompt": "A record contains three bytes of measurement data and one additional status bit. Before any padding is added, how many bits does the record contain?",
+      "options": [
+        {"label": "A", "text": "4"},
+        {"label": "B", "text": "11"},
+        {"label": "C", "text": "24"},
+        {"label": "D", "text": "25"}
+      ],
+      "answer": "D",
+      "explanation": "D is correct: one byte contains eight bits, so 3 × 8 + 1 = 25 bits. A treats each byte as a single bit. B uses 3 + 8 and fails to convert all three bytes or include the additional bit correctly. C counts the three bytes but omits the status bit.",
+      "lines": 0
+    },
+    {
+      "id": "Q2",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Binary to decimal",
+      "prompt": "A maintenance device displays the binary integer 00101101. Which decimal value does it represent?",
+      "options": [
+        {"label": "A", "text": "43"},
+        {"label": "B", "text": "45"},
+        {"label": "C", "text": "46"},
+        {"label": "D", "text": "53"}
+      ],
+      "answer": "B",
+      "explanation": "B is correct: 00101101₂ = 32 + 8 + 4 + 1 = 45. A, 43, would be 00101011; C, 46, would be 00101110; D, 53, would be 00110101. Each distractor places at least one 1 in a different positional weight. Leading zeros do not change the integer's value.",
+      "lines": 0
+    },
+    {
+      "id": "Q3",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Decimal to binary",
+      "prompt": "A display must encode decimal 37 as an eight-bit nonnegative binary integer. Which pattern should it use?",
+      "options": [
+        {"label": "A", "text": "00100101"},
+        {"label": "B", "text": "00100110"},
+        {"label": "C", "text": "00101001"},
+        {"label": "D", "text": "00110101"}
+      ],
+      "answer": "A",
+      "explanation": "A is correct because 37 = 32 + 4 + 1, giving 00100101. B represents 38 = 32 + 4 + 2. C represents 41 = 32 + 8 + 1. D represents 53 = 32 + 16 + 4 + 1.",
+      "lines": 0
+    },
+    {
+      "id": "Q4",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Pattern count versus maximum integer",
+      "prompt": "A system uses all six-bit patterns to represent consecutive nonnegative integers beginning at 0. Which option correctly gives (number of distinct patterns, largest represented integer)?",
+      "options": [
+        {"label": "A", "text": "(32, 31)"},
+        {"label": "B", "text": "(64, 64)"},
+        {"label": "C", "text": "(64, 63)"},
+        {"label": "D", "text": "(63, 63)"}
+      ],
+      "answer": "C",
+      "explanation": "C is correct: six bits provide 2⁶ = 64 patterns, representing 0 through 63. A describes five-bit capacity. B confuses the count of patterns with the largest value and overlooks that 0 occupies a pattern. D gives the correct maximum but incorrectly uses that maximum as the count; the 0 pattern also counts.",
+      "lines": 0
+    },
+    {
+      "id": "Q5",
+      "type": "multi",
+      "marks": 1,
+      "topic": "Minimum bits and capacity growth",
+      "prompt": "A science fair needs unique fixed-length binary identifiers for 27 exhibits. No patterns are reserved. Which TWO statements are correct? Select exactly TWO answers.",
+      "options": [
+        {"label": "A", "text": "Five bits provide exactly 31 distinct identifiers."},
+        {"label": "B", "text": "Five is the minimum number of bits needed for each identifier."},
+        {"label": "C", "text": "Changing from five bits to six bits adds only two possible identifiers."},
+        {"label": "D", "text": "Changing from five bits to six bits doubles the number of possible identifiers."}
+      ],
+      "answer": "B and D",
+      "explanation": "B is correct because 2⁴ = 16 < 27 ≤ 32 = 2⁵. D is correct because an additional bit gives two choices for every existing pattern, increasing capacity from 32 to 64. A confuses the largest five-bit nonnegative integer, 31, with the 32 possible patterns. C confuses the two choices of a new bit with the number of additional full patterns; the increase is 32. Award one mark only for B and D together with no other choices.",
+      "lines": 0
+    },
+    {
+      "id": "Q6",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Overflow and roundoff（溢出与舍入误差）",
+      "prompt": "In situation I, a fixed-width integer field receives a value larger than its maximum representable value. In situation II, a program represents one third using the finite approximation 0.3333. Which classification is correct?",
+      "options": [
+        {"label": "A", "text": "I: roundoff; II: overflow"},
+        {"label": "B", "text": "I: overflow; II: roundoff"},
+        {"label": "C", "text": "Both situations are overflow."},
+        {"label": "D", "text": "Neither situation involves a limitation of number representation."}
+      ],
+      "answer": "B",
+      "explanation": "B is correct: I exceeds a fixed integer representation's capacity, creating an overflow problem; II stores an approximation of a real value and introduces roundoff error. A reverses the concepts. C incorrectly classifies approximation as overflow; no excessive integer magnitude is stated in II. D ignores the finite representation limitations in both examples. The question does not specify or require any particular stored result after overflow.",
+      "lines": 0
+    },
+    {
+      "id": "Q7",
+      "type": "written",
+      "marks": 4,
+      "topic": "Bit patterns and interpretation（解释）",
+      "prompt": "A weather station sends the pattern 00010110.\n(a) State its length in bits and in bytes.\n(b) Interpret the pattern as a nonnegative binary integer. Show the place-value sum and give its decimal value.\n(c) Could software instead use this same pattern to identify a weather category? Explain what determines its meaning.",
+      "answer": "(a) Eight bits; one byte. (b) 16 + 4 + 2 = 22. (c) Yes. An agreed encoding or program context can map the pattern to a weather category; the bits alone do not determine the type or meaning of the data.",
+      "explanation": "There are eight binary digits, and eight bits form one byte. The 1s occupy the 16, 4, and 2 positions. A bit pattern can represent different data in different contexts: the integer 22 under the stated integer encoding, or a category under a suitable agreed mapping.",
+      "rubric": [
+        {"marks": 1, "criterion": "States both eight bits and one byte."},
+        {"marks": 1, "criterion": "Shows the correct place-value sum, 16 + 4 + 2, or an equivalent correctly weighted calculation."},
+        {"marks": 1, "criterion": "Gives the correct decimal value, 22."},
+        {"marks": 1, "criterion": "Says yes and explains that an encoding, agreed mapping, or program context determines the category meaning."}
+      ],
+      "lines": 7
+    },
+    {
+      "id": "Q8",
+      "type": "written",
+      "marks": 4,
+      "topic": "Conversion and comparison",
+      "prompt": "A robotics log records decimal 58.\n(a) Show how to decompose 58 into powers of two and write its binary representation without leading zeros.\n(b) Write the same value using exactly eight bits.\n(c) Which is greater: your eight-bit result or the binary integer 00111100? Justify your comparison.",
+      "answer": "(a) 58 = 32 + 16 + 8 + 2, so its binary representation is 111010. (b) 00111010. (c) 00111100 is greater: it represents 60, whereas 00111010 represents 58.",
+      "explanation": "The weights from 32 through 1 are 32, 16, 8, 4, 2, 1; selecting 32, 16, 8, and 2 gives 111010. Two leading zeros extend this to eight bits without changing its value. For comparison, 00111100 = 32 + 16 + 8 + 4 = 60. Comparing the first differing bit from the left is also a valid justification.",
+      "rubric": [
+        {"marks": 1, "criterion": "Shows 58 = 32 + 16 + 8 + 2, or an equivalent correct conversion method."},
+        {"marks": 1, "criterion": "Writes 111010 without leading zeros."},
+        {"marks": 1, "criterion": "Writes the correct eight-bit pattern, 00111010."},
+        {"marks": 1, "criterion": "Identifies 00111100 as greater and justifies with 60 > 58 or a correct positional comparison."}
+      ],
+      "lines": 7
+    },
+    {
+      "id": "Q9",
+      "type": "written",
+      "marks": 4,
+      "topic": "Capacity and reserved patterns",
+      "prompt": "A controller uses seven-bit codes.\n(a) How many distinct patterns are possible? Show the expression.\n(b) If interpreted as nonnegative binary integers, what is the largest value?\n(c) Codes 0000000 and 1111111 are reserved. How many codes remain for actions?\n(d) Can the controller assign distinct codes to 125 actions? State how many available action codes would remain unused.",
+      "answer": "(a) 2⁷ = 128. (b) 2⁷ − 1 = 127. (c) 128 − 2 = 126. (d) Yes: 126 codes can cover 125 actions, leaving one unused action code.",
+      "explanation": "The number of patterns includes every seven-bit combination, including the all-zero pattern. The maximum integer is one less than that count because numbering begins at zero. Reserving two distinct patterns reduces the action capacity by two; it does not reduce the number of bits or alter the overall pattern count.",
+      "rubric": [
+        {"marks": 1, "criterion": "Gives 2⁷ = 128 distinct patterns."},
+        {"marks": 1, "criterion": "Gives the largest nonnegative integer as 127."},
+        {"marks": 1, "criterion": "Subtracts the two reserved patterns to obtain 126 action codes."},
+        {"marks": 1, "criterion": "States that 125 actions fit and that one available action code remains unused."}
+      ],
+      "lines": 7
+    },
+    {
+      "id": "Q10",
+      "type": "written",
+      "marks": 4,
+      "topic": "Minimum fixed code length",
+      "prompt": "An aquarium assigns a unique fixed-length binary code to each species. No codes are reserved.\n(a) Find the minimum number of bits needed for 41 species. Justify both why your answer works and why one fewer bit fails.\n(b) The collection grows to 100 species. Find the new minimum code length and justify it.\n(c) With your code length from (b), how many patterns remain unused?",
+      "answer": "(a) Six bits: 2⁵ = 32 < 41 and 2⁶ = 64 ≥ 41. (b) Seven bits: 2⁶ = 64 < 100 ≤ 128 = 2⁷. (c) 128 − 100 = 28 unused patterns.",
+      "explanation": "The minimum length is the smallest whole number n for which 2ⁿ is at least the number of distinct labels. Demonstrating that a length has enough patterns does not alone prove it is minimal; the next smaller length must be insufficient. Unused patterns are total capacity minus the number of assigned codes.",
+      "rubric": [
+        {"marks": 1, "criterion": "Finds six bits for 41 species and shows that 2⁶ = 64 provides enough codes."},
+        {"marks": 1, "criterion": "Shows that five bits fail because 2⁵ = 32 < 41, establishing minimality."},
+        {"marks": 1, "criterion": "Finds seven bits for 100 species and supports minimality with 64 < 100 ≤ 128."},
+        {"marks": 1, "criterion": "Calculates 128 − 100 = 28 unused patterns."}
+      ],
+      "lines": 7
+    },
+    {
+      "id": "Q11",
+      "type": "written",
+      "marks": 4,
+      "topic": "Extra bits and zero padding",
+      "prompt": "A dashboard changes its numeric tags from seven bits to nine bits.\n(a) By what factor does the number of possible patterns increase? Show why.\n(b) An old tag is 0011011. Proposal X extends it to 000011011; proposal Y extends it to 001101100. Which proposal preserves the original nonnegative integer value? Verify your answer by finding the decimal values of the old tag and both proposals.",
+      "answer": "(a) A factor of four: 2⁹ / 2⁷ = 2² = 4, or 512 / 128 = 4. (b) X preserves the value. The old tag is 16 + 8 + 2 + 1 = 27; X is also 27; Y is 64 + 32 + 8 + 4 = 108.",
+      "explanation": "Each added bit doubles capacity, so adding two bits multiplies it by 2 × 2 = 4. Leading zeros leave the weights of the original 1s unchanged. Appending two zeros shifts every original 1 to a position with four times its previous weight, so Y represents 27 × 4 = 108.",
+      "rubric": [
+        {"marks": 1, "criterion": "States that capacity increases by a factor of four."},
+        {"marks": 1, "criterion": "Supports the factor with 2⁹ / 2⁷, 512 / 128, or two successive doublings."},
+        {"marks": 1, "criterion": "Selects X and correctly gives both the old value and X's value as 27."},
+        {"marks": 1, "criterion": "Correctly calculates Y as 108, demonstrating that it changes the original value."}
+      ],
+      "lines": 7
+    },
+    {
+      "id": "Q12",
+      "type": "written",
+      "marks": 4,
+      "topic": "Limits of number representation",
+      "prompt": "(a) A four-bit field represents nonnegative binary integers. A device tries to store 16. Name and explain the possible problem.\n(b) Would eight bits prevent integer overflow forever? Explain.\n(c) A program approximates 1/7 as 0.142857. Name and explain this representation error.\n(d) Would using more bits guarantee exact representation of every real number? Explain.",
+      "answer": "(a) An overflow problem: four bits represent 0 through 15, so 16 cannot be represented in this field. (b) No. Eight bits allow 0 through 255, but larger integers still exceed that fixed capacity. (c) Roundoff error: 0.142857 is only an approximation of 1/7. (d) No. A larger finite representation can improve precision but cannot guarantee exact representation of every real number.",
+      "explanation": "Overflow concerns exceeding the capacity of the stated fixed-width integer representation; no particular wraparound or error-handling behavior is specified. Roundoff concerns approximating a value rather than representing it exactly. Allocating additional bits expands finite capacity or precision but does not make either unlimited. This worksheet's fixed-width fields are explicitly defined; do not assume AP pseudocode integers use four or eight bits.",
+      "rubric": [
+        {"marks": 1, "criterion": "Identifies overflow and explains that 16 exceeds the four-bit maximum of 15; no wraparound result is required."},
+        {"marks": 1, "criterion": "Answers no and explains that eight bits still have a finite maximum; giving 255 is valid but not required if the finite-capacity reasoning is clear."},
+        {"marks": 1, "criterion": "Identifies roundoff error and explains that the stored finite value approximates, rather than exactly equals, 1/7."},
+        {"marks": 1, "criterion": "Answers no and explains that more bits still provide finite precision, so exact representation of every real number is not guaranteed."}
+      ],
+      "lines": 7
+    }
+  ]
+}

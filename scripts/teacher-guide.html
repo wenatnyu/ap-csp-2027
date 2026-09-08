@@ -1,0 +1,52 @@
+<div class="tagline">Teacher Guide</div><h1>Lesson 01 · Bits &amp; Binary</h1>
+<p class="sub">Lesson 01 · Bits, Binary, and Representation · 90 minutes · 2027 exam preparation</p>
+<p><a href="https://github.com/wenatnyu/ap-csp-2027/blob/main/COURSE_PLAN.md" target="_blank" rel="noopener">Full course outline / 总体目录与教学安排</a></p>
+
+<h3>Purpose &amp; Scope</h3>
+<p>本课适合零基础学生，前置知识为非负整数、加法与简单的 2 的幂。课堂共 23 页，以英文讲解，中文提示关键术语。课后作业约 40 分钟、12 题、30 分，另附 3 页学生卷与 2 页答案卷 PDF。Lesson 01 是本课程的教学顺序，对应官方 Big Idea 2 / Topic 2.1，并非官方 Unit 1。</p>
+<p>使用左右方向键或 Page Up / Page Down 翻页，N 打开教师备注。各题答案可独立展开；Reading view 适合小屏阅读，Fullscreen 适合投影。Homework 可打印题目或答案，核心课堂功能可离线使用。官方样题和 PDF 需保留与 HTML 同目录的 resources、output 文件夹。</p>
+<p>覆盖 Topic 2.1 的一部分：<strong>DAT-1.A.2–7</strong>（bit、byte、抽象与语境）、<strong>DAT-1.B.1–3</strong>（整数溢出与实数舍入）、<strong>DAT-1.C.a / C.b</strong>（正整数二进制与十进制互换、比较与排序）。<strong>DAT-1.A.1、A.8–10 尚未覆盖</strong>；变量与数据容器随编程引入，模拟数据、数字化与采样安排后续。本课不能视为完整 Topic 2.1。</p>
+<div class="teacher-note"><strong>Precision matters.</strong> n bits 对应 2<sup>n</sup> 种模式；仅在题目采用无符号非负整数编码时，最大值才是 2<sup>n</sup>−1。不要把模式数量当成最大值。固定宽度超范围可导致 overflow，但结果如何处理须由题目说明；AP 参考表伪代码的整数由可用内存限制，不能默认按固定位数回绕。二进制补码、十六进制与浮点编码实现不作为本课目标；CED 明确排除的是实数具体范围限制，而非舍入误差概念。</div>
+
+<h3>90-minute Run of Show</h3>
+<table>
+  <thead><tr><th>Time</th><th>Slides</th><th>Teaching move</th></tr></thead>
+  <tbody>
+    <tr><td>0–10 min</td><td>1–3</td><td>建立目标与考试定位，完成起点诊断。</td></tr>
+    <tr><td>10–24 min</td><td>4–7</td><td>建立 bit / byte、编码语境与抽象概念。</td></tr>
+    <tr><td>24–45 min</td><td>8–12</td><td>位权示范、双向转换、比较与结对核验。</td></tr>
+    <tr><td>45–64 min</td><td>13–16</td><td>区分数量与最大值，计算最少位数、增加一位的效果。</td></tr>
+    <tr><td>64–75 min</td><td>17–19</td><td>情境辨析 overflow / roundoff，纠正概念混用。</td></tr>
+    <tr><td>75–85 min</td><td>20–22</td><td>独立应用、错因讨论与作业说明。</td></tr>
+    <tr><td>85–90 min</td><td>23</td><td>四题 exit ticket，当场决定补救内容。</td></tr>
+  </tbody>
+</table>
+<p>先让学生独立作答，再展开答案；示范过程时每一步都说明位权或容量依据。若节奏偏慢，减少重复口头练习，保留 count / maximum 的辨析与 exit ticket。</p>
+
+<h3>Differentiation &amp; Evidence</h3>
+<p>需要支架的学生使用 128→1 位权表和中文关键词，先圈出为 1 的位再求和。完成较快的学生解释为何增加一位会使模式数量翻倍，或设计能揭露 count / maximum 混淆的反例；不靠引入补码增加难度。</p>
+<p>Exit ticket 为四项：解码 00110110、七位非负整数最大值、90 个唯一编号的最少位数、解释 1/3 的有限小数近似。答案依次为 <strong>54、127、7、roundoff（有限表示造成近似）</strong>。建议每项 1 分：<strong>达到 3/4 且最大值题正确</strong>可继续；4/4 表示掌握稳固。0–2 分或最大值题错误，先针对位权、容量或误差定义补练。这是教师诊断标准，不是 AP 评分规则。</p>
+
+<h3>Suggested September–May Pacing</h3>
+<table>
+  <thead><tr><th>Window</th><th>Suggested focus</th></tr></thead>
+  <tbody>
+    <tr><td>Sep–Oct 2026</td><td>数据基础；尽早并行启动输入输出、变量与短程序，不等理论全部结束。</td></tr>
+    <tr><td>Nov–Dec</td><td>条件、循环、列表与过程；穿插数据、网络及计算影响。</td></tr>
+    <tr><td>Jan–Feb 2027</td><td>补齐课程覆盖；练习项目、测试与英文代码解释，逐步形成独立开发能力。</td></tr>
+    <tr><td>Mar–Apr</td><td>正式 Create 至少安排 9 小时课堂专用时间，并留出上传检查余量。</td></tr>
+    <tr><td>Late Apr–May</td><td>混合选择题、限时书面回答与 Bluebook 熟悉训练；按错因回补。</td></tr>
+  </tbody>
+</table>
+<p><strong>建议校内截止为 2027 年 4 月 23 日</strong>，这是教师预留缓冲的建议，并非官方日期。官方 Create 截止是 <strong>2027 年 4 月 30 日 23:59 ET</strong>（换算北京时间为 5 月 1 日 11:59）。正式考试为 <strong>5 月 14 日 Session 1</strong>；2027 年 UTC+08 考点公布开考时间为 <strong>09:00</strong>，报到时间听从考点安排。</p>
+<div class="teacher-note"><strong>Before the formal Create task.</strong> 开始前重新阅读当年度 Student Handouts，明确教师指导、合作、引用及 PPR 的边界，并落实至少 9 小时课堂时间。练习项目用于学习与反馈；正式作品应按最新要求独立完成相应组件。</div>
+
+<h3>Sources &amp; Version Check</h3>
+<p>核查日期：<strong>2026-09-08</strong>。AP Central 当前链接的 CED 标注 Effective Fall 2023；官方日期页已发布 2027 安排。CED Sample Q2 是<strong>官方公开样题，不是历年真题</strong>。除注明来源的官方样题阅读入口外，本课与作业题均为原创；课堂书面题不是官方 FRQ。</p>
+<ul class="sources">
+  <li><a href="https://apcentral.collegeboard.org/courses/ap-computer-science-principles/exam" target="_blank" rel="noopener">Official exam format, 2027 dates &amp; Student Handouts</a></li>
+  <li><a href="https://apcentral.collegeboard.org/exam-administration-ordering-scores/exam-dates/start-times" target="_blank" rel="noopener">2027 start times by UTC offset</a></li>
+  <li><a href="https://apcentral.collegeboard.org/courses/ap-computer-science-principles" target="_blank" rel="noopener">Course framework &amp; multiple-choice content weights</a></li>
+  <li><a href="https://apcentral.collegeboard.org/media/pdf/ap-computer-science-principles-course-and-exam-description.pdf" target="_blank" rel="noopener">Official CED</a> · 本地离线版：<a href="resources/AP_CSP_Course_and_Exam_Description.pdf#page=53" target="_blank">Topic 2.1，印刷页 46–48</a></li>
+  <li>官方样题阅读：<a href="resources/AP_CSP_Course_and_Exam_Description.pdf#page=182" target="_blank">Sample Q2，印刷页 175</a> · <a href="resources/AP_CSP_Course_and_Exam_Description.pdf#page=194" target="_blank">答案与对齐，印刷页 187</a>。Q2 答案 A；官方对齐 DAT-1.C.b / Skill 2.B。</li>
+</ul>
