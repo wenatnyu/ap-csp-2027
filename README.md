@@ -41,4 +41,4 @@ python3 scripts/build_homework_pdf.py
 
 本次仅完成第一课，后续课次待确认本样稿后继续。
 
-GitHub Pages 使用 `main` 分支的根目录；`index.html` 与第一课页面由同一构建脚本生成。
+GitHub Pages 使用 `gh-pages` 分支的根目录；`index.html` 与第一课页面由同一构建脚本生成。后续在 `main` 完成修改与检查，再将修改同步到 `gh-pages` 并通过 GitHub Desktop 推送，即可更新在线课堂。
