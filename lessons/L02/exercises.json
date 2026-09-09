@@ -1,0 +1,344 @@
+{
+  "title": "AP CSP — Lesson 02 Homework: Computing Innovations, Input and Output",
+  "durationMinutes": 40,
+  "totalMarks": 30,
+  "notice": "All questions are original. Q1–Q6 are AP-style multiple-choice practice, not official or past AP questions. Q7–Q12 are classroom written practice, not official exam FRQs. The 30 marks and rubrics are teacher-assigned. For Q5, select exactly TWO answers; earn its one mark only for both correct choices and no others. Show reasoning in written responses. Binary integer encodings are unsigned and nonnegative.",
+  "questions": [
+    {
+      "id": "Q1",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "L01 retrieval: binary representation",
+      "prompt": "A room device sends 00011010 as an unsigned binary integer. What decimal value does the program receive?",
+      "options": [
+        {
+          "label": "A",
+          "text": "24"
+        },
+        {
+          "label": "B",
+          "text": "25"
+        },
+        {
+          "label": "C",
+          "text": "26"
+        },
+        {
+          "label": "D",
+          "text": "28"
+        }
+      ],
+      "answer": "C",
+      "explanation": "C is correct: 16 + 8 + 2 = 26. A omits the 2 position; B treats the final 10 as 1 instead of 2; D replaces the 2 contribution with 4. Leading zeros do not change the value.",
+      "lines": 0
+    },
+    {
+      "id": "Q2",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "L01 retrieval: minimum bits",
+      "prompt": "A museum needs distinct fixed-length binary codes for 35 rooms. No codes are reserved. What is the minimum number of bits per code?",
+      "options": [
+        {
+          "label": "A",
+          "text": "5"
+        },
+        {
+          "label": "B",
+          "text": "6"
+        },
+        {
+          "label": "C",
+          "text": "7"
+        },
+        {
+          "label": "D",
+          "text": "35"
+        }
+      ],
+      "answer": "B",
+      "explanation": "B is correct: 2⁵ = 32 < 35 ≤ 64 = 2⁶. A has too few patterns. C works but is not minimal. D confuses the number of rooms with the number of bits needed to encode each room.",
+      "lines": 0
+    },
+    {
+      "id": "Q3",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Purpose and function（目的与功能）",
+      "prompt": "A program matches volunteer tutors with learners who request help. Which statement best describes a plausible purpose?",
+      "options": [
+        {
+          "label": "A",
+          "text": "It reads subjects and available times."
+        },
+        {
+          "label": "B",
+          "text": "It displays a list of matches."
+        },
+        {
+          "label": "C",
+          "text": "It compares stored profiles."
+        },
+        {
+          "label": "D",
+          "text": "It helps learners find suitable tutoring support."
+        }
+      ],
+      "answer": "D",
+      "explanation": "D identifies a user goal that the innovation can serve. A describes inputs, B describes an output, and C describes processing. These three explain aspects of function rather than the underlying user need.",
+      "lines": 0
+    },
+    {
+      "id": "Q4",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Computing innovations",
+      "prompt": "Which example clearly uses a program as an essential part of its function?",
+      "options": [
+        {
+          "label": "A",
+          "text": "A spring-driven kitchen timer with no electronics"
+        },
+        {
+          "label": "B",
+          "text": "A paper map marked by a traveler"
+        },
+        {
+          "label": "C",
+          "text": "Software that combines recorded sounds into music"
+        },
+        {
+          "label": "D",
+          "text": "A wooden ruler used to measure a shelf"
+        }
+      ],
+      "answer": "C",
+      "explanation": "C transforms sound through software and can serve creative expression. The stated A operates mechanically; B and D do not execute a program. A device need not be connected to the internet to be a computing innovation.",
+      "lines": 0
+    },
+    {
+      "id": "Q5",
+      "type": "multi",
+      "marks": 1,
+      "topic": "Input sources（输入来源）",
+      "prompt": "A garden program reads soil-moisture measurements and a target moisture level entered by a user. It then sends a watering command. Which TWO are inputs? Select exactly TWO answers.",
+      "options": [
+        {
+          "label": "A",
+          "text": "The measured soil-moisture data"
+        },
+        {
+          "label": "B",
+          "text": "The watering command sent to a controller"
+        },
+        {
+          "label": "C",
+          "text": "The target moisture level entered by the user"
+        },
+        {
+          "label": "D",
+          "text": "The instructions that compare the two levels"
+        }
+      ],
+      "answer": "A and C",
+      "explanation": "A and C are data supplied for processing. B is an output from this program. D is part of its program logic, not the supplied moisture data. Award one mark only for A and C together, with no other choices.",
+      "lines": 0
+    },
+    {
+      "id": "Q6",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Output and prior state",
+      "prompt": "A counter displays 4. A button click increases the stored count by one and displays 5. Later, the same button click displays 9. Which explanation fits this behavior?",
+      "options": [
+        {
+          "label": "A",
+          "text": "A click cannot be program input."
+        },
+        {
+          "label": "B",
+          "text": "The output depends on both the click and the previous count."
+        },
+        {
+          "label": "C",
+          "text": "The display device changes the arithmetic rule."
+        },
+        {
+          "label": "D",
+          "text": "The same click must always produce the same displayed number."
+        }
+      ],
+      "answer": "B",
+      "explanation": "B is correct: before the later click the stored count can be 8. A is false because a click event can supply input. C adds an unsupported cause; the stated program rule is sufficient. D overlooks prior state and would contradict the stated behavior.",
+      "lines": 0
+    },
+    {
+      "id": "Q7",
+      "type": "written",
+      "marks": 4,
+      "topic": "Purpose versus function",
+      "prompt": "A library app reads a topic selected by a reader, finds matching books in a catalog, and displays titles.\n(a) State a plausible purpose naming a user and goal.\n(b) Describe its function.\n(c) Identify one input and one output, naming the actual data.",
+      "answer": "(a) Help readers find books on subjects they want to explore. (b) Use the selected topic to search the catalog and display matching titles. (c) Input: the selected topic (or catalog data read by the app). Output: the displayed matching titles.",
+      "explanation": "A purpose explains why a user would want the program. A function explains its behavior. Name the topic or catalog data rather than just a keyboard or file, and name the titles rather than just a screen.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "States a plausible purpose that identifies readers and their information or reading goal."
+        },
+        {
+          "marks": 1,
+          "criterion": "Describes using the topic to find matching catalog entries and display titles."
+        },
+        {
+          "marks": 1,
+          "criterion": "Identifies a valid input data item: selected topic or catalog data read by the app."
+        },
+        {
+          "marks": 1,
+          "criterion": "Identifies the matching titles as output."
+        }
+      ],
+      "lines": 7
+    },
+    {
+      "id": "Q8",
+      "type": "written",
+      "marks": 4,
+      "topic": "Input, processing and output",
+      "prompt": "A forecast program reads a file of temperatures 18, 21 and 24. It calculates their mean and writes “Mean: 21” to a results file.\n(a) Identify the input data and its source.\n(b) Describe the processing.\n(c) Identify the output.\n(d) Explain why the saved result is still output without a screen display.",
+      "answer": "(a) The temperatures 18, 21 and 24, read from a file. (b) Add them and divide by three. (c) The text “Mean: 21” written to the results file. (d) The program sends result data to a storage device; output is not restricted to a screen.",
+      "explanation": "Separate the numeric data from the source file, the calculation from its result, and the destination from the result text. Saving data is an output operation even when it produces no immediate visual display.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Identifies all three temperatures as the input and the file as their source."
+        },
+        {
+          "marks": 1,
+          "criterion": "Describes finding the mean by adding the three values and dividing by three."
+        },
+        {
+          "marks": 1,
+          "criterion": "Identifies “Mean: 21” or the mean value 21 written to the results file as output."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains that writing result data to storage is output and does not require screen display."
+        }
+      ],
+      "lines": 7
+    },
+    {
+      "id": "Q9",
+      "type": "written",
+      "marks": 4,
+      "topic": "Program boundaries（程序边界）",
+      "prompt": "A sensor program sends “occupied” to a room-finder program. The room finder removes that room from its available-room list and displays the revised list.\n(a) Classify the message relative to each program.\n(b) Identify processing performed by the room finder.\n(c) Identify its final displayed output.",
+      "answer": "(a) “Occupied” is output from the sensor program and input to the room finder. (b) The room finder excludes the occupied room from its list. (c) It displays the revised list of available rooms.",
+      "explanation": "Input and output describe direction relative to a named program. The same message crosses two program boundaries, so it can be output from one program and input to another. Removing a room is processing; the revised list sent to the display is output.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Classifies the message as output from the sensor program."
+        },
+        {
+          "marks": 1,
+          "criterion": "Classifies the same message as input to the room finder."
+        },
+        {
+          "marks": 1,
+          "criterion": "Identifies removal or exclusion of the occupied room as processing."
+        },
+        {
+          "marks": 1,
+          "criterion": "Identifies the revised available-room list as the displayed output."
+        }
+      ],
+      "lines": 7
+    },
+    {
+      "id": "Q10",
+      "type": "written",
+      "marks": 4,
+      "topic": "Events and prior state",
+      "prompt": "An app stores a tally. Each click on “Add one” increases the tally by one and displays it.\n(a) Identify the event input.\n(b) State the displayed result if the tally was 2, and if it was 8.\n(c) Explain why the same click can produce different outputs.\n(d) Is the new tally a program instruction or data?",
+      "answer": "(a) The “Add one” button-click event. (b) It displays 3 or 9, respectively. (c) Output depends on the prior stored tally as well as the click. (d) The new tally is data: a value processed and stored by the program.",
+      "explanation": "The event triggers the behavior. The instruction to add one stays the same while the stored value changes. Different prior states explain the different outputs without requiring a different button or an error.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Identifies the click event on “Add one” as the input."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives both displayed results correctly: 3 and 9."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains that different prior stored tallies cause the outputs to differ."
+        },
+        {
+          "marks": 1,
+          "criterion": "Classifies the new tally as data, a value the program handles, rather than an instruction."
+        }
+      ],
+      "lines": 7
+    },
+    {
+      "id": "Q11",
+      "type": "written",
+      "marks": 4,
+      "topic": "Investigate and specify",
+      "prompt": "Students want a room finder for group study.\n(a) Write one interview question that could reveal a user need or constraint.\n(b) Name one input data item and one useful output.\n(c) Write one requirement with an observable result. State enough detail to check it.",
+      "answer": "(a) “What made it difficult to find a suitable study room last time?” (b) Input: requested group size. Output: names of available rooms with enough seats. (c) Example: for a group of 4, when the only available rooms have capacities 2 and 6, display only the room with 6 seats.",
+      "explanation": "Answers can vary. An interview question should reveal needs, not simply seek approval of a proposed feature. A checkable requirement should connect specified circumstances to an observable result; “make it useful” is not sufficient.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Gives an interview question capable of revealing a user need, experience or constraint."
+        },
+        {
+          "marks": 1,
+          "criterion": "Names a relevant input data item, such as requested group size."
+        },
+        {
+          "marks": 1,
+          "criterion": "Names a useful output data item, such as a list of suitable available rooms."
+        },
+        {
+          "marks": 1,
+          "criterion": "States a requirement specific enough to check, including conditions and an observable expected result."
+        }
+      ],
+      "lines": 7
+    },
+    {
+      "id": "Q12",
+      "type": "written",
+      "marks": 4,
+      "topic": "Trace a requirement and improve a design",
+      "prompt": "A room finder must show all available rooms with enough seats. A has 2 seats and is available; B has 6 and is available; C has 8 and is unavailable.\n(a) Give the result for a group of 2, then a group of 7.\n(b) For 7 students, the app displays C. Explain the error.\n(c) Propose clear output when no room meets the requirement.",
+      "answer": "(a) For 2: A and B. For 7: no matching room. (b) C has enough seats but is unavailable, so displaying it ignores the availability requirement. (c) Display “No suitable room available” or an equivalent clear message.",
+      "explanation": "Both availability and sufficient capacity are required. “All” means a group of 2 should see both A and B, not merely the first match. The no-match case should be communicated so the user can distinguish it from an unfinished search.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Gives both A and B, and no C, for a group of 2."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives no matching room for a group of 7."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains that C must be excluded because it is unavailable despite its capacity."
+        },
+        {
+          "marks": 1,
+          "criterion": "Proposes a clear no-match output message consistent with the requirement."
+        }
+      ],
+      "lines": 7
+    }
+  ]
+}

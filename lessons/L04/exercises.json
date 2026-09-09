@@ -1,0 +1,344 @@
+{
+  "title": "AP CSP — Lesson 04 Homework: Chapter 1 Check",
+  "durationMinutes": 40,
+  "totalMarks": 30,
+  "notice": "All questions are original. Q1–Q6 are AP-style multiple-choice practice, not official or past AP questions. Q7–Q12 are classroom written practice, not official exam FRQs. These 30 marks are teacher-assigned and do not represent AP exam scoring. Q5: select exactly TWO answers; earn its one mark only for both correct choices and no others. Show reasoning, traces and calculations. Ticket Total assumes valid integer inputs from 1 to 50; input validation is not implemented. The practice project is not a full Create task.",
+  "questions": [
+    {
+      "id": "Q1",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "L01 · Binary representation",
+      "prompt": "A ticket scanner stores the eight-bit nonnegative binary integer 00101101. What decimal value does this represent?",
+      "options": [
+        {
+          "label": "A",
+          "text": "43"
+        },
+        {
+          "label": "B",
+          "text": "45"
+        },
+        {
+          "label": "C",
+          "text": "46"
+        },
+        {
+          "label": "D",
+          "text": "53"
+        }
+      ],
+      "answer": "B",
+      "explanation": "B is correct: 00101101₂ = 32 + 8 + 4 + 1 = 45. A, 43, corresponds to 00101011. C, 46, corresponds to 00101110. D, 53, corresponds to 00110101. Each incorrect value assigns different positional weights; leading zeros do not change the value.",
+      "lines": 0
+    },
+    {
+      "id": "Q2",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "L02 · Input, processing and output",
+      "prompt": "A ticket kiosk receives a visitor’s selection of two tickets, calculates a total, and shows 27 on its screen. Which statement correctly identifies input and output?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Input: the total calculation; output: the visitor’s selection."
+        },
+        {
+          "label": "B",
+          "text": "Input: the screen; output: the stored price variable."
+        },
+        {
+          "label": "C",
+          "text": "Input: the visitor’s selection; output: the displayed 27."
+        },
+        {
+          "label": "D",
+          "text": "Input: the displayed 27; output: the multiplication operation."
+        }
+      ],
+      "answer": "C",
+      "explanation": "C is correct: the visitor’s selection supplies data to the program, and the displayed value sends data to a device. A mistakes processing for input and reverses the visitor selection’s role. B names an output device as input and mistakes internal program state for output. D reverses the displayed result’s role and treats internal computation as output.",
+      "lines": 0
+    },
+    {
+      "id": "Q3",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "L03 · Assignment and stored values",
+      "prompt": "Consider the following AP-style pseudocode.\nx ← 4\ny ← x + 2\nx ← 9\nDISPLAY(y)\nWhat is displayed?",
+      "options": [
+        {
+          "label": "A",
+          "text": "4"
+        },
+        {
+          "label": "B",
+          "text": "6"
+        },
+        {
+          "label": "C",
+          "text": "9"
+        },
+        {
+          "label": "D",
+          "text": "11"
+        }
+      ],
+      "answer": "B",
+      "explanation": "B is correct: y receives 4 + 2 = 6 when the second statement runs. Changing x later does not automatically recalculate y. A ignores the addition. C substitutes x’s final value for y. D incorrectly treats y as a permanent formula tied to the current value of x.",
+      "lines": 0
+    },
+    {
+      "id": "Q4",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "L04 · Syntax and run-time errors",
+      "prompt": "In situation I, a parser rejects DISPLAY(total because a required closing parenthesis is missing. In situation II, a language reports division by zero as an error while executing an otherwise valid statement. Which classification is correct?",
+      "options": [
+        {
+          "label": "A",
+          "text": "I: logic; II: syntax"
+        },
+        {
+          "label": "B",
+          "text": "I: run-time; II: logic"
+        },
+        {
+          "label": "C",
+          "text": "I: syntax; II: logic"
+        },
+        {
+          "label": "D",
+          "text": "I: syntax; II: run-time"
+        }
+      ],
+      "answer": "D",
+      "explanation": "D is correct: I breaks the language grammar, while II is a fault reported during execution under the stated language rules. A misclassifies both situations. B also misclassifies both. C identifies the syntax error correctly but overlooks the explicit execution-time fault in II. The example does not claim that every language handles division by zero identically.",
+      "lines": 0
+    },
+    {
+      "id": "Q5",
+      "type": "multi",
+      "marks": 1,
+      "topic": "L04 · Tests that expose a logic error",
+      "prompt": "Ticket Total accepts integer inputs from 1 to 50. Each ticket costs 12, plus a fee of 3 once per order. A faulty version computes tickets * (12 + 3). Which TWO valid inputs expose this error? Select exactly TWO answers.",
+      "options": [
+        {
+          "label": "A",
+          "text": "2"
+        },
+        {
+          "label": "B",
+          "text": "1"
+        },
+        {
+          "label": "C",
+          "text": "50"
+        },
+        {
+          "label": "D",
+          "text": "0"
+        }
+      ],
+      "answer": "A and C",
+      "explanation": "A and C are correct. For 2 tickets, the faulty output is 30 but the required total is 27. For 50 tickets, the faulty output is 750 but the required total is 603. B does not expose the fault: both calculations give 15 for one ticket. D is outside the stated valid domain; 0 must not be labeled a valid test input. Award one mark only for A and C with no other selections.",
+      "lines": 0
+    },
+    {
+      "id": "Q6",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "L04 · Feedback and iterative development",
+      "prompt": "A visitor says, “The displayed 27 does not tell me whether the booking fee is included.” Which response best demonstrates iterative development?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Revise the output label to address the feedback, then check the visitor’s understanding and rerun the numeric tests."
+        },
+        {
+          "label": "B",
+          "text": "Keep the output unchanged because the program has no syntax errors."
+        },
+        {
+          "label": "C",
+          "text": "Add another fee of 3 to every result so that the visitor notices it."
+        },
+        {
+          "label": "D",
+          "text": "Ask only the original developer whether the label is clear and stop testing."
+        }
+      ],
+      "answer": "A",
+      "explanation": "A is correct: it uses specific user evidence to revise the interface and checks the effect of the revision. B ignores usability and confuses syntactic validity with meeting user needs. C changes a correct calculation and would charge the fee twice. D excludes the visitor’s perspective and ends testing without checking the reported problem.",
+      "lines": 0
+    },
+    {
+      "id": "Q7",
+      "type": "written",
+      "marks": 4,
+      "topic": "L01 · Capacity and maximum value",
+      "prompt": "A museum needs distinct fixed-length binary identifiers for 41 exhibits. No patterns are reserved.\n(a) Find the minimum number of bits per identifier. Show both why it is sufficient and why one fewer bit is insufficient.\n(b) With that length, how many different patterns exist?\n(c) If the patterns represent consecutive nonnegative integers starting at 0, what is the largest integer?",
+      "answer": "(a) Six bits: 2⁶ = 64 ≥ 41, but 2⁵ = 32 < 41. (b) 64 patterns. (c) 63.",
+      "explanation": "Six bits provide enough labels; proving that five bits fail establishes minimality. The pattern count is 64, whereas the largest nonnegative integer is 63 because zero is included.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Gives six bits and shows that 2⁶ = 64 is sufficient for 41 exhibits."
+        },
+        {
+          "marks": 1,
+          "criterion": "Shows that one fewer bit fails: 2⁵ = 32 < 41."
+        },
+        {
+          "marks": 1,
+          "criterion": "States that six bits provide 64 distinct patterns."
+        },
+        {
+          "marks": 1,
+          "criterion": "States that the largest represented nonnegative integer is 63."
+        }
+      ],
+      "lines": 7
+    },
+    {
+      "id": "Q8",
+      "type": "written",
+      "marks": 4,
+      "topic": "L02 · Computing innovation and user perspective",
+      "prompt": "A translation app records a visitor’s spoken question, uses a program to produce a translation, and displays translated text.\n(a) Explain why this is a computing innovation.\n(b) Identify one input to the program and one output from it.\n(c) A visitor says that the displayed text is too small to read. Suggest a change and explain how you would check whether it helps.",
+      "answer": "(a) A program is integral to the app’s translation function. (b) Input: the visitor’s recorded speech/audio data; output: the displayed translated text. (c) Increase or allow adjustment of the displayed text size, then ask the visitor to read a translated example and observe whether it is readable.",
+      "explanation": "The program’s essential role makes the app a computing innovation. Inputs and outputs are data crossing the program’s boundary; the translation calculation itself is processing. A justified interface revision responds to a specific user need and is checked with that user.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Explains that a program is integral to the app’s translation function."
+        },
+        {
+          "marks": 1,
+          "criterion": "Identifies the visitor’s speech/audio data as input."
+        },
+        {
+          "marks": 1,
+          "criterion": "Identifies the displayed translated text as output."
+        },
+        {
+          "marks": 1,
+          "criterion": "Suggests a relevant text-size/readability change and a user check tied to the reported difficulty."
+        }
+      ],
+      "lines": 7
+    },
+    {
+      "id": "Q9",
+      "type": "written",
+      "marks": 4,
+      "topic": "L03 · Trace a sequence",
+      "prompt": "Consider the following AP-style pseudocode.\na ← 4\nb ← a + 3\na ← 10\nb ← b + 2\nDISPLAY(a)\nDISPLAY(b)\n(a) State the values of a and b after the second statement.\n(b) State their values after the fourth statement.\n(c) Give the two displayed values in order.\n(d) Explain why changing a to 10 does not automatically change b.",
+      "answer": "(a) a = 4, b = 7. (b) a = 10, b = 9. (c) 10, then 9. (d) The earlier assignment computed a + 3 using a’s value at that time and stored 7 in b; it did not create a continuing relationship.",
+      "explanation": "Trace each assignment in sequence. The third statement changes only a. The fourth evaluates the current value of b, 7, adds 2, and stores 9 back in b. DISPLAY does not change either variable.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Gives both a = 4 and b = 7 after the second statement."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives both a = 10 and b = 9 after the fourth statement."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives output in the correct order: 10, then 9."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains that assignment stores the expression’s value at that time; b is not automatically recomputed when a changes."
+        }
+      ],
+      "lines": 8
+    },
+    {
+      "id": "Q10",
+      "type": "written",
+      "marks": 4,
+      "topic": "L03–L04 · Modify and explain a program",
+      "prompt": "A program should calculate a rectangle’s perimeter from positive integer length and width inputs.\nlength ← INPUT()\nwidth ← INPUT()\nperimeter ← length + width\nDISPLAY(perimeter)\n(a) Replace the incorrect assignment with a correct statement.\n(b) For inputs 7 and 4 in that order, give the corrected output.\n(c) Explain why the original statement is a logic error, assuming its syntax is valid.\n(d) Describe the purpose of the corrected program, referring to its inputs and output.",
+      "answer": "(a) perimeter ← 2 * (length + width), or an equivalent expression. (b) 22. (c) The original computes only length + width, giving 11 instead of the full perimeter. It runs but does not meet the requirement. (d) It takes a rectangle’s length and width and displays the total distance around its four sides.",
+      "explanation": "A rectangle has two sides of each length, so its perimeter is 2 × length + 2 × width. Parentheses in 2 * (length + width) ensure that both dimensions are doubled. For 7 and 4, the result is 2 × 11 = 22.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Provides a correct assignment such as perimeter ← 2 * (length + width) or perimeter ← length * 2 + width * 2."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives corrected output 22."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains that the original calculation omits the second pair of sides, producing 11 instead of 22, despite valid syntax."
+        },
+        {
+          "marks": 1,
+          "criterion": "States that the program uses length and width as inputs to display the rectangle’s full perimeter."
+        }
+      ],
+      "lines": 8
+    },
+    {
+      "id": "Q11",
+      "type": "written",
+      "marks": 4,
+      "topic": "L04 · Requirements, tests and correction",
+      "prompt": "Ticket Total assumes valid integer inputs from 1 to 50. Tickets cost 12 each, plus 3 once per order. A faulty program computes total ← tickets * (12 + 3).\n(a) Give the correct expected totals for valid boundary inputs 1 and 50.\n(b) For input 2, give the expected total and the faulty program’s actual total.\n(c) Explain the cause of the mismatch.\n(d) Write a corrected assignment for total.",
+      "answer": "(a) 1 → 15 and 50 → 603. (b) Expected 27; faulty actual 30. (c) The parentheses make the program multiply the booking fee by the number of tickets, so it charges the fee per ticket. (d) total ← tickets * 12 + 3.",
+      "explanation": "Requirements, rather than the faulty program, determine expected results. The fee is paid once per order. The faulty program matches the requirement for input 1 but diverges for larger valid counts. After correction, rerun the failed case and the earlier boundary tests.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Gives both correct boundary totals: 15 for 1 and 603 for 50."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives both expected 27 and faulty actual 30 for input 2."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains that the faulty expression multiplies the fee by tickets instead of adding it once per order."
+        },
+        {
+          "marks": 1,
+          "criterion": "Writes total ← tickets * 12 + 3 or an equivalent correct assignment."
+        }
+      ],
+      "lines": 8
+    },
+    {
+      "id": "Q12",
+      "type": "written",
+      "marks": 4,
+      "topic": "L04 · Collaboration, revision and attribution",
+      "prompt": "Two students use pair programming to develop Ticket Total. Its calculation is correct, but a visitor cannot tell whether the displayed total includes the booking fee. One student adapted the input lines from the teacher’s starter code.\n(a) State one specific navigator action that contributes to the work.\n(b) Suggest a revision based on the visitor’s feedback.\n(c) State what should be checked after that revision.\n(d) Write a suitable acknowledgement for the adapted code.",
+      "answer": "(a) The navigator can predict the result for a test input, trace the calculation, or compare the code with the per-order fee requirement and explain findings to the driver. (b) Add a clear label such as “Total including booking fee:”. (c) Ask the visitor to interpret the revised display and rerun the numeric tests to confirm the totals remain correct. (d) “The input lines were adapted from the teacher’s Chapter 1 Programming Lab starter. [Student name] adapted those lines; [names] developed the calculation and output changes.” Credit only the contributions actually made.",
+      "explanation": "Effective collaboration involves active review and communication, not one partner watching silently. A revision should address the observed problem. Checking user understanding and rerunning calculations supplies evidence of its effect. Documentation should identify the source and the affected code; merely saying “I had help” does not identify the origin.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Gives a specific active navigator contribution, such as independently predicting a test result or tracing and discussing a code step."
+        },
+        {
+          "marks": 1,
+          "criterion": "Proposes a clear output label or equivalent change that explicitly addresses whether the fee is included."
+        },
+        {
+          "marks": 1,
+          "criterion": "Includes both a check of the visitor’s understanding and rerunning numeric tests after the revision."
+        },
+        {
+          "marks": 1,
+          "criterion": "Acknowledges that the input lines were adapted from the teacher’s starter/Chapter 1 Programming Lab, identifying source and affected code."
+        }
+      ],
+      "lines": 8
+    }
+  ]
+}

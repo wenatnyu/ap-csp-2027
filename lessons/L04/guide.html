@@ -1,0 +1,86 @@
+<div class="tagline">Teacher Guide</div>
+<h1>Lesson 04 · Collaborate, Test &amp; Improve</h1>
+<p class="sub">自编 Chapter 1 收束课 · 23 slides · 90 minutes · May 2027 preparation</p>
+
+<h3>定位与课堂准备</h3>
+<p>本课把 L01 的信息表示、L02 的计算创新与输入输出、L03 的变量和顺序执行放进同一个可检查的小项目。前置要求：学生能手算简单表达式、跟踪赋值、识别 INPUT() / DISPLAY()。项目为 <strong>Ticket Total</strong>：以有效票数计算含一次预订费的总价，留下测试、用户反馈、修改和引用记录。它是开发练习，<strong>不是完整 Create 项目或正式 Create 提交</strong>。</p>
+<p>投影英文为主，中文提示只澄清术语。N 打开教师备注；先独立思考再展开答案。准备<a href="Chapter_1_Programming_Lab.html" target="_blank" rel="noopener">Chapter 1 Programming Lab</a>，每人保存自己的代码和解释；共用设备时结对操作并交换角色。纸笔跟踪可以帮助诊断，但课堂应留足真实编写、运行和修改的时间。</p>
+
+<h3>90 分钟安排</h3>
+<table>
+<thead><tr><th>时间</th><th>页码</th><th>教学动作与证据</th></tr></thead>
+<tbody>
+<tr><td>0–8</td><td>1–3</td><td>二进制、输入输出与赋值提取练习；明确项目交付物。</td></tr>
+<tr><td>8–20</td><td>4–6</td><td>角色演练、用户视角、迭代与增量开发；把“合作有用”讲成具体行为。</td></tr>
+<tr><td>20–32</td><td>7–9</td><td>把需求变成测试；独立计算期望值；区分有效边界与范围外输入。</td></tr>
+<tr><td>32–50</td><td>10–14</td><td>用一个通过、一个失败的测试揭露按张收费错误；分类错误并跟踪首个错误值。</td></tr>
+<tr><td>50–62</td><td>15–16</td><td>4 分钟设计，8 分钟编写；保留学生代码。</td></tr>
+<tr><td>62–72</td><td>17–18</td><td>交换角色，运行三组输入；让另一组作用户，依据反馈修改并复测。</td></tr>
+<tr><td>72–80</td><td>19–20</td><td>整理文档和来源；同伴审阅，教师抽查每人的解释。</td></tr>
+<tr><td>80–90</td><td>21–23</td><td>选两项、迁移情境及 exit ticket；说明章末作业。</td></tr>
+</tbody></table>
+<p>节奏不足时压缩错误类别的重复口述，不挤掉 50–80 分钟的开发块和末尾独立诊断。学生较快时要求解释“为什么一个测试会通过但仍有错”，或比较不同命名、输出提示的清晰度；不临时加入列表、过程、条件或循环。</p>
+
+<h3>Ticket Total：可直接布置的项目说明</h3>
+<p><strong>用户与目的：</strong>一位访客希望知道单次订票的总费用。<strong>输入前提：</strong>整数 tickets，1–50（含端点）。<strong>计算：</strong>每张 12 个货币单位，另加每单一次 3 个单位的 booking fee；总价为 tickets × 12 + 3。<strong>输出：</strong>明确的 total 标签，并说明已经含预订费。需使用学生自己编写或明确标明修改来源的顺序程序。</p>
+<p><strong>实现范围：</strong>变量、赋值、算术、INPUT()、DISPLAY()；每行一条语句，变量名区分大小写，赋值可用 ← 或 &lt;-。文字标签可用 DISPLAY("Total including booking fee:")，数值另行 DISPLAY(total)，无需字符串拼接。本版<strong>假定输入有效，不实现输入验证</strong>。0、51、非整数属于范围外案例；即使算出数值也不代表订单有效。未来若加入拒绝输入要求，应先规定预期提示与行为，再学相应控制结构。</p>
+<table>
+<thead><tr><th>测试输入</th><th>类型</th><th>独立计算的 expected</th><th>学生须填写</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>最小有效值</td><td>1 × 12 + 3 = 15</td><td>实际输出及通过/修改结论</td></tr>
+<tr><td>2</td><td>非单张，能区分两种收费方式</td><td>2 × 12 + 3 = 27</td><td>实际输出及通过/修改结论</td></tr>
+<tr><td>50</td><td>最大有效值</td><td>50 × 12 + 3 = 603</td><td>实际输出及通过/修改结论</td></tr>
+</tbody></table>
+<p>每个测试单独运行：输入框先放 1 并 Run，再分别放 2、50 重跑。这个程序一次运行只有一次 INPUT()；把三个数字放进队列却只运行一次，不能当成完成三次测试。期望结果必须先根据需求计算，不能由运行结果反填。</p>
+<p><strong>学生交付：</strong>代码；包含 expected/actual 的三行测试表；一句具体用户反馈；改前与改后的代码或界面文字；重测结果；本人贡献及适用的来源说明。每位学生还需用自己的话解释输入、计算、输出和一个测试。使用教师 starter 或同伴片段时，注明来源/作者及片段位置。</p>
+
+<details><summary>教师参考实现与检查点（先让学生自行编写）</summary>
+<pre>DISPLAY("Enter an integer ticket count from 1 to 50:")
+tickets ← INPUT()
+price ← 12
+fee ← 3
+total ← tickets * price + fee
+DISPLAY("Total including booking fee:")
+DISPLAY(total)</pre>
+<p>这是一个可行版本，等价表达式、分步计算和合理变量名都接受。检查价款乘以 tickets，而 fee 只加一次。上面提示有效范围的文字<strong>没有实现验证</strong>。若学生从无标签版改为此输出，应留下用户反馈和修改说明；不要仅替换几个变量名就声称完全独立创作。</p>
+</details>
+
+<h3>项目形成性评价：四项，每项 0–2 分</h3>
+<table>
+<thead><tr><th>维度</th><th>2 分：证据充分</th><th>1 分：需要补充</th><th>0 分：未展示</th></tr></thead>
+<tbody>
+<tr><td>功能与解释</td><td>按有效输入计算一次费用，标签清楚；能解释输入—计算—输出。</td><td>核心计算基本正确，但标签或个人解释不清。</td><td>无法实现或解释核心计算。</td></tr>
+<tr><td>测试与调试</td><td>三例 expected/actual 完整，发现问题后修正并重测；若无失败，明确记录全通过。</td><td>有真实运行，但缺一个案例、期望依据或修改后的重测。</td><td>没有可核对的测试记录。</td></tr>
+<tr><td>用户反馈与迭代</td><td>具体反馈、合理修改与用户复核相对应。</td><td>有反馈或改动，但联系和复核不完整。</td><td>只声称“更好”，未提供过程。</td></tr>
+<tr><td>合作、记录与引用</td><td>双方有贡献并能解释；代码来源和改动描述准确。</td><td>有部分贡献记录，但解释或引用不完整。</td><td>无法说明贡献，也未确认来源。</td></tr>
+</tbody></table>
+<p>总分 8 分为课堂诊断，不是官方 AP Create 量表。建议达到 6/8 且“功能与解释”不是 0 分时继续；其余学生按缺失证据补做，不必把整个项目重写。单人完成者用独立开发记录和同伴反馈取代配对贡献要求。对于已满足需求且用户未发现问题的版本，允许依据另一名用户的新证据澄清提示；不要要求为得分而无理由改坏程序。</p>
+
+<h3>常见误区与即时处理</h3>
+<table>
+<thead><tr><th>学生表现</th><th>追问或支架</th></tr></thead>
+<tbody>
+<tr><td>把一次费写为 tickets * (12 + 3)</td><td>并排手算输入 1 和 2。要求解释为什么第一例通过、第二例失败。</td></tr>
+<tr><td>“没有报错，所以正确”</td><td>把 actual 与独立 expected 比较。有效语法与符合需求是两个检查点。</td></tr>
+<tr><td>把 0 称为最小有效边界</td><td>重读 1–50 的输入前提；1 是有效下界，0 在其外。本版尚无拒绝机制。</td></tr>
+<tr><td>认为 b 会随 a 自动变化</td><td>每次赋值更新表格；说明右侧在执行时求值，再复制结果。</td></tr>
+<tr><td>把 navigator 当旁观者</td><td>规定运行前由 navigator 给出预期，运行后说明差异，并交换角色。</td></tr>
+<tr><td>只记“用户说很好”</td><td>请用户解释屏幕数字含义，记录原话、观察和可检验的具体修改。</td></tr>
+<tr><td>把所有除零都叫同一结果</td><td>回到题目给出的语言行为；本课的运行时错误例子明确限定语言报告错误。</td></tr>
+</tbody></table>
+<p><strong>Exit ticket：</strong>42；5；0 不是有效边界；2 张票应为 27，并提出检查每单费用或跟踪首个错误值等具体下一步。四项各 1 分，第四项须同时满足数值与步骤；建议 3/4 且能独立解释项目者进入后续。项目解释比只记住四个答案更能判断迁移能力。</p>
+
+<h3>章末作业与覆盖边界</h3>
+<p>作业 12 题、30 分、约 40 分钟。Q1–Q6 为原创 AP-style 选择题，其中 Q5 选两项，必须仅选 A、C 才得该题 1 分；Q7–Q12 为各 4 分的课堂书面题，附逐项给分标准。这些分值由教师设定，书面题不是官方 FRQ，所有题目均非官方真题。</p>
+<p>提取范围：Q1、Q7 回看 L01 表示与容量；Q2、Q8 回看 L02 计算创新、输入输出与用户；Q3、Q9、Q10 回看 L03 赋值、顺序和运算；Q4–Q6、Q11–Q12 集中检查 L04 错误、有效测试、协作与迭代。Q8、Q10 同时提供跨课迁移。Chapter 1 只是课程自编起步章节，不能据本章结束认定已完成整个 AAP 或正式 Create 准备。</p>
+
+<h3>CED 对齐与来源</h3>
+<p>已核对本地 CED（Effective Fall 2023）及<a href="https://apcentral.collegeboard.org/media/pdf/ap-computer-science-principles-course-and-exam-description.pdf" target="_blank" rel="noopener">AP Central 当前官方 CED</a>，核查日期 2026-09-09。以下是本课活动的对齐范围，而非整章官方标准的完成证明。</p>
+<ul class="sources">
+<li><strong>CRD-1：</strong>重点 A.3–6、B.1–2、C.1：多方视角、用户沟通、协作工具与结对模型、有效人际合作。<a href="resources/AP_CSP_Course_and_Exam_Description.pdf#page=39" target="_blank">Topic 1.1，印刷页 32–33 / PDF 页 39–40</a>。</li>
+<li><strong>CRD-2.E–H：</strong>过程修订、需求与简单界面设计、文档和代码来源。F.7 只用到界面规划、头脑风暴与测试设计等适合当前规模的部分。<a href="resources/AP_CSP_Course_and_Exam_Description.pdf#page=43" target="_blank">Topic 1.3，印刷页 36–38 / PDF 页 43–45</a>。</li>
+<li><strong>CRD-2.I–J：</strong>重点 I.1–3、I.5 及 J.1–3 的错误诊断、修正和基于需求的测试；I.4 溢出仅与 L01 建立回顾联系。范围外行为先讨论规范，验证代码留待后续。<a href="resources/AP_CSP_Course_and_Exam_Description.pdf#page=46" target="_blank">Topic 1.4，印刷页 39–40 / PDF 页 46–47</a>。</li>
+<li><strong>AAP 基础复用：</strong>AAP-1.B 赋值跟踪，AAP-2.A/B 的顺序表达，AAP-2.C 的基本算术与优先级；不在此声称完整覆盖数学表达式（例如 MOD）或算法控制结构。<a href="resources/AP_CSP_Course_and_Exam_Description.pdf#page=71" target="_blank">赋值：印刷页 64 / PDF 页 71</a>；<a href="resources/AP_CSP_Course_and_Exam_Description.pdf#page=75" target="_blank">顺序与表达式：印刷页 68–69 / PDF 页 75–76</a>。</li>
+</ul>
+<p>实验室是便于即时实践的 AP 风格伪代码子集，不是官方考试软件，也不是完整编程语言。其输入队列、错误提示、步进界面服务于课堂；考试概念和语义以当年度官方参考表为准。正式 Create 将在后续独立安排、按当年度要求完成。</p>
+

@@ -1,0 +1,120 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AP CSP · Chapter 1 Programming Lab</title><style>
+*{box-sizing:border-box}body{margin:0;background:#eef2f4;color:#193148;font:16px/1.55 "Helvetica Neue","PingFang SC",Arial,sans-serif}a{color:#225a83;text-underline-offset:4px}header{background:#193148;color:white;padding:19px max(24px,calc((100vw - 1200px)/2));display:flex;justify-content:space-between;gap:20px}header a{color:white}main{max-width:1250px;padding:32px 25px 60px;margin:auto}h1{font-size:38px;line-height:1.1;margin:0 0 12px;letter-spacing:-.035em}h2{font-size:21px;margin:0 0 14px}h3{font-size:16px}p{margin:9px 0 16px}.intro{max-width:900px;color:#566c7a}.columns{display:grid;grid-template-columns:1.2fr 1fr;gap:22px}.panel{border:1px solid #cbd6df;background:white;padding:24px;min-width:0}button,select,input,textarea{font:inherit;border:1px solid #a6b6c4;border-radius:3px;padding:9px;color:#193148;background:white}button{cursor:pointer}button:hover{background:#e9f1f7}button:disabled{opacity:.45;cursor:default}button:focus-visible,select:focus-visible,input:focus-visible,textarea:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid #b18127;outline-offset:3px}button.primary{background:#193148;color:white}.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:12px 0}.row select{flex:1;min-width:160px}label{display:block;font-weight:600;font-size:14px;margin:18px 0 7px}textarea{width:100%;resize:vertical;min-height:245px;font:17px/1.7 ui-monospace,"SFMono-Regular",Consolas,monospace;background:#f5f8fa;white-space:pre;tab-size:2}#prediction{min-height:72px;font-family:inherit;font-size:15px;white-space:pre-wrap}input{width:100%}.hint{font-size:13px;color:#617583}.status{padding:13px 16px;background:#eaf2ee;border-left:4px solid #4d7e66;overflow-wrap:anywhere;margin:20px 0}.status.error{background:#fff0ed;border-color:#aa4433;color:#793123}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f0f4f7;padding:17px;min-height:70px;margin:0;font:18px/1.6 ui-monospace,Consolas,monospace}table{width:100%;border-collapse:collapse;font-size:14px}td,th{border-bottom:1px solid #d3dde4;padding:11px 12px;text-align:left;vertical-align:top}th{background:#f2f5f6;font-size:12px}td{font-family:ui-monospace,Consolas,monospace;overflow-wrap:anywhere}td:first-child{font-family:inherit}details{margin-top:22px}summary{cursor:pointer;font-weight:600}.wide{margin-top:22px}.trace-wrap{overflow-x:auto}#trace td:nth-child(2){white-space:pre-wrap;min-width:170px}.task{border-left:4px solid #c8a45f;padding-left:18px;margin-top:28px}.task ol{padding-left:20px}.task li{margin:10px 0}.supported code{font-family:ui-monospace,Consolas,monospace;background:#f2f4f6;padding:2px 4px}footer{font-size:13px;color:#637685;border-top:1px solid #cbd6df;margin-top:28px;padding-top:20px}@media(max-width:780px){main{padding:25px 16px 40px}.columns{grid-template-columns:1fr}.panel{padding:20px}header{font-size:13px;padding:17px}.row select{width:100%}h1{font-size:32px}textarea{font-size:15px}td,th{padding:9px}}@media print{header,button,.row,details{display:none}.columns{display:block}.panel{margin-bottom:12px;break-inside:avoid}main{padding:0}body{background:white}textarea{border:0;background:white}h1{font-size:24px}}
+</style></head><body><header><strong>AP CSP / CHAPTER 01</strong><a href="index.html">← Back to chapter</a></header><main><h1>Predict. Run. Explain.</h1><p class="intro">A small programming lab for Lessons 03–04. Write AP-style pseudocode, then follow the output and variables after each statement. <span lang="zh">先预测结果，再运行并解释。</span></p>
+<div class="columns"><section class="panel"><h2>1 / Your program</h2><div class="row"><select id="example" aria-label="Example program"><option value="starter">L03 · Ticket total starter</option><option value="fee">L04 · Correct fee example</option><option value="bug">L04 · Find the fee bug</option><option value="trace">Trace · Assignment copies a value</option></select><button id="load">Load example</button></div><label for="program">Pseudocode · one statement per line</label><textarea id="program" spellcheck="false" autocapitalize="off" autocomplete="off" aria-describedby="code-help"></textarea><p class="hint" id="code-help">Use ← or &lt;- for assignment. INPUT() and DISPLAY(...) are built in. Editing code resets the execution; your prediction stays.</p><label for="inputs">Input queue · numeric values, separated by commas</label><input id="inputs" value="2" inputmode="text" autocomplete="off"><p class="hint">Each INPUT() consumes one value from left to right. For the ticket project, use one integer from 1 to 50 per run. Reset between test cases.</p><div class="row"><button class="primary" id="step">Step one line</button><button id="run">Run all</button><button id="reset">Reset execution</button><button id="download-code">Save my code</button></div></section>
+<section class="panel"><h2>2 / Predict, then observe</h2><label for="prediction">My prediction and reason</label><textarea id="prediction" placeholder="For 2 tickets, I predict ... because ..."></textarea><div id="status" class="status" role="status" aria-live="polite"></div><h3>Program output</h3><pre id="output" aria-live="polite">No output yet.</pre><h3>Current variable values</h3><p id="empty-vars" class="hint">No assignments executed.</p><table><thead><tr><th>Variable</th><th>Current value</th></tr></thead><tbody id="variables"></tbody></table><p class="hint">The trace shows the teaching tool's state. Variable names and the trace are not program output; only DISPLAY produces output here.</p></section></div>
+<section class="panel wide"><h2>3 / Trace the execution</h2><div class="trace-wrap"><table><thead><tr><th>Line</th><th>Statement</th><th>Effect</th><th>Values after this statement</th></tr></thead><tbody id="trace"></tbody></table></div></section>
+<section class="panel wide"><h2>Use the lab in class</h2><div class="task"><h3>Lesson 03 · Read, run, modify</h3><ol><li>Keep the starter. Predict outputs for ticket counts 1 and 2. Step through the program; explain how <code>total</code> gets its value.</li><li>Add <code>fee ← 3</code> before calculating the total. Modify the calculation to charge the fee once per order.</li><li>Test again. Explain which variables change when the ticket count changes and which keep the same value.</li></ol></div><div class="task"><h3>Lesson 04 · Test &amp; improve</h3><p>Requirement: integer ticket count 1–50; price 12 per ticket; fee 3 per order. Output the total. Work from your own solution before opening the completed example.</p><ol><li>Test ticket counts 1, 2 and 50. Record the expected total before running, then the actual result and pass/fail.</li><li>Load “Find the fee bug”. Find an input that reveals the defect and explain why testing only 1 ticket misses it.</li><li>Repair the formula, rerun all tests, and record the feedback that prompted a change.</li></ol><p><a href="output/pdf/AP_CSP_Chapter_1_Project_Sheet.pdf">Print the project record sheet</a> · <a href="AP_CSP_L04_Test_and_Improve.html#guide">Teacher project guidance</a></p></div>
+<details class="supported"><summary>Supported syntax and model / 支持范围</summary><p>This is an instructional subset, not a full implementation of AP pseudocode. It supports variables, assignment, numeric <code>+</code> <code>-</code> <code>*</code> <code>/</code>, parentheses, numeric <code>INPUT()</code>, and <code>DISPLAY(expression)</code>. Double-quoted strings can be assigned or displayed, such as <code>DISPLAY("Total")</code>. Variable names are case-sensitive; whole-line comments begin with <code>//</code>.</p><p>No IF, loops, procedures, lists, comparisons, MOD, or string concatenation are implemented here. These belong to later lessons. Unsupported syntax produces a message. A program may run successfully and still give a logically wrong result; check it against the requirements.</p><p>The input queue is a classroom substitute for user input. It does not enforce the ticket project's 1–50 integer rule. Invalid test inputs need a separate requirement and validation code, which this chapter has not yet taught. Each DISPLAY appears on its own line for readability; AP reference-sheet DISPLAY normally follows a value with a space.</p><p>Calculations use the browser's finite numeric representation. Use small numbers for these exercises; the lab does not model the AP reference sheet's integer capacity. Your code and prediction stay in this page only; use “Save my code” before closing or reloading.</p></details></section><footer>Original classroom practice. This small program is not a complete Create performance task. No account or installation is required.</footer></main><script>/* A deliberately small AP-style pseudocode teaching interpreter; never evals code. */
+(function(root){
+'use strict';
+function tokens(source){
+  const result=[]; let i=0;
+  while(i<source.length){
+    const tail=source.slice(i);
+    const ws=tail.match(/^\s+/); if(ws){i+=ws[0].length;continue;}
+    const match=tail.match(/^(?:\d+(?:\.\d+)?|\.[0-9]+)|^[A-Za-z_][A-Za-z0-9_]*|^"(?:[^"\\]|\\["\\nrt])*"|^[()+*/-]/);
+    if(!match)throw new Error('Syntax error: unsupported symbol near '+tail.slice(0,18));
+    const t=match[0]; result.push(t);i+=t.length;
+  }
+  return result;
+}
+function expression(source,vars,getInput){
+  const ts=tokens(source);let p=0;
+  function atom(){
+    const t=ts[p++];
+    if(t===undefined)throw new Error('Syntax error: expected a value.');
+    if(t==='+'||t==='-'){const v=atom();if(typeof v!=='number')throw new Error('Runtime error: a sign needs a number.');return t==='-'?-v:v;}
+    if(t==='('){const v=sum();if(ts[p++]!==')')throw new Error('Syntax error: missing closing parenthesis.');return v;}
+    if(/^"/.test(t))return JSON.parse(t);
+    if(/^(?:\d|\.)/.test(t))return Number(t);
+    if(t.toUpperCase()==='INPUT'){
+      if(ts[p++]!=='('||ts[p++]!==')')throw new Error('Syntax error: write INPUT().');
+      return getInput();
+    }
+    if(/^[A-Za-z_]/.test(t)){
+      if(!Object.prototype.hasOwnProperty.call(vars,t))throw new Error('Runtime error: '+t+' has no value yet. Check assignment order and letter case.');
+      return vars[t];
+    }
+    throw new Error('Syntax error: unexpected '+t+'.');
+  }
+  function calc(a,op,b){
+    if(typeof a!=='number'||typeof b!=='number')throw new Error('Runtime error: arithmetic requires numeric values in this lab.');
+    if(op==='/'&&b===0)throw new Error('Runtime error: division by zero.');
+    const v=op==='+'?a+b:op==='-'?a-b:op==='*'?a*b:a/b;
+    if(!Number.isFinite(v))throw new Error('Runtime error: numeric result is outside this lab\'s range.');
+    return v;
+  }
+  function product(){let v=atom();while(ts[p]==='*'||ts[p]==='/'){const op=ts[p++];v=calc(v,op,atom());}return v;}
+  function sum(){let v=product();while(ts[p]==='+'||ts[p]==='-'){const op=ts[p++];v=calc(v,op,product());}return v;}
+  const value=sum();if(p!==ts.length)throw new Error('Syntax error: unexpected '+ts[p]+'.');return value;
+}
+class LabProgram{
+  constructor(code,inputText){
+    if(code.length>12000)throw new Error('This teaching lab supports at most 12,000 characters.');
+    this.lines=code.split(/\r?\n/).map((text,i)=>({number:i+1,text:text.trim()})).filter(x=>x.text&&!x.text.startsWith('//'));
+    if(this.lines.length>100)throw new Error('This teaching lab supports at most 100 statements.');
+    this.inputs=inputText.trim()?inputText.split(',').map(x=>{
+      if(!/^[+-]?(?:\d+(?:\.\d+)?|\.\d+)$/.test(x.trim()))throw new Error('Input error: enter numeric values separated by commas.');
+      const v=Number(x);if(!Number.isFinite(v))throw new Error('Input error: use a finite number.');return v;
+    }):[];
+    this.vars=Object.create(null);this.outputs=[];this.trace=[];this.position=0;this.inputPosition=0;this.error=null;
+  }
+  get done(){return this.error!==null||this.position>=this.lines.length;}
+  step(){
+    if(this.done)return null;
+    const line=this.lines[this.position];
+    const input=()=>{if(this.inputPosition>=this.inputs.length)throw new Error('Runtime error: INPUT() has no remaining value. Add a value to the input queue and reset.');return this.inputs[this.inputPosition++];};
+    try{
+      let m=line.text.match(/^DISPLAY\s*\((.*)\)$/i);let effect;
+      if(m){const v=expression(m[1],this.vars,input);this.outputs.push(v);effect='Output: '+String(v);}
+      else{
+        m=line.text.match(/^([A-Za-z_][A-Za-z0-9_]*)\s*(?:←|<-)\s*(.+)$/);
+        if(!m||/^(INPUT|DISPLAY)$/i.test(m[1]))throw new Error('Syntax error: use name ← expression or DISPLAY(expression), one statement per line.');
+        const value=expression(m[2],this.vars,input);this.vars[m[1]]=value;effect=m[1]+' = '+String(value);
+      }
+      const row={line:line.number,code:line.text,effect,variables:{...this.vars}};
+      this.trace.push(row);this.position++;return row;
+    }catch(e){this.error='Line '+line.number+' · '+e.message;return null;}
+  }
+  run(){while(!this.done)this.step();return this;}
+}
+if(typeof module!=='undefined'&&module.exports)module.exports={LabProgram,expression};
+else root.LabProgram=LabProgram;
+})(typeof window!=='undefined'?window:this);
+</script><script>const editor=document.querySelector('#program');
+const inputBox=document.querySelector('#inputs');
+const status=document.querySelector('#status');
+let session=null;
+const presets={
+  starter:'tickets ← INPUT()\nprice ← 12\ntotal ← tickets * price\nDISPLAY(total)',
+  fee:'tickets ← INPUT()\nprice ← 12\nfee ← 3\ntotal ← tickets * price + fee\nDISPLAY(total)',
+  bug:'tickets ← INPUT()\nprice ← 12\nfee ← 3\ntotal ← tickets * (price + fee)\nDISPLAY(total)',
+  trace:'a ← 4\nb ← a\na ← a + 3\nDISPLAY(b)\nDISPLAY(a)'
+};
+function render(){
+  document.querySelector('#output').textContent=session?.outputs.length?session.outputs.map(String).join('\n'):'No output yet.';
+  const variables=document.querySelector('#variables');variables.replaceChildren();
+  for(const [name,value] of Object.entries(session?.vars||{})){
+    const row=document.createElement('tr');for(const text of [name,String(value)]){const cell=document.createElement('td');cell.textContent=text;row.append(cell);}variables.append(row);
+  }
+  document.querySelector('#empty-vars').hidden=Boolean(Object.keys(session?.vars||{}).length);
+  const trace=document.querySelector('#trace');trace.replaceChildren();
+  for(const item of session?.trace||[]){const row=document.createElement('tr');for(const text of [item.line,item.code,item.effect,Object.entries(item.variables).map(([k,v])=>k+'='+JSON.stringify(v)).join('; ')]){const cell=document.createElement('td');cell.textContent=text;row.append(cell);}trace.append(row);}
+  if(session){
+    status.textContent=session.error||(session.done?'Finished. Compare the result with your prediction. '+(session.inputs.length-session.inputPosition)+' unused input value(s).':'Next: line '+session.lines[session.position].number+' — '+session.lines[session.position].text);
+    status.classList.toggle('error',Boolean(session.error));
+  }
+  document.querySelector('#step').disabled=Boolean(session?.done);
+  document.querySelector('#run').disabled=Boolean(session?.done);
+}
+function reset(){session=null;status.textContent='Ready. Predict the output before running.';status.classList.remove('error');render();}
+function start(){if(!session)try{session=new LabProgram(editor.value,inputBox.value);}catch(e){status.textContent=e.message;status.classList.add('error');return false;}return true;}
+document.querySelector('#step').onclick=()=>{if(start()){session.step();render();}};
+document.querySelector('#run').onclick=()=>{if(start()){session.run();render();}};
+document.querySelector('#reset').onclick=reset;
+editor.oninput=reset;inputBox.oninput=reset;
+document.querySelector('#load').onclick=()=>{editor.value=presets[document.querySelector('#example').value];inputBox.value='2';reset();};
+document.querySelector('#download-code').onclick=()=>{const blob=new Blob([editor.value+'\n'],{type:'text/plain'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='my-ticket-program.txt';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);};
+editor.value=presets.starter;reset();
+</script></body></html>

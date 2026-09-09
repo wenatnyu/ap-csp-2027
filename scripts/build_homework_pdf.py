@@ -33,6 +33,9 @@ MARGIN = 42
 CONTENT_W = PAGE_W - 2 * MARGIN
 INK = colors.HexColor("#181818")
 RULE = colors.HexColor("#A0A0A0")
+LESSON_LABEL = "Lesson 01"
+LESSON_TITLE = "Bits and Binary"
+INSTRUCTIONS = "Work without a calculator. Unless stated otherwise, binary values are unsigned integers."
 
 
 def register_fonts():
@@ -85,14 +88,14 @@ def footer(c, page, total, key=False):
     c.line(MARGIN, 36, PAGE_W - MARGIN, 36)
     c.setFont("CSP", 8)
     c.setFillColor(INK)
-    c.drawString(MARGIN, 23, "AP CSP | Lesson 01 | " + ("Teacher answer key" if key else "Student homework"))
+    c.drawString(MARGIN, 23, f"AP CSP | {LESSON_LABEL} | " + ("Teacher answer key" if key else "Student homework"))
     c.drawRightString(PAGE_W - MARGIN, 23, f"{page} / {total}")
 
 
 def header(c, part, full=False, data=None):
     c.setFillColor(INK)
     y = PAGE_H - MARGIN
-    y = para(c, "AP CSP | Lesson 01: Bits and Binary", MARGIN, y,
+    y = para(c, f"AP CSP | {LESSON_LABEL}: {LESSON_TITLE}", MARGIN, y,
              size=16 if full else 12.3, leading=20 if full else 16, bold=True)
     y -= 5
     y = para(c, part, MARGIN, y, size=10.5, leading=14, bold=True)
@@ -102,7 +105,7 @@ def header(c, part, full=False, data=None):
         y -= 7
         y = para(c, f"Time: {data['durationMinutes']} minutes   |   Total: {data['totalMarks']} teacher marks (not an AP score)   |   Show working.", MARGIN, y, size=9.4, leading=12.5)
         y -= 4
-        y = para(c, "Original AP-style MCQs and classroom written practice; these are not official AP questions.\nWork without a calculator. Unless stated otherwise, binary values are unsigned integers.", MARGIN, y, size=9.0, leading=12)
+        y = para(c, "Original AP-style MCQs and classroom written practice; these are not official AP questions.\n" + INSTRUCTIONS, MARGIN, y, size=9.0, leading=12)
     y -= 10
     c.setStrokeColor(INK)
     c.setLineWidth(.65)
@@ -188,27 +191,62 @@ def build_student(data, destination):
     questions = data["questions"]
     assert len(questions) == 12
     c = canvas.Canvas(str(destination), pagesize=A4, pageCompression=1)
-    c.setTitle("AP CSP Lesson 01 - Bits and Binary - Student Homework")
+    c.setTitle(f"AP CSP {LESSON_LABEL} - {LESSON_TITLE} - Student Homework")
     c.setAuthor("Teacher-created AP-style practice")
     c.setSubject("Original 30-mark practice worksheet for AP Computer Science Principles")
     top = header(c, "Homework | Multiple-choice and written practice", full=True, data=data)
     heights = [mcq_height(q) for q in questions[:6]]
-    extra = (top - 53 - sum(heights)) / 6
-    if extra < 0:
-        raise ValueError(f"Multiple-choice page is {-6 * extra:.1f} pt too tall")
-    for q, base_height in zip(questions[:6], heights):
-        row_h = base_height + extra
-        draw_mcq(c, q, top, row_h)
-        top -= row_h
-    footer(c, 1, 3)
-    c.showPage()
+    # Preserve the compact original layout when possible; otherwise split MCQs
+    # between two pages instead of shrinking text or losing response space.
+    groups = [list(zip(questions[:6], heights))]
+    if sum(heights) > top - 53:
+        groups = [list(zip(questions[:3], heights[:3])), list(zip(questions[3:6], heights[3:]))]
+    written_groups = []
+    current_group = []
+    used = 0
+    written_top = PAGE_H - MARGIN - 59
+    for q in questions[6:]:
+        pp = Paragraph(markup(q['prompt']), style(size=10.2, leading=14.2))
+        prompt_height = pp.wrap(CONTENT_W - 17, PAGE_H)[1]
+        needed = 19 + prompt_height + 20 + 5 * 17 + 15
+        if current_group and (used + needed > written_top - 53 or len(current_group) == 3):
+            written_groups.append(current_group)
+            current_group = []
+            used = 0
+        current_group.append((q, needed))
+        used += needed
+    if current_group: written_groups.append(current_group)
+    if len(written_groups) == 3 and any(len(g) == 1 for g in written_groups):
+        flat = [item for group in written_groups for item in group]
+        written_groups = [flat[i:i+2] for i in range(0, 6, 2)]
+    total_pages = len(groups) + len(written_groups)
+    page = 0
+    for group in groups:
+        page += 1
+        if page > 1:
+            top = header(c, "Multiple-choice practice | continued")
+        extra = (top - 53 - sum(h for _, h in group)) / len(group)
+        if extra < 0:
+            raise ValueError("Multiple-choice content exceeds available page space")
+        for q, base_height in group:
+            row_h = base_height + extra
+            draw_mcq(c, q, top, row_h)
+            top -= row_h
+        footer(c, page, total_pages)
+        c.showPage()
     spaces = {}
-    for page, group in [(2, questions[6:9]), (3, questions[9:12])]:
-        top = header(c, f"Written responses | Questions {group[0]['id'][1:]}-{group[-1]['id'][1:]}")
-        row_h = (top - 53) / 3
-        for i, q in enumerate(group):
-            spaces[q["id"]] = draw_written(c, q, top - i * row_h, row_h)
-        footer(c, page, 3)
+    for group in written_groups:
+        page += 1
+        first, last = group[0][0]['id'][1:], group[-1][0]['id'][1:]
+        caption = f'Question {first}' if first == last else f'Questions {first}-{last}'
+        top = header(c, 'Written responses | ' + caption)
+        extra = (top - 53 - sum(h for _, h in group)) / len(group)
+        if extra < 0: raise ValueError('Written question exceeds available space')
+        for q, base in group:
+            row_h = base + extra
+            spaces[q['id']] = draw_written(c, q, top, row_h)
+            top -= row_h
+        footer(c, page, total_pages)
         c.showPage()
     c.save()
     return spaces
@@ -235,7 +273,7 @@ class NumberedCanvas(canvas.Canvas):
 def build_key(data, destination):
     doc = BaseDocTemplate(str(destination), pagesize=A4, leftMargin=MARGIN,
                           rightMargin=MARGIN, topMargin=MARGIN, bottomMargin=51,
-                          title="AP CSP Lesson 01 - Teacher Answer Key", author="Teacher-created AP-style practice")
+                          title=f"AP CSP {LESSON_LABEL} - Teacher Answer Key", author="Teacher-created AP-style practice")
     frame = Frame(MARGIN, 51, CONTENT_W, PAGE_H - MARGIN - 51,
                   leftPadding=0, rightPadding=0, topPadding=0, bottomPadding=0)
     doc.addPageTemplates(PageTemplate(id="normal", frames=frame))
@@ -246,10 +284,10 @@ def build_key(data, destination):
     body = style("key-body", size=9.5, leading=12.5, spaceAfter=4)
     small = style("key-small", size=8.8, leading=11.5, spaceAfter=6)
     story = [
-        Paragraph("AP CSP | Lesson 01: Bits and Binary", heading),
+        Paragraph(f"AP CSP | {LESSON_LABEL}: {LESSON_TITLE}", heading),
         Paragraph("Teacher answer key and marking guide", subhead),
         Paragraph(markup(f"{data['totalMarks']} teacher marks. Original AP-style practice; this worksheet does not predict an AP score."), small),
-        Paragraph("Award each written-response point independently. Accept equivalent correct wording and valid alternative methods. Leading zeros do not change the value of an unsigned binary integer.", small),
+        Paragraph("Award each written-response point independently. Accept equivalent correct wording and valid alternative methods. For Q5, award its one mark only for both correct choices and no others.", small),
         Paragraph("Questions 1-6 | 1 mark each", subhead),
     ]
     for q in data["questions"][:6]:
@@ -274,15 +312,24 @@ def build_key(data, destination):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--meta", type=Path)
     parser.add_argument("--source", type=Path, default=ROOT / "lesson-exercises.json")
     parser.add_argument("--output-dir", type=Path, default=ROOT / "output/pdf")
     args = parser.parse_args()
+    global LESSON_LABEL, LESSON_TITLE, INSTRUCTIONS
+    lesson_id = "L01"
+    if args.meta:
+        meta = json.loads(args.meta.read_text())
+        lesson_id = meta['id']
+        LESSON_LABEL = 'Lesson ' + meta['number']
+        LESSON_TITLE = meta['shortTitle']
+        INSTRUCTIONS = meta['homeworkInstructions']
     data = json.loads(args.source.read_text(encoding="utf-8"))
     assert sum(q["marks"] for q in data["questions"]) == data["totalMarks"]
     register_fonts()
     args.output_dir.mkdir(parents=True, exist_ok=True)
-    homework = args.output_dir / "AP_CSP_L01_Homework.pdf"
-    key = args.output_dir / "AP_CSP_L01_Answer_Key.pdf"
+    homework = args.output_dir / f"AP_CSP_{lesson_id}_Homework.pdf"
+    key = args.output_dir / f"AP_CSP_{lesson_id}_Answer_Key.pdf"
     spaces = build_student(data, homework)
     build_key(data, key)
     print(json.dumps({"homework": str(homework), "answer_key": str(key),

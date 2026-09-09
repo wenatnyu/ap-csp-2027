@@ -1,0 +1,10 @@
+{
+  "id": "L03",
+  "number": "03",
+  "title": "Algorithms, Variables & Sequence",
+  "shortTitle": "Variables & Sequence",
+  "filename": "AP_CSP_L03_Variables_and_Sequence.html",
+  "homeworkInstructions": "Complete all 12 original questions (30 marks, about 40 minutes). Predict each result on paper before using the programming lab. Q5 requires exactly two choices. Show the value after each relevant assignment and justify written answers.",
+  "topicSummary": "Design a sequential algorithm, name and update variables, evaluate arithmetic expressions, trace assignment, and predict, run, and modify a ticket calculator in AP pseudocode.",
+  "minutes": 90
+}

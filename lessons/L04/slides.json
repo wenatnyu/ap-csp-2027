@@ -1,0 +1,187 @@
+[
+  {
+    "title": "Collaborate, Test & Improve",
+    "tag": "LESSON 04",
+    "time": "0–2 min",
+    "code": "Chapter 1 · Putting the foundations to work",
+    "html": "<p class=\"lead\">AP Computer Science Principles</p><h1>Collaborate,<br>Test &amp; Improve</h1><p class=\"zh\">合作 · 测试 · 改进</p><p class=\"small\">90 minutes · Chapter 1 practice project + retrieval</p>",
+    "note": "本课收束自编 Chapter 1；不是官方 Big Idea 1 的完整覆盖声明。让学生准备纸笔、自己的程序编辑区和测试记录。今天的目标是留下可检查的开发过程，而不是只展示一个输出数字。Ticket Total 是入门练习，不是正式 Create 项目。",
+    "kind": "dark"
+  },
+  {
+    "title": "What do you remember?",
+    "tag": "RETRIEVAL",
+    "time": "2–6 min",
+    "code": "DAT-1.C · CRD-2.C/D · AAP-1.B",
+    "html": "<ol><li>What decimal value is <span class=\"mono\">00110110</span>?</li><li>A kiosk receives a button press and displays a price.<br>Which is input? Which is output?</li><li><span class=\"mono\">x ← 4; y ← x; x ← 9</span><br>What value does <span class=\"mono\">y</span> now hold?</li></ol><details><summary>Show answers</summary><div class=\"answer\">1. 54 = 32 + 16 + 4 + 2.<br>2. Input: button press. Output: displayed price.<br>3. 4. The earlier assignment stored the value of x at that time.</div></details>",
+    "note": "独立作答两分钟，再同桌说明第三题。这里分号仅在幻灯片上分隔语句；实验室代码必须每行一条语句，不使用分号。若把 y 判成 9，先用变量表复述赋值时间点。第一题忘记位权，允许查 L01 位权表后再试。"
+  },
+  {
+    "title": "Success means evidence",
+    "tag": "TODAY’S GOALS",
+    "time": "6–8 min",
+    "code": "CRD-1 · CRD-2.E–J",
+    "html": "<ol><li>Share work and use a user’s feedback.</li><li>Write testable requirements and predict outputs.</li><li>Find an error, revise code, and test again.</li><li>Explain your contribution and credit shared code.</li></ol><p class=\"callout\">Finish with code + test records + one explained revision.</p><p class=\"zh\">证据：程序、测试记录、修改理由</p>",
+    "note": "请学生把最终交付物写在纸上。项目大小受限，但解释不能只说 it works。要求说清输入、预期、实际结果和改动。四项目标也是本节形成性评价维度。"
+  },
+  {
+    "title": "Two active roles",
+    "tag": "PAIR PROGRAMMING",
+    "time": "8–12 min",
+    "code": "CRD-1.B.2 · CRD-1.C.1",
+    "html": "<div class=\"columns\"><div><h3>Driver</h3><p>Types the agreed change.</p><p>Explains each line aloud.</p></div><div><h3>Navigator</h3><p>Checks the requirement and trace.</p><p>Predicts a test result before Run.</p></div></div><p class=\"callout\">Switch roles at the testing checkpoint.<br>Both partners must be able to explain the whole program.</p><p class=\"small\">When you disagree, compare evidence—not typing speed.</p>",
+    "note": "两人均须参与，不把 navigator 当旁观者。让学生演练一句建设性回应：“Let us test input 2 against the requirement.” 交换角色是课堂合作安排，不是官方固定的配对规则。用共享文档记录测试，纸笔同样可用；线上工具可保留评论、代码版本和反馈。"
+  },
+  {
+    "title": "Whose experience is missing?",
+    "tag": "USER PERSPECTIVES",
+    "time": "12–16 min",
+    "code": "CRD-1.A.3–6",
+    "html": "<p class=\"lead\">A ticket program works for its developers.<br>A first-time visitor sees only <span class=\"mono\">27</span>.</p><ol><li>What might the visitor misunderstand?</li><li>What could you ask or observe?</li><li>Suggest one change based on that evidence.</li></ol><details><summary>One justified improvement</summary><div class=\"answer\">Ask the visitor what 27 means. If the price and fee are unclear, display a total label and state that the booking fee is included. Test with that visitor again.</div></details>",
+    "note": "先让学生提出具体受众差异，如首次使用者、不熟悉票价规则的人、需要更清楚文字说明的人。不同经历帮助发现设计盲点；不能声称多一个人就保证无偏差。要求从观察或用户反馈推出改动，不能只凭开发者个人喜好。"
+  },
+  {
+    "title": "A process can revisit earlier work",
+    "tag": "ITERATIVE DEVELOPMENT",
+    "time": "16–20 min",
+    "code": "CRD-2.E.1–4",
+    "html": "<p class=\"equation\">Investigate → Design → Prototype → Test</p><p class=\"callout\">Feedback can send you back to any earlier phase.</p><div class=\"columns\"><div><h3>Iterative</h3><p class=\"small\">Revise a confusing output label after user testing.</p></div><div><h3>Incremental</h3><p class=\"small\">Make the base price work; then add and test the booking fee.</p></div></div><p class=\"zh\">反复改进；开发过程不必严格按单一顺序完成。</p>",
+    "note": "这是一个可用过程示例，不是开发的唯一顺序。迭代强调根据反馈修订；增量强调小部分正确后再扩展。二者可以同时发生。口头追问：新增预订费后发现需求表述不清，需要回到哪一阶段？接受回到调查/设计并解释原因。"
+  },
+  {
+    "title": "Turn a request into requirements",
+    "tag": "TICKET TOTAL",
+    "time": "20–24 min",
+    "code": "CRD-2.F.1–7",
+    "html": "<p class=\"lead\">Help a visitor calculate the cost of one order.</p><table><tr><th>Part</th><th>Requirement</th></tr><tr><td>Input</td><td>An integer number of tickets: 1 to 50</td></tr><tr><td>Price</td><td>12 currency units per ticket</td></tr><tr><td>Booking fee</td><td>3 currency units once per order</td></tr><tr><td>Output</td><td>A clearly labeled total, including the fee</td></tr></table><p class=\"small zh\">先说明输入范围与收费单位，再写程序。</p>",
+    "note": "逐条询问是否能被检查。澄清 fee 是每单一次，不是每张一次。本练习在有效输入前提下计算，不实现无效输入拒绝；请先在纸上记明限制。界面设计可以很简单：文字输入提示和标明含费的输出。单位不指定国家货币，以免引入汇率或税费。"
+  },
+  {
+    "title": "Predict before you press Run",
+    "tag": "EXPECTED RESULTS",
+    "time": "24–28 min",
+    "code": "CRD-2.J.1 · CRD-2.J.3",
+    "html": "<p class=\"equation\">Expected total = tickets × 12 + 3</p><table><tr><th>Input</th><th>Why this case?</th><th>Expected total</th></tr><tr><td>1</td><td>Minimum valid input</td><td>?</td></tr><tr><td>2</td><td>More than one ticket</td><td>?</td></tr><tr><td>50</td><td>Maximum valid input</td><td>?</td></tr></table><details><summary>Show expected results</summary><div class=\"answer\">1 → 15 · 2 → 27 · 50 → 603.<br>Calculate these from the requirements, independently of the program.</div></details>",
+    "note": "不让学生先运行再把屏幕数字抄进 expected 一栏。正确顺序是依据要求手算，再运行并填写 actual。三个有效测试覆盖下界、能揭露每张收费错误的非单张情况和上界；不是声称三次测试证明所有程序都正确。"
+  },
+  {
+    "title": "A boundary or an invalid input?",
+    "tag": "INPUT DOMAIN",
+    "time": "28–32 min",
+    "code": "CRD-2.F · CRD-2.J.2–3",
+    "html": "<p class=\"lead\">Valid input: an integer from 1 through 50.</p><div class=\"options\"><p><strong>A.</strong> 0</p><p><strong>B.</strong> 1</p><p><strong>C.</strong> 50</p><p><strong>D.</strong> 51</p></div><p>Which are valid boundaries? Which are outside the domain?</p><details><summary>Show answer and project limit</summary><div class=\"answer\">Valid boundaries: 1 and 50. Outside: 0 and 51.<br>This version assumes valid input. A displayed 3 for input 0 does not mean that 0 is a valid order. Input rejection is not implemented.</div></details>",
+    "note": "强调界限测试可包括刚好在范围内及刚好在范围外的值，但预期行为要来自需求。当前版本对范围外输入没有承诺“弹出错误”，不能把尚未提出的拒绝要求当成已实现。本项目可以记录 0、51 为后续验证设计案例，不要求写 IF。"
+  },
+  {
+    "title": "One passing test can hide the fault",
+    "tag": "EXPECTED ≠ ACTUAL",
+    "time": "32–36 min",
+    "code": "CRD-2.I.a · CRD-2.J",
+    "html": "<p>A developer writes:</p><div class=\"code\">total ← tickets * (12 + 3)</div><table><tr><th>tickets</th><th>Expected</th><th>Actual from this line</th></tr><tr><td>1</td><td>15</td><td>15</td></tr><tr><td>2</td><td>27</td><td>30</td></tr></table><details><summary>Explain the mismatch</summary><div class=\"answer\">The code charges the fee for every ticket. Input 1 cannot reveal that mistake; input 2 can. Use tickets * 12 + 3.</div></details>",
+    "note": "不只要求报出逻辑错误这个名词。让学生指出括号导致 3 也被 tickets 乘，并说明一张票时两种收费模式恰好一致。将测试输入选择与需求联系起来。不要把“测试可发现错误”讲成“有限测试必然发现所有错误”。"
+  },
+  {
+    "title": "Three useful error categories",
+    "tag": "ERRORS",
+    "time": "36–40 min",
+    "code": "CRD-2.I.1–3",
+    "html": "<table><tr><th>Type</th><th>What went wrong?</th><th>Example</th></tr><tr><td>Syntax</td><td>The language rule is broken.</td><td class=\"mono\">DISPLAY(total</td></tr><tr><td>Logic</td><td>The steps compute the wrong result.</td><td>A per-order fee is charged per ticket.</td></tr><tr><td>Run-time</td><td>A fault occurs during execution.</td><td>Division by zero, if the language reports it as an error.</td></tr></table><p class=\"small\">Run-time errors depend on the language and environment.</p><p class=\"zh\">语法错误 · 逻辑错误 · 运行时错误</p>",
+    "note": "语法示例假定 DISPLAY 必须成对括号。运行时错误举例须带语言前提，不把所有语言的除零结果说成一致。实验室是受限教学执行器，诊断与完整编程语言不同；不要声称它展示了每种语言的错误机制。溢出另回连 L01：固定宽度超范围也属于表示限制。"
+  },
+  {
+    "title": "Diagnose from evidence",
+    "tag": "QUICK CHECK",
+    "time": "40–43 min",
+    "code": "CRD-2.I.a",
+    "html": "<ol><li>A parser rejects a missing closing parenthesis.</li><li>The program runs; 2 tickets cost 30 instead of 27.</li><li>Execution stops at division by zero; this language reports it as an error.</li></ol><details><summary>Classify and justify</summary><div class=\"answer\">1. Syntax: the statement violates the grammar.<br>2. Logic: execution succeeds but contradicts the requirement.<br>3. Run-time: the fault occurs during execution.</div></details>",
+    "note": "先让每组选择一个案例给出“类别 + 证据”，再揭晓全体答案。若学生只说 crash，追问是解析阶段、执行阶段还是输出不符合需求。不要用“没有报错就没有错误”作为判断。"
+  },
+  {
+    "title": "Trace the first wrong value",
+    "tag": "DEBUGGING",
+    "time": "43–47 min",
+    "code": "CRD-2.I.a/b · AAP-1.B",
+    "html": "<div class=\"columns\"><div><p class=\"small\">Input: 2 tickets</p><div class=\"code\">subtotal ← 2 * 12<br>total ← subtotal + 3<br>total ← total + 3<br>DISPLAY(total)</div></div><div><p>Trace <span class=\"mono\">subtotal</span> and <span class=\"mono\">total</span>.</p><p>Which statement first creates a value that violates the requirement?</p></div></div><details><summary>Show trace and correction</summary><div class=\"answer\">subtotal = 24; total = 27; then total = 30.<br>The second fee addition is wrong. Remove it; output becomes 27.</div></details>",
+    "note": "让学生在每个赋值后更新变量表，特别看第三行第一次偏离收费要求。只移除重复收费行；不要碰已经正确的 subtotal。修复后仍需用 1、2、50 重测。此处常量 2 是手工跟踪场景，最终程序必须读取输入。"
+  },
+  {
+    "title": "Use a repeatable debugging routine",
+    "tag": "FIND → FIX → CHECK",
+    "time": "47–50 min",
+    "code": "CRD-2.I.5 · CRD-2.J.1",
+    "html": "<ol><li>Reproduce a failure with a known input.</li><li>Compare requirements, expected output and actual output.</li><li>Trace values to the first incorrect step.</li><li>Make an explained correction.</li><li>Rerun the failing case and earlier tests.</li></ol><p class=\"small\">A trace table or temporary DISPLAY statements can make values visible.</p>",
+    "note": "用上一页的 2 张票复述五步。临时 DISPLAY 用于检查中间值，确认后可删去或改为用户需要的信息。对能力强者追问：只改 expected 以匹配 actual 为何不能证明修复？需要回到原需求进行独立核验。"
+  },
+  {
+    "title": "Plan your own Ticket Total",
+    "tag": "PROJECT · DESIGN",
+    "time": "50–54 min",
+    "code": "CRD-2.E/F · CRD-2.J",
+    "html": "<ol><li>Sketch the input prompt and labeled output.</li><li>Choose names for tickets, price, fee and total.</li><li>Write the calculation in words.</li><li>Record expected totals for 1, 2 and 50.</li></ol><p class=\"callout\">Use sequence, variables, arithmetic, INPUT() and DISPLAY().</p><p class=\"small\"><a href=\"Chapter_1_Programming_Lab.html\" target=\"_blank\" rel=\"noopener\">Open the Chapter 1 Programming Lab</a> · Practice project; not a full Create task.</p>",
+    "note": "此时进入 30 分钟项目块。学生先在纸上独立规划，再与同伴沟通。有两台设备时各自写一份自己的代码；一台设备时结对输入但每人留下独立解释和角色记录。语言范围限定在已教的顺序、变量、算术和输入输出，不加入条件、列表、循环或过程。"
+  },
+  {
+    "title": "Build a small working version",
+    "tag": "PROJECT · IMPLEMENT",
+    "time": "54–62 min",
+    "code": "CRD-2.E · AAP foundations",
+    "html": "<p class=\"lead\">Write your own code in the <a href=\"Chapter_1_Programming_Lab.html\" target=\"_blank\" rel=\"noopener\">Programming Lab</a>.</p><ol><li>Read a ticket count using <span class=\"mono\">INPUT()</span>.</li><li>Compute the ticket cost and one booking fee.</li><li>Display a label and the total.</li><li>Save a copy of the code you wrote.</li></ol><p class=\"small\">One statement per line. Use ← or &lt;- for assignment.<br>Start with one numeric input, such as 2.</p><p class=\"zh\">先预测，再运行；保留自己写出的程序版本。</p>",
+    "note": "给八分钟安静开发，教师只提供方向性提示。可先让票价部分正确，再增加每单费用。若学生从实验室 starter 修改，应说明自己修改了哪些行；不要把预设代码算作自己的完整原创。INPUT 输入队列使用数字；一次运行本程序只需一个数。字符串仅用于 DISPLAY 提示，不要求拼接或格式化货币小数。"
+  },
+  {
+    "title": "Switch roles. Test the requirement.",
+    "tag": "PROJECT · TEST",
+    "time": "62–67 min",
+    "code": "CRD-1.B/C · CRD-2.J",
+    "html": "<table><tr><th>Input</th><th>Expected</th><th>Actual</th><th>Pass / revise?</th></tr><tr><td>1</td><td>15</td><td>Record your run.</td><td>Compare.</td></tr><tr><td>2</td><td>27</td><td>Record your run.</td><td>Compare.</td></tr><tr><td>50</td><td>603</td><td>Record your run.</td><td>Compare.</td></tr></table><p class=\"callout\">For a failure, record the incorrect line and the correction.<br>Then rerun all three cases.</p><p class=\"small\">These tests check selected valid inputs; input validation is not implemented.</p>",
+    "note": "切换 driver/navigator。每次新运行在输入框放一个测试数，不能把 1、2、50 全放入后只运行一次便称完成三次测试。实验室可能保留旧输入或旧输出，要求学生对应每次 Run 的结果。全过者继续检查输出标签与用户理解，不无故制造错误。"
+  },
+  {
+    "title": "Ask a user, then revise",
+    "tag": "PROJECT · FEEDBACK",
+    "time": "67–72 min",
+    "code": "CRD-1.A.5/6 · CRD-2.E/F",
+    "html": "<p class=\"lead\">Let another pair try the program without your explanation.</p><ol><li>Ask: “What does this output mean?”</li><li>Record one observed difficulty or specific comment.</li><li>Make one justified change to the prompt or output.</li><li>Ask the user again and rerun the numeric tests.</li></ol><p class=\"small\">Example: add a label stating that the total includes the booking fee.</p>",
+    "note": "让另一组作用户，不由作者站在旁边解释全部规则。若一开始标签已经清楚，可依据反馈澄清有效输入范围或每单费用；不要求为了有改动而破坏已满足的要求。用户要求支持 0 张、折扣或退票时，先记录为后续需求；本版不实现分支验证。让学生保留改前、改后措辞与对应反馈。"
+  },
+  {
+    "title": "Leave a useful development record",
+    "tag": "PROJECT · DOCUMENT",
+    "time": "72–76 min",
+    "code": "CRD-2.G/H",
+    "html": "<p>Write four short notes beside your saved code:</p><ol><li><strong>Purpose:</strong> who uses it and what it calculates.</li><li><strong>Testing:</strong> inputs, expected results and actual results.</li><li><strong>Revision:</strong> the feedback, your change and the retest.</li><li><strong>Credit:</strong> your contribution; shared or adapted code and its source.</li></ol><p class=\"small\">If no outside code was used, say so truthfully.<br>Documentation can be separate from executable code.</p>",
+    "note": "文档不是复述每一行中文翻译，而是帮助读者理解目的、限制与开发过程。若使用老师 starter、同伴代码或其他来源，应指明具体片段与来源/作者；自己写完的部分也说明贡献。实验室子集不要求支持代码注释，直接把说明写在单独记录里。正式 Create 的引用和合作规范将单独教学，不能据此认定正式任务已完成。"
+  },
+  {
+    "title": "Can someone else verify your work?",
+    "tag": "PROJECT · REVIEW",
+    "time": "76–80 min",
+    "code": "CRD-1.C · CRD-2.G/J",
+    "html": "<table><tr><th>Evidence</th><th>Reviewer checks</th></tr><tr><td>Code</td><td>The fee is added once; input and output are clear.</td></tr><tr><td>Tests</td><td>1 → 15, 2 → 27, 50 → 603 are recorded.</td></tr><tr><td>Revision</td><td>Feedback led to an explained change and retesting.</td></tr><tr><td>Contribution</td><td>Each partner explains the code and credits sources.</td></tr></table><p class=\"small\">Teacher feedback: secure / revise / missing evidence.<br>This classroom review is not an AP Create scoring rubric.</p>",
+    "note": "用每项 0–2 的形成性量表，详细标准在教师指南。八分只是课堂诊断，不换算 AP 分数。每人随机解释一条计算或一个测试，避免一人包办。记录后续补救学生：不能独立解释赋值的回 L03，fee 乘错的做对比测试，反馈过泛的重访用户。"
+  },
+  {
+    "title": "Chapter check: select TWO",
+    "tag": "ORIGINAL AP-STYLE PRACTICE",
+    "time": "80–84 min",
+    "code": "Chapter 1 · Representation + development",
+    "html": "<p>Which TWO statements are correct?</p><div class=\"options\"><p><strong>A.</strong> Six bits give 63 distinct patterns.</p><p><strong>B.</strong> A program can contain a logic error even when it runs.</p><p><strong>C.</strong> Passing one test proves correctness for every input.</p><p><strong>D.</strong> Testing may lead developers to revise an earlier design.</p></div><details><summary>Show answer and reasoning</summary><div class=\"answer\">B and D. A confuses 64 patterns with a maximum unsigned value of 63. C overlooks untested cases. Execution alone does not guarantee correct behavior.</div></details>",
+    "note": "此题原创，不是官方真题。独立选两项后，每组挑一个干扰项解释错因。A 回连 L01 模式容量与最大值；B、C、D 检查开发与测试理解。不能只记答案字母，应说明一个有效反例或定义。"
+  },
+  {
+    "title": "Transfer: a different calculator",
+    "tag": "CHAPTER CHECK",
+    "time": "84–87 min",
+    "code": "AAP-1.B · AAP-2.C · CRD-2.J",
+    "html": "<p>A café charges 8 per drink plus 2 once per order.</p><div class=\"code\">drinks ← INPUT()<br>total ← drinks * 8 + 2<br>DISPLAY(total)</div><p>For input 3, state the output and explain the role of + 2.</p><details><summary>Show answer</summary><div class=\"answer\">Output: 26. Three drinks cost 24; the single per-order fee adds 2. The fee is not multiplied by the number of drinks.</div></details>",
+    "note": "换一个情境和数值，确认学生迁移而不是记住 Ticket Total 的 27。请一人先描述输入输出，再一人解释运算顺序。正常计费输入假定有效；这里不追究输入验证和真实支付。若剩余时间少，保留最后 exit ticket，勿只快速读答案。"
+  },
+  {
+    "title": "Exit ticket: show your reasoning",
+    "tag": "EXIT TICKET",
+    "time": "87–90 min",
+    "code": "Chapter 1 · Retrieval + next steps",
+    "html": "<ol><li>What decimal value is <span class=\"mono\">00101010</span>?</li><li><span class=\"mono\">a ← 5; b ← a; a ← 8</span>: what is b?</li><li>For Ticket Total, is 0 a valid boundary input?</li><li>A run outputs 30 for 2 tickets. State the expected result and one useful next step.</li></ol><details><summary>Teacher check</summary><div class=\"answer\">1. 42. 2. 5. 3. No; valid inputs are 1–50.<br>4. Expected 27. Trace the calculation against the once-per-order fee, correct the cause, and retest.</div></details><p class=\"small\">Homework: Chapter 1 Check · 12 original questions · 30 classroom marks.</p>",
+    "note": "三分钟独立写，不允许由同伴代答。第四项允许“跟踪 first wrong value”“检查 fee 是否乘了票数”等具体合理步骤；只有“fix it”不算充分。建议每项 1 分，第四项需同时给 27 与具体步骤。达到 3/4 且能解释自己项目的输入—计算—输出可进入后续；不足则依据题号精准补救。本页答案可以课后再展开。"
+  }
+]

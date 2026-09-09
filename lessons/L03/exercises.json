@@ -1,0 +1,344 @@
+{
+  "title": "AP CSP — Lesson 03 Homework: Algorithms, Variables, and Sequence",
+  "durationMinutes": 40,
+  "totalMarks": 30,
+  "notice": "All questions are original. Q1–Q6 are AP-style multiple-choice practice, not official or past AP questions. Q7–Q12 are classroom written practice, not official exam FRQs. These 30 marks are teacher-assigned and do not represent AP exam scoring. For Q5, select exactly TWO answers; earn one mark only when both correct choices and no other choices are selected. Numeric inputs are supplied as stated. Predict before running code; show your reasoning. Each separate code statement appears on a new line.",
+  "questions": [
+    {
+      "id": "Q1",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Retrieval: binary representation",
+      "prompt": "An unsigned binary ticket identifier is 00011001. Which decimal integer does it represent?",
+      "options": [
+        {
+          "label": "A",
+          "text": "19"
+        },
+        {
+          "label": "B",
+          "text": "25"
+        },
+        {
+          "label": "C",
+          "text": "26"
+        },
+        {
+          "label": "D",
+          "text": "49"
+        }
+      ],
+      "answer": "B",
+      "explanation": "B is correct: 16 + 8 + 1 = 25. A would be 00010011, using the 16, 2 and 1 weights. C would be 00011010, using 16, 8 and 2. D would be 00110001, using 32, 16 and 1. Leading zeros do not change the integer value.",
+      "lines": 0
+    },
+    {
+      "id": "Q2",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Retrieval: input, output and purpose",
+      "prompt": "A program helps a buyer find a ticket order's cost. It receives a ticket count, multiplies it by the fixed price 12 and displays a total. Which statement correctly identifies the program's input and output?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Input: the fixed price 12; output: the ticket count."
+        },
+        {
+          "label": "B",
+          "text": "Input: the displayed total; output: the ticket count."
+        },
+        {
+          "label": "C",
+          "text": "Input: the ticket count; output: the calculated total."
+        },
+        {
+          "label": "D",
+          "text": "Input: the program's purpose; output: multiplication."
+        }
+      ],
+      "answer": "C",
+      "explanation": "C is correct: the count enters the program and the total is displayed. A mistakes a value already fixed inside the code for the stated user input, and treats the received count as output. B reverses the actual input and output. D confuses purpose with data and an internal processing operation with output.",
+      "lines": 0
+    },
+    {
+      "id": "Q3",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Assignment copies a current value",
+      "prompt": "What is displayed by this code?\nx ← 8\ny ← x\nx ← x + 5\nDISPLAY(y)",
+      "options": [
+        {
+          "label": "A",
+          "text": "8"
+        },
+        {
+          "label": "B",
+          "text": "13"
+        },
+        {
+          "label": "C",
+          "text": "5"
+        },
+        {
+          "label": "D",
+          "text": "21"
+        }
+      ],
+      "answer": "A",
+      "explanation": "A is correct: y receives a copy of 8. The third line changes x to 13 but does not assign to y. B incorrectly treats y as a live link to x. C gives the amount added to x, not the value of y. D adds the old and new values of x even though no statement performs that addition or stores it in y.",
+      "lines": 0
+    },
+    {
+      "id": "Q4",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Arithmetic order of operations",
+      "prompt": "What is the final value of result?\ncount ← 4\nresult ← 6 + count * 3",
+      "options": [
+        {
+          "label": "A",
+          "text": "30"
+        },
+        {
+          "label": "B",
+          "text": "13"
+        },
+        {
+          "label": "C",
+          "text": "12"
+        },
+        {
+          "label": "D",
+          "text": "18"
+        }
+      ],
+      "answer": "D",
+      "explanation": "D is correct: multiplication occurs first, so 6 + 4 × 3 = 6 + 12 = 18. A evaluates (6 + 4) × 3, introducing parentheses that the code does not contain. B treats the multiplication as addition: 6 + 4 + 3. C correctly multiplies 4 by 3 but omits the addition of 6.",
+      "lines": 0
+    },
+    {
+      "id": "Q5",
+      "type": "multi",
+      "marks": 1,
+      "topic": "Variables and assignment（变量与赋值）",
+      "prompt": "Consider the code below. Which TWO statements are correct? Select exactly TWO answers.\npoints ← 10\nsaved ← points\npoints ← points - 3",
+      "options": [
+        {
+          "label": "A",
+          "text": "The last line tests whether points is equal to points - 3."
+        },
+        {
+          "label": "B",
+          "text": "The final value of points is 7."
+        },
+        {
+          "label": "C",
+          "text": "The final value of saved is 10."
+        },
+        {
+          "label": "D",
+          "text": "The final value of saved is 7 because it always follows points."
+        }
+      ],
+      "answer": "B and C",
+      "explanation": "B is correct because the last line evaluates 10 - 3 and stores 7 in points. C is correct because saved received 10 before that change. A mistakes the assignment arrow for an equality comparison. D mistakes copying a current numeric value for creating an ongoing link. Award one mark only for B and C together with no other choices.",
+      "lines": 0
+    },
+    {
+      "id": "Q6",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Sequence and already calculated values",
+      "prompt": "What is displayed?\nprice ← 12\ntotal ← 3 * price\nprice ← 10\nDISPLAY(total)",
+      "options": [
+        {
+          "label": "A",
+          "text": "30"
+        },
+        {
+          "label": "B",
+          "text": "36"
+        },
+        {
+          "label": "C",
+          "text": "10"
+        },
+        {
+          "label": "D",
+          "text": "12"
+        }
+      ],
+      "answer": "B",
+      "explanation": "B is correct: total is assigned 3 × 12 = 36 before price becomes 10. The later assignment to price does not recalculate total. A uses the final price instead of the price when total was calculated. C reports the final value of price, but DISPLAY uses total. D reports the initial price and omits the multiplication.",
+      "lines": 0
+    },
+    {
+      "id": "Q7",
+      "type": "written",
+      "marks": 4,
+      "topic": "Line-by-line trace（追踪）",
+      "prompt": "Trace this program.\na ← 3\nb ← a + 5\na ← b * 2\nb ← b - 1\nDISPLAY(a)\nDISPLAY(b)\n(a) State (a, b) after line 2 and after line 3.\n(b) State the two displayed values in order.\n(c) Explain why line 4 does not change a.",
+      "answer": "(a) After line 2: (3, 8). After line 3: (16, 8). (b) 16, then 7. (c) Line 4 assigns only to b. The earlier calculation copied the value 16 into a; changing b later does not recalculate or replace a.",
+      "explanation": "Line 2 uses a = 3 to obtain b = 8. Line 3 then uses the current b = 8 to obtain a = 16. Line 4 changes b from 8 to 7 and leaves a = 16. The two DISPLAY calls report the current values in their execution order.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Gives (a, b) = (3, 8) after line 2."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives (a, b) = (16, 8) after line 3."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives both displayed values in the correct order: 16, then 7."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains that line 4 assigns to b only and does not recalculate the value already stored in a."
+        }
+      ],
+      "lines": 7
+    },
+    {
+      "id": "Q8",
+      "type": "written",
+      "marks": 4,
+      "topic": "Implement a fee per order",
+      "prompt": "An order has 4 tickets. Each ticket costs 12, and a fee of 3 is charged once per order.\n(a) Evaluate 4 * 12 + 3.\n(b) Evaluate 4 * (12 + 3).\n(c) Choose the expression that matches the requirement and explain the difference.\n(d) Using variables tickets, price and fee that already hold 4, 12 and 3, write one assignment to total for the correct calculation.",
+      "answer": "(a) 51. (b) 60. (c) 4 * 12 + 3 matches a fee once per order. The other expression charges the fee for each of the four tickets. (d) total ← tickets * price + fee.",
+      "explanation": "Without parentheses, the ticket subtotal is 48 and one fee adds 3, producing 51. With parentheses, the price plus fee is 15 per ticket and four such amounts produce 60. The latter includes four fees rather than one, an excess of 9.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Evaluates 4 * 12 + 3 as 51."
+        },
+        {
+          "marks": 1,
+          "criterion": "Evaluates 4 * (12 + 3) as 60."
+        },
+        {
+          "marks": 1,
+          "criterion": "Selects 4 * 12 + 3 and explains once per order versus once per ticket."
+        },
+        {
+          "marks": 1,
+          "criterion": "Writes total ← tickets * price + fee, or an equivalent correctly parenthesized assignment using the supplied variables."
+        }
+      ],
+      "lines": 7
+    },
+    {
+      "id": "Q9",
+      "type": "written",
+      "marks": 4,
+      "topic": "Design an algorithm before coding",
+      "prompt": "A club wants a program that receives a member's number of sessions, charges 8 per session, adds a single registration fee of 5, and displays the total. Assume a valid session count is supplied. Write a clear, ordered algorithm in everyday English. No programming syntax is required.",
+      "answer": "1. Receive the number of sessions. 2. Multiply the session count by 8 to obtain the session subtotal. 3. Add 5 once to that subtotal to obtain the total. 4. Display the total.",
+      "explanation": "The algorithm must make the input, arithmetic and output explicit and respect their dependencies. Adding 5 to the per-session price before multiplication would charge the fee repeatedly. Correctly combining the two arithmetic operations into one clearly stated calculation is also acceptable.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Explicitly receives or reads the number of sessions before using it."
+        },
+        {
+          "marks": 1,
+          "criterion": "Multiplies the session count by 8, after receiving the count."
+        },
+        {
+          "marks": 1,
+          "criterion": "Adds a single fee of 5 to the session subtotal, or clearly describes count × 8 + 5."
+        },
+        {
+          "marks": 1,
+          "criterion": "Displays the calculated total after calculating it. A combined correct calculation is acceptable."
+        }
+      ],
+      "lines": 7
+    },
+    {
+      "id": "Q10",
+      "type": "written",
+      "marks": 4,
+      "topic": "Repair an order-dependent result",
+      "prompt": "This program should charge 10 per ticket for an order of 2 tickets, but its output is wrong.\nprice ← 12\ntotal ← 2 * price\nprice ← 10\nDISPLAY(total)\n(a) State the actual output and the required output.\n(b) Repair the program by moving one existing line; do not add or delete a line. Write the corrected program.\n(c) Explain why the change fixes the result.",
+      "answer": "(a) Actual output: 24. Required output: 20. (b) price ← 12\nprice ← 10\ntotal ← 2 * price\nDISPLAY(total)\n(c) The calculation of total now uses price = 10. In the original order it used 12, and changing price afterward did not recalculate total.",
+      "explanation": "Moving price ← 10 before total ← 2 * price changes the value available when total is calculated. The initial price assignment is redundant after this repair, but it remains because the task permits reordering only.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "States the actual output 24."
+        },
+        {
+          "marks": 1,
+          "criterion": "States the required output 20."
+        },
+        {
+          "marks": 1,
+          "criterion": "Writes the original four statements in the order price ← 12; price ← 10; total ← 2 * price; DISPLAY(total), moving one existing line."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains that total now uses the updated price at calculation time and that a later price change does not automatically recalculate total."
+        }
+      ],
+      "lines": 8
+    },
+    {
+      "id": "Q11",
+      "type": "written",
+      "marks": 4,
+      "topic": "Two inputs and numeric division",
+      "prompt": "The user supplies 14 first and 6 second.\nfirst ← INPUT()\nsecond ← INPUT()\naverage ← (first + second) / 2\nDISPLAY(average)\n(a) State first and second after both input statements.\n(b) State the displayed value.\n(c) What would be displayed if the calculation were changed to average ← first + second / 2? Explain using the order of operations.",
+      "answer": "(a) first = 14 and second = 6. (b) (14 + 6) / 2 = 10. (c) 17, because division is evaluated before addition: 14 + 6 / 2 = 14 + 3 = 17.",
+      "explanation": "Each INPUT call receives the next supplied value. Parentheses require the original expression to add the two inputs before dividing by 2. Removing those parentheses divides only second by 2 before the addition.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Assigns the supplied values in order: first = 14 and second = 6."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives the original output 10."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives the modified output 17."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains that second / 2 is evaluated before adding first, or shows 14 + 3 = 17."
+        }
+      ],
+      "lines": 7
+    },
+    {
+      "id": "Q12",
+      "type": "written",
+      "marks": 4,
+      "topic": "Transfer: write and check a short program",
+      "prompt": "A bicycle hire program receives a whole number of hours from 1 to 8. It charges 6 per hour plus a single equipment fee of 4. Assume the input is valid.\n(a) Write AP pseudocode that receives hours, uses meaningful named variables for the hourly rate and fee, calculates total, and displays it.\n(b) Give the expected outputs for inputs 1 and 5.",
+      "answer": "(a) hours ← INPUT()\nrate ← 6\nfee ← 4\ntotal ← hours * rate + fee\nDISPLAY(total)\n(b) Input 1 gives 10. Input 5 gives 34.",
+      "explanation": "The input must be assigned before it is used, and the rate and fee must be initialized before the calculation. The one-time fee is added after multiplying the hours by the rate. Equivalent clear variable names, ordering of independent initializations, and an extra subtotal variable are acceptable.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Receives the hour count with INPUT() and stores it in a meaningful variable before use."
+        },
+        {
+          "marks": 1,
+          "criterion": "Assigns 6 and 4 to meaningful named rate and fee variables before using them."
+        },
+        {
+          "marks": 1,
+          "criterion": "Calculates hours × rate + fee and displays the calculated result, using valid assignment and sequence; equivalent extra subtotal steps are acceptable."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives both expected outputs correctly: 10 for input 1 and 34 for input 5."
+        }
+      ],
+      "lines": 8
+    }
+  ]
+}
