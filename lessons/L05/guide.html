@@ -1,0 +1,56 @@
+<div class="tagline">Teacher Guide</div><h1>Lesson 05 · Sampling &amp; Representation</h1>
+<p class="sub">自编 Chapter 2 · Digital Data &amp; Data Analysis · 23 slides · 90 minutes</p>
+<p><a href="index.html">课程目录</a> · <a href="Chapter_2_Data_Lab.html#sampling" target="_blank" rel="noopener">Chapter 2 Data Lab · Sampling</a></p>
+
+<h3>目标与前置知识</h3>
+<p>本课连接第一章的位、编码、变量和顺序执行，重点解释如何把连续变化的信息近似为离散数据。学生需会 2 的简单幂、乘除和基本赋值，不要求条件、循环、列表或过程。完成后应能分别解释<strong>测量时刻</strong>与<strong>可存储数值等级</strong>，并把表示精度与存储成本联系起来。</p>
+<p>课堂采用英文投影片、中文教师备注和关键术语。所有题目原创，作业 12 题、30 分、约 40 分钟；书面题为课堂练习，不冒充官方 FRQ。实验是可视化信号采样模型，<strong>没有录音或音频播放</strong>。每对学生准备浏览器和记录纸；无个人设备时可投影操作，让学生先预测再记录。</p>
+
+<h3>精确 CED 对齐与边界</h3>
+<p>核查 AP Central 当前链接的 <em>AP Computer Science Principles CED, Effective Fall 2023</em>：Topic 2.1 的位置为<strong>印刷页 46–48 / PDF 页 53–55</strong>。本课核心补充 L01 未讲的 <strong>DAT-1.A.8–10</strong>：模拟数据、用数字近似作为抽象、定期采样。结合 <strong>DAT-1.A.2–7</strong> 复习位分组、抽象与语境，并把 <strong>DAT-1.B.3</strong> 的有限精度应用到自定义等级模型。</p>
+<table><thead><tr><th>Reference</th><th>教学证据</th><th>边界</th></tr></thead><tbody>
+<tr><td>DAT-1.A.8–10</td><td>温度连续曲线与文件记录；固定间隔；实验分别改变样本数和等级数。</td><td>本课核心。不限于背定义，需解释被保留与遗漏的细节。</td></tr>
+<tr><td>DAT-1.A.2–7</td><td>自定义字符表、四级像素、编码后的声音测量值。</td><td>明确约定的简化编码，不教授真实文件格式或字符标准实现。</td></tr>
+<tr><td>DAT-1.A.1</td><td>提取题复习变量保存值；模型参数也可作为数据值。</td><td>只巩固已教的变量与常量。列表、过程输入输出尚未学习，不能宣称 A.1 全覆盖。</td></tr>
+<tr><td>DAT-1.B.3</td><td>测量 4.1 只能存为允许等级 3；更多等级与近似误差。</td><td>不涉及浮点位布局或具体实数范围。CED 明确排除具体实数范围限制。</td></tr>
+<tr><td>DAT-1.C.a；CRD-2.C–D</td><td>二进制解码和 bits/bytes；传感、编码、存储路径。</td><td>第一章回顾，不另称完整新主题。</td></tr>
+</tbody></table>
+<p>width × height × bits per pixel 和 sample count × bits per sample 是<strong>在题干明确简化假设下的课堂应用</strong>，不作为独立官方学习目标编号。所有计算只求未压缩 payload，排除元数据、头、调色板、填充、压缩与额外声道。不得用该式断定任意实际图片或音频文件的总字节数。</p>
+<p>本课没有 Nyquist 理论、频谱、抗混叠滤波、RGB 编码细节、ASCII 表、Unicode/UTF-8 结构或 KB/KiB 约定。它也没有完成 DAT-1.A.1 的列表与过程部分，因此不能据此标记整个 Topic 2.1 全部完成。</p>
+
+<h3>90 分钟流程</h3>
+<table><thead><tr><th>时间</th><th>页码</th><th>教学动作</th></tr></thead><tbody>
+<tr><td>0–8</td><td>1–3</td><td>位模式、赋值与语境提取，建立本课解释目标。</td></tr>
+<tr><td>8–20</td><td>4–6</td><td>分清连续信号与离散记录，说明规则采样与间隔。</td></tr>
+<tr><td>20–28</td><td>7–8</td><td>近似到允许等级，分离横轴采样与纵轴数值精度。</td></tr>
+<tr><td>28–43</td><td>9–11</td><td>预测4分钟；样本数实验6分钟；值等级实验5分钟，操作员中途交换。</td></tr>
+<tr><td>43–55</td><td>12–14</td><td>反例说明信息遗漏；样本位数计算；自定义文字编码。</td></tr>
+<tr><td>55–67</td><td>15–17</td><td>像素网格、payload 计算与维度成倍变化。</td></tr>
+<tr><td>67–83</td><td>18–21</td><td>按用户目的评价设置；完整数字化路径；单选和选两项。</td></tr>
+<tr><td>83–90</td><td>22–23</td><td>布置作业，独立 exit ticket 并记录需补练的误区。</td></tr>
+</tbody></table>
+
+<h3>实验任务与证据</h3>
+<p>打开 <a href="Chapter_2_Data_Lab.html#sampling" target="_blank" rel="noopener">Sampling 实验</a>。保持同一信号、相同时间窗口和数值范围。先设 4 samples / 4 levels；实验 A 固定 4 levels，依次比较 4、8、16 samples；实验 B 固定 8 samples，依次比较 4、8、16 levels。学生记录：我改了什么、保持什么不变、观察到什么、还有什么限制。</p>
+<p>证据必须指出具体差异，而不是只写“better”。样本更多意味着更多测量时刻，但纵向等级不自动改变；等级更多意味着同一范围内可用值更细，但测量时刻不改变。图中连线只是显示辅助，并不恢复所有未测值。不同数量的采样位置不必完全嵌套，不能要求新增点集合包含全部原点。</p>
+<p>纸笔备用：在同一平滑曲线上标出四个等间隔测量点，比较添加更多测量位置的结果；随后固定这些位置，分别用四级和更密的允许等级进行取近似。自定义数值例子避开正好位于两等级中点的值，除非事先明确平局规则。</p>
+
+<h3>常见误区</h3>
+<ul>
+<li><strong>“数字文件就是连续信号本身。”</strong> 要求说“encoded measurements”，并找一段没有被直接测量的时间。</li>
+<li><strong>“更多样本”和“更多等级”是一回事。</strong> 让学生只调一个控制，分别指出横轴位置或纵轴允许值。</li>
+<li><strong>“16 levels 就是 16 bits。”</strong> 先找最少位数：4 bits 提供 16 种模式，再用样本数乘位数。</li>
+<li><strong>“更多等级一定让每个样本严格更准。”</strong> 原本恰好能表示的值可能不变；结论应是同范围内可表示值更细、可降低量化误差，不保证每个点都严格改进。</li>
+<li><strong>“显示曲线平滑就保存了所有细节。”</strong> 画两条通过同样样本点的曲线，说明点间行为不唯一。</li>
+<li><strong>“一个字符总是一个字节；一个像素总是三个字节。”</strong> 回到题干指定的编码。不同编码与格式采用不同规则。</li>
+<li><strong>“宽高都翻倍，数据量翻倍。”</strong> 两个独立倍数相乘，固定每像素位数时得到四倍。</li>
+</ul>
+
+<h3>分层支持与课后衔接</h3>
+<p>需要支架时给学生“时间选择 / 数值选择”双列表、2 的幂表、带单位的算式框。课堂可先中文说明因果，再写简洁英文。提前完成的学生设计两个通过同样样本点的不同信号，或比较固定payload预算下更多时刻与更多等级的取舍，不靠提前加入工程公式增加难度。</p>
+<p>Exit ticket 建议四项各 1 分，答案为采样率、16 种模式、32 bits / 4 bytes、不能保证。达到 <strong>3/4 且第1与第4题正确</strong>可进入压缩；位数或单位错误用两题补练，两个采样维度混淆则先重做单变量实验。此标准为教师诊断建议。</p>
+<p>作业 Q1–Q2 回顾第一章，Q3–Q6 检查核心概念与容量，Q7–Q12 要求解释、解码、计算和评价。Q5 必须恰好选两项且两项都对才得1分。下一课再系统比较 lossless / lossy compression，不把本课采样直接等同某种压缩方法。</p>
+
+<h3>Sources</h3>
+<p>核查日期：2026-09-09。教学案例、题目与实验任务均原创。</p>
+<ul class="sources"><li><a href="https://apcentral.collegeboard.org/courses/ap-computer-science-principles" target="_blank" rel="noopener">College Board · Current AP CSP course page</a></li><li><a href="https://apcentral.collegeboard.org/media/pdf/ap-computer-science-principles-course-and-exam-description.pdf" target="_blank" rel="noopener">Official CED</a> · <a href="resources/AP_CSP_Course_and_Exam_Description.pdf#page=53" target="_blank">Local Topic 2.1 / PDF pages 53–55</a></li></ul>

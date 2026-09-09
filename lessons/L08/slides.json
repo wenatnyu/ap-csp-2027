@@ -1,0 +1,187 @@
+[
+  {
+    "title": "Data Analysis, Visualisation & Evidence",
+    "tag": "LESSON 08",
+    "time": "0–2 min",
+    "code": "Chapter 2 · From data to a defensible claim",
+    "html": "<p class=\"lead\">AP Computer Science Principles</p><h1>Data Analysis<br>&amp; Evidence</h1><p class=\"zh\">数据分析 · 可视化 · 证据与结论</p><p class=\"small\">Chapter 2 investigation · 90 minutes</p>",
+    "note": "本课用L07清洗后的同一合成通勤表，把“表格能用”推进到“结论有证据且不过度推广”。学生要实际使用程序筛选、计算、看图，并写一份证据简报。无需写列表或循环代码。资料中的通勤数据完全合成，不代表真实学校、学生或研究发现。",
+    "kind": "dark"
+  },
+  {
+    "title": "Three tools from this chapter",
+    "tag": "CHAPTER 2 RETRIEVAL",
+    "time": "2–6 min",
+    "code": "DAT-1.A/D · DAT-2.B/C",
+    "html": "<ol><li>Does a higher sample count automatically increase the number of value levels?</li><li>Which kind of compression permits exact reconstruction of the original data?</li><li>Why do commute values need a unit label?</li></ol><details><summary>Show answer</summary><div class=\"answer\">1. <strong>No.</strong> Time sampling and value precision are separate.<br>2. <strong>Lossless.</strong><br>3. A value such as 30 is ambiguous without knowing it means minutes rather than another unit.</div></details>",
+    "note": "三题分别回顾采样、压缩、元数据。每题用一句解释，避免直接唱答案。lossless的精确对象是输入的原始数字数据，不是数字化之前模拟世界的全部细节。单位与采集背景在分析中仍然必要，不会因为已经清洗完而失去作用。"
+  },
+  {
+    "title": "Build an evidence brief",
+    "tag": "LEARNING GOALS",
+    "time": "6–8 min",
+    "code": "DAT-2.A · DAT-2.D · DAT-2.E",
+    "html": "<ol><li>Choose a question the available fields can address.</li><li>Filter, summarize and visualize data using a program.</li><li>Write a claim with numbers and clear scope.</li><li>Explain limitations and how analysis choices affect results.</li></ol><p class=\"callout\">Deliver: one question, two statistics, one chart, one limitation and a decision log.</p>",
+    "note": "指出本节的交付物是分析简报，不是正式Create项目，也不是一段自动生成的“答案”。数量证据、图表和限制必须指向同一个问题。教师应看到学生真实切换筛选、核对样本数，而不是只抄最终均值表。"
+  },
+  {
+    "title": "Start with a question that fits the data",
+    "tag": "QUESTION FIRST",
+    "time": "8–12 min",
+    "code": "DAT-2.A.1–2",
+    "html": "<p class=\"lead\">Fields: response ID, main mode, minutes, distance in km.</p><div class=\"columns\"><div><h3>Addressable</h3><p>How do reported commute times differ by mode in this sample?</p></div><div><h3>Not established by this table</h3><p>Which mode would make every student arrive faster?</p></div></div><p>What information is missing for the second question?</p><details><summary>Show examples</summary><div class=\"answer\">Comparable routes and distances, repeated conditions, and evidence about what happens when a person changes mode.</div></details>",
+    "note": "问题要从字段和采集过程出发。第一问描述样本内关联，可以分析；第二问包含反事实与因果判断，这张自愿单次表不足以回答。接受其他缺失信息如路况、等待时间，但不能把任何单一补充字段说成足以证明因果。表里已有distance，可用它提示不同模式人群并不相同。"
+  },
+  {
+    "title": "Use the documented baseline",
+    "tag": "FROM L07 TO L08",
+    "time": "12–16 min",
+    "code": "DAT-2.B/C · DAT-2.E.2",
+    "html": "<p class=\"lead\"><strong>16 raw rows → 13 usable records</strong> for this analysis.</p><ul><li>Standardize the mode labels.</li><li>Remove one repeated ID; exclude one missing and one negative time.</li><li><strong>Keep the 120-minute value</strong>; flag it as unusual.</li></ul><p class=\"callout\">Source: synthetic classroom data modeling a voluntary survey at one school on one morning.</p>",
+    "note": "逐项核对16减3为13，标准化 bus 不删行。所有主分析默认保留120；无证据不能因为它拉高均值就判错。清洗规则存于data/chapter2-commute.json并由实验程序应用。若学生试算原始16行，把问题拉回已经定义的分析集合；保留原始表和排除日志，不覆盖数据来源。"
+  },
+  {
+    "title": "Sorting and filtering do different jobs",
+    "tag": "ORGANIZE VS SELECT",
+    "time": "16–20 min",
+    "code": "DAT-2.D.4–6",
+    "html": "<div class=\"columns\"><div><h3>Sort · 排序</h3><p>Reorder all 13 records by travel time.</p><p class=\"small\">Membership stays the same.</p></div><div><h3>Filter · 筛选</h3><p>Keep only records whose mode is Bus.</p><p class=\"small\">The view contains 6 records.</p></div></div><p>Does sorting alone change the mean of these values?</p><details><summary>Show answer</summary><div class=\"answer\"><strong>No.</strong> The same values and count remain. A filter can change which values contribute.</div></details>",
+    "note": "用三张数值卡片打乱再重排，学生看到和与数量未变。筛选保留Bus是一种分析视图，不等于把其他模式从原始数据中永久删除。排序有助于找中位数，但并不把最大值删除。实验已有模式筛选，无需学生编写布尔条件或假设有排序按钮。"
+  },
+  {
+    "title": "Mean and median answer different questions",
+    "tag": "SUMMARIZE",
+    "time": "20–24 min",
+    "code": "DAT-2.D.6 · Classroom statistical tools",
+    "html": "<p class=\"small mono\">8, 10, 12, 15, 15, 18, 20, 25, 28, 30, 35, 45, 120</p><div class=\"columns\"><div><h3>Mean · 均值</h3><p>sum ÷ count</p><p class=\"equation\">381 ÷ 13 ≈ 29.31</p></div><div><h3>Median · 中位数</h3><p>The middle of the sorted values.</p><p class=\"equation\">7th value = 20</p></div></div><p class=\"small\">Both are minutes, using all 13 usable records.</p>",
+    "note": "先核对排序与13个数，中位数为第7个20，平均为381/13。均值和中位数是本课用于汇总的数学工具，并非要学生把它们当额外官方AP统计公式清单。120相对大，会使均值与中位数相差较明显；不要马上因此宣布中位数唯一正确。两种量回答不同概括问题，报告应说清选择。"
+  },
+  {
+    "title": "Compare groups and report the counts",
+    "tag": "GROUP SUMMARIES",
+    "time": "24–28 min",
+    "code": "DAT-2.D.1/6",
+    "html": "<table><thead><tr><th>Mode</th><th>n</th><th>Mean minutes</th><th>Median minutes</th></tr></thead><tbody><tr><td>Walk</td><td>4</td><td>11.25</td><td>11</td></tr><tr><td>Bike</td><td>3</td><td>17.67</td><td>18</td></tr><tr><td>Bus</td><td>6</td><td>47.17</td><td>32.5</td></tr></tbody></table><p class=\"callout\">These describe the retained records, not every journey by each mode.</p><p>Which group has the largest mean in this sample?</p><details><summary>Show answer</summary><div class=\"answer\"><strong>Bus.</strong> Its mean is about 47.17 minutes across 6 retained responses.</div></details>",
+    "note": "均值保留两位小数，内部计算不先四舍五入。Bike的53/3约17.6667，Bus的283/6约47.1667，展示17.67与47.17。Bus中位数为排序后30和35的平均32.5。强调每组人数不同，不能把三个组均值直接简单平均当全样本均值。计数n是解释统计证据的一部分。"
+  },
+  {
+    "title": "Make the chart tell the same story as the data",
+    "tag": "VISUALIZE",
+    "time": "28–32 min",
+    "code": "DAT-2.D.2/6",
+    "html": "<p class=\"lead\">Mean one-way commute time by mode · minutes</p><svg viewBox=\"0 0 1050 280\" role=\"img\" aria-label=\"Mean commute minutes: Walk 11.25, Bike 17.67, Bus 47.17. Zero-based axis from 0 to 60.\" style=\"display:block;width:100%;max-height:230px\"><g font-family=\"Arial,sans-serif\" font-size=\"22\" fill=\"#193148\"><path d=\"M150 20V220H960\" fill=\"none\" stroke=\"#647381\" stroke-width=\"2\"/><g stroke=\"#cdd6dd\"><path d=\"M420 20V220M690 20V220M960 20V220\"/></g><text x=\"140\" y=\"254\">0</text><text x=\"405\" y=\"254\">20</text><text x=\"675\" y=\"254\">40</text><text x=\"945\" y=\"254\">60</text><text x=\"20\" y=\"65\">Walk</text><text x=\"20\" y=\"130\">Bike</text><text x=\"20\" y=\"195\">Bus</text><g fill=\"#225a83\"><rect x=\"150\" y=\"35\" width=\"151.875\" height=\"40\"/><rect x=\"150\" y=\"100\" width=\"238.5\" height=\"40\"/><rect x=\"150\" y=\"165\" width=\"636.75\" height=\"40\"/></g><text x=\"317\" y=\"63\">11.25 (n=4)</text><text x=\"404\" y=\"128\">17.67 (n=3)</text><text x=\"802\" y=\"193\">47.17 (n=6)</text></g></svg><p class=\"small\">Synthetic voluntary sample · cleaned n = 13 · 120-minute record retained</p><p>What does the length of a bar summarize?</p><details><summary>Show answer</summary><div class=\"answer\">The <strong>group mean</strong>, not every individual travel time. The chart also labels group counts.</div></details>",
+    "note": "图为静态SVG，横向条形从零起，长度表示均值，不是人数。先读标题、单位、图形编码与caption，再看谁更长。学生不能从组均值图读出全部个体分布；要看原记录或其他图才知道组内差异。"
+  },
+  {
+    "title": "Use language that matches the evidence",
+    "tag": "CLAIM + EVIDENCE + SCOPE",
+    "time": "32–36 min",
+    "code": "DAT-2.A.1–3",
+    "html": "<p class=\"lead\">Weak: “Buses make students late.”</p><p class=\"callout\">Stronger: “Among the 13 retained responses in this synthetic sample, Bus has the highest mean reported commute time: 47.17 minutes (n = 6).”</p><p>Name two improvements in the revised claim.</p><details><summary>Show possible answers</summary><div class=\"answer\">It identifies the sample and statistic, gives a number with units and count, and avoids claiming a causal effect or measuring lateness.</div></details>",
+    "note": "弱句含两个跳跃：时间长并不等于迟到，因为没有arrivaldeadline字段；选择Bus和时间关联也不证明Bus造成。强句陈述已观察统计，明确本合成样本与n。词语如“proves”“all students”“best”需要特别检查。训练不是把所有结论都写得含糊，而是具体说数据实际支持什么。"
+  },
+  {
+    "title": "Keep an unusual value; test sensitivity separately",
+    "tag": "SENSITIVITY ANALYSIS",
+    "time": "36–40 min",
+    "code": "DAT-2.C.2 · DAT-2.E.1–2",
+    "html": "<table><thead><tr><th>Analysis view</th><th>All n</th><th>All mean</th><th>All median</th></tr></thead><tbody><tr><td>Baseline: keep 120</td><td>13</td><td>29.31 min</td><td>20 min</td></tr><tr><td>Optional: omit 120</td><td>12</td><td>21.75 min</td><td>19 min</td></tr></tbody></table><p class=\"small\">Bus mean changes from 47.17 (n=6) to 32.60 (n=5).</p><p>Does this change prove the 120-minute response is wrong?</p><details><summary>Show answer</summary><div class=\"answer\"><strong>No.</strong> It shows that the summary depends on this observation. Report the comparison and retain the baseline without evidence of error.</div></details>",
+    "note": "敏感性分析用明确替代选择观察结论稳定程度，不是“清洗掉不喜欢的数”。默认保留120，只有可验证错误或明确分析规则才改变主数据集。Bus删120后剩25、28、30、35、45，均值32.6；全样本均值从381/13降到261/12。教师不要说“修正后的均值21.75”，应说“排除120的替代视图”。"
+  },
+  {
+    "title": "Association is not proof of cause",
+    "tag": "ALTERNATIVE EXPLANATIONS",
+    "time": "40–44 min",
+    "code": "DAT-2.A.3–4",
+    "html": "<p class=\"lead\">The groups also report different travel distances.</p><table><thead><tr><th>Mode</th><th>Mean distance</th><th>Mean time</th></tr></thead><tbody><tr><td>Walk</td><td>0.78 km</td><td>11.25 min</td></tr><tr><td>Bike</td><td>3.50 km</td><td>17.67 min</td></tr><tr><td>Bus</td><td>6.17 km</td><td>47.17 min</td></tr></tbody></table><p class=\"callout\">Distance is a possible confounding factor; this comparison does not isolate an effect of mode.</p>",
+    "note": "依据同13行独立计算距离均值0.775、3.5、6.1667，展示两位小数。没有声称已建立统计显著相关，也没有声称控制距离一定推翻结论。距离、路况和等待时间都可能有关，需要更完整、可比较资料和研究设计才能讨论因果。教“does not prove”而非“correlation means there is never causation”。"
+  },
+  {
+    "title": "A clean sample can still be unrepresentative",
+    "tag": "SCOPE & BIAS",
+    "time": "44–48 min",
+    "code": "DAT-2.B · DAT-2.C.5",
+    "html": "<ul><li>One fictional school, one fictional morning.</li><li>Volunteers may differ from nonrespondents.</li><li>Travel times and distances are reported, not independently verified.</li></ul><p>Would collecting more responses through the same biased process automatically remove the bias?</p><details><summary>Show answer</summary><div class=\"answer\"><strong>No.</strong> More data may improve some estimates, but the source and collection process still matter.</div></details><p class=\"small\">Keep units, source, collection context and cleaning decisions with the chart.</p>",
+    "note": "合成数据设计说明与对其假想采集过程的分析应分开：这些不是真实参与者；为了练习，按“一校一晨自愿调查”情境讨论限制。不要因为是合成资料就说无须思考抽样偏差，也不要用它作现实交通建议。metadata/provenance包括字段单位、来源、采集方式和处理记录，不只有文件大小。"
+  },
+  {
+    "title": "Programs help scale analysis; checks still matter",
+    "tag": "USING PROGRAMS WITH DATA",
+    "time": "48–51 min",
+    "code": "DAT-2.C.1/7–8 · DAT-2.D/E",
+    "html": "<div class=\"columns\"><div><h3>Useful work</h3><p>Repeat filters, compute summaries, transform units and redraw charts.</p></div><div><h3>Human decisions</h3><p>Choose the question, validate rules and judge whether a claim is supported.</p></div></div><p class=\"callout\">Large datasets may require more storage, computation or multiple computers.</p><p class=\"small\">A fast calculation can still use incorrect units, biased inputs or the wrong filter.</p>",
+    "note": "当前13行可手算核查，较大数据通过程序才能有效重复处理，但程序能做并不等于自动正确。举例错误单位乘60也可迅速给出大量错误数值。C.7/C.8仅引入规模、资源和可能多计算机处理的需求，不教并行算法或系统设计，不声称本课掌握完整可扩展计算。"
+  },
+  {
+    "title": "Your investigation brief",
+    "tag": "PROJECT BRIEF",
+    "time": "51–55 min",
+    "code": "DAT-2.D · DAT-2.E",
+    "html": "<p class=\"lead\"><a href=\"Chapter_2_Data_Lab.html#data\" target=\"_blank\" rel=\"noopener\">Open Data Lab → Data analysis</a> · <a href=\"output/pdf/AP_CSP_Chapter_2_Investigation_Sheet.pdf\" target=\"_blank\" rel=\"noopener\">Investigation sheet</a></p><ol><li>One question and the exact analysis view.</li><li>Two statistics with units and sample counts.</li><li>One labeled chart and one evidence-based claim.</li><li>A limitation plus cleaning / sensitivity decisions.</li></ol><p class=\"small\">Use the supplied synthetic data. Save your own completed brief.</p>",
+    "note": "明确28分钟项目时间从55到83分钟。学生可纸笔填调查单，图表可准确临摹当前实验图并标轴、单位、n和处理视图，不依赖未实现的导出按钮。全班相同资料仍应各自写解释。二人共用设备必须交换操作，最后每人都能解释数字来源。该活动是数据调查练习，不叫正式Create任务。"
+  },
+  {
+    "title": "1 · Choose the question and document the view",
+    "tag": "INVESTIGATION · 5 MINUTES",
+    "time": "55–60 min",
+    "code": "DAT-2.A · DAT-2.B/C",
+    "html": "<p class=\"lead\">Start with the baseline: <strong>13 retained records, including 120</strong>.</p><ol><li>Write an answerable question about time and mode.</li><li>Record units, source and the 16 → 13 cleaning decisions.</li><li>Predict what comparison would address the question.</li></ol><details><summary>Show a possible starting point</summary><div class=\"answer\">Example: “How do the mean reported times of Bus and Bike differ in this retained sample?” Compare each filtered mean and record both counts.</div></details>",
+    "note": "5分钟先个人定问题，再同伴用字段表检查能否回答。提议学生比较Bus/Bike、Walk/Bike或全体均值中位数均可，但需要说明同一个分析目标。确定原始120保留，不因想得到某个结论预先删值。预测可以错；之后证据纠正预测本身是学习目标。"
+  },
+  {
+    "title": "2 · Use the program and verify two statistics",
+    "tag": "INVESTIGATION · 7 MINUTES",
+    "time": "60–67 min",
+    "code": "DAT-2.D.1/4/6",
+    "html": "<p class=\"lead\">Use the mode filter. Record values before changing the view.</p><ol><li>Select the views needed for your question.</li><li>Write two statistics with <strong>units and n</strong>.</li><li>Verify one small group using its displayed records.</li></ol><details><summary>Show baseline checks</summary><div class=\"answer\">Baseline examples: Walk mean <strong>11.25 min, n=4</strong>; Bike mean <strong>17.67 min, n=3</strong>; Bus mean <strong>47.17 min, n=6</strong>.</div></details>",
+    "note": "前4分钟操作与抄录，后3分钟交换角色手算一组，如Walk(8+10+12+15)/4=11.25。必须检查过滤器是否已回到需要的视图，防止把Bus统计和All计数拼在一起。实验内部保留精度，展示两位小数允许一致四舍五入。屏幕没显示的统计不要凭视觉猜；可用表中数据手算并注明方法。"
+  },
+  {
+    "title": "3 · Turn the comparison into a readable chart",
+    "tag": "INVESTIGATION · 5 MINUTES",
+    "time": "67–72 min",
+    "code": "DAT-2.D.2/6",
+    "html": "<p class=\"lead\">Record or sketch the group-mean chart from the lab.</p><ul><li>Use a title naming the statistic and population shown.</li><li>Label mode categories and minutes; start bars at zero.</li><li>Show group counts and the treatment of 120.</li><li>Check that your written numbers match the chart’s view.</li></ul><details><summary>Show a caption example</summary><div class=\"answer\">A suitable caption: “Mean reported one-way time by mode; synthetic retained sample; Walk n=4, Bike n=3, Bus n=6; 120 retained.”</div></details>",
+    "note": "如果当前lab模式筛选只突出组或只显示所选记录，要求先回到All观察完整组图，再标记选定比较；根据实际界面数据写，不杜撰不同视图。条形以零作为起点更适合比较长度。图表美化不计本次目标分，标题、单位、计数和与数字一致更重要。也要指出组均值图不展示个体差异。"
+  },
+  {
+    "title": "4 · Check sensitivity and state one limitation",
+    "tag": "INVESTIGATION · 6 MINUTES",
+    "time": "72–78 min",
+    "code": "DAT-2.A.3 · DAT-2.C.5 · DAT-2.E.1",
+    "html": "<ol><li>Record the baseline before omitting 120.</li><li>Use the optional omission view; describe a change.</li><li>Restore the baseline and label the alternative clearly.</li><li>Write one limitation that your calculation cannot remove.</li></ol><details><summary>Show a comparison and limitation</summary><div class=\"answer\">All mean: <strong>29.31 → 21.75 min</strong>; n: <strong>13 → 12</strong>.<br>Possible limitation: one voluntary single-morning sample cannot establish population-wide or causal conclusions.</div></details>",
+    "note": "敏感性实验并不要求学生改变主要结论，观察保持或变化都可。用全体均值便于同一检查；若学生只研究Walk/Bike，说明删除Bus记录不改变这两组均值，因此也可形成有价值的稳定性陈述。记录操作后恢复默认，简报写baseline和alternative，防止下一位用户误把删120后数据当主结果。"
+  },
+  {
+    "title": "5 · Review the claim and revise it",
+    "tag": "INVESTIGATION · 5 MINUTES",
+    "time": "78–83 min",
+    "code": "DAT-2.D.2 · DAT-2.E.1",
+    "html": "<p class=\"lead\">Swap briefs. Check one another’s evidence.</p><ol><li>Can you reproduce the statistics from the stated view?</li><li>Does the claim use the same units, groups and sample?</li><li>Does it confuse association with cause?</li><li>Is every exclusion or alternate view disclosed?</li></ol><details><summary>Show one useful revision</summary><div class=\"answer\">Example revision: replace “Bus causes longer commutes” with “Bus has a higher mean in this retained sample; distance and collection differences may also matter.”</div></details>",
+    "note": "先2分钟审阅，2分钟修改，最后1分钟每人圈出具体改进句子。不能仅签“looks good”，至少核对一个数字和一个限制。要求保留初稿或用不同笔标注更改，体现反馈后修订。若同伴发现计算不一致，回到原始13行和当前filter检查，而不是选择更符合直觉的数字。"
+  },
+  {
+    "title": "Chapter 2 check and hand-in",
+    "tag": "CONSOLIDATION",
+    "time": "83–85 min",
+    "code": "L05–L08 · Original practice",
+    "html": "<p class=\"lead\">Submit your evidence brief and decision log.</p><p>Homework: <strong>12 questions · 30 classroom marks · about 40 minutes</strong>.</p><ul><li>Sampling and compression retrieval.</li><li>Data quality, filtering and aggregation.</li><li>Charts, sensitivity and justified claims.</li></ul><p class=\"small\">Use the provided figures and show your reasoning; the worksheet is not an official AP FRQ.</p>",
+    "note": "本课作业是第二章综合检查，既有本课也有采样、压缩和数据质量。提醒Q5为恰选两项，4分书面题采用教师评分。分析简报可以在课后补充图表整洁度，但核心数字、操作与判断应在课内完成，便于观察真实理解。"
+  },
+  {
+    "title": "Which two claims are supported?",
+    "tag": "ORIGINAL AP-STYLE PRACTICE",
+    "time": "85–87 min",
+    "code": "DAT-2.A · DAT-2.D",
+    "html": "<p class=\"lead\">The retained sample has Walk mean 11.25 min (n=4) and Bus mean 47.17 min (n=6).</p><div class=\"options\"><p>A. Bus has a higher sample mean.</p><p>B. Every Bus trip is longer than every possible Walk trip.</p><p>C. These figures alone establish that mode causes the difference.</p><p>D. These group counts are unequal.</p></div><details><summary>Show exactly two answers</summary><div class=\"answer\"><strong>A and D.</strong> The figures describe group means and counts; they do not establish universal individual rankings or causation.</div></details>",
+    "note": "两分钟快速诊断，A纯描述数据支持，D直接从n读取。B故意使用every possible，不可仅凭组均值推出；本表观察值是否全部Bus大于Walk也不能外推所有可能行程。C从关联跳因果。若学生争论本样本最短Bus25大于Walk最大15，表扬细读但回到possible的范围。"
+  },
+  {
+    "title": "Exit ticket: evidence before confidence",
+    "tag": "EXIT TICKET",
+    "time": "87–90 min",
+    "code": "DAT-2.A · DAT-2.D/E",
+    "html": "<ol><li>A filter selects Bus. What baseline count should you check?</li><li>Does removing 120 for a comparison prove that record is invalid?</li><li>Give one reason a difference in mean times does not establish that mode caused it.</li></ol><details><summary>Show answer</summary><div class=\"answer\">1. <strong>6 records.</strong><br>2. <strong>No.</strong> Sensitivity is different from evidence of an error.<br>3. Groups differ in distance or other conditions; this observational sample does not isolate mode’s effect.</div></details>",
+    "note": "先90秒独立，余90秒收集与总结。三项各1分：正确计数、区分敏感性与纠错、有效替代解释或研究设计限制。建议3/3可结束本章；第2或3题错误需先针对结论边界补练，不能只凭会算均值判掌握。课堂有完整简报作为较强学习证据，exit仅作快速筛查。"
+  }
+]

@@ -1,0 +1,344 @@
+{
+  "title": "AP CSP — Lesson 08 Homework: Chapter 2 Data Analysis and Evidence Check",
+  "durationMinutes": 40,
+  "totalMarks": 30,
+  "notice": "All questions are original. Q1–Q6 are AP-style multiple-choice practice, not official or past AP questions. Q7–Q12 are classroom written practice, not official FRQs. These 30 marks are teacher-assigned. Q5 earns one mark only for both correct choices and no other selections. Survey data are synthetic and describe no real students. Baseline retains the 120-minute record. Use stated assumptions and label units.",
+  "questions": [
+    {
+      "id": "Q1",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "L05 retrieval: sampling",
+      "prompt": "A model increases from 4 to 16 samples over the same time window while retaining 4 value levels. Which statement is supported?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Each sample now has 16 value levels."
+        },
+        {
+          "label": "B",
+          "text": "Measurements are taken at more times."
+        },
+        {
+          "label": "C",
+          "text": "The original signal must be represented exactly."
+        },
+        {
+          "label": "D",
+          "text": "The bits needed per sample must quadruple."
+        }
+      ],
+      "answer": "B",
+      "explanation": "B follows directly from the increased sample count. A confuses time sampling with value levels. C asserts an unsupported guarantee for an arbitrary signal. D confuses total sample count with per-sample code length; four levels can still use two bits each.",
+      "lines": 0
+    },
+    {
+      "id": "Q2",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "L06 retrieval: compression",
+      "prompt": "A school must archive numerical records so that every original bit can be recovered. Which requirement is essential?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Use the smallest file regardless of information loss."
+        },
+        {
+          "label": "B",
+          "text": "Delete unusual values before saving."
+        },
+        {
+          "label": "C",
+          "text": "Use only a technique guaranteed to halve every file."
+        },
+        {
+          "label": "D",
+          "text": "Use lossless compression if the data are compressed."
+        }
+      ],
+      "answer": "D",
+      "explanation": "D permits exact recovery of the original digital data. A may discard needed information. B changes the dataset and is not justified by compression. C imposes an impossible universal size guarantee; some inputs cannot be made smaller by a given lossless method.",
+      "lines": 0
+    },
+    {
+      "id": "Q3",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "L07 retrieval: quality and provenance",
+      "prompt": "The synthetic survey contains a 120-minute response. It is unusual but has no confirmed error. What is the most defensible baseline treatment?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Retain and flag it; document any separate sensitivity comparison."
+        },
+        {
+          "label": "B",
+          "text": "Delete it because the mean becomes lower."
+        },
+        {
+          "label": "C",
+          "text": "Replace it with the next-largest value without recording the change."
+        },
+        {
+          "label": "D",
+          "text": "Assume it describes every bus rider."
+        }
+      ],
+      "answer": "A",
+      "explanation": "A distinguishes an unusual value from an invalid one and preserves the analysis trail. B chooses data to obtain a desired statistic. C changes meaning without evidence or documentation. D turns a single response into an unsupported population claim.",
+      "lines": 0
+    },
+    {
+      "id": "Q4",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Sort versus filter",
+      "prompt": "The 13 retained records are sorted from shortest to longest time, with no values changed. Which statement must be true?",
+      "options": [
+        {
+          "label": "A",
+          "text": "The mean decreases."
+        },
+        {
+          "label": "B",
+          "text": "Only the shortest records remain."
+        },
+        {
+          "label": "C",
+          "text": "The same records contribute to the mean."
+        },
+        {
+          "label": "D",
+          "text": "The 120-minute record is removed."
+        }
+      ],
+      "answer": "C",
+      "explanation": "C is correct because sorting changes order, not membership or values. A confuses reordering with changing data. B describes filtering or selecting a subset. D is an exclusion, not a consequence of sorting.",
+      "lines": 0
+    },
+    {
+      "id": "Q5",
+      "type": "multi",
+      "marks": 1,
+      "topic": "Supported claims",
+      "prompt": "The retained sample has Walk mean 11.25 minutes (n=4), Bike mean 17.67 (n=3), and Bus mean 47.17 (n=6). Which TWO claims are supported? Select exactly TWO answers.",
+      "options": [
+        {
+          "label": "A",
+          "text": "Bus caused each student to travel longer."
+        },
+        {
+          "label": "B",
+          "text": "Bus has the highest mean in this retained sample."
+        },
+        {
+          "label": "C",
+          "text": "The three groups contain equal numbers of responses."
+        },
+        {
+          "label": "D",
+          "text": "The retained sample contains 13 responses in total."
+        }
+      ],
+      "answer": "B and D",
+      "explanation": "B directly compares the three group means. D follows from 4 + 3 + 6 = 13. A makes an individual causal claim not established by observational group summaries. C contradicts the different group counts. Award one mark only for B and D together with no other selections.",
+      "lines": 0
+    },
+    {
+      "id": "Q6",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Aggregation",
+      "prompt": "The retained Walk times are 8, 10, 12 and 15 minutes. What is their mean?",
+      "options": [
+        {
+          "label": "A",
+          "text": "10"
+        },
+        {
+          "label": "B",
+          "text": "11"
+        },
+        {
+          "label": "C",
+          "text": "11.25"
+        },
+        {
+          "label": "D",
+          "text": "45"
+        }
+      ],
+      "answer": "C",
+      "explanation": "C is correct: (8 + 10 + 12 + 15) / 4 = 45 / 4 = 11.25. A is one observation. B is the median, the average of the middle two sorted values. D is the sum rather than the mean.",
+      "lines": 0
+    },
+    {
+      "id": "Q7",
+      "type": "written",
+      "marks": 4,
+      "topic": "Sampling and storage",
+      "prompt": "A recorder stores 40 samples using 3 bits per sample, with no overhead or compression.\n(a) Find the sample payload in bits and bytes.\n(b) The sample count doubles; bits per sample stay fixed. Find the new payload in bits.\n(c) Explain why this change does not guarantee an exact representation of every possible analog signal.",
+      "answer": "(a) 40 × 3 = 120 bits = 15 bytes. (b) 80 × 3 = 240 bits. (c) The recording still uses finitely many measurement times and finite value precision, so information between samples or finer value detail may be omitted.",
+      "explanation": "Keep sample count separate from code length. This is a payload calculation under the stated assumptions, not a claim about actual audio-file overhead. More samples can help capture time detail without removing all representation limits.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Calculates 120 payload bits."
+        },
+        {
+          "marks": 1,
+          "criterion": "Converts 120 bits to 15 bytes."
+        },
+        {
+          "marks": 1,
+          "criterion": "Calculates 240 bits after the sample count doubles."
+        },
+        {
+          "marks": 1,
+          "criterion": "Rejects guaranteed exactness using finite sampling or finite value precision."
+        }
+      ],
+      "lines": 7
+    },
+    {
+      "id": "Q8",
+      "type": "written",
+      "marks": 4,
+      "topic": "Compression for a purpose",
+      "prompt": "A 1,200-byte digital dataset can be stored as a 900-byte lossless file or a 300-byte lossy file.\n(a) Find the bytes saved by each option.\n(b) Which option meets a requirement to recover all original records exactly? Explain.\n(c) Give a different use where the lossy option might be acceptable, and state the condition.",
+      "answer": "(a) Lossless saves 300 bytes; lossy saves 900 bytes. (b) The lossless option meets exact recovery, because decompression reproduces the original digital data. (c) A preview image may use lossy compression if the loss of detail is acceptable for the viewing purpose.",
+      "explanation": "The smaller file is not automatically better for every purpose. Accept suitable lossy examples such as preview images or sound previews when the response acknowledges acceptable loss. Do not confuse exact recovery of digital input with recovery of all pre-digitization analog detail.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Calculates both savings correctly: 300 and 900 bytes."
+        },
+        {
+          "marks": 1,
+          "criterion": "Selects the lossless file for exact recovery."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains that lossless decompression preserves the original digital records exactly."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives a plausible lossy use and explicitly conditions it on acceptable information loss."
+        }
+      ],
+      "lines": 7
+    },
+    {
+      "id": "Q9",
+      "type": "written",
+      "marks": 4,
+      "topic": "Cleaning with an audit trail",
+      "prompt": "The raw survey has 16 rows: one repeated response ID, one missing time, one negative time, and an unusual 120-minute time. A label is also “ bus ”.\n(a) State how to standardize the label.\n(b) Under the supplied rules, how many records remain?\n(c) Explain why 120 remains.\n(d) Name one item the analysis log should preserve.",
+      "answer": "(a) Standardize “ bus ” to “Bus”. (b) Thirteen records: remove one duplicate and exclude the missing and negative times. (c) Unusual does not mean erroneous; no error is confirmed. (d) Record an exclusion with its ID and reason, or another reproducible rule or transformation.",
+      "explanation": "Label normalization preserves intended meaning. Exclusions require stated rules and a log; the raw data should remain available. The 120-minute response is retained in the baseline and may be omitted only in a clearly labeled alternative sensitivity view here.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Standardizes the label to Bus without changing its meaning."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives 13 records and accounts for the three excluded rows."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains that 120 is unusual but has no evidence of error."
+        },
+        {
+          "marks": 1,
+          "criterion": "Names a useful log item such as an excluded ID plus reason or a recorded standardization rule."
+        }
+      ],
+      "lines": 7
+    },
+    {
+      "id": "Q10",
+      "type": "written",
+      "marks": 4,
+      "topic": "Mean, median and sensitivity",
+      "prompt": "Baseline: 13 retained times sum to 381 minutes and have median 20. A comparison omits the 120-minute record.\n(a) Calculate the baseline mean to two decimal places.\n(b) Calculate the comparison count, sum and mean.\n(c) Does the changed mean prove the omitted record is wrong? Explain.",
+      "answer": "(a) 381 / 13 ≈ 29.31 minutes. (b) Count 12; sum 261; mean 261 / 12 = 21.75 minutes. (c) No. The change shows sensitivity to that observation, not evidence that its value is invalid.",
+      "explanation": "Label baseline and comparison clearly. Do not call the alternate mean a corrected value unless independent evidence establishes an error. The median is provided for context; the exercise does not require deriving a new median from a sum alone.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Calculates the baseline mean as 29.31 minutes or the exact equivalent 381/13."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives comparison count 12 and sum 261 minutes."
+        },
+        {
+          "marks": 1,
+          "criterion": "Calculates comparison mean 21.75 minutes."
+        },
+        {
+          "marks": 1,
+          "criterion": "Rejects the error claim and distinguishes sensitivity from evidence of invalidity."
+        }
+      ],
+      "lines": 7
+    },
+    {
+      "id": "Q11",
+      "type": "written",
+      "marks": 4,
+      "topic": "Communicate a group comparison",
+      "prompt": "The baseline means are Walk 11.25 minutes (n=4), Bike 17.67 (n=3) and Bus 47.17 (n=6).\n(a) Choose a chart suitable for comparing the means and state its category and value labels.\n(b) Give one caption detail needed to identify the analysis view.\n(c) Explain why the chart does not show every individual travel time.",
+      "answer": "(a) A bar chart with mode categories Walk, Bike and Bus, and mean one-way commute time in minutes on the numeric axis. (b) For example: synthetic retained sample, n=13, with 120 retained. (c) Each bar aggregates a group into its mean, so individual values and their variation are not shown.",
+      "explanation": "Accept equivalent sensible displays that clearly compare group means, such as a labeled dot plot. If using bars, a zero-based value axis supports honest length comparison. A chart needs context as well as values.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Chooses a suitable comparison chart and identifies the three mode categories."
+        },
+        {
+          "marks": 1,
+          "criterion": "Labels the numeric values as mean commute time in minutes."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives a meaningful view caption detail, such as retained n=13, synthetic source or 120 retained."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains that group means aggregate observations and do not display all individual times or spread."
+        }
+      ],
+      "lines": 7
+    },
+    {
+      "id": "Q12",
+      "type": "written",
+      "marks": 4,
+      "topic": "Claim, evidence and limitation",
+      "prompt": "A student concludes, “Bus travel causes long commutes for all students.” The synthetic voluntary survey covers one school on one morning; mode groups also differ in distance.\n(a) Rewrite the claim using the baseline group statistics.\n(b) Give one numerical piece of evidence with units and n.\n(c) Explain one causal limitation and one population limitation.",
+      "answer": "(a) In this retained sample, Bus has the highest mean reported one-way commute time. (b) Its mean is 47.17 minutes across 6 retained responses. (c) Distance or other group differences may explain part of the association, so mode is not isolated as a cause; a single voluntary school-morning sample does not represent all students.",
+      "explanation": "The stronger claim is precise, not merely less confident. It names what was measured, the relevant sample and the statistic. Additional data and suitable study design would be needed for broader or causal conclusions.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Rewrites the claim as a descriptive comparison restricted to the retained sample."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives an appropriate baseline statistic with units and count, such as Bus 47.17 minutes, n=6."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains a causal limitation such as differing distance or uncontrolled conditions."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains a population limitation such as voluntary participation, one school or one morning."
+        }
+      ],
+      "lines": 7
+    }
+  ]
+}

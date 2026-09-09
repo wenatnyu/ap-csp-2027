@@ -1,0 +1,54 @@
+<div class="tagline">Teacher Guide</div><h1>Lesson 06 · Compression &amp; Trade-offs</h1>
+<p class="sub">Chapter 2 · 90 minutes · AP CSP preparation for May 2027</p>
+<p><a href="index.html">Course home</a> · <a href="Chapter_2_Data_Lab.html#compression" target="_blank">Chapter 2 data lab</a> · <a href="https://github.com/wenatnyu/ap-csp-2027/blob/main/COURSE_PLAN.md" target="_blank" rel="noopener">Full course plan</a></p>
+
+<h3>Purpose &amp; Scope</h3>
+<p>本课用可手工检验的简化 RLE 建立无损、有损、数据特征和应用要求之间的联系。学生在第一章已学习字节、表示语境和顺序执行；第五课的数字表示提供背景。本课重点是解释压缩选择，不要求实现专业压缩算法或背诵文件扩展名。共 23 页、90 分钟，英文正文、中文教师备注；所有示范场景与练习均为原创。</p>
+<p>核心结论：<strong>无损以完整还原保证为定义；有损允许原始细节丢失；节省大小依赖数据及具体方法；最佳方案取决于任务要求。</strong>原始数据与重建数据是否相同，和编码文件是否更小，是两个需要分别验证的问题。低级字节格式、格式头、百分比计算是为了澄清这两个问题而设置的教学支架，不是 AP 官方指定的 RLE 编码规则。</p>
+
+<h3>Official Alignment</h3>
+<table><thead><tr><th>CED reference</th><th>Coverage and evidence</th></tr></thead><tbody>
+<tr><td>Topic 2.2 Data Compression<br>DAT-1.D.1–2</td><td>存储与传输位数，原始数据可用更少位表示而不丢信息；明确原始/编码字节数与百分比的含义。</td></tr>
+<tr><td>DAT-1.D.3</td><td>比较 AAABBBCCCDDD 与 ABCDABCDABCD，以及 ABCABC 的扩张，说明数据中的冗余形式与方法都影响结果。</td></tr>
+<tr><td>DAT-1.D.4–5</td><td>RLE 逐字符完整还原与舍弃个位造成的多对一映射，比较精确恢复保证与近似恢复。</td></tr>
+<tr><td>DAT-1.D.6–8</td><td>通常的压缩幅度取舍；代码归档、精确图片保存、预览大小限制等用途选择。</td></tr>
+<tr><td>Retrieval</td><td>DAT-1.A.4：一字节八位；DAT-1.A.7：表示的语境；AAP-1.B：赋值复制当前值。</td></tr>
+</tbody></table>
+<p>主要思维技能为 <strong>1.D Evaluate solution options</strong>。对应 CED 印刷页 <strong>49–50</strong>、本地 PDF 页 <strong>56–57</strong>。本课覆盖 Topic 2.2 的 DAT-1.D.1–8 概念；具体 RLE 和百分比算式为原创教学工具，不声称是考试要求的标准压缩算法。课程第六课不是官方第六单元。</p>
+
+<h3>90-minute Run of Show</h3>
+<table><thead><tr><th>Time</th><th>Slides</th><th>Teaching move</th></tr></thead><tbody>
+<tr><td>0–8 min</td><td>1–3</td><td>位字节与变量复制提取复习；建立依据要求比较方案的目标。</td></tr>
+<tr><td>8–28 min</td><td>4–8</td><td>压缩用途、精确还原与近似、区分通常与总是；第一轮用途选择。</td></tr>
+<tr><td>28–45 min</td><td>9–12</td><td>明示 RLE 格式，教师编码示范、反向解码、独立练习。</td></tr>
+<tr><td>45–61 min</td><td>13–16</td><td>统一存储约定，算字节和百分比；用扩张反例及文件头修正过度概括。</td></tr>
+<tr><td>61–71 min</td><td>17–18</td><td>实验室预测、运行、逐字符核验；同长度、同字符频数的两串对比。</td></tr>
+<tr><td>71–83 min</td><td>19–21</td><td>根据精确性与大小限制选择编码；选择两项练习；用证据解释结论。</td></tr>
+<tr><td>83–90 min</td><td>22–23</td><td>作业说明与四项退出诊断。</td></tr>
+</tbody></table>
+
+<h3>RLE Model &amp; Lab Contract</h3>
+<p>原始输入只包含大写 <code>A–Z</code>；按从左到右的连续相同字母段编码为“计数、字母”对。计数限 <code>1–9</code>，超过九个的同字母段继续拆成多对，例如十个 A 为 <code>9A1A</code>。工具最多接收 60 个字母；这个上限为课堂交互限制，不是 RLE 或 AP 的一般限制。按最长九个拆段可使示例结果一致。</p>
+<p>字节数明确约定：每个原始字母一字节，每个计数一字节，每个编码字母一字节，因此一对两字节。没有另行说明时，双方已知格式，不额外计算格式头和分隔符。屏幕教学分隔线、空格和加号不属于编码。题目明确增加的格式头必须计入总大小。这些约定不代表真实 ZIP 文件或任何生产压缩库的结果。</p>
+<p>实验室入口：<a href="Chapter_2_Data_Lab.html#compression" target="_blank">Chapter 2 Data Lab</a>。预测表先记录输入、手写编码、原始字节数、编码字节数，再运行工具并检查解码串逐字符相同。先试 <code>AAABBCCCCA → 3A2B4C1A</code>：<strong>10 → 8 bytes，节省 20%</strong>。再试 <code>ABCABC → 1A1B1C1A1B1C</code>：<strong>6 → 12 bytes，增加 100%</strong>，仍然无损。没有设备时两人交换纸条编码和解码，能完成相同目标。</p>
+<p>探究任务使用 <code>AAABBBCCCDDD</code> 与 <code>ABCDABCDABCD</code>：都含十二个字符、每种字母各三个，但编码大小分别为 <strong>8、24 bytes</strong>。不要把第二个例子说成没有重复或没有可压缩信息，它具有重复的 ABCD 模式，只是不适合这个连续段方法。学生提交一份两串的编码与还原记录，以及一句解释为什么结果不同。</p>
+
+<h3>Misconceptions &amp; Teaching Responses</h3>
+<table><thead><tr><th>Observed error</th><th>Prompt and correction</th></tr></thead><tbody>
+<tr><td>“更小就一定丢信息。”</td><td>让学生将 3A2B4C1A 解码并逐字符比较；不同表示仍可恢复同一信息。</td></tr>
+<tr><td>“只要无损就一定更小。”</td><td>比较 ABCABC 的六字节原文和十二字节编码；精确恢复与大小是独立检查项。</td></tr>
+<tr><td>把不相邻同字母合并</td><td>让对方解码错误结果，观察顺序改变。RLE 记录连续段，不只是字符频数。</td></tr>
+<tr><td>用编码大小作节省百分比分母</td><td>先写“节省/原始”，再代入。10→8 是节省 20%，编码占原始 80%。</td></tr>
+<tr><td>只统计有效载荷，漏掉必需文件头</td><td>要求列出题目规定的所有存储部分，再比较总大小。</td></tr>
+<tr><td>“有损对某个输入还原正确，所以它是无损。”</td><td>原始 30 恰可恢复，但 31 与 38 都恢复为 30。保证必须覆盖全部允许输入。</td></tr>
+<tr><td>按文件类型死记方法</td><td>追问保存原稿还是制作预览；引用精确性和大小限制来选择。</td></tr>
+</tbody></table>
+
+<h3>Differentiation &amp; Assessment</h3>
+<p>需要支架的学生先用不同颜色或分隔线圈出连续段，再逐段写对；给“原始大小 / 编码大小 / 差额 / 原始分母”的空表。熟练学生在相同字符频数下重新排列数据，制造更大或更小的 RLE 结果，并通过解码证明信息未丢失；不要求提前学习字典编码或熵理论。</p>
+<p>退出诊断答案：<strong>无损；2A3B；25%；否，交替字符使每个原始字节变成两字节对。</strong>建议每项一分，达到 3/4 且第 1 项正确可继续；这是课堂诊断建议而非 AP 标准。第 2 项错误回到段与顺序，第 3 项错误回到原始分母，第 4 项错误回到 ABCABC 反例。</p>
+<p>作业共 12 题、30 分、约 40 分钟。Q1–2 回收第一章，Q3–6 检查保证、RLE、比较与百分比；Q7–12 要求编码、解码、扩张、文件头、有损歧义和依据要求选择。Q5 正确选项 B、D 必须全对且无多选才得一分；六道书面题均附四项评分细则。题目和课堂任务均为原创，不是历年 AP 题、官方 FRQ 或正式 Create 任务。</p>
+
+<h3>Sources &amp; Version</h3>
+<p>于 <strong>2026-09-09</strong> 核对 AP Central 当前 CED，其版本为 Effective Fall 2023。官方标准支持概念与方法选择；课堂 toy RLE 的计数范围、字节模型、输入限制和数值例子均由本课明确设定。</p>
+<ul class="sources"><li><a href="https://apcentral.collegeboard.org/media/pdf/ap-computer-science-principles-course-and-exam-description.pdf" target="_blank" rel="noopener">Official AP CSP Course and Exam Description</a></li><li><a href="resources/AP_CSP_Course_and_Exam_Description.pdf#page=56" target="_blank">Local CED: Topic 2.2, DAT-1.D.1–8, printed pages 49–50</a></li></ul>

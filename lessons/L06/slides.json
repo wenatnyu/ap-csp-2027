@@ -1,0 +1,187 @@
+[
+  {
+    "title": "Compression & Trade-offs",
+    "tag": "LESSON 06",
+    "time": "0–2 min",
+    "code": "Chapter 2 · Topic 2.2 · Data Compression",
+    "kind": "dark",
+    "html": "<p class=\"lead\">AP Computer Science Principles</p><h1>Compression<br>&amp; Trade-offs</h1><p class=\"zh\">压缩 · 完整还原 · 根据用途作选择</p><p class=\"small\">90 minutes · Preserve the information that the task needs.</p>",
+    "note": "本课以第一章的数据表示和第五课的数字数据为基础，核心是依据用途选择压缩方案。不要把课堂目标变成背文件扩展名。今天会亲手编码、解码一个明确规定的简化 RLE 格式，并发现无损编码也可能让某些输入变大。教师可先展示一个重复图案和一个交替图案，激发预测，但暂不揭晓结论。"
+  },
+  {
+    "title": "Two ideas to retrieve",
+    "tag": "RETRIEVAL · ORIGINAL PRACTICE",
+    "time": "2–6 min",
+    "code": "DAT-1.A.4 · AAP-1.B",
+    "html": "<p><strong>A.</strong> How many bits are in 12 bytes?</p><p><strong>B.</strong> What does this program display?</p><pre class=\"code\">size ← 12\nsaved ← size\nsize ← 8\nDISPLAY(saved)</pre><details><summary>Show answers</summary><div class=\"answer\"><strong>A.</strong> 96 bits. <strong>B.</strong> 12: assignment copied the value before <span class=\"mono\">size</span> changed.</div></details>",
+    "note": "两题分别回收第一课字节换算和第三课赋值复制。先给一分钟独立作答，再让同桌解释一项。强调 saved 只是变量名，此段代码并没有计算节省的空间；有意义的命名有助于理解，但值仍由实际语句决定。今天比较压缩前后大小时，必须明确记录的是什么量。"
+  },
+  {
+    "title": "Learning goals",
+    "tag": "LEARNING GOALS",
+    "time": "6–8 min",
+    "code": "DAT-1.D · Skill 1.D",
+    "html": "<ol><li>Distinguish exact reconstruction from approximation.</li><li>Encode and decode a simple lossless format.</li><li>Calculate size changes with stated assumptions.</li><li>Choose a method that meets a user's requirements.</li></ol><p class=\"callout\">A smaller representation can preserve all the original information.</p><p class=\"small zh\">判断依据：能否完整还原，以及具体任务需要什么。</p>",
+    "note": "让学生用自己的话解释完整还原是什么意思：不只看起来差不多，而是能恢复原始数据。学习目标包括比较方案并给出理由，不只识别无损与有损两个词。结束时学生要能引用题目中的精确性、大小和数据特征来支持选择。"
+  },
+  {
+    "title": "Why compress data?",
+    "tag": "THE PURPOSE",
+    "time": "8–12 min",
+    "code": "DAT-1.D.1–2",
+    "html": "<p class=\"lead\">Compression changes the representation of data to reduce storage or transmission size.</p><div class=\"columns\"><div><h3>Storage</h3><p>Smaller files use fewer bits of available space.</p></div><div><h3>Transmission</h3><p>At the same data rate, fewer bits take less time to send.</p></div></div><p class=\"callout\">Fewer stored bits do not automatically mean less information.</p>",
+    "note": "把减少传输时间的判断限定在相同数据率以及其他条件相同的前提下，不承诺每次实际下载必然更快，编码和解码也可能消耗时间。可以先用“把六个 A 写成六个 A 的计数描述”说明换一种表示，不立即给字节节省数字；只有规定格式之后才可比较存储量。"
+  },
+  {
+    "title": "Lossless: recover the exact original",
+    "tag": "LOSSLESS · 无损",
+    "time": "12–16 min",
+    "code": "DAT-1.D.2 / D.4",
+    "html": "<p class=\"lead\">A lossless method guarantees exact reconstruction of the original data.</p><p class=\"mono equation\">original → encoded data → original</p><p>Decode it with the correct format and rules.</p><details><summary>Must the encoded file look like the original?</summary><div class=\"answer\">No. Its representation changes, but the original data can be recovered exactly.</div></details><p class=\"small\">Exact means every original value, not merely a similar appearance.</p>",
+    "note": "把保证完整恢复作为无损的判定标准。压缩文件的字节与原文件不同，并不构成信息丢失；解码器根据规则恢复原始数据才是关键。若学生说看起来一样就是无损，追问两个表格只差一个数字时是否还能接受。也提前提醒无损不等于每个输入都一定更小，后面会给反例。"
+  },
+  {
+    "title": "Lossy: some distinctions disappear",
+    "tag": "LOSSY · 有损",
+    "time": "16–20 min",
+    "code": "DAT-1.D.5",
+    "html": "<p>A toy method keeps only the tens digit of a two-digit measurement.</p><table><thead><tr><th>Original</th><th>Stored tens digit</th><th>Reconstruct by × 10</th></tr></thead><tbody><tr><td>23</td><td>2</td><td>20</td></tr><tr><td>24</td><td>2</td><td>20</td></tr></tbody></table><p class=\"callout\">From stored <strong>2</strong> alone, the decoder cannot know whether the original was 23 or 24.</p><p class=\"small\">This illustrates information loss; it is not a real file-format specification.</p>",
+    "note": "先清楚定义规则：只保留十位，恢复时乘十。这是为解释不可逆而设计的例子，不声称真实音频或图片算法如此工作，也不在未规定存储方式时计算它的实际字节数。23 与 24 都映射到 2，因此仅凭该编码无法唯一恢复原值。20 恰好可以准确恢复，并不使整个方法变成无损；分类取决于是否对允许的所有输入保证准确恢复。"
+  },
+  {
+    "title": "Compare the guarantee",
+    "tag": "KEY DISTINCTION",
+    "time": "20–24 min",
+    "code": "DAT-1.D.4–6",
+    "html": "<table><thead><tr><th>Question</th><th>Lossless</th><th>Lossy</th></tr></thead><tbody><tr><td>Exact recovery guaranteed?</td><td>Yes</td><td>No</td></tr><tr><td>Original details may be discarded?</td><td>No</td><td>Yes</td></tr><tr><td>Always smaller for every input?</td><td>No</td><td>No universal guarantee</td></tr></tbody></table><p class=\"callout\">Lossy methods can often achieve greater size reductions by allowing approximation.</p><p class=\"small\">Do not replace “often” with “always.”</p>",
+    "note": "强调表格比较的是保证，而不是某个样本恰好恢复成功。有损通常能通过允许近似获得更大的缩小幅度，但没有题目数据时不能说任何有损文件都比任何无损文件小。无损的限制是要保留恢复所需信息；选择有损时，需要确认丢失细节符合使用要求。"
+  },
+  {
+    "title": "Choose from the requirement",
+    "tag": "THINK–PAIR–EXPLAIN",
+    "time": "24–28 min",
+    "code": "DAT-1.D.7–8 · Skill 1.D",
+    "html": "<p><strong>A.</strong> Archive program source code. Every character must be recoverable.</p><p><strong>B.</strong> Send a small preview photo. Approximate detail is acceptable, and transfer size is the priority.</p><details><summary>Show justified choices</summary><div class=\"answer\"><p>A: choose <strong>lossless</strong> so every source character can be restored.</p><p>B: a suitable <strong>lossy</strong> method may meet the size requirement if the resulting preview is acceptable.</p></div></details><p class=\"small\">State the requirement that makes your choice appropriate.</p>",
+    "note": "不要只接受代码无损、照片有损的分类口诀。照片若用于保存精确原稿，也可能需要无损；代码题要求每个字符准确才决定答案。预览题接受有损建立在近似细节可接受的明确前提上。要求学生用 because 连起方法和题目要求，避免泛泛说有损质量差或无损更好。"
+  },
+  {
+    "title": "Our toy run-length format",
+    "tag": "A PRECISE ENCODING RULE",
+    "time": "28–32 min",
+    "code": "DAT-1.D.3–4 · Classroom model",
+    "html": "<p>A <strong>run</strong> is a consecutive group of the same symbol.</p><p class=\"mono equation\">AAAA → 4A</p><ul><li>Symbols: uppercase letters <span class=\"mono\">A–Z</span>.</li><li>Each pair: one count digit <span class=\"mono\">1–9</span>, then one letter.</li><li>Keep run order. Split a longer run into pairs.</li></ul><p class=\"small\">Ten A's become <span class=\"mono\">9A1A</span>. Our format does not use <span class=\"mono\">10A</span>.</p>",
+    "note": "规定字母表和计数范围是保证无歧义解码的一部分，不是附带小字。只把相邻的相同字母组成一段，不能先排序，因为排序会改变原始顺序。十个 A 拆为 9A1A，仍能完整还原；课堂采用尽可能长且最多九个的段，避免多种编码选择分散注意。该格式是教学设计，不是 AP 要求背诵的标准格式，也不代表 ZIP 内部实现。"
+  },
+  {
+    "title": "Encode one sequence",
+    "tag": "WORKED EXAMPLE",
+    "time": "32–37 min",
+    "code": "Toy RLE · Preserve order",
+    "html": "<p class=\"mono big\">AAABBCCCCA</p><p class=\"mono lead\">AAA | BB | CCCC | A</p><p>Count each consecutive run from left to right.</p><details><summary>Show encoding</summary><div class=\"answer\"><p class=\"mono lead\">3A2B4C1A</p><p>The final A stays in its original position; do not combine it with the first run.</p></div></details><p class=\"small\">Original length: 3 + 2 + 4 + 1 = <strong>10 letters</strong>.</p>",
+    "note": "先在原串下划出四段，再逐段写计数和字符。重点纠正把首尾 A 合并成 4A 的做法，那会改变字符次序并不能恢复原数据。此例原串是十个字母，不是十一；让学生用 3+2+4+1 自检。竖线只是教学分段标记，不属于真正编码，所以之后算字节数不计竖线和空格。"
+  },
+  {
+    "title": "Decode and check exact reconstruction",
+    "tag": "REVERSE THE PROCESS",
+    "time": "37–41 min",
+    "code": "DAT-1.D.4 · Toy RLE",
+    "html": "<p class=\"mono big\">3A2B4C1A</p><p>Read pairs. Repeat each letter by its count.</p><details><summary>Show reconstruction</summary><div class=\"answer\"><p class=\"mono lead\">AAA + BB + CCCC + A</p><p class=\"mono lead\">AAABBCCCCA</p></div></details><p class=\"callout\">Compare the reconstructed sequence with the original, character by character.</p><p class=\"small\">Here, the plus signs mean joining groups, not numeric addition.</p>",
+    "note": "按两字符一组扫描，先展开各段，再连接。课堂纸面加号只是表示连接，不是 AP 数值加法代码。让学生指出这里保存了次数、符号、段顺序三类恢复依据。编码串虽然与原串看起来不同，但能够还原每个字符，说明表示变化不等于信息丢失。"
+  },
+  {
+    "title": "Your turn: encode and decode",
+    "tag": "INDEPENDENT PRACTICE · ORIGINAL",
+    "time": "41–45 min",
+    "code": "Toy RLE · Counts 1–9",
+    "html": "<p><strong>A.</strong> Encode <span class=\"mono\">BBBBBAACC</span>.</p><p><strong>B.</strong> Decode <span class=\"mono\">2C1A3B</span>.</p><p><strong>C.</strong> Is <span class=\"mono\">4A2B</span> a correct encoding of <span class=\"mono\">AABBAA</span>?</p><details><summary>Show answers</summary><div class=\"answer\"><p>A: <span class=\"mono\">5B2A2C</span>. B: <span class=\"mono\">CCABBB</span>.</p><p>C: No. It decodes to <span class=\"mono\">AAAABB</span>. Use <span class=\"mono\">2A2B2A</span> to preserve order.</p></div></details>",
+    "note": "两分钟独立完成后交换检查，要求对方真正解码，而不是只看编码长度。C 题专门揭露按字符总频数编码的错误；只有段计数加次序才能适用于这个格式。完成较快的学生解释为什么 5B2A2C 不需要另外保存分隔符：固定的计数位与字母位已经区分角色。"
+  },
+  {
+    "title": "Count bytes under stated assumptions",
+    "tag": "ACCOUNT FOR THE REPRESENTATION",
+    "time": "45–49 min",
+    "code": "DAT-1.D.1 / D.3 · Toy storage model",
+    "html": "<p class=\"callout\">Raw: <strong>1 byte per letter</strong>.<br>Encoded: <strong>1 byte per count + 1 byte per letter</strong>.<br>For now, exclude headers; both sides already know the format.</p><table><thead><tr><th>Representation</th><th>Byte count</th></tr></thead><tbody><tr><td class=\"mono\">AAABBCCCCA</td><td>10 letters → 10 bytes</td></tr><tr><td class=\"mono\">3A2B4C1A</td><td>4 pairs → 8 bytes</td></tr></tbody></table><p class=\"small\">Saving: 2 bytes = 16 bits. Count stored units, not visual width.</p>",
+    "note": "所有后面的 RLE 数字都依赖这里明示的字节约定。计数使用一字节只是课堂模型，不是计数 1–9 在理论上最少只能用一字节；字母同理。不要把“八个屏幕字符”自动等同于所有文本编码的八字节。此处字母和计数都规定一字节，因此可直接计算。文件头等额外信息下一页活动会再单独纳入。"
+  },
+  {
+    "title": "What percentage was saved?",
+    "tag": "A CLEAR DENOMINATOR",
+    "time": "49–53 min",
+    "code": "DAT-1.D.1 · Quantitative practice",
+    "html": "<p>Percentage saved:</p><p class=\"equation\">(original − encoded) / original × 100%</p><p class=\"equation\">(10 − 8) / 10 × 100% = <strong>20%</strong></p><p>The encoded size is <strong>80% of the original</strong>.</p><details><summary>Why is the answer not 25% saved?</summary><div class=\"answer\">2 / 8 uses the encoded size as the denominator. “Percentage saved” compares the saving with the original size.</div></details><p class=\"small\">State exactly which percentage you are reporting.</p>",
+    "note": "把减少百分比与压缩后占原来的百分比并列写清，20% 与 80% 都有意义但回答的问题不同。学生必须标注 original 作为分母。避免只说压缩率或 2:1 而不定义方向，尤其不同材料对 compression ratio 的约定可能不同。本课统一报告原始大小、编码大小、节省百分比。"
+  },
+  {
+    "title": "A lossless encoding can become larger",
+    "tag": "COUNTEREXAMPLE",
+    "time": "53–57 min",
+    "code": "DAT-1.D.3–4",
+    "html": "<p class=\"mono lead\">ABCABC → 1A1B1C1A1B1C</p><table><thead><tr><th>Raw size</th><th>Encoded size</th><th>Change</th></tr></thead><tbody><tr><td>6 bytes</td><td>12 bytes</td><td>6 bytes larger</td></tr></tbody></table><p class=\"callout\">Exact reconstruction still works. This input has no runs longer than one.</p><details><summary>State the size change as a percentage</summary><div class=\"answer\">The encoded size is <strong>200%</strong> of the original: a <strong>100% increase</strong>. Percentage saved is −100%.</div></details>",
+    "note": "强调无损的定义是可还原，不是保证一定节省。ABCABC 虽然有重复的 ABC 模式，但我们的算法只利用相邻重复字符，所以不能据此说它完全没有冗余，也不能说所有压缩方法都会让它变大。真实压缩格式还可采用选择不压缩等策略，本课不要求实现。解释负节省即增大，避免把 200% 当增加百分比。"
+  },
+  {
+    "title": "The decoder needs context",
+    "tag": "RULES AND OVERHEAD",
+    "time": "57–61 min",
+    "code": "DAT-1.A.7 retrieval · DAT-1.D.3",
+    "html": "<p>To interpret <span class=\"mono\">3A2B4C1A</span>, both sides must know the count-letter format and character encoding.</p><p>Suppose this file also needs a <strong>4-byte header</strong> to identify its format.</p><details><summary>Recalculate the stored size</summary><div class=\"answer\"><p>8 payload bytes + 4 header bytes = <strong>12 bytes</strong>.</p><p>Compared with the stated 10-byte raw file, this version is 2 bytes larger.</p></div></details><p class=\"small\">This comparison explicitly gives the raw file no additional header.</p>",
+    "note": "回收第一章位模式需要语境的知识。格式规则可由系统事先约定，也可通过文件头等方式标识，并非每个压缩文件都要重新保存全部算法。此题明确只给编码版加四字节头，原始文件没有额外头，是一个教学假设而非通用现实。要求学生区分 payload 与 total stored size，不能只比较两种方案中对自己有利的部分。"
+  },
+  {
+    "title": "Try the compression lab",
+    "tag": "PREDICT → RUN → VERIFY",
+    "time": "61–66 min",
+    "code": "Interactive data lab · Toy RLE",
+    "html": "<p class=\"lead\"><a href=\"Chapter_2_Data_Lab.html#compression\" target=\"_blank\">Open the Chapter 2 data lab ↗</a></p><ol><li>Predict the encoding and sizes for <span class=\"mono\">AAABBCCCCA</span>.</li><li>Run the RLE tool; compare its reconstruction with the original.</li><li>Try <span class=\"mono\">ABCABC</span> and explain the different size result.</li></ol><p class=\"callout\">Inputs: uppercase A–Z, up to 60 letters. Count digits are 1–9; longer runs split into pairs.</p><p class=\"small\">The byte display uses our toy model, not an actual ZIP file size.</p>",
+    "note": "先要求纸面预测，再点击运行，防止学生把工具输出当作思考的替代。每组记录原始串、编码串、还原串、原始字节数和编码字节数。两个预期结果分别为 10→8 与 6→12，二者还原串都应逐字符相同。提醒空格和小写不属于本活动输入范围；长串规则按最多九个的段拆分。离线可以打开打包的同名 HTML，或用纸笔互相编码解码。"
+  },
+  {
+    "title": "The data and the algorithm both matter",
+    "tag": "PAIR INVESTIGATION · ORIGINAL",
+    "time": "66–71 min",
+    "code": "DAT-1.D.3 · Skill 1.D",
+    "html": "<p>Both inputs contain 12 letters: three A's, B's, C's and D's.</p><p><strong>A.</strong> <span class=\"mono\">AAABBBCCCDDD</span></p><p><strong>B.</strong> <span class=\"mono\">ABCDABCDABCD</span></p><details><summary>Show RLE sizes and reasoning</summary><div class=\"answer\"><p>A: <span class=\"mono\">3A3B3C3D</span> → <strong>8 bytes</strong>.</p><p>B: 12 single-letter runs → <strong>24 bytes</strong>.</p><p>Same letter counts; different consecutive runs. Another algorithm might exploit the repeated ABCD pattern.</p></div></details>",
+    "note": "让两位学生分别负责 A、B，先编码后互相解释。两串长度和字符频数都相同，结果差异来自这个算法所利用的连续段结构。避免笼统说压缩取决于文件类型或某个字母出现次数。延伸学生可以设计一个严格更短的输入和一个严格更大的输入，但必须同时演示解码正确。"
+  },
+  {
+    "title": "Choose a method for two uses",
+    "tag": "EVALUATE A TRADE-OFF",
+    "time": "71–76 min",
+    "code": "DAT-1.D.7–8 · Skill 1.D",
+    "html": "<p>Two encodings of the same photograph have been tested:</p><table><thead><tr><th>Option</th><th>Measured size</th><th>Reconstruction</th></tr></thead><tbody><tr><td>L</td><td>650 KB</td><td>Exact original</td></tr><tr><td>P</td><td>120 KB</td><td>Approximate; approved for previews</td></tr></tbody></table><p><strong>A.</strong> Archive requires exact recovery. <strong>B.</strong> Preview must be under 150 KB.</p><details><summary>Show choices</summary><div class=\"answer\">A: <strong>L</strong>, because exact recovery is required. B: <strong>P</strong>, because its approved preview fits the size limit. These are supplied measurements, not universal format sizes.</div></details>",
+    "note": "让学生先找硬性要求：归档必须精确，预览小于 150 KB 且已有质量认可。答案不能只写 L 或 P，要引用证据。KB 在此仅用于相同单位的大小比较，不进行二进制与十进制单位换算。强调这里给的是该文件实测结果，不从个例推广所有有损都比无损小，也不宣称最小永远最好。"
+  },
+  {
+    "title": "Which two claims are supported?",
+    "tag": "AP-STYLE PRACTICE · ORIGINAL",
+    "time": "76–80 min",
+    "code": "DAT-1.D · Select TWO",
+    "html": "<div class=\"options\"><p><strong>A.</strong> Any smaller file must contain less information.</p><p><strong>B.</strong> A lossless method guarantees exact reconstruction.</p><p><strong>C.</strong> Compression results depend on both data and method.</p><p><strong>D.</strong> Every lossy result is smaller than every lossless result.</p></div><details><summary>Show answers and reasoning</summary><div class=\"answer\"><strong>B and C.</strong> Lossless encoding can retain all information in fewer bits, so A is false. D changes a typical trade-off into an unsupported universal claim.</div></details>",
+    "note": "限时一分钟独立选两项，再让学生分别反驳一个错误选项。B 的保证针对符合格式规则的正常编码和解码，不涉及文件损坏。C 必须同时提到数据与方法，不能只说复杂文件不好压缩。若学生选 A，回看 10→8 且完全恢复的实例；若选 D，让其指出题目没有给所有方案的实际尺寸。"
+  },
+  {
+    "title": "Report evidence, not just a label",
+    "tag": "EXPLAIN YOUR RESULT",
+    "time": "80–83 min",
+    "code": "DAT-1.D · Communicate a choice",
+    "html": "<p>Use this structure to explain one lab result:</p><ol><li><strong>Method and data:</strong> what was encoded?</li><li><strong>Evidence:</strong> what were the byte counts and reconstruction?</li><li><strong>Decision:</strong> does it meet the requirement?</li></ol><details><summary>Show a model explanation</summary><div class=\"answer\">Toy RLE encodes AAABBCCCCA in 8 bytes instead of 10, excluding headers. Decoding restores all 10 letters in order. It saves 20% and meets a requirement for exact recovery.</div></details>",
+    "note": "要求学生把原始串、条件和数值写清楚，再得出方法是否合适的结论。只写 lossless 或 smaller 不足以证明理解。英语支架可使用 excluding headers、reconstruct exactly、compared with the original。这里是原创课堂解释练习，不对应正式 Create 提交任务或官方评分模板。"
+  },
+  {
+    "title": "Homework and the next step",
+    "tag": "CONSOLIDATE",
+    "time": "83–85 min",
+    "code": "12 original questions · 30 classroom marks",
+    "html": "<p>Complete <strong>6 multiple-choice and 6 written questions</strong> in about 40 minutes.</p><p>Q5 requires exactly <strong>two</strong> choices.</p><p class=\"callout\">For every size comparison, state the storage assumptions and the denominator.</p><p><strong>Next:</strong> use data to identify patterns and answer questions.</p><p class=\"small\">Original AP-style MCQs and classroom written practice; these are not official exam questions.</p>",
+    "note": "提醒作业中的 RLE 格式与课堂一致：大写字母、一位计数、每对两字节，除非题目额外说明才加入文件头。六道书面题各四分，按数量、过程和论证分别评分。建议先手算后用工具核验，并把错误归入无法准确恢复、分母错、遗漏开销或忽略使用需求。"
+  },
+  {
+    "title": "Exit ticket",
+    "tag": "INDIVIDUAL CHECK · ORIGINAL",
+    "time": "85–90 min",
+    "code": "Four checks · DAT-1.D",
+    "html": "<p><strong>1.</strong> A method guarantees exact recovery. Lossless or lossy?</p><p><strong>2.</strong> Encode <span class=\"mono\">AABBB</span> with our toy RLE.</p><p><strong>3.</strong> A file changes from 800 bytes to 600 bytes. What percentage is saved?</p><p><strong>4.</strong> Does our RLE always reduce size? Give a reason.</p><details><summary>Show answers</summary><div class=\"answer\"><strong>1.</strong> Lossless. <strong>2.</strong> <span class=\"mono\">2A3B</span>. <strong>3.</strong> 25%.<br><strong>4.</strong> No. A single-letter run needs a two-byte pair for one raw byte; alternating letters can expand.</div></details>",
+    "note": "三分钟独立完成，一分钟核对，一分钟收集。每项一分；建议达到三分且第 1 题正确再继续，第 4 题用具体反例比只说取决于情况更有力。若第 2 题错误需用同桌解码检查，第 3 题必须写 200/800，若第 1 题把小与无损混为一谈，应回到精确恢复保证。此标准是课堂诊断建议，不是 AP 分数线。"
+  }
+]

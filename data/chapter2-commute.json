@@ -1,0 +1,24 @@
+{
+  "title": "Fictional Campus Commute Survey",
+  "notice": "Synthetic classroom data, not actual students or research findings. A fictional voluntary survey at one school on one morning.",
+  "fields": {"id":"Anonymous response identifier; repeated identifiers may be duplicate submissions.","mode":"Reported main travel mode. Canonical values: Walk, Bike, Bus.","minutes":"Reported one-way travel time in minutes. Blank means missing; negative is invalid.","distance_km":"Reported one-way distance in kilometres."},
+  "cleaningRules": ["Trim and standardize mode labels.","Keep the first row for repeated identical response IDs; in a real dataset investigate conflicting repeats.","Exclude records with missing or negative travel time from this analysis; keep an exclusion log.","Keep the 120-minute observation unless there is evidence it is erroneous; flag it as unusual."],
+  "rows": [
+    {"id":"01","mode":"Walk","minutes":10,"distance_km":0.6},
+    {"id":"02","mode":"Bus","minutes":25,"distance_km":4},
+    {"id":"03","mode":"Walk","minutes":12,"distance_km":0.8},
+    {"id":"04","mode":"Bike","minutes":15,"distance_km":3},
+    {"id":"05","mode":"Bus","minutes":30,"distance_km":6},
+    {"id":"06","mode":"Walk","minutes":8,"distance_km":0.5},
+    {"id":"07","mode":"Bike","minutes":20,"distance_km":4},
+    {"id":"08","mode":"Bus","minutes":35,"distance_km":7},
+    {"id":"09","mode":"Walk","minutes":null,"distance_km":0.7},
+    {"id":"10","mode":"Bike","minutes":-5,"distance_km":2},
+    {"id":"11","mode":"Bus","minutes":45,"distance_km":10},
+    {"id":"12","mode":"Walk","minutes":15,"distance_km":1.2},
+    {"id":"13","mode":"Bike","minutes":18,"distance_km":3.5},
+    {"id":"14","mode":"Bus","minutes":120,"distance_km":5},
+    {"id":"03","mode":"Walk","minutes":12,"distance_km":0.8},
+    {"id":"15","mode":" bus ","minutes":28,"distance_km":5}
+  ]
+}

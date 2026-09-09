@@ -4,7 +4,7 @@ import html
 import json
 
 ROOT = Path(__file__).resolve().parents[1]
-L01 = dict(id='L01', number='01', title='Bits, Binary & Representation', shortTitle='Bits & Binary',
+L01 = dict(chapter=1, id='L01', number='01', title='Bits, Binary & Representation', shortTitle='Bits & Binary',
            filename='AP_CSP_L01_Bits_and_Binary.html', minutes=90,
            topicSummary='Bits, context, binary conversions, capacity, overflow and roundoff.',
            homeworkInstructions='Q1–Q6: select the best answer, except Q5, where two answers are required. Q7–Q12: show your reasoning. Binary integer encodings here are nonnegative; ignore storage padding unless stated.')
@@ -12,7 +12,7 @@ L01 = dict(id='L01', number='01', title='Bits, Binary & Representation', shortTi
 def lesson_sources():
     yield L01, ROOT/'scripts/slides.json', ROOT/'lesson-exercises.json', ROOT/'scripts/teacher-guide.html'
     for folder in sorted((ROOT/'lessons').glob('L*')):
-        if (folder/'meta.json').exists():
+        if all((folder/name).exists() for name in ['meta.json','slides.json','exercises.json','guide.html']):
             yield json.loads((folder/'meta.json').read_text()), folder/'slides.json', folder/'exercises.json', folder/'guide.html'
 
 def build_lesson(meta, slides_path, exercise_path, guide_path):
@@ -24,9 +24,11 @@ def build_lesson(meta, slides_path, exercise_path, guide_path):
     runtime=(ROOT/'scripts/runtime.js').read_text()
     runtime=runtime.replace('__SLIDES__',json.dumps(slides,ensure_ascii=False).replace('</','<\\/'))
     runtime=runtime.replace('__EXERCISES__',json.dumps(exercises,ensure_ascii=False).replace('</','<\\/'))
-    guide=guide_path.read_text()+'<p class="teacher-note"><a href="index.html">← Chapter 1 overview</a> · <a href="Chapter_1_Programming_Lab.html">Programming lab</a></p>'
+    chapter=meta.get('chapter',1)
+    lab='Chapter_1_Programming_Lab.html' if chapter==1 else 'Chapter_2_Data_Lab.html'
+    guide=guide_path.read_text()+f'<p class="teacher-note"><a href="Chapter_{chapter}.html">← Chapter {chapter} overview</a> · <a href="{lab}">Interactive lab</a></p>'
     replacements={'__CSS__':(ROOT/'scripts/lesson.css').read_text(), '__GUIDE__':guide, '__JS__':runtime,
-                  '__NUMBER__':meta['number'], '__LESSON_ID__':meta['id'], '__TITLE__':html.escape(meta['title']),
+                  '__CHAPTER__':str(chapter), '__NUMBER__':meta['number'], '__LESSON_ID__':meta['id'], '__TITLE__':html.escape(meta['title']),
                   '__SHORT_TITLE__':html.escape(meta['shortTitle']), '__DURATION__':str(exercises['durationMinutes']),
                   '__INSTRUCTIONS__':html.escape(meta['homeworkInstructions'])}
     page=(ROOT/'scripts/lesson.template.html').read_text()
@@ -37,13 +39,18 @@ def build_lesson(meta, slides_path, exercise_path, guide_path):
 def main():
     sources=list(lesson_sources())
     for args in sources: build_lesson(*args)
-    lessons=[s[0] for s in sources]
-    cards=[]
-    chinese=['信息表示与二进制','计算创新与输入输出','算法、变量与顺序执行','协作、测试与改进']
-    for i,m in enumerate(lessons):
-        cards.append(f'''<article class="lesson-card"><div class="card-top"><span>LESSON {m['number']}</span><span>90 MIN · 23 SLIDES</span></div><h2>{html.escape(m['shortTitle'])}</h2><p class="zh">{chinese[i]}</p><p>{html.escape(m['topicSummary'])}</p><div class="card-actions"><a class="primary" href="{m['filename']}">Open lesson →</a><a href="{m['filename']}#guide">Teacher guide</a></div><div class="downloads"><a href="output/pdf/AP_CSP_{m['id']}_Homework.pdf">Student PDF</a><a href="output/pdf/AP_CSP_{m['id']}_Answer_Key.pdf">Answer key</a><a href="{m['filename']}#homework">Interactive practice</a></div></article>''')
-    page=(ROOT/'scripts/chapter.template.html').read_text().replace('__CARDS__','\n'.join(cards))
-    (ROOT/'index.html').write_text(page)
-    print('Built Chapter 1 portal')
+    chinese=['信息表示与二进制','计算创新与输入输出','算法、变量与顺序执行','协作、测试与改进','采样与数字表示','压缩与取舍','数据质量与清洗','数据分析与证据']
+    for chapter in [1,2]:
+        lessons=[row[0] for row in sources if row[0].get('chapter',1)==chapter]
+        if not lessons: continue
+        cards=[]
+        for m in lessons:
+            cn=chinese[int(m['number'])-1]
+            cards.append(f'''<article class="lesson-card"><div class="card-top"><span>LESSON {m['number']}</span><span>90 MIN · 23 SLIDES</span></div><h2>{html.escape(m['shortTitle'])}</h2><p class="zh">{cn}</p><p>{html.escape(m['topicSummary'])}</p><div class="card-actions"><a class="primary" href="{m['filename']}">Open lesson →</a><a href="{m['filename']}#guide">Teacher guide</a></div><div class="downloads"><a href="output/pdf/AP_CSP_{m['id']}_Homework.pdf">Student PDF</a><a href="output/pdf/AP_CSP_{m['id']}_Answer_Key.pdf">Answer key</a><a href="{m['filename']}#homework">Interactive practice</a></div></article>''')
+        template='chapter.template.html' if chapter==1 else 'chapter2.template.html'
+        page=(ROOT/'scripts'/template).read_text().replace('__CARDS__','\n'.join(cards))
+        (ROOT/f'Chapter_{chapter}.html').write_text(page)
+    (ROOT/'index.html').write_text((ROOT/'scripts/course.template.html').read_text())
+    print('Built course and chapter portals')
 
 if __name__=='__main__': main()

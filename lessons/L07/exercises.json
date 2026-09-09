@@ -1,0 +1,344 @@
+{
+  "title": "AP CSP — Lesson 07 Homework: Metadata, Data Quality & Cleaning",
+  "durationMinutes": 40,
+  "totalMarks": 30,
+  "notice": "All questions are original. Q1–Q6 are AP-style multiple-choice practice, not official or past AP questions. Q7–Q12 are classroom written practice, not official exam FRQs. The 30 marks are teacher-assigned, not AP exam scoring. For Q5, select exactly TWO answers; earn its one mark only for both correct choices and no others. All commute examples are synthetic classroom data. Apply each question’s stated rules, preserve raw evidence, and explain decisions.",
+  "questions": [
+    {
+      "id": "Q1",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Metadata versus primary data",
+      "prompt": "Which item is metadata describing a commute table?",
+      "options": [
+        {
+          "label": "A",
+          "text": "One response’s time: 28."
+        },
+        {
+          "label": "B",
+          "text": "One response’s mode: Bus."
+        },
+        {
+          "label": "C",
+          "text": "One response’s ID: 15."
+        },
+        {
+          "label": "D",
+          "text": "Time means one-way duration in minutes."
+        }
+      ],
+      "answer": "D",
+      "explanation": "D describes the meaning and unit of the recorded values. A, B and C are values in individual records, so they are primary data in this table.",
+      "lines": 0
+    },
+    {
+      "id": "Q2",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Metadata and unit conversion",
+      "prompt": "A time is stored as 30 minutes. Only its unit metadata is changed to hours. What happens?",
+      "options": [
+        {
+          "label": "A",
+          "text": "The number automatically becomes 0.5."
+        },
+        {
+          "label": "B",
+          "text": "The number stays 30; the label is now wrong."
+        },
+        {
+          "label": "C",
+          "text": "It is correctly converted to 30 hours."
+        },
+        {
+          "label": "D",
+          "text": "The measurement is deleted."
+        }
+      ],
+      "answer": "B",
+      "explanation": "B: editing metadata leaves the primary number unchanged. A assumes an automatic conversion. C confuses relabeling with conversion: 30 minutes is 0.5 hours. D incorrectly claims the measurement is deleted.",
+      "lines": 0
+    },
+    {
+      "id": "Q3",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Preserving meaning during cleaning",
+      "prompt": "Valid mode labels are Walk, Bike and Bus. Which action preserves the meaning of the raw value “ bus ”?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Change it to Bike."
+        },
+        {
+          "label": "B",
+          "text": "Replace it with 0."
+        },
+        {
+          "label": "C",
+          "text": "Trim spaces and standardize it to Bus."
+        },
+        {
+          "label": "D",
+          "text": "Delete all nonstandard labels."
+        }
+      ],
+      "answer": "C",
+      "explanation": "C preserves the intended Bus category. A changes the mode; B invents a numeric value; D discards a recoverable response instead of normalizing an equivalent label.",
+      "lines": 0
+    },
+    {
+      "id": "Q4",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Missing values and analysis rules",
+      "prompt": "ID 09 has a missing time. The rule excludes missing times from this analysis and preserves raw data. What should happen?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Keep the raw row; exclude and log it."
+        },
+        {
+          "label": "B",
+          "text": "Replace the blank with 0."
+        },
+        {
+          "label": "C",
+          "text": "Copy the previous row’s time."
+        },
+        {
+          "label": "D",
+          "text": "Erase the raw row and its history."
+        }
+      ],
+      "answer": "A",
+      "explanation": "A follows the rule and preserves an audit trail. B treats unknown as measured zero; C invents a value from another response; D destroys the source evidence. The exclusion applies to this time analysis.",
+      "lines": 0
+    },
+    {
+      "id": "Q5",
+      "type": "multi",
+      "marks": 1,
+      "topic": "Duplicates and unusual observations",
+      "prompt": "ID 03 has two identical records; ID 14 reports an unverified 120 minutes. Rules keep one identical copy and retain unusual values unless proven erroneous. Which TWO actions comply?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Remove both ID 03 records."
+        },
+        {
+          "label": "B",
+          "text": "Keep the first 03; log removal of the copy."
+        },
+        {
+          "label": "C",
+          "text": "Delete ID 14 because 120 looks high."
+        },
+        {
+          "label": "D",
+          "text": "Keep ID 14 and flag it for review."
+        }
+      ],
+      "answer": "B and D",
+      "explanation": "B and D. B retains one response without double-counting; D flags uncertainty without assuming an error. A loses the response entirely. C gives no evidence for exclusion. One mark only for B and D together.",
+      "lines": 0
+    },
+    {
+      "id": "Q6",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Combining records by a shared key",
+      "prompt": "Two tables describe the same responses in different row orders. Both use the same unique response IDs. How should they be combined?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Match by row position."
+        },
+        {
+          "label": "B",
+          "text": "Match similar numbers, ignoring IDs."
+        },
+        {
+          "label": "C",
+          "text": "Match by the shared response ID."
+        },
+        {
+          "label": "D",
+          "text": "Treat times and distances as interchangeable."
+        }
+      ],
+      "answer": "C",
+      "explanation": "C uses the shared identifier to match the same responses. A can pair different IDs. B invents matches from similarity. D ignores different quantities and units.",
+      "lines": 0
+    },
+    {
+      "id": "Q7",
+      "type": "written",
+      "marks": 4,
+      "topic": "Metadata, provenance and units",
+      "prompt": "A record is 30. Metadata: “one-way time in minutes; fictional voluntary survey, one school, one morning.”\n(a) Identify field metadata and explain its use.\n(b) Identify source metadata and explain its use.\n(c) If only the unit label becomes hours, does the number change?\n(d) Express the original duration correctly in hours.",
+      "answer": "(a) “One-way time in minutes” defines quantity and unit. (b) The fictional, voluntary, single-school context identifies source and scope. (c) No: it stays 30. (d) 30 ÷ 60 = 0.5 hours.",
+      "explanation": "Metadata support correct interpretation and expose limits of use. A field definition or unit and a collection/source description are distinct examples. Simply changing metadata does not convert the underlying number; an actual conversion divides 30 by 60 and updates the unit.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Identifies a field definition/unit and explains how it helps interpret values."
+        },
+        {
+          "marks": 1,
+          "criterion": "Identifies collection/source metadata and explains its scope or limitation."
+        },
+        {
+          "marks": 1,
+          "criterion": "States that changing only metadata leaves the number 30 unchanged."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives 0.5 hours, equivalent to 30 minutes."
+        }
+      ],
+      "lines": 6
+    },
+    {
+      "id": "Q8",
+      "type": "written",
+      "marks": 4,
+      "topic": "Match records and check metadata",
+      "prompt": "Both tables use the same unique response IDs from one survey.\nA (ID, min): (02, 25), (03, 12). B (ID, km): (03, 0.8), (02, 4.0).\n(a) Give the two correctly combined records.\n(b) Why would matching by row position fail?\n(c) Give one metadata check needed when combining different sources.",
+      "answer": "(a) 02: 25 min, 4.0 km; 03: 12 min, 0.8 km. (b) Different row orders would pair different responses. (c) Check compatible ID meanings, units, field definitions or collection periods.",
+      "explanation": "A shared key supports matching when order changes. Identically written IDs across unrelated sources do not automatically have the same identity. Metadata are needed to establish compatible meanings and units.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Matches ID 02 to 25 minutes and 4.0 km."
+        },
+        {
+          "marks": 1,
+          "criterion": "Matches ID 03 to 12 minutes and 0.8 km."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains that positional matching would pair different IDs."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives a relevant check of ID meaning, units, definitions or period."
+        }
+      ],
+      "lines": 6
+    },
+    {
+      "id": "Q9",
+      "type": "written",
+      "marks": 4,
+      "topic": "Missing and invalid measurements",
+      "prompt": "Elapsed one-way time: ID 09 is blank; ID 10 is −5.\nPolicy: preserve raw data; exclude and log missing or negative times.\n(a) Explain each record’s issue.\n(b) State the policy’s actions, including what to log.\n(c) Why are replacing the blank with 0 and −5 with +5 unjustified?",
+      "answer": "(a) 09 is unknown; 10 is invalid negative elapsed time. (b) Keep both raw rows; exclude both from this analysis and log each reason. (c) Neither a measured zero nor an intended +5 is established.",
+      "explanation": "The field definition determines validity: negative temperature could be meaningful, but negative elapsed travel time is invalid. This task provides no evidence for a replacement value. Exclusion from an analysis is different from erasing the source.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Identifies 09 as missing and 10 as invalid negative elapsed time."
+        },
+        {
+          "marks": 1,
+          "criterion": "Preserves both raw rows and excludes them from this analysis."
+        },
+        {
+          "marks": 1,
+          "criterion": "Logs missing time for 09 and negative time for 10."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains that both replacements invent unsupported measurements."
+        }
+      ],
+      "lines": 6
+    },
+    {
+      "id": "Q10",
+      "type": "written",
+      "marks": 4,
+      "topic": "Apply the documented rules",
+      "prompt": "Raw data: 16 rows; 09 missing time; 10 negative time; later 03 identical; 15 mode “ bus ”; 14 time 120, unverified.\nExclude missing/negative times and the extra copy; normalize labels; retain unusual values.\n(a) Calculate the retained row count.\n(b) State ID 15’s change and its effect on row count.\n(c) State ID 14’s treatment and justify it.",
+      "answer": "(a) 16 − 1 − 1 − 1 = 13. (b) Normalize “ bus ” to Bus; keep the row. (c) Retain and flag 120: no error is established.",
+      "explanation": "The three exclusions are distinct rows. The repeated ID 03 is counted once in the retained dataset. Formatting repair and an unusual-value flag do not remove records; therefore the default result is 13, not 12.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Shows three exclusions and calculates 13 retained rows."
+        },
+        {
+          "marks": 1,
+          "criterion": "Normalizes ID 15 to Bus, preserving the meaning."
+        },
+        {
+          "marks": 1,
+          "criterion": "States that normalization does not reduce the row count."
+        },
+        {
+          "marks": 1,
+          "criterion": "Retains ID 14 because unusual alone does not establish an error."
+        }
+      ],
+      "lines": 6
+    },
+    {
+      "id": "Q11",
+      "type": "written",
+      "marks": 4,
+      "topic": "Investigate a conflict and document decisions",
+      "prompt": "Hypothetical: the same response ID has times 12 and 30. Only one time per response is intended.\n(a) Why is the identical-copy rule insufficient?\n(b) Give one investigation step.\n(c) If unresolved, give a transparent handling decision.\n(d) State two items to retain in the decision log.",
+      "answer": "(a) Conflicting values do not identify the correct time. (b) Check original submissions or correction records. (c) Keep raw evidence, flag uncertainty and document the handling rule, such as temporary exclusion. (d) Log ID/original values and action/reason.",
+      "explanation": "The question introduces a hypothetical conflict; it does not change the shared synthetic dataset. Arbitrarily keeping the preferred or smaller number would hide uncertainty. A documented exclusion may be appropriate for a stated analysis, but the raw evidence and uncertainty should remain available.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Explains why a conflicting repeat cannot be resolved as an identical copy."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives a relevant source or collection-record check."
+        },
+        {
+          "marks": 1,
+          "criterion": "Preserves raw evidence and documents an unresolved flag or justified handling rule."
+        },
+        {
+          "marks": 1,
+          "criterion": "Names two useful log items: ID, values, action, reason or evidence."
+        }
+      ],
+      "lines": 6
+    },
+    {
+      "id": "Q12",
+      "type": "written",
+      "marks": 4,
+      "topic": "Responsible collection and limits of cleaning",
+      "prompt": "A voluntary single-school survey compares time by mode. It proposes collecting full names and exact addresses too.\n(a) Give a smaller collection plan.\n(b) Explain one privacy risk, including possible data linkage.\n(c) Would cleaning justify conclusions about all students? Explain.\n(d) Would more same-source volunteers guarantee no bias? Explain.",
+      "answer": "(a) Mode and minutes; a response ID only if needed. (b) Identifying fields or linked attributes can reveal identity. (c) No: cleaning does not make the sample representative. (d) No: the same selection/source bias may remain.",
+      "explanation": "Collection should be tied to an explicit purpose. A different stated question might justify an additional field, but “perhaps useful later” is not evidence that identifying details are needed here. Cleaning fixes particular quality problems; it does not establish representativeness. This is a synthetic classroom scenario, not a request to collect actual student information.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Keeps mode/time and omits unnecessary names/addresses."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains a concrete identification risk from fields or linked data."
+        },
+        {
+          "marks": 1,
+          "criterion": "Distinguishes clean values from a representative sample."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains why more same-source responses need not remove selection bias."
+        }
+      ],
+      "lines": 6
+    }
+  ]
+}

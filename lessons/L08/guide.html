@@ -1,0 +1,73 @@
+<div class="tagline">Teacher Guide</div><h1>Lesson 08 · Data Analysis &amp; Evidence</h1>
+<p class="sub">自编 Chapter 2 收束课 · 23 slides · 90 minutes · 28-minute investigation</p>
+<p><a href="index.html">课程目录</a> · <a href="Chapter_2_Data_Lab.html#data" target="_blank" rel="noopener">Data analysis lab</a> · <a href="output/pdf/AP_CSP_Chapter_2_Investigation_Sheet.pdf" target="_blank" rel="noopener">Investigation sheet</a></p>
+
+<h3>目标与准备</h3>
+<p>本课把 L05 数字表示、L06 压缩、L07 元数据与清洗连接到数据分析：提出能回答的问题，用程序筛选和汇总，选择图表，写有范围的证据结论。前置知识为基本算术和 L07 的清洗决定，不要求条件、循环、列表或过程代码。学生将操作现成分析工具；能够调用程序得到信息，并不要求本节自行实现统计程序。</p>
+<p>唯一调查数据源为 <a href="data/chapter2-commute.json" target="_blank" rel="noopener">Fictional Campus Commute Survey</a>。<strong>所有记录均为合成教学数据，没有真实学生参与，也不是研究结论。</strong>其假想情境是一校、一晨、自愿参加的通勤调查，用于讨论采集范围与代表性。字段为匿名 response ID、main mode、one-way minutes、distance_km。</p>
+<p>投影片英文为主，N 展开中文教师备注。先独立作答再揭晓。纸笔记录表与现成浏览器实验配合，允许两人共用设备但必须交换操作；每人最后提交自己的分析简报。课堂调查不是正式 Create 项目。</p>
+
+<h3>精确官方对齐</h3>
+<p>已核对 AP Central 当前 CED：Topic 2.3 位于<strong>印刷页 51–53 / PDF 页 58–60</strong>；Topic 2.4 位于<strong>印刷页 54–55 / PDF 页 61–62</strong>。本课用实际操作建立信息提取与证据表达，不把自编章节等同官方完整单元。</p>
+<table><thead><tr><th>Reference</th><th>本课证据</th><th>覆盖边界</th></tr></thead><tbody>
+<tr><td>DAT-2.A.1–3</td><td>从记录提取模式；拟定可回答问题；区分关联、因果与个体结论。</td><td>核心内容。未计算相关系数，也不声称统计显著性。</td></tr>
+<tr><td>DAT-2.A.4</td><td>指出单一来源不足时需要补充可比较资料与合适研究设计。</td><td>复习 L07 的来源组合；本节不实施新的跨源合并。</td></tr>
+<tr><td>DAT-2.B；C.1–5</td><td>保留字段单位、来源和日志；使用已定清洗规则；解释单一自愿样本限制。</td><td>在 L07 基础上应用，不重新展开每条元数据或质量知识。</td></tr>
+<tr><td>DAT-2.C.7–8</td><td>大数据可能需要更多存储、计算能力或多台计算机。</td><td>概念引入，不教并行实现或声称系统扩展能力已熟练。</td></tr>
+<tr><td>DAT-2.D.1、D.2、D.4、D.6</td><td>实际用程序过滤模式、计算与比较摘要、画图并解释图表。</td><td>核心应用。排序是概念对照，不依赖实验具有排序按钮；D.3 搜索、D.5 电子表格及逐元素变换未在本课全面实践。</td></tr>
+<tr><td>DAT-2.E.1–2、E.4–5</td><td>交互改变视图，保留与省略120两种比较，修订结论，从汇总和图形中提取信息。</td><td>以过滤、汇总、可视化为主。E.3 的聚类、分类等方法未完整覆盖。</td></tr>
+<tr><td>DAT-1.A、DAT-1.D；DAT-2.B/C</td><td>作业和起始题回顾采样、精确恢复、元数据与清洗。</td><td>第二章间隔提取，不是新增完整主题。</td></tr>
+</tbody></table>
+<p>均值、中位数、零基条形图和敏感性比较是本课使用的分析工具，不作为额外独立 AP 学习目标编号。因果推断不展开统计模型或实验设计理论；学生需能说明这份观察表不足以隔离出行方式的因果作用。</p>
+
+<h3>核查后的数据与标准数值</h3>
+<p>按共享数据文件的规则：修剪并标准化标签；对相同 response ID 保留首次记录；把缺失或负数时间排除出本次分析并记录原因；120 虽异常但无已知错误，<strong>默认保留</strong>。16 原始行减去1重复、1缺失、1负数，得到13行。标签“ bus ”规范为 Bus 不减少行数。</p>
+<table><thead><tr><th>Baseline group</th><th>n</th><th>sum minutes</th><th>mean minutes</th><th>median minutes</th></tr></thead><tbody>
+<tr><td>All</td><td>13</td><td>381</td><td>29.307692…</td><td>20</td></tr>
+<tr><td>Walk</td><td>4</td><td>45</td><td>11.25</td><td>11</td></tr>
+<tr><td>Bike</td><td>3</td><td>53</td><td>17.666667…</td><td>18</td></tr>
+<tr><td>Bus</td><td>6</td><td>283</td><td>47.166667…</td><td>32.5</td></tr>
+</tbody></table>
+<p>全部时间排序为 <span class="mono">8, 10, 12, 15, 15, 18, 20, 25, 28, 30, 35, 45, 120</span>。13个值的中位数是第7个20。显示均值通常保留两位小数；计算应保留原精度。不能把三个组均值直接平均来得到全样本均值，因为各组数量不同。</p>
+<table><thead><tr><th>Optional sensitivity: omit 120</th><th>n</th><th>sum</th><th>mean</th><th>median</th></tr></thead><tbody>
+<tr><td>All</td><td>12</td><td>261</td><td>21.75 min</td><td>19 min</td></tr>
+<tr><td>Bus</td><td>5</td><td>163</td><td>32.60 min</td><td>30 min</td></tr>
+</tbody></table>
+<p>替代视图中 Walk 和 Bike 统计不变。这个比较展示120对统计摘要的影响，<strong>不能证明其错误，也不能叫“修正后的数据”</strong>。同13行中的平均距离分别为 Walk 0.775 km、Bike 3.5 km、Bus 6.166667… km；不同距离提示潜在混杂，但单靠这一差异也不证明任何具体因果解释。</p>
+
+<h3>90 分钟安排</h3>
+<table><thead><tr><th>时间</th><th>页码</th><th>活动</th></tr></thead><tbody>
+<tr><td>0–8</td><td>1–3</td><td>采样、压缩和元数据提取，明确证据简报交付物。</td></tr>
+<tr><td>8–20</td><td>4–6</td><td>合适问题、13行基线、排序和筛选区别。</td></tr>
+<tr><td>20–32</td><td>7–9</td><td>均值中位数、组统计、条形图标题单位与计数。</td></tr>
+<tr><td>32–48</td><td>10–13</td><td>结论范围、敏感性、关联与因果、样本来源限制。</td></tr>
+<tr><td>48–55</td><td>14–15</td><td>程序能力与限制；调查任务简报和工具准备。</td></tr>
+<tr><td>55–60</td><td>16</td><td>项目1：问题、元数据与分析视图。</td></tr>
+<tr><td>60–67</td><td>17</td><td>项目2：程序筛选，两项统计，手工核对一项。</td></tr>
+<tr><td>67–72</td><td>18</td><td>项目3：图表及标签、caption。</td></tr>
+<tr><td>72–78</td><td>19</td><td>项目4：敏感性比较及一项限制，恢复基线。</td></tr>
+<tr><td>78–83</td><td>20</td><td>项目5：同伴核对、修改、提交。</td></tr>
+<tr><td>83–90</td><td>21–23</td><td>章末作业、选两项和独立exit。</td></tr>
+</tbody></table>
+<p>保护55–83分钟的28分钟项目；时间不足时压缩教师重复讲解，保留真实操作与学生自己的结论。图表可以准确临摹或记录已有界面，不能以装饰代替数字一致性。</p>
+
+<h3>可直接布置的分析简报</h3>
+<p>使用 <a href="output/pdf/AP_CSP_Chapter_2_Investigation_Sheet.pdf" target="_blank" rel="noopener">Chapter 2 Investigation Sheet</a>。提交内容：一条可回答问题；当前数据的来源、单位和清洗规则；两项带单位及n的统计；一张有标题、类别、数值单位、组计数和视图说明的图；一条与证据一致的结论；一项有效限制；一次明确标记的敏感性比较及修改记录。</p>
+<p><strong>示例：</strong>“在这份保留13行的合成样本中，Bus的平均报告通勤时间为47.17分钟（n=6），Walk为11.25分钟（n=4）。这是本样本的组差异；两组距离和采集条件不同，不能据此断言换成步行会让所有人更快。基线保留120；若在敏感性视图省略它，Bus均值变为32.60分钟（n=5），该变化本身不证明120错误。”对应图应使用同一基线，不能把替代视图均值与基线计数混搭。</p>
+<p><strong>建议课堂8分量表：</strong>可回答问题1；可重现的视图与来源1；两项正确统计各1；图表标签与数据一致1；有范围的证据结论1；有效限制1；清洗与敏感性决定透明1。此量表与作业30分均为教师设计，不是AP官方评分标准。</p>
+
+<h3>误区与分层支持</h3>
+<ul>
+<li><strong>排序改变均值。</strong> 让学生重排三张数值卡，核对和值与数量没变；筛选才可能改变成员。</li>
+<li><strong>图中每条长短是每个人的时间。</strong> 指出条形编码的是group mean，个体变化被汇总隐藏。</li>
+<li><strong>异常值一律删掉。</strong> 区分违反定义的负时间、缺失值与尚未证实错误的120；保留日志与原始数据。</li>
+<li><strong>样本均值最高代表所有人都更慢，或该方式造成更慢。</strong> 分别检查个体外推、群体外推和因果三个跳跃。</li>
+<li><strong>样本多就自然没有偏差。</strong> 问采集过程是否仍遗漏同样的人、时间或场景。</li>
+<li><strong>程序算出来就是可信。</strong> 核对单位、筛选状态、清洗规则和一组手算结果。</li>
+</ul>
+<p>需要支架的学生可使用句式：<em>In [specified view], [group] has [statistic with unit], based on n = [count]. This does not establish [unsupported inference] because [reason].</em> 先比较Walk四行手算再使用程序。较快学生解释为何三个组均值的简单平均不是全样本均值，或比较删除Bus记录为什么不影响Walk/Bike；不要求先学权重公式或新代码结构。</p>
+<p>Exit三项各1分：Bus基线n=6；删120的变化不证明错误；距离或其他条件/观察性设计限制阻止因果结论。建议3/3结束本章；第2或3题错者用新情境补练结论边界，不能只凭会算均值判定掌握。</p>
+
+<h3>Sources</h3>
+<p>官方框架核查日期：2026-09-09。统计数值从本地共享合成数据独立重新计算；题目、示例和活动均原创。</p>
+<ul class="sources"><li><a href="https://apcentral.collegeboard.org/courses/ap-computer-science-principles" target="_blank" rel="noopener">College Board · Current AP CSP course page</a></li><li><a href="https://apcentral.collegeboard.org/media/pdf/ap-computer-science-principles-course-and-exam-description.pdf" target="_blank" rel="noopener">Official CED</a> · <a href="resources/AP_CSP_Course_and_Exam_Description.pdf#page=58" target="_blank">Topic 2.3</a> · <a href="resources/AP_CSP_Course_and_Exam_Description.pdf#page=61" target="_blank">Topic 2.4</a></li><li><a href="data/chapter2-commute.json" target="_blank" rel="noopener">Shared synthetic dataset and cleaning rules</a></li></ul>

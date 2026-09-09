@@ -1,0 +1,11 @@
+{
+  "chapter": 2,
+  "id": "L07",
+  "number": "07",
+  "title": "Metadata, Data Quality & Cleaning",
+  "shortTitle": "Data Quality & Cleaning",
+  "filename": "AP_CSP_L07_Data_Quality.html",
+  "minutes": 90,
+  "topicSummary": "Metadata, context and provenance; keyed data combination; missing, invalid, repeated and inconsistent data; documented cleaning and responsible collection.",
+  "homeworkInstructions": "12 original questions, 30 classroom marks, about 40 minutes. Q5 requires exactly two selections. Explain every cleaning decision; retain unusual values unless evidence justifies a change. Use the synthetic commute dataset and its stated rules."
+}

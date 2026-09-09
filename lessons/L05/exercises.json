@@ -1,0 +1,344 @@
+{
+  "title": "AP CSP — Lesson 05 Homework: Sampling and Digital Representation",
+  "durationMinutes": 40,
+  "totalMarks": 30,
+  "notice": "All questions are original. Q1–Q6 are AP-style multiple-choice practice, not official or past AP questions; Q7–Q12 are classroom written practice, not official FRQs. These are 30 teacher-assigned marks. Q5 earns its one mark only for both correct choices and no other selections. Use the specified encodings. Pixel and sample payloads exclude headers, metadata, padding and compression.",
+  "questions": [
+    {
+      "id": "Q1",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Chapter 1 retrieval: bits and interpretation",
+      "prompt": "A sensor sends 00101100 as an unsigned binary integer. Which decimal value does the receiving program obtain?",
+      "options": [
+        {
+          "label": "A",
+          "text": "40"
+        },
+        {
+          "label": "B",
+          "text": "42"
+        },
+        {
+          "label": "C",
+          "text": "44"
+        },
+        {
+          "label": "D",
+          "text": "48"
+        }
+      ],
+      "answer": "C",
+      "explanation": "C is correct: 32 + 8 + 4 = 44. A omits the 4 position. B uses 2 instead of 4. D uses 16 instead of 8 + 4. The stated integer interpretation is necessary; the same bit pattern could mean something else under another encoding.",
+      "lines": 0
+    },
+    {
+      "id": "Q2",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Chapter 1 retrieval: assignment",
+      "prompt": "A program executes: samples ← 4; samples ← samples * 2; bits ← samples * 3. What value is stored in bits?",
+      "options": [
+        {
+          "label": "A",
+          "text": "12"
+        },
+        {
+          "label": "B",
+          "text": "14"
+        },
+        {
+          "label": "C",
+          "text": "24"
+        },
+        {
+          "label": "D",
+          "text": "32"
+        }
+      ],
+      "answer": "C",
+      "explanation": "C is correct: samples becomes 8, then bits becomes 8 × 3 = 24. A uses the old samples value of 4. B follows the incorrect expression (4 + 3) × 2. D follows 8 × 4 rather than the final instruction. Assignment statements execute in the stated order.",
+      "lines": 0
+    },
+    {
+      "id": "Q3",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Sampling interval",
+      "prompt": "A sensor changes from one measurement every 2 seconds to one every 0.5 seconds. How does its sampling rate change?",
+      "options": [
+        {
+          "label": "A",
+          "text": "It becomes one quarter as large."
+        },
+        {
+          "label": "B",
+          "text": "It doubles."
+        },
+        {
+          "label": "C",
+          "text": "It stays the same."
+        },
+        {
+          "label": "D",
+          "text": "It becomes four times as large."
+        }
+      ],
+      "answer": "D",
+      "explanation": "D is correct: the rate changes from 0.5 measurements per second to 2 per second, a factor of four. A reverses the comparison by using intervals as though they were rates. B gives the new numerical rate but not the factor of change. C overlooks the changed interval.",
+      "lines": 0
+    },
+    {
+      "id": "Q4",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Finite value levels",
+      "prompt": "A toy sensor stores only the levels 0, 3, 6 and 9. It rounds to the nearest level. Which value is stored for a measurement of 5.2?",
+      "options": [
+        {
+          "label": "A",
+          "text": "3"
+        },
+        {
+          "label": "B",
+          "text": "5.2"
+        },
+        {
+          "label": "C",
+          "text": "6"
+        },
+        {
+          "label": "D",
+          "text": "9"
+        }
+      ],
+      "answer": "C",
+      "explanation": "C is correct: 5.2 is 0.8 from 6, less than its distance from any other allowed level. A is 2.2 away; D is 3.8 away. B is the original measurement but is not one of the allowed stored values. The stored result is an approximation.",
+      "lines": 0
+    },
+    {
+      "id": "Q5",
+      "type": "multi",
+      "marks": 1,
+      "topic": "Sampling tradeoffs",
+      "prompt": "A recorder stores fixed-length sample codes. Which TWO changes double its uncompressed sample payload? Consider each change separately; all other settings stay fixed. Select exactly TWO answers.",
+      "options": [
+        {
+          "label": "A",
+          "text": "Double the number of samples."
+        },
+        {
+          "label": "B",
+          "text": "Double the number of possible value codes from 8 to 16."
+        },
+        {
+          "label": "C",
+          "text": "Double the bits stored per sample."
+        },
+        {
+          "label": "D",
+          "text": "Halve the recording duration at the same sample rate."
+        }
+      ],
+      "answer": "A and C",
+      "explanation": "A and C each double sample count × bits per sample. B changes the minimum code length from 3 to 4 bits, giving a factor of 4/3 if minimum lengths are used, not two; code count and bit count differ. D halves the number of samples, so it halves payload. Award one mark only for A and C, with no other selections.",
+      "lines": 0
+    },
+    {
+      "id": "Q6",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Uncompressed pixel payload",
+      "prompt": "A bitmap contains 10 × 6 pixels using 4 bits per pixel. With no metadata, padding or compression, how many bytes of pixel data are stored?",
+      "options": [
+        {
+          "label": "A",
+          "text": "24"
+        },
+        {
+          "label": "B",
+          "text": "30"
+        },
+        {
+          "label": "C",
+          "text": "60"
+        },
+        {
+          "label": "D",
+          "text": "240"
+        }
+      ],
+      "answer": "B",
+      "explanation": "B is correct: 10 × 6 × 4 = 240 bits; 240 / 8 = 30 bytes. A can result from 6 × 4, which omits the width and the bit-to-byte conversion. C is the number of pixels, not bytes. D gives the bit count but labels it bytes.",
+      "lines": 0
+    },
+    {
+      "id": "Q7",
+      "type": "written",
+      "marks": 4,
+      "topic": "Analog, digital and abstraction",
+      "prompt": "A smooth curve models temperature through a day. A file records a temperature rounded to the nearest whole degree every hour.\n(a) Classify each representation as analog or digital.\n(b) Explain why the file is an abstraction.\n(c) Identify two kinds of detail the file can omit.",
+      "answer": "(a) The smooth curve is an analog model; the stored file is digital. (b) The file preserves selected information about the temperature while omitting other detail. (c) It may omit changes between hourly measurements and differences smaller than the chosen value precision.",
+      "explanation": "Distinguish the continuously varying quantity from its encoded record. Time selection and finite value precision are separate limitations, so “some detail is lost” alone is not a sufficiently specific response.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Correctly classifies both the smooth curve and the stored file."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains abstraction as representing selected useful information while omitting detail."
+        },
+        {
+          "marks": 1,
+          "criterion": "Identifies changes between measurement times as potentially omitted."
+        },
+        {
+          "marks": 1,
+          "criterion": "Identifies finer value differences removed by rounding as potentially omitted."
+        }
+      ],
+      "lines": 7
+    },
+    {
+      "id": "Q8",
+      "type": "written",
+      "marks": 4,
+      "topic": "Sampling and rounding",
+      "prompt": "A toy recorder measures 1.1, 3.8, 6.2 and 8.4 at equally spaced times. It stores the nearest level from {0, 3, 6, 9}.\n(a) Give the four stored values in order.\n(b) State the minimum bits per sample.\n(c) Find the payload for these four samples, with no overhead.",
+      "answer": "(a) 0, 3, 6, 9. (b) Two bits: 2² = 4 codes. (c) 4 × 2 = 8 bits, or one byte.",
+      "explanation": "Compare each measurement with the allowed levels. None is a tie. The number of available levels determines the minimum code length; multiplying that length by the number of samples gives payload.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Correctly maps the first two measurements to 0 and 3."
+        },
+        {
+          "marks": 1,
+          "criterion": "Correctly maps the last two measurements to 6 and 9."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives two bits per sample and connects this to four possible codes."
+        },
+        {
+          "marks": 1,
+          "criterion": "Calculates 8 bits or one byte for the four samples."
+        }
+      ],
+      "lines": 7
+    },
+    {
+      "id": "Q9",
+      "type": "written",
+      "marks": 4,
+      "topic": "Separate time and value precision",
+      "prompt": "A visual sampling model offers 4, 8 or 16 samples over the same time window, and 4, 8 or 16 value levels over the same range.\n(a) Which setting directly helps reveal changes between measurement times?\n(b) Which directly helps distinguish nearby measured values?\n(c) At 16 samples and 8 levels, find minimum bits per sample and total payload.",
+      "answer": "(a) Increase the sample count. (b) Increase the number of value levels. (c) Three bits per sample because 2³ = 8; 16 × 3 = 48 payload bits.",
+      "explanation": "More measurement times address time detail; more levels address value detail. These improvements do not guarantee that every possible signal is represented exactly. The calculation assumes fixed-length codes, no reserved codes and no overhead.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Identifies increased sample count for time detail."
+        },
+        {
+          "marks": 1,
+          "criterion": "Identifies increased value levels for nearby value distinctions."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives a minimum of three bits per sample for eight levels."
+        },
+        {
+          "marks": 1,
+          "criterion": "Calculates 16 × 3 = 48 bits."
+        }
+      ],
+      "lines": 7
+    },
+    {
+      "id": "Q10",
+      "type": "written",
+      "marks": 4,
+      "topic": "An agreed code",
+      "prompt": "A custom code assigns 00=A, 01=B, 10=C and 11=space.\n(a) Decode 01 00 11 10.\n(b) Encode “CA” with no space.\n(c) Can a receiver reliably interpret this stream without knowing its coding rules? Explain.\n(d) Does this example establish that every real text character uses two bits?",
+      "answer": "(a) BA C. (b) 10 00. (c) No: it needs the character mapping and grouping rules. (d) No. This is a custom four-symbol code; other text encodings can use different code lengths and symbol sets.",
+      "explanation": "Encoding associates bit groups with symbols. The same bits can have different interpretations. Do not generalize this classroom table into a claim about ASCII, Unicode, bytes per character or natural-language alphabets.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Decodes BA C, with a space between A and C."
+        },
+        {
+          "marks": 1,
+          "criterion": "Encodes CA as 10 00 or 1000."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains that reliable interpretation needs the agreed mapping or grouping rules."
+        },
+        {
+          "marks": 1,
+          "criterion": "Rejects the universal two-bit claim and identifies the code as a custom limited-symbol example."
+        }
+      ],
+      "lines": 7
+    },
+    {
+      "id": "Q11",
+      "type": "written",
+      "marks": 4,
+      "topic": "Pixel dimensions and capacity",
+      "prompt": "A bitmap is 20 pixels wide and 12 pixels high, using 2 bits per pixel. Ignore metadata, padding and compression.\n(a) Find the number of pixels.\n(b) Find the pixel payload in bits and bytes.\n(c) Both dimensions double while bits per pixel stay fixed. By what factor does payload grow?",
+      "answer": "(a) 20 × 12 = 240 pixels. (b) 240 × 2 = 480 bits = 60 bytes. (c) A factor of four: twice the width × twice the height.",
+      "explanation": "The dimensions count a rectangular grid, so multiply rather than add. Bit depth determines the per-pixel data cost in this specified fixed encoding. These calculations describe pixel payload, not a universal actual image-file size.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Calculates 240 pixels."
+        },
+        {
+          "marks": 1,
+          "criterion": "Calculates 480 bits."
+        },
+        {
+          "marks": 1,
+          "criterion": "Converts correctly to 60 bytes."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives a factor of four and supports it with both dimensions doubling."
+        }
+      ],
+      "lines": 7
+    },
+    {
+      "id": "Q12",
+      "type": "written",
+      "marks": 4,
+      "topic": "Evaluate a recording claim",
+      "prompt": "A student says, “Changing a recording from 8 to 16 samples makes it an exact copy and costs no more storage.” Bits per sample and recording duration stay fixed.\n(a) Explain one possible benefit.\n(b) Explain why exactness is not guaranteed.\n(c) Compare the uncompressed sample payloads.\n(d) Name a different setting that can improve value precision over a fixed range.",
+      "answer": "(a) More measurement times may capture detail missed between widely spaced samples. (b) A finite record still omits unsampled values and uses finite precision. (c) Payload doubles because the sample count doubles while bits per sample stay fixed. (d) Increase the number of available value levels, using enough bits to encode them.",
+      "explanation": "Evaluate the benefit and the cost separately. More samples do not automatically change the number of levels. Exactness is an unjustified guarantee for every possible analog signal.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Explains that more measurement times may capture additional time detail."
+        },
+        {
+          "marks": 1,
+          "criterion": "Rejects guaranteed exactness using finite sampling or finite value precision."
+        },
+        {
+          "marks": 1,
+          "criterion": "States and justifies that uncompressed sample payload doubles."
+        },
+        {
+          "marks": 1,
+          "criterion": "Identifies more value levels, with sufficient code capacity, as the relevant different setting."
+        }
+      ],
+      "lines": 7
+    }
+  ]
+}

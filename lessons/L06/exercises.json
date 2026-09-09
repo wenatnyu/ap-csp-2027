@@ -1,0 +1,344 @@
+{
+  "title": "AP CSP — Lesson 06 Homework: Compression and Trade-offs",
+  "durationMinutes": 40,
+  "totalMarks": 30,
+  "notice": "All questions are original. Q1–Q6 are AP-style practice, not official or past AP questions. Q7–Q12 are classroom written practice, not official FRQs. These 30 marks are teacher-assigned, not AP exam scoring. Q5 requires exactly TWO choices; one mark is awarded only for both correct choices and no others. Toy RLE stores uppercase letters A–Z. Raw letters use one byte each; each encoded count-letter pair uses two bytes (one byte per count digit 1–9 and one per letter). Longer runs split into pairs of at most nine. Ignore headers except when explicitly included. Percent saved uses original size as the denominator.",
+  "questions": [
+    {
+      "id": "Q1",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Chapter 1 retrieval: bits and bytes",
+      "prompt": "A record occupies 18 bytes before compression. How many bits is this?",
+      "options": [
+        {
+          "label": "A",
+          "text": "26"
+        },
+        {
+          "label": "B",
+          "text": "72"
+        },
+        {
+          "label": "C",
+          "text": "144"
+        },
+        {
+          "label": "D",
+          "text": "180"
+        }
+      ],
+      "answer": "C",
+      "explanation": "C is correct: 18 × 8 = 144 bits. A adds 8 rather than multiplying by the number of bits per byte. B uses four bits per byte. D uses ten bits per byte. One byte contains eight bits.",
+      "lines": 0
+    },
+    {
+      "id": "Q2",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Chapter 1 retrieval: assignment and sequence",
+      "prompt": "What is displayed?\noriginal ← 80\ncopy ← original\noriginal ← 100\nDISPLAY(copy)",
+      "options": [
+        {
+          "label": "A",
+          "text": "80"
+        },
+        {
+          "label": "B",
+          "text": "100"
+        },
+        {
+          "label": "C",
+          "text": "20"
+        },
+        {
+          "label": "D",
+          "text": "180"
+        }
+      ],
+      "answer": "A",
+      "explanation": "A is correct: copy receives 80 before original changes to 100. B incorrectly treats copy as a live link to original. C subtracts the two values, but the program contains no subtraction. D adds them, but the program contains no addition. A variable's current value follows its actual assignments, not a guess from its name.",
+      "lines": 0
+    },
+    {
+      "id": "Q3",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Lossless reconstruction",
+      "prompt": "A file is encoded in fewer bits, and its decoder guarantees recovery of every original byte. Which description is supported?",
+      "options": [
+        {
+          "label": "A",
+          "text": "The method is lossy because the representation changed."
+        },
+        {
+          "label": "B",
+          "text": "The method must remove information because it uses fewer bits."
+        },
+        {
+          "label": "C",
+          "text": "The method must make every possible input file smaller."
+        },
+        {
+          "label": "D",
+          "text": "The method is lossless because exact reconstruction is guaranteed."
+        }
+      ],
+      "answer": "D",
+      "explanation": "D is correct: the guarantee of exact reconstruction defines lossless compression. A confuses a different representation with information loss. B overlooks that a more efficient representation may retain the same information in fewer bits. C extends one file's size reduction to all possible inputs, which is not justified.",
+      "lines": 0
+    },
+    {
+      "id": "Q4",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Toy RLE and order",
+      "prompt": "Using the specified toy count-letter RLE format, which encoding preserves the original sequence AABBBCC?",
+      "options": [
+        {
+          "label": "A",
+          "text": "3A2B2C"
+        },
+        {
+          "label": "B",
+          "text": "2A3B2C"
+        },
+        {
+          "label": "C",
+          "text": "2A2C3B"
+        },
+        {
+          "label": "D",
+          "text": "A2B3C2"
+        }
+      ],
+      "answer": "B",
+      "explanation": "B is correct: the sequence has two A's, then three B's, then two C's. A exchanges the first two run counts. C preserves the counts but moves the C run before the B run. D uses letter-count order rather than the specified count-letter format, so it is not a valid encoding under these rules.",
+      "lines": 0
+    },
+    {
+      "id": "Q5",
+      "type": "multi",
+      "marks": 1,
+      "topic": "Compare compression claims",
+      "prompt": "Which TWO statements about data compression are correct? Select exactly TWO answers.",
+      "options": [
+        {
+          "label": "A",
+          "text": "A lossless method always reduces the size of every input."
+        },
+        {
+          "label": "B",
+          "text": "Size reduction depends on the data and the algorithm used."
+        },
+        {
+          "label": "C",
+          "text": "Lossy compression guarantees recovery of every original value."
+        },
+        {
+          "label": "D",
+          "text": "Lossless compression can use fewer bits without losing original information."
+        }
+      ],
+      "answer": "B and D",
+      "explanation": "B is correct because different representations contain different patterns, and algorithms exploit different kinds of redundancy. D is correct because the changed representation can preserve everything needed for exact reconstruction. A is false: the toy RLE expands alternating symbols. C attributes the lossless guarantee to a lossy method. Award one mark only for B and D together and no other choices.",
+      "lines": 0
+    },
+    {
+      "id": "Q6",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Percentage saved",
+      "prompt": "A representation changes from 240 bytes to 180 bytes. What percentage of the original size has been saved?",
+      "options": [
+        {
+          "label": "A",
+          "text": "25%"
+        },
+        {
+          "label": "B",
+          "text": "About 33.3%"
+        },
+        {
+          "label": "C",
+          "text": "60%"
+        },
+        {
+          "label": "D",
+          "text": "75%"
+        }
+      ],
+      "answer": "A",
+      "explanation": "A is correct: (240 - 180) / 240 × 100% = 25%. B divides the 60-byte saving by the encoded size 180 rather than the original 240. C reports the numeric byte saving as though it were a percentage. D is the encoded size as a percentage of the original, 180 / 240 = 75%, not the percentage saved.",
+      "lines": 0
+    },
+    {
+      "id": "Q7",
+      "type": "written",
+      "marks": 4,
+      "topic": "Encode, measure and verify",
+      "prompt": "Use the specified toy RLE for AAAABBBBBCC.\n(a) Write the encoding.\n(b) State the raw size and encoded size in bytes.\n(c) Explain how the encoding allows exact reconstruction.",
+      "answer": "(a) 4A5B2C. (b) Raw: 11 bytes. Encoded: 6 bytes. (c) The decoder reads the count-letter pairs and produces four A's, then five B's, then two C's, preserving every original character in order.",
+      "explanation": "There are 4 + 5 + 2 = 11 raw letters. Three pairs use 3 × 2 = 6 bytes. Storing the count, symbol and run order allows the specified decoder to rebuild the same sequence. Being shorter alone would not establish that the method is lossless.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Writes 4A5B2C using the specified count-letter order."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives the raw size as 11 bytes."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives the encoded size as 6 bytes, with three two-byte pairs or equivalent reasoning."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains that expanding each count-letter pair in order restores the exact original sequence."
+        }
+      ],
+      "lines": 7
+    },
+    {
+      "id": "Q8",
+      "type": "written",
+      "marks": 4,
+      "topic": "Decode and explain why order matters",
+      "prompt": "(a) Decode 3C1A2B.\n(b) State the number of reconstructed letters and the encoded size in bytes.\n(c) A student claims 2A2B correctly encodes ABAB because it has two A's and two B's. Explain the error and give a correct encoding for ABAB.",
+      "answer": "(a) CCCABB. (b) Six reconstructed letters; six encoded bytes. (c) 2A2B decodes to AABB, so it changes the original order. A correct encoding is 1A1B1A1B.",
+      "explanation": "RLE stores consecutive runs, not total frequencies. Expanding 3C, 1A and 2B yields CCCABB. Three pairs take six bytes, equal to the six raw bytes here. Correct recovery requires preserving sequence order as well as the number of each symbol.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Decodes 3C1A2B as CCCABB."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives both six reconstructed letters and six encoded bytes."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains that 2A2B decodes to AABB and therefore changes the order of ABAB."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives the correct encoding 1A1B1A1B."
+        }
+      ],
+      "lines": 7
+    },
+    {
+      "id": "Q9",
+      "type": "written",
+      "marks": 4,
+      "topic": "Explain an expanded result",
+      "prompt": "The input is ABCABC. Under the toy format, each raw letter uses one byte and each count-letter pair uses two bytes. No headers are included.\n(a) Write its encoding.\n(b) State its raw and encoded sizes.\n(c) Express the change as a percentage increase from the original.\n(d) Explain why this result does not prove that every compression algorithm will make this input larger.",
+      "answer": "(a) 1A1B1C1A1B1C. (b) Raw: 6 bytes; encoded: 12 bytes. (c) (12 - 6) / 6 × 100% = 100% increase. (d) This RLE exploits consecutive identical symbols, which this input lacks. A different algorithm might exploit its repeated ABC pattern.",
+      "explanation": "All six runs have length one, so six two-byte pairs replace six raw bytes. The result is twice the original size, which is a 100% increase rather than a 200% increase. This is evidence about a particular method and input; it does not show that the input has no redundancy usable by other methods.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Writes 1A1B1C1A1B1C."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives both 6 raw bytes and 12 encoded bytes."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives a 100% increase using the original 6 bytes as denominator."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains that another algorithm may exploit a different pattern, such as repeated ABC, while this RLE only exploits consecutive identical letters."
+        }
+      ],
+      "lines": 7
+    },
+    {
+      "id": "Q10",
+      "type": "written",
+      "marks": 4,
+      "topic": "Size accounting and metadata",
+      "prompt": "A raw file is 20 bytes, with no additional header. An encoded version has 10 bytes of payload and needs a 4-byte format header.\n(a) State the total encoded file size.\n(b) State the number of bytes saved compared with the raw file.\n(c) Calculate the percentage saved, showing the denominator.\n(d) Explain why omitting the header would give a misleading comparison.",
+      "answer": "(a) 14 bytes. (b) 6 bytes saved. (c) (20 - 14) / 20 × 100% = 30%. (d) The header is part of the stored encoded file and must be counted; using only the payload would understate its size and overstate the saving.",
+      "explanation": "The comparison must include all storage explicitly required by each version. The raw version is stipulated to have no extra header, while the encoded version requires one. Its header identifies the format; this does not mean every file must store an entire decompression algorithm.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Adds the 10-byte payload and 4-byte header to obtain 14 bytes."
+        },
+        {
+          "marks": 1,
+          "criterion": "Subtracts from 20 to obtain 6 bytes saved."
+        },
+        {
+          "marks": 1,
+          "criterion": "Calculates 30% saved with original size 20 as denominator."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains that the required header occupies storage and excluding it understates the encoded size or overstates the saving."
+        }
+      ],
+      "lines": 7
+    },
+    {
+      "id": "Q11",
+      "type": "written",
+      "marks": 4,
+      "topic": "Information loss and reconstruction",
+      "prompt": "A toy method stores only the tens digit of each integer measurement from 10 to 99. Its decoder multiplies the stored digit by 10.\n(a) State the stored digit for 31 and for 38.\n(b) State the reconstructed value for each.\n(c) Is this method lossless or lossy? Explain using these two inputs.\n(d) The input 30 is reconstructed correctly. Does this make the method lossless? Explain.",
+      "answer": "(a) Both store 3. (b) Both reconstruct as 30. (c) Lossy: distinct inputs 31 and 38 produce the same stored digit, so that digit cannot identify which exact original value was present. (d) No. Correct recovery for one input does not guarantee exact recovery for every allowed input.",
+      "explanation": "Discarding the units digit removes distinctions among measurements in the same tens group. The decoder can produce an approximation but cannot restore the missing original digit from this stored data alone. A lossy method may reconstruct some inputs exactly without providing the lossless guarantee.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "States that both 31 and 38 store the digit 3."
+        },
+        {
+          "marks": 1,
+          "criterion": "States that both reconstruct as 30."
+        },
+        {
+          "marks": 1,
+          "criterion": "Identifies the method as lossy and explains that the stored data cannot distinguish or exactly recover the two different originals."
+        },
+        {
+          "marks": 1,
+          "criterion": "Says no and explains that exact recovery for 30 does not guarantee exact recovery for all allowed inputs."
+        }
+      ],
+      "lines": 7
+    },
+    {
+      "id": "Q12",
+      "type": "written",
+      "marks": 4,
+      "topic": "Choose from requirements and evidence",
+      "prompt": "Two encodings of the same image have been measured. Option L is 900 KB and guarantees exact reconstruction. Option P is 160 KB and produces an approximation already approved for preview use.\n(a) An archive requires exact recovery of the original image. Choose an option and justify it.\n(b) A preview system requires a file under 200 KB and accepts the approved approximation. Choose an option and justify it.",
+      "answer": "(a) Choose L because it guarantees the exact recovery required by the archive. (b) Choose P because 160 KB is under 200 KB and its approximation has been approved for the preview purpose.",
+      "explanation": "A suitable choice must meet the specified requirement rather than simply be the smallest file. L provides exact restoration. P sacrifices the exact-recovery guarantee but meets both the stated size and preview-quality requirements. The supplied sizes describe these measured encodings only and should not be generalized to every method or image.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Chooses option L for the archive."
+        },
+        {
+          "marks": 1,
+          "criterion": "Justifies L with its guarantee of exact reconstruction, matching the archive requirement."
+        },
+        {
+          "marks": 1,
+          "criterion": "Chooses option P for the preview system."
+        },
+        {
+          "marks": 1,
+          "criterion": "Justifies P by citing both its 160 KB size below 200 KB and the acceptability of the approved approximation."
+        }
+      ],
+      "lines": 7
+    }
+  ]
+}

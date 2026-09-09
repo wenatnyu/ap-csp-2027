@@ -1,0 +1,11 @@
+{
+  "chapter": 2,
+  "id": "L06",
+  "number": "06",
+  "title": "Compression & Trade-offs",
+  "shortTitle": "Compression",
+  "filename": "AP_CSP_L06_Compression.html",
+  "minutes": 90,
+  "topicSummary": "Compare lossless and lossy compression, encode and decode a precisely defined toy RLE format, calculate size changes, and justify a compression choice using the data and the user's requirements.",
+  "homeworkInstructions": "Complete all 12 original questions (30 marks, about 40 minutes). Q5 requires exactly two choices. For toy RLE, each original uppercase letter uses one byte and each count-letter pair uses two bytes; counts are 1–9. Ignore headers unless stated. Show the original size, compressed size and the original-size denominator when calculating a percentage saved."
+}
