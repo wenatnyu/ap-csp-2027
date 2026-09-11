@@ -1,0 +1,13 @@
+{
+  "chapter": 5,
+  "id": "L23",
+  "number": "23",
+  "title": "Systems, Networks & the Internet",
+  "chineseTitle": "系统、网络与互联网",
+  "shortTitle": "Systems & Networks",
+  "filename": "AP_CSP_L23_Systems_and_Networks.html",
+  "minutes": 90,
+  "preview": "lessons/L23/preview.svg",
+  "topicSummary": "Computing devices and systems; networks and paths; Internet open protocols and scalability; IP addresses and DNS context; Web versus Internet; bandwidth and model-based investigation.",
+  "homeworkInstructions": "Q5 requires exactly TWO choices. Show paths, calculations and reasons. Treat all networks and timings as the stated classroom models."
+}

@@ -25,7 +25,7 @@ def build_lesson(meta, slides_path, exercise_path, guide_path):
     runtime=runtime.replace('__SLIDES__',json.dumps(slides,ensure_ascii=False).replace('</','<\\/'))
     runtime=runtime.replace('__EXERCISES__',json.dumps(exercises,ensure_ascii=False).replace('</','<\\/'))
     chapter=meta.get('chapter',1)
-    lab={1:'Chapter_1_Programming_Lab.html',2:'Chapter_2_Data_Lab.html',3:'Chapter_3_Programming_Lab.html'}[chapter]
+    lab={1:'Chapter_1_Programming_Lab.html',2:'Chapter_2_Data_Lab.html',3:'Chapter_3_Programming_Lab.html',4:'Chapter_4_Algorithms_Lab.html',5:'Chapter_5_Network_Lab.html'}[chapter]
     guide=guide_path.read_text()+f'<p class="teacher-note"><a href="Chapter_{chapter}.html">← Chapter {chapter} overview</a> · <a href="{lab}">Interactive lab</a></p>'
     replacements={'__CSS__':(ROOT/'scripts/lesson.css').read_text(), '__GUIDE__':guide, '__JS__':runtime,
                   '__CHAPTER__':str(chapter), '__NUMBER__':meta['number'], '__LESSON_ID__':meta['id'], '__TITLE__':html.escape(meta['title']),
@@ -52,11 +52,12 @@ def main():
             cn=m.get('chineseTitle') or chinese[int(m['number'])-1]
             cards.append(f'''<article class="lesson-card"><div class="card-top"><span>LESSON {m['number']}</span><span>90 MIN · 23 SLIDES</span></div><div class="lesson-preview">{previews[m['id']]}</div><h2>{html.escape(m['shortTitle'])}</h2><p class="zh">{cn}</p><p>{html.escape(m['topicSummary'])}</p><div class="card-actions"><a class="primary" href="{m['filename']}">Open lesson →</a><a href="{m['filename']}#guide">Teacher guide</a></div><div class="downloads"><a href="output/pdf/AP_CSP_{m['id']}_Homework.pdf">Student PDF</a><a href="output/pdf/AP_CSP_{m['id']}_Answer_Key.pdf">Answer key</a><a href="{m['filename']}#homework">Interactive practice</a></div></article>''')
         template='chapter.template.html' if chapter==1 else f'chapter{chapter}.template.html'
-        page=(ROOT/'scripts'/template).read_text().replace('__CARDS__','\n'.join(cards))
+        page=(ROOT/'scripts'/template).read_text().replace('__CARDS__','\n'.join(cards)).replace('__LESSON_CARDS__','\n'.join(cards))
         (ROOT/f'Chapter_{chapter}.html').write_text(page)
     course=(ROOT/'scripts/course.template.html').read_text()
     course=course.replace('__CHAPTER1_VISUAL__',previews['L03']).replace('__CHAPTER2_VISUAL__',previews['L06'])
     course=course.replace('__CHAPTER3_VISUAL__',previews.get('L13',''))
+    course=course.replace('__CH4_PREVIEW__',previews.get('L18','')).replace('__CH5_PREVIEW__',previews.get('L24',''))
     (ROOT/'index.html').write_text(course)
     print('Built course and chapter portals')
 

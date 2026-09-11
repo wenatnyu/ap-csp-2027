@@ -1,0 +1,350 @@
+{
+  "title": "AP CSP — Lesson 19 Homework: Procedures & Libraries",
+  "durationMinutes": 40,
+  "totalMarks": 30,
+  "notice": "All questions are original. Q1–Q6 are AP-style practice, not official AP questions. Q7–Q12 and all marks are teacher-designed. Q5 earns one mark only for both correct choices and no others. Q5: select exactly TWO. Procedure definitions and library contracts are supplied in the question. RETURN sends a value to the caller; DISPLAY produces output. Put braces on separate lines.",
+  "questions": [
+    {
+      "id": "Q1",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Retrieval: empty traversal",
+      "prompt": "How many times does FOR EACH run its body for an empty list?",
+      "options": [
+        {
+          "label": "A",
+          "text": "0"
+        },
+        {
+          "label": "B",
+          "text": "1"
+        },
+        {
+          "label": "C",
+          "text": "The previous list length"
+        },
+        {
+          "label": "D",
+          "text": "It must access index 1"
+        }
+      ],
+      "answer": "A",
+      "explanation": "A follows zero elements. B invents a visit. C incorrectly retains a previous input. D assumes indexing not required by FOR EACH.",
+      "lines": 0
+    },
+    {
+      "id": "Q2",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Procedure result",
+      "prompt": "A supplied procedure toHours(m) returns m / 60. What does toHours(150) return?",
+      "options": [
+        {
+          "label": "A",
+          "text": "150"
+        },
+        {
+          "label": "B",
+          "text": "2"
+        },
+        {
+          "label": "C",
+          "text": "2.5"
+        },
+        {
+          "label": "D",
+          "text": "90"
+        }
+      ],
+      "answer": "C",
+      "explanation": "C is 150/60. A returns the input; B truncates decimal division; D subtracts 60 without instruction.",
+      "lines": 0
+    },
+    {
+      "id": "Q3",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Parameters and arguments",
+      "prompt": "For PROCEDURE combine(left, right), the call is combine(4, 9). Which statement is correct?",
+      "options": [
+        {
+          "label": "A",
+          "text": "4 and 9 are parameter names."
+        },
+        {
+          "label": "B",
+          "text": "left receives 4 and right receives 9."
+        },
+        {
+          "label": "C",
+          "text": "left receives 9 and right receives 4."
+        },
+        {
+          "label": "D",
+          "text": "Both parameters must be named combine."
+        }
+      ],
+      "answer": "B",
+      "explanation": "B binds arguments by position. A confuses values with names. C reverses order. D confuses procedure and parameter names.",
+      "lines": 0
+    },
+    {
+      "id": "Q4",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "DISPLAY versus RETURN",
+      "prompt": "A procedure only DISPLAYs a number and has no RETURN. What can its caller safely assume?",
+      "options": [
+        {
+          "label": "A",
+          "text": "The displayed number is its returned numeric value."
+        },
+        {
+          "label": "B",
+          "text": "The program must stop completely."
+        },
+        {
+          "label": "C",
+          "text": "No output is produced."
+        },
+        {
+          "label": "D",
+          "text": "Output is produced, but no numeric return is promised."
+        }
+      ],
+      "answer": "D",
+      "explanation": "D distinguishes the effect from a returned result. A invents a return contract. B confuses procedure flow with program termination. C ignores DISPLAY.",
+      "lines": 0
+    },
+    {
+      "id": "Q5",
+      "type": "multi",
+      "marks": 1,
+      "topic": "Reuse and documentation",
+      "prompt": "Which TWO statements are true? Select exactly TWO answers.",
+      "options": [
+        {
+          "label": "A",
+          "text": "A parameter can let one procedure work with varied inputs."
+        },
+        {
+          "label": "B",
+          "text": "Calling a library removes the need to read its documentation."
+        },
+        {
+          "label": "C",
+          "text": "A procedure definition executes its body immediately."
+        },
+        {
+          "label": "D",
+          "text": "Documentation can specify parameters and returned values."
+        }
+      ],
+      "answer": "A and D",
+      "explanation": "A supports generalization. D describes useful API documentation. B ignores the need to understand behavior. C confuses defining with calling.",
+      "lines": 0
+    },
+    {
+      "id": "Q6",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Immediate return",
+      "prompt": "Inside a procedure, RETURN(6) is executed before DISPLAY(99). What happens?",
+      "options": [
+        {
+          "label": "A",
+          "text": "99 is displayed before returning 6."
+        },
+        {
+          "label": "B",
+          "text": "6 is returned and that later DISPLAY is skipped."
+        },
+        {
+          "label": "C",
+          "text": "The procedure returns 99."
+        },
+        {
+          "label": "D",
+          "text": "Every remaining caller statement is skipped."
+        }
+      ],
+      "answer": "B",
+      "explanation": "B reflects immediate return from the current call. A and C execute unreachable code. D incorrectly ends the entire caller, which can continue.",
+      "lines": 0
+    },
+    {
+      "id": "Q7",
+      "type": "written",
+      "marks": 4,
+      "topic": "Trace two supplied helpers",
+      "prompt": "toHours(m) returns m/60; reachedGoal(m,g) returns m ≥ g. Give (a) toHours(45), (b) toHours(120), (c) reachedGoal(30, 30), and (d) reachedGoal(30, 45).",
+      "answer": "(a) 0.75; (b) 2; (c) true; (d) false.",
+      "explanation": "(a) 0.75; (b) 2; (c) true; (d) false.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "0.75 hours."
+        },
+        {
+          "marks": 1,
+          "criterion": "2 hours."
+        },
+        {
+          "marks": 1,
+          "criterion": "true at the boundary."
+        },
+        {
+          "marks": 1,
+          "criterion": "false below the goal."
+        }
+      ],
+      "lines": 7,
+      "minLines": 7
+    },
+    {
+      "id": "Q8",
+      "type": "written",
+      "marks": 4,
+      "topic": "Develop a returning procedure",
+      "prompt": "Write a procedure toHours(minutes) that returns minutes/60. Then write one call that assigns its result for 90 minutes to hours. Do not print inside the procedure.",
+      "answer": "PROCEDURE toHours(minutes)\n{\n  RETURN(minutes / 60)\n}\nhours ← toHours(90)",
+      "explanation": "PROCEDURE toHours(minutes)\n{\n  RETURN(minutes / 60)\n}\nhours ← toHours(90)",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Correct named procedure definition."
+        },
+        {
+          "marks": 1,
+          "criterion": "minutes is the input parameter used in the calculation."
+        },
+        {
+          "marks": 1,
+          "criterion": "Returns minutes/60 rather than only displaying it."
+        },
+        {
+          "marks": 1,
+          "criterion": "Calls toHours(90) and assigns its result to hours."
+        }
+      ],
+      "lines": 7,
+      "minLines": 7
+    },
+    {
+      "id": "Q9",
+      "type": "written",
+      "marks": 4,
+      "topic": "Generalize a Boolean test",
+      "prompt": "Write reachedGoal(minutes, goal) to return whether minutes ≥ goal. Then assign reachedGoal(20, 30) to met. Use both parameters; do not hard-code a fixed target.",
+      "answer": "PROCEDURE reachedGoal(minutes, goal)\n{\n  RETURN(minutes ≥ goal)\n}\nmet ← reachedGoal(20, 30)",
+      "explanation": "PROCEDURE reachedGoal(minutes, goal)\n{\n  RETURN(minutes ≥ goal)\n}\nmet ← reachedGoal(20, 30)",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Defines both parameters in the named procedure."
+        },
+        {
+          "marks": 1,
+          "criterion": "Compares minutes ≥ goal inclusively using the parameters."
+        },
+        {
+          "marks": 1,
+          "criterion": "Returns the Boolean result."
+        },
+        {
+          "marks": 1,
+          "criterion": "Correct two-argument call assigned to met."
+        }
+      ],
+      "lines": 7,
+      "minLines": 7
+    },
+    {
+      "id": "Q10",
+      "type": "written",
+      "marks": 4,
+      "topic": "Trace an early return",
+      "prompt": "A procedure demo executes RETURN(8) and then contains DISPLAY(99). A caller evaluates result ← demo() + 2. Give (a) the returned value, (b) whether 99 is displayed, (c) why the later statement is skipped, and (d) result.",
+      "answer": "(a) 8. (b) No. (c) RETURN immediately transfers control back to the caller. (d) 10.",
+      "explanation": "(a) 8. (b) No. (c) RETURN immediately transfers control back to the caller. (d) 10.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Returned value 8."
+        },
+        {
+          "marks": 1,
+          "criterion": "99 is not displayed."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains immediate return from the current procedure call."
+        },
+        {
+          "marks": 1,
+          "criterion": "Caller stores 10."
+        }
+      ],
+      "lines": 7,
+      "minLines": 7
+    },
+    {
+      "id": "Q11",
+      "type": "written",
+      "marks": 4,
+      "topic": "Read a supplied library contract",
+      "prompt": "Fictional DurationKit provides seconds(m): m is a nonnegative number of minutes; it returns numeric seconds and produces no display output. State (a) its input unit, (b) returned unit, (c) seconds(2.5), and (d) whether a separate DISPLAY is needed to show that result.",
+      "answer": "(a) Minutes. (b) Seconds. (c) 150. (d) Yes: use DISPLAY(seconds(2.5)) or display a stored returned result.",
+      "explanation": "(a) Minutes. (b) Seconds. (c) 150. (d) Yes: use DISPLAY(seconds(2.5)) or display a stored returned result.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Input unit minutes."
+        },
+        {
+          "marks": 1,
+          "criterion": "Returned unit seconds."
+        },
+        {
+          "marks": 1,
+          "criterion": "Correct conversion 150."
+        },
+        {
+          "marks": 1,
+          "criterion": "A separate caller DISPLAY is required to show the value."
+        }
+      ],
+      "lines": 7,
+      "minLines": 7
+    },
+    {
+      "id": "Q12",
+      "type": "written",
+      "marks": 4,
+      "topic": "Explain procedural abstraction",
+      "prompt": "A program copies the same goal comparison into three features. (a) Name a reusable helper. (b) Propose its two parameters. (c) Explain one maintenance benefit. (d) State the condition under which changing its internals need not change its callers.",
+      "answer": "(a) reachedGoal. (b) minutes and goal. (c) Shared comparison logic can be maintained in one body instead of three copies. (d) Preserve the documented inputs, returned meaning and other promised behavior.",
+      "explanation": "(a) reachedGoal. (b) minutes and goal. (c) Shared comparison logic can be maintained in one body instead of three copies. (d) Preserve the documented inputs, returned meaning and other promised behavior.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Meaningful helper name."
+        },
+        {
+          "marks": 1,
+          "criterion": "Two parameters representing observed minutes and target."
+        },
+        {
+          "marks": 1,
+          "criterion": "Concrete reduction of duplicated logic or one-place maintenance."
+        },
+        {
+          "marks": 1,
+          "criterion": "Requires preserving the caller-visible contract, not arbitrary changes."
+        }
+      ],
+      "lines": 7,
+      "minLines": 7
+    }
+  ]
+}

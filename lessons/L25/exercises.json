@@ -1,0 +1,344 @@
+{
+  "title": "AP CSP — Lesson 25 Homework: Redundancy & Fault Tolerance",
+  "durationMinutes": 45,
+  "totalMarks": 30,
+  "notice": "All questions are original. Q1–Q6 are AP-style practice, not official or past AP questions. Q7–Q12 are classroom written responses, not official exam FRQs. The 30 marks are teacher-assigned. For Q5 select exactly TWO answers; its one mark requires both correct choices and no others. Follow AP pseudocode semantics.",
+  "questions": [
+    {
+      "id": "Q1",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Redundancy",
+      "prompt": "What is redundancy in a system?",
+      "options": [
+        {
+          "label": "A",
+          "text": "A promise that nothing fails"
+        },
+        {
+          "label": "B",
+          "text": "Extra components that can mitigate other failures"
+        },
+        {
+          "label": "C",
+          "text": "The removal of all alternative paths"
+        },
+        {
+          "label": "D",
+          "text": "A larger font on a network map"
+        }
+      ],
+      "answer": "B",
+      "explanation": "B describes useful alternatives. A overclaims; C reduces redundancy; D changes only presentation.",
+      "lines": 0
+    },
+    {
+      "id": "Q2",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Fault tolerance",
+      "prompt": "Which observation demonstrates fault tolerance for S-to-T communication?",
+      "options": [
+        {
+          "label": "A",
+          "text": "No component has ever failed."
+        },
+        {
+          "label": "B",
+          "text": "A diagram has many colors."
+        },
+        {
+          "label": "C",
+          "text": "Communication continues after a specified link fails."
+        },
+        {
+          "label": "D",
+          "text": "The receiver’s software never needs testing."
+        }
+      ],
+      "answer": "C",
+      "explanation": "C ties a failure to a maintained function. A observes no fault; B is cosmetic; D invents immunity for software.",
+      "lines": 0
+    },
+    {
+      "id": "Q3",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Alternative route",
+      "prompt": "S-A-C-T loses A-C. Working edges S-A, A-D, D-T remain. Which path works?",
+      "options": [
+        {
+          "label": "A",
+          "text": "S-A-D-T"
+        },
+        {
+          "label": "B",
+          "text": "S-A-C-T"
+        },
+        {
+          "label": "C",
+          "text": "S-T, even without that edge"
+        },
+        {
+          "label": "D",
+          "text": "S-C-T, even without S-C"
+        }
+      ],
+      "answer": "A",
+      "explanation": "A uses the stated working edges. B uses failed A-C; C and D invent absent links.",
+      "lines": 0
+    },
+    {
+      "id": "Q4",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Disconnection",
+      "prompt": "S has only two incident links, S-A and S-B. Both fail. What follows?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Remote extra links automatically reconnect S."
+        },
+        {
+          "label": "B",
+          "text": "S can jump to T."
+        },
+        {
+          "label": "C",
+          "text": "Only bandwidth changes."
+        },
+        {
+          "label": "D",
+          "text": "S cannot reach any other node."
+        }
+      ],
+      "answer": "D",
+      "explanation": "D follows from no working first link. A and B invent connectivity; C ignores complete isolation.",
+      "lines": 0
+    },
+    {
+      "id": "Q5",
+      "type": "multi",
+      "marks": 1,
+      "topic": "Tradeoffs and shared risk",
+      "prompt": "Which TWO statements are correct?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Redundancy may require more equipment or maintenance."
+        },
+        {
+          "label": "B",
+          "text": "Any two drawn routes fail independently."
+        },
+        {
+          "label": "C",
+          "text": "A path guarantees a functioning application."
+        },
+        {
+          "label": "D",
+          "text": "Multiple routes can share a physical failure risk."
+        }
+      ],
+      "answer": "A and D",
+      "explanation": "A states a resource cost. D recognizes shared infrastructure. B assumes independence from a diagram; C overclaims end-to-end service. Select A and D only.",
+      "lines": 0
+    },
+    {
+      "id": "Q6",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Performance limits",
+      "prompt": "Route X has 3 hops and route Y has 4. What can be concluded about real delay from this alone?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Y is always slower by 1 second."
+        },
+        {
+          "label": "B",
+          "text": "Actual delay is not determined by hop count alone."
+        },
+        {
+          "label": "C",
+          "text": "Both have the same bandwidth."
+        },
+        {
+          "label": "D",
+          "text": "X can never lose packets."
+        }
+      ],
+      "answer": "B",
+      "explanation": "B respects missing link/waiting information. A invents timing units; C invents capacity; D invents delivery reliability.",
+      "lines": 0
+    },
+    {
+      "id": "Q7",
+      "type": "written",
+      "marks": 4,
+      "topic": "Graph redundancy",
+      "prompt": "All edges are undirected: S-A, S-B, A-C, A-D, B-D, C-T, D-T, C-D. (a) Give two different S-to-T paths, including one avoiding A-C. (b) Give each hop count. (c) Explain how those alternatives help if A-C fails.",
+      "answer": "Examples S-A-C-T and S-B-D-T, each 3 hops. The second avoids A-C and remains usable.",
+      "explanation": "Examples S-A-C-T and S-B-D-T, each 3 hops. The second avoids A-C and remains usable.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Gives one valid S-to-T path."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives a different valid path."
+        },
+        {
+          "marks": 1,
+          "criterion": "Correctly counts hops for both."
+        },
+        {
+          "marks": 1,
+          "criterion": "Identifies a stated route avoiding failed A-C."
+        }
+      ],
+      "lines": 7
+    },
+    {
+      "id": "Q8",
+      "type": "written",
+      "marks": 4,
+      "topic": "Unchanged selected path",
+      "prompt": "Use the graph in Q7. Only C-D fails. (a) Give a working route. (b) Count its hops. (c) Does S-A-C-T remain valid? Explain. (d) Does unchanged routing mean the failed edge did not exist?",
+      "answer": "S-A-C-T; 3 hops; it uses none of C-D; no, the failure can affect alternatives without changing this route.",
+      "explanation": "S-A-C-T; 3 hops; it uses none of C-D; no, the failure can affect alternatives without changing this route.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Gives a valid route avoiding C-D."
+        },
+        {
+          "marks": 1,
+          "criterion": "Correctly counts that route’s hops."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains S-A-C-T excludes C-D."
+        },
+        {
+          "marks": 1,
+          "criterion": "Distinguishes an unchanged selected path from absence of a failed component."
+        }
+      ],
+      "lines": 7
+    },
+    {
+      "id": "Q9",
+      "type": "written",
+      "marks": 4,
+      "topic": "Failure sets",
+      "prompt": "Use Q7’s graph. Disable C-T and D-T together. (a) Is S-to-T communication possible? (b) Explain structurally. (c) Give a different two-edge set that also disconnects S and T. (d) Explain why extra edges elsewhere are insufficient.",
+      "answer": "No; T has no working incident links. S-A and S-B is another disconnecting set. A route cannot start/end across a missing local connection.",
+      "explanation": "No; T has no working incident links. S-A and S-B is another disconnecting set. A route cannot start/end across a missing local connection.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "States no S-to-T path."
+        },
+        {
+          "marks": 1,
+          "criterion": "Identifies isolation of T."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives S-A and S-B as a valid alternative set."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains that remote edges cannot repair the isolated endpoint connection."
+        }
+      ],
+      "lines": 7
+    },
+    {
+      "id": "Q10",
+      "type": "written",
+      "marks": 4,
+      "topic": "Longer alternative",
+      "prompt": "Use Q7’s graph. Disable S-B, A-D and C-T. (a) Give the surviving S-to-T route. (b) Count hops. (c) At exactly 1 time unit per hop, give its cost. (d) Why is this not a measured Internet delay?",
+      "answer": "S-A-C-D-T; 4 hops; 4 units; the equal-hop cost is an assumption and real links/queues differ.",
+      "explanation": "S-A-C-D-T; 4 hops; 4 units; the equal-hop cost is an assumption and real links/queues differ.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Gives S-A-C-D-T."
+        },
+        {
+          "marks": 1,
+          "criterion": "Counts four hops."
+        },
+        {
+          "marks": 1,
+          "criterion": "Calculates four stated time units."
+        },
+        {
+          "marks": 1,
+          "criterion": "Identifies the timing assumption or omitted real delay factors."
+        }
+      ],
+      "lines": 7
+    },
+    {
+      "id": "Q11",
+      "type": "written",
+      "marks": 4,
+      "topic": "Shared vulnerability",
+      "prompt": "Two routes use cables in the same tunnel. (a) Identify a shared risk. (b) Explain why two drawn routes do not ensure independent failure. (c) Propose a relevant improvement. (d) Give one associated resource cost.",
+      "answer": "Tunnel damage could affect both. Logical alternatives share physical infrastructure. Use a physically separate route; this can require extra cable, equipment or maintenance.",
+      "explanation": "Tunnel damage could affect both. Logical alternatives share physical infrastructure. Use a physically separate route; this can require extra cable, equipment or maintenance.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Identifies a common tunnel-related failure."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains shared infrastructure connects their failure risk."
+        },
+        {
+          "marks": 1,
+          "criterion": "Proposes physical separation or another relevant independent alternative."
+        },
+        {
+          "marks": 1,
+          "criterion": "Names a plausible resource/maintenance cost."
+        }
+      ],
+      "lines": 7
+    },
+    {
+      "id": "Q12",
+      "type": "written",
+      "marks": 4,
+      "topic": "Evidence and end-to-end limits",
+      "prompt": "A team observes a route after one link failure and says the whole service can never fail. (a) State what their evidence supports. (b) Give a network counterexample using Q7. (c) Give a non-path limitation. (d) Rewrite the claim accurately.",
+      "answer": "It supports reachability for that tested failure. S-A and S-B together disconnect. A failed receiver/application can still prevent service. The tested link failure was tolerated for S-to-T reachability.",
+      "explanation": "It supports reachability for that tested failure. S-A and S-B together disconnect. A failed receiver/application can still prevent service. The tested link failure was tolerated for S-to-T reachability.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Limits evidence to the tested failure and communication function."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives a valid disconnecting failure set."
+        },
+        {
+          "marks": 1,
+          "criterion": "Identifies an endpoint/application or other omitted failure."
+        },
+        {
+          "marks": 1,
+          "criterion": "States a bounded claim rather than immunity."
+        }
+      ],
+      "lines": 7
+    }
+  ]
+}

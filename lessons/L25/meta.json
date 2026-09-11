@@ -1,0 +1,13 @@
+{
+  "chapter": 5,
+  "id": "L25",
+  "number": "25",
+  "title": "Redundancy & Fault Tolerance",
+  "chineseTitle": "冗余与容错",
+  "shortTitle": "Fault Tolerance",
+  "filename": "AP_CSP_L25_Fault_Tolerance.html",
+  "minutes": 90,
+  "preview": "lessons/L25/preview.svg",
+  "topicSummary": "Network redundancy and fault tolerance; alternative paths under edge failures; isolation and shared vulnerabilities; resource/performance tradeoffs and end-to-end limits; controlled resilience investigation.",
+  "homeworkInstructions": "Q5 requires exactly TWO choices. Show paths, calculations and reasons. Treat all networks and timings as the stated classroom models."
+}

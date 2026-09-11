@@ -1,0 +1,23 @@
+<div class="tagline">Teacher Guide</div><h1>Lesson 18 · Traversing Lists</h1><p class="sub">遍历列表 · 23 slides · 90 minutes · 25-minute Session Filter &amp; Total</p><p><a href="Chapter_4_Algorithms_Lab.html#traversal" target="_blank" rel="noopener">Traversal lab</a> · <a href="index.html">课程目录</a></p>
+<h3>目标与边界</h3><p>前置L17列表和第三章循环、条件。学生要能按照列表顺序解释FOR EACH的每次赋值，维护一个总和，建立新筛选列表，并对重复、阈值与空列表写出预期。筛选代码必须保持源列表不变；不教遍历时删除、并行遍历、嵌套列表或列表别名。</p>
+<h3>官方对齐</h3><table><tr><th>条目</th><th>本课覆盖</th></tr><tr><td>AAP-2.O.1–3，Topic3.10，PDF89/印刷82</td><td>完整遍历、迭代与FOR EACH按序赋当前元素值；提及部分遍历概念但不实现提前退出搜索。</td></tr><tr><td>AAP-2.O.4</td><td>用求和等已有遍历思路构建筛选/汇总；不宣称已完整教最大值、最小值、平均值。</td></tr><tr><td>AAP-2.N.1，AAP-1.D</td><td>APPEND/LENGTH与集合抽象用于构建结果；同一个遍历支持变化长度。</td></tr><tr><td>AAP-2.H；CRD-2.E/I/J</td><td>复习IF在循环内筛选，测试阈值/空列表、诊断初始化错误与修订。</td></tr></table><p>线性搜索AAP-2.O.5在后续专题讲；本课不把“遍历完所有元素”与“找到目标后停止”混为一谈。当前官方参考表说明FOR EACH把元素值逐一赋给item。语言对遍历时修改源列表可能有特殊规则，本课的明确设计约束是保持源不变，向独立新列表APPEND。</p>
+<h3>90分钟安排</h3><p>0–8（1–3页）复习与目标；8–16（4–5页）访问顺序与值/索引；16–28（6–8页）初始化、累加过程、计数与总和；28–36（9–10页）筛选及重复；36–44（11–13页）空列表、源不变及长度变化。44–49准备实验室；49–54规划、54–63编写、63–69测试、69–74修订，共25分钟动手。74–85诊断与选择题；85–90作业和出口。</p>
+<h3>项目要求与参考</h3><p>在代码中设置sessions和goal，不依赖INPUT读取数组。对全部活动计算总分钟，对满足minutes ≥ goal的活动依次添加至selected。最后显示源列表、total、selected与LENGTH(selected)。记录每个访问后的状态；源列表值、顺序和长度都保持原样。</p><details><summary>教师参考程序</summary><pre class="code">sessions ← [20, 30, 45, 10]
+goal ← 30
+total ← 0
+selected ← []
+FOR EACH minutes IN sessions
+{
+  total ← total + minutes
+  IF (minutes ≥ goal)
+  {
+    APPEND(selected, minutes)
+  }
+}
+DISPLAY(sessions)
+DISPLAY(total)
+DISPLAY(selected)
+DISPLAY(LENGTH(selected))</pre></details>
+<table><tr><th>输入 / goal=30</th><th>最终total</th><th>selected</th><th>数量</th></tr><tr><td>[20,30,45,10]</td><td>105</td><td>[30,45]</td><td>2</td></tr><tr><td>[30,30,0]</td><td>60</td><td>[30,30]</td><td>2</td></tr><tr><td>[]</td><td>0</td><td>[]</td><td>0</td></tr></table><p>主测试total检查点为20、50、95、105；selected为[]、[30]、[30,45]、[30,45]。第二组检验每次出现都算，第三组检验零次访问及初始化是否在循环外。先纸上预期，再执行；每例从头初始化。若total最终75，往往说明它被误放到IF内，只求了匹配项的和。</p><p>建议8教师分：初始化总和1、初始化结果列表1、访问和求和1、包含边界筛选1、保留源列表与重复顺序1、三个预期/实际测试1、有标签最终输出1、反馈修订和复测1。课堂量表不等同正式Create评分。</p>
+<h3>误区与支持</h3><ul><li>把item当索引：用[40,70,20]读值；不要写sessions[item]。</li><li>每轮重设total：用纸上已处理前缀说明丢掉了什么。</li><li>总次数等于值：在[8,8,8]中区分3元素与数值8。</li><li>去重当筛选：每个30对应一次活动，符合条件便各自保留。</li><li>空列表必须读首项：FOR EACH自动零次访问，无需读a[1]。</li><li>默认平均数可直接相除：若延伸平均值，必须另检查长度&gt;0；本课基础作业不要求。</li></ul><p>支架是minutes/total/selected三列表；先追踪三个元素再写程序。延伸可修改goal并预测新的selected，或把“每个匹配值+1”与LENGTH(selected)作比较，说明何时相同。不要加入尚未教的过程定义或复杂数据结构。</p>
+<h3>作业与出口</h3><p>12题/30教师分，Q5恰选2；代码题保留8或10行，括号单独成行。每题4评分点独立计，接受等价正确结构但不能改变源列表。出口2次、循环前、[]。达到后进入L19过程抽象；本节把计算过程练熟，为L22封装计数过程作准备。</p><h3>Sources</h3><p>核查日期：2026-09-11。题目、图解与活动原创；当前官方参考表封面标记2026，不称其为2027版。</p><ul class="sources"><li><a href="https://apcentral.collegeboard.org/courses/ap-computer-science-principles" target="_blank" rel="noopener">College Board · AP CSP course</a></li><li><a href="https://apcentral.collegeboard.org/media/pdf/ap-computer-science-principles-course-and-exam-description.pdf" target="_blank" rel="noopener">Official CED · Effective Fall 2023</a> · <a href="resources/AP_CSP_Course_and_Exam_Description.pdf#page=89" target="_blank">Local relevant pages</a></li><li><a href="https://apcentral.collegeboard.org/media/pdf/ap-computer-science-principles-exam-reference-sheet.pdf" target="_blank" rel="noopener">Official reference sheet · 2026 cover</a></li></ul>

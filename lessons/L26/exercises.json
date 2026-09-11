@@ -1,0 +1,344 @@
+{
+  "title": "AP CSP — Lesson 26 Homework: Parallel & Distributed Computing",
+  "durationMinutes": 45,
+  "totalMarks": 30,
+  "notice": "All questions are original. Q1–Q6 are AP-style practice, not official or past AP questions. Q7–Q12 are classroom written responses, not official exam FRQs. The 30 marks are teacher-assigned. For Q5 select exactly TWO answers; its one mark requires both correct choices and no others. Follow AP pseudocode semantics.",
+  "questions": [
+    {
+      "id": "Q1",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Computing models",
+      "prompt": "Which describes sequential computing?",
+      "options": [
+        {
+          "label": "A",
+          "text": "All operations occur at once."
+        },
+        {
+          "label": "B",
+          "text": "Multiple devices are required."
+        },
+        {
+          "label": "C",
+          "text": "Operations occur one at a time in order."
+        },
+        {
+          "label": "D",
+          "text": "Communication has no cost."
+        }
+      ],
+      "answer": "C",
+      "explanation": "C defines sequential execution. A describes overlap; B is not required; D is an unrelated false guarantee.",
+      "lines": 0
+    },
+    {
+      "id": "Q2",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Parallel versus distributed",
+      "prompt": "Which statement correctly relates parallel and distributed computing?",
+      "options": [
+        {
+          "label": "A",
+          "text": "They can occur together in one solution."
+        },
+        {
+          "label": "B",
+          "text": "They are always mutually exclusive."
+        },
+        {
+          "label": "C",
+          "text": "Parallel work always requires multiple devices."
+        },
+        {
+          "label": "D",
+          "text": "Distributed work has no sequential portion."
+        }
+      ],
+      "answer": "A",
+      "explanation": "A distinguishes overlap from device distribution. B wrongly excludes overlap; C ignores parallelism within one device; D ignores dependencies and serial work.",
+      "lines": 0
+    },
+    {
+      "id": "Q3",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Bounded scheduling",
+      "prompt": "Setup costs 2. Jobs [6,4,3,3] use two processors, list-order assignment to earliest free processor, lower index on ties. No overhead. Runtime?",
+      "options": [
+        {
+          "label": "A",
+          "text": "8"
+        },
+        {
+          "label": "B",
+          "text": "9"
+        },
+        {
+          "label": "C",
+          "text": "10"
+        },
+        {
+          "label": "D",
+          "text": "11"
+        }
+      ],
+      "answer": "D",
+      "explanation": "D: P1 handles 6+3 and P2 4+3, so 2+9=11. A assumes all jobs start together; B halves total runtime; C assumes perfectly balanced workloads.",
+      "lines": 0
+    },
+    {
+      "id": "Q4",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Speedup",
+      "prompt": "Sequential runtime is 18; parallel runtime is 8. What is speedup?",
+      "options": [
+        {
+          "label": "A",
+          "text": "0.44"
+        },
+        {
+          "label": "B",
+          "text": "2.25"
+        },
+        {
+          "label": "C",
+          "text": "10"
+        },
+        {
+          "label": "D",
+          "text": "26"
+        }
+      ],
+      "answer": "B",
+      "explanation": "B is 18/8. A reverses the ratio; C subtracts; D adds runtimes. Speedup has no time unit.",
+      "lines": 0
+    },
+    {
+      "id": "Q5",
+      "type": "multi",
+      "marks": 1,
+      "topic": "Limits",
+      "prompt": "Which TWO statements are correct?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Required serial work limits speedup."
+        },
+        {
+          "label": "B",
+          "text": "More processors always halve time."
+        },
+        {
+          "label": "C",
+          "text": "More processors replace missing input data."
+        },
+        {
+          "label": "D",
+          "text": "Coordination overhead can reduce a parallel advantage."
+        }
+      ],
+      "answer": "A and D",
+      "explanation": "A states the serial limit. D includes additional work. B ignores dependencies/load balance; C confuses computing capacity with data availability. Select A and D only.",
+      "lines": 0
+    },
+    {
+      "id": "Q6",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Overhead",
+      "prompt": "Separate model: setup 2, two independent 1-unit jobs. Sequential total 4. With two processors and 2 extra overhead units, what is parallel total?",
+      "options": [
+        {
+          "label": "A",
+          "text": "2"
+        },
+        {
+          "label": "B",
+          "text": "3"
+        },
+        {
+          "label": "C",
+          "text": "5"
+        },
+        {
+          "label": "D",
+          "text": "8"
+        }
+      ],
+      "answer": "C",
+      "explanation": "C: 2+1+2=5. A counts setup only; B omits overhead; D incorrectly duplicates work.",
+      "lines": 0
+    },
+    {
+      "id": "Q7",
+      "type": "written",
+      "marks": 4,
+      "topic": "Sequential baseline and dependency",
+      "prompt": "The fixed model has setup 2 and jobs A=6, B=4, C=3, D=3. (a) Sum the job work. (b) Give one-processor runtime. (c) Explain why setup cannot overlap jobs. (d) State a condition needed to overlap the jobs.",
+      "answer": "Job sum 16; runtime 18; jobs depend on setup; the jobs must be independent with processors available.",
+      "explanation": "Job sum 16; runtime 18; jobs depend on setup; the jobs must be independent with processors available.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Calculates job work 16."
+        },
+        {
+          "marks": 1,
+          "criterion": "Calculates sequential runtime 18."
+        },
+        {
+          "marks": 1,
+          "criterion": "States the setup dependency."
+        },
+        {
+          "marks": 1,
+          "criterion": "Identifies job independence and/or available processing capacity for overlap."
+        }
+      ],
+      "lines": 7
+    },
+    {
+      "id": "Q8",
+      "type": "written",
+      "marks": 4,
+      "topic": "Two-processor schedule",
+      "prompt": "Use Q7’s model with 2 processors. Assign jobs in order to the earliest free processor, lower index on ties. (a) Which processor receives C and when does C start? (b) Which receives D and when? (c) When does P1 finish? (d) Give total runtime. Times start at program start, including setup.",
+      "answer": "C goes to P2 at time 6. D goes to P1 at time 8. P1 ends at 11. Total 11.",
+      "explanation": "C goes to P2 at time 6. D goes to P1 at time 8. P1 ends at 11. Total 11.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Gives C to P2 starting at 6."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives D to P1 starting at 8."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives P1 finish time 11."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives total runtime 11 as the latest completion."
+        }
+      ],
+      "lines": 7
+    },
+    {
+      "id": "Q9",
+      "type": "written",
+      "marks": 4,
+      "topic": "Four processors and overhead",
+      "prompt": "Use Q7’s model with 4 processors. (a) Give zero-overhead runtime. (b) Calculate speedup from 18. (c) Add 6 overhead units after jobs: give runtime. (d) Why can extra processors beyond 4 not reduce the zero-overhead time here?",
+      "answer": "8; 18/8=2.25; 14; four indivisible jobs already start together and the 6-unit job plus setup 2 remains.",
+      "explanation": "8; 18/8=2.25; 14; four indivisible jobs already start together and the 6-unit job plus setup 2 remains.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Gives runtime 8."
+        },
+        {
+          "marks": 1,
+          "criterion": "Calculates speedup 2.25."
+        },
+        {
+          "marks": 1,
+          "criterion": "Calculates overhead runtime 14."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains the indivisible longest job/setup limit."
+        }
+      ],
+      "lines": 7
+    },
+    {
+      "id": "Q10",
+      "type": "written",
+      "marks": 4,
+      "topic": "Serial speedup bound",
+      "prompt": "A task has sequential runtime 18 and 2 unavoidable serial units. (a) State a lower bound on parallel runtime. (b) Give the corresponding upper bound on speedup. (c) Does the bound guarantee it is achievable? Explain. (d) Name a further limit.",
+      "answer": "At least 2; at most 9; no, remaining work/coordination may still take time; indivisible tasks, limited processors, dependencies or overhead can limit more.",
+      "explanation": "At least 2; at most 9; no, remaining work/coordination may still take time; indivisible tasks, limited processors, dependencies or overhead can limit more.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Gives runtime lower bound 2."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives speedup upper bound 18/2=9."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains that a bound does not promise attainment."
+        },
+        {
+          "marks": 1,
+          "criterion": "Names a relevant further limitation."
+        }
+      ],
+      "lines": 7
+    },
+    {
+      "id": "Q11",
+      "type": "written",
+      "marks": 4,
+      "topic": "Chapter integration",
+      "prompt": "A distributed job needs all four packet chunks before processing. Only IDs 1,2,4 arrive. (a) Explain why input is incomplete. (b) Give a recovery action. (c) Explain why extra processors do not fix this. (d) State what makes the computing distributed.",
+      "answer": "ID3 is missing; retry/request it and verify receipt; processors cannot infer guaranteed missing data; multiple devices run the program.",
+      "explanation": "ID3 is missing; retry/request it and verify receipt; processors cannot infer guaranteed missing data; multiple devices run the program.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Identifies the absent required ID3."
+        },
+        {
+          "marks": 1,
+          "criterion": "Describes recovery with receipt verification."
+        },
+        {
+          "marks": 1,
+          "criterion": "Distinguishes missing input from processing capacity."
+        },
+        {
+          "marks": 1,
+          "criterion": "Defines distribution across multiple devices."
+        }
+      ],
+      "lines": 7
+    },
+    {
+      "id": "Q12",
+      "type": "written",
+      "marks": 4,
+      "topic": "Chapter 5 evaluation",
+      "prompt": "A design has an alternate network path and uses four processors. (a) State a fault it may tolerate. (b) State a network limit. (c) State a computing performance limit. (d) Explain why “always reliable and four times faster” is unjustified.",
+      "answer": "It may tolerate a failed link when another working path remains. Endpoint isolation or packet loss may persist. Serial work, imbalance or overhead limits speedup. Specific failure and timing evidence is needed instead of universal guarantees.",
+      "explanation": "It may tolerate a failed link when another working path remains. Endpoint isolation or packet loss may persist. Serial work, imbalance or overhead limits speedup. Specific failure and timing evidence is needed instead of universal guarantees.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Links an alternative path to a specified tolerated link failure."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives a valid residual network/end-to-end limit."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives a valid dependency/serial/overhead performance limit."
+        },
+        {
+          "marks": 1,
+          "criterion": "Rejects both universal claims using their missing conditions/evidence."
+        }
+      ],
+      "lines": 7
+    }
+  ]
+}

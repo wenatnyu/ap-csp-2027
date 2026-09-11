@@ -1,0 +1,12 @@
+{
+  "chapter": 4,
+  "id": "L21",
+  "number": "21",
+  "title": "Robot Algorithms & Problem Solving",
+  "shortTitle": "Robot Algorithms",
+  "chineseTitle": "机器人算法与问题求解",
+  "filename": "AP_CSP_L21_Robot_Algorithms.html",
+  "minutes": 90,
+  "topicSummary": "Robot orientation, relative sensors, grid paths, movement errors, sequencing, selection, iteration and equivalent-route costs.",
+  "homeworkInstructions": "Complete all 12 original questions (30 marks, about 40 minutes). Q5 requires exactly TWO choices. Trace statements in their execution order. Each program statement and each brace occupies its own line. Show reasoning and use the stated valid input range."
+}

@@ -1,0 +1,345 @@
+{
+  "title": "AP CSP — Lesson 22 Homework: Efficiency, Limits & Chapter Project",
+  "durationMinutes": 40,
+  "totalMarks": 30,
+  "notice": "All questions are original. Q1–Q6 are AP-style practice, not official or past AP questions; Q7–Q12 are classroom written practice, not official FRQs. These 30 marks are teacher-assigned, not AP exam scoring. Select exactly TWO answers in Q5; its one mark requires both correct choices and no others. All inputs are valid unless stated. DISPLAY outputs values in execution order. Show reasoning; braces and indentation identify each block.",
+  "questions": [
+    {
+      "id": "Q1",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "List indexing and traversal retrieval",
+      "prompt": "For sessions ← [20,30,45,10], what is sessions[3]?",
+      "options": [
+        {
+          "label": "A",
+          "text": "20"
+        },
+        {
+          "label": "B",
+          "text": "30"
+        },
+        {
+          "label": "C",
+          "text": "45"
+        },
+        {
+          "label": "D",
+          "text": "10"
+        }
+      ],
+      "answer": "C",
+      "explanation": "C follows one-based indexing. A is the first value. B is the second. D is the fourth and could reflect zero-based indexing.",
+      "lines": 0
+    },
+    {
+      "id": "Q2",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Reasonable growth",
+      "prompt": "Which growth pattern is classified as unreasonable time in AP CSP?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Constant"
+        },
+        {
+          "label": "B",
+          "text": "n"
+        },
+        {
+          "label": "C",
+          "text": "n²"
+        },
+        {
+          "label": "D",
+          "text": "2ⁿ"
+        }
+      ],
+      "answer": "D",
+      "explanation": "D is exponential growth. Constant, linear and square/polynomial growth are in the reasonable-time category. This classification concerns growth, not a guarantee of an instant run.",
+      "lines": 0
+    },
+    {
+      "id": "Q3",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Heuristic guarantee",
+      "prompt": "Why might a heuristic be chosen for a time-limited optimization task?",
+      "options": [
+        {
+          "label": "A",
+          "text": "It always proves the optimum."
+        },
+        {
+          "label": "B",
+          "text": "It may provide a useful result when guaranteed optimization is impractical."
+        },
+        {
+          "label": "C",
+          "text": "It turns every undecidable problem into a decidable one."
+        },
+        {
+          "label": "D",
+          "text": "It guarantees zero computation."
+        }
+      ],
+      "answer": "B",
+      "explanation": "B states the practical trade-off. A removes the lack of optimality guarantee. C confuses optimization with decidability and overclaims. D invents a resource guarantee.",
+      "lines": 0
+    },
+    {
+      "id": "Q4",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Undecidable meaning",
+      "prompt": "Which statement best describes an undecidable decision problem?",
+      "options": [
+        {
+          "label": "A",
+          "text": "No algorithm can always terminate with the correct yes/no answer for every input instance."
+        },
+        {
+          "label": "B",
+          "text": "Its currently available computer is too slow."
+        },
+        {
+          "label": "C",
+          "text": "Nobody has typed its program yet."
+        },
+        {
+          "label": "D",
+          "text": "Every single instance is impossible to solve."
+        }
+      ],
+      "answer": "A",
+      "explanation": "A states the universal limitation. B and C concern resources or missing implementation. D is too strong: some individual instances can be solved.",
+      "lines": 0
+    },
+    {
+      "id": "Q5",
+      "type": "multi",
+      "marks": 1,
+      "topic": "Chapter-wide claims",
+      "prompt": "Which TWO statements are correct? Select exactly TWO.",
+      "options": [
+        {
+          "label": "A",
+          "text": "Binary search requires sorted data for its elimination rule."
+        },
+        {
+          "label": "B",
+          "text": "CAN_MOVE(left) moves the robot left."
+        },
+        {
+          "label": "C",
+          "text": "A procedure with parameters can reuse steps for different argument values."
+        },
+        {
+          "label": "D",
+          "text": "RETURN always displays its value directly to the user."
+        }
+      ],
+      "answer": "A and C",
+      "explanation": "A is the binary-search prerequisite. C is parameterized reuse. B confuses sensing with movement. D confuses returning with displaying. Award one mark only for A and C together.",
+      "lines": 0
+    },
+    {
+      "id": "Q6",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Count goals",
+      "prompt": "countGoals counts list elements at least as large as goal. What does countGoals([20,30,45,10],30) return?",
+      "options": [
+        {
+          "label": "A",
+          "text": "1"
+        },
+        {
+          "label": "B",
+          "text": "2"
+        },
+        {
+          "label": "C",
+          "text": "4"
+        },
+        {
+          "label": "D",
+          "text": "75"
+        }
+      ],
+      "answer": "B",
+      "explanation": "B counts 30 and 45. A excludes equality. C counts every item regardless of condition. D sums qualifying minutes instead of counting qualifying sessions.",
+      "lines": 0
+    },
+    {
+      "id": "Q7",
+      "type": "written",
+      "marks": 4,
+      "topic": "List and traversal retrieval",
+      "prompt": "Let values ← [10,20,30]. Then APPEND(values,40) executes. State values[1], LENGTH(values), the sequence of values visited by FOR EACH item IN values, and how many times its body executes.",
+      "answer": "values[1]=10; LENGTH=4; visited values 10,20,30,40 in that order; four body executions.",
+      "explanation": "APPEND adds one value to the end. FOR EACH visits the resulting list sequentially.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Gives values[1] as 10."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives length 4."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives traversal order 10,20,30,40."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives four body executions."
+        }
+      ],
+      "lines": 8
+    },
+    {
+      "id": "Q8",
+      "type": "written",
+      "marks": 4,
+      "topic": "Searching and robot behavior",
+      "prompt": "(a) State the prerequisite for binary search.\n(b) For [3,8,12,19,27,34,50], give binary search’s checked values for target 34.\n(c) State the effect of ROTATE_LEFT on position.\n(d) State what happens after an attempted blocked MOVE_FORWARD.",
+      "answer": "(a) Sorted data. (b) 19 then 34. (c) Position is unchanged. (d) The robot remains in its current cell and the program terminates.",
+      "explanation": "This mixed question distinguishes valid search elimination, search tracing, in-place rotation and termination on invalid movement.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "States that binary-search data must be sorted."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives inspected values 19 then 34."
+        },
+        {
+          "marks": 1,
+          "criterion": "States that a left rotation does not change the cell."
+        },
+        {
+          "marks": 1,
+          "criterion": "States both remaining in place and program termination after an invalid forward move."
+        }
+      ],
+      "lines": 8
+    },
+    {
+      "id": "Q9",
+      "type": "written",
+      "marks": 4,
+      "topic": "Compare growth and heuristics",
+      "prompt": "An algorithm performs n² core operations; another performs 2ⁿ. For n=8, give both counts. Classify each as reasonable or unreasonable time in the AP sense. Explain why a heuristic might be considered when exact optimization is impractical.",
+      "answer": "n² gives 64 operations; 2ⁿ gives 256. Polynomial n² is reasonable; exponential 2ⁿ is unreasonable. A heuristic may offer a useful solution sooner without guaranteeing the optimum.",
+      "explanation": "Operation formulas describe illustrative core work. Categories reflect growth, while a heuristic trades an optimality guarantee for practicality.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Gives 64 for n² at n=8."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives 256 for 2ⁿ at n=8."
+        },
+        {
+          "marks": 1,
+          "criterion": "Correctly classifies n² as reasonable and 2ⁿ as unreasonable."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains useful practical results without a guaranteed optimum as a reason to consider a heuristic."
+        }
+      ],
+      "lines": 8
+    },
+    {
+      "id": "Q10",
+      "type": "written",
+      "marks": 4,
+      "topic": "Decidable versus slow",
+      "prompt": "Explain a decidable decision problem, an undecidable decision problem, why a slow exact algorithm does not by itself imply undecidability, and whether some instances of an undecidable problem can be solved.",
+      "answer": "Decidable: some algorithm terminates with the correct yes/no result for every input. Undecidable: no such universal algorithm exists. A slow exact algorithm can still correctly decide every input eventually. Some instances of an undecidable problem can be solved even though no algorithm solves them all.",
+      "explanation": "The distinction is existence of a universal correct decision algorithm, not a specific computer’s speed.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Defines decidability using a correct terminating answer for every input."
+        },
+        {
+          "marks": 1,
+          "criterion": "Defines undecidability as no algorithm with that universal guarantee."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains that high runtime alone does not remove decidability."
+        },
+        {
+          "marks": 1,
+          "criterion": "States that some instances may be solvable without an algorithm for all instances."
+        }
+      ],
+      "lines": 8
+    },
+    {
+      "id": "Q11",
+      "type": "written",
+      "marks": 4,
+      "topic": "Write a reusable count procedure",
+      "prompt": "Write PROCEDURE countGoals(sessions,goal). Initialize hits to 0, traverse sessions, add 1 for each value at least goal, and RETURN the final count after the traversal. Use AP pseudocode, with each brace on its own line.",
+      "answer": "PROCEDURE countGoals(sessions, goal)\n{\n  hits ← 0\n  FOR EACH minutes IN sessions\n  {\n    IF(minutes >= goal)\n    {\n      hits ← hits + 1\n    }\n  }\n  RETURN(hits)\n}",
+      "explanation": "Initializing inside the traversal would erase earlier hits. Returning inside it would stop after too few elements. goal must be a parameter, not a hard-coded 30.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Defines countGoals with sessions and goal parameters and initializes hits to 0 before the traversal."
+        },
+        {
+          "marks": 1,
+          "criterion": "Uses FOR EACH to traverse sessions."
+        },
+        {
+          "marks": 1,
+          "criterion": "Tests the current value >= goal and adds 1 to hits only when true."
+        },
+        {
+          "marks": 1,
+          "criterion": "Returns hits after the complete traversal, with correct block structure."
+        }
+      ],
+      "lines": 14,
+      "minLines": 14
+    },
+    {
+      "id": "Q12",
+      "type": "written",
+      "marks": 4,
+      "topic": "Project tests and abstraction",
+      "prompt": "For countGoals and the app that displays \"On track\" when the returned count is at least 2, otherwise \"Try again\":\n(a) Give count and feedback for [29,30,31] with goal 30.\n(b) Give count and feedback for [0,0] with goal 30.\n(c) Explain how the sessions list manages complexity.\n(d) Explain how the goal parameter supports reuse.",
+      "answer": "(a) 2, On track. (b) 0, Try again. (c) One list and traversal handle the collection without separate variables and repeated statements for each session. (d) The caller can change the threshold while reusing the same procedure logic.",
+      "explanation": "The list organizes multiple session values; the procedure abstracts the steps and uses the supplied threshold. Feedback is based on a count, not a proportion.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Gives both count 2 and On track for the boundary test."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives both count 0 and Try again for the zero-hit test."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains avoiding separate per-session variables or duplicated processing through a list and traversal."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains reuse of unchanged procedure steps with different goal arguments."
+        }
+      ],
+      "lines": 8
+    }
+  ]
+}

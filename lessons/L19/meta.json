@@ -1,0 +1,13 @@
+{
+  "chapter": 4,
+  "id": "L19",
+  "number": "19",
+  "title": "Procedures, Parameters & Libraries",
+  "shortTitle": "Procedures & Libraries",
+  "chineseTitle": "过程参数与程序库",
+  "filename": "AP_CSP_L19_Procedures_and_Libraries.html",
+  "minutes": 90,
+  "preview": "lessons/L19/preview.svg",
+  "topicSummary": "Procedure definitions and calls, parameters, RETURN versus DISPLAY, reusable logic and documented libraries.",
+  "homeworkInstructions": "Q5: select exactly TWO. Procedure definitions and library contracts are supplied in the question. RETURN sends a value to the caller; DISPLAY produces output. Put braces on separate lines."
+}

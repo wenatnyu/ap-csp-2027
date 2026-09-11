@@ -1,0 +1,12 @@
+{
+  "chapter": 4,
+  "id": "L20",
+  "number": "20",
+  "title": "Searching & Comparing Algorithms",
+  "shortTitle": "Searching Algorithms",
+  "chineseTitle": "搜索与算法比较",
+  "filename": "AP_CSP_L20_Searching_Algorithms.html",
+  "minutes": 90,
+  "topicSummary": "Linear and binary search, sorted prerequisites, found/not-found traces, interval halving and fair comparisons of element checks.",
+  "homeworkInstructions": "Complete all 12 original questions (30 marks, about 40 minutes). Q5 requires exactly TWO choices. Trace statements in their execution order. Each program statement and each brace occupies its own line. Show reasoning and use the stated valid input range."
+}

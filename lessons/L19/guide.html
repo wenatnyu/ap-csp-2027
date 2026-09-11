@@ -1,0 +1,23 @@
+<div class="tagline">Teacher Guide</div><h1>Lesson 19 · Procedures, Parameters &amp; Libraries</h1><p class="sub">过程、参数与库 · 23 slides · 90 minutes · 25-minute Session Helpers</p><p><a href="Chapter_4_Algorithms_Lab.html#procedures" target="_blank" rel="noopener">Procedures lab</a> · <a href="index.html">课程目录</a></p>
+<h3>本课目标与边界</h3><p>学生已有表达式、Boolean、IF和遍历。今天用简单转换和目标判定练习定义、调用、参数绑定和返回值，解释命名过程如何支持复用与维护，并通过虚构文档卡选择合适库行为。列表遍历会在L22放入学生开发的过程，本课先把调用机制教清楚。无递归、全局变量依赖、列表别名或通过参数修改列表的例子。</p>
+<h3>精确官方范围</h3><table><tr><th>条目与页码</th><th>本课证据</th></tr><tr><td>AAP-3.A.1–8，Topic3.12，PDF91–93/印刷84–86</td><td>命名指令组、参数与实参、调用控制流、DISPLAY与RETURN、返回结果赋值。A.9 INPUT只复习，不在项目中新增输入功能。</td></tr><tr><td>AAP-3.B.1–7，Topic3.13，PDF94–95/印刷87–88</td><td>命名过程隐藏实现细节、拆分子问题、减少重复、参数通用化、可读性及保持契约的维护。</td></tr><tr><td>AAP-3.C.1–2，PDF95–96/印刷88–89</td><td>学生定义两个有参数和返回值的过程；RETURN立即返回当前调用。</td></tr><tr><td>AAP-3.D.1–5，Topic3.14，PDF97/印刷90</td><td>库可以提供复用过程，内部/外部来源，API描述可用行为，文档支持选择与调用。</td></tr><tr><td>CRD-2.E/J；CRD-2.H</td><td>契约、实现、预期测试、修订；若复用教师或同伴片段记录来源。</td></tr></table><p>toHours、reachedGoal均是本课学生定义的过程，不是官方固定内建项。DurationKit/ScreenKit是原创文档练习的虚构库，不表示已安装，不调用其点号名称。实际实验室代码只使用自己明确写出的过程。当前官方表封面是2026，课堂不得宣称未发布的2027参考表。</p>
+<h3>90分钟节奏</h3><p>0–8（1–3页）提取与目标；8–20（4–6页）命名、定义/调用、参数实参绑定；20–32（7–9页）返回值、输出差异及立即返回；32–44（10–13页）参数化、契约、库选择和维护。44–49实验室说明；49–54契约规划、54–63实现、63–69测试、69–74修订，共25分钟项目。74–85错误诊断和选择；85–90作业与出口。</p>
+<h3>Session Helpers项目</h3><p>两个契约：toHours(minutes)接受0至180的数值分钟并返回十进制小时；reachedGoal(minutes,goal)接受0至180的两个数值分钟并返回minutes ≥ goal的Boolean值。两个过程内部不DISPLAY，由调用者选择存储和输出；所有需要的数据通过参数显式传入。测试用整数分钟，但返回小时可以是小数。</p><details><summary>教师参考程序</summary><pre class="code">PROCEDURE toHours(minutes)
+{
+  RETURN(minutes / 60)
+}
+PROCEDURE reachedGoal(minutes, goal)
+{
+  RETURN(minutes ≥ goal)
+}
+minutes ← 45
+goal ← 30
+hours ← toHours(minutes)
+met ← reachedGoal(minutes, goal)
+DISPLAY("Hours:")
+DISPLAY(hours)
+DISPLAY("Goal met:")
+DISPLAY(met)</pre></details><table><tr><th>minutes / goal</th><th>hours</th><th>met</th><th>理由</th></tr><tr><td>45 / 30</td><td>0.75</td><td>true</td><td>普通超过目标与小数换算。</td></tr><tr><td>30 / 30</td><td>0.5</td><td>true</td><td>边界相等，检验≥。</td></tr><tr><td>0 / 30</td><td>0</td><td>false</td><td>零分钟输入。</td></tr><tr><td>60 / 90</td><td>1</td><td>false</td><td>变化goal，揭露硬编码30。</td></tr></table><p>每人提交代码、两个输入/输出契约、四组预期和实际值、一条反馈或修订说明。建议8教师分：toHours参数与返回1、正确除法1、reachedGoal双参数1、正确包含边界1、调用及结果存储1、调用者输出与类型1、四个有解释的测试1、修订复测和文档1。非官方Create量表。</p>
+<h3>参数、控制流与抽象解释</h3><p>定义中的minutes、goal是形参名称；调用reachedGoal(45,30)中的45、30是实参值，按位置绑定。实参可以由表达式或调用者变量先求值获得。本实验室过程变量为局部，需要的数据显式传参；避免以调用者恰好有同名变量解释参数得到值。RETURN把一个值和控制流带回调用点，调用者继续；DISPLAY向输出发送值，不等于把值返回给调用者。</p><p>早返回示例中的RETURN(8)后面DISPLAY(99)不执行，但调用者result←example()+2仍能得到10。没有RETURN的过程可以只执行输出动作；不要擅自给它规定某编程语言的隐含数值返回值。库的文档可以说明参数、顺序、单位、返回类型、前提和输出影响。调用者不必看实现细节，但仍需判断文档是否满足需求并测试。</p><p>有效抽象解释应是“同一个目标比较逻辑集中在一个过程，三个功能调用它；以后保持相同契约的内部改进只需改一处”，不能只说“程序更简单”或“肯定更快”。如果修改承诺的行为、返回类型或参数，调用者可能也必须改变。</p>
+<h3>误区、支持与延伸</h3><ul><li>写下PROCEDURE就执行：用定义卡与调用卡分开，只有遇到调用才进入体。</li><li>实参/形参只是术语：要求画45→minutes和30→goal的绑定线。</li><li>DISPLAY代替RETURN：让调用者把结果再加2，检查是否真的得到数值。</li><li>RETURN结束整个程序：回到调用点继续追踪下一条语句。</li><li>参数存在却仍硬编码目标：用60/90测试捕获。</li><li>有库就无须文档和测试：让学生比较只输出与返回数值两个文档，说明选择理由。</li></ul><p>支持：提供完整契约和空白过程框架，让学生填写返回表达式与调用，不直接给全部成品。延伸可用IF在两个路径返回不同消息，但不要扩展递归。最后L22将由学生把FOR EACH计数放到新过程，今天不代写该完整作品。</p>
+<h3>作业和出口</h3><p>12题/30教师分，Q5恰选2；书面题各4个独立点。两个编程题至少7行，保持花括号单独成行。出口：实参120；RETURN回调用者而DISPLAY产生输出；举出一个具体API细节。若第二项不清晰，不能仅凭会写公式判定掌握调用机制。</p><h3>Sources</h3><p>核查日期：2026-09-11。题目、图解与活动原创；当前官方参考表封面标记2026，不称其为2027版。</p><ul class="sources"><li><a href="https://apcentral.collegeboard.org/courses/ap-computer-science-principles" target="_blank" rel="noopener">College Board · AP CSP course</a></li><li><a href="https://apcentral.collegeboard.org/media/pdf/ap-computer-science-principles-course-and-exam-description.pdf" target="_blank" rel="noopener">Official CED · Effective Fall 2023</a> · <a href="resources/AP_CSP_Course_and_Exam_Description.pdf#page=91" target="_blank">Local relevant pages</a></li><li><a href="https://apcentral.collegeboard.org/media/pdf/ap-computer-science-principles-exam-reference-sheet.pdf" target="_blank" rel="noopener">Official reference sheet · 2026 cover</a></li></ul>

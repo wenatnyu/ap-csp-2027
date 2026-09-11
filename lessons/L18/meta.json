@@ -1,0 +1,13 @@
+{
+  "chapter": 4,
+  "id": "L18",
+  "number": "18",
+  "title": "Traversing Lists",
+  "shortTitle": "Traversing Lists",
+  "chineseTitle": "列表遍历与累加筛选",
+  "filename": "AP_CSP_L18_Traversing_Lists.html",
+  "minutes": 90,
+  "preview": "lessons/L18/preview.svg",
+  "topicSummary": "FOR EACH, accumulators, stable filtering, duplicate occurrences and empty-list tests.",
+  "homeworkInstructions": "Q5: select exactly TWO. FOR EACH visits each element value in order. Keep the source list unchanged; append matches to a new list. Code braces go on separate lines."
+}

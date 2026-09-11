@@ -1,0 +1,12 @@
+{
+  "chapter": 4,
+  "id": "L22",
+  "number": "22",
+  "title": "Efficiency, Limits & Chapter Project",
+  "shortTitle": "Efficiency & Project",
+  "chineseTitle": "效率、计算限制与章节项目",
+  "filename": "AP_CSP_L22_Algorithm_Limits_and_Project.html",
+  "minutes": 90,
+  "topicSummary": "Growth categories, heuristics, decidability and a 35-minute Study Session Analyzer project integrating lists, procedures and test evidence.",
+  "homeworkInstructions": "Complete all 12 original questions (30 marks, about 40 minutes). Q5 requires exactly TWO choices. Trace statements in their execution order. Each program statement and each brace occupies its own line. Show reasoning and use the stated valid input range."
+}

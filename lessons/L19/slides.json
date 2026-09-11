@@ -1,0 +1,187 @@
+[
+  {
+    "title": "Procedures, Parameters & Libraries",
+    "tag": "LESSON 19",
+    "time": "0–2 min",
+    "code": "Chapter 4 · Data & Reusable Algorithms",
+    "html": "<p class=\"lead\">AP Computer Science Principles</p><h1>Reusable<br>Procedures</h1><p class=\"zh\">过程 · 参数 · 返回值 · 库</p><p class=\"small\">Develop Session Helpers · 90 minutes</p>",
+    "note": "今天把已经会写的计算包装为有名称、有明确输入与返回值的过程。调用者只需读契约，仍要测试实现。课堂不讲递归、全局依赖或列表别名。",
+    "kind": "dark"
+  },
+  {
+    "title": "Retrieve loops and returned values",
+    "tag": "RETRIEVAL",
+    "time": "2–6 min",
+    "code": "AAP-2.C/O · AAP-3.A",
+    "html": "<ol><li>How many visits does FOR EACH make over []?</li><li>What is 90 / 60?</li><li>Does DISPLAY(5) assign 5 to a variable?</li></ol><details><summary>Show answer</summary><div class=\"answer\"><strong>0; 1.5; no.</strong> Displaying a value differs from storing one.</div></details>",
+    "note": "INPUT早已使用并返回值，DISPLAY则对外显示；今天正式区分过程返回与输出。不要暗示所有过程都有返回值。"
+  },
+  {
+    "title": "What you will write and explain",
+    "tag": "GOALS",
+    "time": "6–8 min",
+    "code": "AAP-3.A–D",
+    "html": "<ol><li>Define a procedure and call it with arguments.</li><li>Trace parameter values and returned results.</li><li>Distinguish RETURN from DISPLAY.</li><li>Use documentation to choose reusable code.</li></ol>",
+    "note": "本课选定Calling/DevelopingProcedures与Libraries条目，重点是简单数值和Boolean过程。创建过程与复用库不是必须联网安装依赖。"
+  },
+  {
+    "title": "Give a process a meaningful name",
+    "tag": "CONCEPT",
+    "time": "8–12 min",
+    "code": "AAP-3.A.1 · AAP-3.B.1",
+    "html": "<figure class=\"visual\" tabindex=\"0\"><svg xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"A caller supplies minutes to a named conversion process, which returns hours.\" viewBox=\"0 0 1200 155\" style=\"font-family:Arial,Helvetica,sans-serif\"><rect x=\"15.0\" y=\"12\" width=\"356.6666666666667\" height=\"126\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"193.33333333333334\" y=\"49\" text-anchor=\"middle\" font-size=\"25\" fill=\"#225a83\" font-weight=\"700\">Input</text><text x=\"193.33333333333334\" y=\"104\" text-anchor=\"middle\" font-size=\"29\" fill=\"#193148\" font-weight=\"700\">minutes</text><path d=\"M378.6666666666667 75.0H401.6666666666667\" stroke=\"#225a83\" stroke-width=\"3\"/><path d=\"M399.6666666666667 68.0L413.6666666666667 75.0L399.6666666666667 82.0Z\" fill=\"#225a83\"/><rect x=\"421.6666666666667\" y=\"12\" width=\"356.6666666666667\" height=\"126\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"600.0\" y=\"49\" text-anchor=\"middle\" font-size=\"25\" fill=\"#225a83\" font-weight=\"700\">Named process</text><text x=\"600.0\" y=\"104\" text-anchor=\"middle\" font-size=\"29\" fill=\"#193148\" font-weight=\"700\">toHours</text><path d=\"M785.3333333333334 75.0H808.3333333333334\" stroke=\"#225a83\" stroke-width=\"3\"/><path d=\"M806.3333333333334 68.0L820.3333333333334 75.0L806.3333333333334 82.0Z\" fill=\"#225a83\"/><rect x=\"828.3333333333334\" y=\"12\" width=\"356.6666666666667\" height=\"126\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"1006.6666666666667\" y=\"49\" text-anchor=\"middle\" font-size=\"25\" fill=\"#225a83\" font-weight=\"700\">Returned value</text><text x=\"1006.6666666666667\" y=\"104\" text-anchor=\"middle\" font-size=\"29\" fill=\"#193148\" font-weight=\"700\">hours</text></svg></figure><p>A procedure groups instructions. A call runs that process.</p><details><summary>Show the abstraction benefit</summary><div class=\"answer\">The caller can use what toHours does without repeating its conversion code.</div></details>",
+    "note": "以名字、输入和结果三层说明，不把图里的过程名字当官方内建函数。本课学生定义toHours；其他题目中的同名过程仍以给定定义为准。"
+  },
+  {
+    "title": "A definition describes; a call executes",
+    "tag": "CONCEPT",
+    "time": "12–16 min",
+    "code": "AAP-3.A.4–5 · AAP-3.C.1–2",
+    "html": "<pre class=\"code\" style=\"font-size:25px;line-height:1.25;padding:18px 24px\">PROCEDURE toHours(minutes)\n{\n  RETURN(minutes / 60)\n}</pre><figure class=\"visual\" tabindex=\"0\"><svg xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"The procedure definition is separate from a later call that supplies90.\" viewBox=\"0 0 1200 130\" style=\"font-family:Arial,Helvetica,sans-serif\"><rect x=\"15.0\" y=\"12\" width=\"560.0\" height=\"106\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"295.0\" y=\"49\" text-anchor=\"middle\" font-size=\"25\" fill=\"#225a83\" font-weight=\"700\">Definition name</text><text x=\"295.0\" y=\"104\" text-anchor=\"middle\" font-size=\"29\" fill=\"#193148\" font-weight=\"700\">toHours</text><path d=\"M582.0 65.0H605.0\" stroke=\"#225a83\" stroke-width=\"3\"/><path d=\"M603.0 58.0L617.0 65.0L603.0 72.0Z\" fill=\"#225a83\"/><rect x=\"625.0\" y=\"12\" width=\"560.0\" height=\"106\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"905.0\" y=\"49\" text-anchor=\"middle\" font-size=\"25\" fill=\"#225a83\" font-weight=\"700\">Call example</text><text x=\"905.0\" y=\"104\" text-anchor=\"middle\" font-size=\"29\" fill=\"#193148\" font-weight=\"700\">toHours(90)</text></svg></figure><details><summary>Show answer</summary><div class=\"answer\">The body runs when the call is executed. The definition alone does not display anything.</div></details>",
+    "note": "参数minutes只在调用时获得输入值。括号外是过程名字，花括号内是执行体。每个大括号单独一行便于结构识别。"
+  },
+  {
+    "title": "Parameters and arguments have different roles",
+    "tag": "CONCEPT",
+    "time": "16–20 min",
+    "code": "AAP-3.A.3/5",
+    "html": "<pre class=\"code\" style=\"font-size:25px;line-height:1.25;padding:18px 24px\">PROCEDURE reachedGoal(minutes, goal)</pre><figure class=\"visual\" tabindex=\"0\"><svg xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"The call arguments45 and30 are assigned by position to parameters minutes and goal.\" viewBox=\"0 0 1200 195\" style=\"font-family:Arial,Helvetica,sans-serif\"><rect x=\"25\" y=\"15\" width=\"500\" height=\"70\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"275\" y=\"59\" text-anchor=\"middle\" font-size=\"31\" fill=\"#193148\" font-weight=\"700\">reachedGoal(45, 30)</text><rect x=\"675\" y=\"15\" width=\"500\" height=\"70\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"925\" y=\"59\" text-anchor=\"middle\" font-size=\"30\" fill=\"#193148\" font-weight=\"400\">minutes = 45</text><rect x=\"675\" y=\"112\" width=\"500\" height=\"70\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"925\" y=\"156\" text-anchor=\"middle\" font-size=\"30\" fill=\"#193148\" font-weight=\"400\">goal = 30</text><path d=\"M525 50H610V147H675M610 50H675\" fill=\"none\" stroke=\"#225a83\" stroke-width=\"3\"/><text x=\"270\" y=\"145\" text-anchor=\"middle\" font-size=\"27\" fill=\"#28766f\" font-weight=\"400\">Arguments bind by position</text></svg></figure><p>Parameters are input names; arguments supply values at a call.</p>",
+    "note": "函数签名行用于阅读参数不是完整可运行程序。参数是minutes/goal，实参是45/30；实参也可由变量或表达式求值获得。按位置对应，交换参数可能改变结果。"
+  },
+  {
+    "title": "RETURN brings a value back to the caller",
+    "tag": "CONCEPT",
+    "time": "20–24 min",
+    "code": "AAP-3.A.7–8",
+    "html": "<figure class=\"visual\" tabindex=\"0\"><svg xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"A call interrupts the caller, calculates90 divided by60, and returns the result to an assignment.\" viewBox=\"0 0 1200 155\" style=\"font-family:Arial,Helvetica,sans-serif\"><rect x=\"15.0\" y=\"12\" width=\"356.6666666666667\" height=\"126\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"193.33333333333334\" y=\"49\" text-anchor=\"middle\" font-size=\"25\" fill=\"#225a83\" font-weight=\"700\">Caller</text><text x=\"193.33333333333334\" y=\"104\" text-anchor=\"middle\" font-size=\"29\" fill=\"#193148\" font-weight=\"700\">h ← toHours(90)</text><path d=\"M378.6666666666667 75.0H401.6666666666667\" stroke=\"#225a83\" stroke-width=\"3\"/><path d=\"M399.6666666666667 68.0L413.6666666666667 75.0L399.6666666666667 82.0Z\" fill=\"#225a83\"/><rect x=\"421.6666666666667\" y=\"12\" width=\"356.6666666666667\" height=\"126\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"600.0\" y=\"49\" text-anchor=\"middle\" font-size=\"25\" fill=\"#225a83\" font-weight=\"700\">Procedure</text><text x=\"600.0\" y=\"104\" text-anchor=\"middle\" font-size=\"29\" fill=\"#193148\" font-weight=\"700\">RETURN(90 / 60)</text><path d=\"M785.3333333333334 75.0H808.3333333333334\" stroke=\"#225a83\" stroke-width=\"3\"/><path d=\"M806.3333333333334 68.0L820.3333333333334 75.0L806.3333333333334 82.0Z\" fill=\"#225a83\"/><rect x=\"828.3333333333334\" y=\"12\" width=\"356.6666666666667\" height=\"126\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"1006.6666666666667\" y=\"49\" text-anchor=\"middle\" font-size=\"25\" fill=\"#225a83\" font-weight=\"700\">Back to caller</text><text x=\"1006.6666666666667\" y=\"104\" text-anchor=\"middle\" font-size=\"29\" fill=\"#193148\" font-weight=\"700\">h ← result</text></svg></figure><p>What value does h receive?</p><details><summary>Show answer</summary><div class=\"answer\"><strong>1.5.</strong> The caller can store, display or further compute with it.</div></details>",
+    "note": "强调控制流回到调用点并把值用于所在表达式。返回值未必自动显示；如果代码只有h赋值，输出区可以仍为空。"
+  },
+  {
+    "title": "RETURN and DISPLAY do different jobs",
+    "tag": "CONCEPT",
+    "time": "24–28 min",
+    "code": "AAP-3.A.6–8",
+    "html": "<figure class=\"visual\" tabindex=\"0\"><svg xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"RETURN sends a value and control back to the caller; DISPLAY sends a value to program output.\" viewBox=\"0 0 1200 190\" style=\"font-family:Arial,Helvetica,sans-serif\"><rect x=\"15\" y=\"12\" width=\"430\" height=\"70\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"230\" y=\"57\" text-anchor=\"middle\" font-size=\"30\" fill=\"#193148\" font-weight=\"700\">RETURN(value)</text><path d=\"M445 47H603\" stroke=\"#225a83\" stroke-width=\"3\"/><path d=\"M601 40L615 47L601 54Z\" fill=\"#225a83\"/><rect x=\"620\" y=\"12\" width=\"560\" height=\"70\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#28766f\" stroke-width=\"2\"/><text x=\"900\" y=\"57\" text-anchor=\"middle\" font-size=\"28\" fill=\"#193148\" font-weight=\"400\">Caller receives a value</text><rect x=\"15\" y=\"105\" width=\"430\" height=\"70\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"230\" y=\"150\" text-anchor=\"middle\" font-size=\"30\" fill=\"#193148\" font-weight=\"700\">DISPLAY(value)</text><path d=\"M445 140H603\" stroke=\"#225a83\" stroke-width=\"3\"/><path d=\"M601 133L615 140L601 147Z\" fill=\"#225a83\"/><rect x=\"620\" y=\"105\" width=\"560\" height=\"70\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"900\" y=\"150\" text-anchor=\"middle\" font-size=\"28\" fill=\"#193148\" font-weight=\"400\">Output receives a value</text></svg></figure><p>Displaying a result does not substitute for returning it.</p><details><summary>Show a design consequence</summary><div class=\"answer\">If a caller needs a numeric result for arithmetic, the procedure must return that number.</div></details>",
+    "note": "不要把DISPLAY所显示的数当作过程的返回值。没有RETURN的过程仍可执行显示等动作，但调用者不能假定它提供可计算的返回结果；不同语言的隐含值不在本课讨论。"
+  },
+  {
+    "title": "RETURN ends the current procedure call",
+    "tag": "CONCEPT",
+    "time": "28–32 min",
+    "code": "AAP-3.C.2",
+    "html": "<pre class=\"code\" style=\"font-size:25px;line-height:1.25;padding:18px 24px\">PROCEDURE example()\n{\n  RETURN(8)\n  DISPLAY(99)\n}\nx ← example()</pre><p>What is x? Is 99 displayed?</p><details><summary>Show answer</summary><div class=\"answer\"><strong>x is 8; 99 is not displayed.</strong> RETURN immediately returns control to the caller.</div></details>",
+    "note": "RETURN后同一路径的语句不会执行。返回结束当前过程调用，不会结束整个程序，调用者还能继续。该例专门演示不可达语句，不作为良好代码风格模板。"
+  },
+  {
+    "title": "Parameters allow meaningful variation",
+    "tag": "CONCEPT",
+    "time": "32–36 min",
+    "code": "AAP-3.B.4–5",
+    "html": "<figure class=\"visual\" tabindex=\"0\"><svg xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Different minute arguments use the same conversion process instead of duplicated bodies.\" viewBox=\"0 0 1200 155\" style=\"font-family:Arial,Helvetica,sans-serif\"><rect x=\"15.0\" y=\"12\" width=\"356.6666666666667\" height=\"126\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"193.33333333333334\" y=\"49\" text-anchor=\"middle\" font-size=\"25\" fill=\"#225a83\" font-weight=\"700\">One call</text><text x=\"193.33333333333334\" y=\"104\" text-anchor=\"middle\" font-size=\"29\" fill=\"#193148\" font-weight=\"700\">toHours(30)</text><rect x=\"421.6666666666667\" y=\"12\" width=\"356.6666666666667\" height=\"126\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"600.0\" y=\"49\" text-anchor=\"middle\" font-size=\"25\" fill=\"#225a83\" font-weight=\"700\">Another call</text><text x=\"600.0\" y=\"104\" text-anchor=\"middle\" font-size=\"29\" fill=\"#193148\" font-weight=\"700\">toHours(90)</text><rect x=\"828.3333333333334\" y=\"12\" width=\"356.6666666666667\" height=\"126\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"1006.6666666666667\" y=\"49\" text-anchor=\"middle\" font-size=\"25\" fill=\"#225a83\" font-weight=\"700\">Same definition</text><text x=\"1006.6666666666667\" y=\"104\" text-anchor=\"middle\" font-size=\"29\" fill=\"#193148\" font-weight=\"700\">minutes / 60</text></svg></figure><p>The parameter changes the input while the conversion rule stays in one place.</p><details><summary>Show answer</summary><div class=\"answer\">These calls return <strong>0.5</strong> and <strong>1.5</strong>. A new input does not require another procedure body.</div></details>",
+    "note": "避免把所有变量硬编码到过程内部；参数化才让不同输入用同一规则。只改变量名字但仍固定返回30/60没有达到通用化目标。"
+  },
+  {
+    "title": "A useful contract makes behavior clear",
+    "tag": "CONCEPT",
+    "time": "36–39 min",
+    "code": "AAP-3.B.1 · AAP-3.D.4–5",
+    "html": "<figure class=\"visual\" tabindex=\"0\"><svg xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Four documentation fields specify input, precondition, returned value and output effects.\" viewBox=\"0 0 1200 205\" style=\"font-family:Arial,Helvetica,sans-serif\"><rect x=\"15\" y=\"10\" width=\"560\" height=\"80\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"295\" y=\"42\" text-anchor=\"middle\" font-size=\"25\" fill=\"#225a83\" font-weight=\"700\">Parameter</text><text x=\"295\" y=\"76\" text-anchor=\"middle\" font-size=\"28\" fill=\"#193148\" font-weight=\"400\">minutes: numeric</text><rect x=\"625\" y=\"10\" width=\"560\" height=\"80\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"905\" y=\"42\" text-anchor=\"middle\" font-size=\"25\" fill=\"#225a83\" font-weight=\"700\">Precondition</text><text x=\"905\" y=\"76\" text-anchor=\"middle\" font-size=\"28\" fill=\"#193148\" font-weight=\"400\">0 ≤ minutes ≤ 180</text><rect x=\"15\" y=\"110\" width=\"560\" height=\"80\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"295\" y=\"142\" text-anchor=\"middle\" font-size=\"25\" fill=\"#28766f\" font-weight=\"700\">Return value</text><text x=\"295\" y=\"176\" text-anchor=\"middle\" font-size=\"28\" fill=\"#193148\" font-weight=\"400\">decimal hours</text><rect x=\"625\" y=\"110\" width=\"560\" height=\"80\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"905\" y=\"142\" text-anchor=\"middle\" font-size=\"25\" fill=\"#28766f\" font-weight=\"700\">Output effect</text><text x=\"905\" y=\"176\" text-anchor=\"middle\" font-size=\"28\" fill=\"#193148\" font-weight=\"400\">no DISPLAY inside</text></svg></figure><p>Read the contract before writing a call or a test.</p>",
+    "note": "契约说明怎么用、适用哪些输入、得到什么和有何外部影响。当前参数接受非负分钟数，但活动测试用整数；小时允许小数。合同不会自动验证输入，需要实现或明确前提。"
+  },
+  {
+    "title": "Select a library by its documented behavior",
+    "tag": "CONCEPT",
+    "time": "39–42 min",
+    "code": "AAP-3.D.1–5",
+    "html": "<p class=\"small\">Fictional documentation cards, supplied for this exercise:</p><figure class=\"visual\" tabindex=\"0\"><svg xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"One library routine returns hours; another only displays hours. Choose based on the needed behavior.\" viewBox=\"0 0 1200 155\" style=\"font-family:Arial,Helvetica,sans-serif\"><rect x=\"15.0\" y=\"12\" width=\"560.0\" height=\"126\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"295.0\" y=\"49\" text-anchor=\"middle\" font-size=\"25\" fill=\"#225a83\" font-weight=\"700\">DurationKit.convert(m)</text><text x=\"295.0\" y=\"104\" text-anchor=\"middle\" font-size=\"29\" fill=\"#193148\" font-weight=\"700\">returns numeric hours</text><rect x=\"625.0\" y=\"12\" width=\"560.0\" height=\"126\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"905.0\" y=\"49\" text-anchor=\"middle\" font-size=\"25\" fill=\"#225a83\" font-weight=\"700\">ScreenKit.show(m)</text><text x=\"905.0\" y=\"104\" text-anchor=\"middle\" font-size=\"29\" fill=\"#193148\" font-weight=\"700\">displays hours only</text></svg></figure><p>Which behavior supports further arithmetic with the result?</p><details><summary>Show answer</summary><div class=\"answer\"><strong>The numeric-returning routine.</strong> Check parameters, units and return type before calling it.</div></details>",
+    "note": "这两个库是教学虚构文档卡，不是实验室已安装或官方内建过程。练习选择行为，不运行未提供的名称。库可来自内部或外部，需要文档与测试，不能因为有库就假定所有功能满足需求。"
+  },
+  {
+    "title": "One implementation can serve many callers",
+    "tag": "CONCEPT",
+    "time": "42–44 min",
+    "code": "AAP-3.B.2–7",
+    "html": "<figure class=\"visual\" tabindex=\"0\"><svg xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Multiple program features call one documented procedure; a behavior-preserving internal improvement is made in one place.\" viewBox=\"0 0 1200 155\" style=\"font-family:Arial,Helvetica,sans-serif\"><rect x=\"15.0\" y=\"12\" width=\"356.6666666666667\" height=\"126\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"193.33333333333334\" y=\"49\" text-anchor=\"middle\" font-size=\"25\" fill=\"#225a83\" font-weight=\"700\">Callers</text><text x=\"193.33333333333334\" y=\"104\" text-anchor=\"middle\" font-size=\"29\" fill=\"#193148\" font-weight=\"700\">summary / chart / report</text><path d=\"M378.6666666666667 75.0H401.6666666666667\" stroke=\"#225a83\" stroke-width=\"3\"/><path d=\"M399.6666666666667 68.0L413.6666666666667 75.0L399.6666666666667 82.0Z\" fill=\"#225a83\"/><rect x=\"421.6666666666667\" y=\"12\" width=\"356.6666666666667\" height=\"126\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"600.0\" y=\"49\" text-anchor=\"middle\" font-size=\"25\" fill=\"#225a83\" font-weight=\"700\">Shared procedure</text><text x=\"600.0\" y=\"104\" text-anchor=\"middle\" font-size=\"29\" fill=\"#193148\" font-weight=\"700\">documented behavior</text><path d=\"M785.3333333333334 75.0H808.3333333333334\" stroke=\"#225a83\" stroke-width=\"3\"/><path d=\"M806.3333333333334 68.0L820.3333333333334 75.0L806.3333333333334 82.0Z\" fill=\"#225a83\"/><rect x=\"828.3333333333334\" y=\"12\" width=\"356.6666666666667\" height=\"126\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"1006.6666666666667\" y=\"49\" text-anchor=\"middle\" font-size=\"25\" fill=\"#225a83\" font-weight=\"700\">Maintenance</text><text x=\"1006.6666666666667\" y=\"104\" text-anchor=\"middle\" font-size=\"29\" fill=\"#193148\" font-weight=\"700\">one body to improve</text></svg></figure><p>Changing the internals can preserve every caller’s contract.</p><details><summary>Show the important boundary</summary><div class=\"answer\">Reuse reduces duplicated logic. Changing the promised behavior may require updating callers.</div></details>",
+    "note": "程序抽象管理复杂度是具体维护好处：共享逻辑集中、名字可读、细节隐藏。只有保持契约时调用者才无须修改，不能许诺任意改实现都不影响别人。"
+  },
+  {
+    "title": "Session Helpers",
+    "tag": "LAB SETUP",
+    "time": "44–49 min",
+    "code": "AAP-3.A/B/C",
+    "html": "<p class=\"lead\"><a href=\"Chapter_4_Algorithms_Lab.html#procedures\" target=\"_blank\" rel=\"noopener\">Open Chapter 4 Lab → Procedures</a></p><p>Write two helpers: toHours(minutes) and reachedGoal(minutes, goal).</p><p class=\"small\">First returns decimal hours. Second returns whether minutes ≥ goal. Use numeric inputs from 0–180.</p>",
+    "note": "项目用自己定义过程和代码中的数值参数，不要求输入队列。给两个契约，让学生实现、调用、输出和测试，避免只复制单个现成过程。"
+  },
+  {
+    "title": "1 · Write the two contracts",
+    "tag": "SESSION HELPERS · 5 MINUTES",
+    "time": "49–54 min",
+    "code": "AAP-3.B/C",
+    "html": "<ol><li>Name each parameter and its unit.</li><li>Specify each returned value and type.</li><li>Choose two meaningful variable names in the caller.</li><li>Keep DISPLAY in the caller.</li></ol><details><summary>Show planning support</summary><div class=\"answer\">toHours returns a number; reachedGoal returns a Boolean. Neither helper needs to print.</div></details>",
+    "note": "5分钟先写输入、返回类型和前提。goal单位也是分钟，不能拿hours与分钟直接比较。参数minutes/goal显式传入，不读取未声明的全局变量。"
+  },
+  {
+    "title": "2 · Define, call and display",
+    "tag": "SESSION HELPERS · 9 MINUTES",
+    "time": "54–63 min",
+    "code": "AAP-3.A/C",
+    "html": "<pre class=\"code\" style=\"font-size:25px;line-height:1.25;padding:18px 24px\">minutes ← 45\ngoal ← 30\nhours ← toHours(minutes)\nmet ← reachedGoal(minutes, goal)</pre><p>Write both procedure definitions above the caller, then display hours and met with labels.</p><details><summary>Show one body hint</summary><div class=\"answer\"><span class=\"mono\">RETURN(minutes ≥ goal)</span> can directly return a Boolean.</div></details>",
+    "note": "保留9分钟写完整代码。Boolean结果无需包一层IF也能返回；这种简单助手为后续含循环过程打基础。过程局部变量由参数绑定，调用者同名变量不是隐藏数据通道。"
+  },
+  {
+    "title": "3 · Test both helpers together",
+    "tag": "SESSION HELPERS · 6 MINUTES",
+    "time": "63–69 min",
+    "code": "CRD-2.J · AAP-3.A",
+    "html": "<p>Predict hours and met for each pair (minutes, goal):</p><ol><li>(45, 30)</li><li>(30, 30)</li><li>(0, 30)</li><li>(60, 90)</li></ol><details><summary>Show answer</summary><div class=\"answer\"><strong>(0.75, true); (0.5, true); (0, false); (1, false).</strong></div></details>",
+    "note": "测试覆盖超过目标、恰等目标、零分钟、目标变化。若goal硬编码30，第四例能揭露错误；如果≥误写>，第二例能揭露。每次重新执行调用。"
+  },
+  {
+    "title": "4 · Review contracts and revise",
+    "tag": "SESSION HELPERS · 5 MINUTES",
+    "time": "69–74 min",
+    "code": "CRD-2.E/J · AAP-3.B",
+    "html": "<ol><li>Have a partner call your procedures using the docs.</li><li>Check return types and units.</li><li>Fix one mismatch or unclear contract.</li><li>Re-run all cases and save code, docs and tests.</li></ol><details><summary>Show a concrete revision</summary><div class=\"answer\">“I used the goal parameter instead of a fixed 30, so the same procedure works for different targets.”</div></details>",
+    "note": "同伴只看契约选择调用，以此检验信息是否足够。修复后原有调用也要复测。使用别人提供的片段须记录来源，课堂自己写的程序不伪称外部库。"
+  },
+  {
+    "title": "A displayed value is not a returned result",
+    "tag": "DEBUG",
+    "time": "74–78 min",
+    "code": "AAP-3.A.6–8 · CRD-2.I",
+    "html": "<pre class=\"code\" style=\"font-size:25px;line-height:1.25;padding:18px 24px\">PROCEDURE toHours(minutes)\n{\n  DISPLAY(minutes / 60)\n}</pre><p>The caller needs to assign the numeric result. What must change?</p><details><summary>Show answer</summary><div class=\"answer\">Use <strong>RETURN(minutes / 60)</strong>. The caller can DISPLAY the returned result afterward.</div></details>",
+    "note": "这是逻辑契约不符而非一定语法错误。不要规定某语言隐式返回值是什么；关注调用者不能获得所承诺的数值返回。"
+  },
+  {
+    "title": "Identify the arguments",
+    "tag": "ORIGINAL AP-STYLE",
+    "time": "78–82 min",
+    "code": "AAP-3.A.3/5",
+    "html": "<p>Given PROCEDURE reachedGoal(minutes, goal), a call is reachedGoal(50, 40). Which binding is correct?</p><div class=\"options\"><p>A. minutes = 40; goal = 50</p><p>B. minutes = 50; goal = 40</p><p>C. Both parameters become 50</p><p>D. Parameter names are the arguments</p></div><details><summary>Show answer</summary><div class=\"answer\"><strong>B.</strong> Arguments supply parameter values by position.</div></details>",
+    "note": "原创AP风格题。检查学生是否把形参/实参名称背诵和实际数据绑定联系起来。"
+  },
+  {
+    "title": "Choose exactly two correct statements",
+    "tag": "ORIGINAL AP-STYLE",
+    "time": "82–85 min",
+    "code": "AAP-3.A–D",
+    "html": "<div class=\"options\"><p>A. RETURN immediately exits the current call.</p><p>B. DISPLAY always returns the displayed value.</p><p>C. Library documentation explains how to use its procedures.</p><p>D. Defining a procedure automatically calls its body.</p></div><details><summary>Show answer</summary><div class=\"answer\"><strong>A and C.</strong> B confuses output and return; D confuses definition and execution.</div></details>",
+    "note": "Q5恰选两项仍保留。A说当前调用结束，不是整个程序退出；有助后续L22循环结束后返回计数。"
+  },
+  {
+    "title": "Homework and the next connection",
+    "tag": "CONSOLIDATION",
+    "time": "85–87 min",
+    "code": "12 original questions · 30 classroom marks",
+    "html": "<p class=\"lead\">Keep both helpers, their contracts and four tests.</p><ul><li>Homework: trace calls and write complete procedures.</li><li>Show where each returned value goes.</li><li>Later: combine a list traversal with a reusable procedure.</li></ul>",
+    "note": "下一章内课会连接搜索与算法，也会把列表计数封装到过程。今天不提前给L22完整实现；让学生先掌握参数和RETURN角色。"
+  },
+  {
+    "title": "Exit ticket",
+    "tag": "EXIT",
+    "time": "87–90 min",
+    "code": "AAP-3.A/B/D",
+    "html": "<ol><li>In toHours(120), identify the argument.</li><li>How does RETURN differ from DISPLAY?</li><li>Name one API detail to check before using a procedure.</li></ol><details><summary>Show answer</summary><div class=\"answer\"><strong>120;</strong> RETURN passes a value/control to the caller, while DISPLAY produces output; check parameters, units, return type or documented behavior.</div></details>",
+    "note": "三项各1分，第二项必须包含调用者与输出去向区别。第三项不能只有“看文档”，需指出文档里的具体信息。"
+  }
+]

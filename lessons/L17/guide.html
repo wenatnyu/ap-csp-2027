@@ -1,0 +1,20 @@
+<div class="tagline">Teacher Guide</div><h1>Lesson 17 · Lists &amp; Data Abstraction</h1><p class="sub">列表与数据抽象 · 23 slides · 90 minutes · 25-minute Study Session Editor</p><p><a href="Chapter_4_Algorithms_Lab.html#lists" target="_blank" rel="noopener">Lists lab</a> · <a href="index.html">课程目录</a></p>
+<h3>目标与前置</h3><p>学生已学赋值、Boolean、条件和循环，本课建立官方AP列表表示及单个操作的准确模型。学生应能根据当前列表判断索引、追踪读写与长度变化，并解释命名集合如何减少分别命名变量和硬编码。今天不要求FOR EACH；下一课用完整遍历连接本章数据抽象。</p>
+<h3>精确官方范围</h3><table><tr><th>条目</th><th>证据与边界</th></tr><tr><td>AAP-1.C.1–3，Topic3.2，PDF72/印刷65</td><td>有序元素、索引与变量表示；字符串只复习，不重新教字符串操作。</td></tr><tr><td>AAP-1.D.1–4、D.6–8，PDF73–74/印刷66–67</td><td>命名集合、可维护性、列表/空列表、1-based索引和错误；不展开链表、物理内存、混合类型或引用别名。</td></tr><tr><td>AAP-2.N.1–2，Topic3.10，PDF87–88/印刷80–81</td><td>read/update/APPEND/INSERT/REMOVE/LENGTH的写法与求值；其他语言语法不能替代本课AP规则。</td></tr><tr><td>CRD-2.E/J</td><td>25分钟计划、编写、测试和修订，依据明确输入和预期输出判断。</td></tr></table>
+<p>当前官方表对带索引的列表操作写明1至当前LENGTH，越界产生错误并终止。INSERT本课只用现有合法索引；空列表首项和末尾新增用APPEND。不要把Python的0-based、REMOVE按值或某语言允许INSERT到n+1直接带进来。本资料避免列表别名例子；数据复制与引用差异不是本课目标。</p>
+<h3>90分钟节奏</h3><p>0–8分钟（1–3页）：提取与目标。8–20（4–6页）：列表、读取与长度。20–36（7–10页）：替换、追加、插入、删除的逐项追踪。36–44（11–13页）：错误边界、数据抽象、重复值。44–49（14页）：实验室与任务。49–54规划；54–63编码；63–69测试；69–74修订（15–18页），共25分钟动手。74–85（19–21页）：诊断与选择题；85–90（22–23页）：作业与独立出口。</p>
+<h3>项目：Study Session Editor</h3><p>输入在代码中初始化，先用[20,30,45,10]，再用[0,30,30,180]。两组都是四元素合成教学记录。顺序执行：第2项改35；追加25；第1位置插入15；删除当前第4位置。每步显示列表，最后显示长度、首项和末项。学生先纸上预期，再运行；保留两组完整trace与一次具体修订说明。</p><details><summary>教师参考程序</summary><pre class="code">sessions ← [20, 30, 45, 10]
+sessions[2] ← 35
+DISPLAY(sessions)
+APPEND(sessions, 25)
+DISPLAY(sessions)
+INSERT(sessions, 1, 15)
+DISPLAY(sessions)
+REMOVE(sessions, 4)
+DISPLAY(sessions)
+DISPLAY(LENGTH(sessions))
+DISPLAY(sessions[1])
+DISPLAY(sessions[LENGTH(sessions)])</pre></details>
+<table><tr><th>检查点</th><th>初始[20,30,45,10]</th><th>初始[0,30,30,180]</th></tr><tr><td>Update</td><td>[20,35,45,10]</td><td>[0,35,30,180]</td></tr><tr><td>Append</td><td>[20,35,45,10,25]</td><td>[0,35,30,180,25]</td></tr><tr><td>Insert</td><td>[15,20,35,45,10,25]</td><td>[15,0,35,30,180,25]</td></tr><tr><td>Remove</td><td>[15,20,35,10,25]</td><td>[15,0,35,180,25]</td></tr></table><p>最终长度均5、首项15、末项25。相同长度不能证明内容正确；错误定位应从第一个不一致检查点开始。建议8教师分：四项操作各1，动态末项和长度1，两组完整预期/实际1，修订/复测1，具体抽象解释1。课堂作品不等同官方Create要求。</p>
+<h3>误区与支架</h3><ul><li>把索引当值：把位置卡放在值卡上方，每次移动后重编号。</li><li>替换与插入混淆：对同一初始列表独立执行两操作，再比较长度。</li><li>REMOVE删除所有同值项：用[30,30,10]按位置只移走一个。</li><li>沿用旧长度：删除后立即重新检查可读索引。</li><li>抽象保证速度或准确：追问集合命名帮助了哪项修改，并指出验证仍必要。</li></ul><p>支持学生可用实体卡逐步排布，再把四步写成代码；较快学生给另一个四元素初始列表预测结果，或单独实验empty←[]再APPEND。不要在当前列表为空时读取first/last。练习与答案都需先作答再展开。</p>
+<h3>作业与验收</h3><p>12题/30教师分，Q5恰选2；书面题各4个独立点，完整代码与纸面trace另存。出口答案9、4、具体集合命名好处；三个点分别补救。达到目标后再进入L18遍历，不以会记过程名字替代状态追踪。</p><h3>Sources</h3><p>核查日期：2026-09-11。题目、图解与活动原创；当前官方参考表封面标记2026，不称其为2027版。</p><ul class="sources"><li><a href="https://apcentral.collegeboard.org/courses/ap-computer-science-principles" target="_blank" rel="noopener">College Board · AP CSP course</a></li><li><a href="https://apcentral.collegeboard.org/media/pdf/ap-computer-science-principles-course-and-exam-description.pdf" target="_blank" rel="noopener">Official CED · Effective Fall 2023</a> · <a href="resources/AP_CSP_Course_and_Exam_Description.pdf#page=72" target="_blank">Local relevant pages</a></li><li><a href="https://apcentral.collegeboard.org/media/pdf/ap-computer-science-principles-exam-reference-sheet.pdf" target="_blank" rel="noopener">Official reference sheet · 2026 cover</a></li></ul>

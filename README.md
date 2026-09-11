@@ -1,94 +1,125 @@
-# AP CSP 2026–27 · Chapters 1–3
+# AP CSP 2026–27 · Chapters 1–5
 
-第一、二、三章已完成：16 节课，每节 90 分钟，共 368 页课堂 Slides，面向 2027 年 5 月 AP CSP 大考。第一章为计算思维与信息表示，第二章为数字数据与数据分析，第三章为算法与编程基础。
+第一至第五章资料已完成：**26 节课，每节90分钟，共39小时、598页课堂 Slides、312题作业**，面向2027年5月AP CSP考试。本次新增第四、五章10课：15小时、230页Slides、120题；后续社会影响、正式Create与综合复习继续按总体规划制作。
 
-**[在线章节目录](https://wenatnyu.github.io/ap-csp-2027/)** · [总体课程规划](COURSE_PLAN.md) · [下载三章离线包](https://github.com/wenatnyu/ap-csp-2027/archive/refs/heads/main.zip)
+**[在线课程目录](https://wenatnyu.github.io/ap-csp-2027/)** · [总体课程规划](COURSE_PLAN.md) · [下载五章离线包](https://github.com/wenatnyu/ap-csp-2027/archive/refs/heads/main.zip)
 
-| 课次 | 内容 | 课堂页面 | 学生卷 / 答案 |
+## 第1章 · 计算思维与信息表示
+
+| 课次 | 主题 | 课堂页面 | 学生卷 / 答案 |
 |---|---|---|---|
-| L01 | 信息表示、二进制、容量与数值限制 | [Bits & Binary](AP_CSP_L01_Bits_and_Binary.html) | [学生 PDF](output/pdf/AP_CSP_L01_Homework.pdf) / [答案 PDF](output/pdf/AP_CSP_L01_Answer_Key.pdf) |
-| L02 | 计算创新、目的与功能、输入与输出 | [Computing Innovations](AP_CSP_L02_Computing_Innovations.html) | [学生 PDF](output/pdf/AP_CSP_L02_Homework.pdf) / [答案 PDF](output/pdf/AP_CSP_L02_Answer_Key.pdf) |
-| L03 | 算法、变量、赋值、顺序与程序追踪 | [Variables & Sequence](AP_CSP_L03_Variables_and_Sequence.html) | [学生 PDF](output/pdf/AP_CSP_L03_Homework.pdf) / [答案 PDF](output/pdf/AP_CSP_L03_Answer_Key.pdf) |
-| L04 | 协作、需求、测试、调试与改进；章末检查 | [Test & Improve](AP_CSP_L04_Test_and_Improve.html) | [学生 PDF](output/pdf/AP_CSP_L04_Homework.pdf) / [答案 PDF](output/pdf/AP_CSP_L04_Answer_Key.pdf) |
-| L05 | 模拟与数字、采样、数据表示与容量 | [Sampling & Representation](AP_CSP_L05_Sampling_and_Representation.html) | [学生 PDF](output/pdf/AP_CSP_L05_Homework.pdf) / [答案 PDF](output/pdf/AP_CSP_L05_Answer_Key.pdf) |
-| L06 | 无损与有损、RLE、压缩大小与取舍 | [Compression](AP_CSP_L06_Compression.html) | [学生 PDF](output/pdf/AP_CSP_L06_Homework.pdf) / [答案 PDF](output/pdf/AP_CSP_L06_Answer_Key.pdf) |
-| L07 | 元数据、质量问题、清洗与记录 | [Data Quality](AP_CSP_L07_Data_Quality.html) | [学生 PDF](output/pdf/AP_CSP_L07_Homework.pdf) / [答案 PDF](output/pdf/AP_CSP_L07_Answer_Key.pdf) |
-| L08 | 筛选与汇总、可视化、证据与局限；章末检查 | [Data Analysis](AP_CSP_L08_Data_Analysis.html) | [学生 PDF](output/pdf/AP_CSP_L08_Homework.pdf) / [答案 PDF](output/pdf/AP_CSP_L08_Answer_Key.pdf) |
+| L01 | 比特、二进制与信息表示 | [Bits & Binary](AP_CSP_L01_Bits_and_Binary.html) | [学生 PDF](output/pdf/AP_CSP_L01_Homework.pdf) / [答案 PDF](output/pdf/AP_CSP_L01_Answer_Key.pdf) |
+| L02 | 计算创新与输入输出 | [Computing Innovations](AP_CSP_L02_Computing_Innovations.html) | [学生 PDF](output/pdf/AP_CSP_L02_Homework.pdf) / [答案 PDF](output/pdf/AP_CSP_L02_Answer_Key.pdf) |
+| L03 | 算法、变量与顺序 | [Variables & Sequence](AP_CSP_L03_Variables_and_Sequence.html) | [学生 PDF](output/pdf/AP_CSP_L03_Homework.pdf) / [答案 PDF](output/pdf/AP_CSP_L03_Answer_Key.pdf) |
+| L04 | 协作、测试与改进 | [Test & Improve](AP_CSP_L04_Test_and_Improve.html) | [学生 PDF](output/pdf/AP_CSP_L04_Homework.pdf) / [答案 PDF](output/pdf/AP_CSP_L04_Answer_Key.pdf) |
 
+[打开第 1 章](Chapter_1.html)
+
+## 第2章 · 数字数据与数据分析
+
+| 课次 | 主题 | 课堂页面 | 学生卷 / 答案 |
+|---|---|---|---|
+| L05 | 采样与数字表示 | [Sampling & Representation](AP_CSP_L05_Sampling_and_Representation.html) | [学生 PDF](output/pdf/AP_CSP_L05_Homework.pdf) / [答案 PDF](output/pdf/AP_CSP_L05_Answer_Key.pdf) |
+| L06 | 压缩与取舍 | [Compression](AP_CSP_L06_Compression.html) | [学生 PDF](output/pdf/AP_CSP_L06_Homework.pdf) / [答案 PDF](output/pdf/AP_CSP_L06_Answer_Key.pdf) |
+| L07 | 元数据、质量与清洗 | [Data Quality & Cleaning](AP_CSP_L07_Data_Quality.html) | [学生 PDF](output/pdf/AP_CSP_L07_Homework.pdf) / [答案 PDF](output/pdf/AP_CSP_L07_Answer_Key.pdf) |
+| L08 | 数据分析与证据 | [Data Analysis & Evidence](AP_CSP_L08_Data_Analysis.html) | [学生 PDF](output/pdf/AP_CSP_L08_Homework.pdf) / [答案 PDF](output/pdf/AP_CSP_L08_Answer_Key.pdf) |
+
+[打开第 2 章](Chapter_2.html)
+
+## 第3章 · 算法与编程基础
+
+| 课次 | 主题 | 课堂页面 | 学生卷 / 答案 |
+|---|---|---|---|
 | L09 | 表达式与字符串 | [Expressions & Strings](AP_CSP_L09_Expressions_and_Strings.html) | [学生 PDF](output/pdf/AP_CSP_L09_Homework.pdf) / [答案 PDF](output/pdf/AP_CSP_L09_Answer_Key.pdf) |
 | L10 | 布尔逻辑与范围判定 | [Boolean Logic](AP_CSP_L10_Boolean_Logic.html) | [学生 PDF](output/pdf/AP_CSP_L10_Homework.pdf) / [答案 PDF](output/pdf/AP_CSP_L10_Answer_Key.pdf) |
-| L11 | 条件选择 | [Selection: Choosing a Path](AP_CSP_L11_Selection.html) | [学生 PDF](output/pdf/AP_CSP_L11_Homework.pdf) / [答案 PDF](output/pdf/AP_CSP_L11_Answer_Key.pdf) |
-| L12 | 嵌套选择与边界测试 | [Nested Decisions & Boundary Tests](AP_CSP_L12_Nested_Decisions.html) | [学生 PDF](output/pdf/AP_CSP_L12_Homework.pdf) / [答案 PDF](output/pdf/AP_CSP_L12_Answer_Key.pdf) |
+| L11 | 条件选择 | [Selection](AP_CSP_L11_Selection.html) | [学生 PDF](output/pdf/AP_CSP_L11_Homework.pdf) / [答案 PDF](output/pdf/AP_CSP_L11_Answer_Key.pdf) |
+| L12 | 嵌套选择与边界测试 | [Nested Decisions](AP_CSP_L12_Nested_Decisions.html) | [学生 PDF](output/pdf/AP_CSP_L12_Homework.pdf) / [答案 PDF](output/pdf/AP_CSP_L12_Answer_Key.pdf) |
 | L13 | 计数循环 | [Counted Loops](AP_CSP_L13_Counted_Loops.html) | [学生 PDF](output/pdf/AP_CSP_L13_Homework.pdf) / [答案 PDF](output/pdf/AP_CSP_L13_Answer_Key.pdf) |
 | L14 | 条件循环 | [Conditional Loops](AP_CSP_L14_Conditional_Loops.html) | [学生 PDF](output/pdf/AP_CSP_L14_Homework.pdf) / [答案 PDF](output/pdf/AP_CSP_L14_Answer_Key.pdf) |
 | L15 | 随机数与模拟 | [Randomness & Simulation](AP_CSP_L15_Randomness_and_Simulation.html) | [学生 PDF](output/pdf/AP_CSP_L15_Homework.pdf) / [答案 PDF](output/pdf/AP_CSP_L15_Answer_Key.pdf) |
-| L16 | 第三章项目与综合检查 | [Study Goal Tracker: Chapter 3 Project & Check](AP_CSP_L16_Chapter_3_Project.html) | [学生 PDF](output/pdf/AP_CSP_L16_Homework.pdf) / [答案 PDF](output/pdf/AP_CSP_L16_Answer_Key.pdf) |
+| L16 | 第三章项目与综合检查 | [Study Goal Tracker](AP_CSP_L16_Chapter_3_Project.html) | [学生 PDF](output/pdf/AP_CSP_L16_Homework.pdf) / [答案 PDF](output/pdf/AP_CSP_L16_Answer_Key.pdf) |
 
+[打开第 3 章](Chapter_3.html)
+
+## 第4章 · 列表、过程与算法分析
+
+| 课次 | 主题 | 课堂页面 | 学生卷 / 答案 |
+|---|---|---|---|
+| L17 | 列表与数据抽象 | [Lists & Abstraction](AP_CSP_L17_Lists_and_Abstraction.html) | [学生 PDF](output/pdf/AP_CSP_L17_Homework.pdf) / [答案 PDF](output/pdf/AP_CSP_L17_Answer_Key.pdf) |
+| L18 | 列表遍历与累加筛选 | [Traversing Lists](AP_CSP_L18_Traversing_Lists.html) | [学生 PDF](output/pdf/AP_CSP_L18_Homework.pdf) / [答案 PDF](output/pdf/AP_CSP_L18_Answer_Key.pdf) |
+| L19 | 过程参数与程序库 | [Procedures & Libraries](AP_CSP_L19_Procedures_and_Libraries.html) | [学生 PDF](output/pdf/AP_CSP_L19_Homework.pdf) / [答案 PDF](output/pdf/AP_CSP_L19_Answer_Key.pdf) |
+| L20 | 搜索与算法比较 | [Searching Algorithms](AP_CSP_L20_Searching_Algorithms.html) | [学生 PDF](output/pdf/AP_CSP_L20_Homework.pdf) / [答案 PDF](output/pdf/AP_CSP_L20_Answer_Key.pdf) |
+| L21 | 机器人算法与问题求解 | [Robot Algorithms](AP_CSP_L21_Robot_Algorithms.html) | [学生 PDF](output/pdf/AP_CSP_L21_Homework.pdf) / [答案 PDF](output/pdf/AP_CSP_L21_Answer_Key.pdf) |
+| L22 | 效率、计算限制与章节项目 | [Efficiency & Project](AP_CSP_L22_Algorithm_Limits_and_Project.html) | [学生 PDF](output/pdf/AP_CSP_L22_Homework.pdf) / [答案 PDF](output/pdf/AP_CSP_L22_Answer_Key.pdf) |
+
+[打开第 4 章](Chapter_4.html)
+
+## 第5章 · 计算机系统与互联网
+
+| 课次 | 主题 | 课堂页面 | 学生卷 / 答案 |
+|---|---|---|---|
+| L23 | 系统、网络与互联网 | [Systems & Networks](AP_CSP_L23_Systems_and_Networks.html) | [学生 PDF](output/pdf/AP_CSP_L23_Homework.pdf) / [答案 PDF](output/pdf/AP_CSP_L23_Answer_Key.pdf) |
+| L24 | 数据包、路由与协议 | [Packets & Routing](AP_CSP_L24_Packets_and_Routing.html) | [学生 PDF](output/pdf/AP_CSP_L24_Homework.pdf) / [答案 PDF](output/pdf/AP_CSP_L24_Answer_Key.pdf) |
+| L25 | 冗余与容错 | [Fault Tolerance](AP_CSP_L25_Fault_Tolerance.html) | [学生 PDF](output/pdf/AP_CSP_L25_Homework.pdf) / [答案 PDF](output/pdf/AP_CSP_L25_Answer_Key.pdf) |
+| L26 | 并行、分布式计算与章末调查 | [Parallel & Distributed](AP_CSP_L26_Parallel_and_Distributed.html) | [学生 PDF](output/pdf/AP_CSP_L26_Homework.pdf) / [答案 PDF](output/pdf/AP_CSP_L26_Answer_Key.pdf) |
+
+[打开第 5 章](Chapter_5.html)
 ## 课堂使用
 
-从在线目录进入每课，或下载 GitHub ZIP，解压后用浏览器打开 `ap-csp-2027-main/index.html`。在线下载由 GitHub 按当前 main 分支自动打包，包含全部三章课件、练习和官方 CED；历史 ZIP 不重复装入。课堂与编程功能均可离线运行，无需安装软件。保持整个文件夹结构，PDF 链接才能正常打开；外部官方来源与 GitHub 链接需要联网。
+从在线目录进入各课，或下载GitHub ZIP，解压后打开 `ap-csp-2027-main/index.html`。在线ZIP由GitHub按当前main分支自动打包，包含五章资料；保持文件夹结构以使用PDF链接。课件、内联图解和实验室可离线运行；官方来源和GitHub链接需要联网。构建脚本另生成 `AP_CSP_Chapters_1_2_3_4_5_Teaching_Pack.zip`。
 
-- **概念图解**：三章关键页加入位值格、分支树、输入输出流程、变量状态图、采样曲线、像素图、压缩示意、数据清理与统计图；第三章增加布尔逻辑、分支路径、循环轨迹与随机模型图。图解为内联矢量图，离线可用；Reading view 在小屏上支持横向查看宽图。
-- **Slides**：英文正文、关键术语中文提示，答案逐题展开；方向键或 Page Up / Page Down 翻页，N 显示教师备注。
-- **Homework**：每课 12 题、30 分，约 35–45 分钟；课堂讲评可以逐题展开答案。L04、L08 与 L16 作业分别作为各章检查。
-- **Teacher Guide**：目标、节奏、考纲对应、常见误区、分层支持和活动建议。
-- **Reading view**：适合小屏阅读；Fullscreen 适合投影。
-- **打印版**：学生卷按题目与作答空间排成 3–4 页，答案卷通常 2–3 页；具体页数以各 PDF 为准。使用 PDF 保留稳定的黑白版式和作答空间。
+- **Slides**：每课23页、90分钟。英文课堂正文配中文术语和教师备注；方向键/Page Up/Page Down翻页，N打开备注，答案逐题展开。Fullscreen适合投影，Reading view适合小屏。
+- **教学图解**：用位值、状态、采样、流程、列表访问、过程调用、路径和时间轴解释具体问题；内联矢量图可离线使用，小屏支持横向查看。
+- **Homework**：每课12题、30教师分，约35–45分钟。Q5恰选两项，书面题有独立评分点。章末综合检查在L04、L08、L16、L22、L26。
+- **Teacher Guide**：目标、准确考纲对应、节奏、常见误区、活动与测试参考、分层支持和资料来源。
+- **打印版**：学生卷与答案卷分开，保留代码和推理作答空间。页数随题目长度而定；L17–L19各为3页学生卷和2页答案。项目与调查另附记录单。
 
-## 编程与章末项目
+## 五个实验室与章节任务
 
-打开 [Chapter 1 Programming Lab](Chapter_1_Programming_Lab.html)。支持编辑、逐行运行、完整运行、输入队列、输出与变量追踪，以及保存代码。
+| 章节 | 实验室与课堂任务 | 记录单 |
+|---|---|---|
+| 1 | [Programming Lab](Chapter_1_Programming_Lab.html)：赋值、数值INPUT、DISPLAY、顺序追踪；Ticket Total按票数计算费用 | [Project Sheet](output/pdf/AP_CSP_Chapter_1_Project_Sheet.pdf) |
+| 2 | [Data Lab](Chapter_2_Data_Lab.html)：采样、简化RLE、清洗和证据分析；合成通勤调查 | [Investigation Sheet](output/pdf/AP_CSP_Chapter_2_Investigation_Sheet.pdf) |
+| 3 | [Programming Lab](Chapter_3_Programming_Lab.html)：表达式、Boolean、分支、循环和随机；Study Goal Tracker | [Project Sheet](output/pdf/AP_CSP_Chapter_3_Project_Sheet.pdf) |
+| 4 | [Algorithms Lab](Chapter_4_Algorithms_Lab.html)：列表、遍历、过程、搜索、机器人与增长；Study Session Analyzer | [Project Sheet](output/pdf/AP_CSP_Chapter_4_Project_Sheet.pdf) |
+| 5 | [Network Lab](Chapter_5_Network_Lab.html)：路径、数据包、容错、并行调度；Connected Systems Investigation | [Investigation Sheet](output/pdf/AP_CSP_Chapter_5_Investigation_Sheet.pdf) |
 
-该教学工具支持 AP 伪代码的有限子集：赋值、变量、数值运算、`INPUT()` 和 `DISPLAY()`；尚不支持条件、循环、列表或自定义过程。输入队列只接收数值。每次 DISPLAY 为便于阅读另起一行；AP 参考表中的 DISPLAY 通常在值后跟一个空格。工具使用浏览器的有限数值表示，不模拟 AP 参考表的整数容量。
+第一章编程工具只支持基础数值顺序程序。第三章加入IF/ELSE、REPEAT、RANDOM与显式给定的字符串教学过程；输入队列每行一个数字、true/false或双引号字符串。第四章再加入平面列表、1-based索引、FOR EACH、PROCEDURE、参数和RETURN；列表写在代码中，INPUT仍只接收标量。过程所需数据显式传参，遍历时保持源列表不变；递归等未包含语法不属于该教学工具范围。
 
-第 4 课项目 Ticket Total：有效输入为 1–50 的整数票数，每张票 12，每单手续费 3，输出总价。学生先预测，再运行，记录测试证据、反馈与修改。
+CONCAT与SUBSTRING在相应实验室中是明确给定的教学过程；SUBSTRING位置从1开始，第三参数为长度。第三章的字符串LENGTH也是教学扩展；第四章LENGTH要求列表，与官方参考表的列表过程一致。各工具使用有限浏览器数值、可见步数保护与逐行输出；这些实现选择在实验室中说明，不冒充AP规则。
 
-[项目记录单 PDF](output/pdf/AP_CSP_Chapter_1_Project_Sheet.pdf) 共 2 页，可直接打印。该项目是基础练习，**不是正式 Create 任务，也不满足正式 Create 的全部要求**。
+第二章的数据见 [chapter2-commute.json](data/chapter2-commute.json)：16条合成记录按说明保留13条，120分钟记录默认保留，临时省略仅用于敏感性比较。它不描述真实学生。
 
-## 数据实验与第二章调查
+第四章项目由学生开发 `countGoals(sessions, goal)`：遍历有效分钟列表并返回达到阈值的次数，调用者显示计数与反馈。基础测试含 `[20,30,45,10]` 配goal30/50、`[29,30,31]` 配30和 `[0,0]` 配30；空列表为延伸。学生保存代码、抽象解释、预期/实际和修订记录。
 
-打开 [Chapter 2 Data Lab](Chapter_2_Data_Lab.html)：改变采样点和幅度等级、探索简化无损 RLE 编解码、清洗与分析一份模拟校园通勤调查。
-
-调查数据保存在 [chapter2-commute.json](data/chapter2-commute.json)，附字段说明、来源情境和清洗规则。16 条原始记录按规则保留13条；120分钟观测默认保留。筛选器和统计图支持比较交通方式；临时排除异常观测只用于敏感性比较。所有记录都是合成课堂数据。
-
-[两页调查记录单](output/pdf/AP_CSP_Chapter_2_Investigation_Sheet.pdf)要求学生记录问题、清洗、数值证据、图表和结论局限。这也是课堂练习，不是正式 Create 任务。
-
-## 第三章编程与综合项目
-
-打开 [Chapter 3 Programming Lab](Chapter_3_Programming_Lab.html)，练习表达式、Boolean、IF/ELSE、嵌套分支、REPEAT次数、REPEAT UNTIL和RANDOM。实验页会显示当前条件真假、下条语句与变量值。输入队列每行一个数字、true/false或双引号字符串；随机回放用于检验某条确定路径，不替代随机实验。每课有对应示例入口，学生可以编辑代码并保存完整工作记录。
-
-本章的 CONCAT、SUBSTRING 与字符串 LENGTH 是预先定义的教学过程；SUBSTRING采用从1开始的位置与明确长度。官方表中 LENGTH 的参数是列表，不应把字符串版当作未说明的官方语法。实验用有限浏览器数值，显示结果按行排列，并在3,000步处保护性停止；这些工具选择均在页面说明。
-
-章末 [Study Goal Tracker](Chapter_3_Programming_Lab.html#project) 输入三次有效分钟数，按30分钟阈值给反馈并累计达标次数。学生解释计数器、分支与重复的组合，用边界29/30及不同整组数据验证。配 [两页项目记录单](output/pdf/AP_CSP_Chapter_3_Project_Sheet.pdf)。它仍是正式 Create 之前的课堂练习；列表与自定义过程在下一章继续。
+第五章的路径图、数据包编号和处理时间均为声明过假设的课堂模型，不是实测网络。调查要求记录基准、改变条件、结果和局限；更多处理器、替代路径和重传分别解决不同问题。所有章节项目都是正式Create之前的教学练习，不能替代正式任务的专用课堂时间。
 
 ## 覆盖与题源
 
-这三章采用自定教学顺序，选取官方 Data、Creative Development 和 Algorithms and Programming 的部分内容，不等同于完整的官方 Big Idea。精确学习目标代码、范围和资料链接在各课 Teacher Guide。
+五章采用自定教学顺序，覆盖Creative Development、Data、Algorithms and Programming及Computer Systems and Networks的所选内容；章节编号不是官方单元编号。第五章之后继续社会影响、正式Create和综合复习，精确目标与范围见各课Teacher Guide及 [总体计划](COURSE_PLAN.md)。
 
-L02–16 的题目均为原创 AP 风格练习及课堂书面题，不是官方真题或官方 Create written-response 题。L01 第 20 页另行标出 College Board CED 公开样题 Q2（正文 p.175；PDF p.182），答案见正文 p.187／PDF p.194。教师自定分数不对应 AP 最终分数。
+L02–L26的题目均为原创AP风格选择练习与课堂书面题，不是官方真题或官方Create written-response题。L01第20页另标College Board CED公开样题Q2（正文p.175 / PDFp.182；答案正文p.187 / PDFp.194）。教师分数不对应AP最终分数。
 
-官方 CED 原文件保留在 `resources/`。根据 [College Board 课程变更表](https://apcentral.collegeboard.org/courses/how-ap-develops-courses-and-exams/course-changes-overview)，2026–27 学年使用 Fall 2023 CED；计划中的下一次课程修订适用于 2027–28。核查于 2026-09-09。
+[官方CED](resources/AP_CSP_Course_and_Exam_Description.pdf)保留在resources。当前课程页面链接Effective Fall 2023 CED；参考表封面标记2026，不称为未发布的2027表。2027年考试与Create截止等安排见 [College Board考试说明](https://apcentral.collegeboard.org/courses/ap-computer-science-principles/exam)；核查于2026-09-11。
 
 ## 修改、构建与发布
 
-L01 原始内容在 `scripts/slides.json`、`scripts/teacher-guide.html`、`lesson-exercises.json`；L02–16 内容在 `lessons/L02` 至 `lessons/L16`。通用页面、样式与运行逻辑在 `scripts/`。
+L01源在 `scripts/slides.json`、`scripts/teacher-guide.html` 和 `lesson-exercises.json`；L02–L26源在对应 `lessons/Lxx/` 的meta、slides、exercises和guide中；预览由课堂图解或独立preview文件提供。门户模板、公共样式和实验逻辑位于 `scripts/`。
 
-生成全部课件、PDF 与离线包（Python 需安装 `reportlab`）：
+生成课件、PDF与五章离线包（Python需reportlab）：
 
 ```sh
 python3 scripts/build_chapter.py
 ```
 
-只修改课件图文、保持练习 PDF 不变时，可运行 `python3 scripts/build_chapter.py --skip-pdfs` 更新网页与三章离线包。
-
-验证编程工具核心逻辑：
+仅修改课堂图文时，可用 `python3 scripts/build_chapter.py --skip-pdfs` 复用既有PDF。修改题目或评分点后应重建相应PDF，并重新检查页面。验证实验核心：
 
 ```sh
 node scripts/verify_lab.cjs
 node scripts/verify_data.cjs
 node scripts/verify_programming.cjs
+node scripts/verify_algorithms.cjs
+node scripts/verify_network.cjs
 ```
 
-`main` 保存课程源文件；GitHub Pages 发布源是 `gh-pages` 根目录。修改、生成并检查后，将 `main` 的提交同步到 `gh-pages`，通过 **GitHub Desktop** 推送即可更新在线课堂。网站首页提供三章目录；第一课原文件链接继续有效。
-
-目前完成第一、二、三章，后续章节尚未制作。
+`main`保存课程源；GitHub Pages发布源为 `gh-pages` 根目录。生成并检查后同步发布提交，再通过GitHub Desktop推送。首页按顺序列出五章，旧课链接继续保留。

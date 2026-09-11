@@ -1,0 +1,345 @@
+{
+  "title": "AP CSP — Lesson 21 Homework: Robot Algorithms & Problem Solving",
+  "durationMinutes": 40,
+  "totalMarks": 30,
+  "notice": "All questions are original. Q1–Q6 are AP-style practice, not official or past AP questions; Q7–Q12 are classroom written practice, not official FRQs. These 30 marks are teacher-assigned, not AP exam scoring. Select exactly TWO answers in Q5; its one mark requires both correct choices and no others. All inputs are valid unless stated. DISPLAY outputs values in execution order. Show reasoning; braces and indentation identify each block.",
+  "questions": [
+    {
+      "id": "Q1",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Rotation meaning",
+      "prompt": "A robot faces east. What is its heading after ROTATE_LEFT()?",
+      "options": [
+        {
+          "label": "A",
+          "text": "North"
+        },
+        {
+          "label": "B",
+          "text": "South"
+        },
+        {
+          "label": "C",
+          "text": "East"
+        },
+        {
+          "label": "D",
+          "text": "West"
+        }
+      ],
+      "answer": "A",
+      "explanation": "A follows a 90-degree counterclockwise turn. B is a right turn. C ignores rotation. D is a half turn. Position does not change.",
+      "lines": 0
+    },
+    {
+      "id": "Q2",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Forward movement",
+      "prompt": "A robot at (row 4, column 1) faces east. The next cell is open. After MOVE_FORWARD(), where is it?",
+      "options": [
+        {
+          "label": "A",
+          "text": "(3,1)"
+        },
+        {
+          "label": "B",
+          "text": "(4,2)"
+        },
+        {
+          "label": "C",
+          "text": "(5,1)"
+        },
+        {
+          "label": "D",
+          "text": "(4,1)"
+        }
+      ],
+      "answer": "B",
+      "explanation": "B moves one column east. A assumes forward always means north. C moves south. D ignores a valid movement.",
+      "lines": 0
+    },
+    {
+      "id": "Q3",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Sensor side effect",
+      "prompt": "A robot evaluates CAN_MOVE(left). Which statement is correct?",
+      "options": [
+        {
+          "label": "A",
+          "text": "It moves left if that cell is open."
+        },
+        {
+          "label": "B",
+          "text": "It rotates left before checking."
+        },
+        {
+          "label": "C",
+          "text": "It returns a Boolean without moving or rotating."
+        },
+        {
+          "label": "D",
+          "text": "It returns the absolute direction west."
+        }
+      ],
+      "answer": "C",
+      "explanation": "C separates sensing from action. A and B add movement effects absent from the reference. D confuses a Boolean result and an absolute compass direction.",
+      "lines": 0
+    },
+    {
+      "id": "Q4",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Invalid move",
+      "prompt": "According to the AP robot model, what happens if MOVE_FORWARD() would enter a blocked cell?",
+      "options": [
+        {
+          "label": "A",
+          "text": "The robot jumps over the wall."
+        },
+        {
+          "label": "B",
+          "text": "The robot rotates right."
+        },
+        {
+          "label": "C",
+          "text": "The move is skipped and all later commands execute."
+        },
+        {
+          "label": "D",
+          "text": "The robot stays in its cell and the program terminates."
+        }
+      ],
+      "answer": "D",
+      "explanation": "D matches the official rule. A and B invent automatic navigation. C omits termination and would produce incorrect traces of later commands.",
+      "lines": 0
+    },
+    {
+      "id": "Q5",
+      "type": "multi",
+      "marks": 1,
+      "topic": "Robot reasoning",
+      "prompt": "Which TWO statements are correct? Select exactly TWO.",
+      "options": [
+        {
+          "label": "A",
+          "text": "Rotations take place without changing cells."
+        },
+        {
+          "label": "B",
+          "text": "CAN_MOVE(forward) uses the top of the diagram regardless of heading."
+        },
+        {
+          "label": "C",
+          "text": "Three right turns and one left turn produce the same final heading."
+        },
+        {
+          "label": "D",
+          "text": "Entering a marked goal cell always terminates the AP program."
+        }
+      ],
+      "answer": "A and C",
+      "explanation": "A is the in-place rotation rule. C follows three clockwise quarter turns versus one counterclockwise quarter turn. B ignores relative orientation. D invents a goal-triggered halt. Award one mark only for A and C together.",
+      "lines": 0
+    },
+    {
+      "id": "Q6",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Sequence order",
+      "prompt": "All neighboring cells are open. Starting at (4,1,E), execute ROTATE_LEFT() then MOVE_FORWARD(). What is the final state?",
+      "options": [
+        {
+          "label": "A",
+          "text": "(4,2,N)"
+        },
+        {
+          "label": "B",
+          "text": "(4,1,N)"
+        },
+        {
+          "label": "C",
+          "text": "(3,1,N)"
+        },
+        {
+          "label": "D",
+          "text": "(5,1,S)"
+        }
+      ],
+      "answer": "C",
+      "explanation": "C turns north, then moves one row up. A reverses the statement order. B omits the move. D turns the wrong way and moves south.",
+      "lines": 0
+    },
+    {
+      "id": "Q7",
+      "type": "written",
+      "marks": 4,
+      "topic": "Trace position and heading",
+      "prompt": "A robot starts at (row 4,column 1), facing east. All visited cells are open. Execute MOVE_FORWARD(), then ROTATE_LEFT(), then MOVE_FORWARD(). State the position after the first command, the position and heading after the second, and the final state.",
+      "answer": "After first: (4,2). After second: position (4,2), heading north. Final: (3,2,N).",
+      "explanation": "The rotation changes only heading. The following forward command therefore changes the row rather than the column.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Gives position (4,2) after the first movement."
+        },
+        {
+          "marks": 1,
+          "criterion": "States position remains (4,2) after rotation."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives heading north after rotation."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives final state (3,2,N)."
+        }
+      ],
+      "lines": 8
+    },
+    {
+      "id": "Q8",
+      "type": "written",
+      "marks": 4,
+      "topic": "Relative directions and sensing",
+      "prompt": "A robot at (4,2) faces north. Cell (3,2) is blocked; (4,1) and (4,3) are open. State CAN_MOVE(forward), CAN_MOVE(left), and CAN_MOVE(right). State whether evaluating these calls changes position or heading.",
+      "answer": "forward=false; left=true; right=true; all three evaluations leave position and heading unchanged.",
+      "explanation": "Facing north makes forward north, left west and right east. Testing does not act.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Gives false for forward."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives true for left."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives true for right."
+        },
+        {
+          "marks": 1,
+          "criterion": "States that sensor evaluations do not move or rotate the robot."
+        }
+      ],
+      "lines": 8
+    },
+    {
+      "id": "Q9",
+      "type": "written",
+      "marks": 4,
+      "topic": "Construct the classroom route",
+      "prompt": "Use a 5×5 grid, rows top-to-bottom 1–5 and columns left-to-right 1–5. Start (4,1,E); walls are (3,2),(3,3),(2,2). Write a counted-loop program that moves east 3 cells, turns left, then moves north 3 cells. State its final state. Each brace occupies its own line.",
+      "answer": "REPEAT 3 TIMES\n{\n  MOVE_FORWARD()\n}\nROTATE_LEFT()\nREPEAT 3 TIMES\n{\n  MOVE_FORWARD()\n}\nFinal state: (1,4,N).",
+      "explanation": "Both straight segments are clear. The program finishes at the goal after six moves and one turn.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Uses a three-iteration block containing MOVE_FORWARD for the initial east segment."
+        },
+        {
+          "marks": 1,
+          "criterion": "Places ROTATE_LEFT after the first segment."
+        },
+        {
+          "marks": 1,
+          "criterion": "Uses a three-iteration forward block after the turn for the north segment."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives final state (1,4,N)."
+        }
+      ],
+      "lines": 12,
+      "minLines": 12
+    },
+    {
+      "id": "Q10",
+      "type": "written",
+      "marks": 4,
+      "topic": "Guard versus attempted collision",
+      "prompt": "A robot faces a blocked cell. Compare these programs: A executes MOVE_FORWARD() then ROTATE_RIGHT(). B first tests CAN_MOVE(forward), executes MOVE_FORWARD() only when that test is true, then executes ROTATE_RIGHT() after the IF. For each program, state whether a move occurs and whether the final rotation executes.",
+      "answer": "A: no move occurs; the attempted blocked move terminates the program, so no rotation. B: no move occurs because the IF body is skipped; the later rotation executes.",
+      "explanation": "A terminates on an invalid action. B avoids the invalid action and continues after a false IF.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "States A does not change cells."
+        },
+        {
+          "marks": 1,
+          "criterion": "States A terminates before its rotation."
+        },
+        {
+          "marks": 1,
+          "criterion": "States B skips the movement body because the sensor is false."
+        },
+        {
+          "marks": 1,
+          "criterion": "States B continues and executes ROTATE_RIGHT."
+        }
+      ],
+      "lines": 8
+    },
+    {
+      "id": "Q11",
+      "type": "written",
+      "marks": 4,
+      "topic": "Equivalent turn replacement",
+      "prompt": "A correct route uses six forward moves and one left turn. Another uses the same movements but replaces the left turn with three right turns at the same point. State whether final position and heading agree, count executed turns for both, and explain which has fewer executed movement-or-turn commands.",
+      "answer": "The final position and heading agree. A uses 1 turn; B uses 3. A executes 7 movement-or-turn commands and B executes 9, so A uses fewer.",
+      "explanation": "The rotations are in place and end with the same heading before the same remaining movements.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "States that both final position and heading agree."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives one turn for A."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives three turns for B."
+        },
+        {
+          "marks": 1,
+          "criterion": "Compares 7 versus 9 executed movement-or-turn commands and identifies A as fewer."
+        }
+      ],
+      "lines": 8
+    },
+    {
+      "id": "Q12",
+      "type": "written",
+      "marks": 4,
+      "topic": "Completion is part of correctness",
+      "prompt": "A robot reaches (1,4,N) on a 5×5 grid, the marked goal. Its program then has one more MOVE_FORWARD() followed by ROTATE_RIGHT(). Explain whether the goal marker stops it, whether the next move is legal, where it remains, and whether the rotation executes.",
+      "answer": "The marker does not stop the program. The next move would leave the grid and is illegal. The robot remains at (1,4), still north. The program terminates, so ROTATE_RIGHT does not execute.",
+      "explanation": "Success must consider completion of the whole program, not merely having visited a goal cell earlier.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "States that reaching the marker does not automatically halt execution."
+        },
+        {
+          "marks": 1,
+          "criterion": "Identifies the following move as off-grid and invalid."
+        },
+        {
+          "marks": 1,
+          "criterion": "States that the robot remains at (1,4,N)."
+        },
+        {
+          "marks": 1,
+          "criterion": "States that termination prevents the later rotation."
+        }
+      ],
+      "lines": 8
+    }
+  ]
+}

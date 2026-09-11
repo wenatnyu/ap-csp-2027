@@ -1,0 +1,344 @@
+{
+  "title": "AP CSP — Lesson 23 Homework: Systems, Networks & the Internet",
+  "durationMinutes": 45,
+  "totalMarks": 30,
+  "notice": "All questions are original. Q1–Q6 are AP-style practice, not official or past AP questions. Q7–Q12 are classroom written responses, not official exam FRQs. The 30 marks are teacher-assigned. For Q5 select exactly TWO answers; its one mark requires both correct choices and no others. Follow AP pseudocode semantics.",
+  "questions": [
+    {
+      "id": "Q1",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Systems",
+      "prompt": "Which best describes a computing system?",
+      "options": [
+        {
+          "label": "A",
+          "text": "One screen only"
+        },
+        {
+          "label": "B",
+          "text": "Devices and programs working toward a shared purpose"
+        },
+        {
+          "label": "C",
+          "text": "Every file on a disk"
+        },
+        {
+          "label": "D",
+          "text": "Only devices connected to the Internet"
+        }
+      ],
+      "answer": "B",
+      "explanation": "B includes the cooperating devices and programs. A is too narrow; C lacks the shared working system; D wrongly requires Internet access.",
+      "lines": 0
+    },
+    {
+      "id": "Q2",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Paths",
+      "prompt": "What makes S–A–C–T a valid path?",
+      "options": [
+        {
+          "label": "A",
+          "text": "The labels are alphabetical."
+        },
+        {
+          "label": "B",
+          "text": "It uses the fewest labels possible."
+        },
+        {
+          "label": "C",
+          "text": "Every consecutive pair has a direct link."
+        },
+        {
+          "label": "D",
+          "text": "The drawing places S left of T."
+        }
+      ],
+      "answer": "C",
+      "explanation": "C is the connectivity requirement. A is not a path rule; B confuses validity with optimization; D uses drawing position instead of links.",
+      "lines": 0
+    },
+    {
+      "id": "Q3",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "DNS",
+      "prompt": "In a common name-to-address lookup, what does DNS return?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Address information for the name"
+        },
+        {
+          "label": "B",
+          "text": "The entire requested website"
+        },
+        {
+          "label": "C",
+          "text": "A guaranteed fixed route"
+        },
+        {
+          "label": "D",
+          "text": "The user’s password"
+        }
+      ],
+      "answer": "A",
+      "explanation": "A describes the lookup. B confuses lookup with content transfer; C confuses addressing with routing; D is unrelated to this function.",
+      "lines": 0
+    },
+    {
+      "id": "Q4",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Web versus Internet",
+      "prompt": "Which statement about the Web is correct?",
+      "options": [
+        {
+          "label": "A",
+          "text": "It is all of the Internet."
+        },
+        {
+          "label": "B",
+          "text": "It is the same as Wi-Fi."
+        },
+        {
+          "label": "C",
+          "text": "It replaces Internet protocols."
+        },
+        {
+          "label": "D",
+          "text": "It is a service that uses the Internet."
+        }
+      ],
+      "answer": "D",
+      "explanation": "D distinguishes service and network. A equates part with whole; B confuses a service with local access technology; C ignores its reliance on protocols.",
+      "lines": 0
+    },
+    {
+      "id": "Q5",
+      "type": "multi",
+      "marks": 1,
+      "topic": "Standards and bandwidth",
+      "prompt": "Which TWO statements are correct?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Open protocols support compatible implementations."
+        },
+        {
+          "label": "B",
+          "text": "A network must contain a website."
+        },
+        {
+          "label": "C",
+          "text": "Bandwidth is usually measured in bits per second."
+        },
+        {
+          "label": "D",
+          "text": "More routes automatically mean more bits per second."
+        }
+      ],
+      "answer": "A and C",
+      "explanation": "A supports interoperability; C gives the capacity unit. B invents a requirement; D infers capacity from topology alone. Select A and C only.",
+      "lines": 0
+    },
+    {
+      "id": "Q6",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Bandwidth calculation",
+      "prompt": "Ignore overhead. How long does sending 90 megabits at 30 megabits/s take?",
+      "options": [
+        {
+          "label": "A",
+          "text": "0.33 s"
+        },
+        {
+          "label": "B",
+          "text": "3 s"
+        },
+        {
+          "label": "C",
+          "text": "60 s"
+        },
+        {
+          "label": "D",
+          "text": "2700 s"
+        }
+      ],
+      "answer": "B",
+      "explanation": "B: 90/30 = 3 seconds. A reverses the ratio; C subtracts unlike quantities; D multiplies data by rate.",
+      "lines": 0
+    },
+    {
+      "id": "Q7",
+      "type": "written",
+      "marks": 4,
+      "topic": "Systems and input",
+      "prompt": "A sensor sends readings to a server, which updates a display. (a) Identify one computing device. (b) State a shared system purpose. (c) Explain what makes their connections a network. (d) Identify input to the server.",
+      "answer": "Sensor, server or display controller; report readings; connected devices exchange data; sensor readings enter the server.",
+      "explanation": "Sensor, server or display controller; report readings; connected devices exchange data; sensor readings enter the server.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Identifies a device capable of running a program."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives a purpose involving their coordinated work."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains connected devices can exchange data."
+        },
+        {
+          "marks": 1,
+          "criterion": "Identifies readings as the server input."
+        }
+      ],
+      "lines": 7
+    },
+    {
+      "id": "Q8",
+      "type": "written",
+      "marks": 4,
+      "topic": "Graph interpretation",
+      "prompt": "Model edges: S-A, S-B, A-C, A-D, B-D, C-T, D-T, C-D, all undirected. (a) Give a valid S-to-T path. (b) Count its hops. (c) Explain why S-B-C-T is invalid. (d) Explain why drawing distance alone does not select a route.",
+      "answer": "Example S-A-C-T: 3 hops. S-B-C-T lacks B-C. Graph positions do not give a routing metric.",
+      "explanation": "Example S-A-C-T: 3 hops. S-B-C-T lacks B-C. Graph positions do not give a routing metric.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Gives a path using only stated edges."
+        },
+        {
+          "marks": 1,
+          "criterion": "Correctly counts links in that path."
+        },
+        {
+          "marks": 1,
+          "criterion": "Identifies missing B-C."
+        },
+        {
+          "marks": 1,
+          "criterion": "Distinguishes drawing position from a stated routing rule."
+        }
+      ],
+      "lines": 7
+    },
+    {
+      "id": "Q9",
+      "type": "written",
+      "marks": 4,
+      "topic": "DNS and addressing",
+      "prompt": "A client looks up a site name and then requests a page. (a) Describe the DNS lookup result. (b) Describe the IP address’s role. (c) State what the page response contains. (d) Explain why DNS is not the same as the page server.",
+      "answer": "DNS returns address information; the address directs communication toward a destination; the response contains requested content; lookup and content delivery are separate functions.",
+      "explanation": "DNS returns address information; the address directs communication toward a destination; the response contains requested content; lookup and content delivery are separate functions.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Gives address information as the lookup result."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains destination addressing."
+        },
+        {
+          "marks": 1,
+          "criterion": "Identifies page/content data in the response."
+        },
+        {
+          "marks": 1,
+          "criterion": "Distinguishes name resolution from content serving."
+        }
+      ],
+      "lines": 7
+    },
+    {
+      "id": "Q10",
+      "type": "written",
+      "marks": 4,
+      "topic": "Capacity and model limits",
+      "prompt": "An 80-megabit payload is sent at an ideal 20 megabits/s. Ignore overhead. (a) Calculate time. (b) Give the bandwidth unit. (c) Would 40 megabits/s halve ideal time? Calculate. (d) Does adding a graph route prove capacity doubled? Explain.",
+      "answer": "4 seconds; bits per second; 80/40 = 2 seconds; no, connectivity alone does not establish link capacity or use.",
+      "explanation": "4 seconds; bits per second; 80/40 = 2 seconds; no, connectivity alone does not establish link capacity or use.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Calculates 4 seconds."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives bits per second or an appropriate scaled form."
+        },
+        {
+          "marks": 1,
+          "criterion": "Calculates 2 seconds at 40 megabits/s."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains that extra routes do not alone specify capacity."
+        }
+      ],
+      "lines": 7
+    },
+    {
+      "id": "Q11",
+      "type": "written",
+      "marks": 4,
+      "topic": "Internet and Web",
+      "prompt": "(a) Describe the Internet. (b) Describe the Web. (c) Name the Web protocol taught here. (d) Explain why one unavailable web page does not prove the entire Internet is unavailable.",
+      "answer": "Internet: interconnected networks using open protocols. Web: linked pages, programs and files. HTTP. Other services or paths may still work.",
+      "explanation": "Internet: interconnected networks using open protocols. Web: linked pages, programs and files. HTTP. Other services or paths may still work.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Defines the Internet as interconnected networks with shared protocols."
+        },
+        {
+          "marks": 1,
+          "criterion": "Describes the Web as linked pages/programs/files."
+        },
+        {
+          "marks": 1,
+          "criterion": "Names HTTP."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains that failure of one service is not failure of all connectivity."
+        }
+      ],
+      "lines": 7
+    },
+    {
+      "id": "Q12",
+      "type": "written",
+      "marks": 4,
+      "topic": "Open protocols and scale",
+      "prompt": "A new device joins a network. (a) What is a protocol? (b) How can open standards help compatibility? (c) What connection is needed for Internet access? (d) Give one reason common protocols do not guarantee unlimited capacity.",
+      "answer": "Agreed behavior rules; creators can implement the same rules; a connection to an Internet-connected device/network; finite link capacity or other resource limits remain.",
+      "explanation": "Agreed behavior rules; creators can implement the same rules; a connection to an Internet-connected device/network; finite link capacity or other resource limits remain.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Defines agreed rules governing communication behavior."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains compatible implementations using shared open rules."
+        },
+        {
+          "marks": 1,
+          "criterion": "Identifies a path to an Internet-connected device/network."
+        },
+        {
+          "marks": 1,
+          "criterion": "Identifies a resource limit unaffected by mere protocol agreement."
+        }
+      ],
+      "lines": 7
+    }
+  ]
+}

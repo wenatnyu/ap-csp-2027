@@ -1,0 +1,13 @@
+{
+  "chapter": 5,
+  "id": "L26",
+  "number": "26",
+  "title": "Parallel & Distributed Computing",
+  "chineseTitle": "并行、分布式计算与章末调查",
+  "shortTitle": "Parallel & Distributed",
+  "filename": "AP_CSP_L26_Parallel_and_Distributed.html",
+  "minutes": 90,
+  "preview": "lessons/L26/preview.svg",
+  "topicSummary": "Sequential, parallel and distributed models; dependency-aware processor scheduling; runtime and speedup; serial limits and overhead; a 32-minute investigation connecting all Chapter 5 concepts.",
+  "homeworkInstructions": "Q5 requires exactly TWO choices. Show paths, calculations and reasons. Treat all networks and timings as the stated classroom models."
+}

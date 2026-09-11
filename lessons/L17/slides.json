@@ -1,0 +1,187 @@
+[
+  {
+    "title": "Lists & Data Abstraction",
+    "tag": "LESSON 17",
+    "time": "0–2 min",
+    "code": "Chapter 4 · Data & Reusable Algorithms",
+    "html": "<p class=\"lead\">AP Computer Science Principles</p><h1>Lists &amp;<br>Abstraction</h1><p class=\"zh\">列表 · 下标 · 数据抽象</p><p class=\"small\">Build a Study Session Editor · 90 minutes</p>",
+    "note": "本章把前面的变量、条件和循环组合为处理多个数据的程序。今天先学列表读写，下一课再遍历。列表值使用分钟，但不是实际收集的学生数据。",
+    "kind": "dark"
+  },
+  {
+    "title": "Retrieve values and boundaries",
+    "tag": "RETRIEVAL",
+    "time": "2–6 min",
+    "code": "AAP-1.B · AAP-2.E/F",
+    "html": "<ol><li>After a ← 3; b ← a; a ← 8, what is b?</li><li>Evaluate (30 ≥ 30) AND (30 ≤ 180).</li><li>What does a variable name help a reader understand?</li></ol><details><summary>Show answer</summary><div class=\"answer\"><strong>3; true; the meaning of the stored value.</strong></div></details>",
+    "note": "先个人回忆第三章赋值与Boolean边界，不把后面的列表集合题当字符串题。复制例只用数值，列表引用别名不在本课范围。"
+  },
+  {
+    "title": "What you will be able to do",
+    "tag": "GOALS",
+    "time": "6–8 min",
+    "code": "AAP-1.C/D · AAP-2.N",
+    "html": "<ol><li>Read a list using 1-based positions.</li><li>Update, append, insert and remove values.</li><li>Check current length and valid indices.</li><li>Explain how a list manages program complexity.</li></ol>",
+    "note": "数据抽象解释必须联系具体程序：它把相关记录命名为一组，减少分别命名和硬编码，不保证运行更快或存储更少。"
+  },
+  {
+    "title": "One ordered collection, one name",
+    "tag": "CONCEPT",
+    "time": "8–12 min",
+    "code": "AAP-1.C.1–2 · AAP-1.D.6–7",
+    "html": "<pre class=\"code\" style=\"font-size:25px;line-height:1.25;padding:18px 24px\">sessions ← [20, 30, 45, 10]</pre><figure class=\"visual\" tabindex=\"0\"><svg xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Four ordered session-minute values are indexed1 through4.\" viewBox=\"0 0 1200 135\" style=\"font-family:Arial,Helvetica,sans-serif\"><text x=\"150.0\" y=\"33\" text-anchor=\"middle\" font-size=\"25\" fill=\"#28766f\" font-weight=\"700\">1</text><rect x=\"25\" y=\"45\" width=\"250\" height=\"70\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"150.0\" y=\"91\" text-anchor=\"middle\" font-size=\"32\" fill=\"#193148\" font-weight=\"700\">20</text><text x=\"450.0\" y=\"33\" text-anchor=\"middle\" font-size=\"25\" fill=\"#28766f\" font-weight=\"700\">2</text><rect x=\"325\" y=\"45\" width=\"250\" height=\"70\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"450.0\" y=\"91\" text-anchor=\"middle\" font-size=\"32\" fill=\"#193148\" font-weight=\"700\">30</text><text x=\"750.0\" y=\"33\" text-anchor=\"middle\" font-size=\"25\" fill=\"#28766f\" font-weight=\"700\">3</text><rect x=\"625\" y=\"45\" width=\"250\" height=\"70\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"750.0\" y=\"91\" text-anchor=\"middle\" font-size=\"32\" fill=\"#193148\" font-weight=\"700\">45</text><text x=\"1050.0\" y=\"33\" text-anchor=\"middle\" font-size=\"25\" fill=\"#28766f\" font-weight=\"700\">4</text><rect x=\"925\" y=\"45\" width=\"250\" height=\"70\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"1050.0\" y=\"91\" text-anchor=\"middle\" font-size=\"32\" fill=\"#193148\" font-weight=\"700\">10</text></svg></figure><p>Each element has a position. Repeated values are allowed.</p>",
+    "note": "中括号包围列表字面值，逗号分隔元素。顺序是列表的一部分；索引唯一不代表数值必须不同。每个数表示一次活动分钟数。"
+  },
+  {
+    "title": "An index selects one element",
+    "tag": "CONCEPT",
+    "time": "12–16 min",
+    "code": "AAP-2.N.1",
+    "html": "<figure class=\"visual\" tabindex=\"0\"><svg xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"The third position is highlighted independently of the numerical values.\" viewBox=\"0 0 1200 135\" style=\"font-family:Arial,Helvetica,sans-serif\"><text x=\"150.0\" y=\"33\" text-anchor=\"middle\" font-size=\"25\" fill=\"#28766f\" font-weight=\"700\">1</text><rect x=\"25\" y=\"45\" width=\"250\" height=\"70\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"150.0\" y=\"91\" text-anchor=\"middle\" font-size=\"32\" fill=\"#193148\" font-weight=\"700\">20</text><text x=\"450.0\" y=\"33\" text-anchor=\"middle\" font-size=\"25\" fill=\"#28766f\" font-weight=\"700\">2</text><rect x=\"325\" y=\"45\" width=\"250\" height=\"70\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"450.0\" y=\"91\" text-anchor=\"middle\" font-size=\"32\" fill=\"#193148\" font-weight=\"700\">30</text><text x=\"750.0\" y=\"33\" text-anchor=\"middle\" font-size=\"25\" fill=\"#28766f\" font-weight=\"700\">3</text><rect x=\"625\" y=\"45\" width=\"250\" height=\"70\" rx=\"10\" fill=\"#f4ecd9\" stroke=\"#28766f\" stroke-width=\"2\"/><text x=\"750.0\" y=\"91\" text-anchor=\"middle\" font-size=\"32\" fill=\"#193148\" font-weight=\"700\">45</text><text x=\"1050.0\" y=\"33\" text-anchor=\"middle\" font-size=\"25\" fill=\"#28766f\" font-weight=\"700\">4</text><rect x=\"925\" y=\"45\" width=\"250\" height=\"70\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"1050.0\" y=\"91\" text-anchor=\"middle\" font-size=\"32\" fill=\"#193148\" font-weight=\"700\">10</text></svg></figure><pre class=\"code\" style=\"font-size:25px;line-height:1.25;padding:18px 24px\">chosen ← sessions[3]</pre><p>What is chosen? Does reading remove a value?</p><details><summary>Show answer</summary><div class=\"answer\"><strong>45.</strong> Reading leaves the list unchanged.</div></details>",
+    "note": "强调AP下标从1开始。第三个值45不是索引45；读出元素不会删除它。高亮位置是寻找目标的支架，仍要学生判断读操作是否改变列表。"
+  },
+  {
+    "title": "Length counts elements",
+    "tag": "CONCEPT",
+    "time": "16–20 min",
+    "code": "AAP-2.N.1",
+    "html": "<figure class=\"visual\" tabindex=\"0\"><svg xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Four values form one list; length counts slots, not the sum of minutes.\" viewBox=\"0 0 1200 155\" style=\"font-family:Arial,Helvetica,sans-serif\"><rect x=\"15.0\" y=\"12\" width=\"560.0\" height=\"121\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"295.0\" y=\"49\" text-anchor=\"middle\" font-size=\"25\" fill=\"#225a83\" font-weight=\"700\">Collection</text><text x=\"295.0\" y=\"104\" text-anchor=\"middle\" font-size=\"29\" fill=\"#193148\" font-weight=\"700\">[20, 30, 45, 10]</text><path d=\"M582.0 72.5H605.0\" stroke=\"#225a83\" stroke-width=\"3\"/><path d=\"M603.0 65.5L617.0 72.5L603.0 79.5Z\" fill=\"#225a83\"/><rect x=\"625.0\" y=\"12\" width=\"560.0\" height=\"121\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"905.0\" y=\"49\" text-anchor=\"middle\" font-size=\"25\" fill=\"#225a83\" font-weight=\"700\">Question</text><text x=\"905.0\" y=\"104\" text-anchor=\"middle\" font-size=\"29\" fill=\"#193148\" font-weight=\"700\">How many elements?</text></svg></figure><p>Evaluate LENGTH(sessions) and LENGTH([]).</p><details><summary>Show answer</summary><div class=\"answer\"><strong>4 and 0.</strong> LENGTH counts elements, not their sum.</div></details>",
+    "note": "LENGTH是官方列表过程，与第九课明确给定的字符串教学过程区分。空列表没有第一个元素，长度0。无需为这个问题先学遍历。"
+  },
+  {
+    "title": "Update replaces a value in place",
+    "tag": "CONCEPT",
+    "time": "20–24 min",
+    "code": "AAP-2.N.1",
+    "html": "<pre class=\"code\" style=\"font-size:25px;line-height:1.25;padding:18px 24px\">sessions[2] ← 35</pre><figure class=\"visual\" tabindex=\"0\"><svg xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"An update keeps all four positions; only the value at position2 is replaced.\" viewBox=\"0 0 1200 135\" style=\"font-family:Arial,Helvetica,sans-serif\"><text x=\"150.0\" y=\"33\" text-anchor=\"middle\" font-size=\"25\" fill=\"#28766f\" font-weight=\"700\">1</text><rect x=\"25\" y=\"45\" width=\"250\" height=\"70\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"150.0\" y=\"91\" text-anchor=\"middle\" font-size=\"32\" fill=\"#193148\" font-weight=\"700\">20</text><text x=\"450.0\" y=\"33\" text-anchor=\"middle\" font-size=\"25\" fill=\"#28766f\" font-weight=\"700\">2</text><rect x=\"325\" y=\"45\" width=\"250\" height=\"70\" rx=\"10\" fill=\"#f4ecd9\" stroke=\"#28766f\" stroke-width=\"2\"/><text x=\"450.0\" y=\"91\" text-anchor=\"middle\" font-size=\"32\" fill=\"#193148\" font-weight=\"700\">new</text><text x=\"750.0\" y=\"33\" text-anchor=\"middle\" font-size=\"25\" fill=\"#28766f\" font-weight=\"700\">3</text><rect x=\"625\" y=\"45\" width=\"250\" height=\"70\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"750.0\" y=\"91\" text-anchor=\"middle\" font-size=\"32\" fill=\"#193148\" font-weight=\"700\">45</text><text x=\"1050.0\" y=\"33\" text-anchor=\"middle\" font-size=\"25\" fill=\"#28766f\" font-weight=\"700\">4</text><rect x=\"925\" y=\"45\" width=\"250\" height=\"70\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"1050.0\" y=\"91\" text-anchor=\"middle\" font-size=\"32\" fill=\"#193148\" font-weight=\"700\">10</text></svg></figure><p>Predict the full list and its length.</p><details><summary>Show answer</summary><div class=\"answer\"><strong>[20, 35, 45, 10]; length 4.</strong> No element shifts.</div></details>",
+    "note": "本页从原始[20,30,45,10]独立开始。只改第2格，不额外增加35，也不改变长度。图中new保留求值任务。"
+  },
+  {
+    "title": "APPEND adds at the end",
+    "tag": "CONCEPT",
+    "time": "24–28 min",
+    "code": "AAP-2.N.1",
+    "html": "<p class=\"small\">Start independently with a ← [8, 12, 5].</p><figure class=\"visual\" tabindex=\"0\"><svg xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Append adds one new end slot; earlier elements keep their positions.\" viewBox=\"0 0 1200 170\" style=\"font-family:Arial,Helvetica,sans-serif\"><text x=\"150.0\" y=\"33\" text-anchor=\"middle\" font-size=\"25\" fill=\"#28766f\" font-weight=\"700\">1</text><rect x=\"25\" y=\"45\" width=\"250\" height=\"70\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"150.0\" y=\"91\" text-anchor=\"middle\" font-size=\"32\" fill=\"#193148\" font-weight=\"700\">8</text><text x=\"450.0\" y=\"33\" text-anchor=\"middle\" font-size=\"25\" fill=\"#28766f\" font-weight=\"700\">2</text><rect x=\"325\" y=\"45\" width=\"250\" height=\"70\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"450.0\" y=\"91\" text-anchor=\"middle\" font-size=\"32\" fill=\"#193148\" font-weight=\"700\">12</text><text x=\"750.0\" y=\"33\" text-anchor=\"middle\" font-size=\"25\" fill=\"#28766f\" font-weight=\"700\">3</text><rect x=\"625\" y=\"45\" width=\"250\" height=\"70\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"750.0\" y=\"91\" text-anchor=\"middle\" font-size=\"32\" fill=\"#193148\" font-weight=\"700\">5</text><text x=\"1050.0\" y=\"33\" text-anchor=\"middle\" font-size=\"25\" fill=\"#28766f\" font-weight=\"700\">4</text><rect x=\"925\" y=\"45\" width=\"250\" height=\"70\" rx=\"10\" fill=\"#f4ecd9\" stroke=\"#28766f\" stroke-width=\"2\"/><text x=\"1050.0\" y=\"91\" text-anchor=\"middle\" font-size=\"32\" fill=\"#193148\" font-weight=\"700\">new</text><text x=\"1075\" y=\"150\" text-anchor=\"middle\" font-size=\"25\" fill=\"#28766f\" font-weight=\"700\">APPEND</text></svg></figure><pre class=\"code\" style=\"font-size:25px;line-height:1.25;padding:18px 24px\">APPEND(a, 9)</pre><details><summary>Show answer</summary><div class=\"answer\"><strong>[8, 12, 5, 9]; length 4.</strong> APPEND can also add the first element to an empty list variable.</div></details>",
+    "note": "实际代码中APPEND的首参数用列表变量，比如empty←[]后APPEND(empty,9)。口头规则表示往空列表追加也有效，不要求把字面量直接当可变目标。已存在的元素索引不变。"
+  },
+  {
+    "title": "INSERT opens a position",
+    "tag": "CONCEPT",
+    "time": "28–32 min",
+    "code": "AAP-2.N.1",
+    "html": "<p class=\"small\">Start independently with a ← [8, 12, 5]. Insert at index 2.</p><figure class=\"visual\" tabindex=\"0\"><svg xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"A new slot opens at position2. Existing values12 and5 shift one index to the right.\" viewBox=\"0 0 1200 205\" style=\"font-family:Arial,Helvetica,sans-serif\"><text x=\"150.0\" y=\"33\" text-anchor=\"middle\" font-size=\"25\" fill=\"#28766f\" font-weight=\"700\">1</text><rect x=\"25\" y=\"45\" width=\"250\" height=\"70\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"150.0\" y=\"91\" text-anchor=\"middle\" font-size=\"32\" fill=\"#193148\" font-weight=\"700\">8</text><text x=\"450.0\" y=\"33\" text-anchor=\"middle\" font-size=\"25\" fill=\"#28766f\" font-weight=\"700\">2</text><rect x=\"325\" y=\"45\" width=\"250\" height=\"70\" rx=\"10\" fill=\"#f4ecd9\" stroke=\"#28766f\" stroke-width=\"2\"/><text x=\"450.0\" y=\"91\" text-anchor=\"middle\" font-size=\"32\" fill=\"#193148\" font-weight=\"700\">new</text><text x=\"750.0\" y=\"33\" text-anchor=\"middle\" font-size=\"25\" fill=\"#28766f\" font-weight=\"700\">3</text><rect x=\"625\" y=\"45\" width=\"250\" height=\"70\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"750.0\" y=\"91\" text-anchor=\"middle\" font-size=\"32\" fill=\"#193148\" font-weight=\"700\">12</text><text x=\"1050.0\" y=\"33\" text-anchor=\"middle\" font-size=\"25\" fill=\"#28766f\" font-weight=\"700\">4</text><rect x=\"925\" y=\"45\" width=\"250\" height=\"70\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"1050.0\" y=\"91\" text-anchor=\"middle\" font-size=\"32\" fill=\"#193148\" font-weight=\"700\">5</text><path d=\"M480 145H668\" stroke=\"#225a83\" stroke-width=\"3\"/><path d=\"M666 138L680 145L666 152Z\" fill=\"#225a83\"/><text x=\"600\" y=\"185\" text-anchor=\"middle\" font-size=\"26\" fill=\"#28766f\" font-weight=\"400\">Existing values shift right</text></svg></figure><pre class=\"code\" style=\"font-size:25px;line-height:1.25;padding:18px 24px\">INSERT(a, 2, 9)</pre><details><summary>Show answer</summary><div class=\"answer\"><strong>[8, 9, 12, 5]; length 4.</strong></div></details>",
+    "note": "INSERT不会替换原第2个值，而是把它及其后的元素右移。只用原列表内有效索引；末尾新增统一用APPEND，避免其他语言允许n+1插入的惯例混入。"
+  },
+  {
+    "title": "REMOVE closes a position",
+    "tag": "CONCEPT",
+    "time": "32–36 min",
+    "code": "AAP-2.N.1",
+    "html": "<p class=\"small\">Start independently with a ← [8, 12, 5, 9]. Remove index 2.</p><figure class=\"visual\" tabindex=\"0\"><svg xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"After removing a position, later values shift left; the remaining list has three positions.\" viewBox=\"0 0 1200 180\" style=\"font-family:Arial,Helvetica,sans-serif\"><text x=\"275.0\" y=\"33\" text-anchor=\"middle\" font-size=\"25\" fill=\"#28766f\" font-weight=\"700\">1</text><rect x=\"150\" y=\"45\" width=\"250\" height=\"70\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"275.0\" y=\"91\" text-anchor=\"middle\" font-size=\"32\" fill=\"#193148\" font-weight=\"700\">8</text><text x=\"600.0\" y=\"33\" text-anchor=\"middle\" font-size=\"25\" fill=\"#28766f\" font-weight=\"700\">2</text><rect x=\"475\" y=\"45\" width=\"250\" height=\"70\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"600.0\" y=\"91\" text-anchor=\"middle\" font-size=\"32\" fill=\"#193148\" font-weight=\"700\">later</text><text x=\"925.0\" y=\"33\" text-anchor=\"middle\" font-size=\"25\" fill=\"#28766f\" font-weight=\"700\">3</text><rect x=\"800\" y=\"45\" width=\"250\" height=\"70\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"925.0\" y=\"91\" text-anchor=\"middle\" font-size=\"32\" fill=\"#193148\" font-weight=\"700\">later</text><text x=\"600\" y=\"156\" text-anchor=\"middle\" font-size=\"26\" fill=\"#28766f\" font-weight=\"400\">Later values shift left</text></svg></figure><pre class=\"code\" style=\"font-size:25px;line-height:1.25;padding:18px 24px\">REMOVE(a, 2)</pre><details><summary>Show answer</summary><div class=\"answer\"><strong>[8, 5, 9]; length 3.</strong> The argument 2 is an index, not a value to search for.</div></details>",
+    "note": "REMOVE按索引删除，不会遍历寻找数值2。删除后每个后续值索引减一，所以多次操作必须基于当前列表重画下标。"
+  },
+  {
+    "title": "Check the current valid index range",
+    "tag": "CONCEPT",
+    "time": "36–39 min",
+    "code": "AAP-1.D.8",
+    "html": "<figure class=\"visual\" tabindex=\"0\"><svg xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"For a three-element list, indices1,2,3 are valid;0 and4 are outside.\" viewBox=\"0 0 1200 140\" style=\"font-family:Arial,Helvetica,sans-serif\"><rect x=\"25\" y=\"45\" width=\"200\" height=\"70\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"125.0\" y=\"91\" text-anchor=\"middle\" font-size=\"32\" fill=\"#193148\" font-weight=\"700\">0 ✕</text><rect x=\"260\" y=\"45\" width=\"200\" height=\"70\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"360.0\" y=\"91\" text-anchor=\"middle\" font-size=\"32\" fill=\"#193148\" font-weight=\"700\">1 ✓</text><rect x=\"495\" y=\"45\" width=\"200\" height=\"70\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"595.0\" y=\"91\" text-anchor=\"middle\" font-size=\"32\" fill=\"#193148\" font-weight=\"700\">2 ✓</text><rect x=\"730\" y=\"45\" width=\"200\" height=\"70\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"830.0\" y=\"91\" text-anchor=\"middle\" font-size=\"32\" fill=\"#193148\" font-weight=\"700\">3 ✓</text><rect x=\"965\" y=\"45\" width=\"200\" height=\"70\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"1065.0\" y=\"91\" text-anchor=\"middle\" font-size=\"32\" fill=\"#193148\" font-weight=\"700\">4 ✕</text></svg></figure><p>For a ← [8, 5, 9], what happens at a[0] or a[4]?</p><details><summary>Show answer</summary><div class=\"answer\"><strong>An index error terminates the program.</strong> Valid indexed access is 1 through LENGTH(a).</div></details>",
+    "note": "错误不是返回0、空字符或循环绕回。当前参考表所有带索引操作遵循1..LENGTH。整数索引是前提；空列表当前没有可访问的元素。课堂错误示例单独运行，不中断完整项目工作。"
+  },
+  {
+    "title": "Why a named collection helps",
+    "tag": "CONCEPT",
+    "time": "39–42 min",
+    "code": "AAP-1.D.1–4/6",
+    "html": "<figure class=\"visual\" tabindex=\"0\"><svg xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Many separately named session variables are represented by one named collection.\" viewBox=\"0 0 1200 155\" style=\"font-family:Arial,Helvetica,sans-serif\"><rect x=\"15.0\" y=\"12\" width=\"560.0\" height=\"126\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"295.0\" y=\"49\" text-anchor=\"middle\" font-size=\"25\" fill=\"#225a83\" font-weight=\"700\">Separate names</text><text x=\"295.0\" y=\"104\" text-anchor=\"middle\" font-size=\"29\" fill=\"#193148\" font-weight=\"700\">s1, s2, s3, s4, ...</text><path d=\"M582.0 75.0H605.0\" stroke=\"#225a83\" stroke-width=\"3\"/><path d=\"M603.0 68.0L617.0 75.0L603.0 82.0Z\" fill=\"#225a83\"/><rect x=\"625.0\" y=\"12\" width=\"560.0\" height=\"126\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"905.0\" y=\"49\" text-anchor=\"middle\" font-size=\"25\" fill=\"#225a83\" font-weight=\"700\">Data abstraction</text><text x=\"905.0\" y=\"104\" text-anchor=\"middle\" font-size=\"29\" fill=\"#193148\" font-weight=\"700\">sessions: one list</text></svg></figure><p>A changing number of sessions can use one collection and the same list operations.</p><details><summary>Show a specific explanation</summary><div class=\"answer\">Adding sessions does not require inventing another variable name each time. Later, one traversal can process the collection.</div></details>",
+    "note": "避免“列表让程序更简单”这样空泛句。联系本例记录数量可变、只需一组同样操作；不宣称列表一定更快或物理存储连续。"
+  },
+  {
+    "title": "Equal values still occupy different positions",
+    "tag": "CONCEPT",
+    "time": "42–44 min",
+    "code": "AAP-1.C.1–3",
+    "html": "<figure class=\"visual\" tabindex=\"0\"><svg xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Two equal30-minute values are different list elements at positions1 and2.\" viewBox=\"0 0 1200 140\" style=\"font-family:Arial,Helvetica,sans-serif\"><text x=\"275.0\" y=\"33\" text-anchor=\"middle\" font-size=\"25\" fill=\"#28766f\" font-weight=\"700\">1</text><rect x=\"150\" y=\"45\" width=\"250\" height=\"70\" rx=\"10\" fill=\"#f4ecd9\" stroke=\"#28766f\" stroke-width=\"2\"/><text x=\"275.0\" y=\"91\" text-anchor=\"middle\" font-size=\"32\" fill=\"#193148\" font-weight=\"700\">30</text><text x=\"600.0\" y=\"33\" text-anchor=\"middle\" font-size=\"25\" fill=\"#28766f\" font-weight=\"700\">2</text><rect x=\"475\" y=\"45\" width=\"250\" height=\"70\" rx=\"10\" fill=\"#f4ecd9\" stroke=\"#28766f\" stroke-width=\"2\"/><text x=\"600.0\" y=\"91\" text-anchor=\"middle\" font-size=\"32\" fill=\"#193148\" font-weight=\"700\">30</text><text x=\"925.0\" y=\"33\" text-anchor=\"middle\" font-size=\"25\" fill=\"#28766f\" font-weight=\"700\">3</text><rect x=\"800\" y=\"45\" width=\"250\" height=\"70\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"925.0\" y=\"91\" text-anchor=\"middle\" font-size=\"32\" fill=\"#193148\" font-weight=\"700\">10</text></svg></figure><p>For a ← [30, 30, 10], predict REMOVE(a, 1).</p><details><summary>Show answer</summary><div class=\"answer\"><strong>[30, 10].</strong> One occurrence is removed; the other remains.</div></details>",
+    "note": "重复值有不同索引。每个元素可以代表不同活动，所以不能无理由去重；以后FOR EACH会分别处理每个出现。"
+  },
+  {
+    "title": "Study Session Editor",
+    "tag": "LAB SETUP",
+    "time": "44–49 min",
+    "code": "AAP-1.D · AAP-2.N",
+    "html": "<p class=\"lead\"><a href=\"Chapter_4_Algorithms_Lab.html#lists\" target=\"_blank\" rel=\"noopener\">Open Chapter 4 Lab → Lists</a></p><p>Use the initial list [20, 30, 45, 10]. Edit this fictional session log and display checkpoints.</p><p class=\"small\">Enter list literals in code. No INPUT queue is required for this activity.</p>",
+    "note": "项目当前固定四个初始元素，索引2和后续4因此有效。明确本课用代码中的字面列表，不猜实验室输入队列是否接受数组。"
+  },
+  {
+    "title": "1 · Plan the sequence of edits",
+    "tag": "EDITOR · 5 MINUTES",
+    "time": "49–54 min",
+    "code": "AAP-2.N",
+    "html": "<ol><li>Replace the second session with 35.</li><li>Append 25.</li><li>Insert 15 at index 1.</li><li>Remove the element now at index 4.</li></ol><p>Sketch the list and current indices after every step.</p><details><summary>Show planning support</summary><div class=\"answer\">Use update → APPEND → INSERT → REMOVE. Recompute the positions after insertion.</div></details>",
+    "note": "保护5分钟纸上计划。删除的是插入后的第4位置，不能按原始索引记忆。先不公布结果，检查学生是否重新编号。"
+  },
+  {
+    "title": "2 · Implement with checkpoints",
+    "tag": "EDITOR · 9 MINUTES",
+    "time": "54–63 min",
+    "code": "AAP-2.N",
+    "html": "<pre class=\"code\" style=\"font-size:25px;line-height:1.25;padding:18px 24px\">sessions ← [20, 30, 45, 10]\nDISPLAY(sessions)</pre><p>Add the four edits. Display the list after each edit, then its length, first value and last value.</p><details><summary>Show output support</summary><div class=\"answer\"><span class=\"mono\">DISPLAY(LENGTH(sessions))<br>DISPLAY(sessions[LENGTH(sessions)])</span></div></details>",
+    "note": "9分钟实际编码。显示最后元素用当前LENGTH，不硬编码原末尾位置4。让学生口述每行预期改变数值、顺序还是长度。"
+  },
+  {
+    "title": "3 · Trace and test two starting lists",
+    "tag": "EDITOR · 6 MINUTES",
+    "time": "63–69 min",
+    "code": "CRD-2.J · AAP-2.N",
+    "html": "<p>Run the same four edits with:</p><ol><li>[20, 30, 45, 10]</li><li>[0, 30, 30, 180]</li></ol><p>Compare every checkpoint to your paper trace.</p><details><summary>Show answer</summary><div class=\"answer\">Final lists: <strong>[15, 20, 35, 10, 25]</strong> and <strong>[15, 0, 35, 180, 25]</strong>. Both lengths are 5; first 15, last 25.</div></details>",
+    "note": "第二组有重复30及0/180分钟；目标是检验按位置操作，不把相同值全部删掉。预期必须先写，再运行；最后长度相同不代表内容正确。"
+  },
+  {
+    "title": "4 · Revise and explain the abstraction",
+    "tag": "EDITOR · 5 MINUTES",
+    "time": "69–74 min",
+    "code": "CRD-2.E/J · AAP-1.D",
+    "html": "<ol><li>Correct a wrong index or unclear checkpoint label.</li><li>Re-run both test cases.</li><li>Save code and expected/actual lists.</li><li>Explain one change that is easier because sessions is a list.</li></ol><details><summary>Show evidence statement</summary><div class=\"answer\">Example: “APPEND adds a session without a new named variable, and LENGTH gives the updated count.”</div></details>",
+    "note": "同伴反馈要求指明哪个检查点首次出现差异。正确程序可改标签并说明理由，不能只写“我用了列表所以快”。"
+  },
+  {
+    "title": "Do not use a missing last index",
+    "tag": "DEBUG",
+    "time": "74–78 min",
+    "code": "AAP-1.D.8 · CRD-2.I",
+    "html": "<pre class=\"code\" style=\"font-size:25px;line-height:1.25;padding:18px 24px\">a ← [8, 12]\nREMOVE(a, 2)\nDISPLAY(a[2])</pre><p>What goes wrong, and which index reads the remaining value?</p><details><summary>Show answer</summary><div class=\"answer\">The list is now <strong>[8]</strong>; index 2 is invalid. Use <strong>a[1]</strong>.</div></details>",
+    "note": "先说明错误发生在哪一行。REMOVE本身有效，随后读旧末尾才失效。这是当前状态而非初始状态决定索引合法性的例子。"
+  },
+  {
+    "title": "Choose the operation that preserves length",
+    "tag": "ORIGINAL AP-STYLE",
+    "time": "78–82 min",
+    "code": "AAP-2.N",
+    "html": "<p>For a nonempty list, which operation always preserves its length when the index is valid?</p><div class=\"options\"><p>A. APPEND(a, 9)</p><p>B. INSERT(a, 1, 9)</p><p>C. a[1] ← 9</p><p>D. REMOVE(a, 1)</p></div><details><summary>Show answer</summary><div class=\"answer\"><strong>C.</strong> Updating replaces one value; the other operations change element count.</div></details>",
+    "note": "原创AP风格题。不要把保留长度误读为列表完全不变；C内容可能变化。"
+  },
+  {
+    "title": "Choose exactly two valid claims",
+    "tag": "ORIGINAL AP-STYLE",
+    "time": "82–85 min",
+    "code": "AAP-1.C/D · AAP-2.N",
+    "html": "<div class=\"options\"><p>A. The first AP list index is 0.</p><p>B. LENGTH([]) is 0.</p><p>C. Equal values cannot appear twice.</p><p>D. APPEND adds one element at the end.</p></div><details><summary>Show answer</summary><div class=\"answer\"><strong>B and D.</strong> AP indices begin at 1; repeated values are allowed.</div></details>",
+    "note": "Q5选两项习惯继续保留，所有选项独立判真再检查数量。"
+  },
+  {
+    "title": "Homework and the next step",
+    "tag": "CONSOLIDATION",
+    "time": "85–87 min",
+    "code": "12 original questions · 30 classroom marks",
+    "html": "<p class=\"lead\">Keep your editor code and two full traces.</p><ul><li>Homework: 12 questions, about 40 minutes.</li><li>Redraw indices after insertion or removal.</li><li>Next: one loop visits every list element.</li></ul>",
+    "note": "本课不强行加入遍历。家作代码写作区按所需行数保留，不因图文内容挤占作答空间。"
+  },
+  {
+    "title": "Exit ticket",
+    "tag": "EXIT",
+    "time": "87–90 min",
+    "code": "AAP-1.D · AAP-2.N",
+    "html": "<ol><li>What is [6, 9, 2] at index 2?</li><li>What is its length after APPEND adds 7?</li><li>State one concrete benefit of storing sessions in a list.</li></ol><details><summary>Show answer</summary><div class=\"answer\"><strong>9; 4;</strong> one named collection can hold a changing number of sessions without a separately named variable for every entry.</div></details>",
+    "note": "独立完成三项各1分。第3项必须具体联系集合或变化数量，不接受只有“更简单”的循环表述。"
+  }
+]

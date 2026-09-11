@@ -1,0 +1,13 @@
+{
+  "chapter": 4,
+  "id": "L17",
+  "number": "17",
+  "title": "Lists & Data Abstraction",
+  "shortTitle": "Lists & Abstraction",
+  "chineseTitle": "列表与数据抽象",
+  "filename": "AP_CSP_L17_Lists_and_Abstraction.html",
+  "minutes": 90,
+  "preview": "lessons/L17/preview.svg",
+  "topicSummary": "List literals, 1-based indexing, length, edits, invalid indices and a Study Session Editor.",
+  "homeworkInstructions": "Q5: select exactly TWO. AP list indices start at 1. Indexed operations use 1 through current LENGTH; invalid indices cause an error. All examples use simple lists."
+}

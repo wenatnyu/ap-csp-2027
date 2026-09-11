@@ -1,0 +1,344 @@
+{
+  "title": "AP CSP — Lesson 20 Homework: Searching & Comparing Algorithms",
+  "durationMinutes": 40,
+  "totalMarks": 30,
+  "notice": "All questions are original. Q1–Q6 are AP-style practice, not official or past AP questions; Q7–Q12 are classroom written practice, not official FRQs. These 30 marks are teacher-assigned, not AP exam scoring. Select exactly TWO answers in Q5; its one mark requires both correct choices and no others. All inputs are valid unless stated. DISPLAY outputs values in execution order. Show reasoning; braces and indentation identify each block.",
+  "questions": [
+    {
+      "id": "Q1",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "List retrieval",
+      "prompt": "For values ← [3,8,12], what is values[1]?",
+      "options": [
+        {
+          "label": "A",
+          "text": "3"
+        },
+        {
+          "label": "B",
+          "text": "8"
+        },
+        {
+          "label": "C",
+          "text": "12"
+        },
+        {
+          "label": "D",
+          "text": "1"
+        }
+      ],
+      "answer": "A",
+      "explanation": "A uses AP one-based indexing. B uses a zero-based interpretation. C selects the last element. D returns the index rather than the stored value.",
+      "lines": 0
+    },
+    {
+      "id": "Q2",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Binary prerequisite",
+      "prompt": "Which property allows an ascending binary search to discard all values left of a midpoint when the target is greater than that midpoint?",
+      "options": [
+        {
+          "label": "A",
+          "text": "All values are positive."
+        },
+        {
+          "label": "B",
+          "text": "The list is sorted in ascending order."
+        },
+        {
+          "label": "C",
+          "text": "The list length is odd."
+        },
+        {
+          "label": "D",
+          "text": "The target must be present."
+        }
+      ],
+      "answer": "B",
+      "explanation": "B guarantees that the left values are no larger than the midpoint. Positivity and odd length are not prerequisites. A target may be absent; binary search must still conclude not found.",
+      "lines": 0
+    },
+    {
+      "id": "Q3",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Linear search cost",
+      "prompt": "An early-stopping linear search checks [3,8,12,19,27,34,50] from the beginning for target 34. How many elements are checked?",
+      "options": [
+        {
+          "label": "A",
+          "text": "2"
+        },
+        {
+          "label": "B",
+          "text": "5"
+        },
+        {
+          "label": "C",
+          "text": "6"
+        },
+        {
+          "label": "D",
+          "text": "7"
+        }
+      ],
+      "answer": "C",
+      "explanation": "C counts 3,8,12,19,27,34. A matches binary search for this target. B stops before examining the match. D unnecessarily examines the last element after finding it.",
+      "lines": 0
+    },
+    {
+      "id": "Q4",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Binary trace",
+      "prompt": "Binary search checks the middle value 19 in [3,8,12,19,27,34,50] for target 34. Which candidates remain?",
+      "options": [
+        {
+          "label": "A",
+          "text": "3,8,12"
+        },
+        {
+          "label": "B",
+          "text": "19,27,34,50"
+        },
+        {
+          "label": "C",
+          "text": "34 only"
+        },
+        {
+          "label": "D",
+          "text": "27,34,50"
+        }
+      ],
+      "answer": "D",
+      "explanation": "D keeps values strictly above the checked 19. A keeps the wrong half. B retains an already ruled-out midpoint. C assumes the answer before inspecting the next midpoint.",
+      "lines": 0
+    },
+    {
+      "id": "Q5",
+      "type": "multi",
+      "marks": 1,
+      "topic": "Search claims",
+      "prompt": "Which TWO statements are correct? Select exactly TWO.",
+      "options": [
+        {
+          "label": "A",
+          "text": "Linear search needs sorted data."
+        },
+        {
+          "label": "B",
+          "text": "Binary search can conclude that a target is absent."
+        },
+        {
+          "label": "C",
+          "text": "Different correct searches can return the same membership result with different costs."
+        },
+        {
+          "label": "D",
+          "text": "Binary search always uses fewer checks than linear search for every target."
+        }
+      ],
+      "answer": "B and C",
+      "explanation": "B stops after all candidates are eliminated. C separates correctness from cost. A is false because linear search can inspect unsorted data. D fails when the target is the first element of the list. Award one mark only for B and C together.",
+      "lines": 0
+    },
+    {
+      "id": "Q6",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Counting convention",
+      "prompt": "A sorted list has 31 distinct elements. Binary search checks one midpoint at each step. The possible interval sizes before checks are 31,15,7,3,1. What is the maximum number of checks?",
+      "options": [
+        {
+          "label": "A",
+          "text": "4"
+        },
+        {
+          "label": "B",
+          "text": "5"
+        },
+        {
+          "label": "C",
+          "text": "15"
+        },
+        {
+          "label": "D",
+          "text": "31"
+        }
+      ],
+      "answer": "B",
+      "explanation": "B counts the five nonempty intervals. A counts gaps between them instead of checks. C is the size after one elimination. D is the linear-search maximum.",
+      "lines": 0
+    },
+    {
+      "id": "Q7",
+      "type": "written",
+      "marks": 4,
+      "topic": "Successful binary trace",
+      "prompt": "Search [3,8,12,19,27,34,50] for 50 using binary search. Give each inspected value in order and the total number of element checks.",
+      "answer": "19 → 34 → 50; 3 checks.",
+      "explanation": "Each comparison retains the larger-valued side until the last remaining candidate matches.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Gives first inspected value 19."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives second inspected value 34."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives third inspected value 50."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives three element checks."
+        }
+      ],
+      "lines": 8
+    },
+    {
+      "id": "Q8",
+      "type": "written",
+      "marks": 4,
+      "topic": "Unsuccessful binary trace",
+      "prompt": "Search [3,8,12,19,27,34,50] for 28 using binary search. Give the three inspected values and explain why the final result is false.",
+      "answer": "19 → 34 → 27; false because after ruling out 27 no candidate remains.",
+      "explanation": "28 is above 19 but below 34, leaving only 27, which is not equal to 28.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Gives first inspected value 19."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives second inspected value 34."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives third inspected value 27."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains that all candidates are eliminated without a match, so the result is false."
+        }
+      ],
+      "lines": 8
+    },
+    {
+      "id": "Q9",
+      "type": "written",
+      "marks": 4,
+      "topic": "Unsorted counterexample",
+      "prompt": "An incorrect search uses [9,1,7,3,5] for target 9. It checks the middle value 7, then keeps only the values to its right because 9 > 7. Identify the broken prerequisite, the remaining values, the lost target, and one valid repair.",
+      "answer": "The data are unsorted. Remaining values are 3 and 5. The target 9 was discarded on the left. Repair: sort first and apply binary search, or use linear search on the unsorted list.",
+      "explanation": "The value comparison alone cannot justify discarding the left half unless order relates that half to the midpoint.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Identifies the missing sorted-order prerequisite."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives remaining values 3 and 5."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains that the actual 9 on the left has been discarded."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives a valid repair: linear search directly or sort before binary search."
+        }
+      ],
+      "lines": 8
+    },
+    {
+      "id": "Q10",
+      "type": "written",
+      "marks": 4,
+      "topic": "Same result, different costs",
+      "prompt": "For [3,8,12,19,27,34,50], compare early-stopping linear and binary search for target 3. State each count, whether the membership results agree, and why this disproves a claim that binary is faster on every individual input.",
+      "answer": "Linear: 1 check. Binary: 3 checks (19,8,3). Both return true. Linear checks fewer elements on this valid input, so the universal claim is false.",
+      "explanation": "Binary is often efficient on sorted data, but an individual target at the beginning favors linear search.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Gives linear count 1."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives binary count 3."
+        },
+        {
+          "marks": 1,
+          "criterion": "States that both return true for membership."
+        },
+        {
+          "marks": 1,
+          "criterion": "Uses this input as a counterexample to the claim that binary always takes fewer checks."
+        }
+      ],
+      "lines": 8
+    },
+    {
+      "id": "Q11",
+      "type": "written",
+      "marks": 4,
+      "topic": "Stop conditions and equivalence",
+      "prompt": "Two algorithms answer whether a target is in a list. State when early-stopping linear search returns true, when it returns false, when binary search returns false, and what it means for their results to agree for the same valid input.",
+      "answer": "Linear returns true on a matching element; false after checking every element without a match. Binary returns false after no candidate remains without a match. Agreement means both return the same membership Boolean for that list and target.",
+      "explanation": "Matching results do not require matching sequences of inspected elements or matching costs.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "States that a matching element makes linear search succeed."
+        },
+        {
+          "marks": 1,
+          "criterion": "States that checking the whole list without a match makes linear search fail."
+        },
+        {
+          "marks": 1,
+          "criterion": "States that exhausting binary candidates without a match makes binary search fail."
+        },
+        {
+          "marks": 1,
+          "criterion": "Defines agreement as the same true/false membership result for the same valid input."
+        }
+      ],
+      "lines": 8
+    },
+    {
+      "id": "Q12",
+      "type": "written",
+      "marks": 4,
+      "topic": "Choose a method with context",
+      "prompt": "A student performs one search on an unsorted list today. Another application performs many searches on an already sorted list. Recommend a suitable method for each, give one reason for each recommendation, and address preparation cost.",
+      "answer": "One unsorted query: linear search is a simple valid choice because it requires no sorting. Many queries on already sorted data: binary search can reduce candidates by about half per step. Sorting has a cost if it is needed; compare preparation plus searches when choosing for unsorted data.",
+      "explanation": "These are justified choices, not a claim that one implementation is always faster for every size and target.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Recommends linear search as a suitable option for the one-time unsorted query."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains that linear search works without sorting or examines elements directly."
+        },
+        {
+          "marks": 1,
+          "criterion": "Recommends binary search for already sorted repeated queries and relates it to interval halving."
+        },
+        {
+          "marks": 1,
+          "criterion": "Acknowledges sorting/preparation cost when evaluating a strategy for initially unsorted data."
+        }
+      ],
+      "lines": 8
+    }
+  ]
+}

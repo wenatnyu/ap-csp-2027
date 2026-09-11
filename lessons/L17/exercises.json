@@ -1,0 +1,350 @@
+{
+  "title": "AP CSP — Lesson 17 Homework: Lists & Abstraction",
+  "durationMinutes": 40,
+  "totalMarks": 30,
+  "notice": "All questions are original. Q1–Q6 are AP-style practice, not official AP questions. Q7–Q12 and all marks are teacher-designed. Q5 earns one mark only for both correct choices and no others. Q5: select exactly TWO. AP list indices start at 1. Indexed operations use 1 through current LENGTH; invalid indices cause an error. All examples use simple lists.",
+  "questions": [
+    {
+      "id": "Q1",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Retrieval: assignment",
+      "prompt": "After a ← 4; b ← a; a ← 9, what is b?",
+      "options": [
+        {
+          "label": "A",
+          "text": "4"
+        },
+        {
+          "label": "B",
+          "text": "9"
+        },
+        {
+          "label": "C",
+          "text": "13"
+        },
+        {
+          "label": "D",
+          "text": "0"
+        }
+      ],
+      "answer": "A",
+      "explanation": "A copies the earlier value 4. B treats assignment as a live link. C invents addition. D invents a reset.",
+      "lines": 0
+    },
+    {
+      "id": "Q2",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Read a list",
+      "prompt": "For a ← [12, 7, 20], what is a[2]?",
+      "options": [
+        {
+          "label": "A",
+          "text": "12"
+        },
+        {
+          "label": "B",
+          "text": "7"
+        },
+        {
+          "label": "C",
+          "text": "20"
+        },
+        {
+          "label": "D",
+          "text": "2"
+        }
+      ],
+      "answer": "B",
+      "explanation": "B is the second element. A uses the first position; C the third; D confuses index with value.",
+      "lines": 0
+    },
+    {
+      "id": "Q3",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Update",
+      "prompt": "Starting with a ← [12, 7, 20], execute a[2] ← 9. What is a?",
+      "options": [
+        {
+          "label": "A",
+          "text": "[12, 9, 7, 20]"
+        },
+        {
+          "label": "B",
+          "text": "[9, 7, 20]"
+        },
+        {
+          "label": "C",
+          "text": "[12, 9, 20]"
+        },
+        {
+          "label": "D",
+          "text": "[12, 7, 20, 9]"
+        }
+      ],
+      "answer": "C",
+      "explanation": "C replaces position 2. A inserts; B updates position 1; D appends. Update preserves length.",
+      "lines": 0
+    },
+    {
+      "id": "Q4",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Current index validity",
+      "prompt": "After a ← [8, 5]; REMOVE(a, 1), which access is valid?",
+      "options": [
+        {
+          "label": "A",
+          "text": "a[0]"
+        },
+        {
+          "label": "B",
+          "text": "a[2]"
+        },
+        {
+          "label": "C",
+          "text": "a[5]"
+        },
+        {
+          "label": "D",
+          "text": "a[1]"
+        }
+      ],
+      "answer": "D",
+      "explanation": "D accesses the sole remaining value 5. The new length is 1; indices 0, 2, 5 are invalid.",
+      "lines": 0
+    },
+    {
+      "id": "Q5",
+      "type": "multi",
+      "marks": 1,
+      "topic": "List facts",
+      "prompt": "Which TWO statements are true? Select exactly TWO answers.",
+      "options": [
+        {
+          "label": "A",
+          "text": "LENGTH([]) is 0."
+        },
+        {
+          "label": "B",
+          "text": "REMOVE(a, 2) searches for the value 2."
+        },
+        {
+          "label": "C",
+          "text": "APPEND increases length by 1."
+        },
+        {
+          "label": "D",
+          "text": "A list cannot contain duplicate values."
+        }
+      ],
+      "answer": "A and C",
+      "explanation": "A counts zero elements. C adds one element at the end. B mistakes an index for a searched value. D contradicts ordered lists, which may contain duplicates.",
+      "lines": 0
+    },
+    {
+      "id": "Q6",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Data abstraction",
+      "prompt": "Why can a list of session minutes manage program complexity?",
+      "options": [
+        {
+          "label": "A",
+          "text": "It guarantees faster execution."
+        },
+        {
+          "label": "B",
+          "text": "One named collection can hold changing numbers of related entries."
+        },
+        {
+          "label": "C",
+          "text": "It guarantees every entry is correct."
+        },
+        {
+          "label": "D",
+          "text": "It removes the need to check indices."
+        }
+      ],
+      "answer": "B",
+      "explanation": "B identifies a concrete abstraction benefit. Lists do not guarantee speed, data correctness or valid indices, so A,C,D are unsupported.",
+      "lines": 0
+    },
+    {
+      "id": "Q7",
+      "type": "written",
+      "marks": 4,
+      "topic": "Index and length",
+      "prompt": "For a ← [5, 5, 12, 8], give (a) a[1], (b) a[3], (c) LENGTH(a) , and (d) all valid indices.",
+      "answer": "(a) 5; (b) 12; (c) 4; (d) 1, 2, 3, 4.",
+      "explanation": "(a) 5; (b) 12; (c) 4; (d) 1, 2, 3, 4.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "First value 5."
+        },
+        {
+          "marks": 1,
+          "criterion": "Third value 12."
+        },
+        {
+          "marks": 1,
+          "criterion": "Length 4."
+        },
+        {
+          "marks": 1,
+          "criterion": "Exactly indices 1 through 4."
+        }
+      ],
+      "lines": 7,
+      "minLines": 7
+    },
+    {
+      "id": "Q8",
+      "type": "written",
+      "marks": 4,
+      "topic": "Sequential edits",
+      "prompt": "Start with a ← [10, 20, 30]. Give the full list after each step in order:\n(a) APPEND(a, 40)\n(b) INSERT(a, 2, 15)\n(c) REMOVE(a, 4)\n(d) a[1] ← 5",
+      "answer": "(a) [10, 20, 30, 40]. (b) [10, 15, 20, 30, 40]. (c) [10, 15, 20, 40]. (d) [5, 15, 20, 40].",
+      "explanation": "(a) [10, 20, 30, 40]. (b) [10, 15, 20, 30, 40]. (c) [10, 15, 20, 40]. (d) [5, 15, 20, 40].",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Correct list after APPEND."
+        },
+        {
+          "marks": 1,
+          "criterion": "Correct list after INSERT, shifting old indices 2 onward right."
+        },
+        {
+          "marks": 1,
+          "criterion": "Correct list after removing current index 4."
+        },
+        {
+          "marks": 1,
+          "criterion": "Correct list after replacement at index 1."
+        }
+      ],
+      "lines": 7,
+      "minLines": 7
+    },
+    {
+      "id": "Q9",
+      "type": "written",
+      "marks": 4,
+      "topic": "Different operations",
+      "prompt": "Each case starts independently with a ← [4, 8, 12]. Give the final list after (a) a[2] ← 6, (b) INSERT(a, 2, 6), (c) APPEND(a, 6), and (d) REMOVE(a, 2).",
+      "answer": "(a) [4, 6, 12]. (b) [4, 6, 8, 12]. (c) [4, 8, 12, 6]. (d) [4, 12].",
+      "explanation": "(a) [4, 6, 12]. (b) [4, 6, 8, 12]. (c) [4, 8, 12, 6]. (d) [4, 12].",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Correct update list."
+        },
+        {
+          "marks": 1,
+          "criterion": "Correct insertion list."
+        },
+        {
+          "marks": 1,
+          "criterion": "Correct append list."
+        },
+        {
+          "marks": 1,
+          "criterion": "Correct removal list."
+        }
+      ],
+      "lines": 7,
+      "minLines": 7
+    },
+    {
+      "id": "Q10",
+      "type": "written",
+      "marks": 4,
+      "topic": "Write an editor fragment",
+      "prompt": "Write four statements: (a) create sessions as [15, 30]; (b) append 45; (c) change the first value to 20; (d) display the current last element using LENGTH.",
+      "answer": "sessions ← [15, 30]\nAPPEND(sessions, 45)\nsessions[1] ← 20\nDISPLAY(sessions[LENGTH(sessions)])",
+      "explanation": "sessions ← [15, 30]\nAPPEND(sessions, 45)\nsessions[1] ← 20\nDISPLAY(sessions[LENGTH(sessions)])",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Creates the specified list."
+        },
+        {
+          "marks": 1,
+          "criterion": "APPEND adds 45 at the end."
+        },
+        {
+          "marks": 1,
+          "criterion": "Updates index 1 to 20."
+        },
+        {
+          "marks": 1,
+          "criterion": "Displays the element at current LENGTH, not a hard-coded last index."
+        }
+      ],
+      "lines": 7,
+      "minLines": 7
+    },
+    {
+      "id": "Q11",
+      "type": "written",
+      "marks": 4,
+      "topic": "Empty list and error",
+      "prompt": "Trace separately: a ← []; APPEND(a, 30). Give (a) final a, (b) LENGTH(a) , (c) a[1], and (d) what happens if a[0] is then accessed.",
+      "answer": "(a) [30]. (b) 1. (c) 30. (d) An invalid-index error terminates execution.",
+      "explanation": "(a) [30]. (b) 1. (c) 30. (d) An invalid-index error terminates execution.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "List[30]."
+        },
+        {
+          "marks": 1,
+          "criterion": "Length 1."
+        },
+        {
+          "marks": 1,
+          "criterion": "First value 30."
+        },
+        {
+          "marks": 1,
+          "criterion": "Index 0 causes an error and program termination."
+        }
+      ],
+      "lines": 7,
+      "minLines": 7
+    },
+    {
+      "id": "Q12",
+      "type": "written",
+      "marks": 4,
+      "topic": "Explain an abstraction",
+      "prompt": "A program stores session minutes in separate variables s1,s2,s3. (a) Propose a meaningful list name. (b) Give a list literal for 10, 20, 30. (c) Explain how an extra session can be added without inventing s4. (d) State one requirement that a list alone does not guarantee.",
+      "answer": "(a) sessions. (b) [10, 20, 30]. (c) APPEND(sessions,newValue) adds an entry to the collection. (d) For example, entries must still be checked for valid minute values; a list does not guarantee correctness.",
+      "explanation": "(a) sessions. (b) [10, 20, 30]. (c) APPEND(sessions,newValue) adds an entry to the collection. (d) For example, entries must still be checked for valid minute values; a list does not guarantee correctness.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Meaningful name tied to sessions/minutes."
+        },
+        {
+          "marks": 1,
+          "criterion": "Correct ordered list literal[10, 20, 30]."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains APPEND or equivalent collection operation avoids another separate variable."
+        },
+        {
+          "marks": 1,
+          "criterion": "Identifies a genuine remaining requirement, such as valid data or valid indices, without claiming guaranteed speed."
+        }
+      ],
+      "lines": 7,
+      "minLines": 7
+    }
+  ]
+}

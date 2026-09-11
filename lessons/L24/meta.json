@@ -1,0 +1,13 @@
+{
+  "chapter": 5,
+  "id": "L24",
+  "number": "24",
+  "title": "Packets, Routing & Protocols",
+  "chineseTitle": "数据包、路由与协议",
+  "shortTitle": "Packets & Routing",
+  "filename": "AP_CSP_L24_Packets_and_Routing.html",
+  "minutes": 90,
+  "preview": "lessons/L24/preview.svg",
+  "topicSummary": "Packet payload and metadata; order and reassembly; dynamic routes and possible loss; IP best effort, TCP reliable ordered delivery and UDP tradeoffs; controlled packet investigation.",
+  "homeworkInstructions": "Q5 requires exactly TWO choices. Show paths, calculations and reasons. Treat all networks and timings as the stated classroom models."
+}

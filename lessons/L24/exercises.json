@@ -1,0 +1,344 @@
+{
+  "title": "AP CSP — Lesson 24 Homework: Packets, Routing & Protocols",
+  "durationMinutes": 45,
+  "totalMarks": 30,
+  "notice": "All questions are original. Q1–Q6 are AP-style practice, not official or past AP questions. Q7–Q12 are classroom written responses, not official exam FRQs. The 30 marks are teacher-assigned. For Q5 select exactly TWO answers; its one mark requires both correct choices and no others. Follow AP pseudocode semantics.",
+  "questions": [
+    {
+      "id": "Q1",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Payload",
+      "prompt": "What is the packet payload?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Its destination address"
+        },
+        {
+          "label": "B",
+          "text": "The data chunk it carries"
+        },
+        {
+          "label": "C",
+          "text": "Its route-count total"
+        },
+        {
+          "label": "D",
+          "text": "Its complete protocol specification"
+        }
+      ],
+      "answer": "B",
+      "explanation": "B is the carried data. A is metadata; C is not the payload definition; D describes rules rather than message content.",
+      "lines": 0
+    },
+    {
+      "id": "Q2",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Reassembly",
+      "prompt": "Packets with IDs 4, 2, 1, 3 arrive. Which order reconstructs the original message?",
+      "options": [
+        {
+          "label": "A",
+          "text": "4, 2, 1, 3"
+        },
+        {
+          "label": "B",
+          "text": "3, 1, 2, 4"
+        },
+        {
+          "label": "C",
+          "text": "1, 2, 3, 4"
+        },
+        {
+          "label": "D",
+          "text": "Any order gives the same text"
+        }
+      ],
+      "answer": "C",
+      "explanation": "C uses the specified sequence IDs. A uses arrival order; B reverses it; D ignores that text order matters.",
+      "lines": 0
+    },
+    {
+      "id": "Q3",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Loss",
+      "prompt": "Packet 3 never arrives, but 1, 2 and 4 do. What should the classroom receiver report?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Incomplete buffer"
+        },
+        {
+          "label": "B",
+          "text": "Successful complete transfer"
+        },
+        {
+          "label": "C",
+          "text": "An empty buffer"
+        },
+        {
+          "label": "D",
+          "text": "Packet 4 replaces packet 3"
+        }
+      ],
+      "answer": "A",
+      "explanation": "A retains received pieces and reports the missing one. B claims success without all data; C discards valid pieces; D invents a replacement.",
+      "lines": 0
+    },
+    {
+      "id": "Q4",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "IP",
+      "prompt": "What does IP best-effort service imply?",
+      "options": [
+        {
+          "label": "A",
+          "text": "All packets arrive in order."
+        },
+        {
+          "label": "B",
+          "text": "Only one route is possible."
+        },
+        {
+          "label": "C",
+          "text": "Lost packets are always replaced by IP."
+        },
+        {
+          "label": "D",
+          "text": "Delivery is attempted without guaranteeing arrival."
+        }
+      ],
+      "answer": "D",
+      "explanation": "D states the limit. A adds ordered reliability; B invents fixed routing; C assigns guaranteed recovery to IP itself.",
+      "lines": 0
+    },
+    {
+      "id": "Q5",
+      "type": "multi",
+      "marks": 1,
+      "topic": "Transport protocols",
+      "prompt": "Which TWO statements are correct?",
+      "options": [
+        {
+          "label": "A",
+          "text": "TCP supports reliable ordered byte-stream delivery."
+        },
+        {
+          "label": "B",
+          "text": "TCP makes permanent network failure impossible."
+        },
+        {
+          "label": "C",
+          "text": "UDP itself does not guarantee delivery or ordering."
+        },
+        {
+          "label": "D",
+          "text": "All packets of a message must use one fixed route."
+        }
+      ],
+      "answer": "A and C",
+      "explanation": "A describes TCP service; C identifies UDP limits. B mistakes reliability mechanisms for immunity; D contradicts dynamic routing. Select A and C only.",
+      "lines": 0
+    },
+    {
+      "id": "Q6",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Protocol tradeoffs",
+      "prompt": "Why might an application skip an old live update rather than wait for recovery?",
+      "options": [
+        {
+          "label": "A",
+          "text": "All lost data are harmless."
+        },
+        {
+          "label": "B",
+          "text": "A new update may be more useful than the stale one."
+        },
+        {
+          "label": "C",
+          "text": "UDP always has lower total delay."
+        },
+        {
+          "label": "D",
+          "text": "The Internet cannot retransmit."
+        }
+      ],
+      "answer": "B",
+      "explanation": "B is a task-dependent freshness tradeoff. A overgeneralizes; C promises performance without conditions; D denies possible recovery mechanisms.",
+      "lines": 0
+    },
+    {
+      "id": "Q7",
+      "type": "written",
+      "marks": 4,
+      "topic": "Packetization",
+      "prompt": "Split HELLO AP CSP into chunks of 3 characters. (a) Give packet 1. (b) Give packet 2. (c) Give packet 3. (d) Give packet 4. Preserve spaces inside quotes.",
+      "answer": "1 “HEL”; 2 “LO ”; 3 “AP ”; 4 “CSP”.",
+      "explanation": "1 “HEL”; 2 “LO ”; 3 “AP ”; 4 “CSP”.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Gives HEL for ID 1."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives LO followed by one space for ID 2."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives AP followed by one space for ID 3."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives CSP for ID 4."
+        }
+      ],
+      "lines": 7
+    },
+    {
+      "id": "Q8",
+      "type": "written",
+      "marks": 4,
+      "topic": "Buffer trace",
+      "prompt": "Arrival order is 4, 2, 1, 3. (a) Which IDs are present after two arrivals? (b) Which are missing then? (c) Give final reconstruction order. (d) Explain why arrival order is insufficient.",
+      "answer": "Present 4 and 2; missing 1 and 3; reconstruct 1,2,3,4; arrival order can differ from source order.",
+      "explanation": "Present 4 and 2; missing 1 and 3; reconstruct 1,2,3,4; arrival order can differ from source order.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Identifies IDs 4 and 2 as present."
+        },
+        {
+          "marks": 1,
+          "criterion": "Identifies IDs 1 and 3 as absent."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives order 1,2,3,4."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains that sequence information restores source order despite variable arrival."
+        }
+      ],
+      "lines": 7
+    },
+    {
+      "id": "Q9",
+      "type": "written",
+      "marks": 4,
+      "topic": "Loss and recovery",
+      "prompt": "Only IDs 1,2,4 arrive. (a) State the buffer status. (b) Identify the absent chunk. (c) Describe a recovery action. (d) State what evidence is needed before claiming completion.",
+      "answer": "Incomplete; ID3 carries “AP ”; retry the missing piece; verify all required IDs/payloads have arrived.",
+      "explanation": "Incomplete; ID3 carries “AP ”; retry the missing piece; verify all required IDs/payloads have arrived.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "States incomplete despite having some data."
+        },
+        {
+          "marks": 1,
+          "criterion": "Identifies ID3 and its AP-plus-space payload."
+        },
+        {
+          "marks": 1,
+          "criterion": "Describes resending/requesting the missing data."
+        },
+        {
+          "marks": 1,
+          "criterion": "Requires receiver evidence of all required pieces before success."
+        }
+      ],
+      "lines": 7
+    },
+    {
+      "id": "Q10",
+      "type": "written",
+      "marks": 4,
+      "topic": "Dynamic routing",
+      "prompt": "The original route is S-A-C-T. A-C fails; A-D and D-T remain. (a) Give an alternative path. (b) Count its hops. (c) Does the destination necessarily change? (d) Why does this not prove all packets arrive?",
+      "answer": "S-A-D-T; 3 hops; no, T remains the destination; available connectivity does not guarantee packet delivery.",
+      "explanation": "S-A-D-T; 3 hops; no, T remains the destination; available connectivity does not guarantee packet delivery.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Gives S-A-D-T."
+        },
+        {
+          "marks": 1,
+          "criterion": "Counts three hops."
+        },
+        {
+          "marks": 1,
+          "criterion": "Keeps destination T despite route change."
+        },
+        {
+          "marks": 1,
+          "criterion": "Distinguishes route availability from guaranteed delivery."
+        }
+      ],
+      "lines": 7
+    },
+    {
+      "id": "Q11",
+      "type": "written",
+      "marks": 4,
+      "topic": "TCP and UDP",
+      "prompt": "Compare TCP and UDP. (a) State TCP’s application-facing service. (b) Name one TCP recovery mechanism. (c) State a guarantee UDP itself lacks. (d) Explain why TCP does not make every transfer succeed.",
+      "answer": "TCP supports reliable ordered byte streams; acknowledgment/retransmission; UDP lacks delivery/order guarantees; persistent path or endpoint failure can prevent completion.",
+      "explanation": "TCP supports reliable ordered byte streams; acknowledgment/retransmission; UDP lacks delivery/order guarantees; persistent path or endpoint failure can prevent completion.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "States reliable ordered byte-stream service."
+        },
+        {
+          "marks": 1,
+          "criterion": "Names acknowledgment or retransmission appropriately."
+        },
+        {
+          "marks": 1,
+          "criterion": "Identifies a delivery or ordering guarantee UDP does not itself provide."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains an ongoing failure can prevent successful completion."
+        }
+      ],
+      "lines": 7
+    },
+    {
+      "id": "Q12",
+      "type": "written",
+      "marks": 4,
+      "topic": "Use and limits",
+      "prompt": "An app receives frequent location updates. (a) Give a reason to prefer fresh data over a missing old update. (b) Give a task needing exact ordered data instead. (c) Why is “UDP is always faster” unjustified? (d) Name one limitation of our manual-retry model.",
+      "answer": "An old position may be obsolete; exact file transfer; performance depends on conditions/application; model omits real acknowledgment, timeouts, congestion or failures of retries.",
+      "explanation": "An old position may be obsolete; exact file transfer; performance depends on conditions/application; model omits real acknowledgment, timeouts, congestion or failures of retries.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Links a freshness priority to obsolete data."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives a valid exact/ordered delivery task."
+        },
+        {
+          "marks": 1,
+          "criterion": "Rejects universal speed claims with a relevant dependency."
+        },
+        {
+          "marks": 1,
+          "criterion": "Names a specific omitted real protocol/network behavior."
+        }
+      ],
+      "lines": 7
+    }
+  ]
+}

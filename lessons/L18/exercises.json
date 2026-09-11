@@ -1,0 +1,350 @@
+{
+  "title": "AP CSP — Lesson 18 Homework: Traversing Lists",
+  "durationMinutes": 40,
+  "totalMarks": 30,
+  "notice": "All questions are original. Q1–Q6 are AP-style practice, not official AP questions. Q7–Q12 and all marks are teacher-designed. Q5 earns one mark only for both correct choices and no others. Q5: select exactly TWO. FOR EACH visits each element value in order. Keep the source list unchanged; append matches to a new list. Code braces go on separate lines.",
+  "questions": [
+    {
+      "id": "Q1",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Retrieval: list indexing",
+      "prompt": "For a ← [9, 4, 4], what is a[2]?",
+      "options": [
+        {
+          "label": "A",
+          "text": "9"
+        },
+        {
+          "label": "B",
+          "text": "4"
+        },
+        {
+          "label": "C",
+          "text": "2"
+        },
+        {
+          "label": "D",
+          "text": "3"
+        }
+      ],
+      "answer": "B",
+      "explanation": "B uses 1-based index 2. A is first; C confuses index and value; D is the length.",
+      "lines": 0
+    },
+    {
+      "id": "Q2",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "FOR EACH value",
+      "prompt": "FOR EACH item IN [10, 30, 20] assigns which values to item in order?",
+      "options": [
+        {
+          "label": "A",
+          "text": "1, 2, 3"
+        },
+        {
+          "label": "B",
+          "text": "3, 2, 1"
+        },
+        {
+          "label": "C",
+          "text": "10, 30, 20"
+        },
+        {
+          "label": "D",
+          "text": "10, 20, 30"
+        }
+      ],
+      "answer": "C",
+      "explanation": "C follows element order. A and B use indices. D sorts without an instruction.",
+      "lines": 0
+    },
+    {
+      "id": "Q3",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Accumulator placement",
+      "prompt": "Where should total ← 0 be placed to sum an entire list?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Inside IF after each match"
+        },
+        {
+          "label": "B",
+          "text": "After displaying the total"
+        },
+        {
+          "label": "C",
+          "text": "At the end of every visit"
+        },
+        {
+          "label": "D",
+          "text": "Before the traversal"
+        }
+      ],
+      "answer": "D",
+      "explanation": "D initializes once. A and C repeatedly discard progress. B initializes too late.",
+      "lines": 0
+    },
+    {
+      "id": "Q4",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Duplicates",
+      "prompt": "How many loop-body executions occur for FOR EACH item IN [6, 6, 6]?",
+      "options": [
+        {
+          "label": "A",
+          "text": "3"
+        },
+        {
+          "label": "B",
+          "text": "1"
+        },
+        {
+          "label": "C",
+          "text": "6"
+        },
+        {
+          "label": "D",
+          "text": "0"
+        }
+      ],
+      "answer": "A",
+      "explanation": "A counts three elements. B deduplicates without permission. C confuses values with count. D ignores the elements.",
+      "lines": 0
+    },
+    {
+      "id": "Q5",
+      "type": "multi",
+      "marks": 1,
+      "topic": "Stable filtering",
+      "prompt": "Which TWO statements match this lesson’s filter design? Select exactly TWO answers.",
+      "options": [
+        {
+          "label": "A",
+          "text": "Remove nonmatches from the source during traversal."
+        },
+        {
+          "label": "B",
+          "text": "Initialize a separate result as []."
+        },
+        {
+          "label": "C",
+          "text": "Append each matching occurrence to that result."
+        },
+        {
+          "label": "D",
+          "text": "Sort the source automatically before filtering."
+        }
+      ],
+      "answer": "B and C",
+      "explanation": "B and C build a stable separate result. A changes the traversed source and violates the design. D adds an unrequested sort; filtering preserves source order here.",
+      "lines": 0
+    },
+    {
+      "id": "Q6",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Empty traversal",
+      "prompt": "total starts at 0, then each value in [] is added to it. What is the final total?",
+      "options": [
+        {
+          "label": "A",
+          "text": "An invalid index is always accessed"
+        },
+        {
+          "label": "B",
+          "text": "1"
+        },
+        {
+          "label": "C",
+          "text": "The last element"
+        },
+        {
+          "label": "D",
+          "text": "0"
+        }
+      ],
+      "answer": "D",
+      "explanation": "D remains initialized 0 because there are no visits. A assumes indexed access not present. B invents an increment. C refers to a nonexistent element.",
+      "lines": 0
+    },
+    {
+      "id": "Q7",
+      "type": "written",
+      "marks": 4,
+      "topic": "Trace a sum",
+      "prompt": "Start total=0. Add each value in [5, 10, 5] during FOR EACH. Give (a) total after visit 1, (b) after visit 2, (c) after visit 3, and (d) the number of visits.",
+      "answer": "(a) 5; (b) 15; (c) 20; (d) 3.",
+      "explanation": "(a) 5; (b) 15; (c) 20; (d) 3.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "After first visit 5."
+        },
+        {
+          "marks": 1,
+          "criterion": "After second visit 15."
+        },
+        {
+          "marks": 1,
+          "criterion": "After third visit 20."
+        },
+        {
+          "marks": 1,
+          "criterion": "Three visits, including both 5 occurrences."
+        }
+      ],
+      "lines": 7,
+      "minLines": 7
+    },
+    {
+      "id": "Q8",
+      "type": "written",
+      "marks": 4,
+      "topic": "Trace filtering",
+      "prompt": "Start selected=[]. For each value in [12, 30, 30, 45], append it when value ≥ 30. Give selected after each of the four visits.",
+      "answer": "After visits 1–4: []; [30]; [30, 30]; [30, 30, 45].",
+      "explanation": "After visits 1–4: []; [30]; [30, 30]; [30, 30, 45].",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "After 12: []."
+        },
+        {
+          "marks": 1,
+          "criterion": "After first 30: [30]."
+        },
+        {
+          "marks": 1,
+          "criterion": "After second 30: [30, 30]."
+        },
+        {
+          "marks": 1,
+          "criterion": "After 45: [30, 30, 45]."
+        }
+      ],
+      "lines": 7,
+      "minLines": 7
+    },
+    {
+      "id": "Q9",
+      "type": "written",
+      "marks": 4,
+      "topic": "Correct loop structure",
+      "prompt": "Write code that sets total to 0, visits each minutes value in sessions, adds it to total, and displays the final total after traversal. Assume sessions is a numeric list.",
+      "answer": "total ← 0\nFOR EACH minutes IN sessions\n{\n  total ← total + minutes\n}\nDISPLAY(total)",
+      "explanation": "total ← 0\nFOR EACH minutes IN sessions\n{\n  total ← total + minutes\n}\nDISPLAY(total)",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Initializes total to 0 before the loop."
+        },
+        {
+          "marks": 1,
+          "criterion": "Uses FOR EACH to visit sessions values."
+        },
+        {
+          "marks": 1,
+          "criterion": "Adds current minutes to the running total inside the loop."
+        },
+        {
+          "marks": 1,
+          "criterion": "Displays total after the loop."
+        }
+      ],
+      "lines": 8,
+      "minLines": 8
+    },
+    {
+      "id": "Q10",
+      "type": "written",
+      "marks": 4,
+      "topic": "Write a stable filter",
+      "prompt": "Write code that creates selected=[] and appends each value from sessions that is at least goal. Preserve sessions and its order. sessions is numeric and goal is a number.",
+      "answer": "selected ← []\nFOR EACH minutes IN sessions\n{\n  IF (minutes ≥ goal)\n  {\n    APPEND(selected, minutes)\n  }\n}",
+      "explanation": "selected ← []\nFOR EACH minutes IN sessions\n{\n  IF (minutes ≥ goal)\n  {\n    APPEND(selected, minutes)\n  }\n}",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Creates empty result before traversal."
+        },
+        {
+          "marks": 1,
+          "criterion": "Traverses sessions without modifying it."
+        },
+        {
+          "marks": 1,
+          "criterion": "Uses inclusive minutes ≥ goal condition."
+        },
+        {
+          "marks": 1,
+          "criterion": "Appends each matching current value to selected inside the condition, preserving order."
+        }
+      ],
+      "lines": 10,
+      "minLines": 10
+    },
+    {
+      "id": "Q11",
+      "type": "written",
+      "marks": 4,
+      "topic": "Boundary and empty tests",
+      "prompt": "A filter keeps values ≥ 30. Give the resulting list for (a) [29], (b) [30], (c) [31], and (d) [].",
+      "answer": "(a) []; (b) [30]; (c) [31]; (d) [].",
+      "explanation": "(a) []; (b) [30]; (c) [31]; (d) [].",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Below threshold: []."
+        },
+        {
+          "marks": 1,
+          "criterion": "At threshold: [30]."
+        },
+        {
+          "marks": 1,
+          "criterion": "Above threshold: [31]."
+        },
+        {
+          "marks": 1,
+          "criterion": "Empty input: []."
+        }
+      ],
+      "lines": 7,
+      "minLines": 7
+    },
+    {
+      "id": "Q12",
+      "type": "written",
+      "marks": 4,
+      "topic": "Debug a repeated reset",
+      "prompt": "For each value in [4, 7, 2], a program first sets total=0 and then adds the value to total. (a) Give its final total. (b) State the fix. (c) Give the corrected total. (d) Explain why changing the source during a separate filtering traversal is avoided here.",
+      "answer": "(a) 2. (b) Initialize total once before traversal. (c) 13. (d) Keeping the source unchanged prevents shifts from altering which elements are visited and preserves data for checking.",
+      "explanation": "(a) 2. (b) Initialize total once before traversal. (c) 13. (d) Keeping the source unchanged prevents shifts from altering which elements are visited and preserves data for checking.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Buggy final total 2."
+        },
+        {
+          "marks": 1,
+          "criterion": "Moves initialization before the loop."
+        },
+        {
+          "marks": 1,
+          "criterion": "Correct full sum 13."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains stable visits or preserving the original data as a concrete reason."
+        }
+      ],
+      "lines": 7,
+      "minLines": 7
+    }
+  ]
+}
