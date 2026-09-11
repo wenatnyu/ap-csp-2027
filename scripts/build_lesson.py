@@ -38,6 +38,7 @@ def build_lesson(meta, slides_path, exercise_path, guide_path):
 
 def main():
     sources=list(lesson_sources())
+    previews=json.loads((ROOT/'scripts/lesson-previews.json').read_text())
     for args in sources: build_lesson(*args)
     chinese=['信息表示与二进制','计算创新与输入输出','算法、变量与顺序执行','协作、测试与改进','采样与数字表示','压缩与取舍','数据质量与清洗','数据分析与证据']
     for chapter in [1,2]:
@@ -46,11 +47,13 @@ def main():
         cards=[]
         for m in lessons:
             cn=chinese[int(m['number'])-1]
-            cards.append(f'''<article class="lesson-card"><div class="card-top"><span>LESSON {m['number']}</span><span>90 MIN · 23 SLIDES</span></div><h2>{html.escape(m['shortTitle'])}</h2><p class="zh">{cn}</p><p>{html.escape(m['topicSummary'])}</p><div class="card-actions"><a class="primary" href="{m['filename']}">Open lesson →</a><a href="{m['filename']}#guide">Teacher guide</a></div><div class="downloads"><a href="output/pdf/AP_CSP_{m['id']}_Homework.pdf">Student PDF</a><a href="output/pdf/AP_CSP_{m['id']}_Answer_Key.pdf">Answer key</a><a href="{m['filename']}#homework">Interactive practice</a></div></article>''')
+            cards.append(f'''<article class="lesson-card"><div class="card-top"><span>LESSON {m['number']}</span><span>90 MIN · 23 SLIDES</span></div><div class="lesson-preview">{previews[m['id']]}</div><h2>{html.escape(m['shortTitle'])}</h2><p class="zh">{cn}</p><p>{html.escape(m['topicSummary'])}</p><div class="card-actions"><a class="primary" href="{m['filename']}">Open lesson →</a><a href="{m['filename']}#guide">Teacher guide</a></div><div class="downloads"><a href="output/pdf/AP_CSP_{m['id']}_Homework.pdf">Student PDF</a><a href="output/pdf/AP_CSP_{m['id']}_Answer_Key.pdf">Answer key</a><a href="{m['filename']}#homework">Interactive practice</a></div></article>''')
         template='chapter.template.html' if chapter==1 else 'chapter2.template.html'
         page=(ROOT/'scripts'/template).read_text().replace('__CARDS__','\n'.join(cards))
         (ROOT/f'Chapter_{chapter}.html').write_text(page)
-    (ROOT/'index.html').write_text((ROOT/'scripts/course.template.html').read_text())
+    course=(ROOT/'scripts/course.template.html').read_text()
+    course=course.replace('__CHAPTER1_VISUAL__',previews['L03']).replace('__CHAPTER2_VISUAL__',previews['L06'])
+    (ROOT/'index.html').write_text(course)
     print('Built course and chapter portals')
 
 if __name__=='__main__': main()

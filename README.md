@@ -19,6 +19,7 @@
 
 从在线目录进入每课，或解压两章包后用浏览器打开 `index.html`。课堂与编程功能均可离线运行，无需安装软件。保持整个文件夹结构，PDF 链接才能正常打开；外部官方来源与 GitHub 链接需要联网。
 
+- **概念图解**：两章关键页加入位值格、分支树、输入输出流程、变量状态图、采样曲线、像素图、压缩示意、数据清理与统计图。图解为内联矢量图，离线可用；Reading view 在小屏上支持横向查看宽图。
 - **Slides**：英文正文、关键术语中文提示，答案逐题展开；方向键或 Page Up / Page Down 翻页，N 显示教师备注。
 - **Homework**：每课 12 题、30 分，约 35–40 分钟；课堂讲评可以逐题展开答案。L04 与 L08 作业分别作为两章检查。
 - **Teacher Guide**：目标、节奏、考纲对应、常见误区、分层支持和活动建议。
@@ -60,6 +61,8 @@ L01 原始内容在 `scripts/slides.json`、`scripts/teacher-guide.html`、`less
 ```sh
 python3 scripts/build_chapter.py
 ```
+
+只修改课件图文、保持练习 PDF 不变时，可运行 `python3 scripts/build_chapter.py --skip-pdfs` 更新网页与两章离线包。
 
 验证编程工具核心逻辑：
 
