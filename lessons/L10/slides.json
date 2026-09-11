@@ -1,0 +1,187 @@
+[
+  {
+    "title": "Boolean Logic",
+    "tag": "LESSON 10",
+    "time": "0–2 min",
+    "code": "Chapter 3 · Algorithms & Programming",
+    "html": "<p class=\"lead\">AP Computer Science Principles</p><h1>Boolean<br>Logic</h1><p class=\"zh\">布尔值 · 关系运算 · 逻辑运算</p><p class=\"small\">Build and test a Workshop Rule Checker · 90 minutes</p>",
+    "note": "本课把表达式从数字与字符串扩展为true/false。先让学生写出并测试条件值，不使用还未学习的IF分支。课堂作品只根据假想规则报告Boolean结果，不是实际门禁系统。",
+    "kind": "dark"
+  },
+  {
+    "title": "Retrieve three foundation ideas",
+    "tag": "RETRIEVAL",
+    "time": "2–6 min",
+    "code": "AAP-1.A/B · AAP-2.C",
+    "html": "<ol><li>Evaluate 13 / 4 and 13 MOD 4.</li><li>Is \"12\" a numeric literal or a string literal?</li><li>After a ← 4; b ← a; a ← 9, what is b?</li></ol><details><summary>Show answer</summary><div class=\"answer\"><strong>3.25 and 1; string; 4.</strong> Distinguish type, operation and stored value.</div></details>",
+    "note": "前两题从L09提取，第三题再次检查复制赋值。让学生说明理由，避免Boolean课开始后仍把字符串\"true\"和Boolean true混淆。"
+  },
+  {
+    "title": "Build conditions you can explain",
+    "tag": "LEARNING GOALS",
+    "time": "6–8 min",
+    "code": "AAP-2.E/F",
+    "html": "<ol><li>Write comparisons that produce true or false.</li><li>Combine them with AND, OR and NOT.</li><li>Check boundaries and logical equivalence.</li><li>Build and test a rule checker.</li></ol><p class=\"callout\">Today we compute a condition. Later, IF will use it.</p>",
+    "note": "把求条件值和按条件执行动作分开。完成Boolean表达式已经是程序的一部分，不需要提前用分支。学生最后必须能解释一个边界测试与一次修订。"
+  },
+  {
+    "title": "Comparisons return Boolean values",
+    "tag": "RELATIONAL OPERATORS",
+    "time": "8–12 min",
+    "code": "AAP-2.E.1–2",
+    "html": "<p class=\"lead\">Compare compatible values to get true or false.</p><figure class=\"visual\" tabindex=\"0\"><svg xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Six relational operators: equal, not equal, greater or less, and inclusive boundaries.\" viewBox=\"0 0 1200 160\" style=\"font-family:Arial,Helvetica,sans-serif\"><rect x=\"15.0\" y=\"12\" width=\"356.6666666666667\" height=\"126\" rx=\"12\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"193.33333333333334\" y=\"48\" text-anchor=\"middle\" font-size=\"25\" fill=\"#225a83\" font-weight=\"700\">Equality</text><text x=\"193.33333333333334\" y=\"103\" text-anchor=\"middle\" font-size=\"30\" fill=\"#193148\" font-weight=\"700\">=   ≠</text><rect x=\"421.6666666666667\" y=\"12\" width=\"356.6666666666667\" height=\"126\" rx=\"12\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"600.0\" y=\"48\" text-anchor=\"middle\" font-size=\"25\" fill=\"#225a83\" font-weight=\"700\">Strict comparison</text><text x=\"600.0\" y=\"103\" text-anchor=\"middle\" font-size=\"30\" fill=\"#193148\" font-weight=\"700\">&gt;   &lt;</text><rect x=\"828.3333333333334\" y=\"12\" width=\"356.6666666666667\" height=\"126\" rx=\"12\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"1006.6666666666667\" y=\"48\" text-anchor=\"middle\" font-size=\"25\" fill=\"#225a83\" font-weight=\"700\">Include equality</text><text x=\"1006.6666666666667\" y=\"103\" text-anchor=\"middle\" font-size=\"30\" fill=\"#193148\" font-weight=\"700\">≥   ≤</text></svg></figure><p>Evaluate 8 ≤ 8 and 8 ≠ 8.</p><details><summary>Show answer</summary><div class=\"answer\"><strong>true; false.</strong> The equality part of ≤ includes the boundary.</div></details>",
+    "note": "六种符号都要会读，重点区分严格与包含边界。使用数值比较与相容类型，不讨论字符串排序或类型强制转换。关系运算产出Boolean，不更改比较对象。"
+  },
+  {
+    "title": "Assignment stores a Boolean too",
+    "tag": "VALUES & ASSIGNMENT",
+    "time": "12–16 min",
+    "code": "AAP-1.A/B · AAP-2.E",
+    "html": "<pre class=\"code\" style=\"font-size:26px;line-height:1.3\">minutes ← 30\ngoalMet ← (minutes ≥ 30)</pre><figure class=\"visual\" tabindex=\"0\"><svg xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"A number is compared to a threshold and the Boolean result is stored in goalMet.\" viewBox=\"0 0 1200 160\" style=\"font-family:Arial,Helvetica,sans-serif\"><rect x=\"15.0\" y=\"12\" width=\"356.6666666666667\" height=\"121\" rx=\"12\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"193.33333333333334\" y=\"48\" text-anchor=\"middle\" font-size=\"25\" fill=\"#225a83\" font-weight=\"700\">Read a number</text><text x=\"193.33333333333334\" y=\"103\" text-anchor=\"middle\" font-size=\"30\" fill=\"#193148\" font-weight=\"700\">minutes: 30</text><path d=\"M380.6666666666667 72.5H401.6666666666667\" stroke=\"#225a83\" stroke-width=\"3\"/><path d=\"M399.6666666666667 65.5L413.6666666666667 72.5L399.6666666666667 79.5Z\" fill=\"#225a83\"/><rect x=\"421.6666666666667\" y=\"12\" width=\"356.6666666666667\" height=\"121\" rx=\"12\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"600.0\" y=\"48\" text-anchor=\"middle\" font-size=\"25\" fill=\"#225a83\" font-weight=\"700\">Compare</text><text x=\"600.0\" y=\"103\" text-anchor=\"middle\" font-size=\"30\" fill=\"#193148\" font-weight=\"700\">minutes ≥ 30</text><path d=\"M787.3333333333334 72.5H808.3333333333334\" stroke=\"#225a83\" stroke-width=\"3\"/><path d=\"M806.3333333333334 65.5L820.3333333333334 72.5L806.3333333333334 79.5Z\" fill=\"#225a83\"/><rect x=\"828.3333333333334\" y=\"12\" width=\"356.6666666666667\" height=\"121\" rx=\"12\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"1006.6666666666667\" y=\"48\" text-anchor=\"middle\" font-size=\"25\" fill=\"#225a83\" font-weight=\"700\">Store Boolean</text><text x=\"1006.6666666666667\" y=\"103\" text-anchor=\"middle\" font-size=\"30\" fill=\"#193148\" font-weight=\"700\">goalMet ← result</text></svg></figure><p>What value is stored in goalMet?</p><details><summary>Show answer</summary><div class=\"answer\"><strong>true.</strong> ← assigns a value; = compares equality.</div></details><p class=\"small\">true is a Boolean; \"true\" is a string.</p>",
+    "note": "变量能够存储Boolean表达式求得的结果。区分←赋值与=相等比较，不把数学等式的直觉变成程序更新规则。JSON输入中true不加引号；\"true\"是另一类型。"
+  },
+  {
+    "title": "AND requires both conditions",
+    "tag": "LOGICAL AND",
+    "time": "16–20 min",
+    "code": "AAP-2.F.1/3/5",
+    "html": "<p class=\"lead\">A AND B is true only when both A and B are true.</p><figure class=\"visual\" tabindex=\"0\"><svg xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Two Boolean conditions feed an AND operation; both are required for a true result.\" viewBox=\"0 0 1200 185\" style=\"font-family:Arial,Helvetica,sans-serif\"><rect x=\"20\" y=\"18\" width=\"340\" height=\"60\" rx=\"12\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"190\" y=\"57\" text-anchor=\"middle\" font-size=\"28\" fill=\"#193148\" font-weight=\"400\">A: has a ticket</text><rect x=\"20\" y=\"107\" width=\"340\" height=\"60\" rx=\"12\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"190\" y=\"146\" text-anchor=\"middle\" font-size=\"28\" fill=\"#193148\" font-weight=\"400\">B: door is open</text><path d=\"M360 48H460V92H520M360 137H460V92\" fill=\"none\" stroke=\"#225a83\" stroke-width=\"3\"/><rect x=\"520\" y=\"51\" width=\"200\" height=\"80\" rx=\"12\" fill=\"#fcfcfa\" stroke=\"#28766f\" stroke-width=\"2\"/><text x=\"620\" y=\"102\" text-anchor=\"middle\" font-size=\"34\" fill=\"#28766f\" font-weight=\"700\">AND</text><path d=\"M720 92H808\" stroke=\"#225a83\" stroke-width=\"3\"/><path d=\"M806 85L820 92L806 99Z\" fill=\"#225a83\"/><rect x=\"825\" y=\"51\" width=\"350\" height=\"80\" rx=\"12\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"1000\" y=\"102\" text-anchor=\"middle\" font-size=\"28\" fill=\"#193148\" font-weight=\"400\">Both must be true</text></svg></figure><p>What if A is true and B is false?</p><details><summary>Show answer</summary><div class=\"answer\"><strong>false.</strong> One satisfied requirement is not enough.</div></details>",
+    "note": "图中的票与门仅用于解释两个同时必要条件，不能拿自然语言顺序当执行顺序。可让同桌各持一张true/false卡，只有两人都true才举起AND卡。"
+  },
+  {
+    "title": "OR includes the case where both are true",
+    "tag": "LOGICAL OR",
+    "time": "20–24 min",
+    "code": "AAP-2.F.4–5",
+    "html": "<p class=\"lead\">A OR B is true when at least one operand is true.</p><figure class=\"visual\" tabindex=\"0\"><svg xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Two alternative Boolean conditions feed OR; one or both being true is sufficient.\" viewBox=\"0 0 1200 185\" style=\"font-family:Arial,Helvetica,sans-serif\"><rect x=\"20\" y=\"18\" width=\"340\" height=\"60\" rx=\"12\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"190\" y=\"57\" text-anchor=\"middle\" font-size=\"28\" fill=\"#193148\" font-weight=\"400\">A: has a ticket</text><rect x=\"20\" y=\"107\" width=\"340\" height=\"60\" rx=\"12\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"190\" y=\"146\" text-anchor=\"middle\" font-size=\"28\" fill=\"#193148\" font-weight=\"400\">B: has a pass</text><path d=\"M360 48H460V92H520M360 137H460V92\" fill=\"none\" stroke=\"#225a83\" stroke-width=\"3\"/><rect x=\"520\" y=\"51\" width=\"200\" height=\"80\" rx=\"12\" fill=\"#fcfcfa\" stroke=\"#28766f\" stroke-width=\"2\"/><text x=\"620\" y=\"102\" text-anchor=\"middle\" font-size=\"34\" fill=\"#28766f\" font-weight=\"700\">OR</text><path d=\"M720 92H808\" stroke=\"#225a83\" stroke-width=\"3\"/><path d=\"M806 85L820 92L806 99Z\" fill=\"#225a83\"/><rect x=\"825\" y=\"51\" width=\"350\" height=\"80\" rx=\"12\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"1000\" y=\"102\" text-anchor=\"middle\" font-size=\"28\" fill=\"#193148\" font-weight=\"400\">One or both true</text></svg></figure><p>What if the person has both a ticket and a pass?</p><details><summary>Show answer</summary><div class=\"answer\"><strong>true.</strong> AP OR is inclusive: both true is allowed.</div></details>",
+    "note": "明确inclusive OR包含双方都true，不能用生活中“选饮料A或B且只能一种”的互斥语境替代。这里不引入XOR语法，只解释官方OR的四种组合。"
+  },
+  {
+    "title": "A truth table covers every two-input case",
+    "tag": "TRUTH TABLE",
+    "time": "24–28 min",
+    "code": "AAP-2.F.3–4",
+    "html": "<p class=\"small\">Complete the two result columns in this row order.</p><figure class=\"visual\" tabindex=\"0\"><svg xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Four combinations of A and B with blank AND and OR results for students to complete.\" viewBox=\"0 0 1200 220\" style=\"font-family:Arial,Helvetica,sans-serif\"><text x=\"150\" y=\"31\" text-anchor=\"middle\" font-size=\"27\" fill=\"#225a83\" font-weight=\"700\">A</text><text x=\"450\" y=\"31\" text-anchor=\"middle\" font-size=\"27\" fill=\"#225a83\" font-weight=\"700\">B</text><text x=\"750\" y=\"31\" text-anchor=\"middle\" font-size=\"27\" fill=\"#225a83\" font-weight=\"700\">A AND B</text><text x=\"1050\" y=\"31\" text-anchor=\"middle\" font-size=\"27\" fill=\"#225a83\" font-weight=\"700\">A OR B</text><rect x=\"15\" y=\"53\" width=\"1170\" height=\"37\" rx=\"4\" fill=\"#eef3f6\"/><text x=\"150\" y=\"81\" text-anchor=\"middle\" font-size=\"27\" fill=\"#193148\" font-weight=\"400\">true</text><text x=\"450\" y=\"81\" text-anchor=\"middle\" font-size=\"27\" fill=\"#193148\" font-weight=\"400\">true</text><text x=\"750\" y=\"81\" text-anchor=\"middle\" font-size=\"27\" fill=\"#193148\" font-weight=\"400\">?</text><text x=\"1050\" y=\"81\" text-anchor=\"middle\" font-size=\"27\" fill=\"#193148\" font-weight=\"400\">?</text><rect x=\"15\" y=\"93\" width=\"1170\" height=\"37\" rx=\"4\" fill=\"#fcfcfa\"/><text x=\"150\" y=\"121\" text-anchor=\"middle\" font-size=\"27\" fill=\"#193148\" font-weight=\"400\">true</text><text x=\"450\" y=\"121\" text-anchor=\"middle\" font-size=\"27\" fill=\"#193148\" font-weight=\"400\">false</text><text x=\"750\" y=\"121\" text-anchor=\"middle\" font-size=\"27\" fill=\"#193148\" font-weight=\"400\">?</text><text x=\"1050\" y=\"121\" text-anchor=\"middle\" font-size=\"27\" fill=\"#193148\" font-weight=\"400\">?</text><rect x=\"15\" y=\"133\" width=\"1170\" height=\"37\" rx=\"4\" fill=\"#eef3f6\"/><text x=\"150\" y=\"161\" text-anchor=\"middle\" font-size=\"27\" fill=\"#193148\" font-weight=\"400\">false</text><text x=\"450\" y=\"161\" text-anchor=\"middle\" font-size=\"27\" fill=\"#193148\" font-weight=\"400\">true</text><text x=\"750\" y=\"161\" text-anchor=\"middle\" font-size=\"27\" fill=\"#193148\" font-weight=\"400\">?</text><text x=\"1050\" y=\"161\" text-anchor=\"middle\" font-size=\"27\" fill=\"#193148\" font-weight=\"400\">?</text><rect x=\"15\" y=\"173\" width=\"1170\" height=\"37\" rx=\"4\" fill=\"#fcfcfa\"/><text x=\"150\" y=\"201\" text-anchor=\"middle\" font-size=\"27\" fill=\"#193148\" font-weight=\"400\">false</text><text x=\"450\" y=\"201\" text-anchor=\"middle\" font-size=\"27\" fill=\"#193148\" font-weight=\"400\">false</text><text x=\"750\" y=\"201\" text-anchor=\"middle\" font-size=\"27\" fill=\"#193148\" font-weight=\"400\">?</text><text x=\"1050\" y=\"201\" text-anchor=\"middle\" font-size=\"27\" fill=\"#193148\" font-weight=\"400\">?</text></svg></figure><details><summary>Show answer</summary><div class=\"answer\">Rows (AND, OR): <strong>(true, true); (false, true); (false, true); (false, false).</strong></div></details>",
+    "note": "四行完整列出两Boolean输入的全部组合，结果列保留问号供学生作答。先分别依据定义填列，再比较AND仅一行true、OR仅一行false；不是背字母排列。"
+  },
+  {
+    "title": "NOT reverses one Boolean result",
+    "tag": "LOGICAL NOT",
+    "time": "28–32 min",
+    "code": "AAP-2.F.2",
+    "html": "<figure class=\"visual\" tabindex=\"0\"><svg xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"NOT maps true to false and maps false to true.\" viewBox=\"0 0 1200 160\" style=\"font-family:Arial,Helvetica,sans-serif\"><rect x=\"15.0\" y=\"12\" width=\"560.0\" height=\"126\" rx=\"12\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"295.0\" y=\"48\" text-anchor=\"middle\" font-size=\"25\" fill=\"#225a83\" font-weight=\"700\">Input true</text><text x=\"295.0\" y=\"103\" text-anchor=\"middle\" font-size=\"30\" fill=\"#193148\" font-weight=\"700\">NOT true = false</text><rect x=\"625.0\" y=\"12\" width=\"560.0\" height=\"126\" rx=\"12\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"905.0\" y=\"48\" text-anchor=\"middle\" font-size=\"25\" fill=\"#225a83\" font-weight=\"700\">Input false</text><text x=\"905.0\" y=\"103\" text-anchor=\"middle\" font-size=\"30\" fill=\"#193148\" font-weight=\"700\">NOT false = true</text></svg></figure><p class=\"lead\">Evaluate NOT (7 &gt; 10).</p><details><summary>Show answer</summary><div class=\"answer\"><strong>true.</strong> First 7 &gt; 10 is false; then NOT reverses it.</div></details><p class=\"small\">Parentheses show exactly which expression is negated.</p>",
+    "note": "NOT不是简单把符号方向随意改动。先求括号内的Boolean再翻转。对于否定大于，包含等于的部分也要保留，因此NOT(x>10)对应x≤10。"
+  },
+  {
+    "title": "A closed range needs two comparisons",
+    "tag": "INCLUSIVE RANGE",
+    "time": "32–36 min",
+    "code": "AAP-2.E/F",
+    "html": "<p class=\"lead\">A workshop accepts ages 12 through 17, inclusive.</p><figure class=\"visual\" tabindex=\"0\"><svg xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"The interval from12 to17 is highlighted, with filled endpoints showing inclusion.\" viewBox=\"0 0 1200 155\" style=\"font-family:Arial,Helvetica,sans-serif\"><path d=\"M80 85H1120\" stroke=\"#193148\" stroke-width=\"3\"/><path d=\"M340 85H860\" stroke=\"#28766f\" stroke-width=\"14\"/><circle cx=\"340\" cy=\"85\" r=\"14\" fill=\"#28766f\"/><circle cx=\"860\" cy=\"85\" r=\"14\" fill=\"#28766f\"/><text x=\"340\" y=\"136\" text-anchor=\"middle\" font-size=\"30\" fill=\"#193148\" font-weight=\"400\">12</text><text x=\"860\" y=\"136\" text-anchor=\"middle\" font-size=\"30\" fill=\"#193148\" font-weight=\"400\">17</text><text x=\"600\" y=\"37\" text-anchor=\"middle\" font-size=\"28\" fill=\"#28766f\" font-weight=\"700\">Both boundaries included</text></svg></figure><pre class=\"code\" style=\"font-size:26px;line-height:1.3\">(age ≥ 12) AND (age ≤ 17)</pre><p>Test age = 12, then age = 18.</p><details><summary>Show answer</summary><div class=\"answer\"><strong>true; false.</strong> Both comparisons must be true.</div></details>",
+    "note": "数轴实心端点表示包含12和17。必须拆成两个完整关系再AND连接，不写12≤age≤17这种未提供的连写语法。不假设短路求值；本课表达式没有副作用。"
+  },
+  {
+    "title": "Evaluate the inner group first",
+    "tag": "GROUPED EXPRESSIONS",
+    "time": "36–40 min",
+    "code": "AAP-2.E/F",
+    "html": "<p class=\"lead\">A is true, B is false, and C is true.</p><pre class=\"code\" style=\"font-size:26px;line-height:1.3\">A AND (B OR C)</pre><ol><li>Evaluate B OR C.</li><li>Combine that result with A.</li></ol><details><summary>Show answer</summary><div class=\"answer\"><strong>true, then true.</strong> Parentheses make the intended grouping explicit.</div></details>",
+    "note": "对复杂条件先圈内部表达式。这里不是新增逻辑运算优先级记忆题；所有混合逻辑运算均用括号明确分组。学生要能口述每一步操作数是Boolean值。"
+  },
+  {
+    "title": "Negating a group changes the connector",
+    "tag": "LOGICAL EQUIVALENCE",
+    "time": "40–42 min",
+    "code": "AAP-2.F · De Morgan application",
+    "html": "<figure class=\"visual\" tabindex=\"0\"><svg xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"De Morgan equivalences negate each Boolean operand and exchange AND with OR.\" viewBox=\"0 0 1200 195\" style=\"font-family:Arial,Helvetica,sans-serif\"><rect x=\"15\" y=\"12\" width=\"1170\" height=\"77\" rx=\"12\" fill=\"#fcfcfa\" stroke=\"#28766f\" stroke-width=\"2\"/><text x=\"600\" y=\"61\" text-anchor=\"middle\" font-size=\"31\" fill=\"#193148\" font-weight=\"700\">NOT (A AND B)  =  (NOT A) OR (NOT B)</text><rect x=\"15\" y=\"105\" width=\"1170\" height=\"77\" rx=\"12\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"600\" y=\"154\" text-anchor=\"middle\" font-size=\"31\" fill=\"#193148\" font-weight=\"700\">NOT (A OR B)  =  (NOT A) AND (NOT B)</text></svg></figure><p>De Morgan: negate each operand and swap AND / OR.</p><details><summary>Show why keeping AND is wrong</summary><div class=\"answer\">For A = false, B = true: NOT (A AND B) is <strong>true</strong>; (NOT A) AND (NOT B) is <strong>false</strong>.</div></details>",
+    "note": "等号在图中表达两Boolean表达式对所有输入都有相同值，不是赋值。De Morgan作为AAP-2.F的逻辑应用，不虚构独立官方学习目标。用反例检查错误变形比死记符号更可靠。"
+  },
+  {
+    "title": "The outside of a closed range",
+    "tag": "APPLY THE NEGATION",
+    "time": "42–44 min",
+    "code": "AAP-2.E/F",
+    "html": "<pre class=\"code\" style=\"font-size:26px;line-height:1.3\">NOT ((age ≥ 12) AND (age ≤ 17))</pre><figure class=\"visual\" tabindex=\"0\"><svg xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Outside the closed12 to17 interval; open endpoints exclude12 and17 from the outside region.\" viewBox=\"0 0 1200 150\" style=\"font-family:Arial,Helvetica,sans-serif\"><path d=\"M80 82H1120\" stroke=\"#193148\" stroke-width=\"3\"/><path d=\"M80 82H330M870 82H1120\" stroke=\"#28766f\" stroke-width=\"13\"/><circle cx=\"340\" cy=\"82\" r=\"13\" fill=\"#fcfcfa\" stroke=\"#28766f\" stroke-width=\"4\"/><circle cx=\"860\" cy=\"82\" r=\"13\" fill=\"#fcfcfa\" stroke=\"#28766f\" stroke-width=\"4\"/><text x=\"340\" y=\"135\" text-anchor=\"middle\" font-size=\"30\" fill=\"#193148\" font-weight=\"400\">12</text><text x=\"860\" y=\"135\" text-anchor=\"middle\" font-size=\"30\" fill=\"#193148\" font-weight=\"400\">17</text><text x=\"190\" y=\"38\" text-anchor=\"middle\" font-size=\"28\" fill=\"#28766f\" font-weight=\"400\">Below 12</text><text x=\"1000\" y=\"38\" text-anchor=\"middle\" font-size=\"28\" fill=\"#28766f\" font-weight=\"400\">Above 17</text></svg></figure><p>Write an equivalent expression without NOT.</p><details><summary>Show answer</summary><div class=\"answer\"><strong>(age &lt; 12) OR (age &gt; 17).</strong> The boundary ages remain inside.</div></details>",
+    "note": "结合上一页：否定AND变OR，否定≥变<，否定≤变>。空心端点让边界是否进入outside一目了然。图给概念支架，等价代码仍留到学生作答后揭晓。"
+  },
+  {
+    "title": "Set up a Workshop Rule Checker",
+    "tag": "LAB SETUP",
+    "time": "44–49 min",
+    "code": "AAP-2.E/F",
+    "html": "<p class=\"lead\"><a href=\"Chapter_3_Programming_Lab.html#boolean\" target=\"_blank\" rel=\"noopener\">Open Programming Lab → Boolean</a></p><p>Fictional rule: age 12–17 inclusive, and booked OR hasPass.</p><pre class=\"code\" style=\"font-size:26px;line-height:1.3\">12\nfalse\ntrue</pre><p class=\"small\">Input queue: age, booked, hasPass. Use an integer age (0–120) and Boolean literals, one JSON scalar per line.</p>",
+    "note": "规则是本课堂自定的假想工作坊要求，不引用现实许可政策。年龄域0至120包括不符合资格的合法测试输入。第二第三行是Boolean不加引号，不输入列表。说明本课只报告true/false，不控制实际进入行为。"
+  },
+  {
+    "title": "1 · Break the rule into named conditions",
+    "tag": "RULE CHECKER · 5 MINUTES",
+    "time": "49–54 min",
+    "code": "AAP-2.E/F",
+    "html": "<ol><li>inRange: age is from 12 through 17.</li><li>hasEntry: booked OR hasPass.</li><li>eligible: inRange AND hasEntry.</li><li>Display all three Boolean results with labels.</li></ol><details><summary>Show planning support</summary><div class=\"answer\"><span class=\"mono\">inRange ← (age ≥ 12) AND (age ≤ 17)<br>hasEntry ← booked OR hasPass</span></div></details>",
+    "note": "前5分钟先表达规则再写程序，把复合式拆成有意义中间变量。两人共用设备也每人写自己的预期表。帮助学生确认age0和120属于输入域，但资格结果为false。"
+  },
+  {
+    "title": "2 · Write and run your program",
+    "tag": "RULE CHECKER · 9 MINUTES",
+    "time": "54–63 min",
+    "code": "AAP-1.B · AAP-2.E/F",
+    "html": "<pre class=\"code\" style=\"font-size:26px;line-height:1.3\">age ← INPUT()\nbooked ← INPUT()\nhasPass ← INPUT()</pre><p>Compute inRange, hasEntry and eligible. Display each label and Boolean in separate calls.</p><details><summary>Show optional ending fragments</summary><div class=\"answer\"><span class=\"mono\">eligible ← inRange AND hasEntry<br>DISPLAY(\"Eligible:\")<br>DISPLAY(eligible)</span></div></details>",
+    "note": "给三个输入起始语句与可选结尾片段，保留学生完成核心条件的任务。输出Boolean值已满足本课要求，无需IF。若出现\"true\"类型错误，回到输入契约，不通过字符串强制转换绕过。"
+  },
+  {
+    "title": "3 · Test boundaries and Boolean combinations",
+    "tag": "RULE CHECKER · 6 MINUTES",
+    "time": "63–69 min",
+    "code": "CRD-2.J · AAP-2.F",
+    "html": "<p class=\"small\">Predict all three outputs, then run each input queue.</p><table style=\"font-size:23px;margin:12px 0\"><tr><th style=\"padding:6px 12px\">Case</th><th style=\"padding:6px 12px\">age</th><th style=\"padding:6px 12px\">booked</th><th style=\"padding:6px 12px\">hasPass</th></tr><tr><td style=\"padding:6px 12px\">A</td><td style=\"padding:6px 12px\">12</td><td style=\"padding:6px 12px\">false</td><td style=\"padding:6px 12px\">true</td></tr><tr><td style=\"padding:6px 12px\">B</td><td style=\"padding:6px 12px\">17</td><td style=\"padding:6px 12px\">true</td><td style=\"padding:6px 12px\">false</td></tr><tr><td style=\"padding:6px 12px\">C</td><td style=\"padding:6px 12px\">11</td><td style=\"padding:6px 12px\">true</td><td style=\"padding:6px 12px\">true</td></tr><tr><td style=\"padding:6px 12px\">D</td><td style=\"padding:6px 12px\">18</td><td style=\"padding:6px 12px\">true</td><td style=\"padding:6px 12px\">false</td></tr><tr><td style=\"padding:6px 12px\">E</td><td style=\"padding:6px 12px\">15</td><td style=\"padding:6px 12px\">false</td><td style=\"padding:6px 12px\">false</td></tr><tr><td style=\"padding:6px 12px\">F</td><td style=\"padding:6px 12px\">15</td><td style=\"padding:6px 12px\">true</td><td style=\"padding:6px 12px\">true</td></tr></table><details><summary>Show answer</summary><div class=\"answer\">Results (inRange, hasEntry, eligible):<br><strong>A/B/F: true, true, true. C/D: false, true, false. E: true, false, false.</strong></div></details>",
+    "note": "6例含12和17边界、11和18刚越界、两种单个凭据、都无和都有。F能揭露把OR理解成互斥选择的错误；C/D能揭露用OR检查闭区间的错误。先预期后运行，每个队列重置。"
+  },
+  {
+    "title": "4 · Revise and justify the test",
+    "tag": "RULE CHECKER · 5 MINUTES",
+    "time": "69–74 min",
+    "code": "CRD-2.E/J",
+    "html": "<ol><li>Compare expected and actual outputs with a partner.</li><li>Fix one failed condition or unclear label.</li><li>Run all six cases again.</li><li>Save code, test results and one reason a test matters.</li></ol><details><summary>Show evidence statements</summary><div class=\"answer\">“Age 12 checks that ≥ includes the lower boundary.”<br>“Both credentials true checks inclusive OR.”</div></details>",
+    "note": "如果全部通过，要求同伴检查标签和变量名并写为什么某个测试有区分力，不为制造修改而故意改坏。修订需依据真实反馈；通过有限测试不等于对所有输入数学证明正确。"
+  },
+  {
+    "title": "Find the range bug",
+    "tag": "DEBUG",
+    "time": "74–78 min",
+    "code": "AAP-2.E/F · CRD-2.I",
+    "html": "<pre class=\"code\" style=\"font-size:26px;line-height:1.3\">inRange ← (age ≥ 12) OR (age ≤ 17)</pre><p class=\"lead\">The intended interval is 12–17 inclusive. Test age = 5.</p><details><summary>Show answer</summary><div class=\"answer\">The buggy result is <strong>true</strong>: 5 ≤ 17. Replace <strong>OR with AND</strong>; the correct result is false.</div></details>",
+    "note": "用明确反例而非只记AND口诀。在数域中这两个半区间用OR会覆盖所有年龄，但学生给一个反例已足以否定等价。保留括号和关系符，最小修正仅连接词。"
+  },
+  {
+    "title": "Choose the equivalent condition",
+    "tag": "ORIGINAL AP-STYLE",
+    "time": "78–82 min",
+    "code": "AAP-2.E/F",
+    "html": "<p class=\"lead\">Which is equivalent to NOT (score &gt; 20)?</p><div class=\"options\"><p>A. score &lt; 20</p><p>B. score ≤ 20</p><p>C. score ≥ 20</p><p>D. score = 20</p></div><details><summary>Show answer</summary><div class=\"answer\"><strong>B.</strong> The negation includes all scores below 20 and the boundary 20.</div></details>",
+    "note": "用score20检查A漏边界，再用score19检查D过窄，C包含原本应为false的21。题目为原创AP风格，不是历年真题。"
+  },
+  {
+    "title": "Choose exactly two true statements",
+    "tag": "ORIGINAL AP-STYLE",
+    "time": "82–85 min",
+    "code": "AAP-2.F",
+    "html": "<div class=\"options\"><p>A. true OR true is false.</p><p>B. true AND false is false.</p><p>C. NOT false is true.</p><p>D. NOT (A OR B) always equals (NOT A) OR (NOT B).</p></div><details><summary>Show answer</summary><div class=\"answer\"><strong>B and C.</strong> A ignores inclusive OR. D must use AND between the negated operands.</div></details>",
+    "note": "D是全称等价声明，AtrueBfalse便可反驳：左false右true。按题意恰选两项，与官方多选形式建立习惯，但本课教师分制自行定义。"
+  },
+  {
+    "title": "Keep the code and the evidence",
+    "tag": "CONSOLIDATION",
+    "time": "85–87 min",
+    "code": "12 original questions · 30 classroom marks",
+    "html": "<p class=\"lead\">Save your Workshop Rule Checker and six test cases.</p><ul><li>Homework: 12 questions, about 40 minutes.</li><li>Show Boolean intermediate values.</li><li>Q5 requires exactly two selections.</li></ul><p class=\"callout\">Next: use a Boolean condition to choose a branch.</p>",
+    "note": "本课阶段目标是条件求值，下一课才进入IF/ELSE。作业书面题按4独立点评分，允许逻辑等价表达式，但必须满足边界与上下文要求。"
+  },
+  {
+    "title": "Exit ticket",
+    "tag": "CHECK THE LOGIC",
+    "time": "87–90 min",
+    "code": "AAP-2.E/F",
+    "html": "<ol><li>Evaluate true OR true.</li><li>Write “x is from 4 through 9, inclusive.”</li><li>Rewrite NOT (A OR B) without an outer NOT.</li></ol><details><summary>Show answer</summary><div class=\"answer\"><strong>true.</strong><br><span class=\"mono\">(x ≥ 4) AND (x ≤ 9)</span><br><span class=\"mono\">(NOT A) AND (NOT B)</span></div></details>",
+    "note": "每项1分，建议3/3。错第1题用双方true重新讲OR，错区间画实心端点，错否定用四行真值表验证。不要以记住单个课堂例子的数值代替迁移理解。"
+  }
+]

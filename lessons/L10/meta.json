@@ -1,0 +1,13 @@
+{
+  "chapter": 3,
+  "id": "L10",
+  "number": "10",
+  "title": "Boolean Logic",
+  "shortTitle": "Boolean Logic",
+  "chineseTitle": "布尔逻辑与范围判定",
+  "filename": "AP_CSP_L10_Boolean_Logic.html",
+  "minutes": 90,
+  "preview": "lessons/L10/preview.svg",
+  "topicSummary": "Relational operators, AND, inclusive OR, NOT, truth tables, boundaries, logical equivalence and a Workshop Rule Checker.",
+  "homeworkInstructions": "Q5: select exactly TWO answers. OR is inclusive. All named logical operands are Booleans; age and score values are numbers. Parentheses specify grouping."
+}

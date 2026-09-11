@@ -1,0 +1,187 @@
+[
+  {
+    "title": "Study Goal Tracker: Chapter 3 Project & Check",
+    "tag": "LESSON 16",
+    "code": "Chapter 3 · Algorithms and programming",
+    "html": "<p class=\"lead\">AP Computer Science Principles</p><h1>Study Goal<br>Tracker</h1><p class=\"zh\">第三章项目 · 算法编程综合检查</p><p class=\"small\">90 minutes · Build, test and explain your own program</p>",
+    "note": "今天把第三章内容组织成一段可以测试的程序。项目主题为学习分钟数，但使用虚构有效输入，不收集个人真实学习记录。至少40分钟用于实施、测试和修改。此任务不是正式Create。",
+    "kind": "dark",
+    "time": "0–2 min"
+  },
+  {
+    "title": "Retrieve expressions and logic",
+    "tag": "RETRIEVAL · L09/L10",
+    "code": "AAP-2.C/E/F",
+    "html": "<p>1. Evaluate 14 MOD 5 + 2 * 3.<br>2. Evaluate (30 ≥ 30) AND NOT(30 > 180).</p><details><summary>Show answer</summary><div class=\"answer\">1. 4 + 6 = 10.<br>2. true AND true = true.</div></details>",
+    "note": "第一题先乘除MOD后加减，MOD余数4。第二题先关系后NOT和AND，强调30在有效范围且达到目标。90秒独立，再说明理由。",
+    "time": "2–6 min"
+  },
+  {
+    "title": "Chapter 3 skills in one program",
+    "tag": "CHAPTER MAP",
+    "code": "AAP-1.B · AAP-2.C–K",
+    "html": "<ul><li>Expressions update stored values.</li><li>Boolean conditions choose a branch.</li><li>Iteration repeats the daily decision.</li><li>Tests explain whether the result meets the requirement.</li></ul><p class=\"small\">Randomness is an optional extension after the core program works.</p>",
+    "note": "本章还学过嵌套条件与条件循环，本项目选择最直接结构并不强迫每种语法出现。作业会覆盖所有本章概念。不能为了塞技能让项目需求变得含糊或不必要复杂。",
+    "time": "6–8 min"
+  },
+  {
+    "title": "The Study Goal Tracker brief",
+    "tag": "PROJECT BRIEF",
+    "code": "CRD-2.A–F",
+    "html": "<figure class=\"visual\" tabindex=\"0\" role=\"group\" aria-label=\"The tracker reads three daily minute values, checks a thirty-minute goal each day, and reports a count and final message.\"><svg xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"The tracker reads three daily minute values, checks a thirty-minute goal each day, and reports a count and final message.\" viewBox=\"0 0 1200 210\" style=\"font-family:Arial,sans-serif\"><rect x=\"10.0\" y=\"28\" width=\"368.0\" height=\"150\" rx=\"10\" fill=\"#eef3f6\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"194.0\" y=\"65\" font-size=\"29\" fill=\"#225a83\" text-anchor=\"middle\" font-weight=\"700\">Input</text><text x=\"194.0\" y=\"104\" font-size=\"25\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"400\">3 daily minute values</text><path d=\"M383.0 103L411.0 103\" stroke=\"#225a83\" stroke-width=\"3\" fill=\"none\"/><polygon points=\"411.0,103 399.0,97.0 399.0,109.0\" fill=\"#225a83\"/><rect x=\"416.0\" y=\"28\" width=\"368.0\" height=\"150\" rx=\"10\" fill=\"#eef3f6\" stroke=\"#28766f\" stroke-width=\"2\"/><text x=\"600.0\" y=\"65\" font-size=\"29\" fill=\"#28766f\" text-anchor=\"middle\" font-weight=\"700\">Each day</text><text x=\"600.0\" y=\"104\" font-size=\"25\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"400\">goal is at least 30</text><path d=\"M789.0 103L817.0 103\" stroke=\"#225a83\" stroke-width=\"3\" fill=\"none\"/><polygon points=\"817.0,103 805.0,97.0 805.0,109.0\" fill=\"#225a83\"/><rect x=\"822.0\" y=\"28\" width=\"368.0\" height=\"150\" rx=\"10\" fill=\"#eef3f6\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"1006.0\" y=\"65\" font-size=\"29\" fill=\"#225a83\" text-anchor=\"middle\" font-weight=\"700\">End</text><text x=\"1006.0\" y=\"104\" font-size=\"25\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"400\">goal-day count</text><text x=\"1006.0\" y=\"137\" font-size=\"25\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"400\">overall message</text></svg></figure><p class=\"visual-note\">Purpose: help a user review progress toward a simple three-day goal.</p>",
+    "note": "需求以brief为唯一判断依据：每一天≥30显示Goal met并计数+1，否则Keep going；三次后显示计数并按≥2选择最终提示。这里每日目标30和总判定2不能混淆。",
+    "time": "8–12 min"
+  },
+  {
+    "title": "The input contract",
+    "tag": "REQUIREMENTS",
+    "code": "CRD-2.F/J",
+    "html": "<figure class=\"visual\" tabindex=\"0\" role=\"group\" aria-label=\"The valid integer-minute range includes zero and one hundred eighty, with a goal boundary at thirty.\"><svg xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"The valid integer-minute range includes zero and one hundred eighty, with a goal boundary at thirty.\" viewBox=\"0 0 1200 210\" style=\"font-family:Arial,sans-serif\"><rect x=\"315.0\" y=\"40\" width=\"135\" height=\"95\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"382.5\" y=\"101\" font-size=\"35\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"700\">0</text><rect x=\"460.0\" y=\"40\" width=\"135\" height=\"95\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"527.5\" y=\"101\" font-size=\"35\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"700\">29</text><rect x=\"605.0\" y=\"40\" width=\"135\" height=\"95\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"672.5\" y=\"101\" font-size=\"35\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"700\">30</text><rect x=\"750.0\" y=\"40\" width=\"135\" height=\"95\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"817.5\" y=\"101\" font-size=\"35\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"700\">180</text><text x=\"600\" y=\"180\" font-size=\"26\" fill=\"#647381\" text-anchor=\"middle\" font-weight=\"400\">Valid input: whole minutes from 0 through 180</text></svg></figure><p class=\"visual-note\">Read exactly three valid values. Use fictional test data.</p><p class=\"visual-note\">This core version assumes valid input; validation is not implemented.</p>",
+    "note": "0和180是有效端点；29和30是判定边界。输入181、负数、小数、字符串可用来讨论合同之外，但本项目不要求额外验证，不能把“输入假设有效”写成“程序自动拒绝非法值”。",
+    "time": "12–16 min"
+  },
+  {
+    "title": "The daily boundary is 30",
+    "tag": "PREDICT",
+    "code": "AAP-2.E/H · CRD-2.J",
+    "html": "<p>For each value, predict which message the specification requires:</p><figure class=\"visual\" tabindex=\"0\" role=\"group\" aria-label=\"Predict the required daily messages at twenty-nine, thirty and thirty-one minutes.\"><svg xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Predict the required daily messages at twenty-nine, thirty and thirty-one minutes.\" viewBox=\"0 0 1200 210\" style=\"font-family:Arial,sans-serif\"><rect x=\"387.5\" y=\"40\" width=\"135\" height=\"95\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"455.0\" y=\"101\" font-size=\"35\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"700\">29</text><rect x=\"532.5\" y=\"40\" width=\"135\" height=\"95\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"600.0\" y=\"101\" font-size=\"35\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"700\">30</text><rect x=\"677.5\" y=\"40\" width=\"135\" height=\"95\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"745.0\" y=\"101\" font-size=\"35\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"700\">31</text></svg></figure><details><summary>Show answer</summary><div class=\"answer\">29: Keep going. 30 and 31: Goal met. The comparison includes the boundary value 30.</div></details>",
+    "note": "先根据自然语言at least判定，不先跑代码。29/30能区别>30错误与≥30正确；仅测试31无法暴露边界bug。该页要求消息但不直接画出答案。",
+    "time": "16–20 min"
+  },
+  {
+    "title": "Two decisions happen at different times",
+    "tag": "DESIGN",
+    "code": "AAP-2.H/K",
+    "html": "<figure class=\"visual\" tabindex=\"0\" role=\"group\" aria-label=\"The minutes decision happens on every day, but the count summary happens only after all three days.\"><svg xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"The minutes decision happens on every day, but the count summary happens only after all three days.\" viewBox=\"0 0 1200 210\" style=\"font-family:Arial,sans-serif\"><rect x=\"10.0\" y=\"28\" width=\"368.0\" height=\"150\" rx=\"10\" fill=\"#eef3f6\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"194.0\" y=\"65\" font-size=\"29\" fill=\"#225a83\" text-anchor=\"middle\" font-weight=\"700\">Each day</text><text x=\"194.0\" y=\"104\" font-size=\"25\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"400\">minutes ≥ 30?</text><path d=\"M383.0 103L411.0 103\" stroke=\"#225a83\" stroke-width=\"3\" fill=\"none\"/><polygon points=\"411.0,103 399.0,97.0 399.0,109.0\" fill=\"#225a83\"/><rect x=\"416.0\" y=\"28\" width=\"368.0\" height=\"150\" rx=\"10\" fill=\"#eef3f6\" stroke=\"#28766f\" stroke-width=\"2\"/><text x=\"600.0\" y=\"65\" font-size=\"29\" fill=\"#28766f\" text-anchor=\"middle\" font-weight=\"700\">After 3 days</text><text x=\"600.0\" y=\"104\" font-size=\"25\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"400\">display count</text><path d=\"M789.0 103L817.0 103\" stroke=\"#225a83\" stroke-width=\"3\" fill=\"none\"/><polygon points=\"817.0,103 805.0,97.0 805.0,109.0\" fill=\"#225a83\"/><rect x=\"822.0\" y=\"28\" width=\"368.0\" height=\"150\" rx=\"10\" fill=\"#eef3f6\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"1006.0\" y=\"65\" font-size=\"29\" fill=\"#225a83\" text-anchor=\"middle\" font-weight=\"700\">Final decision</text><text x=\"1006.0\" y=\"104\" font-size=\"25\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"400\">count ≥ 2?</text></svg></figure><p class=\"visual-note\">Daily: Goal met or Keep going. Final: On track or Try again.</p>",
+    "note": "总判定在循环外。在第1天未满2时马上显示Try again会产生额外最终提示，与只在3次结束后判断的需求不同。循环体内可以每日输出，但最终报告只一次。",
+    "time": "20–24 min"
+  },
+  {
+    "title": "Predict the first complete run",
+    "tag": "PREDICT BEFORE CODE",
+    "code": "CRD-2.J",
+    "html": "<p class=\"lead\">Input queue, in order: 29, 30, 31.</p><p>Write the three daily messages, final count and final message.</p><details><summary>Show answer</summary><div class=\"answer\">Keep going; Goal met; Goal met; 2; On track.</div></details>",
+    "note": "学生先独立完整写五个输出值，工具可能逐行排版，AP参考DISPLAY是空格分隔，评分看顺序和值。这里用逗号表达输入流，不把它当需要列表代码。",
+    "time": "24–28 min"
+  },
+  {
+    "title": "The counter has one lifetime per run",
+    "tag": "STRUCTURE",
+    "code": "AAP-1.B · AAP-2.K",
+    "html": "<figure class=\"visual\" tabindex=\"0\" role=\"group\" aria-label=\"Initialize count once, update it within three iterations and use its accumulated value afterward.\"><svg xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Initialize count once, update it within three iterations and use its accumulated value afterward.\" viewBox=\"0 0 1200 210\" style=\"font-family:Arial,sans-serif\"><rect x=\"10.0\" y=\"28\" width=\"368.0\" height=\"150\" rx=\"10\" fill=\"#eef3f6\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"194.0\" y=\"65\" font-size=\"29\" fill=\"#225a83\" text-anchor=\"middle\" font-weight=\"700\">Before loop</text><text x=\"194.0\" y=\"104\" font-size=\"25\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"400\">count ← 0</text><path d=\"M383.0 103L411.0 103\" stroke=\"#225a83\" stroke-width=\"3\" fill=\"none\"/><polygon points=\"411.0,103 399.0,97.0 399.0,109.0\" fill=\"#225a83\"/><rect x=\"416.0\" y=\"28\" width=\"368.0\" height=\"150\" rx=\"10\" fill=\"#eef3f6\" stroke=\"#28766f\" stroke-width=\"2\"/><text x=\"600.0\" y=\"65\" font-size=\"29\" fill=\"#28766f\" text-anchor=\"middle\" font-weight=\"700\">3 iterations</text><text x=\"600.0\" y=\"104\" font-size=\"25\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"400\">read, decide, update</text><path d=\"M789.0 103L817.0 103\" stroke=\"#225a83\" stroke-width=\"3\" fill=\"none\"/><polygon points=\"817.0,103 805.0,97.0 805.0,109.0\" fill=\"#225a83\"/><rect x=\"822.0\" y=\"28\" width=\"368.0\" height=\"150\" rx=\"10\" fill=\"#eef3f6\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"1006.0\" y=\"65\" font-size=\"29\" fill=\"#225a83\" text-anchor=\"middle\" font-weight=\"700\">After loop</text><text x=\"1006.0\" y=\"104\" font-size=\"25\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"400\">report count</text><text x=\"1006.0\" y=\"137\" font-size=\"25\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"400\">choose final message</text></svg></figure><p class=\"visual-note\">Resetting count inside the body discards earlier days.</p>",
+    "note": "说明变量不是每次循环自动重建。初始化一次，满足条件时加1，不满足保持原值。可以使用goalDays等清楚变量名，实验室区分大小写。",
+    "time": "28–31 min"
+  },
+  {
+    "title": "A test plan covers different paths",
+    "tag": "TEST PLAN",
+    "code": "CRD-2.J",
+    "html": "<figure class=\"visual\" tabindex=\"0\" role=\"group\" aria-label=\"Three required test queues cover the daily boundary, no successful days and all successful days.\"><svg xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Three required test queues cover the daily boundary, no successful days and all successful days.\" viewBox=\"0 0 1200 210\" style=\"font-family:Arial,sans-serif\"><rect x=\"10.0\" y=\"28\" width=\"368.0\" height=\"150\" rx=\"10\" fill=\"#eef3f6\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"194.0\" y=\"65\" font-size=\"29\" fill=\"#225a83\" text-anchor=\"middle\" font-weight=\"700\">Mixed boundary</text><text x=\"194.0\" y=\"104\" font-size=\"25\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"400\">29, 30, 31</text><path d=\"M383.0 103L411.0 103\" stroke=\"#225a83\" stroke-width=\"3\" fill=\"none\"/><polygon points=\"411.0,103 399.0,97.0 399.0,109.0\" fill=\"#225a83\"/><rect x=\"416.0\" y=\"28\" width=\"368.0\" height=\"150\" rx=\"10\" fill=\"#eef3f6\" stroke=\"#28766f\" stroke-width=\"2\"/><text x=\"600.0\" y=\"65\" font-size=\"29\" fill=\"#28766f\" text-anchor=\"middle\" font-weight=\"700\">No goal days</text><text x=\"600.0\" y=\"104\" font-size=\"25\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"400\">0, 0, 0</text><path d=\"M789.0 103L817.0 103\" stroke=\"#225a83\" stroke-width=\"3\" fill=\"none\"/><polygon points=\"817.0,103 805.0,97.0 805.0,109.0\" fill=\"#225a83\"/><rect x=\"822.0\" y=\"28\" width=\"368.0\" height=\"150\" rx=\"10\" fill=\"#eef3f6\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"1006.0\" y=\"65\" font-size=\"29\" fill=\"#225a83\" text-anchor=\"middle\" font-weight=\"700\">All goal days</text><text x=\"1006.0\" y=\"104\" font-size=\"25\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"400\">30, 30, 30</text></svg></figure><p class=\"small\">Predict the count and final message for every test before running.</p><details><summary>Show answer</summary><div class=\"answer\">Expected count/message: 2 / On track; 0 / Try again; 3 / On track.</div></details>",
+    "note": "三组是最低测试要求，还可加入180/29/0→1/Try again覆盖上端点及总判定count1。实际代码输出须包含三条日提示，不能只测最后计数。",
+    "time": "31–34 min"
+  },
+  {
+    "title": "Build 1: establish the program structure",
+    "tag": "PROJECT · 5 MIN",
+    "code": "AAP-2.K · CRD-2.E",
+    "html": "<p class=\"small\"><a href=\"Chapter_3_Programming_Lab.html#project\" target=\"_blank\" rel=\"noopener\">Open the project lab</a> · <a href=\"output/pdf/AP_CSP_Chapter_3_Project_Sheet.pdf\" target=\"_blank\" rel=\"noopener\">Project planning sheet</a></p><figure class=\"visual\" tabindex=\"0\" role=\"group\" aria-label=\"A three-part plan separates initialization, repeated input handling and the final summary.\"><svg xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"A three-part plan separates initialization, repeated input handling and the final summary.\" viewBox=\"0 0 1200 210\" style=\"font-family:Arial,sans-serif\"><rect x=\"10.0\" y=\"28\" width=\"368.0\" height=\"150\" rx=\"10\" fill=\"#eef3f6\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"194.0\" y=\"65\" font-size=\"29\" fill=\"#225a83\" text-anchor=\"middle\" font-weight=\"700\">Initialize</text><text x=\"194.0\" y=\"104\" font-size=\"25\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"400\">one counter</text><path d=\"M383.0 103L411.0 103\" stroke=\"#225a83\" stroke-width=\"3\" fill=\"none\"/><polygon points=\"411.0,103 399.0,97.0 399.0,109.0\" fill=\"#225a83\"/><rect x=\"416.0\" y=\"28\" width=\"368.0\" height=\"150\" rx=\"10\" fill=\"#eef3f6\" stroke=\"#28766f\" stroke-width=\"2\"/><text x=\"600.0\" y=\"65\" font-size=\"29\" fill=\"#28766f\" text-anchor=\"middle\" font-weight=\"700\">Repeat 3 times</text><text x=\"600.0\" y=\"104\" font-size=\"25\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"400\">one INPUT per day</text><path d=\"M789.0 103L817.0 103\" stroke=\"#225a83\" stroke-width=\"3\" fill=\"none\"/><polygon points=\"817.0,103 805.0,97.0 805.0,109.0\" fill=\"#225a83\"/><rect x=\"822.0\" y=\"28\" width=\"368.0\" height=\"150\" rx=\"10\" fill=\"#eef3f6\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"1006.0\" y=\"65\" font-size=\"29\" fill=\"#225a83\" text-anchor=\"middle\" font-weight=\"700\">After the loop</text><text x=\"1006.0\" y=\"104\" font-size=\"25\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"400\">summary outputs</text></svg></figure><p class=\"visual-note\">Write your own program. Start with the structure and add behavior next.</p>",
+    "note": "34–39分钟，计时5分钟。学生可以先用占位注释规划，但运行前要换成合法语句。不要直接提供完整答案让其照抄。检查计数初始0在循环外、REPEAT3TIMES和花括号结构、每次INPUT只读一个value。",
+    "time": "34–39 min"
+  },
+  {
+    "title": "Build 2: implement the daily decision",
+    "tag": "PROJECT · 6 MIN",
+    "code": "AAP-2.H/K",
+    "html": "<ul><li>Read the next minute value inside the loop.</li><li>At 30 or above: display Goal met and add one to the counter.</li><li>Below 30: display Keep going and leave the counter unchanged.</li></ul><p class=\"small\">Use IF/ELSE so exactly one daily message appears.</p>",
+    "note": "39–45分钟，6分钟独立写body。屏幕提供行为要求，不给完整实现。巡视变量是否正确更新、DISPLAY字符串引号是否闭合、计数+1是否只在达标分支。要求学生解释为什么每天恰好一条提示。",
+    "time": "39–45 min"
+  },
+  {
+    "title": "Build 3: implement the final report",
+    "tag": "PROJECT · 7 MIN",
+    "code": "AAP-2.H/K · CRD-2.J",
+    "html": "<ul><li>After the loop, display the number of goal days.</li><li>If the count is at least 2, display On track.</li><li>Otherwise, display Try again.</li></ul><p class=\"small\">Before Run, trace your program with 29, 30, 31.</p>",
+    "note": "45–52分钟，7分钟。最终输出两条：count、总评。学生若在循环内报告，要求按花括号边界标出哪些代码只执行一次。先预测再运行要求作用于自己代码，不仅复述brief答案。",
+    "time": "45–52 min"
+  },
+  {
+    "title": "Test the program against the specification",
+    "tag": "PROJECT · 6 MIN",
+    "code": "CRD-2.J",
+    "html": "<figure class=\"visual\" tabindex=\"0\" role=\"group\" aria-label=\"Compare predicted outputs from the specification with actual results for each required input queue.\"><svg xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Compare predicted outputs from the specification with actual results for each required input queue.\" viewBox=\"0 0 1200 210\" style=\"font-family:Arial,sans-serif\"><rect x=\"10.0\" y=\"28\" width=\"368.0\" height=\"150\" rx=\"10\" fill=\"#eef3f6\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"194.0\" y=\"65\" font-size=\"29\" fill=\"#225a83\" text-anchor=\"middle\" font-weight=\"700\">Expected</text><text x=\"194.0\" y=\"104\" font-size=\"25\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"400\">from the brief</text><path d=\"M383.0 103L411.0 103\" stroke=\"#225a83\" stroke-width=\"3\" fill=\"none\"/><polygon points=\"411.0,103 399.0,97.0 399.0,109.0\" fill=\"#225a83\"/><rect x=\"416.0\" y=\"28\" width=\"368.0\" height=\"150\" rx=\"10\" fill=\"#eef3f6\" stroke=\"#28766f\" stroke-width=\"2\"/><text x=\"600.0\" y=\"65\" font-size=\"29\" fill=\"#28766f\" text-anchor=\"middle\" font-weight=\"700\">Actual</text><text x=\"600.0\" y=\"104\" font-size=\"25\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"400\">from your run</text><path d=\"M789.0 103L817.0 103\" stroke=\"#225a83\" stroke-width=\"3\" fill=\"none\"/><polygon points=\"817.0,103 805.0,97.0 805.0,109.0\" fill=\"#225a83\"/><rect x=\"822.0\" y=\"28\" width=\"368.0\" height=\"150\" rx=\"10\" fill=\"#eef3f6\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"1006.0\" y=\"65\" font-size=\"29\" fill=\"#225a83\" text-anchor=\"middle\" font-weight=\"700\">Compare</text><text x=\"1006.0\" y=\"104\" font-size=\"25\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"400\">values + order</text><text x=\"1006.0\" y=\"137\" font-size=\"25\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"400\">all three tests</text></svg></figure><p class=\"visual-note\">Reset the run between input queues. Record a mismatch or a verified match.</p>",
+    "note": "52–58分钟，6分钟。逐次运行三组，每组重新初始化。不要把前一组count带到下一组。记录输入、完整expected、actual、pass/fail；若全部匹配，保留一条完整跟踪作为证据。",
+    "time": "52–58 min"
+  },
+  {
+    "title": "Diagnose a counter reset",
+    "tag": "PROJECT DEBUG · 5 MIN",
+    "code": "CRD-2.I · AAP-1.B/K",
+    "html": "<div class=\"columns\" style=\"gap:32px\"><div><pre class=\"code\" style=\"font-size:25px;line-height:1.22;padding:16px 20px;margin:14px 0\">REPEAT 3 TIMES\n{\n  count ← 0\n  minutes ← INPUT()\n  IF(minutes ≥ 30)\n  {\n    count ← count + 1\n  }\n}\nDISPLAY(count)</pre></div><div><p>This faulty counting fragment reads 30, 30, 30.<br><br>Predict its final count. Where should initialization move?</p></div></div><details><summary>Show answer</summary><div class=\"answer\">It displays 1. Move count ← 0 before the loop so all three successful days accumulate.</div></details>",
+    "note": "58–63分钟，5分钟。给定片段为诊断材料，缺少日提示是有意省略，问题仅问counter reset。原项目若没有此bug，也要独立说明错例，随后检查自己的代码。修复后同输入应3，必须复测。",
+    "time": "58–63 min"
+  },
+  {
+    "title": "A one-character change needs a boundary test",
+    "tag": "PROJECT DEBUG · 4 MIN",
+    "code": "CRD-2.I/J",
+    "html": "<p>A draft uses minutes > 30 for the daily goal.</p><p>Which input distinguishes it from minutes ≥ 30? What change follows the brief?</p><details><summary>Show answer</summary><div class=\"answer\">30 distinguishes them: > gives Keep going, but ≥ gives Goal met. Replace > with ≥ and rerun 29, 30, 31.</div></details>",
+    "note": "63–67分钟，4分钟。区分“发现问题的输入30”与“修改后回归测试29/30/31”。只测31或0无法证明这次比较符修改正确。可把代码正确的学生与需要修复的学生配对解释。",
+    "time": "63–67 min"
+  },
+  {
+    "title": "Peer review checks behavior and evidence",
+    "tag": "PROJECT REVIEW · 4 MIN",
+    "code": "CRD-1 · CRD-2.E/H",
+    "html": "<figure class=\"visual\" tabindex=\"0\" role=\"group\" aria-label=\"Partners compare a prediction with a step-by-step execution and give a specific revision tied to the requirement.\"><svg xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Partners compare a prediction with a step-by-step execution and give a specific revision tied to the requirement.\" viewBox=\"0 0 1200 210\" style=\"font-family:Arial,sans-serif\"><rect x=\"10.0\" y=\"28\" width=\"368.0\" height=\"150\" rx=\"10\" fill=\"#eef3f6\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"194.0\" y=\"65\" font-size=\"29\" fill=\"#225a83\" text-anchor=\"middle\" font-weight=\"700\">Partner A</text><text x=\"194.0\" y=\"104\" font-size=\"25\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"400\">predict one test</text><path d=\"M383.0 103L411.0 103\" stroke=\"#225a83\" stroke-width=\"3\" fill=\"none\"/><polygon points=\"411.0,103 399.0,97.0 399.0,109.0\" fill=\"#225a83\"/><rect x=\"416.0\" y=\"28\" width=\"368.0\" height=\"150\" rx=\"10\" fill=\"#eef3f6\" stroke=\"#28766f\" stroke-width=\"2\"/><text x=\"600.0\" y=\"65\" font-size=\"29\" fill=\"#28766f\" text-anchor=\"middle\" font-weight=\"700\">Partner B</text><text x=\"600.0\" y=\"104\" font-size=\"25\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"400\">step + explain</text><path d=\"M789.0 103L817.0 103\" stroke=\"#225a83\" stroke-width=\"3\" fill=\"none\"/><polygon points=\"817.0,103 805.0,97.0 805.0,109.0\" fill=\"#225a83\"/><rect x=\"822.0\" y=\"28\" width=\"368.0\" height=\"150\" rx=\"10\" fill=\"#eef3f6\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"1006.0\" y=\"65\" font-size=\"29\" fill=\"#225a83\" text-anchor=\"middle\" font-weight=\"700\">Together</text><text x=\"1006.0\" y=\"104\" font-size=\"25\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"400\">locate mismatch</text><text x=\"1006.0\" y=\"137\" font-size=\"25\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"400\">suggest one revision</text></svg></figure><p class=\"visual-note\">Swap roles. The author makes and explains their own change.</p>",
+    "note": "67–71分钟，4分钟。同伴反馈必须具体，例如“计数在体内重置，前三天全30仅得1”；不要写笼统good。已通过功能测试者可改善输入提示或清晰变量名，但不能破坏精确要求的五项输出。若增加界面提示，区分输入提示与规定结果显示。",
+    "time": "67–71 min"
+  },
+  {
+    "title": "Save the program and one revision record",
+    "tag": "PROJECT RECORD · 3 MIN",
+    "code": "CRD-2.E/G/H/J",
+    "html": "<figure class=\"visual\" tabindex=\"0\" role=\"group\" aria-label=\"A development record preserves the original issue, the chosen change and evidence from a repeated test.\"><svg xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"A development record preserves the original issue, the chosen change and evidence from a repeated test.\" viewBox=\"0 0 1200 210\" style=\"font-family:Arial,sans-serif\"><rect x=\"10.0\" y=\"28\" width=\"368.0\" height=\"150\" rx=\"10\" fill=\"#eef3f6\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"194.0\" y=\"65\" font-size=\"29\" fill=\"#225a83\" text-anchor=\"middle\" font-weight=\"700\">Before</text><text x=\"194.0\" y=\"104\" font-size=\"25\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"400\">code + evidence</text><path d=\"M383.0 103L411.0 103\" stroke=\"#225a83\" stroke-width=\"3\" fill=\"none\"/><polygon points=\"411.0,103 399.0,97.0 399.0,109.0\" fill=\"#225a83\"/><rect x=\"416.0\" y=\"28\" width=\"368.0\" height=\"150\" rx=\"10\" fill=\"#eef3f6\" stroke=\"#28766f\" stroke-width=\"2\"/><text x=\"600.0\" y=\"65\" font-size=\"29\" fill=\"#28766f\" text-anchor=\"middle\" font-weight=\"700\">Change</text><text x=\"600.0\" y=\"104\" font-size=\"25\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"400\">what and why</text><path d=\"M789.0 103L817.0 103\" stroke=\"#225a83\" stroke-width=\"3\" fill=\"none\"/><polygon points=\"817.0,103 805.0,97.0 805.0,109.0\" fill=\"#225a83\"/><rect x=\"822.0\" y=\"28\" width=\"368.0\" height=\"150\" rx=\"10\" fill=\"#eef3f6\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"1006.0\" y=\"65\" font-size=\"29\" fill=\"#225a83\" text-anchor=\"middle\" font-weight=\"700\">After</text><text x=\"1006.0\" y=\"104\" font-size=\"25\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"400\">retest result</text></svg></figure><p class=\"visual-note\">Submit code, three test records, one explanation and attribution.</p>",
+    "note": "71–74分钟，3分钟。修改记录可以针对自己代码的真实问题，也可以针对已给的错误片段，必须注明来源，不编造开发过程。引用教师模板、同伴帮助、外部资源时清楚说明。正式Create规则后续单独教学。",
+    "time": "71–74 min"
+  },
+  {
+    "title": "Optional extension: a random encouragement",
+    "tag": "OPTIONAL EXTENSION",
+    "code": "AAP-3.E",
+    "html": "<p>After the required final message, choose one of two extra encouragements using RANDOM(1, 2).</p><p class=\"small\">Keep the daily decisions, count and required messages unchanged.</p><p class=\"small\">Explain possible extra outputs and test that each is allowed.</p>",
+    "note": "核心完成者74–78分钟尝试扩展。随机数只选择附加提示，不替代分钟判断或随机改变count。未完成者继续核心测试，扩展不计核心达标分。禁止为了展示随机而改变StudyGoalTracker判断的确定性。",
+    "time": "74–78 min"
+  },
+  {
+    "title": "Original chapter check: select TWO",
+    "tag": "CHAPTER CHECK",
+    "code": "AAP-2.F/H/K · AAP-3.E",
+    "html": "<p>Which TWO statements are correct?</p><ul><li>A. NOT(true OR false) is false.</li><li>B. REPEAT UNTIL(true) runs its body once.</li><li>C. RANDOM(1, 3) cannot return 3.</li><li>D. IF/ELSE chooses exactly one of its two branches.</li></ul><details><summary>Show answer</summary><div class=\"answer\">A and D. B runs zero times under the AP pre-check rule. C excludes a valid endpoint.</div></details>",
+    "note": "78–82分钟，4分钟，回收本章Boolean、until、random、selection，不要求整个项目强行使用所有语法。原创建模问题，不是官方真题。错误按对应课回补。",
+    "time": "78–82 min"
+  },
+  {
+    "title": "What this project demonstrates",
+    "tag": "SCOPE",
+    "code": "AAP-2 · CRD-2",
+    "html": "<ul><li>An algorithm using sequence, selection and iteration</li><li>Predictions, input boundaries and tests</li><li>A reasoned revision with a development record</li></ul><p class=\"small\">This is classroom practice, not a complete formal Create submission.</p><p class=\"small\">Lists and student-developed procedures will be taught later.</p>",
+    "note": "明确本项目缺少正式任务中的列表与学生自定义过程（procedure）等要求，不能宣传“已完成Create”。三次输入队列不是项目自己用代码建立的list。当前成果只说明所列技能。",
+    "time": "82–85 min"
+  },
+  {
+    "title": "Chapter homework and next steps",
+    "tag": "HOMEWORK",
+    "code": "Chapter 3 retrieval",
+    "html": "<p class=\"lead\">Complete the original 12-question Chapter 3 Check: 30 teacher marks.</p><p class=\"small\">Keep your code, test table, feedback and revision record.</p><p class=\"small\">Use the teacher key to explain an error after attempting every question.</p>",
+    "note": "85–88分钟。作业覆盖运算、布尔、分支/嵌套、计数/条件循环、随机与模型，以及项目测试，不只重复项目结论。可安排下一节课开头针对Q错因分组补救。",
+    "time": "85–88 min"
+  },
+  {
+    "title": "Exit ticket",
+    "tag": "EXIT",
+    "code": "AAP-2.E/H/K · CRD-2.J",
+    "html": "<p>1. Why does 30 count as a goal day?<br>2. Why initialize count outside the loop?<br>3. What test distinguishes > from ≥ here?</p><details><summary>Show answer</summary><div class=\"answer\">1. The goal is at least 30 minutes.<br>2. To preserve earlier days while accumulating the count.<br>3. Input 30 is the distinguishing boundary test.</div></details>",
+    "note": "三项各1分。回答至少30、保留累积、边界30即可。若学生只写“老师要求放外面”，追问放体内会如何改变三次30结果，检验能否解释行为。",
+    "time": "88–90 min"
+  }
+]

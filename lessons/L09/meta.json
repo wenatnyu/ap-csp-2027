@@ -1,0 +1,13 @@
+{
+  "chapter": 3,
+  "id": "L09",
+  "number": "09",
+  "title": "Expressions & Strings",
+  "shortTitle": "Expressions & Strings",
+  "chineseTitle": "表达式与字符串",
+  "filename": "AP_CSP_L09_Expressions_and_Strings.html",
+  "minutes": 90,
+  "preview": "lessons/L09/preview.svg",
+  "topicSummary": "Arithmetic precedence, decimal division, MOD, defined string operations and Workshop Pass development.",
+  "homeworkInstructions": "Q5: select exactly TWO answers. CONCAT joins two strings with no added spaces. SUBSTRING(s,start,length) uses 1-based positions and a character count. These are supplied teaching procedures."
+}

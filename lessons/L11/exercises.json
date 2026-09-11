@@ -1,0 +1,346 @@
+{
+  "title": "AP CSP — Lesson 11 Homework: Selection: Choosing a Path",
+  "durationMinutes": 40,
+  "totalMarks": 30,
+  "notice": "All questions are original. Q1–Q6 are AP-style practice, not official or past AP questions; Q7–Q12 are classroom written practice, not official FRQs. These 30 marks are teacher-assigned, not AP exam scoring. Select exactly TWO answers in Q5; its one mark requires both correct choices and no others. All inputs are valid unless stated. DISPLAY outputs values in execution order. Show reasoning; braces and indentation identify each block.",
+  "questions": [
+    {
+      "id": "Q1",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Retrieval: Boolean boundary",
+      "prompt": "When minutes is 30, which pair gives the values of (minutes >= 30, minutes > 30)?",
+      "options": [
+        {
+          "label": "A",
+          "text": "(true, true)"
+        },
+        {
+          "label": "B",
+          "text": "(true, false)"
+        },
+        {
+          "label": "C",
+          "text": "(false, true)"
+        },
+        {
+          "label": "D",
+          "text": "(false, false)"
+        }
+      ],
+      "answer": "B",
+      "explanation": "B is correct: equality satisfies >= but not >. A incorrectly includes equality in >. C reverses the outcomes. D excludes equality from >=.",
+      "lines": 0
+    },
+    {
+      "id": "Q2",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Selection without ELSE",
+      "prompt": "A program reaches an IF whose condition is false. There is no ELSE block. What happens next?",
+      "options": [
+        {
+          "label": "A",
+          "text": "The program stops."
+        },
+        {
+          "label": "B",
+          "text": "The IF block executes once."
+        },
+        {
+          "label": "C",
+          "text": "The IF block is skipped and execution continues after it."
+        },
+        {
+          "label": "D",
+          "text": "The program waits until the condition becomes true."
+        }
+      ],
+      "answer": "C",
+      "explanation": "C is correct. A confuses skipping a block with stopping the program. B ignores the false condition. D describes waiting behavior that IF does not provide.",
+      "lines": 0
+    },
+    {
+      "id": "Q3",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Trace a conditional update",
+      "prompt": "Initially x is 4. What does this code display?\nIF(x >= 4)\n{\n  x ← x + 3\n}\nDISPLAY(x)",
+      "options": [
+        {
+          "label": "A",
+          "text": "4"
+        },
+        {
+          "label": "B",
+          "text": "3"
+        },
+        {
+          "label": "C",
+          "text": "11"
+        },
+        {
+          "label": "D",
+          "text": "7"
+        }
+      ],
+      "answer": "D",
+      "explanation": "D is correct: 4 >= 4 is true, so x becomes 7 and is displayed. A skips a true branch. B reports only the increment. C applies the increment incorrectly twice or uses a value not assigned by this code.",
+      "lines": 0
+    },
+    {
+      "id": "Q4",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "IF / ELSE branch choice",
+      "prompt": "An IF condition is true. Its block changes the tested variable so that the same expression would now be false. What happens to this IF statement’s ELSE block?",
+      "options": [
+        {
+          "label": "A",
+          "text": "It remains skipped."
+        },
+        {
+          "label": "B",
+          "text": "It runs immediately after the first block."
+        },
+        {
+          "label": "C",
+          "text": "Both blocks restart."
+        },
+        {
+          "label": "D",
+          "text": "It runs only if DISPLAY is present."
+        }
+      ],
+      "answer": "A",
+      "explanation": "A is correct: branch choice uses the condition evaluated when the IF was reached. B wrongly reevaluates the decision after the block. C invents repetition. D gives DISPLAY a control effect it does not have.",
+      "lines": 0
+    },
+    {
+      "id": "Q5",
+      "type": "multi",
+      "marks": 1,
+      "topic": "Compare selection structures",
+      "prompt": "Which TWO statements are correct? Select exactly TWO.",
+      "options": [
+        {
+          "label": "A",
+          "text": "Two separate IF statements always behave like IF / ELSE."
+        },
+        {
+          "label": "B",
+          "text": "A separate later IF uses the current values when it is reached."
+        },
+        {
+          "label": "C",
+          "text": "IF / ELSE chooses one of its two blocks from a single condition evaluation."
+        },
+        {
+          "label": "D",
+          "text": "A false condition automatically resets its variable to zero."
+        }
+      ],
+      "answer": "B and C",
+      "explanation": "B and C are correct. Separate IF statements make separate decisions, while IF / ELSE selects a single branch. A ignores that both independent IF conditions can be true. D invents an assignment; testing does not reset values. Award one mark only for B and C together.",
+      "lines": 0
+    },
+    {
+      "id": "Q6",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Consecutive IF statements",
+      "prompt": "A score starts at 12. The first IF tests score >= 10 and sets score to 5 when true. A second, separate IF then tests score < 10 and adds 2 when true. What is the final score?",
+      "options": [
+        {
+          "label": "A",
+          "text": "5"
+        },
+        {
+          "label": "B",
+          "text": "12"
+        },
+        {
+          "label": "C",
+          "text": "7"
+        },
+        {
+          "label": "D",
+          "text": "14"
+        }
+      ],
+      "answer": "C",
+      "explanation": "C is correct: the first block sets 5, then the second test sees 5 and adds 2. A treats the second IF as an ELSE. B ignores both updates. D adds 2 to the original score and ignores the first assignment.",
+      "lines": 0
+    },
+    {
+      "id": "Q7",
+      "type": "written",
+      "marks": 4,
+      "topic": "Trace a skipped or executed block",
+      "prompt": "Consider the code.\nx ← 6\nIF(x > 4)\n{\n  x ← x - 3\n}\nDISPLAY(x)\n(a) State the condition value and the displayed value.\n(b) If the first line becomes x ← 4, state the displayed value and explain why DISPLAY still executes.",
+      "answer": "(a) true; output 3. (b) Output 4. The IF block is skipped, but DISPLAY is outside it and executes afterward.",
+      "explanation": "Use the current x when the condition is reached. A false IF without ELSE skips only its own block.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "States that 6 > 4 is true."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives output 3 for the original program."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives output 4 for the changed initialization."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains that DISPLAY is outside the IF block and executes after the skipped block."
+        }
+      ],
+      "lines": 8
+    },
+    {
+      "id": "Q8",
+      "type": "written",
+      "marks": 4,
+      "topic": "Build a single-session goal check",
+      "prompt": "Write AP pseudocode that receives a valid integer number of minutes from 0 to 180. Display \"Goal met\" for at least 30 minutes; otherwise display \"Keep going\". Then give the expected outputs for inputs 29 and 30.",
+      "answer": "minutes ← INPUT()\nIF(minutes >= 30)\n{\n  DISPLAY(\"Goal met\")\n}\nELSE\n{\n  DISPLAY(\"Keep going\")\n}\nTests: 29 → Keep going; 30 → Goal met.",
+      "explanation": "A correct solution reads the value before testing it and uses >= to include the boundary. Equivalent meaningful variable names are acceptable.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Reads the numeric minutes with INPUT before using the value."
+        },
+        {
+          "marks": 1,
+          "criterion": "Uses minutes >= 30 or an equivalent correct condition."
+        },
+        {
+          "marks": 1,
+          "criterion": "Uses matching IF / ELSE blocks to display the two correct messages on their corresponding paths."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives both boundary outputs correctly: 29 Keep going; 30 Goal met."
+        }
+      ],
+      "lines": 12,
+      "minLines": 12
+    },
+    {
+      "id": "Q9",
+      "type": "written",
+      "marks": 4,
+      "topic": "Independent IF versus ELSE",
+      "prompt": "A value starts at 12. First, if it is at least 10, a program sets it to 5. Next, a separate IF adds 2 if the current value is below 10.\n(a) Give the value after the first block and the final value.\n(b) If the second IF is replaced by the ELSE of the first IF, what is the final value? Explain why the results differ.",
+      "answer": "(a) After the first block: 5. Final: 7. (b) With ELSE: 5. The separate second IF tests the updated 5; ELSE belongs to the original true decision and is skipped.",
+      "explanation": "The wording describes two sequential decisions, not nested statements. The first update changes the value seen by a later independent condition.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Gives 5 after the first block."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives 7 after the separate second IF."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives 5 for the IF / ELSE version."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains the new condition evaluation versus the branch chosen by the original evaluation."
+        }
+      ],
+      "lines": 8
+    },
+    {
+      "id": "Q10",
+      "type": "written",
+      "marks": 4,
+      "topic": "Choose boundary tests",
+      "prompt": "A program should display \"Pass\" for scores at least 70 and \"Retry\" otherwise. Scores are valid integers from 0 to 100. A student mistakenly uses score > 70.\n(a) Give a test that exposes this mistake, with the required and actual output.\n(b) Write the corrected condition.\n(c) Give one test strictly below 70 and its correct output.",
+      "answer": "(a) Input 70; required Pass, actual Retry. (b) score >= 70. (c) For example 69 → Retry.",
+      "explanation": "A value exactly at the boundary distinguishes > from >=. Tests such as 69 and 71 alone would not expose this particular mistake.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Selects input 70."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives required Pass and actual Retry for 70."
+        },
+        {
+          "marks": 1,
+          "criterion": "Writes score >= 70 or an equivalent correct condition."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives a valid score below 70 with expected output Retry."
+        }
+      ],
+      "lines": 8
+    },
+    {
+      "id": "Q11",
+      "type": "written",
+      "marks": 4,
+      "topic": "Stored Boolean versus reevaluation",
+      "prompt": "Consider the code.\nminutes ← 35\nmet ← minutes >= 30\nminutes ← 10\nIF(met)\n{\n  DISPLAY(\"Goal met\")\n}\n(a) State met immediately after its assignment and immediately before IF.\n(b) State the output.\n(c) Write one assignment immediately before IF that would update met for the current minutes.",
+      "answer": "(a) true; true. (b) Goal met. (c) met ← minutes >= 30. This would update met to false and skip the display.",
+      "explanation": "The Boolean variable stores the earlier true result. It does not automatically track the expression when minutes changes.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "States true immediately after assigning met."
+        },
+        {
+          "marks": 1,
+          "criterion": "States that met remains true immediately before IF."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives the output Goal met for the unmodified program."
+        },
+        {
+          "marks": 1,
+          "criterion": "Writes met ← minutes >= 30 immediately before IF, or an equivalent reevaluation."
+        }
+      ],
+      "lines": 8
+    },
+    {
+      "id": "Q12",
+      "type": "written",
+      "marks": 4,
+      "topic": "Transfer: discount choice",
+      "prompt": "A shop receives a valid integer amount from 0 to 200. If the amount is at least 100, the discount is 20; otherwise it is 0. Write code to display amount minus discount. Give expected outputs for amounts 99 and 100.",
+      "answer": "amount ← INPUT()\nIF(amount >= 100)\n{\n  discount ← 20\n}\nELSE\n{\n  discount ← 0\n}\nDISPLAY(amount - discount)\nTests: 99 → 99; 100 → 80.",
+      "explanation": "Both branches establish a discount before it is used. An equivalent program may initialize discount to zero and use an IF without ELSE.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Reads amount before using it and makes the correct >= 100 decision."
+        },
+        {
+          "marks": 1,
+          "criterion": "Assigns discount 20 for qualifying amounts and 0 otherwise, through correct branches or an equivalent default-and-update structure."
+        },
+        {
+          "marks": 1,
+          "criterion": "Displays amount minus the selected discount after the selection."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives both test outputs: 99 for input 99 and 80 for input 100."
+        }
+      ],
+      "lines": 13,
+      "minLines": 13
+    }
+  ]
+}

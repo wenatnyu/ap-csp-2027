@@ -1,0 +1,13 @@
+{
+  "chapter": 3,
+  "id": "L15",
+  "number": "15",
+  "title": "Randomness & Simulation",
+  "chineseTitle": "随机数与模拟",
+  "shortTitle": "Randomness & Simulation",
+  "filename": "AP_CSP_L15_Randomness_and_Simulation.html",
+  "minutes": 90,
+  "topicSummary": "Inclusive equally likely RANDOM integer outcomes; repeated calls; probability versus finite observed frequencies; simple coin/die simulations, assumptions, usefulness and limits.",
+  "homeworkInstructions": "12 original questions, 30 teacher marks, about 45 minutes. Q5 requires exactly TWO choices. Show predictions, traces and reasons. Braces mark blocks; each statement is on its own line.",
+  "preview": "lessons/L15/preview.svg"
+}

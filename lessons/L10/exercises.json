@@ -1,0 +1,344 @@
+{
+  "title": "AP CSP — Lesson 10 Homework: Boolean Logic",
+  "durationMinutes": 40,
+  "totalMarks": 30,
+  "notice": "All questions are original. Q1–Q6 are AP-style practice, not official AP questions. Written tasks and 30 marks are teacher-designed. Q5 earns one mark only for both correct choices and no others. OR is inclusive. Logical operands are Boolean values; age, score and x are numeric. Parentheses specify grouping. The Workshop Rule Checker is a fictional teaching example.",
+  "questions": [
+    {
+      "id": "Q1",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Retrieval: arithmetic and MOD",
+      "prompt": "What are 14 / 5 and 14 MOD 5, respectively?",
+      "options": [
+        {
+          "label": "A",
+          "text": "2 and 4"
+        },
+        {
+          "label": "B",
+          "text": "2.8 and 2"
+        },
+        {
+          "label": "C",
+          "text": "2.8 and 4"
+        },
+        {
+          "label": "D",
+          "text": "4 and 2.8"
+        }
+      ],
+      "answer": "C",
+      "explanation": "C is correct: division gives 2.8 and 14 = 2 × 5 + 4. A truncates division. B uses the whole-group count for MOD. D reverses or confuses the two results.",
+      "lines": 0
+    },
+    {
+      "id": "Q2",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Relational boundaries",
+      "prompt": "Which expression is true?",
+      "options": [
+        {
+          "label": "A",
+          "text": "8 < 8"
+        },
+        {
+          "label": "B",
+          "text": "8 ≠ 8"
+        },
+        {
+          "label": "C",
+          "text": "8 > 8"
+        },
+        {
+          "label": "D",
+          "text": "8 ≤ 8"
+        }
+      ],
+      "answer": "D",
+      "explanation": "D includes equality. A and C are strict comparisons and fail when the values are equal. B is false because the values are equal.",
+      "lines": 0
+    },
+    {
+      "id": "Q3",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Retrieval: assignment of a Boolean result",
+      "prompt": "Trace: score ← 7; passed ← (score ≥ 5); score ← 2. What does passed hold?",
+      "options": [
+        {
+          "label": "A",
+          "text": "true"
+        },
+        {
+          "label": "B",
+          "text": "false"
+        },
+        {
+          "label": "C",
+          "text": "2"
+        },
+        {
+          "label": "D",
+          "text": "The expression score ≥ 5, which updates automatically"
+        }
+      ],
+      "answer": "A",
+      "explanation": "A is correct: passed stores true when assigned and is never reassigned. B wrongly recalculates after score changes. C confuses two variables. D treats assignment as a live formula.",
+      "lines": 0
+    },
+    {
+      "id": "Q4",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Inclusive OR",
+      "prompt": "booked and hasPass are both true. What is booked OR hasPass?",
+      "options": [
+        {
+          "label": "A",
+          "text": "false, because exactly one must be true"
+        },
+        {
+          "label": "B",
+          "text": "true, because OR allows one or both true"
+        },
+        {
+          "label": "C",
+          "text": "2, because two conditions are true"
+        },
+        {
+          "label": "D",
+          "text": "A string containing \"true\""
+        }
+      ],
+      "answer": "B",
+      "explanation": "B matches inclusive OR. A describes an exclusive choice, not AP OR. C invents numeric counting. D confuses a Boolean result with a string.",
+      "lines": 0
+    },
+    {
+      "id": "Q5",
+      "type": "multi",
+      "marks": 1,
+      "topic": "Logical operators",
+      "prompt": "For Boolean A and B, which TWO statements are true? Select exactly TWO answers.",
+      "options": [
+        {
+          "label": "A",
+          "text": "true AND false evaluates to true."
+        },
+        {
+          "label": "B",
+          "text": "NOT false evaluates to true."
+        },
+        {
+          "label": "C",
+          "text": "NOT (A OR B) always equals (NOT A) OR (NOT B)."
+        },
+        {
+          "label": "D",
+          "text": "NOT (A AND B) always equals (NOT A) OR (NOT B)."
+        }
+      ],
+      "answer": "B and D",
+      "explanation": "B reverses false. D is the correct De Morgan equivalence. A is false because AND needs both true. C needs AND between the negated operands; A=true, B=false is a counterexample.",
+      "lines": 0
+    },
+    {
+      "id": "Q6",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Write an inclusive range",
+      "prompt": "Which expression is true exactly when age is from 12 through 17, inclusive?",
+      "options": [
+        {
+          "label": "A",
+          "text": "(age > 12) AND (age < 17)"
+        },
+        {
+          "label": "B",
+          "text": "(age ≥ 12) OR (age ≤ 17)"
+        },
+        {
+          "label": "C",
+          "text": "(age ≥ 12) AND (age ≤ 17)"
+        },
+        {
+          "label": "D",
+          "text": "(age = 12) OR (age = 17)"
+        }
+      ],
+      "answer": "C",
+      "explanation": "C enforces both inclusive bounds. A excludes the endpoints. B accepts out-of-range ages, such as 5. D accepts only the two endpoints, excluding valid interior ages.",
+      "lines": 0
+    },
+    {
+      "id": "Q7",
+      "type": "written",
+      "marks": 4,
+      "topic": "Evaluate relational expressions",
+      "prompt": "For score = 20, evaluate each expression.\n(a) score > 20   (b) score ≥ 20\n(c) score ≠ 20   (d) NOT (score > 20)",
+      "answer": "(a) false. (b) true. (c) false. (d) true.",
+      "explanation": "(a) false. (b) true. (c) false. (d) true.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "(a) false."
+        },
+        {
+          "marks": 1,
+          "criterion": "(b) true."
+        },
+        {
+          "marks": 1,
+          "criterion": "(c) false."
+        },
+        {
+          "marks": 1,
+          "criterion": "(d) true."
+        }
+      ],
+      "lines": 7
+    },
+    {
+      "id": "Q8",
+      "type": "written",
+      "marks": 4,
+      "topic": "Complete a truth table",
+      "prompt": "For each row, give A AND B and A OR B, in that order.\n(a) A=true, B=true   (b) A=true, B=false\n(c) A=false, B=true   (d) A=false, B=false",
+      "answer": "(a) true, true. (b) false, true. (c) false, true. (d) false, false.",
+      "explanation": "(a) true, true. (b) false, true. (c) false, true. (d) false, false.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Both outputs correct for row (a): true, true."
+        },
+        {
+          "marks": 1,
+          "criterion": "Both outputs correct for row (b): false, true."
+        },
+        {
+          "marks": 1,
+          "criterion": "Both outputs correct for row (c): false, true."
+        },
+        {
+          "marks": 1,
+          "criterion": "Both outputs correct for row (d): false, false."
+        }
+      ],
+      "lines": 7
+    },
+    {
+      "id": "Q9",
+      "type": "written",
+      "marks": 4,
+      "topic": "Range and its complement",
+      "prompt": "Write a Boolean expression for each condition.\n(a) x is at least 4 and at most 9.\n(b) x is outside that inclusive range, without using NOT.\nThen evaluate expression (a) for (c) x=4 and (d) x=10.",
+      "answer": "(a) (x ≥ 4) AND (x ≤ 9). (b) (x < 4) OR (x > 9). (c) true. (d) false.",
+      "explanation": "(a) (x ≥ 4) AND (x ≤ 9). (b) (x < 4) OR (x > 9). (c) true. (d) false.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Correct inclusive-range expression, or an equivalent expression."
+        },
+        {
+          "marks": 1,
+          "criterion": "Correct outside-range expression with strict bounds and no NOT."
+        },
+        {
+          "marks": 1,
+          "criterion": "At x=4 the inclusive-range result is true."
+        },
+        {
+          "marks": 1,
+          "criterion": "At x=10 the inclusive-range result is false."
+        }
+      ],
+      "lines": 7
+    },
+    {
+      "id": "Q10",
+      "type": "written",
+      "marks": 4,
+      "topic": "Logical equivalence and a counterexample",
+      "prompt": "(a) Rewrite NOT (A AND B) with NOT applied only to individual operands.\n(b) Do the same for NOT (A OR B).\nFor A=false and B=true, evaluate (c) NOT (A AND B) and (d) (NOT A) AND (NOT B).",
+      "answer": "(a) (NOT A) OR (NOT B). (b) (NOT A) AND (NOT B). (c) true. (d) false; these two expressions are not equivalent.",
+      "explanation": "(a) (NOT A) OR (NOT B). (b) (NOT A) AND (NOT B). (c) true. (d) false; these two expressions are not equivalent.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "(a) Both operands negated and joined with OR."
+        },
+        {
+          "marks": 1,
+          "criterion": "(b) Both operands negated and joined with AND."
+        },
+        {
+          "marks": 1,
+          "criterion": "(c) true."
+        },
+        {
+          "marks": 1,
+          "criterion": "(d) false."
+        }
+      ],
+      "lines": 7
+    },
+    {
+      "id": "Q11",
+      "type": "written",
+      "marks": 4,
+      "topic": "Workshop Rule Checker trace",
+      "prompt": "Use inRange ← (age ≥ 12) AND (age ≤ 17), hasEntry ← booked OR hasPass, eligible ← inRange AND hasEntry. For age=14, booked=true, hasPass=true, give (a) inRange, (b) hasEntry, (c) eligible. (d) On a new run with age=18 and the same credentials, give eligible.",
+      "answer": "(a) true. (b) true. (c) true. (d) false. The new run recomputes the conditions.",
+      "explanation": "(a) true. (b) true. (c) true. (d) false. The new run recomputes the conditions.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "(a) inRange is true."
+        },
+        {
+          "marks": 1,
+          "criterion": "(b) hasEntry is true, including the both-true OR case."
+        },
+        {
+          "marks": 1,
+          "criterion": "(c) eligible is true."
+        },
+        {
+          "marks": 1,
+          "criterion": "(d) eligible is false after all conditions are recomputed for age=18."
+        }
+      ],
+      "lines": 7
+    },
+    {
+      "id": "Q12",
+      "type": "written",
+      "marks": 4,
+      "topic": "Repair a range condition and test it",
+      "prompt": "Bug: inRange ← (age ≥ 12) OR (age ≤ 17). The intended range is 12–17 inclusive.\n(a) Give the buggy result for age=5. (b) Correct the assignment.\nFor the corrected code give the expected result at (c) age=12 and (d) age=11.",
+      "answer": "(a) true. (b) inRange ← (age ≥ 12) AND (age ≤ 17). (c) true. (d) false.",
+      "explanation": "(a) true. (b) inRange ← (age ≥ 12) AND (age ≤ 17). (c) true. (d) false.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Buggy age=5 result is true."
+        },
+        {
+          "marks": 1,
+          "criterion": "Correct assignment enforces both inclusive bounds with AND, or equivalent logic."
+        },
+        {
+          "marks": 1,
+          "criterion": "Corrected result at age=12 is true."
+        },
+        {
+          "marks": 1,
+          "criterion": "Corrected result at age=11 is false."
+        }
+      ],
+      "lines": 7
+    }
+  ]
+}

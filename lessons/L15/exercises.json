@@ -1,0 +1,344 @@
+{
+  "title": "AP CSP — Lesson 15 Homework: Randomness & Simulation",
+  "durationMinutes": 45,
+  "totalMarks": 30,
+  "notice": "All questions are original. Q1–Q6 are AP-style practice, not official or past AP questions. Q7–Q12 are classroom written responses, not official exam FRQs. The 30 marks are teacher-assigned. For Q5 select exactly TWO answers; its one mark requires both correct choices and no others. Follow AP pseudocode semantics.",
+  "questions": [
+    {
+      "id": "Q1",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Inclusive integer range",
+      "prompt": "Which values can RANDOM(2, 5) return?",
+      "options": [
+        {
+          "label": "A",
+          "text": "2, 3, 4 only"
+        },
+        {
+          "label": "B",
+          "text": "2, 3, 4, 5"
+        },
+        {
+          "label": "C",
+          "text": "Any decimal from 2 to 5"
+        },
+        {
+          "label": "D",
+          "text": "3, 4 only"
+        }
+      ],
+      "answer": "B",
+      "explanation": "B includes both integer endpoints. A and D omit endpoints; C includes nonintegers that RANDOM does not return.",
+      "lines": 0
+    },
+    {
+      "id": "Q2",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Mapping and probability",
+      "prompt": "Let r ← RANDOM(1, 6). What is the probability that r ≤ 2?",
+      "options": [
+        {
+          "label": "A",
+          "text": "1/2"
+        },
+        {
+          "label": "B",
+          "text": "1/6"
+        },
+        {
+          "label": "C",
+          "text": "2/3"
+        },
+        {
+          "label": "D",
+          "text": "1/3"
+        }
+      ],
+      "answer": "D",
+      "explanation": "D: values 1 and 2 give 2/6 = 1/3. A assumes two categories are equal; B counts only one value; C counts the four failures.",
+      "lines": 0
+    },
+    {
+      "id": "Q3",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Calls versus variable reads",
+      "prompt": "r ← RANDOM(1, 6)\nDISPLAY(r)\nDISPLAY(r)\nWhich statement is guaranteed?",
+      "options": [
+        {
+          "label": "A",
+          "text": "The two displayed values are equal."
+        },
+        {
+          "label": "B",
+          "text": "The second value is larger."
+        },
+        {
+          "label": "C",
+          "text": "The values differ."
+        },
+        {
+          "label": "D",
+          "text": "Both values are 6."
+        }
+      ],
+      "answer": "A",
+      "explanation": "A: one draw is stored and reused. B and C invent another draw or update. D chooses one possible result without justification.",
+      "lines": 0
+    },
+    {
+      "id": "Q4",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Observed frequency",
+      "prompt": "A fair coin model yields 9 Heads in 20 trials. Which statement is justified?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Its true model probability is now 0.45."
+        },
+        {
+          "label": "B",
+          "text": "The code must be wrong."
+        },
+        {
+          "label": "C",
+          "text": "The observed fraction is 0.45."
+        },
+        {
+          "label": "D",
+          "text": "The next result must be Heads."
+        }
+      ],
+      "answer": "C",
+      "explanation": "C is 9/20. A confuses an observation with the model; B treats ordinary variability as proof of error; D assumes past results force a future result.",
+      "lines": 0
+    },
+    {
+      "id": "Q5",
+      "type": "multi",
+      "marks": 1,
+      "topic": "Repeated random calls",
+      "prompt": "Which TWO statements hold for this independent fair-die model?",
+      "options": [
+        {
+          "label": "A",
+          "text": "RANDOM(1, 6) may return 6."
+        },
+        {
+          "label": "B",
+          "text": "Six calls must produce six different values."
+        },
+        {
+          "label": "C",
+          "text": "Two consecutive calls cannot match."
+        },
+        {
+          "label": "D",
+          "text": "Two consecutive calls may both return 4."
+        }
+      ],
+      "answer": "A and D",
+      "explanation": "A includes the upper endpoint. D is a possible repeat. B invents sampling without replacement; C incorrectly excludes matching draws. Both A and D are required.",
+      "lines": 0
+    },
+    {
+      "id": "Q6",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Model limitations",
+      "prompt": "A queue simulation assumes a fixed delay chance. It ignores lunch-hour crowding. What does adding more trials do?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Guarantees all predictions are correct."
+        },
+        {
+          "label": "B",
+          "text": "Explores the same simplified model more often."
+        },
+        {
+          "label": "C",
+          "text": "Automatically includes crowding."
+        },
+        {
+          "label": "D",
+          "text": "Proves no bias exists."
+        }
+      ],
+      "answer": "B",
+      "explanation": "B preserves the assumptions. A and D overclaim accuracy or absence of bias; C invents a model change that extra trials do not make.",
+      "lines": 0
+    },
+    {
+      "id": "Q7",
+      "type": "written",
+      "marks": 4,
+      "topic": "Outcomes and probabilities",
+      "prompt": "For RANDOM(3, 7): (a) list the outcomes; (b) count them; (c) give P(result = 7); (d) give P(even result), with a reason.",
+      "answer": "3, 4, 5, 6, 7; five outcomes; P(7) = 1/5; P(even) = 2/5 because 4 and 6 qualify.",
+      "explanation": "3, 4, 5, 6, 7; five outcomes; P(7) = 1/5; P(even) = 2/5 because 4 and 6 qualify.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Lists exactly 3, 4, 5, 6, 7."
+        },
+        {
+          "marks": 1,
+          "criterion": "Counts five equally likely integer outcomes."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives probability 1/5 for 7."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives 2/5 and identifies 4 and 6."
+        }
+      ],
+      "lines": 7
+    },
+    {
+      "id": "Q8",
+      "type": "written",
+      "marks": 4,
+      "topic": "Design a mapping",
+      "prompt": "A fictional model needs a 30% chance of Delay each trial. Use r ← RANDOM(1, 10).\n(a) Give a Delay condition. (b) Justify its probability.\n(c) State the other outcome. (d) Explain why r < 3 would not work.",
+      "answer": "Use r ≤ 3: three of ten codes give 30%. Otherwise report No delay. r < 3 selects only 1 and 2, or 20%.",
+      "explanation": "Use r ≤ 3: three of ten codes give 30%. Otherwise report No delay. r < 3 selects only 1 and 2, or 20%.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Gives a condition selecting exactly three values, such as r ≤ 3."
+        },
+        {
+          "marks": 1,
+          "criterion": "Justifies probability 3/10 = 30%."
+        },
+        {
+          "marks": 1,
+          "criterion": "Maps the remaining seven values to No delay."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains that r < 3 gives 2/10 = 20%."
+        }
+      ],
+      "lines": 7
+    },
+    {
+      "id": "Q9",
+      "type": "written",
+      "marks": 4,
+      "topic": "Trace a simulation",
+      "prompt": "heads ← 0\nREPEAT 4 TIMES\n{\n  r ← RANDOM(1, 2)\n  IF(r = 1)\n  {\n    heads ← heads + 1\n  }\n}\nFor supplied results 1, 2, 1, 1: give (a) heads after each trial, (b) final heads, (c) observed fraction, (d) whether the next run must match.",
+      "answer": "Counts: 1, 1, 2, 3. Final 3; fraction 3/4 = 0.75. A fresh run need not match.",
+      "explanation": "Counts: 1, 1, 2, 3. Final 3; fraction 3/4 = 0.75. A fresh run need not match.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Gives trace 1, 1, 2, 3."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives final heads = 3."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives observed fraction 3/4 or 0.75."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains that new random draws may yield a different result."
+        }
+      ],
+      "lines": 6
+    },
+    {
+      "id": "Q10",
+      "type": "written",
+      "marks": 4,
+      "topic": "Interpret repeated trials",
+      "prompt": "A fair independent coin model yields 53 Heads in 100 trials.\n(a) State theoretical P(Heads). (b) Calculate observed frequency.\n(c) Must 1,000 trials give exactly 500 Heads? Explain.\n(d) Must the next toss correct the earlier imbalance? Explain.",
+      "answer": "(a) 1/2. (b) 0.53. (c) No; finite random counts vary. (d) No; the next trial still has probability 1/2.",
+      "explanation": "(a) 1/2. (b) 0.53. (c) No; finite random counts vary. (d) No; the next trial still has probability 1/2.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Gives theoretical probability 1/2."
+        },
+        {
+          "marks": 1,
+          "criterion": "Calculates observed frequency 53/100 = 0.53."
+        },
+        {
+          "marks": 1,
+          "criterion": "Rejects guaranteed 500 Heads and cites finite variability."
+        },
+        {
+          "marks": 1,
+          "criterion": "Rejects required correction because the next trial retains probability 1/2."
+        }
+      ],
+      "lines": 7
+    },
+    {
+      "id": "Q11",
+      "type": "written",
+      "marks": 4,
+      "topic": "Compare random models",
+      "prompt": "Compare sum ← RANDOM(1, 6) + RANDOM(1, 6) with r ← RANDOM(1, 6), then sum ← 2 * r.\n(a) State each model’s number of draws. (b) Give an odd sum possible only in the first.\n(c) Explain the second model’s restriction. (d) Which represents two independent fair dice?",
+      "answer": "First uses two draws; second one. Example odd sum: 3 = 1 + 2. Doubling an integer yields only even sums. The first represents two independent fair dice.",
+      "explanation": "First uses two draws; second one. Example odd sum: 3 = 1 + 2. Doubling an integer yields only even sums. The first represents two independent fair dice.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Identifies two draws versus one."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives a possible odd sum with a valid pair."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains that 2*r allows only even sums."
+        },
+        {
+          "marks": 1,
+          "criterion": "Selects the first model for independent dice."
+        }
+      ],
+      "lines": 7
+    },
+    {
+      "id": "Q12",
+      "type": "written",
+      "marks": 4,
+      "topic": "Simulation usefulness and limits",
+      "prompt": "A fictional school queue model assigns a 30% delay chance to each independent arrival, regardless of time.\n(a) Give one useful purpose. (b) State one simplifying assumption.\n(c) Name an omitted factor and possible effect. (d) Explain why more trials alone cannot repair that omission.",
+      "answer": "It can explore delay frequency cheaply. It assumes constant independent arrival outcomes. Lunch crowding may increase real delays. More trials still apply the same assumptions.",
+      "explanation": "It can explore delay frequency cheaply. It assumes constant independent arrival outcomes. Lunch crowding may increase real delays. More trials still apply the same assumptions.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Gives a relevant purpose, such as exploring delay rates or comparing assumptions."
+        },
+        {
+          "marks": 1,
+          "criterion": "Identifies constant chance or independence as an assumption."
+        },
+        {
+          "marks": 1,
+          "criterion": "Links an omitted factor to a possible effect on results."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains that repetition does not add the omitted factor to the model."
+        }
+      ],
+      "lines": 7
+    }
+  ]
+}

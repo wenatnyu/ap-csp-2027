@@ -1,0 +1,64 @@
+<div class="tagline">Teacher Guide</div><h1>Lesson 09 · Expressions &amp; Strings</h1>
+<p class="sub">表达式与字符串 · 23 slides · 90 minutes · 25-minute Workshop Pass</p>
+<p><a href="index.html">课程目录</a> · <a href="Chapter_3_Programming_Lab.html#expressions" target="_blank" rel="noopener">Expressions lab</a></p>
+<h3>本课目标与前置知识</h3>
+<p>本课以第一章的变量赋值和顺序执行为起点，补齐算术表达式与字符串表达式。学生要能读出运算顺序，解释 / 与 MOD 的不同结果，按给定规则连接字符串、提取子串，并写出可测试的顺序程序。阅读者应有基本乘除法知识；尚不要求 IF、循环、列表、自定义过程或机器人。25分钟项目应保护，不以整节教师演示代替学生实际编写。</p>
+<p>英文投影片配中文术语与 N 键教师备注。练习先个人预测、再同伴说明、最后展开答案。图中分组、位置和数据流是解题支架；不把能照图数出结果当作已经能独立编程。所有题目与课堂量表原创，课堂活动不等同正式 Create 任务或官方 FRQ。</p>
+<h3>已核对的官方范围</h3>
+<p>核查日期：2026-09-11。当前 AP Central 链接的 CED 为 Effective Fall 2023。官方考试参考表封面写 <strong>2026 EXAM REFERENCE INFORMATION</strong>；本资料不把它称为2027版。</p>
+<table><thead><tr><th>官方条目</th><th>本课证据</th><th>覆盖边界</th></tr></thead><tbody>
+<tr><td>AAP-1.A.2–4；AAP-1.B.1–3<br>Topic 3.1，印刷63–64 / PDF70–71</td><td>有意义的变量名；数字与字符串；赋值复制当前结果；之后改源变量不自动更新目标变量。</td><td>复习与应用；不展开列表或对象语义。</td></tr>
+<tr><td>AAP-2.B.3–7<br>Topic 3.3，印刷69 / PDF76</td><td>表达式求出一个值；执行顺序与可读性；把计算和字符串调用组合为顺序程序。</td><td>只实践顺序结构；不声称已覆盖选择与迭代。</td></tr>
+<tr><td>AAP-2.C.1–4<br>Topic 3.3，印刷69 / PDF76</td><td>加减乘除与 MOD，通常数学优先级，括号，非整数除法结果。</td><td>MOD 的 a 为非负整数、b 为正整数；不教负数 MOD 或除零的语言差异。</td></tr>
+<tr><td>AAP-2.D.1–2<br>Topic 3.4，印刷70 / PDF77</td><td>字符串连接与子串求值；从原字符串返回新字符串。</td><td>过程名与参数约定由本课明确提供；不是官方固定内建过程清单。</td></tr>
+<tr><td>CRD-2.E.2–4；CRD-2.J.1–3<br>Topics 1.3/1.4，印刷36、40 / PDF43、47</td><td>设计、编写、测试、修订；根据要求先写预期输出，再运行并复测。</td><td>小型实践：本课假定有效输入，未实现无效输入处理，不能据此声称程序应付所有输入。</td></tr>
+</tbody></table>
+<p>同级乘、除、MOD 按从左到右求值；加减也按通常数学顺序。用括号明确意图。表达式可直接传给 DISPLAY，也可先赋给变量；赋值存储的是当时求得的结果，不会建立电子表格式的自动重算关系。</p>
+<h3>本课字符串过程契约</h3>
+<table><thead><tr><th>过程</th><th>给定规则</th><th>教学检查</th></tr></thead><tbody>
+<tr><td>CONCAT(a, b)</td><td>a、b 都是字符串；按顺序连接并返回新字符串，不自动添加空格。</td><td>CONCAT("Hi, ", "Ada") 为 "Hi, Ada"；空格来自第一个参数。</td></tr>
+<tr><td>SUBSTRING(s, start, length)</td><td>位置从1开始，返回 start 起的 length 个连续字符。本课使用正长度及有效范围。</td><td>SUBSTRING("PLANET",2,3) 为 "LAN"；第3参数是数量，不是末尾位置。</td></tr>
+</tbody></table>
+<p>CONCAT 与 SUBSTRING 在此是实验室提供的教学过程；AP题若给出其他定义，应按该题定义。官方固定参考表没有这两项字符串内建过程。官方 LENGTH(aList) 对列表定义；即使实验室提供字符串 LENGTH，本课也不把它当官方字符串内建规则，不要求使用。本节仅用简单英文字符，避免把 Unicode 码点、编码单元或屏幕字形混为字符位置。</p>
+<h3>90分钟安排</h3>
+<table><thead><tr><th>时间</th><th>页码</th><th>活动与观察</th></tr></thead><tbody>
+<tr><td>0–8</td><td>1–3</td><td>复习赋值复制、乘加顺序、DISPLAY 是否修改变量；说明交付物。</td></tr>
+<tr><td>8–20</td><td>4–6</td><td>表达式流程、括号路线和 / 的十进制结果。</td></tr>
+<tr><td>20–28</td><td>7–8</td><td>MOD 分组模型、余数范围、整除与非整除。</td></tr>
+<tr><td>28–44</td><td>9–12</td><td>字符串类型；读过程契约；连接、子串与组合追踪。</td></tr>
+<tr><td>44–51</td><td>13–14</td><td>赋值非实时公式；打开实验室，区分代码区与输入队列。</td></tr>
+<tr><td>51–56</td><td>15</td><td>项目规划5分钟：用户、四种输出与变量。</td></tr>
+<tr><td>56–65</td><td>16</td><td>项目编写9分钟：学生完成代码，不直接发完整范例。</td></tr>
+<tr><td>65–71</td><td>17</td><td>项目测试6分钟：先预期再运行，记录差异。</td></tr>
+<tr><td>71–76</td><td>18</td><td>项目修订5分钟：交换反馈并复测，保存个人证据。</td></tr>
+<tr><td>76–85</td><td>19–21</td><td>下标诊断与两种原创选择题。</td></tr>
+<tr><td>85–90</td><td>22–23</td><td>作业说明与独立出口检测。</td></tr>
+</tbody></table>
+<h3>Workshop Pass：具体任务与教师参考</h3>
+<p>假想工作坊参与者输入姓名和活动分钟数，程序输出问候语、姓名前两字符的badge code、十进制小时，以及除去完整小时后余下的分钟。姓名至少两个英文字母；分钟为0至180整数。该badge code <strong>不保证唯一</strong>。项目只按有效输入假设设计，本节不增加尚未学习的条件验证。</p>
+<p>输入队列每行一个 JSON scalar，例如第一行 <code>"Ada"</code>，第二行 <code>105</code>。每个测试要重新设置整个队列；INPUT 按顺序读取。数字不要加引号。数值标签与值分开 DISPLAY，避免依赖未定义的字符串与数值隐式转换。参考表 DISPLAY 关注输出的值及顺序；实验室可能按行排列输出，不据此改变求值规则。</p>
+<details><summary>教师参考程序：学生开始编写后按需要使用</summary><pre class="code">name ← INPUT()
+minutes ← INPUT()
+greeting ← CONCAT("Hello, ", name)
+badge ← SUBSTRING(name, 1, 2)
+hours ← minutes / 60
+remaining ← minutes MOD 60
+DISPLAY(greeting)
+DISPLAY(badge)
+DISPLAY("Hours:")
+DISPLAY(hours)
+DISPLAY("Remaining minutes:")
+DISPLAY(remaining)</pre></details>
+<table><thead><tr><th>姓名 / 分钟</th><th>预期四项值（不含标签）</th><th>选择理由</th></tr></thead><tbody>
+<tr><td>"Ada" / 105</td><td>"Hello, Ada"；"Ad"；1.75；45</td><td>非零余数，能揭露错误截断的除法。</td></tr>
+<tr><td>"Li" / 0</td><td>"Hello, Li"；"Li"；0；0</td><td>有效最小分钟值与最短姓名。</td></tr>
+<tr><td>"Maya" / 180</td><td>"Hello, Maya"；"Ma"；3；0</td><td>最大有效分钟值与完整小时。</td></tr>
+</tbody></table>
+<p>每人保存代码、预期与实际输出、一次具体反馈和修改说明。建议8分课堂量表：输入顺序1；问候语正确1；badge正确1；小时正确1；余下分钟正确1；三个有预期的有效测试1；输出标签清晰1；记录修订与复测1。该量表由教师设计，不是AP官方评分标准。</p>
+<h3>误区、支持与延伸</h3>
+<ul><li><strong>所有表达式都从左到右。</strong> 用同一数值比较有无括号，先圈出最先运算。</li><li><strong>整数相除只得到整数。</strong> 用8份平均分给5人画份额，区别数学商与完整组数。</li><li><strong>MOD 是商、百分比或可等于除数。</strong> 用 a = q × b + r 检查，要求0 ≤ r &lt; b。</li><li><strong>子串第3参数是结束下标。</strong> 先标位置，再从 start 数 length 个字符；不要按记忆猜名称。</li><li><strong>连接自动插空格或改原字符串。</strong> 明确两个返回值调用都不自动重写源变量。</li><li><strong>重新赋 minutes 就自动更新 hours。</strong> 在状态表只改赋值左侧，要求指出第二次更新 hours 的语句。</li></ul>
+<p>支架：先纸上索引卡，再代码；给输出清单和两个 INPUT 起始语句，不给完整答案。较快学生可以为问候语增加一个明确字符串前缀，或解释为何105比180更能检查除法错误；不要提前加入 IF、循环或假装badge唯一。采用精确小数示例，浮点表示误差会在其他适当情境处理。</p>
+<h3>作业与出口检测</h3>
+<p>12题共30教师分，约40分钟：Q1–6每题1分，其中Q5恰选两项；Q7–12每题4个独立得分点。网页答案隐藏；单独教师答案PDF含干扰项解释与逐点评分。作业额外提交Workshop Pass代码与测试记录，不重复计入30分。</p>
+<p>Exit：14 MOD 4 = 2；9 / 2 = 4.5；SUBSTRING("DATA",2,2) = "AT"。每项1分，建议3/3；按错误类别给一个新例再检，而不是让学生复制原答案。下一课转向关系与Boolean表达式，条件分支尚未引入。</p>
+<h3>Sources</h3><ul class="sources"><li><a href="https://apcentral.collegeboard.org/courses/ap-computer-science-principles" target="_blank" rel="noopener">College Board · Current AP CSP course page</a></li><li><a href="https://apcentral.collegeboard.org/media/pdf/ap-computer-science-principles-course-and-exam-description.pdf" target="_blank" rel="noopener">Official CED</a> · <a href="resources/AP_CSP_Course_and_Exam_Description.pdf#page=76" target="_blank">Local Topics 3.3–3.4</a></li><li><a href="https://apcentral.collegeboard.org/media/pdf/ap-computer-science-principles-exam-reference-sheet.pdf" target="_blank" rel="noopener">Official exam reference sheet · cover labelled 2026</a></li></ul>

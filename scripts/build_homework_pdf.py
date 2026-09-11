@@ -60,7 +60,9 @@ def clean(value):
 
 
 def markup(value):
-    text = escape(clean(value)).replace("\n", "<br/>")
+    text = escape(clean(value).expandtabs(2))
+    # Paragraph collapses ordinary whitespace; retain meaningful pseudocode indentation.
+    text = re.sub(r"(?m)^ +", lambda m: "&#160;" * len(m[0]), text).replace("\n", "<br/>")
     supers = str.maketrans("⁰¹²³⁴⁵⁶⁷⁸⁹ⁿ", "0123456789n")
     subs = str.maketrans("₀₁₂₃₄₅₆₇₈₉", "0123456789")
     text = re.sub(r"[⁰¹²³⁴⁵⁶⁷⁸⁹ⁿ]+", lambda m: "<super>" + m[0].translate(supers) + "</super>", text)
@@ -177,7 +179,7 @@ def draw_written(c, q, top, height):
     lower = top - height + 15
     requested = q.get("lines", 7)
     count = min(requested, max(1, int((line_top - lower) / 17) + 1))
-    if count < 4:
+    if count < q.get("minLines", 4):
         raise ValueError(f"{q['id']} has inadequate working space ({count} lines)")
     c.setStrokeColor(RULE)
     c.setLineWidth(.35)
@@ -208,7 +210,8 @@ def build_student(data, destination):
     for q in questions[6:]:
         pp = Paragraph(markup(q['prompt']), style(size=10.2, leading=14.2))
         prompt_height = pp.wrap(CONTENT_W - 17, PAGE_H)[1]
-        needed = 19 + prompt_height + 20 + 5 * 17 + 15
+        minimum_lines = max(6, q.get("minLines", 6))
+        needed = 19 + prompt_height + 20 + (minimum_lines - 1) * 17 + 15
         if current_group and (used + needed > written_top - 53 or len(current_group) == 3):
             written_groups.append(current_group)
             current_group = []
@@ -218,7 +221,9 @@ def build_student(data, destination):
     if current_group: written_groups.append(current_group)
     if len(written_groups) == 3 and any(len(g) == 1 for g in written_groups):
         flat = [item for group in written_groups for item in group]
-        written_groups = [flat[i:i+2] for i in range(0, 6, 2)]
+        balanced = [flat[i:i+2] for i in range(0, 6, 2)]
+        if all(sum(h for _, h in group) <= written_top - 53 for group in balanced):
+            written_groups = balanced
     total_pages = len(groups) + len(written_groups)
     page = 0
     for group in groups:

@@ -1,0 +1,13 @@
+{
+  "chapter": 3,
+  "id": "L14",
+  "number": "14",
+  "title": "Conditional Loops",
+  "chineseTitle": "条件循环",
+  "shortTitle": "Conditional Loops",
+  "filename": "AP_CSP_L14_Conditional_Loops.html",
+  "minutes": 90,
+  "topicSummary": "REPEAT UNTIL pre-check and stopping conditions; traces, updates, termination, sentinels and boundary tests; comparison with counted loops.",
+  "homeworkInstructions": "12 original questions, 30 teacher marks, about 45 minutes. Q5 requires exactly TWO choices. Show predictions, traces and reasons. Braces mark blocks; each statement is on its own line.",
+  "preview": "lessons/L14/preview.svg"
+}

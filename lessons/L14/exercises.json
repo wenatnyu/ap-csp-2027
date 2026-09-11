@@ -1,0 +1,346 @@
+{
+  "title": "AP CSP — Lesson 14 Homework: Conditional Loops",
+  "durationMinutes": 45,
+  "totalMarks": 30,
+  "notice": "All questions are original. Q1–Q6 are AP-style practice, not official or past AP questions. Q7–Q12 are classroom written responses, not official exam FRQs. The 30 marks are teacher-assigned. For Q5 select exactly TWO answers; its one mark requires both correct choices and no others. Follow AP pseudocode semantics.",
+  "questions": [
+    {
+      "id": "Q1",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Initial true condition",
+      "prompt": "A REPEAT UNTIL condition is true before the first check. How many times does its body run?",
+      "options": [
+        {
+          "label": "A",
+          "text": "0"
+        },
+        {
+          "label": "B",
+          "text": "1"
+        },
+        {
+          "label": "C",
+          "text": "2"
+        },
+        {
+          "label": "D",
+          "text": "Infinitely many"
+        }
+      ],
+      "answer": "A",
+      "explanation": "A follows the pre-check rule. B assumes a post-check loop; C invents an extra run; D reverses the stopping condition.",
+      "lines": 0
+    },
+    {
+      "id": "Q2",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Trace and threshold",
+      "prompt": "Start n = 2. While the stop condition n ≥ 7 is false, add 2 to n. What is the final n?",
+      "options": [
+        {
+          "label": "A",
+          "text": "6"
+        },
+        {
+          "label": "B",
+          "text": "7"
+        },
+        {
+          "label": "C",
+          "text": "8"
+        },
+        {
+          "label": "D",
+          "text": "10"
+        }
+      ],
+      "answer": "C",
+      "explanation": "C: the states are 2, 4, 6, 8 and the loop stops at 8. A is before the final update; B assumes exact arrival; D adds once after stopping.",
+      "lines": 0
+    },
+    {
+      "id": "Q3",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Unreachable stopping state",
+      "prompt": "Start x = 1. A REPEAT UNTIL(x = 8) loop only sets x ← x + 2. What happens?",
+      "options": [
+        {
+          "label": "A",
+          "text": "It stops at 7."
+        },
+        {
+          "label": "B",
+          "text": "It stops at 8."
+        },
+        {
+          "label": "C",
+          "text": "It stops at 9."
+        },
+        {
+          "label": "D",
+          "text": "Its condition never becomes true."
+        }
+      ],
+      "answer": "D",
+      "explanation": "D: only odd values are reached. A and C stop without equality; B assumes the sequence reaches an even value.",
+      "lines": 0
+    },
+    {
+      "id": "Q4",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Sentinel meaning",
+      "prompt": "A loop sums nonnegative inputs until −1. Why should it check value = −1 before adding value?",
+      "options": [
+        {
+          "label": "A",
+          "text": "To add −1 exactly once."
+        },
+        {
+          "label": "B",
+          "text": "To exclude the sentinel from the total."
+        },
+        {
+          "label": "C",
+          "text": "To discard all zero inputs."
+        },
+        {
+          "label": "D",
+          "text": "To read every value twice."
+        }
+      ],
+      "answer": "B",
+      "explanation": "B matches the sentinel contract. A includes the stopping marker as data; C rejects valid zero; D is unnecessary and may skip data.",
+      "lines": 0
+    },
+    {
+      "id": "Q5",
+      "type": "multi",
+      "marks": 1,
+      "topic": "Infinite loop diagnosis",
+      "prompt": "Which TWO changes can prevent this loop from ending? Start count = 0; stop when count ≥ 3; body displays count and adds 1.",
+      "options": [
+        {
+          "label": "A",
+          "text": "Remove the update."
+        },
+        {
+          "label": "B",
+          "text": "Start count at 3."
+        },
+        {
+          "label": "C",
+          "text": "Subtract 1 instead of adding 1."
+        },
+        {
+          "label": "D",
+          "text": "Change the stop test to count ≥ 2."
+        }
+      ],
+      "answer": "A and C",
+      "explanation": "A leaves count at 0. C moves below 0, away from 3. B stops immediately; D stops earlier. Both A and C are required.",
+      "lines": 0
+    },
+    {
+      "id": "Q6",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Choice of iteration",
+      "prompt": "Which loop most directly expresses “perform exactly five trials”?",
+      "options": [
+        {
+          "label": "A",
+          "text": "REPEAT UNTIL(trials = 0), with no update"
+        },
+        {
+          "label": "B",
+          "text": "REPEAT UNTIL(true)"
+        },
+        {
+          "label": "C",
+          "text": "REPEAT 5 TIMES"
+        },
+        {
+          "label": "D",
+          "text": "REPEAT UNTIL(trials > 5), starting at 0 and adding 1"
+        }
+      ],
+      "answer": "C",
+      "explanation": "C fixes five executions. A cannot progress when initially false; B runs zero times; D runs six times under the stated start/update.",
+      "lines": 0
+    },
+    {
+      "id": "Q7",
+      "type": "written",
+      "marks": 4,
+      "topic": "Full trace",
+      "prompt": "n ← 1\nREPEAT UNTIL(n ≥ 6)\n{\n  DISPLAY(n)\n  n ← n + 2\n}\nGive (a) displayed values, (b) final n, (c) body count, (d) condition-check count.",
+      "answer": "(a) 1, 3, 5. (b) 7. (c) 3. (d) 4.",
+      "explanation": "(a) 1, 3, 5. (b) 7. (c) 3. (d) 4.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Gives outputs 1, 3, 5 in order."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives final n = 7."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives three body executions."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives four checks, including the final true check."
+        }
+      ],
+      "lines": 7
+    },
+    {
+      "id": "Q8",
+      "type": "written",
+      "marks": 4,
+      "topic": "Create conditional iteration",
+      "prompt": "Start charge at 20 and add 15 each run. Stop when charge is at least 65.\n(a) Write initialization. (b) Write REPEAT UNTIL with its body.\n(c) Give the final charge. (d) Give the number of body runs.",
+      "answer": "charge ← 20\nREPEAT UNTIL(charge ≥ 65)\n{\n  charge ← charge + 15\n}\nFinal charge: 65. Body runs: 3.",
+      "explanation": "charge ← 20\nREPEAT UNTIL(charge ≥ 65)\n{\n  charge ← charge + 15\n}\nFinal charge: 65. Body runs: 3.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Initializes charge to 20 before the loop."
+        },
+        {
+          "marks": 1,
+          "criterion": "Uses stop charge ≥ 65 and update +15 inside the loop."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives final charge 65."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives three body executions."
+        }
+      ],
+      "lines": 8,
+      "minLines": 8
+    },
+    {
+      "id": "Q9",
+      "type": "written",
+      "marks": 4,
+      "topic": "Debug and test",
+      "prompt": "Start x = 2. Stop at x ≥ 5. The body displays x but never changes it.\n(a) Explain the failure. (b) Give a repair after DISPLAY.\n(c) Give the repaired output. (d) Give an initially true test and its body count.",
+      "answer": "(a) x stays 2, so the condition stays false. (b) x ← x + 1. (c) 2, 3, 4. (d) Start x = 5: 0 body executions.",
+      "explanation": "(a) x stays 2, so the condition stays false. (b) x ← x + 1. (c) 2, 3, 4. (d) Start x = 5: 0 body executions.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Connects unchanged x = 2 to a condition that stays false."
+        },
+        {
+          "marks": 1,
+          "criterion": "Adds x ← x + 1 after DISPLAY in the body."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives repaired outputs 2, 3, 4."
+        },
+        {
+          "marks": 1,
+          "criterion": "Tests any starting x ≥ 5 and predicts zero body executions."
+        }
+      ],
+      "lines": 7
+    },
+    {
+      "id": "Q10",
+      "type": "written",
+      "marks": 4,
+      "topic": "Sentinel trace",
+      "prompt": "A correct sentinel loop initializes total = 0, reads value, and until value = −1 adds value then reads again. Inputs are 5, 0, −1.\n(a) Give final total. (b) Give body count. (c) Give INPUT-call count. (d) Explain why 0 and −1 are treated differently.",
+      "answer": "Total 5; two body executions; three INPUT calls. Zero is valid data, while −1 is the stopping marker and is not added.",
+      "explanation": "Total 5; two body executions; three INPUT calls. Zero is valid data, while −1 is the stopping marker and is not added.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Gives total 5."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives two body executions."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives three INPUT calls."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains valid zero versus an excluded sentinel."
+        }
+      ],
+      "lines": 7
+    },
+    {
+      "id": "Q11",
+      "type": "written",
+      "marks": 4,
+      "topic": "Boundary and requirement",
+      "prompt": "A model starts n = 1 and adds 2 repeatedly. Compare stop tests n = 6 and n ≥ 6.\n(a) Does equality terminate? Explain. (b) Does ≥ terminate? Give final n.\n(c) Give the ≥ loop’s body count. (d) State a requirement that makes ≥ suitable.",
+      "answer": "Equality never holds because n stays odd. ≥ ends at 7 after three updates. It fits “reach or exceed 6.”",
+      "explanation": "Equality never holds because n stays odd. ≥ ends at 7 after three updates. It fits “reach or exceed 6.”",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Explains that n = 6 is unreachable from the odd sequence."
+        },
+        {
+          "marks": 1,
+          "criterion": "States that n ≥ 6 stops at n = 7."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives three body executions."
+        },
+        {
+          "marks": 1,
+          "criterion": "States a reach-or-exceed requirement rather than exact equality."
+        }
+      ],
+      "lines": 7
+    },
+    {
+      "id": "Q12",
+      "type": "written",
+      "marks": 4,
+      "topic": "Equivalent loop forms",
+      "prompt": "Express “display Ready exactly three times” using REPEAT UNTIL and count.\nGive (a) initialization, (b) stopping condition, (c) complete body, and (d) a count trace proving three executions.",
+      "answer": "count ← 0; stop at count ≥ 3. Body: DISPLAY(\"Ready\"), then count ← count + 1. Checks see 0, 1, 2 (false) then 3 (true).",
+      "explanation": "Accept an equivalent count-from-one solution with a matching stop condition.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Initializes count consistently, such as 0."
+        },
+        {
+          "marks": 1,
+          "criterion": "Uses a matching stopping test, such as count ≥ 3."
+        },
+        {
+          "marks": 1,
+          "criterion": "Includes DISPLAY and exactly one consistent count update in the body."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives a trace proving three body executions."
+        }
+      ],
+      "lines": 9,
+      "minLines": 9
+    }
+  ]
+}

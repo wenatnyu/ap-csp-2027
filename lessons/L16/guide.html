@@ -1,0 +1,28 @@
+<div class="tagline">Teacher Guide</div><h1>Lesson 16 · Study Goal Tracker: Chapter 3 Project &amp; Check</h1><p class="sub">自编第三章 · 23 slides · 90 minutes · AP CSP May 2027 preparation</p>
+<h3>定位与准备</h3><p>第三章整合课，保留34–74分钟40分钟项目实施与记录。目标是学生自己编写、解释、测试一段含顺序、选择与迭代的程序。使用虚构分钟输入，不收集真实学习数据。此前已学运算、布尔、分支、嵌套、两类循环及随机，项目选最直接的固定三次循环，随机仅扩展。</p><p>英文投影、中文备注；N 打开备注，课堂问题先独立作答再展开答案。图解可聚焦放大。实验室 <a href="Chapter_3_Programming_Lab.html#project" target="_blank" rel="noopener">Chapter 3 Programming Lab</a> 使用本章 AP 风格子集。每条语句独立一行，花括号独立成行；INPUT 队列每行一个 JSON 标量，数字直接写，字符串带双引号。屏幕逐条显示便于追踪；考场 DISPLAY 定义的空格分隔与显示界面换行不要混淆。</p>
+<h3>90 分钟安排</h3><table><thead><tr><th>时间</th><th>页码</th><th>教学活动与证据</th></tr></thead><tbody><tr><td>0–8</td><td>1–3</td><td>运算/逻辑提取与整章定位。</td></tr><tr><td>8–24</td><td>4–7</td><td>项目目的、有效输入、每日边界与两个判定层次。</td></tr><tr><td>24–34</td><td>8–10</td><td>完整预测、状态生命周期、三组测试计划。</td></tr><tr><td>34–39</td><td>11</td><td>项目5分钟：建立初始化、三次循环、最终报告结构。</td></tr><tr><td>39–45</td><td>12</td><td>项目6分钟：读取输入与日判定/计数。</td></tr><tr><td>45–52</td><td>13</td><td>项目7分钟：最终计数与总提示，先做纸上跟踪。</td></tr><tr><td>52–58</td><td>14</td><td>项目6分钟：独立三组测试并记录expected/actual。</td></tr><tr><td>58–67</td><td>15–16</td><td>项目9分钟：计数重置与>、≥边界诊断/修复。</td></tr><tr><td>67–74</td><td>17–18</td><td>项目7分钟：同伴解释、修改、复测、保存记录。</td></tr><tr><td>74–82</td><td>19–20</td><td>随机扩展或继续核心，原创章末选两项。</td></tr><tr><td>82–90</td><td>21–23</td><td>正式Create边界、整章作业、exit ticket。</td></tr></tbody></table>
+<h3>关键讲解、答案与诊断</h3><p><strong>需求合同：</strong>三个输入均为0到180之间整数，30及以上达标。达标显示Goal met并count+1，未达标显示Keep going。第三天后输出count，再按count≥2输出On track，否则Try again。程序假设有效输入，未实现验证；−1、181和字符串不属于本项目核心测试输入。每次运行重新初始化。</p><p><strong>必测完整输出：</strong>29/30/31 → Keep going、Goal met、Goal met、2、On track；0/0/0 → Keep going三次、0、Try again；30/30/30 → Goal met三次、3、On track。可加180/29/0 → Goal met、Keep going、Keep going、1、Try again。AP DISPLAY参考定义以空格分隔，本实验室逐行展示不改变输出值与顺序。</p><p>第8页先预测再写代码；第10页保留预测，不把运行结果回填成“事前预期”。计数初始化放循环外；每轮INPUT与日分支放内；最终两项报告放外。一天未达标时count保持，不需要设置0。只测31无法辨别&gt;和≥，30才是决定性反例。</p><details><summary>教师参考实现（课堂先让学生独立完成）</summary><pre>count ← 0
+REPEAT 3 TIMES
+{
+  minutes ← INPUT()
+  IF(minutes ≥ 30)
+  {
+    DISPLAY(&quot;Goal met&quot;)
+    count ← count + 1
+  }
+  ELSE
+  {
+    DISPLAY(&quot;Keep going&quot;)
+  }
+}
+DISPLAY(count)
+IF(count ≥ 2)
+{
+  DISPLAY(&quot;On track&quot;)
+}
+ELSE
+{
+  DISPLAY(&quot;Try again&quot;)
+}</pre></details><p>以上实现为参考之一，接受等价算法与清楚变量名，但输出、输入次数和边界须一致。不得把这份教师答案当作学生原创成果。随机扩展只在核心输出后附加鼓励，不改变已有判定；用RANDOM(1,2)选择两条允许消息，可记录范围性质而不要求某一次固定输出。</p><p>同伴角色：一人预测与读需求，另一人逐步解释代码，再交换。反馈应指向具体输入、语句或输出。保存自己的代码和原始测试；若自己无bug，允许对第15页给定错误片段制作修复记录并注明材料来源。教师模板、同伴建议或引用内容均保留归属说明。</p><p>常见错因与干预：count重置放内→三次30只得1；把&gt;当≥→输入30错误；最终提示放内→出现多条过早总评；INPUT放外→三轮复用同一值；每天都+1→全0仍count3。分别用针对性测试，不仅检查一个正确输出。</p>
+<h3>评价与作业</h3><p><strong>12分形成性项目量表：</strong>输入恰3次且初始化正确0–2；日判定含30且消息/计数正确0–2；最终count与总判定正确0–2；三组预测和实际测试证据0–2；能解释边界与状态跟踪0–2；具体修改/复测及归属记录0–2。每项0无证据、1部分、2充分。建议≥9/12且修正边界与计数重置后进入后续内容；这是教师标准不是AP评分。</p><p>项目表链接：<a href="output/pdf/AP_CSP_Chapter_3_Project_Sheet.pdf" target="_blank">Chapter 3 Project Sheet</a>。至少需代码、三组测试、一个具体算法解释和一项可核查修改记录。基础项目未用列表或学生自定义过程（procedure），不能作为完整正式Create提交。</p><p>作业共12题30分，前6题各1分，Q5恰选两项；后6题各4分，逐点评分、可接受等价正确写法。题目全部原创，AP-style仅表示练习风格，书面题不是官方FRQ，教师分数不能换算为AP分数。</p>
+<h3>官方对齐与边界</h3><p>核对本地 <a href="resources/AP_CSP_Course_and_Exam_Description.pdf" target="_blank">CED（Effective Fall 2023）</a> 及 <a href="https://apcentral.collegeboard.org/media/pdf/ap-computer-science-principles-course-and-exam-description.pdf" target="_blank" rel="noopener">AP Central 官方 CED</a>，核查日期2026-09-11。当前<a href="https://apcentral.collegeboard.org/media/pdf/ap-computer-science-principles-exam-reference-sheet.pdf" target="_blank" rel="noopener">官方参考表</a>首页标为2026，作为当前语义依据，不称其为2027版本。</p><ul class="sources"><li><strong>AAP-1.B，AAP-2.C、D、E、F、H、I、J、K：</strong>变量更新、运算、给定字符串操作、布尔、选择/嵌套及迭代的整章应用。项目主要为H、K，I及其他形式在章末作业检查。</li><li><strong>CRD-2.B–J的所选活动：</strong>功能与输入输出、开发/界面、文档、归属、错误与测试；CED印刷34–40 / PDF41–47。合作同时应用CRD-1相关原则。</li><li><strong>AAP-3.E/F：</strong>章末作业复习随机与模型；可选随机鼓励只练E，不把扩展称为完整模拟项目。</li><li>正式Create相关列表与过程要求不由本课满足；本课不是AP正式任务、PPR或官方FRQ训练包。</li></ul><p>第三章为教师自编顺序，不等于 College Board 的第三单元完整范围；列表、过程、搜索和效率仍在后续课程。课堂代码与模拟是学习材料，不能直接宣称完成正式 Create 任务。</p>

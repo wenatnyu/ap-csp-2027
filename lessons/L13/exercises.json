@@ -1,0 +1,345 @@
+{
+  "title": "AP CSP — Lesson 13 Homework: Counted Loops",
+  "durationMinutes": 40,
+  "totalMarks": 30,
+  "notice": "All questions are original. Q1–Q6 are AP-style practice, not official or past AP questions; Q7–Q12 are classroom written practice, not official FRQs. These 30 marks are teacher-assigned, not AP exam scoring. Select exactly TWO answers in Q5; its one mark requires both correct choices and no others. All inputs are valid unless stated. DISPLAY outputs values in execution order. Show reasoning; braces and indentation identify each block.",
+  "questions": [
+    {
+      "id": "Q1",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Retrieve assignment",
+      "prompt": "x begins at 4. After x ← x + 2, what is its value?",
+      "options": [
+        {
+          "label": "A",
+          "text": "2"
+        },
+        {
+          "label": "B",
+          "text": "4"
+        },
+        {
+          "label": "C",
+          "text": "6"
+        },
+        {
+          "label": "D",
+          "text": "8"
+        }
+      ],
+      "answer": "C",
+      "explanation": "C is correct: evaluate the old value 4 plus 2, then store 6. A confuses the update amount with the result. B ignores assignment. D doubles x instead of adding 2.",
+      "lines": 0
+    },
+    {
+      "id": "Q2",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Counted-loop meaning",
+      "prompt": "What does REPEAT 4 TIMES do to the statements inside its braces?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Runs the complete body four times in sequence."
+        },
+        {
+          "label": "B",
+          "text": "Runs only the first statement four times."
+        },
+        {
+          "label": "C",
+          "text": "Executes the body until four outputs have appeared."
+        },
+        {
+          "label": "D",
+          "text": "Runs the body once and multiplies all results by four."
+        }
+      ],
+      "answer": "A",
+      "explanation": "A matches the counted-loop structure. B ignores the block boundaries. C counts outputs instead of iterations. D changes the computation rather than repeating the statements.",
+      "lines": 0
+    },
+    {
+      "id": "Q3",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Counter update amount",
+      "prompt": "What is displayed?\ncount ← 0\nREPEAT 3 TIMES\n{\n  count ← count + 2\n}\nDISPLAY(count)",
+      "options": [
+        {
+          "label": "A",
+          "text": "2"
+        },
+        {
+          "label": "B",
+          "text": "3"
+        },
+        {
+          "label": "C",
+          "text": "5"
+        },
+        {
+          "label": "D",
+          "text": "6"
+        }
+      ],
+      "answer": "D",
+      "explanation": "D is correct: count becomes 2, 4, then 6. A performs one iteration. B counts iterations but ignores adding 2. C has an incorrect initial value or arithmetic.",
+      "lines": 0
+    },
+    {
+      "id": "Q4",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Accumulator initialization",
+      "prompt": "A loop should add three inputs into total. Where should total ← 0 go?",
+      "options": [
+        {
+          "label": "A",
+          "text": "After the final DISPLAY only."
+        },
+        {
+          "label": "B",
+          "text": "Before the loop, once."
+        },
+        {
+          "label": "C",
+          "text": "Immediately before every addition inside the loop."
+        },
+        {
+          "label": "D",
+          "text": "It is never needed before total ← total + value."
+        }
+      ],
+      "answer": "B",
+      "explanation": "B gives an initial sum without erasing earlier contributions. A initializes too late. C repeatedly discards the running total. D reads an uninitialized total.",
+      "lines": 0
+    },
+    {
+      "id": "Q5",
+      "type": "multi",
+      "marks": 1,
+      "topic": "Zero and nested iteration",
+      "prompt": "Which TWO statements are correct? Select exactly TWO.",
+      "options": [
+        {
+          "label": "A",
+          "text": "REPEAT 0 TIMES skips the body."
+        },
+        {
+          "label": "B",
+          "text": "A fixed-count loop always performs at least one iteration."
+        },
+        {
+          "label": "C",
+          "text": "Two outer iterations with three inner iterations each perform six inner-body executions."
+        },
+        {
+          "label": "D",
+          "text": "Two outer iterations with three inner iterations each perform five inner-body executions."
+        }
+      ],
+      "answer": "A and C",
+      "explanation": "A follows zero-iteration semantics. C counts 2 × 3 executions. B incorrectly excludes zero. D adds the two loop counts instead of applying the inner count for each outer iteration. Award one mark only for A and C together.",
+      "lines": 0
+    },
+    {
+      "id": "Q6",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Display before update",
+      "prompt": "count starts at 1. A loop repeats three times; each iteration first displays count, then adds 2 to count. What are the outputs in order?",
+      "options": [
+        {
+          "label": "A",
+          "text": "3, 5, 7"
+        },
+        {
+          "label": "B",
+          "text": "1, 1, 1"
+        },
+        {
+          "label": "C",
+          "text": "1, 3, 5"
+        },
+        {
+          "label": "D",
+          "text": "1, 3, 5, 7"
+        }
+      ],
+      "answer": "C",
+      "explanation": "C displays the current value before each update. A reverses the statement order. B ignores saved updates. D adds an extra output after the loop that was not specified.",
+      "lines": 0
+    },
+    {
+      "id": "Q7",
+      "type": "written",
+      "marks": 4,
+      "topic": "Outputs and final state",
+      "prompt": "Trace the program. Give its three outputs in order and the final value of count.\ncount ← 2\nREPEAT 3 TIMES\n{\n  DISPLAY(count)\n  count ← count + 3\n}",
+      "answer": "Outputs: 2, 5, 8. Final count: 11.",
+      "explanation": "Each iteration displays the current value and then adds 3. The final updated value 11 is not displayed by this program.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Gives first output 2."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives second output 5."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives third output 8."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives final count 11, distinct from the displayed outputs."
+        }
+      ],
+      "lines": 8
+    },
+    {
+      "id": "Q8",
+      "type": "written",
+      "marks": 4,
+      "topic": "Trace an accumulator",
+      "prompt": "The input queue contains 8, then 12, then 5. Give total after each iteration and the final displayed value.\ntotal ← 0\nREPEAT 3 TIMES\n{\n  value ← INPUT()\n  total ← total + value\n}\nDISPLAY(total)",
+      "answer": "After iteration 1: 8. After iteration 2: 20. After iteration 3: 25. Final output: 25.",
+      "explanation": "The right side uses the previously accumulated total, then adds the newly read input. The single final DISPLAY is outside the loop.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Gives first running total 8."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives second running total 20."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives third running total 25."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives final displayed value 25 once after the loop."
+        }
+      ],
+      "lines": 8
+    },
+    {
+      "id": "Q9",
+      "type": "written",
+      "marks": 4,
+      "topic": "Counter initialization and repair",
+      "prompt": "A program sets count ← 1, then repeats count ← count + 1 four times. The intended final count is the number of completed iterations.\n(a) State the actual final count.\n(b) State how many iterations execute.\n(c) Correct the initialization.\n(d) Explain why placing count ← 0 inside each iteration would not be a correct repair.",
+      "answer": "(a) 5. (b) 4. (c) count ← 0 before the loop. (d) Resetting each time discards previous increments, so reset-then-increment would leave 1.",
+      "explanation": "The loop count is four in every version described. Changing initialization changes the variable result, not the number of iterations.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Gives actual final count 5."
+        },
+        {
+          "marks": 1,
+          "criterion": "States exactly four iterations execute."
+        },
+        {
+          "marks": 1,
+          "criterion": "Initializes count to 0 before the loop."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains that resetting inside each iteration erases earlier increments; may also state final count 1 for reset then increment."
+        }
+      ],
+      "lines": 8
+    },
+    {
+      "id": "Q10",
+      "type": "written",
+      "marks": 4,
+      "topic": "Nested execution order",
+      "prompt": "An outer loop repeats twice. Its body first runs an inner loop three times, displaying \"Tick\" each time, then displays \"Done\" once after that inner loop.\n(a) How many Tick outputs occur?\n(b) How many Done outputs occur?\n(c) Write the complete output order.\n(d) Explain why Done is not displayed after every Tick.",
+      "answer": "(a) 6. (b) 2. (c) Tick, Tick, Tick, Done, Tick, Tick, Tick, Done. (d) Done is outside the inner loop but inside the outer loop, so it executes after each complete group of three Tick outputs.",
+      "explanation": "For each outer iteration, the entire inner loop finishes before its following DISPLAY executes.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Gives six Tick outputs."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives two Done outputs."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives the complete order as two groups of three Tick followed by one Done."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains that Done lies outside the inner loop and executes only after that inner loop finishes, once per outer iteration."
+        }
+      ],
+      "lines": 8
+    },
+    {
+      "id": "Q11",
+      "type": "written",
+      "marks": 4,
+      "topic": "Update-order comparison",
+      "prompt": "Initially i is 1 and total is 0. Repeat three times: add i to total, then increase i by 1.\n(a) Give final total and final i.\n(b) If the two body statements are swapped, give final total and explain which values are now added.",
+      "answer": "(a) total = 6; i = 4. (b) total = 9, because updating i first makes the additions 2, 3 and 4.",
+      "explanation": "Original order adds 1 + 2 + 3. Swapped order adds 2 + 3 + 4. Both versions still update i three times.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Gives original final total 6."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives original final i 4."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives swapped final total 9."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains that swapped order adds the updated values 2, 3 and 4."
+        }
+      ],
+      "lines": 8
+    },
+    {
+      "id": "Q12",
+      "type": "written",
+      "marks": 4,
+      "topic": "Write and test a counted program",
+      "prompt": "Write AP pseudocode that reads two valid whole-number minute values from 0 through 180 using REPEAT 2 TIMES, calculates their average, and displays the average once. Give the expected output for inputs 30 and 50, and for inputs 0 and 0. Each brace occupies its own line.",
+      "answer": "total ← 0\nREPEAT 2 TIMES\n{\n  minutes ← INPUT()\n  total ← total + minutes\n}\naverage ← total / 2\nDISPLAY(average)\nTests: 30, 50 → 40; 0, 0 → 0.",
+      "explanation": "Initialize once, accumulate both values, then divide their total by the known input count 2. Do not average only the final input.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Initializes a total to 0 before the loop."
+        },
+        {
+          "marks": 1,
+          "criterion": "Uses REPEAT 2 TIMES with an INPUT and an addition to the running total inside the body."
+        },
+        {
+          "marks": 1,
+          "criterion": "Calculates total / 2 and displays that average once after the loop."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives both test outputs correctly: 40 for 30 and 50; 0 for 0 and 0."
+        }
+      ],
+      "lines": 12,
+      "minLines": 11
+    }
+  ]
+}

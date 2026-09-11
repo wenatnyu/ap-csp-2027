@@ -1,0 +1,59 @@
+[
+  {
+    "id": "expressions",
+    "title": "L09 · Expressions & string labels",
+    "inputs": "\"Ada\"",
+    "code": "name ← INPUT()\nlabel ← CONCAT(\"Hello, \", name)\nDISPLAY(label)\nDISPLAY(SUBSTRING(\"COMPUTING\", 1, 4))\nDISPLAY(17 / 5)\nDISPLAY(17 MOD 5)",
+    "prompt": "Predict the two strings and two numbers. Then change one argument and explain the result."
+  },
+  {
+    "id": "boolean",
+    "title": "L10 · Boolean rule checker",
+    "inputs": "30\ntrue",
+    "code": "minutes ← INPUT()\nhasMaterials ← INPUT()\nready ← (minutes >= 30) AND hasMaterials\nDISPLAY(ready)\nDISPLAY(NOT ready)",
+    "prompt": "Try the boundary 29/30 with true and false. Predict both displayed values before running."
+  },
+  {
+    "id": "selection",
+    "title": "L11 · One study session",
+    "inputs": "30",
+    "code": "minutes ← INPUT()\nIF (minutes >= 30)\n{\n  DISPLAY(\"Goal met\")\n}\nELSE\n{\n  DISPLAY(\"Keep going\")\n}",
+    "prompt": "Run 29 and 30 separately. Which branch runs, and why does only one message appear?"
+  },
+  {
+    "id": "nested",
+    "title": "L12 · Nested ticket decisions",
+    "inputs": "12",
+    "code": "age ← INPUT()\nIF (age < 12)\n{\n  price ← 5\n}\nELSE\n{\n  IF (age >= 65)\n  {\n    price ← 7\n  }\n  ELSE\n  {\n    price ← 12\n  }\n}\nDISPLAY(price)",
+    "prompt": "Valid ages are whole numbers 0–120. Predict tests 11,12,64,65, then change the child threshold to 13."
+  },
+  {
+    "id": "counted",
+    "title": "L13 · Total three study sessions",
+    "inputs": "20\n30\n40",
+    "code": "total ← 0\nREPEAT 3 TIMES\n{\n  minutes ← INPUT()\n  total ← total + minutes\n}\nDISPLAY(total)",
+    "prompt": "Trace total after each input. Extend the program to display the mean after the loop."
+  },
+  {
+    "id": "until",
+    "title": "L14 · Stop at a sentinel",
+    "inputs": "10\n20\n-1",
+    "code": "total ← 0\nminutes ← INPUT()\nREPEAT UNTIL (minutes = -1)\n{\n  total ← total + minutes\n  minutes ← INPUT()\n}\nDISPLAY(total)",
+    "prompt": "Use nonnegative minutes and end with -1. Predict what happens if the first input is -1. The sentinel is not added."
+  },
+  {
+    "id": "random",
+    "title": "L15 · Simulate die rolls",
+    "inputs": "",
+    "draws": "1\n6\n2\n6\n5\n3",
+    "code": "sixes ← 0\nREPEAT 6 TIMES\n{\n  roll ← RANDOM(1, 6)\n  DISPLAY(roll)\n  IF (roll = 6)\n  {\n    sixes ← sixes + 1\n  }\n}\nDISPLAY(\"Number of sixes\")\nDISPLAY(sixes)",
+    "prompt": "A random run varies. To test the counter, choose Replay specified draws and supply the six values shown."
+  },
+  {
+    "id": "project",
+    "title": "L16 · Study Goal Tracker starter",
+    "inputs": "29\n30\n31",
+    "code": "goalHits ← 0\nREPEAT 3 TIMES\n{\n  minutes ← INPUT()\n  // TODO: display feedback and count a goal hit when minutes >= 30\n}\nDISPLAY(goalHits)\n// TODO: final feedback, using goalHits >= 2",
+    "prompt": "Complete both TODOs using the project requirements below. A program that runs is not necessarily a complete solution."
+  }
+]

@@ -1,0 +1,345 @@
+{
+  "title": "AP CSP — Lesson 12 Homework: Nested Decisions & Boundary Tests",
+  "durationMinutes": 40,
+  "totalMarks": 30,
+  "notice": "All questions are original. Q1–Q6 are AP-style practice, not official or past AP questions; Q7–Q12 are classroom written practice, not official FRQs. These 30 marks are teacher-assigned, not AP exam scoring. Select exactly TWO answers in Q5; its one mark requires both correct choices and no others. All inputs are valid unless stated. DISPLAY outputs values in execution order. Show reasoning; braces and indentation identify each block.",
+  "questions": [
+    {
+      "id": "Q1",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Retrieve an exclusive branch",
+      "prompt": "For IF(age < 12) with age equal to 12, which statement is correct?",
+      "options": [
+        {
+          "label": "A",
+          "text": "The condition is true."
+        },
+        {
+          "label": "B",
+          "text": "Both IF and ELSE blocks execute."
+        },
+        {
+          "label": "C",
+          "text": "The condition is false, so ELSE is chosen."
+        },
+        {
+          "label": "D",
+          "text": "The program cannot compare equal values."
+        }
+      ],
+      "answer": "C",
+      "explanation": "C is correct: 12 < 12 is false. A confuses < with <=. B ignores mutually exclusive branches. D invents an invalid restriction.",
+      "lines": 0
+    },
+    {
+      "id": "Q2",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Reachability of an inner IF",
+      "prompt": "A complete inner IF is inside the ELSE block of an outer IF. When the outer condition is true, what happens to the inner IF?",
+      "options": [
+        {
+          "label": "A",
+          "text": "It is skipped."
+        },
+        {
+          "label": "B",
+          "text": "It is evaluated as false."
+        },
+        {
+          "label": "C",
+          "text": "It executes after the outer true block."
+        },
+        {
+          "label": "D",
+          "text": "It changes the outer result."
+        }
+      ],
+      "answer": "A",
+      "explanation": "A is correct because the outer ELSE is not chosen. B confuses not evaluated with evaluated false. C wrongly runs the unchosen block. D gives the skipped inner IF an effect it cannot have.",
+      "lines": 0
+    },
+    {
+      "id": "Q3",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Piecewise price at a boundary",
+      "prompt": "The toy price is 5 for ages under 12, 12 for ages 12–64, and 7 for ages 65–120. A nested program first tests age < 12, then tests age < 65 inside ELSE. What fee is selected for age 65?",
+      "options": [
+        {
+          "label": "A",
+          "text": "5"
+        },
+        {
+          "label": "B",
+          "text": "12"
+        },
+        {
+          "label": "C",
+          "text": "0"
+        },
+        {
+          "label": "D",
+          "text": "7"
+        }
+      ],
+      "answer": "D",
+      "explanation": "D is correct: both comparisons are false, so the inner ELSE selects 7. A uses the child fee. B incorrectly includes 65 in the under-65 range. C invents a default fee not specified by the program.",
+      "lines": 0
+    },
+    {
+      "id": "Q4",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Boundary test selection",
+      "prompt": "A child price should apply only when age < 12, but the code uses age <= 12. Which input distinguishes these two conditions?",
+      "options": [
+        {
+          "label": "A",
+          "text": "11"
+        },
+        {
+          "label": "B",
+          "text": "12"
+        },
+        {
+          "label": "C",
+          "text": "13"
+        },
+        {
+          "label": "D",
+          "text": "65"
+        }
+      ],
+      "answer": "B",
+      "explanation": "B is correct because equality is the only difference between the two operators. At 11 both are true. At 13 and 65 both are false, so those tests cannot reveal this particular mistake.",
+      "lines": 0
+    },
+    {
+      "id": "Q5",
+      "type": "multi",
+      "marks": 1,
+      "topic": "Nested logic claims",
+      "prompt": "Which TWO statements are correct? Select exactly TWO.",
+      "options": [
+        {
+          "label": "A",
+          "text": "Every inner condition is evaluated on every run."
+        },
+        {
+          "label": "B",
+          "text": "A nested condition is inside another conditional block."
+        },
+        {
+          "label": "C",
+          "text": "An ELSE belongs to all earlier IF statements."
+        },
+        {
+          "label": "D",
+          "text": "Reaching the outer ELSE tells us that its outer condition was false."
+        }
+      ],
+      "answer": "B and D",
+      "explanation": "B states the nesting structure. D uses path information from the outer choice. A ignores skipped blocks. C ignores brace structure; an ELSE is paired with a particular IF. Award one mark only for B and D together.",
+      "lines": 0
+    },
+    {
+      "id": "Q6",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Overly broad first case",
+      "prompt": "A program tests age >= 12 first and immediately assigns the adult price on its true path. Its senior-age test is inside that IF’s ELSE. What happens for age 70?",
+      "options": [
+        {
+          "label": "A",
+          "text": "The senior test selects 7."
+        },
+        {
+          "label": "B",
+          "text": "Both prices are selected."
+        },
+        {
+          "label": "C",
+          "text": "The adult branch is chosen and the senior test is skipped."
+        },
+        {
+          "label": "D",
+          "text": "Neither condition can be tested."
+        }
+      ],
+      "answer": "C",
+      "explanation": "C is correct: 70 >= 12 is true, so the containing ELSE is skipped. A ignores the location of the senior test. B treats nested exclusive paths as independent IFs. D is unsupported.",
+      "lines": 0
+    },
+    {
+      "id": "Q7",
+      "type": "written",
+      "marks": 4,
+      "topic": "Trace both levels",
+      "prompt": "Use these rules: age under 12 → fee 5; otherwise age under 65 → fee 12; otherwise fee 7.\n(a) For age 11, give the outer condition result and selected fee.\n(b) For age 65, give the inner condition result and selected fee.",
+      "answer": "(a) Outer age < 12 is true; fee 5. (b) The outer test is false; inner age < 65 is false; fee 7.",
+      "explanation": "At age 11 the inner test is not reached. At age 65 it is reached because the first test is false.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Gives true for the outer condition at age 11."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives fee 5 for age 11."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives false for the reached inner condition at age 65."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives fee 7 for age 65."
+        }
+      ],
+      "lines": 8
+    },
+    {
+      "id": "Q8",
+      "type": "written",
+      "marks": 4,
+      "topic": "Write the complete nested program",
+      "prompt": "Receive one valid integer age from 0 to 120. Use nested IF / ELSE to assign fee 5 for ages under 12, fee 12 for ages 12–64, and fee 7 for ages 65–120. Display the fee once after the selection. Each brace must occupy its own line.",
+      "answer": "age ← INPUT()\nIF(age < 12)\n{\n  fee ← 5\n}\nELSE\n{\n  IF(age < 65)\n  {\n    fee ← 12\n  }\n  ELSE\n  {\n    fee ← 7\n  }\n}\nDISPLAY(fee)",
+      "explanation": "The outer ELSE contains the entire second IF / ELSE. Every valid path assigns fee before the final DISPLAY.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Reads age before selection and correctly tests the under-12 group."
+        },
+        {
+          "marks": 1,
+          "criterion": "Assigns fee 5 in the under-12 branch."
+        },
+        {
+          "marks": 1,
+          "criterion": "Uses a correctly nested age < 65 decision inside the outer ELSE, assigning 12 and 7 on the appropriate paths."
+        },
+        {
+          "marks": 1,
+          "criterion": "Places a single DISPLAY(fee) after a correctly closed outer selection so every path displays the selected fee once."
+        }
+      ],
+      "lines": 19,
+      "minLines": 19
+    },
+    {
+      "id": "Q9",
+      "type": "written",
+      "marks": 4,
+      "topic": "Four boundary tests",
+      "prompt": "A price program uses the ranges under 12, 12–64, and 65–120 with fees 5, 12, and 7. Give the nearest legal integer immediately below each boundary and the value exactly at each boundary, with their expected fees.",
+      "answer": "11 → 5; 12 → 12; 64 → 12; 65 → 7.",
+      "explanation": "The boundaries are 12 and 65. Each below/at pair can reveal whether that endpoint is included in the intended range.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Gives test 11 with expected fee 5."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives test 12 with expected fee 12."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives test 64 with expected fee 12."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives test 65 with expected fee 7."
+        }
+      ],
+      "lines": 8
+    },
+    {
+      "id": "Q10",
+      "type": "written",
+      "marks": 4,
+      "topic": "Repair a hidden senior case",
+      "prompt": "A program first tests age >= 12 and assigns fee 12 if true. Only inside ELSE does it test age >= 65 to assign fee 7; its final ELSE assigns fee 5.\n(a) Give a valid senior-age counterexample with the actual and required fee.\n(b) Describe a correct order of conditions.\n(c) Explain why that order makes the senior case reachable.",
+      "answer": "(a) For example age 70: actual 12, required 7. (b) Test age >= 65 first; otherwise test age >= 12; otherwise use the child fee. (c) The narrower senior group is handled before the broader at-least-12 group can capture it.",
+      "explanation": "Testing broad groups before special subgroups can prevent nested alternatives from being reached. An equivalent correct under-12 then under-65 structure is also acceptable.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Gives a valid counterexample age from 65 through 120."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives actual fee 12 and required fee 7."
+        },
+        {
+          "marks": 1,
+          "criterion": "Describes a correct senior-first then adult decision order, or equivalent correct under-12 / under-65 structure."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains how the corrected path avoids the broad adult condition hiding seniors."
+        }
+      ],
+      "lines": 8
+    },
+    {
+      "id": "Q11",
+      "type": "written",
+      "marks": 4,
+      "topic": "Nested ELSE association",
+      "prompt": "A club uses this rule: if isMember is true, it checks age < 12 and charges 4 when true or 8 otherwise. If isMember is false, it charges 12 without checking age.\n(a) Give the fee for a member aged 12.\n(b) Give the fee for a nonmember aged 8.\n(c) Is the age test evaluated for the nonmember?\n(d) Which condition controls the ELSE that charges 12?",
+      "answer": "(a) 8. (b) 12. (c) No. (d) The outer isMember condition.",
+      "explanation": "The age choice lies inside the member branch. The nonmember ELSE belongs to the outer membership decision, not the inner age decision.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Gives fee 8 for a member aged 12."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives fee 12 for a nonmember aged 8."
+        },
+        {
+          "marks": 1,
+          "criterion": "States that the age test is not evaluated for that nonmember."
+        },
+        {
+          "marks": 1,
+          "criterion": "Identifies the outer isMember condition as the IF whose ELSE charges 12."
+        }
+      ],
+      "lines": 8
+    },
+    {
+      "id": "Q12",
+      "type": "written",
+      "marks": 4,
+      "topic": "Modify three pricing requirements",
+      "prompt": "The original program charges 5 for age < 12, then 12 for age < 65 in the outer ELSE, otherwise 7. Change it so children are under 13, seniors begin at 60, and the senior fee is 6. Adult and child prices stay unchanged.\n(a) Write the revised outer condition.\n(b) Write the revised inner condition.\n(c) State the revised senior assignment.\n(d) Give expected fees for ages 12 and 60.",
+      "answer": "(a) age < 13. (b) age < 60. (c) fee ← 6. (d) Age 12 → 5; age 60 → 6.",
+      "explanation": "The outer false path now means age >= 13. Its inner true path covers 13–59; its inner false path covers seniors 60 and above.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Writes age < 13 for the outer condition."
+        },
+        {
+          "marks": 1,
+          "criterion": "Writes age < 60 for the inner condition in outer ELSE."
+        },
+        {
+          "marks": 1,
+          "criterion": "Writes fee ← 6 for the inner ELSE."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives both expected fees correctly: 5 at age 12 and 6 at age 60."
+        }
+      ],
+      "lines": 8
+    }
+  ]
+}

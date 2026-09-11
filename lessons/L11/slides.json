@@ -1,0 +1,187 @@
+[
+  {
+    "title": "Selection: Choosing a Path",
+    "tag": "LESSON 11",
+    "time": "0–2 min",
+    "code": "AAP-2.G / H · Selection",
+    "html": "<p class=\"lead\">AP Computer Science Principles</p><h1>Selection:<br>Choosing a Path</h1><p class=\"zh\">条件选择 · IF / ELSE</p><p class=\"small\">90 minutes · Predict the condition, follow the branch.</p>",
+    "note": "接续上一课布尔表达式，把true/false转化为程序执行路径。今天会独立编写一个学习时长反馈程序，尚不使用循环或嵌套选择。开场让学生想到一个需要依据条件决定行为的应用，而非列举复杂编程语法。",
+    "kind": "dark"
+  },
+  {
+    "title": "Retrieve the condition and the value",
+    "tag": "RETRIEVAL · ORIGINAL",
+    "time": "2–6 min",
+    "code": "AAP-2.E / F · AAP-1.B",
+    "html": "<p>Assume <span class=\"mono\">minutes = 30</span>.</p><ol><li>Evaluate <span class=\"mono\">minutes >= 30</span>.</li><li>Evaluate <span class=\"mono\">minutes > 30</span>.</li><li>After <span class=\"mono\">saved ← minutes</span>, changing minutes to 12 changes saved too: true or false?</li></ol><details><summary>Show answer</summary><div class=\"answer\">true; false; false. The boundary matters, and assignment copied the current value.</div></details>",
+    "note": "一分钟独立判断，再让学生解释>=与>在等于30时的差异。第三项回收变量复制，避免后面把保存在变量里的布尔值当成自动更新的公式。若前两项错误，画30点并标明是否包含边界，不在此重新讲完整真值表。"
+  },
+  {
+    "title": "Learning goals",
+    "tag": "GOALS",
+    "time": "6–8 min",
+    "code": "AAP-2.G / H · Selection",
+    "html": "<ol><li>Use a Boolean condition to choose code.</li><li>Trace IF, IF / ELSE and consecutive IF statements.</li><li>Explain when a condition is evaluated.</li><li>Build, test and modify a useful selection program.</li></ol><p class=\"callout\">Success means explaining the path and the resulting output.</p>",
+    "note": "请学生把最不确定的一项目标圈出来。强调控制流判断发生在程序运行到条件位置时，不是根据整段程序执行完的最终变量倒推。所有练习使用允许的有效输入，异常输入处理留到需要它的后续任务。"
+  },
+  {
+    "title": "A condition chooses a route",
+    "tag": "SELECTION · 选择",
+    "time": "8–12 min",
+    "code": "AAP-2.G.1",
+    "html": "<figure class=\"visual\" tabindex=\"0\"><svg xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Test minutes &gt;= 30 ?. True: Show Goal met. False: Show Keep going. Continue after the selection\" viewBox=\"0 0 1200 312\" style=\"font-family:Arial,sans-serif\"><path d=\"M600 10L860 75L600 140L340 75Z\" fill=\"#d3ad62\" stroke=\"#193148\" stroke-width=\"2\"/><text x=\"600\" y=\"85\" text-anchor=\"middle\" font-size=\"29\" font-weight=\"700\" fill=\"#193148\">minutes &gt;= 30 ?</text><path d=\"M340 75H225V165M860 75H975V165\" fill=\"none\" stroke=\"#225a83\" stroke-width=\"3\"/><text x=\"270\" y=\"55\" text-anchor=\"middle\" font-size=\"25\" font-weight=\"400\" fill=\"#28766f\">true</text><text x=\"930\" y=\"55\" text-anchor=\"middle\" font-size=\"25\" font-weight=\"400\" fill=\"#225a83\">false</text><rect x=\"25\" y=\"167\" width=\"400\" height=\"60\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#28766f\" stroke-width=\"2\"/><text x=\"225\" y=\"206\" text-anchor=\"middle\" font-size=\"27\" font-weight=\"700\" fill=\"#28766f\">Show Goal met</text><rect x=\"775\" y=\"167\" width=\"400\" height=\"60\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"975\" y=\"206\" text-anchor=\"middle\" font-size=\"27\" font-weight=\"700\" fill=\"#225a83\">Show Keep going</text><path d=\"M225 229V257H975V229\" fill=\"none\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"600\" y=\"293\" text-anchor=\"middle\" font-size=\"26\" font-weight=\"400\" fill=\"#193148\">Continue after the selection</text></svg></figure><p class=\"small\">Selection executes code according to whether a condition is true or false.</p>",
+    "note": "从菱形条件沿带true或false的路径读到操作，再回到共同后续。先用自然语言描述，无需马上背语法。图中每次只能通过其中一条路径，合流表示分支完成后还会继续执行，不代表另一分支也跟着运行。"
+  },
+  {
+    "title": "The shape of IF / ELSE",
+    "tag": "READ THE BLOCKS",
+    "time": "12–16 min",
+    "code": "AAP-2.H.1 / H.3",
+    "html": "<div class=\"visual-row\"><pre class=\"code\" style=\"font-size:25px;line-height:1.25;padding:16px;margin:12px 0\">IF(condition)\n{\n  first block\n}\nELSE\n{\n  second block\n}</pre><p><strong>True:</strong> run the first block.</p><p><strong>False:</strong> run the ELSE block.</p><p class=\"small\">Braces mark each block. Indentation makes the grouping visible.</p></div>",
+    "note": "这里first block和second block是语法说明占位文字，不能直接复制当可运行语句。逐个指出括号是布尔表达式，大括号包住要执行的语句。不要说ELSE会重新求一次相反条件；它依据同一次IF判断选择另一路径。"
+  },
+  {
+    "title": "Trace a true and a false case",
+    "tag": "WORKED EXAMPLE",
+    "time": "16–20 min",
+    "code": "AAP-2.H.b",
+    "html": "<div class=\"visual-row\"><pre class=\"code\" style=\"font-size:25px;line-height:1.25;padding:16px;margin:12px 0\">minutes ← INPUT()\nIF(minutes &gt;= 30)\n{\n  DISPLAY(&quot;Goal met&quot;)\n}\nELSE\n{\n  DISPLAY(&quot;Keep going&quot;)\n}</pre><p>Input <strong>35</strong>: condition is true.</p><p>Input <strong>20</strong>: condition is false.</p><details><summary>Show answer</summary><div class=\"answer\">35 → <strong>Goal met</strong>.<br>20 → <strong>Keep going</strong>. Each run displays one message.</div></details></div>",
+    "note": "先遮住输出，让两组学生分别代入35和20。代码中的字符串需要双引号，INPUT得到数字而不是文字。两次测试是两次独立运行；本程序只有一次INPUT，不能以为它会依次处理整个队列。"
+  },
+  {
+    "title": "A condition is a snapshot",
+    "tag": "CURRENT STATE",
+    "time": "20–24 min",
+    "code": "AAP-2.H.3 · AAP-1.B",
+    "html": "<p>Evaluate the condition when execution reaches the IF.</p><div class=\"visual-row\"><div><pre class=\"code\" style=\"font-size:24px;line-height:1.25;padding:16px;margin:12px 0\">IF(points &gt;= 10)\n{\n  points ← 0\n}\nELSE\n{\n  points ← 99\n}</pre></div><figure class=\"visual\" tabindex=\"0\" style=\"margin:0\"><svg viewBox=\"0 0 600 260\" role=\"img\" aria-label=\"The condition is checked using points equal to 10. The selected block may then change the variable.\" xmlns=\"http://www.w3.org/2000/svg\"><g font-family=\"Arial,sans-serif\" fill=\"#193148\"><rect x=\"20\" y=\"0\" width=\"560\" height=\"70\" rx=\"9\" fill=\"#eef3f6\" stroke=\"#225a83\"/><text x=\"300\" y=\"29\" text-anchor=\"middle\" font-size=\"26\" font-weight=\"700\">Before test</text><text x=\"300\" y=\"56\" text-anchor=\"middle\" font-size=\"24\">points = 10</text><path d=\"M300 72V86m-5 -6 5 6 5-6\" fill=\"none\" stroke=\"#225a83\" stroke-width=\"2\"/><rect x=\"20\" y=\"90\" width=\"560\" height=\"70\" rx=\"9\" fill=\"#eef3f6\" stroke=\"#225a83\"/><text x=\"300\" y=\"119\" text-anchor=\"middle\" font-size=\"26\" font-weight=\"700\">Test now</text><text x=\"300\" y=\"146\" text-anchor=\"middle\" font-size=\"24\">points &gt;= 10</text><path d=\"M300 162V176m-5 -6 5 6 5-6\" fill=\"none\" stroke=\"#225a83\" stroke-width=\"2\"/><rect x=\"20\" y=\"180\" width=\"560\" height=\"70\" rx=\"9\" fill=\"#eef3f6\" stroke=\"#225a83\"/><text x=\"300\" y=\"209\" text-anchor=\"middle\" font-size=\"26\" font-weight=\"700\">Chosen block</text><text x=\"300\" y=\"236\" text-anchor=\"middle\" font-size=\"24\">may change points</text></g></svg></figure></div><details><summary>Show answer</summary><div class=\"answer\">The final value is <strong>0</strong>. Changing points inside the chosen block does not trigger ELSE.</div></details>",
+    "note": "此页是条件快照关键误区。条件先以10判断为真，所以执行赋值0；不能因为0之后小于10又补执行ELSE。若页内代码较长，先读三张状态卡再看代码。图中没有暴露最终值，让学生先作预测。"
+  },
+  {
+    "title": "IF can have no ELSE",
+    "tag": "OPTIONAL ACTION",
+    "time": "24–28 min",
+    "code": "AAP-2.H.2",
+    "html": "<figure class=\"visual\" tabindex=\"0\"><svg xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Test bonus &gt; 0 ?. True: Add the bonus. False: Skip the block. Continue after the selection\" viewBox=\"0 0 1200 312\" style=\"font-family:Arial,sans-serif\"><path d=\"M600 10L860 75L600 140L340 75Z\" fill=\"#d3ad62\" stroke=\"#193148\" stroke-width=\"2\"/><text x=\"600\" y=\"85\" text-anchor=\"middle\" font-size=\"29\" font-weight=\"700\" fill=\"#193148\">bonus &gt; 0 ?</text><path d=\"M340 75H225V165M860 75H975V165\" fill=\"none\" stroke=\"#225a83\" stroke-width=\"3\"/><text x=\"270\" y=\"55\" text-anchor=\"middle\" font-size=\"25\" font-weight=\"400\" fill=\"#28766f\">true</text><text x=\"930\" y=\"55\" text-anchor=\"middle\" font-size=\"25\" font-weight=\"400\" fill=\"#225a83\">false</text><rect x=\"25\" y=\"167\" width=\"400\" height=\"60\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#28766f\" stroke-width=\"2\"/><text x=\"225\" y=\"206\" text-anchor=\"middle\" font-size=\"27\" font-weight=\"700\" fill=\"#28766f\">Add the bonus</text><rect x=\"775\" y=\"167\" width=\"400\" height=\"60\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"975\" y=\"206\" text-anchor=\"middle\" font-size=\"27\" font-weight=\"700\" fill=\"#225a83\">Skip the block</text><path d=\"M225 229V257H975V229\" fill=\"none\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"600\" y=\"293\" text-anchor=\"middle\" font-size=\"26\" font-weight=\"400\" fill=\"#193148\">Continue after the selection</text></svg></figure><p class=\"callout\">When the condition is false, continue after the IF.</p><p class=\"small\">Skipping a block does not terminate the program.</p>",
+    "note": "使用可选奖励说明没有ELSE的选择。假条件使IF体完全跳过，但后面的无条件语句仍执行。不要用什么也不发生这类含混表述让学生以为程序结束；明确“不执行这个块”。"
+  },
+  {
+    "title": "Predict: a skipped block",
+    "tag": "ORIGINAL PRACTICE",
+    "time": "28–32 min",
+    "code": "AAP-2.H.b",
+    "html": "<div class=\"visual-row\"><pre class=\"code\" style=\"font-size:25px;line-height:1.25;padding:16px;margin:12px 0\">score ← 8\nIF(score &gt;= 10)\n{\n  score ← score + 5\n}\nDISPLAY(score)</pre><p>Which statements execute?</p><details><summary>Show answer</summary><div class=\"answer\">The condition is false. Skip the update, then display <strong>8</strong>.</div></details></div>",
+    "note": "先用笔划出跳过的两侧大括号，保留DISPLAY作为下一条可执行语句。请学生说明为何不是13，也不是没有输出。检查其是否把题中>=边界与实际输入8分开，后续再测试10。"
+  },
+  {
+    "title": "Two IF statements mean two tests",
+    "tag": "CONSECUTIVE SELECTION",
+    "time": "32–36 min",
+    "code": "AAP-2.H.1",
+    "html": "<figure class=\"visual\" tabindex=\"0\"><svg xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"IF 1: test current value → Possible update: state may change → IF 2: test the new state\" viewBox=\"0 0 1200 190\" style=\"font-family:Arial,sans-serif\"><rect x=\"20.0\" y=\"20\" width=\"350.0\" height=\"150\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"195.0\" y=\"69\" text-anchor=\"middle\" font-size=\"29\" font-weight=\"700\" fill=\"#193148\">IF 1</text><text x=\"195.0\" y=\"122\" text-anchor=\"middle\" font-size=\"26\" font-weight=\"400\" fill=\"#193148\">test current value</text><path d=\"M378.0 97H404.0\" fill=\"none\" stroke=\"#225a83\" stroke-width=\"3\"/><path d=\"M404.0 91L416.0 97L404.0 103Z\" fill=\"#225a83\"/><rect x=\"425.0\" y=\"20\" width=\"350.0\" height=\"150\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"600.0\" y=\"69\" text-anchor=\"middle\" font-size=\"29\" font-weight=\"700\" fill=\"#193148\">Possible update</text><text x=\"600.0\" y=\"122\" text-anchor=\"middle\" font-size=\"26\" font-weight=\"400\" fill=\"#193148\">state may change</text><path d=\"M783.0 97H809.0\" fill=\"none\" stroke=\"#225a83\" stroke-width=\"3\"/><path d=\"M809.0 91L821.0 97L809.0 103Z\" fill=\"#225a83\"/><rect x=\"830.0\" y=\"20\" width=\"350.0\" height=\"150\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#28766f\" stroke-width=\"2\"/><text x=\"1005.0\" y=\"69\" text-anchor=\"middle\" font-size=\"29\" font-weight=\"700\" fill=\"#193148\">IF 2</text><text x=\"1005.0\" y=\"122\" text-anchor=\"middle\" font-size=\"26\" font-weight=\"400\" fill=\"#193148\">test the new state</text></svg></figure><p>Both blocks may execute, one may execute, or neither may execute.</p><p class=\"callout\">Each separate IF evaluates its own condition when reached.</p>",
+    "note": "说明多个IF是连续程序语句，不会自动互斥。第一个条件是否真不阻止第二个条件被检查，而且第二个条件读取当时的当前值。这里不讨论短路求值，也不将两个IF混成嵌套结构。"
+  },
+  {
+    "title": "Compare independent and exclusive decisions",
+    "tag": "PREDICT TWO VERSIONS",
+    "time": "36–40 min",
+    "code": "AAP-2.H.b · AAP-2.L.2",
+    "html": "<div class=\"visual-row\"><pre class=\"code\" style=\"font-size:24px;line-height:1.25;padding:16px;margin:12px 0\">score ← 12\nIF(score &gt;= 10)\n{\n  score ← 5\n}\nIF(score &lt; 10)\n{\n  score ← score + 2\n}</pre><pre class=\"code\" style=\"font-size:24px;line-height:1.25;padding:16px;margin:12px 0\">score ← 12\nIF(score &gt;= 10)\n{\n  score ← 5\n}\nELSE\n{\n  score ← score + 2\n}</pre></div><details><summary>Show answer</summary><div class=\"answer\">Left: <strong>7</strong>, because the second test sees 5.<br>Right: <strong>5</strong>, because the ELSE block is not chosen.</div></details>",
+    "note": "两份代码只在中部结构不同。先让学生独立追踪再同桌解释：左边第二个IF基于新值5而为真，右边ELSE依赖原来那次真条件而跳过。两页程序没有DISPLAY，问题是最终变量值，不能说它们已经输出7或5。"
+  },
+  {
+    "title": "After the branch, the program continues",
+    "tag": "MERGING PATHS",
+    "time": "40–44 min",
+    "code": "AAP-2.H.3 · AAP-2.B.6",
+    "html": "<figure class=\"visual\" tabindex=\"0\"><svg xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Test ready = true ?. True: DISPLAY(&quot;Ready&quot;). False: DISPLAY(&quot;Wait&quot;). Then DISPLAY(&quot;Done&quot;) runs\" viewBox=\"0 0 1200 312\" style=\"font-family:Arial,sans-serif\"><path d=\"M600 10L860 75L600 140L340 75Z\" fill=\"#d3ad62\" stroke=\"#193148\" stroke-width=\"2\"/><text x=\"600\" y=\"85\" text-anchor=\"middle\" font-size=\"29\" font-weight=\"700\" fill=\"#193148\">ready = true ?</text><path d=\"M340 75H225V165M860 75H975V165\" fill=\"none\" stroke=\"#225a83\" stroke-width=\"3\"/><text x=\"270\" y=\"55\" text-anchor=\"middle\" font-size=\"25\" font-weight=\"400\" fill=\"#28766f\">true</text><text x=\"930\" y=\"55\" text-anchor=\"middle\" font-size=\"25\" font-weight=\"400\" fill=\"#225a83\">false</text><rect x=\"25\" y=\"167\" width=\"400\" height=\"60\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#28766f\" stroke-width=\"2\"/><text x=\"225\" y=\"206\" text-anchor=\"middle\" font-size=\"27\" font-weight=\"700\" fill=\"#28766f\">DISPLAY(&quot;Ready&quot;)</text><rect x=\"775\" y=\"167\" width=\"400\" height=\"60\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"975\" y=\"206\" text-anchor=\"middle\" font-size=\"27\" font-weight=\"700\" fill=\"#225a83\">DISPLAY(&quot;Wait&quot;)</text><path d=\"M225 229V257H975V229\" fill=\"none\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"600\" y=\"293\" text-anchor=\"middle\" font-size=\"26\" font-weight=\"400\" fill=\"#193148\">Then DISPLAY(&quot;Done&quot;) runs</text></svg></figure><p class=\"small\">A statement outside both blocks runs after either branch.</p>",
+    "note": "让学生从两条路径分别往下走，看到共同的Done。如果在每个分支内部重复写Done也能实现相同输出，但本页展示共同步骤放在合流之后更清楚。括号和大括号的位置比视觉上的空白行更能确定所属结构。"
+  },
+  {
+    "title": "A Boolean variable keeps its assigned value",
+    "tag": "ORIGINAL TRACE",
+    "time": "44–48 min",
+    "code": "AAP-1.B · AAP-2.H",
+    "html": "<div class=\"visual-row\"><pre class=\"code\" style=\"font-size:24px;line-height:1.25;padding:16px;margin:12px 0\">minutes ← 35\nmet ← minutes &gt;= 30\nminutes ← 10\nIF(met)\n{\n  DISPLAY(&quot;Goal met&quot;)\n}</pre><p>Does <span class=\"mono\">met</span> change automatically?</p><details><summary>Show answer</summary><div class=\"answer\">No. It still holds <strong>true</strong>, so the message is displayed. Re-evaluate the expression only if a new assignment asks for it.</div></details></div>",
+    "note": "连接L03赋值复制和L10布尔值。met保存true这一值，不保存会自动联动的计算规则。后续如果想更新判断，应明确再写met←minutes>=30。不得误说IF直接读取了最后的minutes值；本例条件是met。"
+  },
+  {
+    "title": "Boundary values reveal the exact rule",
+    "tag": "PLAN YOUR TESTS",
+    "time": "48–52 min",
+    "code": "CRD-2.J.1–3",
+    "html": "<figure class=\"visual\" tabindex=\"0\"><svg xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Requirement: goal met when minutes &gt;= 30; 29: below, 30: at boundary, 31: above\" viewBox=\"0 0 1200 193\" style=\"font-family:Arial,sans-serif\"><text x=\"600\" y=\"35\" text-anchor=\"middle\" font-size=\"27\" font-weight=\"700\" fill=\"#193148\">Requirement: goal met when minutes &gt;= 30</text><rect x=\"50.0\" y=\"62\" width=\"351.6666666666667\" height=\"112\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"225.83333333333334\" y=\"108\" text-anchor=\"middle\" font-size=\"35\" font-weight=\"700\" fill=\"#193148\">29</text><text x=\"225.83333333333334\" y=\"151\" text-anchor=\"middle\" font-size=\"25\" font-weight=\"400\" fill=\"#193148\">below</text><rect x=\"416.6666666666667\" y=\"62\" width=\"351.6666666666667\" height=\"112\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#28766f\" stroke-width=\"2\"/><text x=\"592.5\" y=\"108\" text-anchor=\"middle\" font-size=\"35\" font-weight=\"700\" fill=\"#193148\">30</text><text x=\"592.5\" y=\"151\" text-anchor=\"middle\" font-size=\"25\" font-weight=\"400\" fill=\"#193148\">at boundary</text><rect x=\"783.3333333333334\" y=\"62\" width=\"351.6666666666667\" height=\"112\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"959.1666666666667\" y=\"108\" text-anchor=\"middle\" font-size=\"35\" font-weight=\"700\" fill=\"#193148\">31</text><text x=\"959.1666666666667\" y=\"151\" text-anchor=\"middle\" font-size=\"25\" font-weight=\"400\" fill=\"#193148\">above</text></svg></figure><p>Predict the message for all three values before running.</p><details><summary>Show answer</summary><div class=\"answer\">29 → Keep going; 30 → Goal met; 31 → Goal met.</div></details>",
+    "note": "三点跨边界测试揭露>和>=的区别。30是最有诊断力的值，但29和31也检查两侧路径。提醒学生输入范围为整数0到180，边界测试是合法数据，不把它误称为异常输入。"
+  },
+  {
+    "title": "Design a useful feedback program",
+    "tag": "DESIGN BEFORE CODE",
+    "time": "52–55 min",
+    "code": "CRD-2.A / C / D · AAP-2.G",
+    "html": "<figure class=\"visual\" tabindex=\"0\"><svg xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Input: minutes: 0–180 → Selection: goal at 30 → Output: one feedback message\" viewBox=\"0 0 1200 190\" style=\"font-family:Arial,sans-serif\"><rect x=\"20.0\" y=\"20\" width=\"350.0\" height=\"150\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"195.0\" y=\"69\" text-anchor=\"middle\" font-size=\"29\" font-weight=\"700\" fill=\"#193148\">Input</text><text x=\"195.0\" y=\"122\" text-anchor=\"middle\" font-size=\"26\" font-weight=\"400\" fill=\"#193148\">minutes: 0–180</text><path d=\"M378.0 97H404.0\" fill=\"none\" stroke=\"#225a83\" stroke-width=\"3\"/><path d=\"M404.0 91L416.0 97L404.0 103Z\" fill=\"#225a83\"/><rect x=\"425.0\" y=\"20\" width=\"350.0\" height=\"150\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"600.0\" y=\"69\" text-anchor=\"middle\" font-size=\"29\" font-weight=\"700\" fill=\"#193148\">Selection</text><text x=\"600.0\" y=\"122\" text-anchor=\"middle\" font-size=\"26\" font-weight=\"400\" fill=\"#193148\">goal at 30</text><path d=\"M783.0 97H809.0\" fill=\"none\" stroke=\"#225a83\" stroke-width=\"3\"/><path d=\"M809.0 91L821.0 97L809.0 103Z\" fill=\"#225a83\"/><rect x=\"830.0\" y=\"20\" width=\"350.0\" height=\"150\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#28766f\" stroke-width=\"2\"/><text x=\"1005.0\" y=\"69\" text-anchor=\"middle\" font-size=\"29\" font-weight=\"700\" fill=\"#193148\">Output</text><text x=\"1005.0\" y=\"122\" text-anchor=\"middle\" font-size=\"26\" font-weight=\"400\" fill=\"#193148\">one feedback message</text></svg></figure><p>One run handles one session. The input is a valid whole number.</p><p class=\"small\">Record the requirement in words before choosing <span class=\"mono\">>=</span> or <span class=\"mono\">></span>.</p>",
+    "note": "本课小程序为以后多次学习记录项目建立组件，并非正式Create作品。先确认目标30分钟以及一次运行只看一节学习时长。合法性检验不在本课范围，代码不应宣称已经阻止负数、小数或超过180。"
+  },
+  {
+    "title": "Lab: predict and set up",
+    "tag": "PROGRAMMING · 55–60",
+    "time": "55–60 min",
+    "code": "Practical coding · AAP-2.H.a",
+    "html": "<p class=\"lead\"><a href=\"Chapter_3_Programming_Lab.html#selection\" target=\"_blank\" rel=\"noopener\">Open the selection lab ↗</a></p><ol><li>Write expected messages for 20, 30 and 45.</li><li>Place one numeric input on one queue line.</li><li>Write each statement and brace on its own line.</li></ol><p class=\"small\">Input queue example: <span class=\"mono\">30</span>. Reset before the next independent run.</p>",
+    "note": "进入25分钟真实编程，不把时间全部花在看教师演示。给一人键盘操作、一人核对需求，两分钟后交换角色。输入为JSON数字30，不写带引号的字符串30；本例只需要一条队列数据。记录预期后才运行。"
+  },
+  {
+    "title": "Lab: build the two branches",
+    "tag": "PROGRAMMING · 60–66",
+    "time": "60–66 min",
+    "code": "AAP-2.H.a",
+    "html": "<p>Build the Study Goal feedback program. Use a meaningful variable and one IF / ELSE.</p><div class=\"visual-row\"><ol><li>Read the session minutes.</li><li>Display Goal met at 30 or above.</li><li>Otherwise display Keep going.</li></ol><details><summary>Show one solution after building</summary><div class=\"answer\"><pre class=\"code\" style=\"font-size:24px;line-height:1.25;padding:16px;margin:12px 0\">minutes ← INPUT()\nIF(minutes &gt;= 30)\n{\n  DISPLAY(&quot;Goal met&quot;)\n}\nELSE\n{\n  DISPLAY(&quot;Keep going&quot;)\n}</pre></div></details></div>",
+    "note": "先独立编码四分钟，再用余下两分钟与同伴比较。模型答案只在学生完成尝试后展开，错误时先读报错行并核对引号和大括号。有效等价实现可接受，包括先存条件到布尔变量，但需在读取输入后求值。"
+  },
+  {
+    "title": "Lab: test and explain the selected path",
+    "tag": "PROGRAMMING · 66–71",
+    "time": "66–71 min",
+    "code": "CRD-2.J · Skill 4.C",
+    "html": "<figure class=\"visual\" tabindex=\"0\"><svg xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Compare expected and actual output; 20: false path, 30: boundary, 45: true path\" viewBox=\"0 0 1200 193\" style=\"font-family:Arial,sans-serif\"><text x=\"600\" y=\"35\" text-anchor=\"middle\" font-size=\"27\" font-weight=\"700\" fill=\"#193148\">Compare expected and actual output</text><rect x=\"50.0\" y=\"62\" width=\"351.6666666666667\" height=\"112\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"225.83333333333334\" y=\"108\" text-anchor=\"middle\" font-size=\"35\" font-weight=\"700\" fill=\"#193148\">20</text><text x=\"225.83333333333334\" y=\"151\" text-anchor=\"middle\" font-size=\"25\" font-weight=\"400\" fill=\"#193148\">false path</text><rect x=\"416.6666666666667\" y=\"62\" width=\"351.6666666666667\" height=\"112\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#28766f\" stroke-width=\"2\"/><text x=\"592.5\" y=\"108\" text-anchor=\"middle\" font-size=\"35\" font-weight=\"700\" fill=\"#193148\">30</text><text x=\"592.5\" y=\"151\" text-anchor=\"middle\" font-size=\"25\" font-weight=\"400\" fill=\"#193148\">boundary</text><rect x=\"783.3333333333334\" y=\"62\" width=\"351.6666666666667\" height=\"112\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"959.1666666666667\" y=\"108\" text-anchor=\"middle\" font-size=\"35\" font-weight=\"700\" fill=\"#193148\">45</text><text x=\"959.1666666666667\" y=\"151\" text-anchor=\"middle\" font-size=\"25\" font-weight=\"400\" fill=\"#193148\">true path</text></svg></figure><p>For a mismatch, trace the first condition before editing.</p><details><summary>Show answer</summary><div class=\"answer\">20 → Keep going; 30 and 45 → Goal met. Exactly one feedback message appears per run.</div></details>",
+    "note": "要求三行测试日志同时含输入、预期、实际、判断结果。若两个消息都出现，首先检查是否用了两个无条件DISPLAY或块位置错；若30错，检查关系运算符。不要随机修改代码碰运气。"
+  },
+  {
+    "title": "Lab: change the goal to 40",
+    "tag": "PROGRAMMING · 71–76",
+    "time": "71–76 min",
+    "code": "AAP-2.M.1 · CRD-2.J",
+    "html": "<figure class=\"visual\" tabindex=\"0\"><svg xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"New requirement: at least 40 minutes; 39: below new goal, 40: at new goal, 41: above new goal\" viewBox=\"0 0 1200 193\" style=\"font-family:Arial,sans-serif\"><text x=\"600\" y=\"35\" text-anchor=\"middle\" font-size=\"27\" font-weight=\"700\" fill=\"#193148\">New requirement: at least 40 minutes</text><rect x=\"50.0\" y=\"62\" width=\"351.6666666666667\" height=\"112\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"225.83333333333334\" y=\"108\" text-anchor=\"middle\" font-size=\"35\" font-weight=\"700\" fill=\"#193148\">39</text><text x=\"225.83333333333334\" y=\"151\" text-anchor=\"middle\" font-size=\"25\" font-weight=\"400\" fill=\"#193148\">below new goal</text><rect x=\"416.6666666666667\" y=\"62\" width=\"351.6666666666667\" height=\"112\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#28766f\" stroke-width=\"2\"/><text x=\"592.5\" y=\"108\" text-anchor=\"middle\" font-size=\"35\" font-weight=\"700\" fill=\"#193148\">40</text><text x=\"592.5\" y=\"151\" text-anchor=\"middle\" font-size=\"25\" font-weight=\"400\" fill=\"#193148\">at new goal</text><rect x=\"783.3333333333334\" y=\"62\" width=\"351.6666666666667\" height=\"112\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"959.1666666666667\" y=\"108\" text-anchor=\"middle\" font-size=\"35\" font-weight=\"700\" fill=\"#193148\">41</text><text x=\"959.1666666666667\" y=\"151\" text-anchor=\"middle\" font-size=\"25\" font-weight=\"400\" fill=\"#193148\">above new goal</text></svg></figure><p>Modify the condition, keep the two messages, and retest.</p><details><summary>Show answer</summary><div class=\"answer\">Use <span class=\"mono\">minutes >= 40</span>. 39 → Keep going; 40 and 41 → Goal met.</div></details>",
+    "note": "需求变化只调整目标，不要求重写整个程序。学生必须重新设计边界测试，不能只重复20和45然后声称全部正确。要求指出哪条旧输入30的反馈发生变化：旧规则Goal met，新规则Keep going。"
+  },
+  {
+    "title": "Lab: review another student’s program",
+    "tag": "PROGRAMMING · 76–80",
+    "time": "76–80 min",
+    "code": "CRD-2.B / J",
+    "html": "<figure class=\"visual\" tabindex=\"0\"><svg xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Predict: choose a test → Run: compare output → Explain: cite the condition\" viewBox=\"0 0 1200 190\" style=\"font-family:Arial,sans-serif\"><rect x=\"20.0\" y=\"20\" width=\"350.0\" height=\"150\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"195.0\" y=\"69\" text-anchor=\"middle\" font-size=\"29\" font-weight=\"700\" fill=\"#193148\">Predict</text><text x=\"195.0\" y=\"122\" text-anchor=\"middle\" font-size=\"26\" font-weight=\"400\" fill=\"#193148\">choose a test</text><path d=\"M378.0 97H404.0\" fill=\"none\" stroke=\"#225a83\" stroke-width=\"3\"/><path d=\"M404.0 91L416.0 97L404.0 103Z\" fill=\"#225a83\"/><rect x=\"425.0\" y=\"20\" width=\"350.0\" height=\"150\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"600.0\" y=\"69\" text-anchor=\"middle\" font-size=\"29\" font-weight=\"700\" fill=\"#193148\">Run</text><text x=\"600.0\" y=\"122\" text-anchor=\"middle\" font-size=\"26\" font-weight=\"400\" fill=\"#193148\">compare output</text><path d=\"M783.0 97H809.0\" fill=\"none\" stroke=\"#225a83\" stroke-width=\"3\"/><path d=\"M809.0 91L821.0 97L809.0 103Z\" fill=\"#225a83\"/><rect x=\"830.0\" y=\"20\" width=\"350.0\" height=\"150\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#28766f\" stroke-width=\"2\"/><text x=\"1005.0\" y=\"69\" text-anchor=\"middle\" font-size=\"29\" font-weight=\"700\" fill=\"#193148\">Explain</text><text x=\"1005.0\" y=\"122\" text-anchor=\"middle\" font-size=\"26\" font-weight=\"400\" fill=\"#193148\">cite the condition</text></svg></figure><p>Submit code, three test rows, and one sentence explaining the 40-minute boundary.</p><p class=\"small\">Partner check: can exactly one feedback message appear for every valid input?</p>",
+    "note": "四分钟结束环节应留下可审查的程序和证据。互评者提出具体测试，而不是只说看起来不错。教师抽看一个边界输入与一句英文解释，确认真实修改已发生。保持课堂项目与正式Create的指导规则区别。"
+  },
+  {
+    "title": "Which two statements are correct?",
+    "tag": "AP-STYLE · SELECT TWO",
+    "time": "80–83 min",
+    "code": "AAP-2.H",
+    "html": "<ol><li>A. IF / ELSE runs exactly one of its two blocks.</li><li>B. ELSE rechecks the condition after the IF block changes a variable.</li><li>C. A false IF without ELSE stops the whole program.</li><li>D. Two separate IF statements can both execute their blocks.</li></ol><details><summary>Show answer</summary><div class=\"answer\"><strong>A and D.</strong> Branch choice belongs to that IF evaluation; skipping a block does not stop later code.</div></details>",
+    "note": "一分钟选两项，一分钟解释错项。A按程序运行正常且到达该IF的前提理解，避免讨论异常终止偏离目标。B对应快照误区，C对应跳过块与结束程序混淆。原创题，不标注历年题。"
+  },
+  {
+    "title": "Homework and the next lesson",
+    "tag": "CONSOLIDATE",
+    "time": "83–85 min",
+    "code": "AAP-2.G / H · Selection",
+    "html": "<p class=\"lead\">12 original questions · 30 classroom marks · about 40 minutes.</p><ol><li>Show the condition value and the executed branch.</li><li>Keep assignments, comparisons and outputs distinct.</li><li>Select exactly two answers in Q5.</li></ol><p class=\"callout\">Next: one decision can contain another decision.</p>",
+    "note": "布置纸笔追踪后再使用实验室核对。六道书面题分别检验分支、边界、快照和迁移编程；教师按四点细则给分。下课前保留本课反馈程序，后续循环课会复用判断思想，但今天不加入重复输入。"
+  },
+  {
+    "title": "Exit ticket: follow one path",
+    "tag": "EXIT · ORIGINAL",
+    "time": "85–90 min",
+    "code": "AAP-2.G / H · Selection",
+    "html": "<ol><li>At minutes = 30, is minutes >= 30 true?</li><li>A false IF has no ELSE. Does the program stop?</li><li>A chosen IF block changes its condition’s variable. Does ELSE then run?</li><li>Can two separate IF blocks both run?</li></ol><details><summary>Show answer</summary><div class=\"answer\">1. Yes. 2. No: skip the block and continue. 3. No. 4. Yes, if each condition is true when reached.</div></details>",
+    "note": "三分钟独立作答，一分钟核对，一分钟收集。每题一分，建议至少3分且第3项正确后继续；这是教师诊断。若第3项错误用points10变0的示例重追，若第4项错误再比较连续IF和IFELSE，不加新语法。"
+  }
+]

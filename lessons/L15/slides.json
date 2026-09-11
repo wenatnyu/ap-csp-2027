@@ -1,0 +1,187 @@
+[
+  {
+    "title": "Randomness & Simulation",
+    "tag": "LESSON 15",
+    "code": "Chapter 3 · Algorithms and programming",
+    "html": "<p class=\"lead\">AP Computer Science Principles</p><h1>Randomness<br>&amp; Simulation</h1><p class=\"zh\">随机数 · 概率模型 · 模拟局限</p><p class=\"small\">90 minutes · Explain what a model can tell us</p>",
+    "note": "承接循环与条件判断，今天把重复试验的变化交给RANDOM。重点不是猜下一次，而是确定可能结果、模型如何映射现实、有限结果能支持什么。",
+    "kind": "dark",
+    "time": "0–2 min"
+  },
+  {
+    "title": "Retrieve iteration and selection",
+    "tag": "RETRIEVAL · L11/L13",
+    "code": "AAP-2.E/H/K",
+    "html": "<p>A loop runs 4 times. Each run adds 1 to count, starting at 0. What is the final count?</p><p>If roll = 4, is roll ≤ 2 true or false?</p><details><summary>Show answer</summary><div class=\"answer\">count = 4. The comparison 4 ≤ 2 is false.</div></details>",
+    "note": "快速检查计数变量初始化在循环外、比较表达式结果为真假。后续将计数更新放进IF，届时循环次数和成功次数不再总相同。",
+    "time": "2–6 min"
+  },
+  {
+    "title": "What counts as a defensible simulation",
+    "tag": "LEARNING TARGETS",
+    "code": "AAP-3.E/F",
+    "html": "<ul><li>Define possible outcomes and a mapping.</li><li>Repeat trials and record observed results.</li><li>Explain assumptions and limits before drawing a conclusion.</li></ul><p class=\"small\">Evidence: a probability calculation and a short simulation report.</p>",
+    "note": "声明将使用公平硬币、骰子和虚构排队模型，所有观察数若来自给定例子均标示example，而不是伪造真实实验。学生实验记录自己运行的结果。",
+    "time": "6–8 min"
+  },
+  {
+    "title": "RANDOM includes both endpoints",
+    "tag": "CONCEPT",
+    "code": "AAP-3.E.1",
+    "html": "<figure class=\"visual\" tabindex=\"0\" role=\"group\" aria-label=\"RANDOM(2,5) has four equally likely integer results, including both endpoints.\"><svg xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"RANDOM(2,5) has four equally likely integer results, including both endpoints.\" viewBox=\"0 0 1200 210\" style=\"font-family:Arial,sans-serif\"><rect x=\"315.0\" y=\"40\" width=\"135\" height=\"95\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"382.5\" y=\"101\" font-size=\"35\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"700\">2</text><rect x=\"460.0\" y=\"40\" width=\"135\" height=\"95\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"527.5\" y=\"101\" font-size=\"35\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"700\">3</text><rect x=\"605.0\" y=\"40\" width=\"135\" height=\"95\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"672.5\" y=\"101\" font-size=\"35\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"700\">4</text><rect x=\"750.0\" y=\"40\" width=\"135\" height=\"95\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"817.5\" y=\"101\" font-size=\"35\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"700\">5</text><text x=\"600\" y=\"180\" font-size=\"26\" fill=\"#647381\" text-anchor=\"middle\" font-weight=\"400\">RANDOM(2, 5): 4 possible integers</text></svg></figure><p class=\"visual-note\">Each value has probability 1/4. A value such as 2.5 is impossible.</p>",
+    "note": "官方AAP-3.E.1明确整数、包含a和b、每个结果等可能。四格宽度相同表示概率相同，不表示调用会按顺序轮换。通用计数b−a+1适用于本课a≤b的整数范围。",
+    "time": "8–12 min"
+  },
+  {
+    "title": "Count the outcomes before calculating",
+    "tag": "PREDICT",
+    "code": "AAP-3.E",
+    "html": "<p>A program calls RANDOM(3, 7).</p><p>List all possible values. What is the probability of an even result?</p><details><summary>Show answer</summary><div class=\"answer\">Possible values: 3, 4, 5, 6, 7. Two of five are even, so the probability is 2/5.</div></details>",
+    "note": "列出范围有助于避免7−3=4漏端点。偶数为4与6，不要因为奇偶两类就断言各一半；分类后的概率取决于每类包含的等可能整数个数。",
+    "time": "12–16 min"
+  },
+  {
+    "title": "New calls can repeat old values",
+    "tag": "CONCEPT",
+    "code": "AAP-3.E.2",
+    "html": "<figure class=\"visual\" tabindex=\"0\" role=\"group\" aria-label=\"Two separate random calls may return the same value.\"><svg xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Two separate random calls may return the same value.\" viewBox=\"0 0 1200 210\" style=\"font-family:Arial,sans-serif\"><rect x=\"10.0\" y=\"28\" width=\"368.0\" height=\"150\" rx=\"10\" fill=\"#eef3f6\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"194.0\" y=\"65\" font-size=\"29\" fill=\"#225a83\" text-anchor=\"middle\" font-weight=\"700\">Call 1</text><text x=\"194.0\" y=\"104\" font-size=\"25\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"400\">RANDOM(1, 6)</text><path d=\"M383.0 103L411.0 103\" stroke=\"#225a83\" stroke-width=\"3\" fill=\"none\"/><polygon points=\"411.0,103 399.0,97.0 399.0,109.0\" fill=\"#225a83\"/><rect x=\"416.0\" y=\"28\" width=\"368.0\" height=\"150\" rx=\"10\" fill=\"#eef3f6\" stroke=\"#28766f\" stroke-width=\"2\"/><text x=\"600.0\" y=\"65\" font-size=\"29\" fill=\"#28766f\" text-anchor=\"middle\" font-weight=\"700\">Call 2</text><text x=\"600.0\" y=\"104\" font-size=\"25\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"400\">RANDOM(1, 6)</text><path d=\"M789.0 103L817.0 103\" stroke=\"#225a83\" stroke-width=\"3\" fill=\"none\"/><polygon points=\"817.0,103 805.0,97.0 805.0,109.0\" fill=\"#225a83\"/><rect x=\"822.0\" y=\"28\" width=\"368.0\" height=\"150\" rx=\"10\" fill=\"#eef3f6\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"1006.0\" y=\"65\" font-size=\"29\" fill=\"#225a83\" text-anchor=\"middle\" font-weight=\"700\">Possible result</text><text x=\"1006.0\" y=\"104\" font-size=\"25\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"400\">4, then 4</text></svg></figure><p class=\"visual-note\">A new call draws a new result. It does not promise a different result.</p>",
+    "note": "展示4,4只是可能序列，不是实际运行日志，也不是固定预期输出。后续独立试验模型假设连续抽取互不改变范围与概率；没有无放回机制。Avoid“每次随机必须不同”。",
+    "time": "16–20 min"
+  },
+  {
+    "title": "One draw used twice is still one draw",
+    "tag": "COMPARE",
+    "code": "AAP-1.B · AAP-3.E",
+    "html": "<div class=\"columns\" style=\"gap:32px\"><div><pre class=\"code\" style=\"font-size:25px;line-height:1.22;padding:16px 20px;margin:14px 0\">r ← RANDOM(1, 6)\nDISPLAY(r)\nDISPLAY(r)</pre></div><div><pre class=\"code\" style=\"font-size:25px;line-height:1.22;padding:16px 20px;margin:14px 0\">DISPLAY(RANDOM(1, 6))\nDISPLAY(RANDOM(1, 6))</pre></div></div><p>Which version guarantees two equal displayed values?</p><details><summary>Show answer</summary><div class=\"answer\">The left version stores one result and displays it twice. The right calls RANDOM twice; values may match or differ.</div></details>",
+    "note": "把变量存储语义与随机调用次数联结，不能把每次读变量当成新抽样。此处不用两骰子复杂概率也能准确诊断。随机版本不承诺两次不同，左侧相同是逻辑保证。",
+    "time": "20–24 min"
+  },
+  {
+    "title": "A coin model maps codes to outcomes",
+    "tag": "MODEL",
+    "code": "AAP-3.E/F",
+    "html": "<figure class=\"visual\" tabindex=\"0\" role=\"group\" aria-label=\"Codes one and two map to heads and tails with equal probability.\"><svg xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Codes one and two map to heads and tails with equal probability.\" viewBox=\"0 0 1200 210\" style=\"font-family:Arial,sans-serif\"><rect x=\"10.0\" y=\"28\" width=\"368.0\" height=\"150\" rx=\"10\" fill=\"#eef3f6\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"194.0\" y=\"65\" font-size=\"29\" fill=\"#225a83\" text-anchor=\"middle\" font-weight=\"700\">Random code</text><text x=\"194.0\" y=\"104\" font-size=\"25\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"400\">RANDOM(1, 2)</text><path d=\"M383.0 103L411.0 103\" stroke=\"#225a83\" stroke-width=\"3\" fill=\"none\"/><polygon points=\"411.0,103 399.0,97.0 399.0,109.0\" fill=\"#225a83\"/><rect x=\"416.0\" y=\"28\" width=\"368.0\" height=\"150\" rx=\"10\" fill=\"#eef3f6\" stroke=\"#28766f\" stroke-width=\"2\"/><text x=\"600.0\" y=\"65\" font-size=\"29\" fill=\"#28766f\" text-anchor=\"middle\" font-weight=\"700\">Mapping</text><text x=\"600.0\" y=\"104\" font-size=\"25\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"400\">1 = Heads</text><text x=\"600.0\" y=\"137\" font-size=\"25\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"400\">2 = Tails</text><path d=\"M789.0 103L817.0 103\" stroke=\"#225a83\" stroke-width=\"3\" fill=\"none\"/><polygon points=\"817.0,103 805.0,97.0 805.0,109.0\" fill=\"#225a83\"/><rect x=\"822.0\" y=\"28\" width=\"368.0\" height=\"150\" rx=\"10\" fill=\"#eef3f6\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"1006.0\" y=\"65\" font-size=\"29\" fill=\"#225a83\" text-anchor=\"middle\" font-weight=\"700\">Model</text><text x=\"1006.0\" y=\"104\" font-size=\"25\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"400\">fair coin</text></svg></figure><p class=\"visual-note\">Assumption: each trial uses the same fair, independent coin model.</p>",
+    "note": "映射规则属于模型的选择，要先说清再运行。数字1不天然代表正面，可换映射但需一致。独立是本模型假设：上一投结果不改变下一投的1/2，不讲复杂随机数发生器内部实现。",
+    "time": "24–28 min"
+  },
+  {
+    "title": "Unequal categories need unequal counts",
+    "tag": "PROBABILITY",
+    "code": "AAP-3.E",
+    "html": "<figure class=\"visual\" tabindex=\"0\" role=\"group\" aria-label=\"For a fair die model, results one and two are a success and the other four results are not.\"><svg xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"For a fair die model, results one and two are a success and the other four results are not.\" viewBox=\"0 0 1200 210\" style=\"font-family:Arial,sans-serif\"><rect x=\"170.0\" y=\"40\" width=\"135\" height=\"95\" rx=\"10\" fill=\"#d3ad62\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"237.5\" y=\"101\" font-size=\"35\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"700\">1</text><rect x=\"315.0\" y=\"40\" width=\"135\" height=\"95\" rx=\"10\" fill=\"#d3ad62\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"382.5\" y=\"101\" font-size=\"35\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"700\">2</text><rect x=\"460.0\" y=\"40\" width=\"135\" height=\"95\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"527.5\" y=\"101\" font-size=\"35\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"700\">3</text><rect x=\"605.0\" y=\"40\" width=\"135\" height=\"95\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"672.5\" y=\"101\" font-size=\"35\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"700\">4</text><rect x=\"750.0\" y=\"40\" width=\"135\" height=\"95\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"817.5\" y=\"101\" font-size=\"35\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"700\">5</text><rect x=\"895.0\" y=\"40\" width=\"135\" height=\"95\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"962.5\" y=\"101\" font-size=\"35\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"700\">6</text><text x=\"600\" y=\"180\" font-size=\"26\" fill=\"#647381\" text-anchor=\"middle\" font-weight=\"400\">Success if roll ≤ 2</text></svg></figure><p class=\"small\">Write the theoretical probability of success.</p><details><summary>Show answer</summary><div class=\"answer\">2 favorable integers out of 6 equally likely integers: 2/6 = 1/3.</div></details>",
+    "note": "相等宽度六格基础分布，金色两格才是成功类别，避免“success/failure两类各50%”。若学生以为所有RANDOM输出都代表等可能现实类别，返回映射计数。",
+    "time": "28–32 min"
+  },
+  {
+    "title": "Theoretical probability and observed frequency",
+    "tag": "INTERPRET",
+    "code": "AAP-3.E/F",
+    "html": "<figure class=\"visual\" tabindex=\"0\" role=\"group\" aria-label=\"A fair coin model has probability one-half, while an example twenty-trial result has nine heads and observed frequency 0.45.\"><svg xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"A fair coin model has probability one-half, while an example twenty-trial result has nine heads and observed frequency 0.45.\" viewBox=\"0 0 1200 210\" style=\"font-family:Arial,sans-serif\"><rect x=\"10.0\" y=\"28\" width=\"368.0\" height=\"150\" rx=\"10\" fill=\"#eef3f6\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"194.0\" y=\"65\" font-size=\"29\" fill=\"#225a83\" text-anchor=\"middle\" font-weight=\"700\">MODEL</text><text x=\"194.0\" y=\"104\" font-size=\"25\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"400\">P(Heads) = 1/2</text><path d=\"M383.0 103L411.0 103\" stroke=\"#225a83\" stroke-width=\"3\" fill=\"none\"/><polygon points=\"411.0,103 399.0,97.0 399.0,109.0\" fill=\"#225a83\"/><rect x=\"416.0\" y=\"28\" width=\"368.0\" height=\"150\" rx=\"10\" fill=\"#eef3f6\" stroke=\"#28766f\" stroke-width=\"2\"/><text x=\"600.0\" y=\"65\" font-size=\"29\" fill=\"#28766f\" text-anchor=\"middle\" font-weight=\"700\">20 trials</text><text x=\"600.0\" y=\"104\" font-size=\"25\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"400\">example: 9 Heads</text><path d=\"M789.0 103L817.0 103\" stroke=\"#225a83\" stroke-width=\"3\" fill=\"none\"/><polygon points=\"817.0,103 805.0,97.0 805.0,109.0\" fill=\"#225a83\"/><rect x=\"822.0\" y=\"28\" width=\"368.0\" height=\"150\" rx=\"10\" fill=\"#eef3f6\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"1006.0\" y=\"65\" font-size=\"29\" fill=\"#225a83\" text-anchor=\"middle\" font-weight=\"700\">OBSERVED</text><text x=\"1006.0\" y=\"104\" font-size=\"25\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"400\">9/20 = 0.45</text></svg></figure><p class=\"visual-note\">The model probability and one finite observation need not be equal.</p>",
+    "note": "9/20明确为给定示例，非实际工具输出。术语theoretical probability与observed relative frequency各有分母含义。出现9而非10正面并不能单独证明硬币模型错。",
+    "time": "32–36 min"
+  },
+  {
+    "title": "More trials do not guarantee an exact fraction",
+    "tag": "REASON",
+    "code": "AAP-3.E/F",
+    "html": "<p>A fair coin model produces 11 Heads in 20 trials.</p><p>Must the next 20 trials contain 9 Heads to balance the total?</p><details><summary>Show answer</summary><div class=\"answer\">No. Each new trial still uses the same probability. A later batch need not “correct” an earlier imbalance.</div></details>",
+    "note": "排除赌徒谬误，不要给学生“随机会记账补回来”的感觉。可以展示长样本通常更稳定，但不能保证每次增加样本都更接近1/2或恰好一半。概率本身没有因本次11/20而变成0.55。",
+    "time": "36–40 min"
+  },
+  {
+    "title": "A repeated-trial simulation",
+    "tag": "ALGORITHM",
+    "code": "AAP-2.K · AAP-3.E/F",
+    "html": "<figure class=\"visual\" tabindex=\"0\" role=\"group\" aria-label=\"A coin simulation initializes a count, repeats one hundred draws and conditional updates, and reports the observed fraction.\"><svg xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"A coin simulation initializes a count, repeats one hundred draws and conditional updates, and reports the observed fraction.\" viewBox=\"0 0 1200 210\" style=\"font-family:Arial,sans-serif\"><rect x=\"10.0\" y=\"28\" width=\"368.0\" height=\"150\" rx=\"10\" fill=\"#eef3f6\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"194.0\" y=\"65\" font-size=\"29\" fill=\"#225a83\" text-anchor=\"middle\" font-weight=\"700\">Initialize</text><text x=\"194.0\" y=\"104\" font-size=\"25\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"400\">heads = 0</text><path d=\"M383.0 103L411.0 103\" stroke=\"#225a83\" stroke-width=\"3\" fill=\"none\"/><polygon points=\"411.0,103 399.0,97.0 399.0,109.0\" fill=\"#225a83\"/><rect x=\"416.0\" y=\"28\" width=\"368.0\" height=\"150\" rx=\"10\" fill=\"#eef3f6\" stroke=\"#28766f\" stroke-width=\"2\"/><text x=\"600.0\" y=\"65\" font-size=\"29\" fill=\"#28766f\" text-anchor=\"middle\" font-weight=\"700\">100 trials</text><text x=\"600.0\" y=\"104\" font-size=\"25\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"400\">draw + test + count</text><path d=\"M789.0 103L817.0 103\" stroke=\"#225a83\" stroke-width=\"3\" fill=\"none\"/><polygon points=\"817.0,103 805.0,97.0 805.0,109.0\" fill=\"#225a83\"/><rect x=\"822.0\" y=\"28\" width=\"368.0\" height=\"150\" rx=\"10\" fill=\"#eef3f6\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"1006.0\" y=\"65\" font-size=\"29\" fill=\"#225a83\" text-anchor=\"middle\" font-weight=\"700\">Report</text><text x=\"1006.0\" y=\"104\" font-size=\"25\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"400\">heads / 100</text></svg></figure><p class=\"visual-note\">Only Heads trials increase heads. Every trial contributes to the denominator.</p>",
+    "note": "把试验次数100与成功次数heads明确分开。初始化一次计数；若把heads=0放入循环，每次会丢失前面结果。最后比例输出在循环外，避免只有第一轮或重复报告的歧义。",
+    "time": "40–44 min"
+  },
+  {
+    "title": "Trace a short supplied sequence",
+    "tag": "TRACE",
+    "code": "AAP-2.H/K · AAP-3.E",
+    "html": "<div class=\"columns\" style=\"gap:32px\"><div><pre class=\"code\" style=\"font-size:25px;line-height:1.22;padding:16px 20px;margin:14px 0\">heads ← 0\nREPEAT 4 TIMES\n{\n  r ← RANDOM(1, 2)\n  IF(r = 1)\n  {\n    heads ← heads + 1\n  }\n}\nDISPLAY(heads / 4)</pre></div><div><p>For this trace only, the returned values are 1, 2, 1, 1.<br><br>Predict heads after each trial and the final display.</p></div></div><details><summary>Show answer</summary><div class=\"answer\">heads: 1, 1, 2, 3. Final display: 3/4 = 0.75.</div></details>",
+    "note": "给定随机序列是确定性追踪条件，不是预测下一次真实随机运行。抽到2时count保持1，IF为false没有else也可。代码11行25px约368高，两栏加答案应保持可读。",
+    "time": "44–48 min"
+  },
+  {
+    "title": "A simulation needs a question",
+    "tag": "MODEL DESIGN",
+    "code": "AAP-3.F.1–5",
+    "html": "<figure class=\"visual\" tabindex=\"0\" role=\"group\" aria-label=\"A hypothetical queue model asks about delays using a fixed thirty-percent chance in each independent trial.\"><svg xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"A hypothetical queue model asks about delays using a fixed thirty-percent chance in each independent trial.\" viewBox=\"0 0 1200 210\" style=\"font-family:Arial,sans-serif\"><rect x=\"10.0\" y=\"28\" width=\"368.0\" height=\"150\" rx=\"10\" fill=\"#eef3f6\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"194.0\" y=\"65\" font-size=\"29\" fill=\"#225a83\" text-anchor=\"middle\" font-weight=\"700\">Question</text><text x=\"194.0\" y=\"104\" font-size=\"25\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"400\">How often is there</text><text x=\"194.0\" y=\"137\" font-size=\"25\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"400\">a queue delay?</text><path d=\"M383.0 103L411.0 103\" stroke=\"#225a83\" stroke-width=\"3\" fill=\"none\"/><polygon points=\"411.0,103 399.0,97.0 399.0,109.0\" fill=\"#225a83\"/><rect x=\"416.0\" y=\"28\" width=\"368.0\" height=\"150\" rx=\"10\" fill=\"#eef3f6\" stroke=\"#28766f\" stroke-width=\"2\"/><text x=\"600.0\" y=\"65\" font-size=\"29\" fill=\"#28766f\" text-anchor=\"middle\" font-weight=\"700\">Assumption</text><text x=\"600.0\" y=\"104\" font-size=\"25\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"400\">each trial: 30% delay</text><path d=\"M789.0 103L817.0 103\" stroke=\"#225a83\" stroke-width=\"3\" fill=\"none\"/><polygon points=\"817.0,103 805.0,97.0 805.0,109.0\" fill=\"#225a83\"/><rect x=\"822.0\" y=\"28\" width=\"368.0\" height=\"150\" rx=\"10\" fill=\"#eef3f6\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"1006.0\" y=\"65\" font-size=\"29\" fill=\"#225a83\" text-anchor=\"middle\" font-weight=\"700\">Simplification</text><text x=\"1006.0\" y=\"104\" font-size=\"25\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"400\">same chance each time</text></svg></figure><p class=\"visual-note\">This is a fictional model, not evidence about a real school queue.</p>",
+    "note": "模型设定30%而非现实测量值。把问题、规则与省略因素区分：真实排队与到达时段、服务能力相关，恒定且独立的假设可能不成立。仿真结果仅描述这个假设模型。",
+    "time": "48–52 min"
+  },
+  {
+    "title": "Represent a 30% chance with integers",
+    "tag": "DESIGN",
+    "code": "AAP-3.E/F",
+    "html": "<figure class=\"visual\" tabindex=\"0\" role=\"group\" aria-label=\"Ten equally likely codes can represent thirty percent by assigning exactly three codes to delay.\"><svg xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Ten equally likely codes can represent thirty percent by assigning exactly three codes to delay.\" viewBox=\"0 0 1200 210\" style=\"font-family:Arial,sans-serif\"><rect x=\"60.0\" y=\"40\" width=\"99.0\" height=\"95\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"109.5\" y=\"101\" font-size=\"35\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"700\">1</text><rect x=\"169.0\" y=\"40\" width=\"99.0\" height=\"95\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"218.5\" y=\"101\" font-size=\"35\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"700\">2</text><rect x=\"278.0\" y=\"40\" width=\"99.0\" height=\"95\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"327.5\" y=\"101\" font-size=\"35\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"700\">3</text><rect x=\"387.0\" y=\"40\" width=\"99.0\" height=\"95\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"436.5\" y=\"101\" font-size=\"35\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"700\">4</text><rect x=\"496.0\" y=\"40\" width=\"99.0\" height=\"95\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"545.5\" y=\"101\" font-size=\"35\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"700\">5</text><rect x=\"605.0\" y=\"40\" width=\"99.0\" height=\"95\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"654.5\" y=\"101\" font-size=\"35\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"700\">6</text><rect x=\"714.0\" y=\"40\" width=\"99.0\" height=\"95\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"763.5\" y=\"101\" font-size=\"35\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"700\">7</text><rect x=\"823.0\" y=\"40\" width=\"99.0\" height=\"95\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"872.5\" y=\"101\" font-size=\"35\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"700\">8</text><rect x=\"932.0\" y=\"40\" width=\"99.0\" height=\"95\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"981.5\" y=\"101\" font-size=\"35\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"700\">9</text><rect x=\"1041.0\" y=\"40\" width=\"99.0\" height=\"95\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"1090.5\" y=\"101\" font-size=\"35\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"700\">10</text><text x=\"600\" y=\"180\" font-size=\"26\" fill=\"#647381\" text-anchor=\"middle\" font-weight=\"400\">RANDOM(1, 10): choose 3 codes for Delay</text></svg></figure><p class=\"small\">Write a condition for Delay.</p><details><summary>Show answer</summary><div class=\"answer\">For example, r ≤ 3. This selects 1, 2 and 3, giving 3/10 = 30%.</div></details>",
+    "note": "不要先在图上涂前三格来泄露学生应选条件的答案，图十格等概率。允许r≥8等价映射；关键恰好3个码，必须从RANDOM同一次存储值判断。r<3仅2个结果。",
+    "time": "52–58 min"
+  },
+  {
+    "title": "Lab: run and report a coin simulation",
+    "tag": "LAB · 6 MIN",
+    "code": "AAP-3.E/F · CRD-2.J",
+    "html": "<p class=\"small\"><a href=\"Chapter_3_Programming_Lab.html#random\" target=\"_blank\" rel=\"noopener\">Open the randomness lab</a></p><ul><li>Use slide 13’s coin code in the editor. Change to 20 trials and divide by 20.</li><li>Record the count and fraction for two separate runs.</li><li>Compare observations with 1/2 and explain any difference.</li></ul><p class=\"small\">Record your actual results. Different groups may obtain different counts.</p>",
+    "note": "6分钟实验。修改REPEAT4为20时同时把/4改/20，这是实际可诊断的修改点。记录真实运行数字，不写老师希望的10。实验室若提供演示随机序列，区分其可复现性和新随机运行；跟踪固定序列不是重复采样。 入口预置可能是骰子示例；明确先把第13页硬币代码写入学生编辑区，再改次数与分母。Replay可逐行给定1、2、1、1来核对短例，随机运行则关闭固定序列。",
+    "time": "58–64 min"
+  },
+  {
+    "title": "Testing random programs uses properties",
+    "tag": "TEST",
+    "code": "CRD-2.J · AAP-3.E",
+    "html": "<figure class=\"visual\" tabindex=\"0\" role=\"group\" aria-label=\"Tests for random code check allowed values, conditional counting and output bounds rather than expecting one fixed random sequence.\"><svg xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Tests for random code check allowed values, conditional counting and output bounds rather than expecting one fixed random sequence.\" viewBox=\"0 0 1200 210\" style=\"font-family:Arial,sans-serif\"><rect x=\"10.0\" y=\"28\" width=\"368.0\" height=\"150\" rx=\"10\" fill=\"#eef3f6\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"194.0\" y=\"65\" font-size=\"29\" fill=\"#225a83\" text-anchor=\"middle\" font-weight=\"700\">Range check</text><text x=\"194.0\" y=\"104\" font-size=\"25\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"400\">all r in 1..2</text><path d=\"M383.0 103L411.0 103\" stroke=\"#225a83\" stroke-width=\"3\" fill=\"none\"/><polygon points=\"411.0,103 399.0,97.0 399.0,109.0\" fill=\"#225a83\"/><rect x=\"416.0\" y=\"28\" width=\"368.0\" height=\"150\" rx=\"10\" fill=\"#eef3f6\" stroke=\"#28766f\" stroke-width=\"2\"/><text x=\"600.0\" y=\"65\" font-size=\"29\" fill=\"#28766f\" text-anchor=\"middle\" font-weight=\"700\">Logic check</text><text x=\"600.0\" y=\"104\" font-size=\"25\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"400\">r = 1 counts once</text><path d=\"M789.0 103L817.0 103\" stroke=\"#225a83\" stroke-width=\"3\" fill=\"none\"/><polygon points=\"817.0,103 805.0,97.0 805.0,109.0\" fill=\"#225a83\"/><rect x=\"822.0\" y=\"28\" width=\"368.0\" height=\"150\" rx=\"10\" fill=\"#eef3f6\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"1006.0\" y=\"65\" font-size=\"29\" fill=\"#225a83\" text-anchor=\"middle\" font-weight=\"700\">Report check</text><text x=\"1006.0\" y=\"104\" font-size=\"25\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"400\">0 ≤ heads/20 ≤ 1</text></svg></figure><p class=\"visual-note\">A supplied sequence can test logic. Fresh runs explore variability.</p>",
+    "note": "随机程序仍可测试。范围测试关注每个结果合法，逻辑用给定序列手工或可控模式，最终计数不能大于试验次数。有限频数偏离1/2不自动是程序bug，超出[0,1]则与统计定义冲突。",
+    "time": "64–68 min"
+  },
+  {
+    "title": "Useful simulations simplify expensive experiments",
+    "tag": "USEFULNESS",
+    "code": "AAP-3.F.3/6/7",
+    "html": "<figure class=\"visual\" tabindex=\"0\" role=\"group\" aria-label=\"Simulations can explore costly or dangerous situations repeatedly, while conclusions still need comparison with the real setting.\"><svg xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Simulations can explore costly or dangerous situations repeatedly, while conclusions still need comparison with the real setting.\" viewBox=\"0 0 1200 210\" style=\"font-family:Arial,sans-serif\"><rect x=\"10.0\" y=\"28\" width=\"368.0\" height=\"150\" rx=\"10\" fill=\"#eef3f6\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"194.0\" y=\"65\" font-size=\"29\" fill=\"#225a83\" text-anchor=\"middle\" font-weight=\"700\">Real setting</text><text x=\"194.0\" y=\"104\" font-size=\"25\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"400\">costly or risky</text><text x=\"194.0\" y=\"137\" font-size=\"25\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"400\">to repeat</text><path d=\"M383.0 103L411.0 103\" stroke=\"#225a83\" stroke-width=\"3\" fill=\"none\"/><polygon points=\"411.0,103 399.0,97.0 399.0,109.0\" fill=\"#225a83\"/><rect x=\"416.0\" y=\"28\" width=\"368.0\" height=\"150\" rx=\"10\" fill=\"#eef3f6\" stroke=\"#28766f\" stroke-width=\"2\"/><text x=\"600.0\" y=\"65\" font-size=\"29\" fill=\"#28766f\" text-anchor=\"middle\" font-weight=\"700\">Simulation</text><text x=\"600.0\" y=\"104\" font-size=\"25\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"400\">try assumptions</text><text x=\"600.0\" y=\"137\" font-size=\"25\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"400\">many times</text><path d=\"M789.0 103L817.0 103\" stroke=\"#225a83\" stroke-width=\"3\" fill=\"none\"/><polygon points=\"817.0,103 805.0,97.0 805.0,109.0\" fill=\"#225a83\"/><rect x=\"822.0\" y=\"28\" width=\"368.0\" height=\"150\" rx=\"10\" fill=\"#eef3f6\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"1006.0\" y=\"65\" font-size=\"29\" fill=\"#225a83\" text-anchor=\"middle\" font-weight=\"700\">Interpretation</text><text x=\"1006.0\" y=\"104\" font-size=\"25\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"400\">inform decisions</text><text x=\"1006.0\" y=\"137\" font-size=\"25\" fill=\"#193148\" text-anchor=\"middle\" font-weight=\"400\">check against reality</text></svg></figure><p class=\"visual-note\">Examples: evacuation planning or many possible queue schedules.</p>",
+    "note": "只在解释用途层面提疏散，不要求学生模拟现实危险。计算允许加速多次试验，但简化与输入参数会影响结果。不能说“模拟完全替代现实测试”，也不能要求安全敏感事件真实重演。",
+    "time": "68–72 min"
+  },
+  {
+    "title": "A limitation comes from a specific choice",
+    "tag": "EVALUATE",
+    "code": "AAP-3.F.4/5",
+    "html": "<p>Our queue model uses the same 30% delay chance on every trial.</p><p>Name one omitted real factor and explain how it could affect results.</p><details><summary>Show answer</summary><div class=\"answer\">For example, arrivals may cluster at lunchtime. Omitting that pattern can understate delays during busy periods.</div></details>",
+    "note": "答案要把省略因素与结论影响连起来。还可答服务速度差异、队列累积产生相依性等。仅“模型不真实”不给充分分；增加trial数无法修复错误的恒定概率假设。",
+    "time": "72–76 min"
+  },
+  {
+    "title": "Original AP-style check: select TWO",
+    "tag": "CHECK",
+    "code": "AAP-3.E/F",
+    "html": "<p>Which TWO statements are justified?</p><ul><li>A. RANDOM(1, 6) can return 6.</li><li>B. Six calls must return each value once.</li><li>C. More trials guarantee the correct real-world model.</li><li>D. Two consecutive calls can return the same integer.</li></ul><details><summary>Show answer</summary><div class=\"answer\">A and D. B confuses randomness with a shuffled set. C ignores assumptions and omitted factors.</div></details>",
+    "note": "学生先圈两项再各给一句证据。可询问B若要“无重复”需要怎样改变模型，但不引入列表实现；只说明当前代码没有那项规则。",
+    "time": "76–80 min"
+  },
+  {
+    "title": "Two dice require two draws",
+    "tag": "COMPARE MODELS",
+    "code": "AAP-3.E/F",
+    "html": "<div class=\"columns\" style=\"gap:32px\"><div><pre class=\"code\" style=\"font-size:25px;line-height:1.22;padding:16px 20px;margin:14px 0\">a ← RANDOM(1, 6)\nb ← RANDOM(1, 6)\nsum ← a + b</pre></div><div><pre class=\"code\" style=\"font-size:25px;line-height:1.22;padding:16px 20px;margin:14px 0\">r ← RANDOM(1, 6)\nsum ← 2 * r</pre></div></div><p>Which can produce an odd sum? What does that reveal about the other model?</p><details><summary>Show answer</summary><div class=\"answer\">The left can, such as 1 + 2 = 3. The right only produces even sums, so it does not model two independent dice.</div></details>",
+    "note": "用可能结果差异评价模型，不必推导完整两骰分布。RANDOM2,12虽能出全部和但各和值等可能，也不等于两公平骰之和；如学生提问可用和2只有1+1、和7有六对作扩展。",
+    "time": "80–84 min"
+  },
+  {
+    "title": "A four-sentence simulation report",
+    "tag": "REPORT",
+    "code": "AAP-3.F",
+    "html": "<ul><li>Question and outcome mapping</li><li>Assumptions about the repeated trials</li><li>Actual count and observed fraction</li><li>One specific limit on the conclusion</li></ul><p class=\"small\">Homework: 12 original questions, 30 teacher marks.</p>",
+    "note": "用实验自己的记录写报告，可简短但四项齐全。避免把“100次中53”写成“现实正面概率等于53%”；写observed proportion。班级统一0/1或1/2映射前先明确，数字不同不影响公平模型。",
+    "time": "84–87 min"
+  },
+  {
+    "title": "Exit ticket",
+    "tag": "EXIT",
+    "code": "AAP-3.E/F",
+    "html": "<p>1. How many results can RANDOM(4, 8) return?<br>2. Must 10 fair coin trials contain 5 Heads?<br>3. Can more trials repair an omitted real factor?</p><details><summary>Show answer</summary><div class=\"answer\">1. Five integers.<br>2. No; finite counts vary.<br>3. No; revise the model or justify the simplification.</div></details>",
+    "note": "三项各1分。漏端点者重列4到8；把有限试验当必须对半者回第10页；以为样本量能修复模型者重说queue忽略午餐高峰。",
+    "time": "87–90 min"
+  }
+]

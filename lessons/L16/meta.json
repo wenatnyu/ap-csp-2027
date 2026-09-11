@@ -1,0 +1,13 @@
+{
+  "chapter": 3,
+  "id": "L16",
+  "number": "16",
+  "title": "Study Goal Tracker: Chapter 3 Project & Check",
+  "chineseTitle": "第三章项目与综合检查",
+  "shortTitle": "Study Goal Tracker",
+  "filename": "AP_CSP_L16_Chapter_3_Project.html",
+  "minutes": 90,
+  "topicSummary": "Chapter 3 integration: expressions, Boolean logic, selection and iteration; Study Goal Tracker practice project; predictions, boundary tests, debugging, peer feedback and revision.",
+  "homeworkInstructions": "12 original questions, 30 teacher marks, about 45 minutes. Q5 requires exactly TWO choices. Show predictions, traces and reasons. Braces mark blocks; each statement is on its own line.",
+  "preview": "lessons/L16/preview.svg"
+}

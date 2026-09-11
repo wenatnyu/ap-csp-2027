@@ -1,0 +1,67 @@
+<div class="tagline">Teacher Guide</div><h1>Lesson 10 · Boolean Logic</h1>
+<p class="sub">布尔逻辑与范围判定 · 23 slides · 90 minutes · 25-minute Workshop Rule Checker</p>
+<p><a href="index.html">课程目录</a> · <a href="Chapter_3_Programming_Lab.html#boolean" target="_blank" rel="noopener">Boolean lab</a></p>
+<h3>目标与知识边界</h3>
+<p>学生从L09的数值、字符串表达式进到只产生true或false的Boolean表达式。目标是写出并求值关系运算，使用AND、inclusive OR与NOT组合条件，检查包含与不包含边界，并用测试和逻辑等价说明规则正确。最后学生编写Workshop Rule Checker，只输出三个Boolean结果，<strong>本课尚不使用IF、循环、列表或自定义过程</strong>。</p>
+<p>先求条件值，下一课才用条件决定执行哪部分程序。教师可说“条件为真”，不要把“为真”直接等同“某个动作自动发生”。例如DISPLAY(eligible)只显示值，既不会改变eligible，也不会自行开放假想工作坊的入口。本课案例为原创假想规则，不代表真实许可、门禁或年龄政策。</p>
+<h3>精确官方对齐与来源版本</h3>
+<p>核查日期：2026-09-11。AP Central 当前 CED 为 Effective Fall 2023；Topic 3.5 在<strong>印刷71–72 / PDF78–79页</strong>。当前官方参考表封面为<strong>2026 EXAM REFERENCE INFORMATION</strong>，不称其为2027版。</p>
+<table><thead><tr><th>官方条目</th><th>本课实际证据</th><th>边界</th></tr></thead><tbody>
+<tr><td>AAP-2.E.a/b；E.1–2</td><td>写出与求值六种关系运算：=、≠、&gt;、&lt;、≥、≤；解释Boolean只有true/false。</td><td>使用数值比较及相容类型；不教跨类型强制转换或字符串排序。</td></tr>
+<tr><td>AAP-2.F.a/b；F.1–5</td><td>写出与求值NOT、AND、OR；完整两输入真值表；复合条件、范围与等价变形。</td><td>所有逻辑操作数为Boolean；混合表达式显式加括号，不依赖未给出的优先级或短路求值规则。</td></tr>
+<tr><td>AAP-1.A.2–4；AAP-1.B.1–3</td><td>有意义的条件变量；Boolean和字符串区分；结果赋值与后续变量变化。</td><td>第一章与L09的间隔提取，不新增引用或对象语义。</td></tr>
+<tr><td>CRD-2.E.2–4；CRD-2.I.1/5；CRD-2.J.1–3</td><td>计划、实现、比较预期与实际、修复逻辑错误；测试边界、刚越界以及OR双方都true。</td><td>小项目实践，不声称覆盖所有错误类别或正式Create要求。通过有限测试不是对全体输入的证明。</td></tr>
+</tbody></table>
+<p><strong>De Morgan律与真值表是本课解释AAP-2.F的工具与应用，不另造官方目标编号。</strong>NOT(A AND B)与(NOT A) OR (NOT B)等价；NOT(A OR B)与(NOT A) AND (NOT B)等价。图中等号表示两个Boolean表达式的值相等，不是←赋值。条件分支AAP-2.G/H留到下一课。</p>
+<h3>90分钟教学安排</h3>
+<table><thead><tr><th>时间</th><th>页码</th><th>活动与检查</th></tr></thead><tbody>
+<tr><td>0–8</td><td>1–3</td><td>复习除法/MOD、字符串类型、赋值复制，明确本课输出条件值。</td></tr>
+<tr><td>8–16</td><td>4–5</td><td>六种关系运算与边界；把比较结果存入变量。</td></tr>
+<tr><td>16–28</td><td>6–8</td><td>AND/OR双输入图，独立完成四行真值表。</td></tr>
+<tr><td>28–40</td><td>9–11</td><td>NOT、闭区间、显式分组的复合表达式。</td></tr>
+<tr><td>40–44</td><td>12–13</td><td>De Morgan与闭区间补集；先保概念正确，熟练度通过作业巩固。</td></tr>
+<tr><td>44–49</td><td>14</td><td>读假想规则、输入契约，打开实验室。</td></tr>
+<tr><td>49–54</td><td>15</td><td>项目规划5分钟：拆成inRange、hasEntry、eligible。</td></tr>
+<tr><td>54–63</td><td>16</td><td>项目编写9分钟：完成输入、表达式和有标签的输出。</td></tr>
+<tr><td>63–69</td><td>17</td><td>项目测试6分钟：六个输入队列，先预测再执行。</td></tr>
+<tr><td>69–74</td><td>18</td><td>项目修订5分钟：同伴反馈、修正与复测。</td></tr>
+<tr><td>74–85</td><td>19–21</td><td>OR范围错误诊断与原创选择练习。</td></tr>
+<tr><td>85–90</td><td>22–23</td><td>作业说明及三项独立出口检测。</td></tr>
+</tbody></table>
+<p>项目25分钟不可用教师整段演示替代。第12–13页为首次接触De Morgan，时间紧时只展示一条并用数轴解释补集，另一条在作业前用完整真值表回访；不要求学生以记忆专有名称代替能判断表达式。</p>
+<h3>真值与边界：教师核对表</h3>
+<table><thead><tr><th>A</th><th>B</th><th>A AND B</th><th>A OR B</th><th>NOT A</th></tr></thead><tbody>
+<tr><td>true</td><td>true</td><td>true</td><td>true</td><td>false</td></tr><tr><td>true</td><td>false</td><td>false</td><td>true</td><td>false</td></tr><tr><td>false</td><td>true</td><td>false</td><td>true</td><td>true</td></tr><tr><td>false</td><td>false</td><td>false</td><td>false</td><td>true</td></tr></tbody></table>
+<p>闭区间12至17表达为(age ≥ 12) AND (age ≤ 17)。外部区域为(age &lt; 12) OR (age &gt; 17)，不是两个严格比较用AND。对照年龄11、12、17、18分别为范围条件false、true、true、false。不要写12 ≤ age ≤ 17这种未在本课实验室契约中定义的链式比较。</p>
+<p>反例法：A=false、B=true时，NOT(A AND B)=true，而(NOT A) AND (NOT B)=false，因此否定AND却不换连接词的表达式并不等价。一个反例足以否定“总是等价”；几个一致例子不能证明对所有可能情况等价。两Boolean输入的四行真值表覆盖全部组合，可用来完整验证这两个表达式。</p>
+<h3>Workshop Rule Checker：项目要求</h3>
+<p>假想规则：年龄12至17（含端点），且已经预订<strong>或</strong>有通行证。双方都有也满足凭据条件。输入依次为age、booked、hasPass；age为0至120的整数，后两项为Boolean值。年龄11或18是本课输入域中的有效测试值，只是资格结果false。输入队列每行一个JSON scalar，例如三行分别为 <code>12</code>、<code>false</code>、<code>true</code>。Boolean不加引号；不传列表。</p>
+<p>学生应输出三个有标签的Boolean：inRange、hasEntry、eligible；标签字符串和值分开DISPLAY。使用中间变量有助于定位哪一部分条件失效。每一组新输入都重置队列并从程序开头运行，不能只修改age变量后期待先前存储的条件自动重算。</p>
+<details><summary>教师参考程序：按教学进程展开</summary><pre class="code">age ← INPUT()
+booked ← INPUT()
+hasPass ← INPUT()
+inRange ← (age ≥ 12) AND (age ≤ 17)
+hasEntry ← booked OR hasPass
+eligible ← inRange AND hasEntry
+DISPLAY("In range:")
+DISPLAY(inRange)
+DISPLAY("Has entry:")
+DISPLAY(hasEntry)
+DISPLAY("Eligible:")
+DISPLAY(eligible)</pre></details>
+<table><thead><tr><th>Case / input</th><th>inRange</th><th>hasEntry</th><th>eligible</th><th>目的</th></tr></thead><tbody>
+<tr><td>A: 12, false, true</td><td>true</td><td>true</td><td>true</td><td>最小可接受年龄；只有pass。</td></tr>
+<tr><td>B: 17, true, false</td><td>true</td><td>true</td><td>true</td><td>最大可接受年龄；只有booked。</td></tr>
+<tr><td>C: 11, true, true</td><td>false</td><td>true</td><td>false</td><td>下界之外；凭据不能补救年龄不符。</td></tr>
+<tr><td>D: 18, true, false</td><td>false</td><td>true</td><td>false</td><td>上界之外；两边界都要测试。</td></tr>
+<tr><td>E: 15, false, false</td><td>true</td><td>false</td><td>false</td><td>年龄合格但凭据全无。</td></tr>
+<tr><td>F: 15, true, true</td><td>true</td><td>true</td><td>true</td><td>inclusive OR的双方都true。</td></tr>
+</tbody></table>
+<p>提交代码、六组预期/实际值、一个有区分力测试的解释，以及真实修改或反馈记录。建议8分课堂量表：输入顺序与类型1；inRange正确1；hasEntry正确1；eligible正确1；三个标签清晰1；边界和刚越界预期准确1；双方都true的OR测试解释1；修订/反馈与复测记录1。此为教师量表，不是AP官方评分。</p>
+<h3>常见误区与分层</h3>
+<ul><li><strong>=赋值，←比较。</strong> 明确两符号各自作用；让学生指出谁修改变量，谁返回Boolean。</li><li><strong>Boolean true就是字符串"true"。</strong> 解释类型不同；输入队列中只有后者带引号。</li><li><strong>OR只能有一边true。</strong> 先做双方都true那一行；票和pass可以同时具备。</li><li><strong>条件为真就自动发生某动作。</strong> 本课只计算和DISPLAY；IF执行路径下一课才学。</li><li><strong>范围两个边界用OR。</strong> 输入5得到true，作为直接反例；数轴显示应取两个范围的共同部分。</li><li><strong>NOT &gt;变成&lt;。</strong> 测等于边界，正确应为≤。复合否定还要换AND/OR。</li><li><strong>修改原变量自动重算条件。</strong> 沿赋值时间线记录，每个新测试从头运行。</li></ul>
+<p>需要支架：先给四行输入组合，用真假卡片操作；把复合式拆成有意义变量；写出每个比较的Boolean，再做逻辑连接。延伸：用四行真值表验证De Morgan两式，或构造能区分两种候选规则的输入。无需增加IF、嵌套循环、互斥运算符或逻辑门电路细节。</p>
+<h3>作业与出口检测</h3>
+<p>12题共30教师分，约40分钟；前6题每题1分，Q5恰选两项才得1分；后6题每题4个独立评分点。Q1与Q3分别提取L09算术和赋值复制。学生纸张不显示答案；单独教师答案解释干扰项并提供逐点评分。保存课堂代码与测试表作为另外的学习证据。</p>
+<p>Exit标准：true OR true为true；范围(x ≥ 4) AND (x ≤ 9)；NOT(A OR B)等价(NOT A) AND (NOT B)。各1分，建议3/3；不达标按对应错误类型补做一个新情境。能顺利运行不代表已理解所有边界，因此出口题仍独立完成。</p>
+<h3>Sources</h3><ul class="sources"><li><a href="https://apcentral.collegeboard.org/courses/ap-computer-science-principles" target="_blank" rel="noopener">College Board · Current AP CSP course page</a></li><li><a href="https://apcentral.collegeboard.org/media/pdf/ap-computer-science-principles-course-and-exam-description.pdf" target="_blank" rel="noopener">Official CED</a> · <a href="resources/AP_CSP_Course_and_Exam_Description.pdf#page=78" target="_blank">Local Topic 3.5</a></li><li><a href="https://apcentral.collegeboard.org/media/pdf/ap-computer-science-principles-exam-reference-sheet.pdf" target="_blank" rel="noopener">Official exam reference sheet · cover labelled 2026</a></li></ul>

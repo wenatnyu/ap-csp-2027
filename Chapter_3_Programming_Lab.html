@@ -1,0 +1,230 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AP CSP · Chapter 3 Programming Lab</title><style>
+:root{--ink:#193148;--blue:#225a83;--teal:#28766f;--gold:#d3ad62;--muted:#607382;--line:#ccd6de;--paper:#fcfcfa}*{box-sizing:border-box}body{margin:0;background:#eef2f4;color:var(--ink);font:16px/1.55 "Helvetica Neue","PingFang SC",Arial,sans-serif}a{color:var(--blue);text-underline-offset:4px}header{background:var(--ink);color:white;padding:19px max(24px,calc((100vw - 1240px)/2));display:flex;justify-content:space-between;gap:20px}header a{color:white}main{max-width:1290px;padding:34px 25px 60px;margin:auto}h1{font-size:43px;line-height:1.1;margin:0 0 12px;letter-spacing:-.035em}h2{font-size:22px;margin:0 0 14px}h3{font-size:16px;margin:20px 0 10px}p{margin:9px 0 16px}.intro{max-width:940px;color:var(--muted)}.columns{display:grid;grid-template-columns:1.15fr 1fr;gap:22px}.panel{border:1px solid var(--line);background:white;padding:24px;min-width:0}.diagram{margin:22px 0;padding:18px;background:var(--paper);border:1px solid var(--line)}.diagram svg{display:block;width:100%;max-height:150px}.diagram figcaption{color:var(--muted);font-size:13px;margin-top:7px}button,select,textarea{font:inherit;border:1px solid #a6b6c4;border-radius:4px;padding:9px;color:var(--ink);background:white}button{cursor:pointer}button:hover{background:#e9f1f7}button:disabled{opacity:.45;cursor:default}button:focus-visible,select:focus-visible,textarea:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid #b18127;outline-offset:3px}.primary{background:var(--ink);color:white}.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:12px 0}.row select{flex:1;min-width:190px}label{display:block;font-weight:600;font-size:14px;margin:18px 0 7px}textarea{width:100%;resize:vertical;font:15px/1.65 ui-monospace,"SFMono-Regular",Consolas,monospace;background:#f5f8fa;tab-size:2}#program{min-height:370px;white-space:pre}#inputs,#draws{min-height:98px}#prediction,#reflection{min-height:95px;font-family:inherit;font-size:15px}.hint{font-size:13px;color:var(--muted)}.status{padding:13px 16px;background:#eaf2ee;border-left:4px solid var(--teal);overflow-wrap:anywhere;margin:20px 0}.status.error{background:#fff0ed;border-color:#aa4433;color:#793123}.snapshot{background:#f4f7f9;padding:16px;margin:20px 0}.snapshot h3{margin:0 0 9px}.state{border-left:4px solid var(--blue);padding:8px 12px;font-size:15px;overflow-wrap:anywhere;margin:6px 0}.state.true{border-color:var(--teal);background:#e8f3ee}.state.false{border-color:var(--gold);background:#fff7e5}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f0f4f7;padding:17px;min-height:70px;max-height:280px;overflow:auto;margin:0;font:17px/1.6 ui-monospace,Consolas,monospace}table{width:100%;border-collapse:collapse;font-size:14px}td,th{border-bottom:1px solid #d3dde4;padding:10px 12px;text-align:left;vertical-align:top}th{background:#f2f5f6;font-size:12px}td{font-family:ui-monospace,Consolas,monospace;overflow-wrap:anywhere}details{margin-top:22px}summary{cursor:pointer;font-weight:600}.wide{margin-top:22px}.trace-wrap{max-height:500px;overflow:auto}.trace-wrap thead{position:sticky;top:0}#trace td:nth-child(3){white-space:pre-wrap;min-width:170px}.task{border-left:4px solid var(--gold);padding-left:18px;margin-top:25px}.task li{margin:9px 0}.task ol{padding-left:22px}.supported code{font-family:ui-monospace,Consolas,monospace;background:#f2f4f6;padding:2px 4px}footer{font-size:13px;color:var(--muted);border-top:1px solid var(--line);margin-top:28px;padding-top:20px}[hidden]{display:none!important}@media(max-width:780px){main{padding:25px 16px 40px}.columns{grid-template-columns:1fr}.panel{padding:20px}header{font-size:13px;padding:17px}.row select{width:100%}h1{font-size:34px}textarea{font-size:14px}td,th{padding:9px}.diagram{padding:8px;overflow:auto}.diagram svg{min-width:620px}.diagram figcaption{min-width:0}.table-wrap{overflow:auto}}@media print{header,button,.row,.supported{display:none}.columns{display:block}.panel{margin-bottom:12px;break-inside:avoid}main{padding:0}body{background:white}textarea{border:0;background:white}h1{font-size:24px}.trace-wrap{max-height:none}}
+</style></head><body><header><strong>AP CSP / CHAPTER 03</strong><a href="Chapter_3.html">← Back to chapter</a></header><main><h1>Follow the path. Explain the change.</h1><p class="intro">Write expressions, branch on a condition, and repeat a useful action. Each step exposes the executed line, condition result and current values. <span lang="zh">先预测，再逐步运行：哪条路径执行了，哪个值改变了？</span></p>
+<figure class="diagram" tabindex="0"><svg viewBox="0 0 1080 135" role="img" aria-label="A program executes a sequence, chooses a branch using a Boolean condition, and repeats a body until its stopping rule is met."><g font-family="Arial,sans-serif" fill="#193148"><rect x="15" y="32" width="245" height="70" rx="10" fill="#eef3f6"/><text x="137" y="63" text-anchor="middle" font-size="25">SEQUENCE</text><text x="137" y="89" text-anchor="middle" font-size="19">update a value</text><path d="M274 67H328m-9 -6 9 6-9 6" fill="none" stroke="#225a83" stroke-width="3"/><path d="M540 7 744 67 540 127 336 67Z" fill="#e8f2ef" stroke="#28766f" stroke-width="2"/><text x="540" y="61" text-anchor="middle" font-size="25">SELECTION</text><text x="540" y="88" text-anchor="middle" font-size="19">true or false?</text><path d="M754 67H808m-9 -6 9 6-9 6" fill="none" stroke="#225a83" stroke-width="3"/><rect x="820" y="32" width="245" height="70" rx="10" fill="#fbf1dc"/><text x="942" y="63" text-anchor="middle" font-size="25">ITERATION</text><text x="942" y="89" text-anchor="middle" font-size="19">repeat and check</text></g></svg><figcaption>These structures combine inside a program. The trace below shows the actual path of your current code.</figcaption></figure>
+<div class="columns"><section class="panel"><h2>1 / Build and modify</h2><div class="row"><select id="example" aria-label="Example program"></select><button id="load">Load example</button></div><p class="hint" id="activity"></p><label for="program">Pseudocode · one statement per line</label><textarea id="program" spellcheck="false" autocapitalize="off" autocomplete="off" aria-describedby="code-help"></textarea><p class="hint" id="code-help">Use ← or &lt;- for assignment. Put {, }, and ELSE on separate lines. Numeric inputs can be supplied below.</p><label for="inputs">Input queue · one value per line</label><textarea id="inputs" spellcheck="false" aria-describedby="input-help"></textarea><p class="hint" id="input-help">Each INPUT() takes the next line: a number, true/false, or a double-quoted string such as "Ada". Empty lines are ignored.</p><details><summary>Random draws / 随机值与测试回放</summary><label for="random-mode">RANDOM source</label><select id="random-mode"><option value="sample">Sample random draws</option><option value="replay">Replay specified draws</option></select><div id="replay-box" hidden><label for="draws">Replay draws · one integer per line</label><textarea id="draws" spellcheck="false"></textarea><p class="hint">Each RANDOM(a,b) consumes one supplied integer inside [a,b]. Replay checks a chosen path; it is a test tool, not AP pseudocode or a random experiment.</p></div></details><div class="row"><button class="primary" id="step">Step one statement</button><button id="run">Run all</button><button id="reset">Reset execution</button></div><div class="row"><button id="save-code">Save my code</button><button id="save-work">Save work record</button></div></section>
+<section class="panel"><h2>2 / Predict, trace, explain</h2><label for="prediction">My prediction and reason</label><textarea id="prediction" placeholder="I predict these outputs and branch choices because ..."></textarea><div id="status" class="status" role="status" aria-live="polite"></div><div class="snapshot"><h3>Execution snapshot</h3><div id="last-step" class="state"></div><p class="hint">Next source line</p><div id="next-step" class="state"></div><p id="progress-text" class="hint"></p></div><h3>Program output</h3><pre id="output" aria-live="polite"></pre><h3>Current variable values</h3><p id="empty-vars" class="hint">No assignments executed.</p><table><thead><tr><th>Variable</th><th>Current value</th></tr></thead><tbody id="variables"></tbody></table><p class="hint">A variable value is not program output. Only DISPLAY produces the output above. Each display gets a separate line here for readability.</p><label for="reflection">My explanation and revision</label><textarea id="reflection" placeholder="Which condition or update explains the result? What did I change, and which tests did I rerun?"></textarea></section></div>
+<section class="panel wide"><h2>3 / Read the execution trace</h2><p class="hint" id="trace-count"></p><div class="trace-wrap"><table><thead><tr><th>Step</th><th>Line</th><th>Code</th><th>Effect / condition</th><th>Values after this step</th></tr></thead><tbody id="trace"></tbody></table></div></section>
+<section class="panel wide"><h2>Chapter project / Study Goal Tracker</h2><p>Complete the L16 starter before checking a reference answer. Use sequence, selection and repetition to give feedback for three study sessions.</p><div class="task"><h3>Requirements</h3><ol><li>Read exactly three whole-number minute values, each in 0–180. These are the valid inputs for the basic project.</li><li>For each value of at least 30, display "Goal met" and increase <code>goalHits</code> by one. Otherwise display "Keep going".</li><li>After the loop, display the count. If at least two sessions met the goal, display "On track"; otherwise display "Try again".</li></ol><p>Test 29 / 30 / 31, all zeros, and all thirties. Write the expected messages and count before you run. Explain why the counter belongs outside the loop.</p><p><a href="output/pdf/AP_CSP_Chapter_3_Project_Sheet.pdf">Project record PDF</a> · <a href="AP_CSP_L16_Chapter_3_Project.html#guide">Teacher guidance and scoring</a></p></div>
+<details class="supported"><summary>Language and execution model / 支持范围</summary><p>This classroom subset supports assignment, INPUT, DISPLAY, numeric + − * / MOD, comparisons, true/false, NOT/AND/OR, IF/ELSE, nested blocks, REPEAT n TIMES, REPEAT UNTIL, and RANDOM(a,b). Integers returned by RANDOM include both endpoints. Variables are case-sensitive; comments begin with //.</p><p><strong>REPEAT UNTIL checks before entering its body.</strong> If the condition is already true, it runs zero times. The condition is the stopping rule. Counted-loop counts are evaluated on entry; examples keep the count unchanged during the body. Each control check is visible in the trace.</p><p>For L09, we define three classroom string procedures: <code>CONCAT(a,b)</code> joins two strings; <code>SUBSTRING(text,start,length)</code> takes the stated number of characters from a 1-based position; <code>LENGTH(text)</code> counts characters. They are explicitly defined for these exercises. The official reference sheet's LENGTH is a list operation; it does not define these string procedures. Use the English-character examples in the lessons.</p><p>Inputs must be scalars. Lists, custom procedures, robot commands and string ordering are taught later and are not implemented here. Compare matching types; arithmetic needs numbers and Boolean operations need true/false. This lab evaluates both sides of AND/OR; do not rely on skipping a potentially invalid expression. Use nested selection when a check must precede another operation.</p><p>The lab uses finite browser numbers and stops after 3,000 visible steps. That stop is a classroom safeguard, not proof of an infinite loop or an AP execution rule. Each DISPLAY appears on a new line here; official DISPLAY appends a space. Editing code or inputs resets execution, while your prediction stays. Save your code or work record to keep it after closing the page.</p><p><a href="https://apcentral.collegeboard.org/media/pdf/ap-computer-science-principles-exam-reference-sheet.pdf" target="_blank" rel="noopener">Current official exam reference sheet</a> · The version consulted is labeled 2026. Lesson guidance uses the CED applicable to 2026–27; a future exam sheet should be checked when released.</p></details></section><footer>Original classroom practice for Lessons 09–16. The project prepares programming skills; it is not a formal Create task and does not yet include the later list and procedure requirements.</footer></main><script>/* Chapter 3 AP-style teaching interpreter. Parses a bounded subset; never evaluates JavaScript. */
+(function(root){
+'use strict';
+const RESERVED=new Set(['IF','ELSE','REPEAT','TIMES','UNTIL','MOD','AND','OR','NOT','TRUE','FALSE','INPUT','DISPLAY','RANDOM','CONCAT','SUBSTRING','LENGTH']);
+function scan(source){
+  const out=[];let p=0;
+  while(p<source.length){
+    const tail=source.slice(p),space=tail.match(/^\s+/);if(space){p+=space[0].length;continue;}
+    const m=tail.match(/^"(?:[^"\\]|\\["\\nrt])*"|^(?:\d+(?:\.\d+)?|\.\d+)|^[A-Za-z_][A-Za-z0-9_]*|^(?:<=|>=|!=|[(),+*/=<>≠≤≥-])/);
+    if(!m)throw new Error('Unsupported symbol near '+tail.slice(0,16)+'. Use double quotes for strings.');
+    out.push(m[0]);p+=m[0].length;
+  }
+  return out;
+}
+function parseExpression(source){
+  const ts=scan(source);let p=0,depth=0;
+  function match(t){if((ts[p]||'').toUpperCase()===t){p++;return true;}return false;}
+  function needed(t){if(!match(t))throw new Error('Expected '+t+'.');}
+  function atom(){
+    if(++depth>60)throw new Error('Expression is too deeply nested.');
+    const t=ts[p++];let node;
+    if(t===undefined)throw new Error('Expected a value.');
+    if(t==='+'||t==='-')node={type:'unary',op:t,arg:atom()};
+    else if(t==='('){node=or();needed(')');}
+    else if(t[0]==='"')node={type:'literal',value:JSON.parse(t)};
+    else if(/^(?:\d|\.)/.test(t))node={type:'literal',value:Number(t)};
+    else if(/^(TRUE|FALSE)$/i.test(t))node={type:'literal',value:t.toUpperCase()==='TRUE'};
+    else if(/^[A-Za-z_]/.test(t)){
+      if(match('(')){
+        const name=t.toUpperCase(),args=[];
+        if(!match(')')){do{args.push(or());}while(match(','));needed(')');}
+        const arity={INPUT:0,RANDOM:2,CONCAT:2,SUBSTRING:3,LENGTH:1};
+        if(!(name in arity)||args.length!==arity[name])throw new Error('Use INPUT(), RANDOM(a,b), CONCAT(a,b), SUBSTRING(text,start,length), or LENGTH(text) with the stated arguments.');
+        node={type:'call',name,args};
+      }else{
+        if(RESERVED.has(t.toUpperCase()))throw new Error(t+' is reserved; expected a value.');
+        node={type:'variable',name:t};
+      }
+    }else throw new Error('Unexpected '+t+'.');
+    depth--;return node;
+  }
+  function product(){let node=atom();while(['*','/','MOD'].includes((ts[p]||'').toUpperCase())){const op=ts[p++].toUpperCase();node={type:'binary',op,left:node,right:atom()};}return node;}
+  function sum(){let node=product();while(['+','-'].includes(ts[p])){const op=ts[p++];node={type:'binary',op,left:node,right:product()};}return node;}
+  function comparison(){let node=sum();if(['=','≠','!=','<','>','≤','≥','<=','>='].includes(ts[p])){const op=ts[p++];node={type:'binary',op,left:node,right:sum()};}return node;}
+  function not(){if(match('NOT'))return {type:'unary',op:'NOT',arg:not()};return comparison();}
+  function and(){let node=not();while(match('AND'))node={type:'binary',op:'AND',left:node,right:not()};return node;}
+  function or(){let node=and();while(match('OR'))node={type:'binary',op:'OR',left:node,right:and()};return node;}
+  const result=or();if(p!==ts.length)throw new Error('Unexpected '+ts[p]+'. Parenthesize each comparison and join with AND or OR.');return result;
+}
+function boolean(v){if(typeof v!=='boolean')throw new Error('A condition must be true or false, not '+JSON.stringify(v)+'.');return v;}
+function numeric(v){if(typeof v!=='number'||!Number.isFinite(v))throw new Error('This operation needs finite numbers.');return v;}
+function textValue(v){if(typeof v!=='string')throw new Error('This string procedure needs string arguments.');return v;}
+function finite(v){if(typeof v==='number'&&!Number.isFinite(v))throw new Error('Numeric result exceeds the lab range.');if(typeof v==='string'&&v.length>10000)throw new Error('A string exceeds the 10,000-character lab limit.');return v;}
+function evaluate(node,context){
+  if(node.type==='literal')return finite(node.value);
+  if(node.type==='variable'){if(!Object.prototype.hasOwnProperty.call(context.vars,node.name))throw new Error(node.name+' has no value yet. Check assignment order and letter case.');return context.vars[node.name];}
+  if(node.type==='unary'){const v=evaluate(node.arg,context);return node.op==='NOT'?!boolean(v):node.op==='-'?-numeric(v):numeric(v);}
+  if(node.type==='call'){
+    const args=node.args.map(x=>evaluate(x,context));
+    if(node.name==='INPUT')return context.input();
+    if(node.name==='RANDOM'){
+      const [a,b]=args;
+      if(!Number.isSafeInteger(a)||!Number.isSafeInteger(b)||a>b||!Number.isSafeInteger(b-a+1))throw new Error('RANDOM requires safe integer endpoints a ≤ b.');
+      return context.random(a,b);
+    }
+    if(node.name==='CONCAT')return finite(textValue(args[0])+textValue(args[1]));
+    if(node.name==='LENGTH')return Array.from(textValue(args[0])).length;
+    const chars=Array.from(textValue(args[0])),start=args[1],length=args[2];
+    if(!Number.isSafeInteger(start)||!Number.isSafeInteger(length)||start<1||length<0||start>chars.length+1||start-1+length>chars.length)throw new Error('SUBSTRING uses a 1-based start and a nonnegative length that stays inside the string.');
+    return chars.slice(start-1,start-1+length).join('');
+  }
+  const a=evaluate(node.left,context),b=evaluate(node.right,context),op=node.op;
+  if(op==='AND'||op==='OR'){boolean(a);boolean(b);return op==='AND'?a&&b:a||b;}
+  if(['+','-','*','/','MOD'].includes(op)){
+    numeric(a);numeric(b);
+    if(op==='/'&&b===0)throw new Error('Division by zero.');
+    if(op==='MOD'&&(!Number.isSafeInteger(a)||a<0||!Number.isSafeInteger(b)||b<=0))throw new Error('MOD assumes a nonnegative integer and a positive integer divisor.');
+    return finite(op==='+'?a+b:op==='-'?a-b:op==='*'?a*b:op==='/'?a/b:a%b);
+  }
+  if(typeof a!==typeof b)throw new Error('Compare values of the same type in this lab.');
+  if(op==='=')return a===b;
+  if(op==='≠'||op==='!=')return a!==b;
+  numeric(a);numeric(b);
+  return op==='<'?a<b:op==='>'?a>b:(op==='≤'||op==='<=')?a<=b:a>=b;
+}
+function stripComment(line){let quoted=false,escaped=false;for(let i=0;i<line.length;i++){const c=line[i];if(escaped){escaped=false;continue;}if(quoted&&c==='\\'){escaped=true;continue;}if(c==='"')quoted=!quoted;if(!quoted&&line.slice(i,i+2)==='//')return line.slice(0,i);}return line;}
+function compile(code){
+  if(code.length>24000)throw new Error('Use at most 24,000 characters.');
+  const lines=code.split(/\r?\n/).map((s,i)=>({text:stripComment(s).trim(),line:i+1})).filter(x=>x.text);
+  if(lines.length>300)throw new Error('Use at most 300 nonblank lines.');
+  const instructions=[];let p=0,blockDepth=0;
+  function expression(s,line){try{return parseExpression(s);}catch(e){throw new Error('Line '+line+' · '+e.message);}}
+  function emit(type,line,extra={}){instructions.push({type,line:line.line,code:line.text,...extra});return instructions.length-1;}
+  function braceBlock(){
+    if(!lines[p]||lines[p].text!=='{')throw new Error('Line '+(lines[p]?.line||lines.at(-1)?.line||1)+' · Put { on its own line after a condition or loop.');
+    p++;block(true);
+  }
+  function block(nested){
+    if(++blockDepth>30)throw new Error('Too many nested blocks.');
+    while(p<lines.length){
+      const source=lines[p++],s=source.text;let m;
+      if(s==='}'){if(!nested)throw new Error('Line '+source.line+' · Unexpected }.');blockDepth--;return;}
+      if((m=s.match(/^IF\s*\((.*)\)$/i))){
+        const idx=emit('if',source,{expr:expression(m[1],source.line)});braceBlock();
+        if(lines[p]?.text.toUpperCase()==='ELSE'){
+          p++;const jump=emit('jump',source);instructions[idx].target=instructions.length;braceBlock();instructions[jump].target=instructions.length;
+        }else instructions[idx].target=instructions.length;
+      }else if((m=s.match(/^REPEAT\s+UNTIL\s*\((.*)\)$/i))){
+        const idx=emit('until',source,{expr:expression(m[1],source.line)});braceBlock();emit('jump',source,{target:idx});instructions[idx].target=instructions.length;
+      }else if((m=s.match(/^REPEAT\s+(.+)\s+TIMES$/i))){
+        const idx=emit('repeat',source,{expr:expression(m[1],source.line)});braceBlock();emit('repeatEnd',source,{start:idx});instructions[idx].target=instructions.length;
+      }else if((m=s.match(/^DISPLAY\s*\((.*)\)$/i))){emit('display',source,{expr:expression(m[1],source.line)});}
+      else if((m=s.match(/^([A-Za-z_][A-Za-z0-9_]*)\s*(?:←|<-)\s*(.+)$/))&&!RESERVED.has(m[1].toUpperCase())){emit('assign',source,{name:m[1],expr:expression(m[2],source.line)});}
+      else throw new Error('Line '+source.line+' · Use one supported statement per line; put {, }, and ELSE on separate lines.');
+    }
+    if(nested)throw new Error('Missing } at the end of a block.');blockDepth--;
+  }
+  block(false);return instructions;
+}
+function inputQueue(source){
+  if(typeof source!=='string')throw new Error('Input queue must be text.');
+  if(source.length>24000)throw new Error('Input queue is too large.');
+  return source.split(/\r?\n/).filter(x=>x.trim()).map((row,i)=>{
+    let value;try{value=JSON.parse(row);}catch(e){throw new Error('Input row '+(i+1)+' · Enter one number, true/false, or double-quoted string per line.');}
+    if(!['number','boolean','string'].includes(typeof value)||value===null)throw new Error('Input row '+(i+1)+' · Lists and objects are not inputs in this chapter.');return finite(value);
+  });
+}
+class Program{
+  constructor(code,inputs='',options={}){
+    this.instructions=compile(code);this.inputs=inputQueue(inputs);this.inputPosition=0;this.vars=Object.create(null);this.outputs=[];this.trace=[];this.pc=0;this.loops=new Map();this.error=null;this.steps=0;this.limit=options.limit||3000;
+    this.replay=options.replay?inputQueue(options.draws||''):null;this.drawPosition=0;this.rng=options.rng||Math.random;
+  }
+  get done(){return this.error!==null||this.pc>=this.instructions.length;}
+  get next(){return this.instructions[this.pc]||null;}
+  step(){
+    if(this.done)return null;
+    const context={vars:this.vars,input:()=>{if(this.inputPosition>=this.inputs.length)throw new Error('INPUT() has no remaining value. Add inputs and reset.');return this.inputs[this.inputPosition++];},random:(a,b)=>{
+      let value;
+      if(this.replay){if(this.drawPosition>=this.replay.length)throw new Error('Replay has no remaining random draw. Add draws or choose random mode.');value=this.replay[this.drawPosition++];if(!Number.isSafeInteger(value)||value<a||value>b)throw new Error('Replay value '+value+' is outside RANDOM('+a+', '+b+').');}
+      else {const u=this.rng();if(typeof u!=='number'||!Number.isFinite(u)||u<0||u>=1)throw new Error('Random source must return a number in [0,1).');value=a+Math.floor(u*(b-a+1));this.drawPosition++;}
+      draws.push({a,b,value});return value;
+    }};
+    const draws=[];
+    try{
+      // Hidden jumps connect blocks; each visible step still records a statement or a condition check.
+      while(!this.done){
+        const item=this.instructions[this.pc];
+        if(item.type==='jump'){this.pc=item.target;continue;}
+        if(item.type==='repeatEnd'){
+          const state=this.loops.get(item.start);state.completed++;
+          if(state.completed<state.count){this.pc=item.start;state.returning=true;}else{this.loops.delete(item.start);this.pc++;}
+          continue;
+        }
+        if(this.steps>=this.limit)throw new Error('Stopped at the '+this.limit+'-step classroom limit. Check the loop condition and its updates; this is a lab safeguard, not an AP rule.');
+        let effect='',condition=null;const beforeInput=this.inputPosition;
+        if(item.type==='assign'){const value=evaluate(item.expr,context);this.vars[item.name]=value;effect=item.name+' ← '+format(value);this.pc++;}
+        else if(item.type==='display'){const value=evaluate(item.expr,context);this.outputs.push(value);effect='DISPLAY: '+format(value);this.pc++;}
+        else if(item.type==='if'){condition=boolean(evaluate(item.expr,context));effect=condition?'true → execute IF block':'false → skip IF block / use ELSE if present';this.pc=condition?this.pc+1:item.target;}
+        else if(item.type==='until'){condition=boolean(evaluate(item.expr,context));effect=condition?'true → stop this loop':'false → execute loop body';this.pc=condition?item.target:this.pc+1;}
+        else if(item.type==='repeat'){
+          let state=this.loops.get(this.pc);
+          if(!state){const count=evaluate(item.expr,context);if(!Number.isSafeInteger(count)||count<0||count>10000)throw new Error('REPEAT needs a whole-number count from 0 to 10,000 in this lab.');state={count,completed:0};this.loops.set(this.pc,state);}
+          if(state.count===0){effect='0 repetitions → skip body';this.loops.delete(this.pc);this.pc=item.target;}
+          else{effect='Iteration '+(state.completed+1)+' of '+state.count+' → execute body';this.pc++;}
+        }
+        this.steps++;
+        const row={step:this.steps,line:item.line,code:item.code,effect,condition,variables:{...this.vars},inputs:this.inputs.slice(beforeInput,this.inputPosition),draws};this.trace.push(row);
+        // Finish transparent control transitions so the UI points to the next real source line.
+        this.normalize();return row;
+      }
+      return null;
+    }catch(e){this.error='Line '+(this.next?.line||this.trace.at(-1)?.line||1)+' · '+e.message;return null;}
+  }
+  normalize(){
+    while(!this.done){const item=this.next;if(item.type==='jump'){this.pc=item.target;continue;}if(item.type==='repeatEnd'){const state=this.loops.get(item.start);state.completed++;if(state.completed<state.count)this.pc=item.start;else{this.loops.delete(item.start);this.pc++;}continue;}break;}
+  }
+  run(){while(!this.done)this.step();return this;}
+}
+function format(value){return typeof value==='string'?JSON.stringify(value):String(value);}
+const api={Program,compile,parseExpression,evaluate,inputQueue,format};
+if(typeof module!=='undefined'&&module.exports)module.exports=api;else root.CSPProgramming=api;
+})(typeof window!=='undefined'?window:this);
+</script><script>const PRESETS=[{"id": "expressions", "title": "L09 · Expressions & string labels", "inputs": "\"Ada\"", "code": "name ← INPUT()\nlabel ← CONCAT(\"Hello, \", name)\nDISPLAY(label)\nDISPLAY(SUBSTRING(\"COMPUTING\", 1, 4))\nDISPLAY(17 / 5)\nDISPLAY(17 MOD 5)", "prompt": "Predict the two strings and two numbers. Then change one argument and explain the result."}, {"id": "boolean", "title": "L10 · Boolean rule checker", "inputs": "30\ntrue", "code": "minutes ← INPUT()\nhasMaterials ← INPUT()\nready ← (minutes >= 30) AND hasMaterials\nDISPLAY(ready)\nDISPLAY(NOT ready)", "prompt": "Try the boundary 29/30 with true and false. Predict both displayed values before running."}, {"id": "selection", "title": "L11 · One study session", "inputs": "30", "code": "minutes ← INPUT()\nIF (minutes >= 30)\n{\n  DISPLAY(\"Goal met\")\n}\nELSE\n{\n  DISPLAY(\"Keep going\")\n}", "prompt": "Run 29 and 30 separately. Which branch runs, and why does only one message appear?"}, {"id": "nested", "title": "L12 · Nested ticket decisions", "inputs": "12", "code": "age ← INPUT()\nIF (age < 12)\n{\n  price ← 5\n}\nELSE\n{\n  IF (age >= 65)\n  {\n    price ← 7\n  }\n  ELSE\n  {\n    price ← 12\n  }\n}\nDISPLAY(price)", "prompt": "Valid ages are whole numbers 0–120. Predict tests 11,12,64,65, then change the child threshold to 13."}, {"id": "counted", "title": "L13 · Total three study sessions", "inputs": "20\n30\n40", "code": "total ← 0\nREPEAT 3 TIMES\n{\n  minutes ← INPUT()\n  total ← total + minutes\n}\nDISPLAY(total)", "prompt": "Trace total after each input. Extend the program to display the mean after the loop."}, {"id": "until", "title": "L14 · Stop at a sentinel", "inputs": "10\n20\n-1", "code": "total ← 0\nminutes ← INPUT()\nREPEAT UNTIL (minutes = -1)\n{\n  total ← total + minutes\n  minutes ← INPUT()\n}\nDISPLAY(total)", "prompt": "Use nonnegative minutes and end with -1. Predict what happens if the first input is -1. The sentinel is not added."}, {"id": "random", "title": "L15 · Simulate die rolls", "inputs": "", "draws": "1\n6\n2\n6\n5\n3", "code": "sixes ← 0\nREPEAT 6 TIMES\n{\n  roll ← RANDOM(1, 6)\n  DISPLAY(roll)\n  IF (roll = 6)\n  {\n    sixes ← sixes + 1\n  }\n}\nDISPLAY(\"Number of sixes\")\nDISPLAY(sixes)", "prompt": "A random run varies. To test the counter, choose Replay specified draws and supply the six values shown."}, {"id": "project", "title": "L16 · Study Goal Tracker starter", "inputs": "29\n30\n31", "code": "goalHits ← 0\nREPEAT 3 TIMES\n{\n  minutes ← INPUT()\n  // TODO: display feedback and count a goal hit when minutes >= 30\n}\nDISPLAY(goalHits)\n// TODO: final feedback, using goalHits >= 2", "prompt": "Complete both TODOs using the project requirements below. A program that runs is not necessarily a complete solution."}];
+const $=s=>document.querySelector(s);
+let session=null;
+const format=CSPProgramming.format;
+function cells(row,values){for(const value of values){const td=document.createElement('td');td.textContent=String(value);row.append(td);}return row;}
+function render(){
+  $('#output').textContent=session?.outputs.length?session.outputs.map(String).join('\n'):'No output yet.';
+  $('#variables').replaceChildren();
+  for(const [key,value] of Object.entries(session?.vars||{}))$('#variables').append(cells(document.createElement('tr'),[key,format(value)]));
+  $('#empty-vars').hidden=Boolean(Object.keys(session?.vars||{}).length);
+  const last=session?.trace.at(-1);
+  $('#last-step').textContent=last?'Line '+last.line+' · '+last.effect:'Predict the path first.';
+  $('#next-step').textContent=session?.error?'Review the error and reset.':session?.done?'End of program.':session?'Line '+session.next.line+' · '+session.next.code:'Press Step to begin.';
+  $('#progress-text').textContent=session?session.steps+' steps · '+session.inputPosition+'/'+session.inputs.length+' inputs used · '+session.drawPosition+' random draws':'0 steps';
+  $('#last-step').className=last?.condition===true?'state true':last?.condition===false?'state false':'state';
+  $('#trace').replaceChildren();
+  for(const item of (session?.trace||[]).slice(-120)){
+    const extra=[item.inputs.length?'INPUT: '+item.inputs.map(format).join(', '):'',item.draws.length?'RANDOM: '+item.draws.map(x=>x.value+' in ['+x.a+', '+x.b+']').join('; '):''].filter(Boolean).join(' · ');
+    $('#trace').append(cells(document.createElement('tr'),[item.step,item.line,item.code,item.effect+(extra?' · '+extra:''),Object.entries(item.variables).map(([k,v])=>k+'='+format(v)).join('; ')]));
+  }
+  $('#trace-count').textContent=session?.trace.length>120?'Showing the latest 120 of '+session.trace.length+' steps. Save the work record for the full trace.':'Each row is an executed statement or a condition check. Skipped statements do not produce rows.';
+  $('#step').disabled=Boolean(session?.done);$('#run').disabled=Boolean(session?.done);
+  if(session){$('#status').textContent=session.error||(session.done?'Finished. Compare the output and path with your prediction.':'Paused. Read the next line before stepping.');$('#status').classList.toggle('error',Boolean(session.error));}
+}
+function reset(){session=null;$('#status').textContent='Ready. Write a prediction before running.';$('#status').classList.remove('error');render();}
+function start(){if(!session){try{session=new CSPProgramming.Program($('#program').value,$('#inputs').value,{replay:$('#random-mode').value==='replay',draws:$('#draws').value});}catch(e){$('#status').textContent='Syntax / input error · '+e.message;$('#status').classList.add('error');return false;}}return true;}
+function loadExample(){const preset=PRESETS.find(x=>x.id===$('#example').value)||PRESETS[0];$('#program').value=preset.code;$('#inputs').value=preset.inputs;$('#draws').value=preset.draws||'';$('#activity').textContent=preset.prompt;$('#random-mode').value='sample';$('#replay-box').hidden=true;history.replaceState(null,'','#'+preset.id);reset();}
+function download(name,body,type){const url=URL.createObjectURL(new Blob([body],{type}));const a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
+$('#example').replaceChildren(...PRESETS.map(x=>{const option=document.createElement('option');option.value=x.id;option.textContent=x.title;return option;}));
+const selected=location.hash.slice(1);if(PRESETS.some(x=>x.id===selected))$('#example').value=selected;
+$('#load').onclick=loadExample;
+$('#step').onclick=()=>{if(start()){session.step();render();}};
+$('#run').onclick=()=>{if(start()){session.run();render();}};
+$('#reset').onclick=reset;
+for(const selector of ['#program','#inputs','#draws'])$(selector).addEventListener('input',reset);
+$('#random-mode').onchange=()=>{$('#replay-box').hidden=$('#random-mode').value!=='replay';reset();};
+$('#save-code').onclick=()=>download('my-chapter-3-program.txt',$('#program').value+'\n','text/plain');
+$('#save-work').onclick=()=>download('chapter-3-work-record.json',JSON.stringify({chapter:3,example:$('#example').value,code:$('#program').value,inputs:$('#inputs').value,randomMode:$('#random-mode').value,replayDraws:$('#draws').value,prediction:$('#prediction').value,reflection:$('#reflection').value,outputs:session?.outputs||[],trace:session?.trace||[],error:session?.error||null},null,2),'application/json');
+loadExample();
+</script></body></html>

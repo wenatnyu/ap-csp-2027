@@ -1,0 +1,345 @@
+{
+  "title": "AP CSP — Lesson 16 Homework: Study Goal Tracker: Chapter 3 Project & Check",
+  "durationMinutes": 45,
+  "totalMarks": 30,
+  "notice": "All questions are original. Q1–Q6 are AP-style practice, not official or past AP questions. Q7–Q12 are classroom written responses, not official exam FRQs. The 30 marks are teacher-assigned. For Q5 select exactly TWO answers; its one mark requires both correct choices and no others. Follow AP pseudocode semantics.",
+  "questions": [
+    {
+      "id": "Q1",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "L09 arithmetic and MOD",
+      "prompt": "What is the value of 17 MOD 5 + 2 * 4?",
+      "options": [
+        {
+          "label": "A",
+          "text": "16"
+        },
+        {
+          "label": "B",
+          "text": "10"
+        },
+        {
+          "label": "C",
+          "text": "12"
+        },
+        {
+          "label": "D",
+          "text": "11.4"
+        }
+      ],
+      "answer": "B",
+      "explanation": "B: the remainder is 2 and the product is 8, giving 10. A groups the addition before multiplication; C groups 5+2 as the divisor; D uses division instead of MOD.",
+      "lines": 0
+    },
+    {
+      "id": "Q2",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "L10 Boolean logic",
+      "prompt": "When x = 4, which expression is true?",
+      "options": [
+        {
+          "label": "A",
+          "text": "(x < 4) AND (x > 0)"
+        },
+        {
+          "label": "B",
+          "text": "NOT(x = 4)"
+        },
+        {
+          "label": "C",
+          "text": "(x = 4) AND NOT(x > 5)"
+        },
+        {
+          "label": "D",
+          "text": "(x > 5) OR (x < 0)"
+        }
+      ],
+      "answer": "C",
+      "explanation": "C is true AND true. A contains false x<4; B negates true; D combines two false comparisons.",
+      "lines": 0
+    },
+    {
+      "id": "Q3",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "L11 selection boundary",
+      "prompt": "IF(score ≥ 50) displays Pass; ELSE displays Retry. What appears when score = 50?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Retry"
+        },
+        {
+          "label": "B",
+          "text": "Both messages"
+        },
+        {
+          "label": "C",
+          "text": "Neither message"
+        },
+        {
+          "label": "D",
+          "text": "Pass"
+        }
+      ],
+      "answer": "D",
+      "explanation": "D includes the equality boundary. A treats ≥ as >; B ignores exclusive branch choice; C ignores that an IF/ELSE always chooses a branch.",
+      "lines": 0
+    },
+    {
+      "id": "Q4",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "L13 counted iteration",
+      "prompt": "Start total = 1. Repeat total ← total * 2 three times. What is total?",
+      "options": [
+        {
+          "label": "A",
+          "text": "8"
+        },
+        {
+          "label": "B",
+          "text": "6"
+        },
+        {
+          "label": "C",
+          "text": "4"
+        },
+        {
+          "label": "D",
+          "text": "16"
+        }
+      ],
+      "answer": "A",
+      "explanation": "A: 1→2→4→8. B adds or multiplies by the count; C performs two updates; D performs four.",
+      "lines": 0
+    },
+    {
+      "id": "Q5",
+      "type": "multi",
+      "marks": 1,
+      "topic": "L14 conditional iteration",
+      "prompt": "Which TWO statements about AP REPEAT UNTIL are correct?",
+      "options": [
+        {
+          "label": "A",
+          "text": "It stops when the condition is false."
+        },
+        {
+          "label": "B",
+          "text": "An initially true condition can give zero body runs."
+        },
+        {
+          "label": "C",
+          "text": "Any changing variable guarantees it ends."
+        },
+        {
+          "label": "D",
+          "text": "A condition that never becomes true can cause an infinite loop."
+        }
+      ],
+      "answer": "B and D",
+      "explanation": "B follows the pre-check rule. D describes an unreachable stopping condition. A reverses true/false behavior; C does not show progress toward the required condition. Both B and D are required.",
+      "lines": 0
+    },
+    {
+      "id": "Q6",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "L15 random probability",
+      "prompt": "What is P(RANDOM(1, 5) ≤ 2)?",
+      "options": [
+        {
+          "label": "A",
+          "text": "1/2"
+        },
+        {
+          "label": "B",
+          "text": "1/5"
+        },
+        {
+          "label": "C",
+          "text": "2/5"
+        },
+        {
+          "label": "D",
+          "text": "3/5"
+        }
+      ],
+      "answer": "C",
+      "explanation": "C counts outcomes 1 and 2 among five. A assumes two equal categories; B counts one outcome; D counts the failures.",
+      "lines": 0
+    },
+    {
+      "id": "Q7",
+      "type": "written",
+      "marks": 4,
+      "topic": "L09 expressions, assignment and defined string operations",
+      "prompt": "x ← 3\ny ← x + 2\nx ← y * 2\ny ← x MOD 4\n(a) Give y after line 2. (b) Give x after line 3. (c) Give final y.\n(d) Evaluate CONCAT(\"AP\", \" CSP\"). CONCAT joins strings without adding spaces.",
+      "answer": "(a) 5. (b) 10. (c) 2. (d) AP CSP, with one space from the second string.",
+      "explanation": "Arithmetic is evaluated before assignment. MOD returns the remainder, so 10 MOD 4 is 2. The supplied CONCAT operation preserves the space already present in its second argument and adds no extra space.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Gives y = 5 after line 2."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives x = 10 after line 3."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives final y = 2."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives AP CSP with exactly one space from the second string."
+        }
+      ],
+      "lines": 7
+    },
+    {
+      "id": "Q8",
+      "type": "written",
+      "marks": 4,
+      "topic": "L12 nested conditionals",
+      "prompt": "Rule: if age ≥ 12, check member. If member is true, display Member; otherwise display Guest. If age < 12, display Junior.\n(a) Predict age 12/member false. (b) Predict age 11/member true.\n(c) Predict age 12/member true. (d) Explain why member need not be checked for age 11.",
+      "answer": "(a) Guest. (b) Junior. (c) Member. (d) The outer age condition is false, so its nested member test is skipped.",
+      "explanation": "(a) Guest. (b) Junior. (c) Member. (d) The outer age condition is false, so its nested member test is skipped.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Gives Guest for 12/false."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives Junior for 11/true."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives Member for 12/true."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains that the false outer condition skips the nested test."
+        }
+      ],
+      "lines": 7
+    },
+    {
+      "id": "Q9",
+      "type": "written",
+      "marks": 4,
+      "topic": "L14 trace and termination",
+      "prompt": "n ← 2\nREPEAT UNTIL(n ≥ 7)\n{\n  n ← n + 2\n}\n(a) Give final n. (b) Give body count. (c) Would replacing ≥ with = terminate? Explain. (d) Give a start value making the original loop run zero times.",
+      "answer": "Final n 8; three body runs. Equality to 7 never occurs because n stays even. Any initial n ≥ 7 gives zero runs, such as 7.",
+      "explanation": "Final n 8; three body runs. Equality to 7 never occurs because n stays even. Any initial n ≥ 7 gives zero runs, such as 7.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Gives final n = 8."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives three body executions."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains that equality to odd 7 is unreachable from even values."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives a starting value ≥ 7 and states zero body runs."
+        }
+      ],
+      "lines": 7
+    },
+    {
+      "id": "Q10",
+      "type": "written",
+      "marks": 4,
+      "topic": "L15 simulation interpretation",
+      "prompt": "A fair independent coin model uses RANDOM(1, 2), with 1 = Heads. It gives 8 Heads in 20 trials.\n(a) Give theoretical P(Heads). (b) Calculate observed frequency.\n(c) Must the next trial be Heads? Explain. (d) State one reason a real coin experiment could differ from this simplified model.",
+      "answer": "Theoretical probability 1/2; observed 8/20 = 0.4. No: the next trial still has probability 1/2. A real coin or tossing method may be biased or trials may not be independent.",
+      "explanation": "Theoretical probability 1/2; observed 8/20 = 0.4. No: the next trial still has probability 1/2. A real coin or tossing method may be biased or trials may not be independent.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Gives theoretical probability 1/2."
+        },
+        {
+          "marks": 1,
+          "criterion": "Calculates observed frequency 0.4."
+        },
+        {
+          "marks": 1,
+          "criterion": "Rejects a forced next result and refers to the unchanged independent probability."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives a relevant real-world assumption that may fail."
+        }
+      ],
+      "lines": 7
+    },
+    {
+      "id": "Q11",
+      "type": "written",
+      "marks": 4,
+      "topic": "Project tests",
+      "prompt": "Study Goal Tracker reads three valid daily values and counts minutes ≥ 30. After three days it displays count, then On track if count ≥ 2, else Try again.\n(a) For 29, 30, 31, give count and final message.\n(b) For 0, 0, 0, give count and final message.\n(c) For 30, 30, 30, give count and final message.\n(d) Explain why 29 and 30 form a useful boundary pair.",
+      "answer": "(a) 2, On track. (b) 0, Try again. (c) 3, On track. (d) They lie on opposite sides of the included goal boundary and distinguish >30 from ≥30.",
+      "explanation": "(a) 2, On track. (b) 0, Try again. (c) 3, On track. (d) They lie on opposite sides of the included goal boundary and distinguish >30 from ≥30.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Gives 2 and On track for 29/30/31."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives 0 and Try again for 0/0/0."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives 3 and On track for 30/30/30."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains how 29/30 test the inclusion boundary."
+        }
+      ],
+      "lines": 7
+    },
+    {
+      "id": "Q12",
+      "type": "written",
+      "marks": 4,
+      "topic": "Project repair and development record",
+      "prompt": "A faulty tracker resets count ← 0 inside its three-day loop. All inputs are 30.\n(a) Give the faulty final count. (b) Write the corrected initialization and loop outline.\n(c) Give the corrected final count and final message.\n(d) Write a revision record linking this change to a test.",
+      "answer": "Faulty count 1. Move count ← 0 before REPEAT 3 TIMES and keep the conditional increment inside. Correct result: 3, On track. Record the reset bug, moved initialization and 30/30/30 retest changing 1 to 3.",
+      "explanation": "Faulty count 1. Move count ← 0 before REPEAT 3 TIMES and keep the conditional increment inside. Correct result: 3, On track. Record the reset bug, moved initialization and 30/30/30 retest changing 1 to 3.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Gives faulty count 1."
+        },
+        {
+          "marks": 1,
+          "criterion": "Places count ← 0 before the loop and conditional increment inside."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives corrected count 3 and On track."
+        },
+        {
+          "marks": 1,
+          "criterion": "Records the specific change and the 30/30/30 before/after test."
+        }
+      ],
+      "lines": 9,
+      "minLines": 9
+    }
+  ]
+}

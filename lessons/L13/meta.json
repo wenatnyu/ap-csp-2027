@@ -1,0 +1,12 @@
+{
+  "chapter": 3,
+  "id": "L13",
+  "number": "13",
+  "title": "Counted Loops",
+  "shortTitle": "Counted Loops",
+  "chineseTitle": "计数循环",
+  "filename": "AP_CSP_L13_Counted_Loops.html",
+  "minutes": 90,
+  "topicSummary": "REPEAT n TIMES, counters, accumulators, initialization, update order, zero iterations and small fixed nested loops.",
+  "homeworkInstructions": "Complete all 12 original questions (30 marks, about 40 minutes). Q5 requires exactly TWO choices. Trace statements in their execution order. Each program statement and each brace occupies its own line. Show reasoning and use the stated valid input range."
+}

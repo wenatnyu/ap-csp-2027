@@ -1,0 +1,344 @@
+{
+  "title": "AP CSP — Lesson 09 Homework: Expressions and Strings",
+  "durationMinutes": 40,
+  "totalMarks": 30,
+  "notice": "All questions are original. Q1–Q6 are AP-style practice, not official AP questions. Written tasks and 30 marks are teacher-designed. Q5 earns one mark only for both correct choices and no others. CONCAT(a,b) joins two strings without adding spaces. SUBSTRING(s,start,length) returns length consecutive characters starting at 1-based position start. Both are supplied teaching procedures, not fixed AP-reference built-ins. Examples use valid substring positions.",
+  "questions": [
+    {
+      "id": "Q1",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Retrieval: assignment copies a value",
+      "prompt": "After x ← 6; y ← x; x ← 10, what value does y hold?",
+      "options": [
+        {
+          "label": "A",
+          "text": "6"
+        },
+        {
+          "label": "B",
+          "text": "10"
+        },
+        {
+          "label": "C",
+          "text": "16"
+        },
+        {
+          "label": "D",
+          "text": "The expression x, which updates automatically"
+        }
+      ],
+      "answer": "A",
+      "explanation": "A is correct: y received a copy of 6. B treats assignment as a live link. C invents addition. D confuses a stored result with an automatically recalculated formula.",
+      "lines": 0
+    },
+    {
+      "id": "Q2",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Arithmetic precedence",
+      "prompt": "What is the value of 4 + 3 * 5?",
+      "options": [
+        {
+          "label": "A",
+          "text": "35"
+        },
+        {
+          "label": "B",
+          "text": "19"
+        },
+        {
+          "label": "C",
+          "text": "27"
+        },
+        {
+          "label": "D",
+          "text": "60"
+        }
+      ],
+      "answer": "B",
+      "explanation": "B is correct: multiply 3 by 5, then add 4. A adds before multiplying. C and D do not follow the given operations and their precedence.",
+      "lines": 0
+    },
+    {
+      "id": "Q3",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Division",
+      "prompt": "In AP pseudocode, what is 13 / 4?",
+      "options": [
+        {
+          "label": "A",
+          "text": "3"
+        },
+        {
+          "label": "B",
+          "text": "1"
+        },
+        {
+          "label": "C",
+          "text": "3.25"
+        },
+        {
+          "label": "D",
+          "text": "4"
+        }
+      ],
+      "answer": "C",
+      "explanation": "C is correct: / performs division, so the result can be decimal. A truncates incorrectly. B is 13 MOD 4. D is not the quotient.",
+      "lines": 0
+    },
+    {
+      "id": "Q4",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Remainder",
+      "prompt": "A program evaluates 23 MOD 6. What value is produced?",
+      "options": [
+        {
+          "label": "A",
+          "text": "3"
+        },
+        {
+          "label": "B",
+          "text": "3.8333…"
+        },
+        {
+          "label": "C",
+          "text": "6"
+        },
+        {
+          "label": "D",
+          "text": "5"
+        }
+      ],
+      "answer": "D",
+      "explanation": "D is correct: 23 = 3 × 6 + 5. A is the number of complete groups. B is the division result. C equals the divisor and cannot be this remainder.",
+      "lines": 0
+    },
+    {
+      "id": "Q5",
+      "type": "multi",
+      "marks": 1,
+      "topic": "Defined string operations and MOD",
+      "prompt": "Using the supplied procedures above, which TWO statements are true? Select exactly TWO answers.",
+      "options": [
+        {
+          "label": "A",
+          "text": "CONCAT(\"A\", \"B\") produces \"A B\"."
+        },
+        {
+          "label": "B",
+          "text": "SUBSTRING(\"STUDY\", 2, 3) produces \"TUD\"."
+        },
+        {
+          "label": "C",
+          "text": "12 MOD 4 produces 0."
+        },
+        {
+          "label": "D",
+          "text": "9 / 2 produces 4."
+        }
+      ],
+      "answer": "B and C",
+      "explanation": "B takes three characters at positions 2, 3 and 4. C has no remainder. A is false because CONCAT adds no space; it produces \"AB\". D is false because 9 / 2 is 4.5.",
+      "lines": 0
+    },
+    {
+      "id": "Q6",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Substring parameters",
+      "prompt": "What does SUBSTRING(\"CAMPUS\", 3, 2) return under the supplied definition?",
+      "options": [
+        {
+          "label": "A",
+          "text": "\"MP\""
+        },
+        {
+          "label": "B",
+          "text": "\"AM\""
+        },
+        {
+          "label": "C",
+          "text": "\"MPU\""
+        },
+        {
+          "label": "D",
+          "text": "\"CA\""
+        }
+      ],
+      "answer": "A",
+      "explanation": "A selects two characters, at positions 3 and 4. B starts at position 2. C takes three characters. D starts at position 1. The third argument is a count, not an end position.",
+      "lines": 0
+    },
+    {
+      "id": "Q7",
+      "type": "written",
+      "marks": 4,
+      "topic": "Evaluate distinct arithmetic expressions",
+      "prompt": "Evaluate each expression. Show the operation performed first.\n(a) 6 + 4 * 3   (b) (6 + 4) * 3\n(c) 15 / 4   (d) 3 + 15 MOD 4",
+      "answer": "(a) 18: multiplication first. (b) 30: parentheses first. (c) 3.75. (d) 6: MOD first, then addition.",
+      "explanation": "(a) 18: multiplication first. (b) 30: parentheses first. (c) 3.75. (d) 6: MOD first, then addition.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "(a) 18, with 4 * 3 evaluated first."
+        },
+        {
+          "marks": 1,
+          "criterion": "(b) 30, with 6 + 4 evaluated first."
+        },
+        {
+          "marks": 1,
+          "criterion": "(c) 3.75 from division."
+        },
+        {
+          "marks": 1,
+          "criterion": "(d) 6, with 15 MOD 4 = 3 evaluated before addition."
+        }
+      ],
+      "lines": 7
+    },
+    {
+      "id": "Q8",
+      "type": "written",
+      "marks": 4,
+      "topic": "MOD model and boundary",
+      "prompt": "There are 26 tiles and each full pack holds 7. State (a) the number of full packs, (b) 26 MOD 7, (c) the equality connecting these values, and (d) every possible remainder for a MOD 7 when a is a nonnegative integer.",
+      "answer": "(a) 3 packs. (b) 5 tiles. (c) 26 = 3 × 7 + 5. (d) 0, 1, 2, 3, 4, 5, 6.",
+      "explanation": "(a) 3 packs. (b) 5 tiles. (c) 26 = 3 × 7 + 5. (d) 0, 1, 2, 3, 4, 5, 6.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "3 full packs."
+        },
+        {
+          "marks": 1,
+          "criterion": "Remainder 5."
+        },
+        {
+          "marks": 1,
+          "criterion": "26 = 3 × 7 + 5 (or equivalent equality)."
+        },
+        {
+          "marks": 1,
+          "criterion": "Exactly the integers 0 through 6."
+        }
+      ],
+      "lines": 7
+    },
+    {
+      "id": "Q9",
+      "type": "written",
+      "marks": 4,
+      "topic": "Construct a string step by step",
+      "prompt": "Use the supplied string procedures.\ns ← \"SUNRISE\"; part ← SUBSTRING(s, 4, 3); tag ← CONCAT(part, \"!\")\nGive (a) part, (b) tag, (c) the positions used, and (d) the final value of s.",
+      "answer": "(a) \"RIS\". (b) \"RIS!\". (c) Positions 4, 5 and 6. (d) \"SUNRISE\".",
+      "explanation": "(a) \"RIS\". (b) \"RIS!\". (c) Positions 4, 5 and 6. (d) \"SUNRISE\".",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "part is \"RIS\"."
+        },
+        {
+          "marks": 1,
+          "criterion": "tag is \"RIS!\"."
+        },
+        {
+          "marks": 1,
+          "criterion": "Positions 4, 5 and 6, demonstrating a three-character count."
+        },
+        {
+          "marks": 1,
+          "criterion": "s remains \"SUNRISE\"; neither later assignment targets s."
+        }
+      ],
+      "lines": 7
+    },
+    {
+      "id": "Q10",
+      "type": "written",
+      "marks": 4,
+      "topic": "Trace a stored calculation",
+      "prompt": "Trace: minutes ← 75; hours ← minutes / 60; minutes ← 120.\nState (a) final hours, (b) final minutes, (c) why hours has that value, and (d) one assignment that updates hours to match the new minutes.",
+      "answer": "(a) 1.25. (b) 120. (c) hours stores the earlier evaluated result; it is not assigned again. (d) hours ← minutes / 60.",
+      "explanation": "(a) 1.25. (b) 120. (c) hours stores the earlier evaluated result; it is not assigned again. (d) hours ← minutes / 60.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Final hours is 1.25."
+        },
+        {
+          "marks": 1,
+          "criterion": "Final minutes is 120."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains that the earlier result is stored and no later assignment updates hours."
+        },
+        {
+          "marks": 1,
+          "criterion": "hours ← minutes / 60 (equivalent valid calculation accepted)."
+        }
+      ],
+      "lines": 7
+    },
+    {
+      "id": "Q11",
+      "type": "written",
+      "marks": 4,
+      "topic": "Workshop Pass test",
+      "prompt": "The Workshop Pass displays CONCAT(\"Hello, \", name), SUBSTRING(name, 1, 2), minutes / 60, and minutes MOD 60. For name = \"Zoe\" and minutes = 150, give these four values in order.",
+      "answer": "\"Hello, Zoe\"; \"Zo\"; 2.5; 30.",
+      "explanation": "\"Hello, Zoe\"; \"Zo\"; 2.5; 30.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Greeting is \"Hello, Zoe\", with the supplied space."
+        },
+        {
+          "marks": 1,
+          "criterion": "Badge is \"Zo\" with case preserved."
+        },
+        {
+          "marks": 1,
+          "criterion": "Decimal hours is 2.5."
+        },
+        {
+          "marks": 1,
+          "criterion": "Remaining minutes is 30."
+        }
+      ],
+      "lines": 7
+    },
+    {
+      "id": "Q12",
+      "type": "written",
+      "marks": 4,
+      "topic": "Debug and choose a revealing test",
+      "prompt": "A learner uses badge ← SUBSTRING(name, 0, 2) and claims / always drops a fractional part. (a) Correct the assignment. (b) State the indexing rule. (c) Choose an integer minute value from 1–59 to test minutes / 60. (d) Give its expected result and explain what it checks.",
+      "answer": "(a) badge ← SUBSTRING(name, 1, 2). (b) Positions start at 1. (c) For example, 30 minutes. (d) 0.5 hours; this distinguishes decimal division from an incorrect result of 0.",
+      "explanation": "(a) badge ← SUBSTRING(name, 1, 2). (b) Positions start at 1. (c) For example, 30 minutes. (d) 0.5 hours; this distinguishes decimal division from an incorrect result of 0.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Correct assignment uses start 1 and length 2."
+        },
+        {
+          "marks": 1,
+          "criterion": "States the supplied procedure uses 1-based positions."
+        },
+        {
+          "marks": 1,
+          "criterion": "Chooses an integer minute value from 1 through 59."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives the correct fractional hours for that choice and explains that it reveals improper truncation."
+        }
+      ],
+      "lines": 7
+    }
+  ]
+}
