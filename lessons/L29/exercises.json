@@ -1,0 +1,344 @@
+{
+  "title": "AP CSP — Lesson 29 Homework: Privacy & Security",
+  "durationMinutes": 40,
+  "totalMarks": 30,
+  "notice": "All questions and scenarios are original. Q1–Q6 are AP-style practice, not official or past AP questions; Q7–Q12 are classroom written practice, not official FRQs. These 30 marks are teacher-assigned, not AP exam scoring. Select exactly TWO answers in Q5; its one mark requires both correct choices and no others. All people, data and permission cards are fictional or synthetic. Explain decisions using the stated purpose and conditions. Do not submit real passwords or personal information.",
+  "questions": [
+    {
+      "id": "Q1",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "PII and combined data",
+      "prompt": "Which statement about personally identifiable information (PII) is most accurate?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Only a legal name can be PII."
+        },
+        {
+          "label": "B",
+          "text": "A field must identify exactly one person by itself to be PII."
+        },
+        {
+          "label": "C",
+          "text": "Information that describes or links to an individual can be PII, and combining fields can increase what is inferred."
+        },
+        {
+          "label": "D",
+          "text": "Removing names guarantees that no personal information remains."
+        }
+      ],
+      "answer": "C",
+      "explanation": "C includes descriptive and linkable information and the effect of combining data. A excludes many forms of PII. B incorrectly requires unique identification by one field. D ignores location, descriptive fields and links to other data.",
+      "lines": 0
+    },
+    {
+      "id": "Q2",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Purpose and data minimization",
+      "prompt": "The fictional Community Shade Map only needs North/South summaries of shade ratings. Which field set best meets this purpose while limiting unnecessary collection?",
+      "options": [
+        {
+          "label": "A",
+          "text": "zone and shadeRating"
+        },
+        {
+          "label": "B",
+          "text": "name, email and exactGPS only"
+        },
+        {
+          "label": "C",
+          "text": "every available field because it might be useful later"
+        },
+        {
+          "label": "D",
+          "text": "password and fingerprint"
+        }
+      ],
+      "answer": "A",
+      "explanation": "A supplies the group and measure needed for the stated summary. B omits the rating and adds unnecessary identifying detail. C expands collection without a stated purpose. D collects sensitive authentication information unrelated to the summary.",
+      "lines": 0
+    },
+    {
+      "id": "Q3",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Multifactor authentication",
+      "prompt": "Which sign-in method uses two different authentication factor categories? The phone step verifies possession of the registered device.",
+      "options": [
+        {
+          "label": "A",
+          "text": "password and PIN"
+        },
+        {
+          "label": "B",
+          "text": "password entered twice"
+        },
+        {
+          "label": "C",
+          "text": "PIN and a second PIN"
+        },
+        {
+          "label": "D",
+          "text": "password and approval from the registered phone"
+        }
+      ],
+      "answer": "D",
+      "explanation": "D combines something known with verified possession. A, B and C use only the knowledge category, even when there are two secrets or two steps.",
+      "lines": 0
+    },
+    {
+      "id": "Q4",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Public-key confidentiality",
+      "prompt": "A sender wants to encrypt a confidential message for Blake in the public-key model taught in class. Which pairing is correct?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Encrypt with the sender’s private key; decrypt with the sender’s public key."
+        },
+        {
+          "label": "B",
+          "text": "Encrypt with Blake’s public key; decrypt with Blake’s private key."
+        },
+        {
+          "label": "C",
+          "text": "Encrypt with Blake’s private key; publish that private key for decryption."
+        },
+        {
+          "label": "D",
+          "text": "Encrypt with a public key; anyone’s unrelated private key can decrypt it."
+        }
+      ],
+      "answer": "B",
+      "explanation": "B uses the recipient’s matched keys in the confidentiality model. A assigns the sender’s keys to the wrong purpose. C reverses roles and exposes the secret. D ignores that the public and private keys must be the matching pair.",
+      "lines": 0
+    },
+    {
+      "id": "Q5",
+      "type": "multi",
+      "marks": 1,
+      "topic": "Safe computing",
+      "prompt": "Select exactly TWO supported statements.",
+      "options": [
+        {
+          "label": "A",
+          "text": "A valid certificate proves that every request on the site is honest."
+        },
+        {
+          "label": "B",
+          "text": "Software updates can patch known security flaws."
+        },
+        {
+          "label": "C",
+          "text": "A familiar sender’s account may have been compromised."
+        },
+        {
+          "label": "D",
+          "text": "Every public wireless network is a rogue access point."
+        }
+      ],
+      "answer": "B and C",
+      "explanation": "B is a reason to keep software updated; it is not a promise of perfect security. C explains why familiar names alone are insufficient verification. A overstates certificates, which validate key ownership through a trust model. D confuses public access with unauthorized access points.",
+      "lines": 0
+    },
+    {
+      "id": "Q6",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Threat behavior",
+      "prompt": "A malicious program records keyboard input to capture credentials. Which term most directly describes this behavior?",
+      "options": [
+        {
+          "label": "A",
+          "text": "aggregation"
+        },
+        {
+          "label": "B",
+          "text": "public-key encryption"
+        },
+        {
+          "label": "C",
+          "text": "keylogging"
+        },
+        {
+          "label": "D",
+          "text": "data compression"
+        }
+      ],
+      "answer": "C",
+      "explanation": "C directly names recording keystrokes. A combines records into summaries. B transforms data to protect confidentiality using matched keys. D reduces representation size; none of those definitions describes capturing typed credentials.",
+      "lines": 0
+    },
+    {
+      "id": "Q7",
+      "type": "written",
+      "marks": 4,
+      "topic": "Collection and disclosure",
+      "prompt": "The fictional map needs only North/South aggregate shade priorities. Proposed fields are zone, shadeRating, name, email and exactGPS. Choose the two necessary fields, explain their roles, identify unnecessary collection, and explain one privacy risk that can remain after publishing only zone summaries.",
+      "answer": "Use zone to group reports and shadeRating to summarize need. Omit name, email and exactGPS because this purpose does not require identifying, contacting or precisely locating a respondent. Aggregation reduces detail, but small groups or combination with other data can still permit inferences about people.",
+      "explanation": "Judge necessity against the stated purpose. Do not assume a later contact or routing feature that is not requested. Aggregation helps but does not guarantee anonymity.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Identifies zone and explains that it groups responses into North/South."
+        },
+        {
+          "marks": 1,
+          "criterion": "Identifies shadeRating and explains that it supplies the measure of shade need."
+        },
+        {
+          "marks": 1,
+          "criterion": "Identifies name, email and exactGPS as unnecessary for this stated aggregate purpose, with a purpose-based reason."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains a plausible remaining privacy risk from small groups or linking summaries to other data; does not claim zero risk."
+        }
+      ],
+      "lines": 8
+    },
+    {
+      "id": "Q8",
+      "type": "written",
+      "marks": 4,
+      "topic": "Authentication categories",
+      "prompt": "Compare password + PIN with password + verified phone approval. Classify the password and PIN, classify the phone step, identify which combination qualifies as MFA, and explain one limitation of MFA. No real credentials are needed.",
+      "answer": "A password and a PIN are both knowledge factors. Verified phone approval is possession. Password plus verified phone approval therefore combines two categories; password plus PIN does not. MFA reduces account-access risk, but does not guarantee protection against every phishing attempt, malware or misuse by an authorized user.",
+      "explanation": "Two inputs do not necessarily mean two factors. A correct limit must not erase the protection MFA provides.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Classifies password and PIN as the knowledge category."
+        },
+        {
+          "marks": 1,
+          "criterion": "Classifies verified phone approval as the possession category."
+        },
+        {
+          "marks": 1,
+          "criterion": "Identifies password plus phone as MFA and password plus PIN as one category."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains one plausible remaining risk, such as malware, deceptive approval requests or misuse after access; does not say MFA guarantees safety."
+        }
+      ],
+      "lines": 8
+    },
+    {
+      "id": "Q9",
+      "type": "written",
+      "marks": 4,
+      "topic": "Encryption models",
+      "prompt": "For a confidential message sent to Blake, identify the public-key encryption key and decryption key, explain which key Blake may share and which stays secret, and contrast this with symmetric encryption.",
+      "answer": "Encrypt with Blake’s public key. Decrypt with Blake’s private key. Blake can share the public key while protecting the private key. Symmetric encryption instead uses the same secret key for encryption and decryption, so authorized parties must share and protect that secret.",
+      "explanation": "This question is about confidentiality, not digital signatures. No algorithm mathematics is required.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Identifies Blake’s public key for encryption."
+        },
+        {
+          "marks": 1,
+          "criterion": "Identifies Blake’s private key for decryption."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains that the public key may be shared while the private key must remain secret."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains that symmetric encryption uses the same secret key at both ends, unlike the public/private pair."
+        }
+      ],
+      "lines": 8
+    },
+    {
+      "id": "Q10",
+      "type": "written",
+      "marks": 4,
+      "topic": "Phishing and layered protection",
+      "prompt": "A fictional message from a familiar account says, “Open this form now and send your password to keep using the map.” A separate untrusted download claims to be a required map update. Give two distinct risks and a suitable response to each.",
+      "answer": "The form may be phishing that attempts to obtain credentials; verify using an independently known channel and do not provide the password through the message. The untrusted download may install malware, including a keylogger; obtain software or updates from a trusted source instead. A familiar account may be compromised.",
+      "explanation": "The response must match each risk. Do not download a file or follow a link to investigate it for this classroom exercise.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Identifies the credential-request message as a phishing risk, including why the request is suspicious."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives a safe independent verification or reporting response and avoids providing credentials through the supplied form."
+        },
+        {
+          "marks": 1,
+          "criterion": "Identifies the untrusted download as a malware or keylogging risk."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives a matched protective action such as using a trusted update source and keeping verified software updated; does not claim any download is automatically safe."
+        }
+      ],
+      "lines": 8
+    },
+    {
+      "id": "Q11",
+      "type": "written",
+      "marks": 4,
+      "topic": "Certificates and trustworthy requests",
+      "prompt": "A student says, “This connection is encrypted and has a valid digital certificate, so the request to reveal my password must be safe.” Explain the role of encryption, the role of a certificate authority, the flaw in the claim, and a safer response.",
+      "answer": "Encryption protects the confidentiality of data in transit. A certificate authority uses a trust model to validate ownership of encryption keys through digital certificates. Neither proves that a request is honest or appropriate. Do not reveal the password in response; verify the request through an independently known service or contact channel.",
+      "explanation": "Keep channel protection, key ownership and content judgment distinct. A valid certificate does not license inappropriate data collection.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Explains that encryption protects confidentiality during transfer, assuming the intended key association."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains that a certificate authority validates encryption-key ownership using digital certificates and a trust model."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains that channel encryption or a valid certificate does not prove message honesty or eliminate phishing."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives a safer independent verification response that does not disclose the password to the request."
+        }
+      ],
+      "lines": 8
+    },
+    {
+      "id": "Q12",
+      "type": "written",
+      "marks": 4,
+      "topic": "Unauthorized access and maintenance",
+      "prompt": "Explain what a rogue access point is, why “all public Wi-Fi is rogue” is incorrect, how reviewing app permissions can protect privacy, and why software updates matter.",
+      "answer": "A rogue access point is an unauthorized wireless access point that can give unauthorized access to a secure network. Public availability does not by itself make a wireless network unauthorized or malicious. Reviewing and removing unnecessary app permissions limits data or device access. Software updates can repair known security flaws, although no system becomes risk-free.",
+      "explanation": "These are four separate explanations. Mentioning a tool name without its effect is insufficient.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Defines a rogue access point as unauthorized wireless access that can enable unauthorized access to a secure network."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains that public availability alone does not mean the access point is unauthorized or malicious."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains that reviewing or removing unnecessary permissions reduces unnecessary app access to data or functions."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains that updates can patch known flaws without guaranteeing perfect protection."
+        }
+      ],
+      "lines": 8
+    }
+  ]
+}

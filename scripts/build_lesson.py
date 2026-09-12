@@ -25,7 +25,7 @@ def build_lesson(meta, slides_path, exercise_path, guide_path):
     runtime=runtime.replace('__SLIDES__',json.dumps(slides,ensure_ascii=False).replace('</','<\\/'))
     runtime=runtime.replace('__EXERCISES__',json.dumps(exercises,ensure_ascii=False).replace('</','<\\/'))
     chapter=meta.get('chapter',1)
-    lab={1:'Chapter_1_Programming_Lab.html',2:'Chapter_2_Data_Lab.html',3:'Chapter_3_Programming_Lab.html',4:'Chapter_4_Algorithms_Lab.html',5:'Chapter_5_Network_Lab.html'}[chapter]
+    lab={1:'Chapter_1_Programming_Lab.html',2:'Chapter_2_Data_Lab.html',3:'Chapter_3_Programming_Lab.html',4:'Chapter_4_Algorithms_Lab.html',5:'Chapter_5_Network_Lab.html',6:'Chapter_6_Impact_Lab.html'}[chapter]
     guide=guide_path.read_text()+f'<p class="teacher-note"><a href="Chapter_{chapter}.html">← Chapter {chapter} overview</a> · <a href="{lab}">Interactive lab</a></p>'
     replacements={'__CSS__':(ROOT/'scripts/lesson.css').read_text(), '__GUIDE__':guide, '__JS__':runtime,
                   '__CHAPTER__':str(chapter), '__NUMBER__':meta['number'], '__LESSON_ID__':meta['id'], '__TITLE__':html.escape(meta['title']),
@@ -58,6 +58,7 @@ def main():
     course=course.replace('__CHAPTER1_VISUAL__',previews['L03']).replace('__CHAPTER2_VISUAL__',previews['L06'])
     course=course.replace('__CHAPTER3_VISUAL__',previews.get('L13',''))
     course=course.replace('__CH4_PREVIEW__',previews.get('L18','')).replace('__CH5_PREVIEW__',previews.get('L24',''))
+    course=course.replace('__CH6_PREVIEW__',previews.get('L28',''))
     (ROOT/'index.html').write_text(course)
     print('Built course and chapter portals')
 

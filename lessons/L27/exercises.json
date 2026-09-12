@@ -1,0 +1,350 @@
+{
+  "title": "AP CSP — Lesson 27 Homework: Impacts & Digital Divide",
+  "durationMinutes": 40,
+  "totalMarks": 30,
+  "notice": "All questions are original. Q1–Q6 are AP-style practice, not official AP questions. Q7–Q12 and all marks are teacher-designed. Q5 earns one mark only for both correct choices and no others. Q5: select exactly TWO. All case numbers and costs are synthetic. Explain mechanisms and show calculations.",
+  "questions": [
+    {
+      "id": "Q1",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Retrieval: network access",
+      "prompt": "A person has a working laptop. Which statement is justified?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Internet access is guaranteed."
+        },
+        {
+          "label": "B",
+          "text": "Device access and Internet access are separate requirements."
+        },
+        {
+          "label": "C",
+          "text": "Bandwidth must be unlimited."
+        },
+        {
+          "label": "D",
+          "text": "All websites must be accessible."
+        }
+      ],
+      "answer": "B",
+      "explanation": "B separates device availability from connection availability. A ignores network access; C invents a bandwidth guarantee; D ignores interface and other access barriers.",
+      "lines": 0
+    },
+    {
+      "id": "Q2",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Stakeholders",
+      "prompt": "In a fictional map project, more visitors may increase shop sales and nearby noise. This illustrates that:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Every effect is harmful."
+        },
+        {
+          "label": "B",
+          "text": "Only creators are stakeholders."
+        },
+        {
+          "label": "C",
+          "text": "One effect can be beneficial and harmful."
+        },
+        {
+          "label": "D",
+          "text": "Unintended effects cannot be beneficial."
+        }
+      ],
+      "answer": "C",
+      "explanation": "C links one effect to different stakeholder consequences. A excludes benefits; B excludes affected residents and shops; D incorrectly equates unintended with harmful.",
+      "lines": 0
+    },
+    {
+      "id": "Q3",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Intended and unintended",
+      "prompt": "Creators intend a fictional map to support shade planning. Residents later use it to plan art walks. The new use is:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Necessarily harmful."
+        },
+        {
+          "label": "B",
+          "text": "Proof the original purpose failed."
+        },
+        {
+          "label": "C",
+          "text": "Impossible to anticipate in principle."
+        },
+        {
+          "label": "D",
+          "text": "An unintended use that may be beneficial."
+        }
+      ],
+      "answer": "D",
+      "explanation": "D follows from the stated original intention and allows a possible benefit. A is not implied; B is not supported; C overclaims that this particular use could never have been anticipated.",
+      "lines": 0
+    },
+    {
+      "id": "Q4",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Digital divide",
+      "prompt": "Which is an example of a digital divide issue?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Two connected users prefer different colors."
+        },
+        {
+          "label": "B",
+          "text": "Two programs use different variable names."
+        },
+        {
+          "label": "C",
+          "text": "One area lacks affordable Internet access available elsewhere."
+        },
+        {
+          "label": "D",
+          "text": "Two files have different extensions."
+        }
+      ],
+      "answer": "C",
+      "explanation": "C describes geographic and cost-related access differences. A concerns preferences; B naming; D file types. None of A, B or D alone establishes an access disparity.",
+      "lines": 0
+    },
+    {
+      "id": "Q5",
+      "type": "multi",
+      "marks": 1,
+      "topic": "Limits and interventions",
+      "prompt": "Select exactly TWO justified statements.",
+      "options": [
+        {
+          "label": "A",
+          "text": "Skill training can address a practical participation barrier."
+        },
+        {
+          "label": "B",
+          "text": "A free device removes all possible access barriers."
+        },
+        {
+          "label": "C",
+          "text": "Only governments can affect the digital divide."
+        },
+        {
+          "label": "D",
+          "text": "Access differences can occur locally and globally."
+        }
+      ],
+      "answer": "A and D",
+      "explanation": "A is a matched practical intervention; D reflects the scale of access differences. B ignores connection, usability and other barriers. C excludes individual and organizational action.",
+      "lines": 0
+    },
+    {
+      "id": "Q6",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Retrieval: evidence",
+      "prompt": "A model says 85 people can access a fictional system. Which claim is justified?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Exactly 85 people will submit real reports."
+        },
+        {
+          "label": "B",
+          "text": "The model enables access for 85 under its assumptions."
+        },
+        {
+          "label": "C",
+          "text": "Every resident benefits equally."
+        },
+        {
+          "label": "D",
+          "text": "The model proves real policy costs."
+        }
+      ],
+      "answer": "B",
+      "explanation": "B keeps the conclusion within the model. A confuses access with observed participation; C invents equal benefits; D treats assumed costs as measured costs.",
+      "lines": 0
+    },
+    {
+      "id": "Q7",
+      "type": "written",
+      "marks": 4,
+      "topic": "Impact mechanism",
+      "prompt": "A fictional shade map makes neglected places more visible. Explain one possible benefit and one possible harm, naming the affected stakeholder and mechanism for each.",
+      "answer": "Benefit: planners can notice an overlooked stop and direct shade resources to waiting residents. Harm: a misleading report could direct limited resources away from residents with greater need. Both are possible outcomes, not measured effects.",
+      "explanation": "Benefit: planners can notice an overlooked stop and direct shade resources to waiting residents. Harm: a misleading report could direct limited resources away from residents with greater need. Both are possible outcomes, not measured effects.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Names a stakeholder for the benefit."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains a plausible map-to-benefit mechanism."
+        },
+        {
+          "marks": 1,
+          "criterion": "Names a stakeholder for the harm."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains a plausible map-to-harm mechanism; a different supported example is accepted."
+        }
+      ],
+      "lines": 7,
+      "minLines": 7
+    },
+    {
+      "id": "Q8",
+      "type": "written",
+      "marks": 4,
+      "topic": "Intention and responsibility",
+      "prompt": "A fictional map intended for planning is reused for art walks. Classify this new use, explain a possible benefit, state one responsible design action and one prediction limit.",
+      "answer": "It is an unintended use relative to the stated planning purpose. It may help residents discover art. Creators could consult affected people about plausible misuse before release. They cannot anticipate every later use.",
+      "explanation": "It is an unintended use relative to the stated planning purpose. It may help residents discover art. Creators could consult affected people about plausible misuse before release. They cannot anticipate every later use.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Classifies the art-walk use as unintended relative to the stated purpose."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains a plausible benefit of that new use."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives a specific responsible action, such as consultation or misuse testing."
+        },
+        {
+          "marks": 1,
+          "criterion": "States that all future uses or effects cannot be predicted."
+        }
+      ],
+      "lines": 7,
+      "minLines": 7
+    },
+    {
+      "id": "Q9",
+      "type": "written",
+      "marks": 4,
+      "topic": "Combined barriers",
+      "prompt": "Synthetic groups: 40 have no barrier, 20 need connection only, 15 device only, and 10 both. All other people stay blocked. Give model access with no action, connection only, device only and both; explain the combined case.",
+      "answer": "No action: 40. Connection only: 60. Device only: 55. Both: 85 = 40 + 20 + 15 + 10; the dual-barrier group joins only after both barriers are removed.",
+      "explanation": "No action: 40. Connection only: 60. Device only: 55. Both: 85 = 40 + 20 + 15 + 10; the dual-barrier group joins only after both barriers are removed.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Baseline 40."
+        },
+        {
+          "marks": 1,
+          "criterion": "Connection only 60."
+        },
+        {
+          "marks": 1,
+          "criterion": "Device only 55."
+        },
+        {
+          "marks": 1,
+          "criterion": "Both 85 with an explanation that all barriers of the dual-barrier group are removed."
+        }
+      ],
+      "lines": 7,
+      "minLines": 7
+    },
+    {
+      "id": "Q10",
+      "type": "written",
+      "marks": 4,
+      "topic": "Budget comparison",
+      "prompt": "Synthetic baseline: 40. Exclusive groups need connection only 20, device only 15, skills only 10, accessibility only 5, both connection/device 10. Costs: connection/device 2 each; skills/accessibility 1 each. Budget 4. Compare connection+device with connection+skills+accessibility: costs, totals, remaining groups, and one evaluation limit.",
+      "answer": "Both plans cost 4. Connection+device enables 85; connection+skills+accessibility enables 75. The first leaves skills-only 10 and accessibility-only 5 blocked; the second leaves device-only 15 and dual-barrier 10 blocked. Model totals do not prove actual participation or policy fairness.",
+      "explanation": "Both plans cost 4. Connection+device enables 85; connection+skills+accessibility enables 75. The first leaves skills-only 10 and accessibility-only 5 blocked; the second leaves device-only 15 and dual-barrier 10 blocked. Model totals do not prove actual participation or policy fairness.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Gives cost 4 for each feasible plan."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives access totals 85 and 75 in the correct order."
+        },
+        {
+          "marks": 1,
+          "criterion": "Identifies all remaining groups for both plans."
+        },
+        {
+          "marks": 1,
+          "criterion": "States a relevant limit of using access totals alone."
+        }
+      ],
+      "lines": 7,
+      "minLines": 7
+    },
+    {
+      "id": "Q11",
+      "type": "written",
+      "marks": 4,
+      "topic": "Matched access intervention",
+      "prompt": "In a fictional town, a free hotspot is open only during office hours. Some residents work then; others need an accessible interface. Explain the barrier the hotspot addresses, a time limit, another matched action and a success measure.",
+      "answer": "The hotspot can address connection cost or availability nearby. Office hours exclude some working residents. An accessible interface addresses interaction barriers for users who need it. Measure successful submissions across affected groups after the intervention.",
+      "explanation": "The hotspot can address connection cost or availability nearby. Office hours exclude some working residents. An accessible interface addresses interaction barriers for users who need it. Measure successful submissions across affected groups after the intervention.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Identifies connection availability or cost as a barrier the hotspot can address."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains how office hours limit access for some residents."
+        },
+        {
+          "marks": 1,
+          "criterion": "Matches an accessible interface or another justified action to a stated remaining barrier."
+        },
+        {
+          "marks": 1,
+          "criterion": "Proposes a relevant observable measure beyond merely counting hotspots."
+        }
+      ],
+      "lines": 7,
+      "minLines": 7
+    },
+    {
+      "id": "Q12",
+      "type": "written",
+      "marks": 4,
+      "topic": "Bounded recommendation",
+      "prompt": "Evaluate: “A fictional model enables all 100 residents, so all will contribute and benefit equally.” Identify two unsupported claims, propose one field measure and explain how that measure could guide revision.",
+      "answer": "Enabled access does not prove that all 100 will submit reports, and participation does not prove equal benefit. A pilot could measure completed submissions and reasons for nonparticipation. If interface difficulty persists, revise the interface and retest.",
+      "explanation": "Enabled access does not prove that all 100 will submit reports, and participation does not prove equal benefit. A pilot could measure completed submissions and reasons for nonparticipation. If interface difficulty persists, revise the interface and retest.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Identifies the unsupported claim that all enabled people will contribute."
+        },
+        {
+          "marks": 1,
+          "criterion": "Identifies the unsupported equal-benefit claim."
+        },
+        {
+          "marks": 1,
+          "criterion": "Proposes a concrete field measure relevant to participation or benefit."
+        },
+        {
+          "marks": 1,
+          "criterion": "Links a possible measurement result to a relevant revision and check."
+        }
+      ],
+      "lines": 7,
+      "minLines": 7
+    }
+  ]
+}

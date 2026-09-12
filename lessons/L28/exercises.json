@@ -1,0 +1,350 @@
+{
+  "title": "AP CSP — Lesson 28 Homework: Bias & Crowdsourcing",
+  "durationMinutes": 40,
+  "totalMarks": 30,
+  "notice": "All questions are original. Q1–Q6 are AP-style practice, not official AP questions. Q7–Q12 and all marks are teacher-designed. Q5 earns one mark only for both correct choices and no others. Q5: select exactly TWO. All cases and numbers are synthetic. Show calculations and distinguish model results from real evidence.",
+  "questions": [
+    {
+      "id": "Q1",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Retrieval: sampling",
+      "prompt": "A fictional voluntary online survey gains many more responses from its existing users. What follows?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Representation is guaranteed."
+        },
+        {
+          "label": "B",
+          "text": "More responses may preserve the same coverage gaps."
+        },
+        {
+          "label": "C",
+          "text": "Non-users must be included."
+        },
+        {
+          "label": "D",
+          "text": "Every response is accurate."
+        }
+      ],
+      "answer": "B",
+      "explanation": "B allows the same systematic omissions despite increased size. A assumes representation; C invents inclusion; D confuses quantity with accuracy.",
+      "lines": 0
+    },
+    {
+      "id": "Q2",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Bias in design",
+      "prompt": "A fictional map ranks needs by raw report count. One person can resubmit the same report repeatedly. The main concern is:",
+      "options": [
+        {
+          "label": "A",
+          "text": "The list must be sorted alphabetically."
+        },
+        {
+          "label": "B",
+          "text": "All repeated observations are invalid."
+        },
+        {
+          "label": "C",
+          "text": "The rule may reward repetition rather than need."
+        },
+        {
+          "label": "D",
+          "text": "The Internet cannot carry many reports."
+        }
+      ],
+      "answer": "C",
+      "explanation": "C connects the chosen measure to a misleading ranking. A is unrelated; B overgeneralizes because distinct valid observations may repeat locations; D is not implied by the scenario.",
+      "lines": 0
+    },
+    {
+      "id": "Q3",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Crowdsourcing",
+      "prompt": "Which fictional activity is crowdsourcing?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Many residents submit observations through an online platform."
+        },
+        {
+          "label": "B",
+          "text": "One computer repeats a calculation."
+        },
+        {
+          "label": "C",
+          "text": "A programmer renames a local variable."
+        },
+        {
+          "label": "D",
+          "text": "Two offline processors divide arithmetic tasks."
+        }
+      ],
+      "answer": "A",
+      "explanation": "A obtains input from many people via the Internet. B and C lack crowd input; D concerns computational work distribution rather than human contributions.",
+      "lines": 0
+    },
+    {
+      "id": "Q4",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Citizen science",
+      "prompt": "Which fictional project best illustrates citizen science?",
+      "options": [
+        {
+          "label": "A",
+          "text": "A store changes its logo."
+        },
+        {
+          "label": "B",
+          "text": "A processor divides a file into packets."
+        },
+        {
+          "label": "C",
+          "text": "Residents collect shade measurements for an online scientific study."
+        },
+        {
+          "label": "D",
+          "text": "A developer tests only personal preferences."
+        }
+      ],
+      "answer": "C",
+      "explanation": "C involves distributed people contributing relevant research data, including non-scientists. A and D do not describe scientific participation; B is not human research contribution.",
+      "lines": 0
+    },
+    {
+      "id": "Q5",
+      "type": "multi",
+      "marks": 1,
+      "topic": "Bias mitigation",
+      "prompt": "Select exactly TWO justified statements.",
+      "options": [
+        {
+          "label": "A",
+          "text": "Deleting a region label always eliminates bias."
+        },
+        {
+          "label": "B",
+          "text": "Comparing outcomes across groups can reveal a gap."
+        },
+        {
+          "label": "C",
+          "text": "A large crowd guarantees true reports."
+        },
+        {
+          "label": "D",
+          "text": "Improving coverage can reduce some bias without removing all bias."
+        }
+      ],
+      "answer": "B and D",
+      "explanation": "B describes an evaluation step; D states a bounded mitigation claim. A ignores related signals and data gaps; C ignores inaccurate contributions and selection effects.",
+      "lines": 0
+    },
+    {
+      "id": "Q6",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Retrieval: participation",
+      "prompt": "All listed access barriers are removed in a fictional model. Why might collected reports still be unrepresentative?",
+      "options": [
+        {
+          "label": "A",
+          "text": "All enabled people must submit."
+        },
+        {
+          "label": "B",
+          "text": "A valid file format proves representation."
+        },
+        {
+          "label": "C",
+          "text": "People may differ in willingness or time to contribute."
+        },
+        {
+          "label": "D",
+          "text": "Equal access forces identical opinions."
+        }
+      ],
+      "answer": "C",
+      "explanation": "C identifies a remaining participation mechanism. A equates opportunity with action; B concerns formatting rather than selection; D invents identical views.",
+      "lines": 0
+    },
+    {
+      "id": "Q7",
+      "type": "written",
+      "marks": 4,
+      "topic": "Locate and reduce bias",
+      "prompt": "In a fictional map, only app users can report and ranking uses raw report counts. Identify one data bias risk and one design bias risk, then give a matched action for each.",
+      "answer": "Data risk: non-users are missing. Offer accessible alternative contribution routes with the same definitions. Design risk: repeated submissions inflate rankings. Detect duplicate submissions and evaluate whether the ranking better reflects valid evidence.",
+      "explanation": "Data risk: non-users are missing. Offer accessible alternative contribution routes with the same definitions. Design risk: repeated submissions inflate rankings. Detect duplicate submissions and evaluate whether the ranking better reflects valid evidence.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Identifies missing non-users as a data coverage risk."
+        },
+        {
+          "marks": 1,
+          "criterion": "Matches a relevant inclusion action to that coverage gap."
+        },
+        {
+          "marks": 1,
+          "criterion": "Identifies repeated submissions or activity being mistaken for need as a design risk."
+        },
+        {
+          "marks": 1,
+          "criterion": "Matches a rule or validation change to that design risk."
+        }
+      ],
+      "lines": 7,
+      "minLines": 7
+    },
+    {
+      "id": "Q8",
+      "type": "written",
+      "marks": 4,
+      "topic": "Sample composition",
+      "prompt": "Synthetic report rates: North 20%, South 80%. Sample A has 80 North and 20 South; B has 40 North and 60 South. Calculate each total report rate, give the difference in percentage points, and explain the cause.",
+      "answer": "A: (80×0.20 + 20×0.80)/100 = 32%. B: (40×0.20 + 60×0.80)/100 = 56%. B is 24 percentage points higher. Composition changes while the two group rates stay fixed.",
+      "explanation": "A: (80×0.20 + 20×0.80)/100 = 32%. B: (40×0.20 + 60×0.80)/100 = 56%. B is 24 percentage points higher. Composition changes while the two group rates stay fixed.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Correct sample A rate 32% with calculation."
+        },
+        {
+          "marks": 1,
+          "criterion": "Correct sample B rate 56% with calculation."
+        },
+        {
+          "marks": 1,
+          "criterion": "Correct difference of 24 percentage points."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains that the sample mix changes while group rates remain fixed."
+        }
+      ],
+      "lines": 7,
+      "minLines": 7
+    },
+    {
+      "id": "Q9",
+      "type": "written",
+      "marks": 4,
+      "topic": "Population-mix weighting",
+      "prompt": "Synthetic population shares are North 60%, South 40%; report rates are 20%, 80%. Calculate the weighted rate, state the condition that keeps it fixed when the sample mix changes, and name one bias it does not remove.",
+      "answer": "0.60×0.20 + 0.40×0.80 = 0.44 = 44%. It stays fixed while population shares and the two group rates remain fixed. It does not remove within-group nonresponse, self-selection or measurement bias.",
+      "explanation": "0.60×0.20 + 0.40×0.80 = 0.44 = 44%. It stays fixed while population shares and the two group rates remain fixed. It does not remove within-group nonresponse, self-selection or measurement bias.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Uses the correct weighted sum with both population shares."
+        },
+        {
+          "marks": 1,
+          "criterion": "Obtains 44%."
+        },
+        {
+          "marks": 1,
+          "criterion": "States that both population shares and group rates remain fixed."
+        },
+        {
+          "marks": 1,
+          "criterion": "Names a relevant residual bias, such as within-group nonresponse or measurement error."
+        }
+      ],
+      "lines": 7,
+      "minLines": 7
+    },
+    {
+      "id": "Q10",
+      "type": "written",
+      "marks": 4,
+      "topic": "Scientific collaboration",
+      "prompt": "Design a fictional online citizen-science shade study. State a research question, what distributed participants contribute using devices, one benefit of collaboration, and one matched quality check.",
+      "answer": "Question: how does shade coverage at sampled public stops change by time of day? Participants submit time-stamped observations using a common protocol on their devices. Many people can cover more locations or times. Audit a sample of observations against independent field checks.",
+      "explanation": "Question: how does shade coverage at sampled public stops change by time of day? Participants submit time-stamped observations using a common protocol on their devices. Many people can cover more locations or times. Audit a sample of observations against independent field checks.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "States a suitable scientific research question."
+        },
+        {
+          "marks": 1,
+          "criterion": "Specifies relevant data contributed by distributed participants using computing devices."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains a plausible scale or collaboration benefit."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives a concrete quality check relevant to the contributed measurements."
+        }
+      ],
+      "lines": 7,
+      "minLines": 7
+    },
+    {
+      "id": "Q11",
+      "type": "written",
+      "marks": 4,
+      "topic": "Validate and audit",
+      "prompt": "A fictional map accepts a report if its date and location fields are complete. Explain what this check can detect, what it cannot prove, one stronger verification step, and one remaining limitation.",
+      "answer": "It can detect missing required fields. It cannot prove the location was actually observed or the report is accurate. An independent field audit can check a sample. The audit may miss errors in unaudited reports.",
+      "explanation": "It can detect missing required fields. It cannot prove the location was actually observed or the report is accurate. An independent field audit can check a sample. The audit may miss errors in unaudited reports.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Identifies missing-field detection."
+        },
+        {
+          "marks": 1,
+          "criterion": "Distinguishes complete fields from accurate or genuine observations."
+        },
+        {
+          "marks": 1,
+          "criterion": "Proposes a relevant verification step using independent evidence."
+        },
+        {
+          "marks": 1,
+          "criterion": "States a specific remaining limitation of that step."
+        }
+      ],
+      "lines": 7,
+      "minLines": 7
+    },
+    {
+      "id": "Q12",
+      "type": "written",
+      "marks": 4,
+      "topic": "Bounded evidence brief",
+      "prompt": "Evaluate: “Crowdsourcing removes bias; our weighted 44% proves the real need.” The 44% comes from synthetic group shares and fixed report rates. Give two corrections, an inclusion action and a measure to evaluate that action.",
+      "answer": "Crowdsourcing can expand participation but does not guarantee representation or accurate input. The 44% summarizes assumptions, not verified real-world need. Offer supported contribution routes for missing participants. Compare who completes valid submissions before and after, while checking whether important groups remain absent.",
+      "explanation": "Crowdsourcing can expand participation but does not guarantee representation or accurate input. The 44% summarizes assumptions, not verified real-world need. Offer supported contribution routes for missing participants. Compare who completes valid submissions before and after, while checking whether important groups remain absent.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Corrects the claim that crowdsourcing removes bias."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains why synthetic weighted 44% does not prove real need."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives a specific action addressing an identified inclusion barrier."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives an observable measure that evaluates the action, rather than asserting guaranteed success."
+        }
+      ],
+      "lines": 7,
+      "minLines": 7
+    }
+  ]
+}

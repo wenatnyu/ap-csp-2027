@@ -1,0 +1,344 @@
+{
+  "title": "AP CSP — Lesson 30 Homework: Responsible Computing",
+  "durationMinutes": 40,
+  "totalMarks": 30,
+  "notice": "All questions and scenarios are original. Q1–Q6 are AP-style practice, not official or past AP questions; Q7–Q12 are classroom written practice, not official FRQs. These 30 marks are teacher-assigned, not AP exam scoring. Select exactly TWO answers in Q5; its one mark requires both correct choices and no others. All people, data and permission cards are fictional or synthetic. Explain decisions using the stated purpose and conditions. Do not submit real passwords or personal information.",
+  "questions": [
+    {
+      "id": "Q1",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Permission and attribution",
+      "prompt": "A figure’s card grants reading only. A team wants to copy it into a public map. Which conclusion is supported?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Online access grants copying permission."
+        },
+        {
+          "label": "B",
+          "text": "Get copying permission or replace it; credit alone does not grant permission."
+        },
+        {
+          "label": "C",
+          "text": "Downloading the figure transfers its ownership."
+        },
+        {
+          "label": "D",
+          "text": "No watermark means copying is allowed."
+        }
+      ],
+      "answer": "B",
+      "explanation": "B follows the stated reading-only permission. A confuses access with reuse rights. C confuses possession of a copy with ownership. D treats a missing watermark as permission, which the card does not give.",
+      "lines": 0
+    },
+    {
+      "id": "Q2",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Open source",
+      "prompt": "Which statement most accurately describes open-source software?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Any program that is free of charge is open source."
+        },
+        {
+          "label": "B",
+          "text": "Any visible code has no owner or license conditions."
+        },
+        {
+          "label": "C",
+          "text": "Code is open source only if nobody is allowed to modify it."
+        },
+        {
+          "label": "D",
+          "text": "Its license permits uses such as modification and redistribution; making code visible alone is insufficient."
+        }
+      ],
+      "answer": "D",
+      "explanation": "D includes permission for modification and redistribution. A confuses price with rights. B ignores authorship and license conditions. C contradicts modification being an open-source permission.",
+      "lines": 0
+    },
+    {
+      "id": "Q3",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Simplified permission card A",
+      "prompt": "Original Card A allows sharing and adapting an icon for any purpose, with credit and notice of changes. A team recolors it. Which action follows the card?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Credit the creator and state that the colors changed."
+        },
+        {
+          "label": "B",
+          "text": "Use it with no credit because the colors changed."
+        },
+        {
+          "label": "C",
+          "text": "Credit the creator but claim the team made no changes."
+        },
+        {
+          "label": "D",
+          "text": "Treat permission to adapt as permission to claim sole authorship."
+        }
+      ],
+      "answer": "A",
+      "explanation": "A satisfies both supplied conditions. B omits credit. C fails to indicate the actual modification. D confuses permission to adapt with owning every contribution. This is a simplified classroom card, not complete CC license text.",
+      "lines": 0
+    },
+    {
+      "id": "Q4",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Open access",
+      "prompt": "Which claim about open access is most accurate for this course?",
+      "options": [
+        {
+          "label": "A",
+          "text": "It means research has no author."
+        },
+        {
+          "label": "B",
+          "text": "It gives ownership of every research figure to every reader."
+        },
+        {
+          "label": "C",
+          "text": "It broadens access to research and many uses, while authorship and applicable terms still matter."
+        },
+        {
+          "label": "D",
+          "text": "It means any free-to-read page grants unlimited reuse."
+        }
+      ],
+      "answer": "C",
+      "explanation": "C follows the course distinction. A and B erase authorship or ownership. D treats price-free reading as unlimited permission, which is not established by free access alone.",
+      "lines": 0
+    },
+    {
+      "id": "Q5",
+      "type": "multi",
+      "marks": 1,
+      "topic": "Responsible computing",
+      "prompt": "Select exactly TWO supported statements.",
+      "options": [
+        {
+          "label": "A",
+          "text": "A source citation automatically authorizes every intended use."
+        },
+        {
+          "label": "B",
+          "text": "Permitted reuse can still raise ethical concerns about harm."
+        },
+        {
+          "label": "C",
+          "text": "Creative Commons licenses all impose exactly the same conditions."
+        },
+        {
+          "label": "D",
+          "text": "Record the creator and follow the credit and change-notice conditions."
+        }
+      ],
+      "answer": "B and D",
+      "explanation": "B distinguishes permission compliance from ethical impact. D supports attribution and following stated conditions. A confuses attribution with permission. C ignores differences among licenses.",
+      "lines": 0
+    },
+    {
+      "id": "Q6",
+      "type": "mcq",
+      "marks": 1,
+      "topic": "Access and evidence",
+      "prompt": "In a synthetic model, network and device support makes 85 of 100 residents eligible to contribute. What follows?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Exactly 85 residents will certainly submit reports."
+        },
+        {
+          "label": "B",
+          "text": "85 are eligible in this model, but fewer may actually participate."
+        },
+        {
+          "label": "C",
+          "text": "The intervention guarantees that the sample will be unbiased."
+        },
+        {
+          "label": "D",
+          "text": "All 100 residents now have no barriers."
+        }
+      ],
+      "answer": "B",
+      "explanation": "B preserves the distinction between modeled eligibility and actual behavior. A assumes participation is guaranteed. C assumes access repairs every selection or response bias. D ignores unresolved skills and accessibility barriers.",
+      "lines": 0
+    },
+    {
+      "id": "Q7",
+      "type": "written",
+      "marks": 4,
+      "topic": "Permission, credit and ownership",
+      "prompt": "A fictional team copies a reading-only research figure into its public map, adds the author’s name, and says, “Giving credit means we can use it however we want.” Explain permission, attribution, the flaw in the team’s claim, and one appropriate next action.",
+      "answer": "Permission determines whether the planned copying and publication are allowed. Attribution identifies the source and creator. Credit alone cannot expand reading-only permission. The team should obtain copying permission before publishing or replace the figure with material whose terms permit the use.",
+      "explanation": "Judge this supplied reading-only card, not unstated exceptions or other licenses. More than one next action can be justified.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Explains that permission must cover the intended copying or publication."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains that attribution acknowledges the creator or source."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains why a credit line does not expand reading-only permission or grant unlimited use."
+        },
+        {
+          "marks": 1,
+          "criterion": "Gives a suitable next action: seek the needed permission before copying/publishing, or replace the figure with permitted material."
+        }
+      ],
+      "lines": 8
+    },
+    {
+      "id": "Q8",
+      "type": "written",
+      "marks": 4,
+      "topic": "Simplified card A and a credit record",
+      "prompt": "Original classroom Card A: “Shade icon by Map Art Team; source identifier A-01. Share and adapt for any purpose, with credit and an indication of changes.” The team resizes the icon and changes its colors. State whether this use can follow the card. Write a credit record identifying the material, creator, source identifier and both changes.",
+      "answer": "The use can follow the card because it permits sharing and adapting for any purpose. A suitable record is: “Shade icon by Map Art Team; source A-01; resized and recolored by our team.” The record identifies the material and creator, retains the source identifier, and marks the actual changes.",
+      "explanation": "This is an original simplified permission card. No full Creative Commons legal text is being applied. Equivalent clear records receive credit.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "States that the adapted use is permitted if the given credit and change conditions are followed."
+        },
+        {
+          "marks": 1,
+          "criterion": "Identifies the shade icon and Map Art Team as its creator in the record."
+        },
+        {
+          "marks": 1,
+          "criterion": "Includes source identifier A-01 to make the record traceable."
+        },
+        {
+          "marks": 1,
+          "criterion": "States both actual changes: resizing and recoloring."
+        }
+      ],
+      "lines": 8
+    },
+    {
+      "id": "Q9",
+      "type": "written",
+      "marks": 4,
+      "topic": "Deciding with three different cards",
+      "prompt": "Original classroom cards: B grants reading only for a research figure; C is the team’s self-created code, allowed for this project with its author recorded; D is a photograph with no license information. The team wants all three in its public map. Give an appropriate action for each, and explain why “it is online” does not establish permission.",
+      "answer": "For B, obtain separate copying permission or replace the figure before public reuse. For C, use the code for this project and record its author. For D, seek permission or replace it with clearly permitted material. Online availability indicates access, not the rights needed to copy, modify or redistribute.",
+      "explanation": "Accept any action that satisfies the given card. Do not require a single yes/no label when asking permission or replacing can both solve the problem.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "For B, requests the missing copying permission before reuse or replaces the figure."
+        },
+        {
+          "marks": 1,
+          "criterion": "For C, permits this project’s use and records the code’s author."
+        },
+        {
+          "marks": 1,
+          "criterion": "For D, seeks permission or replaces the photograph rather than assuming reuse is allowed."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains that online availability does not itself grant copying, modification or redistribution rights."
+        }
+      ],
+      "lines": 8
+    },
+    {
+      "id": "Q10",
+      "type": "written",
+      "marks": 4,
+      "topic": "Access intervention: synthetic model",
+      "prompt": "The fictional community has 100 people: 40 with no barrier; 20 network only; 15 device only; 10 skills only; 5 accessible-UI only; and 10 with both network and device barriers. Costs: network 2, device 2, skills 1, accessible UI 1. With budget 4, analyze choosing network plus device. Show cost and eligible count, identify unresolved barriers, and explain one limit of the count.",
+      "answer": "Cost = 2 + 2 = 4, within budget. Eligible = 40 + 20 + 15 + 10 = 85. The 10 skills-only and 5 accessible-UI-only residents remain blocked under this selection. Eligibility does not guarantee actual participation or a representative sample.",
+      "explanation": "The double-barrier group joins only when both barriers are removed. Treat all counts as the stated teaching model, not a real prediction.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Calculates total cost 4 and shows it fits the budget."
+        },
+        {
+          "marks": 1,
+          "criterion": "Calculates 85 eligible residents using 40 + 20 + 15 + 10, counting the double-barrier group once."
+        },
+        {
+          "marks": 1,
+          "criterion": "Identifies both unresolved groups: 10 skills-only and 5 accessible-UI-only residents."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains that eligibility does not guarantee participation or representativeness, with a clear distinction from the model count."
+        }
+      ],
+      "lines": 8
+    },
+    {
+      "id": "Q11",
+      "type": "written",
+      "marks": 4,
+      "topic": "Sample and population mixture: synthetic data",
+      "prompt": "Within-group reported need for more shade is North 20% and South 80%. The sample is North 80% / South 20%; the population is North 60% / South 40%. Calculate the sample estimate and population-weighted reference, compare them in percentage points, and explain one bias that matching zone shares may leave unresolved.",
+      "answer": "Sample = 0.80 × 20% + 0.20 × 80% = 32%. Population-weighted reference = 0.60 × 20% + 0.40 × 80% = 44%. The reference is 12 percentage points higher. Within-group nonresponse or selection bias, or biased wording/measurement, can remain even if the zone shares match.",
+      "explanation": "The 44% value is a reference under the supplied group-rate assumptions, not a guarantee of the true real-world rate. Percentage points are the difference of percentages.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Calculates the sample estimate as 32% using the 80/20 sample weights."
+        },
+        {
+          "marks": 1,
+          "criterion": "Calculates the population-weighted reference as 44% using the 60/40 population weights."
+        },
+        {
+          "marks": 1,
+          "criterion": "States that the reference is 12 percentage points higher than the sample estimate."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains a specific remaining within-group or measurement bias that matching zone proportions does not eliminate."
+        }
+      ],
+      "lines": 8
+    },
+    {
+      "id": "Q12",
+      "type": "written",
+      "marks": 4,
+      "topic": "Privacy and security recommendation",
+      "prompt": "The map only needs North/South summaries of shade ratings. Recommend a field set and explain it, recommend a release format and explain its benefit, choose one suitable authentication or encryption measure and explain its role, and explain a remaining risk. Use no real personal details.",
+      "answer": "Collect zone and shadeRating to group and summarize need, omitting unnecessary names, emails and exact GPS. Publish zone aggregates to reduce individual detail exposure. One suitable measure is password plus verified phone approval, combining knowledge and possession to reduce unauthorized account-access risk; another is correctly applied encryption for confidentiality. Aggregates can still be linked with other data, or MFA/encryption can leave phishing, misuse or biased input unresolved.",
+      "explanation": "Accept another justified safeguard that matches the purpose. A measure must be explained, and the limit must not contradict the protection it offers.",
+      "rubric": [
+        {
+          "marks": 1,
+          "criterion": "Chooses zone and shadeRating and connects them to grouping and measuring need while limiting unnecessary personal fields."
+        },
+        {
+          "marks": 1,
+          "criterion": "Chooses an aggregate release and explains how it reduces exposure of individual details."
+        },
+        {
+          "marks": 1,
+          "criterion": "Specifies a suitable authentication or encryption measure and correctly explains its protective role."
+        },
+        {
+          "marks": 1,
+          "criterion": "Explains a concrete remaining risk, such as linkable aggregate data, authorized misuse, deceptive requests or biased input; does not claim zero risk."
+        }
+      ],
+      "lines": 8
+    }
+  ]
+}

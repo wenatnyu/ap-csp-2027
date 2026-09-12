@@ -1,0 +1,13 @@
+{
+  "chapter": 6,
+  "id": "L28",
+  "number": "28",
+  "title": "Computing Bias & Crowdsourcing",
+  "shortTitle": "Bias & Crowdsourcing",
+  "chineseTitle": "计算偏差与众包",
+  "filename": "AP_CSP_L28_Bias_and_Crowdsourcing.html",
+  "minutes": 90,
+  "preview": "lessons/L28/preview.svg",
+  "topicSummary": "Investigate bias in data, design and use; test synthetic sample composition and build an inclusive, checked crowdsourcing process.",
+  "homeworkInstructions": "Q5: select exactly TWO. All cases and numbers are synthetic. Show calculations and distinguish model results from real evidence."
+}

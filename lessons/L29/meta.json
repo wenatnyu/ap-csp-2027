@@ -1,0 +1,13 @@
+{
+  "chapter": 6,
+  "id": "L29",
+  "number": "29",
+  "title": "Privacy & Security",
+  "shortTitle": "Privacy & Security",
+  "chineseTitle": "隐私与安全",
+  "filename": "AP_CSP_L29_Privacy_and_Security.html",
+  "minutes": 90,
+  "preview": "lessons/L29/preview.svg",
+  "topicSummary": "Personal data and inference; purpose-limited collection; authentication and MFA; symmetric/public-key confidentiality and certificates; phishing, malware, network and permission risks; a 25-minute security investigation.",
+  "homeworkInstructions": "Complete all 12 original questions (30 marks, about 40 minutes). Q5 requires exactly TWO choices. Use the stated fictional scenarios, models and simplified permission cards. Explain each decision with evidence; never enter or submit real passwords or personal details."
+}

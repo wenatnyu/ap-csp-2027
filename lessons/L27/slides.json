@@ -1,0 +1,187 @@
+[
+  {
+    "title": "Impacts & the Digital Divide",
+    "tag": "LESSON 27",
+    "time": "0–2 min",
+    "code": "Chapter 6 · Impact of Computing",
+    "html": "<p class=\"lead\">AP Computer Science Principles</p><h1>Who Benefits?<br>Who Can Join?</h1><p class=\"zh\">计算影响 · 利益相关者 · 数字鸿沟</p><p class=\"small\">Community Shade Map · a fictional case · 90 minutes</p>",
+    "note": "第六章第一课。社区遮阴地图是原创虚构案例：居民报告公共空间的遮阴需求。所有人数、成本和效果均是课堂模型，并非任何城市的调查。先解释影响机制，再用30分钟调查接入限制；不要把计算模型结果称为现实政策效果。",
+    "kind": "dark"
+  },
+  {
+    "title": "Retrieve networks and evidence",
+    "tag": "RETRIEVAL",
+    "time": "2–6 min",
+    "code": "CSN-1 · DAT-2",
+    "html": "<ol><li>Does a working device guarantee an Internet connection?</li><li>Does a voluntary online sample represent everyone?</li><li>What makes a claim stronger than “technology is good”?</li></ol><details><summary>Show answer</summary><div class=\"answer\">No; no. Name a stakeholder, explain a mechanism, and support the claim with relevant evidence.</div></details>",
+    "note": "让学生先独立写30秒，再同桌解释。前两问提取第五章网络与第二章数据，第三问转向有依据的影响分析。不能凭设备存在推断付得起数据流量，也不能凭样本大推断代表性。"
+  },
+  {
+    "title": "Explain effects and test access choices",
+    "tag": "GOALS",
+    "time": "6–8 min",
+    "code": "IOC-1.A–C",
+    "html": "<ol><li>Explain a benefit and a harm through a clear mechanism.</li><li>Separate intended effects from unintended effects.</li><li>Match interventions to access barriers.</li><li>Use a model result with an explicit limitation.</li></ol>",
+    "note": "强调评价依据是因果机制与证据，不是要求所有学生持同一种技术态度。课末交一份方案卡：影响链、预算比较、剩余障碍和现实验证。"
+  },
+  {
+    "title": "A computing innovation changes a task",
+    "tag": "CONCEPT",
+    "time": "8–11 min",
+    "code": "IOC-1.A.1–2",
+    "html": "<figure class=\"visual\" tabindex=\"0\"><svg xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"In the fictional Shade Map, residents submit reports, software groups locations, and planners review priorities.\" viewBox=\"0 0 1200 155\" style=\"font-family:Arial,Helvetica,sans-serif\"><rect x=\"15.0\" y=\"12\" width=\"356.6666666666667\" height=\"126\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"193.33333333333334\" y=\"49\" text-anchor=\"middle\" font-size=\"25\" fill=\"#225a83\" font-weight=\"700\">Residents</text><text x=\"193.33333333333334\" y=\"104\" text-anchor=\"middle\" font-size=\"29\" fill=\"#193148\" font-weight=\"700\">Submit reports</text><path d=\"M378.6666666666667 75.0H401.6666666666667\" stroke=\"#225a83\" stroke-width=\"3\"/><path d=\"M399.6666666666667 68.0L413.6666666666667 75.0L399.6666666666667 82.0Z\" fill=\"#225a83\"/><rect x=\"421.6666666666667\" y=\"12\" width=\"356.6666666666667\" height=\"126\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"600.0\" y=\"49\" text-anchor=\"middle\" font-size=\"25\" fill=\"#225a83\" font-weight=\"700\">Software</text><text x=\"600.0\" y=\"104\" text-anchor=\"middle\" font-size=\"29\" fill=\"#193148\" font-weight=\"700\">Group locations</text><path d=\"M785.3333333333334 75.0H808.3333333333334\" stroke=\"#225a83\" stroke-width=\"3\"/><path d=\"M806.3333333333334 68.0L820.3333333333334 75.0L806.3333333333334 82.0Z\" fill=\"#225a83\"/><rect x=\"828.3333333333334\" y=\"12\" width=\"356.6666666666667\" height=\"126\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"1006.6666666666667\" y=\"49\" text-anchor=\"middle\" font-size=\"25\" fill=\"#225a83\" font-weight=\"700\">Planners</text><text x=\"1006.6666666666667\" y=\"104\" text-anchor=\"middle\" font-size=\"29\" fill=\"#193148\" font-weight=\"700\">Review priorities</text></svg></figure><p>People design the system. People decide how to use its results.</p>",
+    "note": "地图并不自动种树。原来分散的信息被数字化汇总，改变居民报告和规划者审阅任务的方式。设计和使用都有人作选择；不能把责任或目的只归给“电脑”。"
+  },
+  {
+    "title": "Connect a feature to a consequence",
+    "tag": "CONCEPT",
+    "time": "11–14 min",
+    "code": "IOC-1.A.2/4",
+    "html": "<figure class=\"visual\" tabindex=\"0\"><svg xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"A fictional map makes needs visible; planners can notice neglected locations; residents may receive better shade.\" viewBox=\"0 0 1200 155\" style=\"font-family:Arial,Helvetica,sans-serif\"><rect x=\"15.0\" y=\"12\" width=\"356.6666666666667\" height=\"126\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"193.33333333333334\" y=\"49\" text-anchor=\"middle\" font-size=\"25\" fill=\"#225a83\" font-weight=\"700\">Feature</text><text x=\"193.33333333333334\" y=\"104\" text-anchor=\"middle\" font-size=\"29\" fill=\"#193148\" font-weight=\"700\">Visible needs</text><path d=\"M378.6666666666667 75.0H401.6666666666667\" stroke=\"#225a83\" stroke-width=\"3\"/><path d=\"M399.6666666666667 68.0L413.6666666666667 75.0L399.6666666666667 82.0Z\" fill=\"#225a83\"/><rect x=\"421.6666666666667\" y=\"12\" width=\"356.6666666666667\" height=\"126\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"600.0\" y=\"49\" text-anchor=\"middle\" font-size=\"25\" fill=\"#225a83\" font-weight=\"700\">Mechanism</text><text x=\"600.0\" y=\"104\" text-anchor=\"middle\" font-size=\"29\" fill=\"#193148\" font-weight=\"700\">Notice gaps</text><path d=\"M785.3333333333334 75.0H808.3333333333334\" stroke=\"#225a83\" stroke-width=\"3\"/><path d=\"M806.3333333333334 68.0L820.3333333333334 75.0L806.3333333333334 82.0Z\" fill=\"#225a83\"/><rect x=\"828.3333333333334\" y=\"12\" width=\"356.6666666666667\" height=\"126\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"1006.6666666666667\" y=\"49\" text-anchor=\"middle\" font-size=\"25\" fill=\"#225a83\" font-weight=\"700\">Possible benefit</text><text x=\"1006.6666666666667\" y=\"104\" text-anchor=\"middle\" font-size=\"29\" fill=\"#193148\" font-weight=\"700\">Better shade</text></svg></figure><p>Use “may” when an outcome depends on later decisions.</p><details><summary>Show a complete explanation</summary><div class=\"answer\">The map could help planners notice an overlooked stop; shade improves only if action follows.</div></details>",
+    "note": "同一链条需明确受影响的人。图最后是可能收益，不是承诺；实际依赖报告质量、土地条件、预算和后续行动。让学生比较“地图很好”与一条有中间机制的解释。"
+  },
+  {
+    "title": "One effect can have different impacts",
+    "tag": "CONCEPT",
+    "time": "14–17 min",
+    "code": "IOC-1.A.4",
+    "html": "<figure class=\"visual\" tabindex=\"0\"><svg xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"In a fictional extension, more visitors could increase café sales and nearby noise, affecting stakeholders differently.\" viewBox=\"0 0 1200 183\" style=\"font-family:Arial,Helvetica,sans-serif\"><rect x=\"10\" y=\"12\" width=\"360\" height=\"156\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"190\" y=\"51\" text-anchor=\"middle\" font-size=\"26\" fill=\"#225a83\" font-weight=\"700\">One effect</text><text x=\"190\" y=\"102\" text-anchor=\"middle\" font-size=\"32\" fill=\"#193148\" font-weight=\"700\">More visitors</text><path d=\"M380 90H463\" stroke=\"#225a83\" stroke-width=\"3\"/><path d=\"M461 83L475 90L461 97Z\" fill=\"#225a83\"/><rect x=\"480\" y=\"12\" width=\"710\" height=\"70\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#28766f\" stroke-width=\"2\"/><text x=\"835\" y=\"57\" text-anchor=\"middle\" font-size=\"28\" fill=\"#193148\" font-weight=\"400\">Café owner: possible extra sales</text><rect x=\"480\" y=\"98\" width=\"710\" height=\"70\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"835\" y=\"143\" text-anchor=\"middle\" font-size=\"27\" fill=\"#193148\" font-weight=\"400\">Nearby resident: possible extra noise</text></svg></figure><p>A stakeholder is a person or group affected by the innovation.</p>",
+    "note": "此处新增访问量是虚构的可能情境，不是已测量的地图效应。要求两种评价确实来自同一个效应“更多访客”，不能把一个人看到地图、另一个人手机坏了勉强连在一起。同一居民也可能同时欢迎活力并担心噪声。"
+  },
+  {
+    "title": "Unintended does not mean harmful",
+    "tag": "CONCEPT",
+    "time": "17–20 min",
+    "code": "IOC-1.A.3 · IOC-1.B.1/5",
+    "html": "<figure class=\"visual\" tabindex=\"0\"><svg xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Fictional creators intend planning support, but residents might later use the map for art walks, an unintended possible benefit.\" viewBox=\"0 0 1200 195\" style=\"font-family:Arial,Helvetica,sans-serif\"><rect x=\"25\" y=\"15\" width=\"535\" height=\"165\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"292\" y=\"55\" text-anchor=\"middle\" font-size=\"27\" fill=\"#225a83\" font-weight=\"700\">Creators intended</text><text x=\"292\" y=\"104\" text-anchor=\"middle\" font-size=\"30\" fill=\"#193148\" font-weight=\"700\">Find shade needs</text><text x=\"292\" y=\"147\" text-anchor=\"middle\" font-size=\"26\" fill=\"#193148\" font-weight=\"400\">Planning support</text><rect x=\"640\" y=\"15\" width=\"535\" height=\"165\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#28766f\" stroke-width=\"2\"/><text x=\"907\" y=\"55\" text-anchor=\"middle\" font-size=\"27\" fill=\"#28766f\" font-weight=\"700\">Creators did not intend</text><text x=\"907\" y=\"104\" text-anchor=\"middle\" font-size=\"30\" fill=\"#193148\" font-weight=\"700\">Plan art walks</text><text x=\"907\" y=\"147\" text-anchor=\"middle\" font-size=\"26\" fill=\"#193148\" font-weight=\"400\">A possible new use</text></svg></figure><p>Intention asks what creators aimed for. Impact asks who is affected and how.</p><details><summary>Check the distinction</summary><div class=\"answer\">A harmful effect can also be foreseeable. The two questions are separate.</div></details>",
+    "note": "预期/非预期与有益/有害是不同维度。艺术路线是未预期用途可能带来创造性的例子，不能宣称实际已发生。技术也可以促进工程、医疗、沟通与艺术创造，符合A.5，但每个具体成效仍需证据。"
+  },
+  {
+    "title": "Impact can spread beyond the creators",
+    "tag": "CONCEPT",
+    "time": "20–23 min",
+    "code": "IOC-1.B.2–4/6",
+    "html": "<figure class=\"visual\" tabindex=\"0\"><svg xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"A published map can be rapidly shared, used in new contexts and reach people beyond the creators’ original audience.\" viewBox=\"0 0 1200 155\" style=\"font-family:Arial,Helvetica,sans-serif\"><rect x=\"15.0\" y=\"12\" width=\"356.6666666666667\" height=\"126\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"193.33333333333334\" y=\"49\" text-anchor=\"middle\" font-size=\"25\" fill=\"#225a83\" font-weight=\"700\">Publish</text><text x=\"193.33333333333334\" y=\"104\" text-anchor=\"middle\" font-size=\"29\" fill=\"#193148\" font-weight=\"700\">One map</text><path d=\"M378.6666666666667 75.0H401.6666666666667\" stroke=\"#225a83\" stroke-width=\"3\"/><path d=\"M399.6666666666667 68.0L413.6666666666667 75.0L399.6666666666667 82.0Z\" fill=\"#225a83\"/><rect x=\"421.6666666666667\" y=\"12\" width=\"356.6666666666667\" height=\"126\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"600.0\" y=\"49\" text-anchor=\"middle\" font-size=\"25\" fill=\"#225a83\" font-weight=\"700\">Share rapidly</text><text x=\"600.0\" y=\"104\" text-anchor=\"middle\" font-size=\"29\" fill=\"#193148\" font-weight=\"700\">New audiences</text><path d=\"M785.3333333333334 75.0H808.3333333333334\" stroke=\"#225a83\" stroke-width=\"3\"/><path d=\"M806.3333333333334 68.0L820.3333333333334 75.0L806.3333333333334 82.0Z\" fill=\"#225a83\"/><rect x=\"828.3333333333334\" y=\"12\" width=\"356.6666666666667\" height=\"126\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"1006.6666666666667\" y=\"49\" text-anchor=\"middle\" font-size=\"25\" fill=\"#225a83\" font-weight=\"700\">Reuse</text><text x=\"1006.6666666666667\" y=\"104\" text-anchor=\"middle\" font-size=\"29\" fill=\"#193148\" font-weight=\"700\">New effects</text></svg></figure><p>Consider plausible misuse, consult affected people, and monitor use.</p><details><summary>Show a responsibility principle</summary><div class=\"answer\">Creators cannot predict every use. That does not remove the need to consider foreseeable harm.</div></details>",
+    "note": "用误导性重新发布需求地图作为可能误用：读者可能误以为点位已完成改造。讨论标签与更新时间可降低这种风险。影响扩散超过创建者控制不等于无须负责，也不等于必须预测一切。"
+  },
+  {
+    "title": "Digital divide: unequal access",
+    "tag": "CONCEPT",
+    "time": "23–26 min",
+    "code": "IOC-1.C.1–4",
+    "html": "<figure class=\"visual\" tabindex=\"0\"><svg xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"The digital divide describes differences in access to devices and the Internet, across individuals, groups and places.\" viewBox=\"0 0 1200 225\" style=\"font-family:Arial,Helvetica,sans-serif\"><rect x=\"15\" y=\"15\" width=\"550\" height=\"150\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"290\" y=\"55\" text-anchor=\"middle\" font-size=\"27\" fill=\"#225a83\" font-weight=\"700\">Person or group A</text><text x=\"290\" y=\"103\" text-anchor=\"middle\" font-size=\"31\" fill=\"#193148\" font-weight=\"700\">Device + Internet</text><rect x=\"635\" y=\"15\" width=\"550\" height=\"150\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"910\" y=\"55\" text-anchor=\"middle\" font-size=\"27\" fill=\"#225a83\" font-weight=\"700\">Person or group B</text><text x=\"910\" y=\"103\" text-anchor=\"middle\" font-size=\"31\" fill=\"#193148\" font-weight=\"700\">Limited access</text><text x=\"600\" y=\"208\" text-anchor=\"middle\" font-size=\"29\" fill=\"#28766f\" font-weight=\"700\">Differences can occur locally and globally</text></svg></figure><p>数字鸿沟: access can differ with socioeconomic, geographic and demographic factors.</p>",
+    "note": "CED的核心定义是设备和互联网接入差异，涉及社会经济、地理与人口特征。用地理上布网困难或持续费用举机制，不让学生从某群体身份直接推断能力、需要或意愿。技能与可访问性稍后是实用参与障碍的延伸。"
+  },
+  {
+    "title": "Find the barrier before choosing a fix",
+    "tag": "CONCEPT",
+    "time": "26–30 min",
+    "code": "IOC-1.C.1/5 · applied access",
+    "html": "<figure class=\"visual\" tabindex=\"0\"><svg xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Four practical participation barriers are connection, devices, skills and interface accessibility, each requiring a relevant intervention.\" viewBox=\"0 0 1200 200\" style=\"font-family:Arial,Helvetica,sans-serif\"><rect x=\"15\" y=\"10\" width=\"570\" height=\"83\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"300\" y=\"43\" text-anchor=\"middle\" font-size=\"27\" fill=\"#225a83\" font-weight=\"700\">Connection</text><text x=\"300\" y=\"76\" text-anchor=\"middle\" font-size=\"26\" fill=\"#193148\" font-weight=\"400\">Coverage / data cost</text><rect x=\"615\" y=\"10\" width=\"570\" height=\"83\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"900\" y=\"43\" text-anchor=\"middle\" font-size=\"27\" fill=\"#225a83\" font-weight=\"700\">Device</text><text x=\"900\" y=\"76\" text-anchor=\"middle\" font-size=\"26\" fill=\"#193148\" font-weight=\"400\">Hardware / upkeep</text><rect x=\"15\" y=\"108\" width=\"570\" height=\"83\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#28766f\" stroke-width=\"2\"/><text x=\"300\" y=\"141\" text-anchor=\"middle\" font-size=\"27\" fill=\"#225a83\" font-weight=\"700\">Skills</text><text x=\"300\" y=\"174\" text-anchor=\"middle\" font-size=\"26\" fill=\"#193148\" font-weight=\"400\">Using the interface</text><rect x=\"615\" y=\"108\" width=\"570\" height=\"83\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#28766f\" stroke-width=\"2\"/><text x=\"900\" y=\"141\" text-anchor=\"middle\" font-size=\"27\" fill=\"#225a83\" font-weight=\"700\">Accessibility</text><text x=\"900\" y=\"174\" text-anchor=\"middle\" font-size=\"26\" fill=\"#193148\" font-weight=\"400\">Usable interaction</text></svg></figure><p>Skills and accessibility also affect whether available technology is usable.</p>",
+    "note": "区分拥有与能用。技能培训针对任务操作，不是给群体贴标签；可访问界面可涉及键盘操作、屏幕阅读器兼容、清晰标签。图中列的是机制类别，不能把所有障碍只看成个人能力问题。课堂模型把四类分开用于比较，现实常互相影响。"
+  },
+  {
+    "title": "Combined barriers need a combined response",
+    "tag": "CONCEPT",
+    "time": "30–34 min",
+    "code": "IOC-1.C.3/5",
+    "html": "<figure class=\"visual\" tabindex=\"0\"><svg xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"If a person needs both connection and device barriers removed, connection support alone leaves the device barrier unresolved.\" viewBox=\"0 0 1200 150\" style=\"font-family:Arial,Helvetica,sans-serif\"><rect x=\"20\" y=\"15\" width=\"345\" height=\"120\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"192\" y=\"56\" text-anchor=\"middle\" font-size=\"27\" fill=\"#193148\" font-weight=\"700\">Needs a connection</text><text x=\"192\" y=\"102\" text-anchor=\"middle\" font-size=\"30\" fill=\"#28766f\" font-weight=\"700\">AND a device</text><path d=\"M375 75H453\" stroke=\"#225a83\" stroke-width=\"3\"/><path d=\"M451 68L465 75L451 82Z\" fill=\"#225a83\"/><rect x=\"475\" y=\"15\" width=\"330\" height=\"120\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"640\" y=\"56\" text-anchor=\"middle\" font-size=\"27\" fill=\"#193148\" font-weight=\"700\">Connection only</text><text x=\"640\" y=\"102\" text-anchor=\"middle\" font-size=\"26\" fill=\"#193148\" font-weight=\"400\">Device still missing</text><path d=\"M815 75H888\" stroke=\"#225a83\" stroke-width=\"3\"/><path d=\"M886 68L900 75L886 82Z\" fill=\"#225a83\"/><rect x=\"910\" y=\"15\" width=\"270\" height=\"120\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#d3ad62\" stroke-width=\"2\"/><text x=\"1045\" y=\"58\" text-anchor=\"middle\" font-size=\"27\" fill=\"#193148\" font-weight=\"700\">Access?</text><text x=\"1045\" y=\"103\" text-anchor=\"middle\" font-size=\"29\" fill=\"#193148\" font-weight=\"700\">Still blocked</text></svg></figure><p>Removing one barrier may produce no immediate access gain for that person.</p>",
+    "note": "用已学AND概念解释“组内所有障碍解决才计入”，不需要再编写算法。不要把总新增人数直接按两个干预的独立人数相加而遗漏双障碍人群。让学生口述为什么只送流量仍不能让无设备者使用。"
+  },
+  {
+    "title": "A matched intervention still has limits",
+    "tag": "CONCEPT",
+    "time": "34–38 min",
+    "code": "IOC-1.C.5",
+    "html": "<figure class=\"visual\" tabindex=\"0\"><svg xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Individuals, organizations and governments can take action; a free hotspot addresses connection access but may have location and opening-hour limits.\" viewBox=\"0 0 1200 155\" style=\"font-family:Arial,Helvetica,sans-serif\"><rect x=\"15.0\" y=\"12\" width=\"356.6666666666667\" height=\"126\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"193.33333333333334\" y=\"49\" text-anchor=\"middle\" font-size=\"25\" fill=\"#225a83\" font-weight=\"700\">Action</text><text x=\"193.33333333333334\" y=\"104\" text-anchor=\"middle\" font-size=\"29\" fill=\"#193148\" font-weight=\"700\">Free hotspot</text><path d=\"M378.6666666666667 75.0H401.6666666666667\" stroke=\"#225a83\" stroke-width=\"3\"/><path d=\"M399.6666666666667 68.0L413.6666666666667 75.0L399.6666666666667 82.0Z\" fill=\"#225a83\"/><rect x=\"421.6666666666667\" y=\"12\" width=\"356.6666666666667\" height=\"126\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"600.0\" y=\"49\" text-anchor=\"middle\" font-size=\"25\" fill=\"#225a83\" font-weight=\"700\">Barrier addressed</text><text x=\"600.0\" y=\"104\" text-anchor=\"middle\" font-size=\"29\" fill=\"#193148\" font-weight=\"700\">Connection</text><path d=\"M785.3333333333334 75.0H808.3333333333334\" stroke=\"#225a83\" stroke-width=\"3\"/><path d=\"M806.3333333333334 68.0L820.3333333333334 75.0L806.3333333333334 82.0Z\" fill=\"#225a83\"/><rect x=\"828.3333333333334\" y=\"12\" width=\"356.6666666666667\" height=\"126\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"1006.6666666666667\" y=\"49\" text-anchor=\"middle\" font-size=\"25\" fill=\"#225a83\" font-weight=\"700\">Possible limit</text><text x=\"1006.6666666666667\" y=\"104\" text-anchor=\"middle\" font-size=\"29\" fill=\"#193148\" font-weight=\"700\">Place / hours</text></svg></figure><p>Individuals, organizations and governments can all affect access.</p><details><summary>Show a bounded claim</summary><div class=\"answer\">A hotspot may help nearby users but miss people unable to travel there. Match the evidence to the barrier.</div></details>",
+    "note": "免费热点仅为教学例，不声称现行项目有效。社会组织可提供设备借用，个人可协助学习，政府可支持基础设施；不是互斥责任。可持续费用、维修与可用时段需要长期观察，初始发放数不等于成功参与数。"
+  },
+  {
+    "title": "Access is one step, not the final outcome",
+    "tag": "CONCEPT",
+    "time": "38–42 min",
+    "code": "IOC-1.A/C · evaluation",
+    "html": "<figure class=\"visual\" tabindex=\"0\"><svg xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Removing an access barrier can enable participation, which may inform decisions, but each later transition needs additional evidence.\" viewBox=\"0 0 1200 155\" style=\"font-family:Arial,Helvetica,sans-serif\"><rect x=\"15.0\" y=\"12\" width=\"356.6666666666667\" height=\"126\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"193.33333333333334\" y=\"49\" text-anchor=\"middle\" font-size=\"25\" fill=\"#225a83\" font-weight=\"700\">Access enabled</text><text x=\"193.33333333333334\" y=\"104\" text-anchor=\"middle\" font-size=\"29\" fill=\"#193148\" font-weight=\"700\">Can submit</text><path d=\"M378.6666666666667 75.0H401.6666666666667\" stroke=\"#225a83\" stroke-width=\"3\"/><path d=\"M399.6666666666667 68.0L413.6666666666667 75.0L399.6666666666667 82.0Z\" fill=\"#225a83\"/><rect x=\"421.6666666666667\" y=\"12\" width=\"356.6666666666667\" height=\"126\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"600.0\" y=\"49\" text-anchor=\"middle\" font-size=\"25\" fill=\"#225a83\" font-weight=\"700\">Participation</text><text x=\"600.0\" y=\"104\" text-anchor=\"middle\" font-size=\"29\" fill=\"#193148\" font-weight=\"700\">Does submit</text><path d=\"M785.3333333333334 75.0H808.3333333333334\" stroke=\"#225a83\" stroke-width=\"3\"/><path d=\"M806.3333333333334 68.0L820.3333333333334 75.0L806.3333333333334 82.0Z\" fill=\"#225a83\"/><rect x=\"828.3333333333334\" y=\"12\" width=\"356.6666666666667\" height=\"126\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"1006.6666666666667\" y=\"49\" text-anchor=\"middle\" font-size=\"25\" fill=\"#225a83\" font-weight=\"700\">Outcome</text><text x=\"1006.6666666666667\" y=\"104\" text-anchor=\"middle\" font-size=\"29\" fill=\"#193148\" font-weight=\"700\">Better decisions</text></svg></figure><p>Each arrow is a question to test, not a guaranteed result.</p><details><summary>Show stronger evaluation</summary><div class=\"answer\">Track successful submissions and who remains missing; then assess whether decisions improve.</div></details>",
+    "note": "两个箭头都必须有条件：信任、时间、兴趣、数据质量、预算等。课堂数量只预测消除模型障碍后的可参与者，不能称为真实参与者或受益者。让学生准备活动后必须写的一句限制。"
+  },
+  {
+    "title": "Investigation: design an access plan",
+    "tag": "INVESTIGATE",
+    "time": "42–47 min",
+    "code": "30-minute investigation · 1 / 5",
+    "html": "<p><strong>Fictional Community Shade Map:</strong> 100 potential contributors face the barriers on the next page.</p><ol><li>Model who can take part under a budget of 4 units.</li><li>Compare at least three plans and justify one.</li><li>Explain a benefit, a remaining barrier and a real-world test.</li></ol><p class=\"small\"><a href=\"Chapter_6_Impact_Lab.html#access\" target=\"_blank\" rel=\"noopener\">Open Access lab</a> · Paper calculation works too.</p>",
+    "note": "计时开始：42–72完整30分钟，不用讲解挤占。两人一组，一人先纸面预测一人操作验证，下一方案交换。前5分钟读任务与交付格式，教师不先给最优组合。提交方案表和不超过120词的论证。"
+  },
+  {
+    "title": "Baseline: count each person once",
+    "tag": "INVESTIGATE",
+    "time": "47–52 min",
+    "code": "30-minute investigation · 2 / 5",
+    "html": "<figure class=\"visual\" tabindex=\"0\"><svg xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Six mutually exclusive synthetic groups total100:40 no barrier,20 connection only,15 device only,10 skills only,5 accessibility only,10 connection and device.\" viewBox=\"0 0 1200 212\" style=\"font-family:Arial,Helvetica,sans-serif\"><rect x=\"15\" y=\"8\" width=\"370\" height=\"88\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"200\" y=\"40\" text-anchor=\"middle\" font-size=\"24\" fill=\"#225a83\" font-weight=\"700\">No listed barrier</text><text x=\"200\" y=\"77\" text-anchor=\"middle\" font-size=\"32\" fill=\"#193148\" font-weight=\"700\">40</text><rect x=\"415\" y=\"8\" width=\"370\" height=\"88\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"600\" y=\"40\" text-anchor=\"middle\" font-size=\"24\" fill=\"#225a83\" font-weight=\"700\">Connection only</text><text x=\"600\" y=\"77\" text-anchor=\"middle\" font-size=\"32\" fill=\"#193148\" font-weight=\"700\">20</text><rect x=\"815\" y=\"8\" width=\"370\" height=\"88\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"1000\" y=\"40\" text-anchor=\"middle\" font-size=\"24\" fill=\"#225a83\" font-weight=\"700\">Device only</text><text x=\"1000\" y=\"77\" text-anchor=\"middle\" font-size=\"32\" fill=\"#193148\" font-weight=\"700\">15</text><rect x=\"15\" y=\"112\" width=\"370\" height=\"88\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"200\" y=\"144\" text-anchor=\"middle\" font-size=\"24\" fill=\"#225a83\" font-weight=\"700\">Skills only</text><text x=\"200\" y=\"181\" text-anchor=\"middle\" font-size=\"32\" fill=\"#193148\" font-weight=\"700\">10</text><rect x=\"415\" y=\"112\" width=\"370\" height=\"88\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"600\" y=\"144\" text-anchor=\"middle\" font-size=\"24\" fill=\"#225a83\" font-weight=\"700\">Accessibility only</text><text x=\"600\" y=\"181\" text-anchor=\"middle\" font-size=\"32\" fill=\"#193148\" font-weight=\"700\">5</text><rect x=\"815\" y=\"112\" width=\"370\" height=\"88\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"1000\" y=\"144\" text-anchor=\"middle\" font-size=\"24\" fill=\"#225a83\" font-weight=\"700\">Connection + device</text><text x=\"1000\" y=\"181\" text-anchor=\"middle\" font-size=\"32\" fill=\"#193148\" font-weight=\"700\">10</text></svg></figure><p>Groups do not overlap. A group joins only when <strong>all</strong> its barriers are removed.</p><details><summary>Check your baseline</summary><div class=\"answer\">Baseline: <strong>40 of 100</strong> can participate in this model. Check that all six groups sum to 100.</div></details>",
+    "note": "学生先把六组加到100，再算无干预基线。不要把10名双障碍者再算入20名connection only或15名device only。此页模型可参与不是人数观察。答疑只提醒组内AND，不给后续预算解。"
+  },
+  {
+    "title": "Predict before testing interventions",
+    "tag": "INVESTIGATE",
+    "time": "52–58 min",
+    "code": "30-minute investigation · 3 / 5",
+    "html": "<figure class=\"visual\" tabindex=\"0\"><svg xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Synthetic intervention costs are connection2,device2,skills1,accessibility1 budget units.\" viewBox=\"0 0 1200 155\" style=\"font-family:Arial,Helvetica,sans-serif\"><rect x=\"15\" y=\"15\" width=\"270\" height=\"127\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"150\" y=\"57\" text-anchor=\"middle\" font-size=\"26\" fill=\"#225a83\" font-weight=\"700\">Connection</text><text x=\"150\" y=\"105\" text-anchor=\"middle\" font-size=\"31\" fill=\"#193148\" font-weight=\"700\">2 units</text><rect x=\"315\" y=\"15\" width=\"270\" height=\"127\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"450\" y=\"57\" text-anchor=\"middle\" font-size=\"26\" fill=\"#225a83\" font-weight=\"700\">Device</text><text x=\"450\" y=\"105\" text-anchor=\"middle\" font-size=\"31\" fill=\"#193148\" font-weight=\"700\">2 units</text><rect x=\"615\" y=\"15\" width=\"270\" height=\"127\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"750\" y=\"57\" text-anchor=\"middle\" font-size=\"26\" fill=\"#225a83\" font-weight=\"700\">Skills</text><text x=\"750\" y=\"105\" text-anchor=\"middle\" font-size=\"31\" fill=\"#193148\" font-weight=\"700\">1 unit</text><rect x=\"915\" y=\"15\" width=\"270\" height=\"127\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"1050\" y=\"57\" text-anchor=\"middle\" font-size=\"26\" fill=\"#225a83\" font-weight=\"700\">Accessibility</text><text x=\"1050\" y=\"105\" text-anchor=\"middle\" font-size=\"31\" fill=\"#193148\" font-weight=\"700\">1 unit</text></svg></figure><p>Budget: <strong>4 units</strong>. Predict connection only, device only, and both together.</p><details><summary>Check these three predictions</summary><div class=\"answer\">Model access: connection only <strong>60</strong>; device only <strong>55</strong>; both <strong>85</strong>. The dual-barrier group joins only in the combined plan.</div></details>",
+    "note": "6分钟。成本是假定政策单位不是货币或现实报价，每个勾选干预完全解决相应模型障碍且作用于所有相关组。学生记录预测、实际显示与差异。只展示核对三个预测，下一页还需自主比较不同预算4方案。"
+  },
+  {
+    "title": "Compare a strong alternative",
+    "tag": "INVESTIGATE",
+    "time": "58–64 min",
+    "code": "30-minute investigation · 4 / 5",
+    "html": "<p>At budget 4, compare connection + device with connection + skills + accessibility.</p><ol><li>Which groups join under each plan?</li><li>What is each total? Which groups remain excluded?</li><li>Does the larger total settle every policy question?</li></ol><details><summary>Show answer</summary><div class=\"answer\">Connection + device: <strong>85</strong>. Connection + skills + accessibility: <strong>75</strong>. Totals measure model access; they do not settle urgency, fairness or real-world costs.</div></details>",
+    "note": "6分钟。前一方案仍有10技能、5可访问性；后一方案仍有15仅设备、10双障碍。预算4枚举可行方案最大85，但“人数最大”只是指定优化目标，不自动等同公平。讨论价值取舍时要求说清目标，不凭态度打分。"
+  },
+  {
+    "title": "Revise the claim, then propose a test",
+    "tag": "INVESTIGATE",
+    "time": "64–72 min",
+    "code": "30-minute investigation · 5 / 5",
+    "html": "<p>Finish your recommendation with four pieces of evidence:</p><ol><li>Selected plan, cost and enabled-access total.</li><li>A comparison with one feasible alternative.</li><li>A named group still facing a barrier.</li><li>A field test that checks an assumption or later outcome.</li></ol><details><summary>Show a test example</summary><div class=\"answer\">Example test: offer a pilot and measure successful submissions plus reasons for nonparticipation. Even 100 enabled in the model would not guarantee 100 contributors.</div></details>",
+    "note": "最后8分钟写作和交换质疑。可选调整预算0至6检验假设；全部干预成本6，模型100。允许不同方案，只要预算可行、算数正确且说明自己的目标。8教师分：成本与总数各1、可行对照2、机制与利益相关者2、具体限制1、匹配现场测试1。"
+  },
+  {
+    "title": "Check the impact explanation",
+    "tag": "CHECK",
+    "time": "72–76 min",
+    "code": "Original AP-style practice",
+    "html": "<p>In the fictional map, more visitors may bring extra sales and extra noise. Which explanation is strongest?</p><p class=\"small\">A. Computing effects must be entirely good or bad.<br>B. A single effect can benefit one stakeholder and harm another.<br>C. Noise proves the creators intended harm.<br>D. Every stakeholder will value more visitors equally.</p><details><summary>Show answer</summary><div class=\"answer\"><strong>B.</strong> A ignores mixed effects; C confuses effect with intention; D assumes identical interests.</div></details>",
+    "note": "先独立选再解释排除项。把关键机制指回更多访客如何分别带来销售和噪声。要求不用“B看起来更全面”作为理由。"
+  },
+  {
+    "title": "Select exactly TWO justified claims",
+    "tag": "CHECK",
+    "time": "76–80 min",
+    "code": "Original AP-style practice",
+    "html": "<p class=\"small\">A. Donating a device always removes every access barrier.<br>B. An unintended use may produce a benefit.<br>C. A large model access total proves actual participation.<br>D. Access differences can affect individuals and groups.</p><details><summary>Show answer</summary><div class=\"answer\"><strong>B and D.</strong> A ignores other barriers. C treats a model prediction as an observed outcome.</div></details>",
+    "note": "多选只选两项，先写字母再解释错误项中的绝对词。不要教成看到always就机械排除，真正原因是还有未解决的前提。"
+  },
+  {
+    "title": "State the conclusion at the right strength",
+    "tag": "DEBRIEF",
+    "time": "80–84 min",
+    "code": "IOC-1.A–C · evidence brief",
+    "html": "<figure class=\"visual\" tabindex=\"0\"><svg xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"A defensible recommendation connects a claim to a model result and a limitation before a proposed real-world check.\" viewBox=\"0 0 1200 155\" style=\"font-family:Arial,Helvetica,sans-serif\"><rect x=\"15.0\" y=\"12\" width=\"356.6666666666667\" height=\"126\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"193.33333333333334\" y=\"49\" text-anchor=\"middle\" font-size=\"25\" fill=\"#225a83\" font-weight=\"700\">Claim</text><text x=\"193.33333333333334\" y=\"104\" text-anchor=\"middle\" font-size=\"29\" fill=\"#193148\" font-weight=\"700\">Choose a plan</text><path d=\"M378.6666666666667 75.0H401.6666666666667\" stroke=\"#225a83\" stroke-width=\"3\"/><path d=\"M399.6666666666667 68.0L413.6666666666667 75.0L399.6666666666667 82.0Z\" fill=\"#225a83\"/><rect x=\"421.6666666666667\" y=\"12\" width=\"356.6666666666667\" height=\"126\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"600.0\" y=\"49\" text-anchor=\"middle\" font-size=\"25\" fill=\"#225a83\" font-weight=\"700\">Evidence</text><text x=\"600.0\" y=\"104\" text-anchor=\"middle\" font-size=\"29\" fill=\"#193148\" font-weight=\"700\">Compare totals</text><path d=\"M785.3333333333334 75.0H808.3333333333334\" stroke=\"#225a83\" stroke-width=\"3\"/><path d=\"M806.3333333333334 68.0L820.3333333333334 75.0L806.3333333333334 82.0Z\" fill=\"#225a83\"/><rect x=\"828.3333333333334\" y=\"12\" width=\"356.6666666666667\" height=\"126\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"1006.6666666666667\" y=\"49\" text-anchor=\"middle\" font-size=\"25\" fill=\"#225a83\" font-weight=\"700\">Limit</text><text x=\"1006.6666666666667\" y=\"104\" text-anchor=\"middle\" font-size=\"29\" fill=\"#193148\" font-weight=\"700\">Test assumptions</text></svg></figure><p>“Under this model…” should introduce model results.</p><details><summary>Compare one defensible conclusion</summary><div class=\"answer\">Under the model, connection + device enables 85 people at cost 4. Skills and interface barriers remain; a pilot must check whether access leads to participation.</div></details>",
+    "note": "请两组分享不同价值目标，不要求所有人选最大人数。课堂证据足以对模型内结果作结论，却不够对真实城市、真实群体或最终遮阴收益下结论。用包含条件的陈述评估学习。"
+  },
+  {
+    "title": "Homework: explain, calculate, evaluate",
+    "tag": "HOMEWORK",
+    "time": "84–87 min",
+    "code": "12 original questions · 30 teacher marks",
+    "html": "<p>Complete the Lesson 27 homework.</p><ul><li>Q1–6: original AP-style MCQs; Q5 selects exactly TWO.</li><li>Q7–12: four independent marks for each written response.</li><li>All case numbers and costs are synthetic classroom assumptions.</li></ul><p class=\"small\"><a href=\"#homework\">Open homework</a> · <a href=\"output/pdf/AP_CSP_L27_Homework.pdf\" target=\"_blank\">Print student PDF</a></p>",
+    "note": "书面题用简短因果句和必要计算即可，不奖励堆术语。学生版无答案；网页答案需点开。教师通过错因决定下课先补双障碍逻辑还是模型与现实的区别。"
+  },
+  {
+    "title": "Exit: effect, barrier, evidence",
+    "tag": "EXIT",
+    "time": "87–90 min",
+    "code": "IOC-1.A–C",
+    "html": "<ol><li>Can an unintended effect be beneficial? Explain.</li><li>Why may a device donation fail to enable participation?</li><li>What evidence would show more than access alone?</li></ol><details><summary>Show answer</summary><div class=\"answer\">Yes: a useful new purpose can emerge. Other barriers may remain. Observe successful participation, who is missing, and the consequences of decisions.</div></details>",
+    "note": "每人写3短句；第一题必须给机制或例，第二题指出具体未解障碍，第三题提出可观察信息。收集后为L28样本偏差铺垫：谁能够参加仍不等于谁真的提交，也不等于代表全体。"
+  }
+]
