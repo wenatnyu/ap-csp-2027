@@ -4,6 +4,14 @@
 
 **[在线课程目录](https://wenatnyu.github.io/ap-csp-2027/)** · [总体课程规划](COURSE_PLAN.md) · [下载六章离线包](https://github.com/wenatnyu/ap-csp-2027/archive/refs/heads/main.zip)
 
+## 官方真题与样题
+
+**[打开官方资源页](https://wenatnyu.github.io/ap-csp-2027/Official_Exam_Resources.html)**：2026年1套、2025和2024年各2套公开FRQ原卷及对应评分标准；2024/2025年另有官方学生样例与评语入口。文件直达College Board官方来源。
+
+选择题公开部分为当前CED中的18道官方样题（PDF页182–192，答案页194），不称为历年实考卷。完整官方练习卷与已释放题库通过AP Classroom或Course Audit教师权限获取；目前未取得这些完整卷。现有360道课后题仍为原创练习。
+
+本资源页不代表正式Create专题和综合复习已经完成。题源核查：2026-09-12；资源页源码为 `Official_Exam_Resources.html`，首页入口在 `scripts/course.template.html`。
+
 ## 第1章 · 计算思维与信息表示
 
 | 课次 | 主题 | 课堂页面 | 学生卷 / 答案 |
