@@ -1,0 +1,310 @@
+{
+  "sessions": [
+    {
+      "id": "R01",
+      "title": "Diagnose the Five Big Ideas",
+      "zh": "五大主题诊断与错因分类",
+      "minutes": 90,
+      "summary": "Use an 18-minute original diagnostic to separate reading, tracing, concept and evidence errors before choosing repair work.",
+      "objectives": [
+        "Identify decisive conditions before solving a question.",
+        "Trace current values instead of guessing program behavior.",
+        "Use evidence to classify errors and choose two repair targets."
+      ],
+      "blocks": [
+        {
+          "start": 0,
+          "end": 8,
+          "title": "Read conditions and set a goal",
+          "task": "Review the five lenses and model how one constraint changes a conclusion."
+        },
+        {
+          "start": 8,
+          "end": 26,
+          "title": "Independent diagnostic",
+          "task": "Complete Q01–Q10 in 18 minutes; record confidence before opening feedback."
+        },
+        {
+          "start": 26,
+          "end": 38,
+          "title": "Check and classify",
+          "task": "Inspect feedback and give each error a primary cause with evidence."
+        },
+        {
+          "start": 38,
+          "end": 55,
+          "title": "Trace a concrete example",
+          "task": "Predict the original assignment micro-case, reveal the trace and explain the divergence."
+        },
+        {
+          "start": 55,
+          "end": 70,
+          "title": "Repair a concept boundary",
+          "task": "Use the five-bit and volunteer-sample cases to distinguish similar concepts."
+        },
+        {
+          "start": 70,
+          "end": 85,
+          "title": "Transfer to a changed case",
+          "task": "Repair one incorrect and one guessed response; change one condition and justify the new result."
+        },
+        {
+          "start": 85,
+          "end": 90,
+          "title": "Exit plan",
+          "task": "Submit two specific repair targets and name the evidence that will show improvement."
+        }
+      ],
+      "contentHtml": "<section class=\"section\" id=\"R01-map\"><h2>1. Diagnose before choosing what to review</h2><p>Use ten new, original questions to find repair targets across the five Big Ideas. The result is a small diagnostic sample, not an AP score prediction.</p><figure class=\"visual\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 450 421\" role=\"img\" aria-label=\"Five Big Ideas provide five lenses for the review diagnosis.\" width=\"450\" style=\"display:block;width:100%;max-width:520px;height:auto;margin:auto;font-family:Arial,sans-serif\"><rect x=\"20\" y=\"10\" width=\"410\" height=\"71\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"225\" y=\"39\" text-anchor=\"middle\" font-size=\"23\" fill=\"#193148\" font-weight=\"700\">Creative Development</text><text x=\"225\" y=\"66\" text-anchor=\"middle\" font-size=\"20\" fill=\"#193148\" font-weight=\"400\">purpose · users · testing</text><rect x=\"20\" y=\"91\" width=\"410\" height=\"71\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#28766f\" stroke-width=\"2\"/><text x=\"225\" y=\"120\" text-anchor=\"middle\" font-size=\"23\" fill=\"#193148\" font-weight=\"700\">Data</text><text x=\"225\" y=\"147\" text-anchor=\"middle\" font-size=\"20\" fill=\"#193148\" font-weight=\"400\">representation · evidence</text><rect x=\"20\" y=\"172\" width=\"410\" height=\"71\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"225\" y=\"201\" text-anchor=\"middle\" font-size=\"23\" fill=\"#193148\" font-weight=\"700\">Algorithms &amp; Programming</text><text x=\"225\" y=\"228\" text-anchor=\"middle\" font-size=\"20\" fill=\"#193148\" font-weight=\"400\">execution · abstraction</text><rect x=\"20\" y=\"253\" width=\"410\" height=\"71\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#28766f\" stroke-width=\"2\"/><text x=\"225\" y=\"282\" text-anchor=\"middle\" font-size=\"23\" fill=\"#193148\" font-weight=\"700\">Systems &amp; Networks</text><text x=\"225\" y=\"309\" text-anchor=\"middle\" font-size=\"20\" fill=\"#193148\" font-weight=\"400\">paths · protocols</text><rect x=\"20\" y=\"334\" width=\"410\" height=\"71\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"225\" y=\"363\" text-anchor=\"middle\" font-size=\"23\" fill=\"#193148\" font-weight=\"700\">Impact of Computing</text><text x=\"225\" y=\"390\" text-anchor=\"middle\" font-size=\"20\" fill=\"#193148\" font-weight=\"400\">people · risks · conditions</text></svg><figcaption>These five lenses organize the diagnosis; ten questions cannot establish mastery of the entire course.</figcaption></figure><aside class=\"teacher-note\" lang=\"zh-CN\"><strong>教师支持：</strong>不要把10题得分换算成AP等级。先看学生错误集中在哪些机制：读题条件、执行追踪、概念边界或证据表达；本节诊断用于选择补弱内容。</aside></section><section class=\"section\" id=\"R01-attempt\"><h2>2. Complete Q01–Q10 in 18 minutes</h2><p><a href=\"Chapter_8_Quiz.html#diagnostic\" target=\"_blank\" rel=\"noopener\">Open the original diagnostic set</a></p><p>Work independently for 18 minutes. For every answer, mark confident or uncertain on paper. Read words such as exactly, at least, only, sorted and same before calculating. Do not open feedback until the independent interval ends.</p><figure class=\"visual\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 450 325\" role=\"img\" aria-label=\"Read conditions, model the case and check the conclusion.\" width=\"450\" style=\"display:block;width:100%;max-width:520px;height:auto;margin:auto;font-family:Arial,sans-serif\"><rect x=\"25\" y=\"8\" width=\"400\" height=\"86\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"225\" y=\"41\" text-anchor=\"middle\" font-size=\"24\" fill=\"#193148\" font-weight=\"700\">Read the conditions</text><text x=\"225\" y=\"73\" text-anchor=\"middle\" font-size=\"21\" fill=\"#193148\" font-weight=\"400\">What is given or restricted?</text><path d=\"M225 97V105\" stroke=\"#225a83\" stroke-width=\"3\"/><path d=\"M218 104L225 115L232 104Z\" fill=\"#225a83\"/><rect x=\"25\" y=\"118\" width=\"400\" height=\"86\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"225\" y=\"151\" text-anchor=\"middle\" font-size=\"24\" fill=\"#193148\" font-weight=\"700\">Model the situation</text><text x=\"225\" y=\"183\" text-anchor=\"middle\" font-size=\"21\" fill=\"#193148\" font-weight=\"400\">Trace, calculate or draw</text><path d=\"M225 207V215\" stroke=\"#225a83\" stroke-width=\"3\"/><path d=\"M218 214L225 225L232 214Z\" fill=\"#225a83\"/><rect x=\"25\" y=\"228\" width=\"400\" height=\"86\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#28766f\" stroke-width=\"2\"/><text x=\"225\" y=\"261\" text-anchor=\"middle\" font-size=\"24\" fill=\"#193148\" font-weight=\"700\">Check the claim</text><text x=\"225\" y=\"293\" text-anchor=\"middle\" font-size=\"21\" fill=\"#193148\" font-weight=\"400\">Does the conclusion follow?</text></svg></figure><aside class=\"teacher-note\" lang=\"zh-CN\"><strong>教师支持：</strong>0–8分钟先讲方法，8–26分钟完整保留给独立10题。读题标记不意味着必须把题干所有字划线，只提取会改变结论的条件。自信度应在看答案前记录。</aside></section><section class=\"section\" id=\"R01-bits\"><h2>3. Micro-case: a condition changes the answer</h2><p><strong>Original review case.</strong> A club needs 33 distinct identifiers. Every identifier must use exactly five bits. Is that enough? Explain what must change if the club keeps all 33 identifiers.</p><details><summary>Show answer and reasoning / 展开答案与解释</summary><div class=\"answer\"><p>Five bits provide 2⁵ = 32 patterns, so 33 distinct identifiers do not fit. At least six bits are needed because 2⁶ = 64. The decisive conditions are “distinct,” “33” and “exactly five bits.”</p></div></details><p>A useful correction names the limiting quantity. “Use more memory” is less precise than identifying the number of available patterns.</p><aside class=\"teacher-note\" lang=\"zh-CN\"><strong>教师支持：</strong>这里考的是模式数量，不是五位无符号整数的最大值31。要求学生区分32种模式与最大数31；这也是把条件标记转化为具体推理的示范。</aside></section><section class=\"section\" id=\"R01-trace\"><h2>4. Micro-case: save a value, then change a variable</h2><p>Predict both outputs before running or revealing anything. Record the value of each variable after every assignment.</p><pre class=\"code\" style=\"overflow:auto;white-space:pre;font-size:16px;line-height:1.5;padding:18px;background:#eef2f3\">first ← 4\nsaved ← first\nfirst ← first + 3\nDISPLAY(saved)\nDISPLAY(first)</pre><details><summary>Show answer and reasoning / 展开答案与解释</summary><div class=\"answer\"><div class=\"table-wrap\"><table><thead><tr><th>After statement</th><th>first</th><th>saved</th></tr></thead><tbody><tr><td>first ← 4</td><td>4</td><td>not yet assigned</td></tr><tr><td>saved ← first</td><td>4</td><td>4</td></tr><tr><td>first ← first + 3</td><td>7</td><td>4</td></tr></tbody></table></div><p>The outputs are 4, then 7. The assignment copied the current value into saved; later changing first does not change saved.</p></div></details><p>If your prediction was 7, 7, classify the error as execution/assignment reasoning, then explain the exact statement where your model diverged.</p><aside class=\"teacher-note\" lang=\"zh-CN\"><strong>教师支持：</strong>不能只抄最终4和7。让学生指出第二条赋值完成时saved存了什么；把错误定位到一个执行时刻，下一课的列表和过程追踪会沿用同一方法。</aside></section><section class=\"section\" id=\"R01-errors\"><h2>5. Turn feedback into an error record</h2><div class=\"table-wrap\"><table><thead><tr><th>Classroom tag</th><th>Evidence to record</th><th>A useful repair</th></tr></thead><tbody><tr><td>Condition</td><td>The exact word or constraint I missed</td><td>Restate the rule, then change one condition.</td></tr><tr><td>Trace</td><td>The first incorrect state or path</td><td>Rebuild the trace from that point.</td></tr><tr><td>Concept</td><td>The two ideas I confused</td><td>Write a distinction and a counterexample.</td></tr><tr><td>Evidence</td><td>The claim I could not justify</td><td>Point to a value, code step or stated permission.</td></tr><tr><td>Pacing</td><td>Where time was spent without progress</td><td>Set a return point and finish other items.</td></tr></tbody></table></div><p>Example: “A larger volunteer sample must be unbiased” confuses quantity with representativeness. Explain a selection or nonresponse mechanism; simply asking more volunteers may preserve the same bias.</p><details><summary>Show answer and reasoning / 展开答案与解释</summary><div class=\"answer\"><p>A defensible counterexample is a survey available only through one club’s app. More replies from those app users can still underrepresent non-users. Bigger is not automatically more representative.</p></div></details><aside class=\"teacher-note\" lang=\"zh-CN\"><strong>教师支持：</strong>这些标签是本课程复盘工具，不是官方评分分类。一次错误可以有主因与次因，但本课每题先写一个可行动主因，避免笼统归咎于粗心。</aside></section><section class=\"section\" id=\"R01-plan\"><h2>6. End with two specific repair targets</h2><p>Choose two questions: one incorrect answer and one correct answer you guessed. For each, write the decisive condition, a corrected explanation and a new case that would test the same idea. Assign each target to code/algorithms, data/networks/impact, or reading and pacing.</p><p>Exit check: explain the difference between “I now know the answer” and “I can apply the rule to a changed case.”</p><aside class=\"teacher-note\" lang=\"zh-CN\"><strong>教师支持：</strong>70–85分钟让学生实际改一个条件并再答，教师按解释核查；85–90分钟收两项目标。不要以反复点击直到正确作为掌握证据。</aside></section>",
+      "homework": [
+        "Revisit one missed diagnostic item without looking at feedback; explain why each alternative fails.",
+        "Create one small changed-case check for a repair target and state the expected result.",
+        "Keep your original answer, confidence and correction; do not replace the record with only a new score."
+      ],
+      "teacherNotes": [
+        "保留完整18分钟独立诊断，不用讲题挤占。10题只提供薄样本，不以总分预测AP等级。",
+        "要求圈定条件、显示追踪过程；错误标签是教学工具而非官方评分术语。",
+        "两项修复目标分别指向具体机制与证据，不写笼统“多刷题”。"
+      ]
+    },
+    {
+      "id": "R02",
+      "title": "Repair Code & Algorithm Reasoning",
+      "zh": "代码、算法与边界补弱",
+      "minutes": 90,
+      "summary": "A 20-minute targeted set followed by original list, return-position, parameter, boundary and search comparisons.",
+      "objectives": [
+        "Trace edits using the current 1-based list indices.",
+        "Explain how RETURN placement and meaningful parameters affect execution.",
+        "Use boundary cases to test a correction.",
+        "Compare search costs under stated assumptions."
+      ],
+      "blocks": [
+        {
+          "start": 0,
+          "end": 10,
+          "title": "Choose a tracing target",
+          "task": "Use the diagnostic record to identify one code or algorithm reasoning weakness."
+        },
+        {
+          "start": 10,
+          "end": 30,
+          "title": "Independent algorithms set",
+          "task": "Complete Q11–Q20 in 20 minutes before opening feedback."
+        },
+        {
+          "start": 30,
+          "end": 44,
+          "title": "Repair list reasoning",
+          "task": "Trace INSERT and REMOVE on the current list and justify both outputs."
+        },
+        {
+          "start": 44,
+          "end": 60,
+          "title": "Repair return reasoning",
+          "task": "Trace the original buggy procedure, relocate RETURN and verify the changed behavior."
+        },
+        {
+          "start": 60,
+          "end": 74,
+          "title": "Test boundaries and compare search",
+          "task": "Check parameter boundaries, zero iterations and sorted-search inspection counts."
+        },
+        {
+          "start": 74,
+          "end": 85,
+          "title": "Transfer the repair",
+          "task": "Apply the explanation to an algorithms-set error or a new counterexample."
+        },
+        {
+          "start": 85,
+          "end": 90,
+          "title": "Exit explanation",
+          "task": "Explain the distinct effects of parameter values and return position."
+        }
+      ],
+      "contentHtml": "<section class=\"section\" id=\"R02-focus\"><h2>1. Start at the first state change</h2><p>The aim is to explain execution, not memorize a pattern. Track indices, argument values, branch decisions and the exact point at which a procedure returns. All code below is original review practice, separate from official Create work.</p><aside class=\"teacher-note\" lang=\"zh-CN\"><strong>教师支持：</strong>先用R01记录选一个代码弱点。正式Create若尚未三项Final，不在本课让教师改学生正在提交的程序；这些原创小例独立于正式作品。</aside></section><section class=\"section\" id=\"R02-attempt\"><h2>2. Complete Q11–Q20 in 20 minutes</h2><p><a href=\"Chapter_8_Quiz.html#algorithms\" target=\"_blank\" rel=\"noopener\">Open the original algorithms set</a></p><p>Work independently. Draw a tiny list or trace table when needed. If you are unsure, record the first uncertain step rather than repeatedly changing the answer.</p><aside class=\"teacher-note\" lang=\"zh-CN\"><strong>教师支持：</strong>10–30分钟完整独立作答，剩余时间用于实际修复。不要在限时中逐题宣布对错；评分反馈留到限时结束后。</aside></section><section class=\"section\" id=\"R02-list\"><h2>3. List indices belong to the current list</h2><figure class=\"visual\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 450 239\" role=\"img\" aria-label=\"A three-element list uses indices one, two and three. Insertion before index two changes later positions.\" width=\"450\" style=\"display:block;width:100%;max-width:520px;height:auto;margin:auto;font-family:Arial,sans-serif\"><text x=\"225\" y=\"28\" text-anchor=\"middle\" font-size=\"23\" fill=\"#193148\" font-weight=\"700\">Initial list: [2, 5, 8]</text><rect x=\"55\" y=\"55\" width=\"105\" height=\"90\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"107.5\" y=\"88\" text-anchor=\"middle\" font-size=\"20\" fill=\"#225a83\" font-weight=\"400\">index 1</text><text x=\"107.5\" y=\"125\" text-anchor=\"middle\" font-size=\"27\" fill=\"#193148\" font-weight=\"700\">2</text><rect x=\"170\" y=\"55\" width=\"105\" height=\"90\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"222.5\" y=\"88\" text-anchor=\"middle\" font-size=\"20\" fill=\"#225a83\" font-weight=\"400\">index 2</text><text x=\"222.5\" y=\"125\" text-anchor=\"middle\" font-size=\"27\" fill=\"#193148\" font-weight=\"700\">5</text><rect x=\"285\" y=\"55\" width=\"105\" height=\"90\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"337.5\" y=\"88\" text-anchor=\"middle\" font-size=\"20\" fill=\"#225a83\" font-weight=\"400\">index 3</text><text x=\"337.5\" y=\"125\" text-anchor=\"middle\" font-size=\"27\" fill=\"#193148\" font-weight=\"700\">8</text><text x=\"225\" y=\"184\" text-anchor=\"middle\" font-size=\"22\" fill=\"#28766f\" font-weight=\"400\">INSERT before index 2</text><text x=\"225\" y=\"218\" text-anchor=\"middle\" font-size=\"21\" fill=\"#193148\" font-weight=\"400\">Later indices may change.</text></svg></figure><pre class=\"code\" style=\"overflow:auto;white-space:pre;font-size:16px;line-height:1.5;padding:18px;background:#eef2f3\">items ← [2, 5, 8]\nINSERT(items, 2, 7)\nREMOVE(items, 4)\nDISPLAY(items[3])\nDISPLAY(LENGTH(items))</pre><p>Predict the list after each edit and both outputs. AP list indices start at 1; INSERT places the new element before the current element at the specified position.</p><details><summary>Show answer and reasoning / 展开答案与解释</summary><div class=\"answer\"><p>After INSERT: [2, 7, 5, 8]. After REMOVE at the current index 4: [2, 7, 5]. The outputs are 5 and 3. REMOVE acts on the edited list, not the original positions.</p></div></details><aside class=\"teacher-note\" lang=\"zh-CN\"><strong>教师支持：</strong>图只给初始位置，不提前填修改后答案。学生应在每次编辑后重画索引；误把8的旧索引3保留下来，属于当前状态追踪错误。</aside></section><section class=\"section\" id=\"R02-return\"><h2>4. A return ends the procedure</h2><p>This program is intended to sum all values below limit. For values [4, 10, 7] and limit 8, predict what the buggy procedure actually returns, then locate the smallest repair.</p><pre class=\"code\" style=\"overflow:auto;white-space:pre;font-size:16px;line-height:1.5;padding:18px;background:#eef2f3\">PROCEDURE sumBelow(values, limit)\n{\n  total ← 0\n  FOR EACH item IN values\n  {\n    IF (item &lt; limit)\n    {\n      total ← total + item\n    }\n    RETURN(total)\n  }\n}</pre><details><summary>Show answer and reasoning / 展开答案与解释</summary><div class=\"answer\"><figure class=\"visual\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 450 295\" role=\"img\" aria-label=\"Returning inside a traversal exits the procedure early; returning after the traversal allows all elements to be processed.\" width=\"450\" style=\"display:block;width:100%;max-width:520px;height:auto;margin:auto;font-family:Arial,sans-serif\"><rect x=\"30\" y=\"15\" width=\"390\" height=\"105\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"225\" y=\"50\" text-anchor=\"middle\" font-size=\"23\" fill=\"#193148\" font-weight=\"700\">RETURN inside the loop</text><text x=\"225\" y=\"84\" text-anchor=\"middle\" font-size=\"21\" fill=\"#193148\" font-weight=\"400\">Leaves the entire procedure</text><text x=\"225\" y=\"108\" text-anchor=\"middle\" font-size=\"20\" fill=\"#193148\" font-weight=\"400\">on the first iteration</text><rect x=\"30\" y=\"165\" width=\"390\" height=\"110\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#28766f\" stroke-width=\"2\"/><text x=\"225\" y=\"201\" text-anchor=\"middle\" font-size=\"23\" fill=\"#193148\" font-weight=\"700\">RETURN after the loop</text><text x=\"225\" y=\"237\" text-anchor=\"middle\" font-size=\"21\" fill=\"#193148\" font-weight=\"400\">Finishes all iterations first</text></svg><figcaption>Both locations are syntactically possible. Their behavior is different.</figcaption></figure><p>It returns 4 after processing the first item. RETURN is inside the FOR EACH body, so later items are never processed. Move RETURN after the loop:</p><pre class=\"code\" style=\"overflow:auto;white-space:pre;font-size:16px;line-height:1.5;padding:18px;background:#eef2f3\">PROCEDURE sumBelow(values, limit)\n{\n  total ← 0\n  FOR EACH item IN values\n  {\n    IF (item &lt; limit)\n    {\n      total ← total + item\n    }\n  }\n  RETURN(total)\n}</pre><p>The repaired call returns 11 because 4 and 7 are below 8. The change in location, not a change in the comparison, repairs this bug.</p></div></details><aside class=\"teacher-note\" lang=\"zh-CN\"><strong>教师支持：</strong>只改一处定位并复测。RETURN不是只跳出IF或本次循环，而是结束当前过程。此例考察位置和执行含义，不让学生背“所有RETURN都只能在最后”；提前返回在别的需求下可能正确。</aside></section><section class=\"section\" id=\"R02-boundary\"><h2>5. Make the parameter and boundary visible</h2><p>Use the repaired sumBelow. Predict the following before checking. Changing limit must affect which items contribute; equality matters because the comparison is strict.</p><div class=\"table-wrap\"><table><thead><tr><th>Call</th><th>Your prediction</th><th>What it tests</th></tr></thead><tbody><tr><td>sumBelow([4, 10, 7], 4)</td><td>Write first</td><td>Equality excluded</td></tr><tr><td>sumBelow([4, 10, 7], 5)</td><td>Write first</td><td>One value included</td></tr><tr><td>sumBelow([4, 10, 7], 8)</td><td>Write first</td><td>Two values included</td></tr><tr><td>sumBelow([], 8)</td><td>Write first</td><td>Zero iterations</td></tr></tbody></table></div><details><summary>Show answer and reasoning / 展开答案与解释</summary><div class=\"answer\"><p>The results are 0, 4, 11 and 0. The empty list leaves total at its initialized value, and RETURN after the loop still runs. The parameter changes membership in the sum; merely naming a parameter would not establish this effect.</p></div></details><aside class=\"teacher-note\" lang=\"zh-CN\"><strong>教师支持：</strong>边界不是随机挑几个数字：4刚好等于列表元素，5跨过它，空列表检查零次循环。若改成≤，第一项结果会从0变4，要求学生用这个反例说明运算符的作用。</aside></section><section class=\"section\" id=\"R02-search\"><h2>6. Same result can have a different cost</h2><figure class=\"visual\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 450 205\" role=\"img\" aria-label=\"Sorted values four, nine, sixteen, twenty-three, thirty-one, forty-two and sixty. The middle value is twenty-three.\" width=\"450\" style=\"display:block;width:100%;max-width:520px;height:auto;margin:auto;font-family:Arial,sans-serif\"><text x=\"225\" y=\"29\" text-anchor=\"middle\" font-size=\"23\" fill=\"#193148\" font-weight=\"700\">Sorted search example</text><rect x=\"11\" y=\"51\" width=\"56\" height=\"68\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"39\" y=\"95\" text-anchor=\"middle\" font-size=\"24\" fill=\"#193148\" font-weight=\"700\">4</text><rect x=\"73\" y=\"51\" width=\"56\" height=\"68\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"101\" y=\"95\" text-anchor=\"middle\" font-size=\"24\" fill=\"#193148\" font-weight=\"700\">9</text><rect x=\"135\" y=\"51\" width=\"56\" height=\"68\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"163\" y=\"95\" text-anchor=\"middle\" font-size=\"24\" fill=\"#193148\" font-weight=\"700\">16</text><rect x=\"197\" y=\"51\" width=\"56\" height=\"68\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#28766f\" stroke-width=\"2\"/><text x=\"225\" y=\"95\" text-anchor=\"middle\" font-size=\"24\" fill=\"#193148\" font-weight=\"700\">23</text><rect x=\"259\" y=\"51\" width=\"56\" height=\"68\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"287\" y=\"95\" text-anchor=\"middle\" font-size=\"24\" fill=\"#193148\" font-weight=\"700\">31</text><rect x=\"321\" y=\"51\" width=\"56\" height=\"68\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"349\" y=\"95\" text-anchor=\"middle\" font-size=\"24\" fill=\"#193148\" font-weight=\"700\">42</text><rect x=\"383\" y=\"51\" width=\"56\" height=\"68\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"411\" y=\"95\" text-anchor=\"middle\" font-size=\"24\" fill=\"#193148\" font-weight=\"700\">60</text><text x=\"225\" y=\"153\" text-anchor=\"middle\" font-size=\"20\" fill=\"#193148\" font-weight=\"400\">Inspect one element = one comparison</text><text x=\"225\" y=\"185\" text-anchor=\"middle\" font-size=\"20\" fill=\"#193148\" font-weight=\"400\">Use the lower middle when needed.</text></svg></figure><p>Compare a left-to-right linear search with binary search on the displayed sorted list. The linear search stops only when it finds the target or reaches the end. Count each inspected element once. How many inspections find 4? How many find 60? What happens when searching for 30?</p><details><summary>Show answer and reasoning / 展开答案与解释</summary><div class=\"answer\"><div class=\"table-wrap\"><table><thead><tr><th>Target</th><th>Linear search</th><th>Binary search</th></tr></thead><tbody><tr><td>4</td><td>1 inspection</td><td>23 → 9 → 4: 3 inspections</td></tr><tr><td>60</td><td>7 inspections</td><td>23 → 42 → 60: 3 inspections</td></tr><tr><td>30</td><td>7 inspections, not found</td><td>23 → 42 → 31: 3 inspections, then interval empty</td></tr></tbody></table></div><p>For 4, linear search happens to be cheaper. This does not overturn binary search’s better worst-case growth on sorted data. Binary search needs the ordering assumption; neither method can report a missing value as found.</p></div></details><aside class=\"teacher-note\" lang=\"zh-CN\"><strong>教师支持：</strong>明确比较单位是一项元素检查，不是源码比较运算符计数。二分未命中时空区间结束；不能把31当作最近值返回。讲效率要区分具体输入与最坏情况，不背“二分每次都更快”。</aside></section><section class=\"section\" id=\"R02-transfer\"><h2>7. Explain one repair without copying the example</h2><p>Choose one algorithms-set error. State its first incorrect index, branch, return or comparison. Give a boundary test or counterexample that would expose the mistake, then explain why your correction changes the result.</p><p>Exit check: changing RETURN’s position and changing a parameter can both change output. Explain their different mechanisms.</p><aside class=\"teacher-note\" lang=\"zh-CN\"><strong>教师支持：</strong>74–85分钟让学生实际重做专项错题或自造反例；85–90分钟检验是否能把“参数决定哪些值参与”和“RETURN决定何时结束”分开解释。</aside></section>",
+      "homework": [
+        "Trace the repaired sumBelow with [3, 8, 12] and limit 8; record each running total and the return value.",
+        "Change the test from < to ≤ and identify a test that distinguishes the two versions.",
+        "For the displayed sorted search list, compare inspection sequences for target 16 and justify the stopping point."
+      ],
+      "teacherNotes": [
+        "参考课后题：sumBelow([3,8,12],8)=3；改≤则11；目标16线性3项，二分23→9→16也是3项。",
+        "空列表测试仅用于修正后的过程；错误版本可能没有返回，不能凭空赋0。",
+        "教师只讨论这些原创练习和符合反馈阶段的个人材料，不改尚在正式阶段的学生作品。"
+      ]
+    },
+    {
+      "id": "R03",
+      "title": "Data, Networks & Impact Evidence",
+      "zh": "数据、网络、社会影响与官方样题",
+      "minutes": 90,
+      "summary": "Complete the 18 official CED sample questions in 30 minutes, then test claims using original path, sampling and permission cases.",
+      "objectives": [
+        "Distinguish official sample questions from released exam papers.",
+        "Justify network reachability with remaining links.",
+        "Use stated group weights and explain remaining sampling bias.",
+        "Separate permission from attribution when reading a case."
+      ],
+      "blocks": [
+        {
+          "start": 0,
+          "end": 8,
+          "title": "Orient to the source",
+          "task": "Open the current CED samples and check page numbers, context and the 30-minute plan."
+        },
+        {
+          "start": 8,
+          "end": 38,
+          "title": "Independent official samples",
+          "task": "Answer CED Q1–Q18 in 30 minutes without opening the key."
+        },
+        {
+          "start": 38,
+          "end": 48,
+          "title": "Compare with the official key",
+          "task": "Use PDF page 194 and record decisive conditions for errors."
+        },
+        {
+          "start": 48,
+          "end": 63,
+          "title": "Prove a network claim",
+          "task": "Trace the original graph under two failure sets and distinguish reachability from delivery."
+        },
+        {
+          "start": 63,
+          "end": 78,
+          "title": "Evaluate data and permission evidence",
+          "task": "Calculate the library mixture and interpret the two supplied permission cards."
+        },
+        {
+          "start": 78,
+          "end": 86,
+          "title": "Transfer and repair",
+          "task": "Rewrite one sample-error explanation and one original-case claim with a limit."
+        },
+        {
+          "start": 86,
+          "end": 90,
+          "title": "Exit distinction",
+          "task": "Explain why an alternate route is not a universal delivery guarantee."
+        }
+      ],
+      "contentHtml": "<section class=\"section\" id=\"R03-sources\"><h2>1. Use the CED questions as official samples</h2><p>Today’s independent set is the 18 multiple-choice sample questions in the current Course and Exam Description. These are official sample questions, not a released annual multiple-choice exam.</p><p><a href=\"resources/AP_CSP_Course_and_Exam_Description.pdf#page=182\" target=\"_blank\" rel=\"noopener\">Open CED sample Q1–Q18 · PDF pages 182–192</a></p><p>Set aside 30 uninterrupted minutes. Use the full question context, including any reading passage. If the PDF does not jump, enter the PDF page number manually.</p><aside class=\"teacher-note\" lang=\"zh-CN\"><strong>教师支持：</strong>8–38分钟独立完成Q1–Q18；PDF页码包含封面，不能和印刷页码混淆。先别打开答案页，完整阅读题组背景。样题反映题型，但18题不是70题完整选择题考试。</aside></section><section class=\"section\" id=\"R03-check\"><h2>2. Check the official key, then locate evidence</h2><p>After the independent interval, compare your choices with the official answer page. For each discrepancy, record the decisive wording and the concept, rather than only copying a letter.</p><details><summary>After the 30-minute attempt: open the official answers</summary><p><a href=\"resources/AP_CSP_Course_and_Exam_Description.pdf#page=194\" target=\"_blank\" rel=\"noopener\">CED official answers · PDF page 194</a></p></details><p><a href=\"Official_Exam_Resources.html#mcq\" target=\"_blank\" rel=\"noopener\">Official source labels and course-topic mapping</a></p><aside class=\"teacher-note\" lang=\"zh-CN\"><strong>教师支持：</strong>38–48分钟核答案与错因。教师不要把这18题重新计入本章40道原创题库；也不要把原题搬入原创题JSON。题源和评分对应以官方PDF为准。</aside></section><section class=\"section\" id=\"R03-path\"><h2>3. Original network case: prove a path or a break</h2><figure class=\"visual\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 450 329\" role=\"img\" aria-label=\"Two paths connect S to T: through A and through B. The links are S-A, A-T, S-B and B-T.\" width=\"450\" style=\"display:block;width:100%;max-width:520px;height:auto;margin:auto;font-family:Arial,sans-serif\"><path d=\"M60 150L225 55L390 150L225 245Z\" fill=\"none\" stroke=\"#225a83\" stroke-width=\"4\"/><circle cx=\"60\" cy=\"150\" r=\"30\" fill=\"#fcfcfa\" stroke=\"#28766f\" stroke-width=\"3\"/><text x=\"60\" y=\"158\" text-anchor=\"middle\" font-size=\"25\" fill=\"#193148\" font-weight=\"700\">S</text><circle cx=\"225\" cy=\"55\" r=\"30\" fill=\"#fcfcfa\" stroke=\"#28766f\" stroke-width=\"3\"/><text x=\"225\" y=\"63\" text-anchor=\"middle\" font-size=\"25\" fill=\"#193148\" font-weight=\"700\">A</text><circle cx=\"225\" cy=\"245\" r=\"30\" fill=\"#fcfcfa\" stroke=\"#28766f\" stroke-width=\"3\"/><text x=\"225\" y=\"253\" text-anchor=\"middle\" font-size=\"25\" fill=\"#193148\" font-weight=\"700\">B</text><circle cx=\"390\" cy=\"150\" r=\"30\" fill=\"#fcfcfa\" stroke=\"#28766f\" stroke-width=\"3\"/><text x=\"390\" y=\"158\" text-anchor=\"middle\" font-size=\"25\" fill=\"#193148\" font-weight=\"700\">T</text><text x=\"225\" y=\"305\" text-anchor=\"middle\" font-size=\"21\" fill=\"#193148\" font-weight=\"400\">Links: S–A, A–T, S–B, B–T</text></svg><figcaption>This is a connectivity model. It does not model latency, packet loss or every device failure.</figcaption></figure><p>Only the four drawn links exist; all nodes are working. If A–T fails, can S still reach T? Give a valid path. If both S–A and S–B fail, can the remaining links restore reachability? Explain.</p><details><summary>Show answer and reasoning / 展开答案与解释</summary><div class=\"answer\"><p>After A–T fails, S → B → T remains a valid path. If S–A and S–B both fail, S has no outgoing link in this model, so it cannot reach T. Having two initial routes does not protect against every set of failures.</p></div></details><p>Reachability is a claim about a path. It is different from a claim that every packet arrives, arrives in order, or arrives quickly.</p><aside class=\"teacher-note\" lang=\"zh-CN\"><strong>教师支持：</strong>学生必须给路径或断开的理由，不接受只写“有冗余所以可以”。先检查每一步边是否仍存在；把节点全好和只有四条边作为模型条件，避免学生自行加连接。</aside></section><section class=\"section\" id=\"R03-sample\"><h2>4. Original sampling case: mix and bias</h2><figure class=\"visual\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 450 318\" role=\"img\" aria-label=\"The sample contains ninety percent weekday users and ten percent weekend users; the population is sixty percent weekday and forty percent weekend.\" width=\"450\" style=\"display:block;width:100%;max-width:520px;height:auto;margin:auto;font-family:Arial,sans-serif\"><text x=\"225\" y=\"29\" text-anchor=\"middle\" font-size=\"23\" fill=\"#193148\" font-weight=\"700\">Two different group mixtures</text><rect x=\"25\" y=\"55\" width=\"400\" height=\"107\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"225\" y=\"87\" text-anchor=\"middle\" font-size=\"22\" fill=\"#193148\" font-weight=\"700\">Sample composition</text><rect x=\"45\" y=\"109\" width=\"324\" height=\"25\" fill=\"#225a83\"/><rect x=\"369\" y=\"109\" width=\"36\" height=\"25\" fill=\"#d3ad62\"/><text x=\"225\" y=\"152\" text-anchor=\"middle\" font-size=\"20\" fill=\"#193148\" font-weight=\"400\">Weekday 90% · Weekend 10%</text><rect x=\"25\" y=\"192\" width=\"400\" height=\"107\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#28766f\" stroke-width=\"2\"/><text x=\"225\" y=\"224\" text-anchor=\"middle\" font-size=\"22\" fill=\"#193148\" font-weight=\"700\">Population composition</text><rect x=\"45\" y=\"246\" width=\"216\" height=\"25\" fill=\"#225a83\"/><rect x=\"261\" y=\"246\" width=\"144\" height=\"25\" fill=\"#d3ad62\"/><text x=\"225\" y=\"289\" text-anchor=\"middle\" font-size=\"20\" fill=\"#193148\" font-weight=\"400\">Weekday 60% · Weekend 40%</text></svg><figcaption>Original synthetic library case. Blue = weekday group; gold = weekend group.</figcaption></figure><p>A fictional library asks whether more charging points are needed. In this synthetic model, the shares answering that more charging points are needed are 25% among weekday users and 75% among weekend users. These fixed within-group need rates are not questionnaire participation rates. Using the supplied rates, calculate the sample estimate and the population-weighted reference. Explain one limitation of reweighting.</p><details><summary>Show answer and reasoning / 展开答案与解释</summary><div class=\"answer\"><p>Sample: 0.90 × 25% + 0.10 × 75% = 30%. Population-weighted reference: 0.60 × 25% + 0.40 × 75% = 45%. The reference is 15 percentage points higher. Matching group shares does not remove within-group nonresponse, selection or measurement bias; 45% relies on the supplied rates.</p></div></details><aside class=\"teacher-note\" lang=\"zh-CN\"><strong>教师支持：</strong>这些都是合成数据，45%不被描述为现实真值。若学生把25%与75%直接平均得50%，让其指出用了什么未经给定的50/50权重。</aside></section><section class=\"section\" id=\"R03-permission\"><h2>5. Original reading case: access is not permission</h2><div class=\"grid\"><article class=\"card\"><h3>Figure F</h3><p>The creator permits reading only. A student wants to copy the figure into a public library page and add the author’s name.</p></article><article class=\"card\"><h3>Icon I</h3><p>A simplified classroom card permits sharing and adapting if the creator is credited and changes are identified. The student recolors the icon.</p></article></div><p>For each item, give a supported next action. Identify which part of your reasoning is about permission and which part is about attribution.</p><details><summary>Show answer and reasoning / 展开答案与解释</summary><div class=\"answer\"><p>For F, get permission covering reproduction or choose a permitted replacement before reuse. Credit alone does not expand reading-only permission. For I, follow the given sharing/adaptation permission by crediting the creator and stating the recoloring. These are simplified case terms, not complete license texts.</p></div></details><aside class=\"teacher-note\" lang=\"zh-CN\"><strong>教师支持：</strong>要求学生引用具体条款，不凭免费、在线或无水印判断。题目不需要法域例外或法律推测；合法使用与伦理评价也不应被混成同一个标签。</aside></section><section class=\"section\" id=\"R03-transfer\"><h2>6. Repair a claim without overclaiming</h2><p>Choose one CED sample error and one original case. Write: the supplied condition, the evidence, the conclusion, and a limit. Use a path for a network claim, a weighted calculation for a sampling claim, or an explicit permission for a reuse claim.</p><p>Exit check: why does “there is a backup route” not prove “every message will arrive”?</p><details><summary>Show answer and reasoning / 展开答案与解释</summary><div class=\"answer\"><p>A backup route supports connectivity under certain failures. It does not by itself establish a delivery protocol, eliminate loss, or cover all possible failures.</p></div></details><aside class=\"teacher-note\" lang=\"zh-CN\"><strong>教师支持：</strong>78–86分钟把官方样题错因迁移到新情境；最后4分钟用一句因果解释检验是否能区分模型支持与没有检验的保证。</aside></section>",
+      "homework": [
+        "Redo two missed CED sample questions and locate the condition that determines each answer; retain the original source labels.",
+        "For the library model, calculate a 50/50 sample mixture and explain why it differs from the population-weighted reference.",
+        "Write a one-sentence counterexample to either “more data removes bias” or “credit grants permission.”"
+      ],
+      "teacherNotes": [
+        "课后50/50样本按给定率得50%，与60/40人口参考45%不同；权重不同，不自动说明某组数据造假。",
+        "R03全部18题为官方CED样题，原题/答案从现有PDF直接打开；不叫历年实考试卷、不算进40原创题。",
+        "网络例的断路结论依赖图中仅四条边且节点工作；对图外路径不做推断。"
+      ]
+    },
+    {
+      "id": "R04",
+      "title": "The 2026 Written-Response Paper",
+      "zh": "2026官方完整书面题组与证据讲评",
+      "minutes": 90,
+      "summary": "10 minutes of preparation, 60 minutes of independent official written responses and 20 minutes reviewing the four written scoring rows.",
+      "objectives": [
+        "Read the current prompt rather than substitute a memorized answer.",
+        "Support a response with precise evidence from personal program code.",
+        "Explain why the code produces the claimed behavior.",
+        "Use the four written scoring rows without treating practice as a full Create or AP score."
+      ],
+      "blocks": [
+        {
+          "start": 0,
+          "end": 10,
+          "title": "Prepare the context",
+          "task": "Confirm that all three official components are final, or that the official task has not yet begun and separate personal practice material is being used. If the official task is in progress, postpone the guided lesson; changing programs does not bypass the written-response feedback restriction."
+        },
+        {
+          "start": 10,
+          "end": 70,
+          "title": "Independent 2026 written responses",
+          "task": "Complete the full public 2026 written-response paper for 60 uninterrupted minutes, without the scoring guidelines."
+        },
+        {
+          "start": 70,
+          "end": 90,
+          "title": "Compare four written scoring rows",
+          "task": "Open the official guidelines, locate evidence for each of the four written rows and revise an unsupported explanation without modifying the submitted artifact."
+        }
+      ],
+      "contentHtml": "<section class=\"section\" id=\"R04-ready\"><h2>1. Prepare a valid practice context · 0–10 min</h2><p>Schedule this guided lesson outside the nine dedicated task hours. If all three Create components are final, you may use that work for guided review. If the official task has not yet begun, you may use a separate earlier personal practice program. If the official task has begun but any component is not final, postpone this guided lesson: switching to an older program does not permit teacher feedback on practice written responses.</p><p>Have a readable PPR and keep the corresponding full program for post-attempt checking. During the 60-minute attempt, use your PPR and the general reference information allowed in the exam, not extra access to the full program. If you have not yet begun the official task and use earlier work, label the attempt “personal practice program.” That can develop the reasoning skills, but it does not fully simulate using an official submitted PPR.</p><aside class=\"teacher-note\" lang=\"zh-CN\"><strong>教师支持：</strong>先区分三状态：全Final可讲评；正式任务尚未开始可用旧个人练习；正式任务进行中则推迟本课指导讲评。换旧程序不能绕过practice WR反馈限制。准备10分钟不替学生制作PPR或挑截图；缺材料者记录缺口，不发全班可背的统一程序。</aside></section><section class=\"section\" id=\"R04-paper\"><h2>2. Complete the 2026 written-response paper · 10–70 min</h2><p><a href=\"https://apcentral.collegeboard.org/media/pdf/ap26-frq-computer-science-principles.pdf\" target=\"_blank\" rel=\"noopener\">Open the official 2026 complete written-response paper</a></p><p>Work independently for the full 60 minutes. Answer both questions and all four prompts using the supplied official directions and your own code evidence. Do not read the scoring guidelines during this interval.</p><p>This is the complete publicly released written-response paper. It is not a full AP exam simulation: the 70-question multiple-choice section and the Create artifacts are not being assessed here.</p><aside class=\"teacher-note\" lang=\"zh-CN\"><strong>教师支持：</strong>保留连续60分钟，不边做边讲。不要把以往年份的通用“程序目的”回答套到2026年题干；命令、对象和条件必须从当前原卷读出。这里链接原题，不复制题文。</aside></section><section class=\"section\" id=\"R04-method\"><h2>3. Connect the command to evidence and a reason</h2><figure class=\"visual\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 450 325\" role=\"img\" aria-label=\"A response links the prompt command to specific evidence in the student’s code and a causal explanation.\" width=\"450\" style=\"display:block;width:100%;max-width:520px;height:auto;margin:auto;font-family:Arial,sans-serif\"><rect x=\"25\" y=\"8\" width=\"400\" height=\"86\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"225\" y=\"41\" text-anchor=\"middle\" font-size=\"24\" fill=\"#193148\" font-weight=\"700\">Command</text><text x=\"225\" y=\"73\" text-anchor=\"middle\" font-size=\"21\" fill=\"#193148\" font-weight=\"400\">What must the response do?</text><path d=\"M225 97V105\" stroke=\"#225a83\" stroke-width=\"3\"/><path d=\"M218 104L225 115L232 104Z\" fill=\"#225a83\"/><rect x=\"25\" y=\"118\" width=\"400\" height=\"86\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"225\" y=\"151\" text-anchor=\"middle\" font-size=\"24\" fill=\"#193148\" font-weight=\"700\">Own code evidence</text><text x=\"225\" y=\"183\" text-anchor=\"middle\" font-size=\"21\" fill=\"#193148\" font-weight=\"400\">Which exact part supports it?</text><path d=\"M225 207V215\" stroke=\"#225a83\" stroke-width=\"3\"/><path d=\"M218 214L225 225L232 214Z\" fill=\"#225a83\"/><rect x=\"25\" y=\"228\" width=\"400\" height=\"86\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#28766f\" stroke-width=\"2\"/><text x=\"225\" y=\"261\" text-anchor=\"middle\" font-size=\"24\" fill=\"#193148\" font-weight=\"700\">Causal explanation</text><text x=\"225\" y=\"293\" text-anchor=\"middle\" font-size=\"21\" fill=\"#193148\" font-weight=\"400\">Why does that behavior follow?</text></svg></figure><div class=\"grid\"><article class=\"card\"><h3>Locate precisely</h3><p>Identify the requested procedure, list, condition, loop or call in your own material. Check that it is the one the prompt specifies.</p></article><article class=\"card\"><h3>Explain the mechanism</h3><p>Follow the actual values and control flow. A statement such as “the code is correct” does not explain what causes the result.</p></article><article class=\"card\"><h3>Respect the question</h3><p>If a prompt asks for a case or an impossibility explanation, decide which is supported by your own program. Do not invent behavior to match a memorized response.</p></article><article class=\"card\"><h3>Keep material separate</h3><p>These review notes are practice support. They do not belong inside a PPR and are not a prepared answer to an official prompt.</p></article></div><aside class=\"teacher-note\" lang=\"zh-CN\"><strong>教师支持：</strong>这是一种读题和论证方法，不是可直接填入考试的万能答案。教师用学生已允许讲评的材料追问证据，不代写句子或改动已最终提交的程序。</aside></section><section class=\"section\" id=\"R04-score\"><h2>4. Review the four written rows · 70–90 min</h2><figure class=\"visual\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 450 327\" role=\"img\" aria-label=\"The 2026 scoring guidelines contain two artifact rows and four written-response rows. This lesson reviews only the four written-response rows.\" width=\"450\" style=\"display:block;width:100%;max-width:520px;height:auto;margin:auto;font-family:Arial,sans-serif\"><rect x=\"25\" y=\"15\" width=\"400\" height=\"94\" rx=\"10\" fill=\"#eef2f3\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"225\" y=\"52\" text-anchor=\"middle\" font-size=\"24\" fill=\"#193148\" font-weight=\"700\">2 artifact rows</text><text x=\"225\" y=\"86\" text-anchor=\"middle\" font-size=\"21\" fill=\"#193148\" font-weight=\"400\">Video + program requirements</text><rect x=\"25\" y=\"157\" width=\"400\" height=\"150\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#28766f\" stroke-width=\"2\"/><text x=\"225\" y=\"196\" text-anchor=\"middle\" font-size=\"24\" fill=\"#193148\" font-weight=\"700\">4 written-response rows</text><text x=\"225\" y=\"231\" text-anchor=\"middle\" font-size=\"21\" fill=\"#193148\" font-weight=\"400\">Q1 · Q2(a) · Q2(b) · Q2(c)</text><text x=\"225\" y=\"274\" text-anchor=\"middle\" font-size=\"21\" fill=\"#28766f\" font-weight=\"400\">Today: review these four only</text></svg><figcaption>A written-response practice result is not a full Create score or an AP score prediction.</figcaption></figure><details><summary>After the 60-minute attempt: open the 2026 scoring guidelines</summary><p><a href=\"https://apcentral.collegeboard.org/media/pdf/ap26-sg-computer-science-principles.pdf\" target=\"_blank\" rel=\"noopener\">Official 2026 scoring guidelines</a></p></details><p>Compare each written-response row with your response and code. Record the supporting evidence, whether it satisfies that row, and the smallest improvement to the explanation. Do not add the video and program-requirement rows to this classroom written-response result.</p><div class=\"table-wrap\"><table><thead><tr><th>Written row</th><th>Evidence in my response/code</th><th>Revision target</th></tr></thead><tbody><tr><td>Q1</td><td>Identify it in your work</td><td>Write a specific change</td></tr><tr><td>Q2(a)</td><td>Identify it in your work</td><td>Write a specific change</td></tr><tr><td>Q2(b)</td><td>Identify it in your work</td><td>Write a specific change</td></tr><tr><td>Q2(c)</td><td>Identify it in your work</td><td>Write a specific change</td></tr></tbody></table></div><aside class=\"teacher-note\" lang=\"zh-CN\"><strong>教师支持：</strong>2026评分指南共6个1分行；本课只复盘其中4个书面行，不误写“FRQ满分6”。四行是否满足必须依据对应原文标准和学生自身程序；课堂判断不是官方AP评分或等级预测。</aside></section><section class=\"section\" id=\"R04-revise\"><h2>5. Revise the explanation, not the submitted artifact</h2><p>Choose one response that lacked evidence or a causal link. Without changing the submitted program, identify what its existing code actually supports. Rewrite the explanation to address the prompt directly; if the code cannot support the requested claim, explain that limitation honestly.</p><p>Keep the first timed attempt and the revision together. For later independent practice, choose an unused public paper from <a href=\"Official_Exam_Resources.html#frq\" target=\"_blank\" rel=\"noopener\">the official-paper index</a>.</p><aside class=\"teacher-note\" lang=\"zh-CN\"><strong>教师支持：</strong>三项全部Final后可按规则教学反馈；已提交内容不因为本课复盘就可自由改交。不要给全班同一个所谓完整答案。若在正式任务开始前用个人练习程序，明确本次结果不能证明正式PPR在考场可用。</aside></section>",
+      "homework": [
+        "Keep the original timed response and a revised explanation for one weak written row. Identify exactly which evidence was missing.",
+        "Use a different unused public written-response paper for a later independent attempt; check its own year-specific guidelines.",
+        "If you used personal practice material, list what is still needed to simulate access to an official submitted PPR accurately."
+      ],
+      "teacherNotes": [
+        "本课在正式Create专用九小时之外：三项全Final可讲评正式作品；正式任务尚未开始可用此前个人练习并标限制；正式任务进行中必须推迟指导讲评，旧练习也不能获得practice WR反馈。",
+        "2026四个书面行与两个artifact行分开：本课只有四书面行的练习复盘，不评出“完整Create6分”或AP等级。",
+        "实际要求逐字看官方原卷，不能一律套“目的、算法、抽象”的泛答；原卷与评分直接链接，不复制题文。",
+        "60分钟期间不提示证据、不选PPR截图。其后20分钟用已允许讲评的个人材料核证据，学生本人写修订解释。"
+      ]
+    },
+    {
+      "id": "R05",
+      "title": "Mixed Timing & a Personal Repair Plan",
+      "zh": "混合限时、证据复盘与个人计划",
+      "minutes": 90,
+      "summary": "A 34-minute original mixed set followed by evidence review, targeted repair, exam readiness and an individual next-step plan.",
+      "objectives": [
+        "Maintain a workable pace on a shortened mixed set.",
+        "Distinguish explained success from a correct guess.",
+        "Repair one error through a changed-case test.",
+        "Plan further practice using appropriately labeled and authorized sources."
+      ],
+      "blocks": [
+        {
+          "start": 0,
+          "end": 34,
+          "title": "Independent mixed questions",
+          "task": "Complete Q21–Q40 in 34 minutes, recording confidence before feedback."
+        },
+        {
+          "start": 34,
+          "end": 60,
+          "title": "Evidence review",
+          "task": "Classify missed and guessed answers, identify decisive evidence and explain a tempting alternative."
+        },
+        {
+          "start": 60,
+          "end": 70,
+          "title": "One targeted repair",
+          "task": "Work a changed code or data case that matches the primary error pattern."
+        },
+        {
+          "start": 70,
+          "end": 80,
+          "title": "Exam readiness",
+          "task": "Check school arrangements, official preview access and the appropriate route for PPR or registration issues."
+        },
+        {
+          "start": 80,
+          "end": 90,
+          "title": "Personal plan",
+          "task": "Write two specific repair actions and a correctly labeled full-length practice opportunity."
+        }
+      ],
+      "contentHtml": "<section class=\"section\" id=\"R05-attempt\"><h2>1. Complete Q21–Q40 in 34 minutes</h2><p><a href=\"Chapter_8_Quiz.html#mixed\" target=\"_blank\" rel=\"noopener\">Open the original mixed set</a></p><p>Work independently on all 20 questions. Record confidence and any return point. This shortened mixed set is not a complete 70-question AP multiple-choice exam and cannot predict an AP score.</p><figure class=\"visual\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 450 385\" role=\"img\" aria-label=\"The session allocates thirty-four minutes to mixed questions, twenty-six to evidence review and ten each to repair, exam readiness and a personal plan.\" width=\"450\" style=\"display:block;width:100%;max-width:520px;height:auto;margin:auto;font-family:Arial,sans-serif\"><text x=\"225\" y=\"27\" text-anchor=\"middle\" font-size=\"23\" fill=\"#193148\" font-weight=\"700\">90-minute review session</text><rect x=\"25\" y=\"47\" width=\"400\" height=\"102\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"225\" y=\"105.0\" text-anchor=\"middle\" font-size=\"21\" fill=\"#225a83\" font-weight=\"700\">34 min · Mixed questions</text><rect x=\"25\" y=\"161\" width=\"400\" height=\"78\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#28766f\" stroke-width=\"2\"/><text x=\"225\" y=\"207.0\" text-anchor=\"middle\" font-size=\"21\" fill=\"#28766f\" font-weight=\"700\">26 min · Evidence review</text><rect x=\"25\" y=\"251\" width=\"400\" height=\"30\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"225\" y=\"273.0\" text-anchor=\"middle\" font-size=\"21\" fill=\"#225a83\" font-weight=\"700\">10 min · Targeted repair</text><rect x=\"25\" y=\"293\" width=\"400\" height=\"30\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#28766f\" stroke-width=\"2\"/><text x=\"225\" y=\"315.0\" text-anchor=\"middle\" font-size=\"21\" fill=\"#28766f\" font-weight=\"700\">10 min · Exam readiness</text><rect x=\"25\" y=\"335\" width=\"400\" height=\"30\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"225\" y=\"357.0\" text-anchor=\"middle\" font-size=\"21\" fill=\"#225a83\" font-weight=\"700\">10 min · Personal plan</text></svg></figure><aside class=\"teacher-note\" lang=\"zh-CN\"><strong>教师支持：</strong>0–34分钟整段留给独立答题。34分钟近似练习读题节奏，但题量与覆盖均不等于完整考试；不要用比例换算AP等级。</aside></section><section class=\"section\" id=\"R05-review\"><h2>2. Review evidence for 26 minutes</h2><figure class=\"visual\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 450 285\" role=\"img\" aria-label=\"Correctness and confidence form four categories: correct and explained, correct and guessed, incorrect and confident, incorrect and uncertain.\" width=\"450\" style=\"display:block;width:100%;max-width:520px;height:auto;margin:auto;font-family:Arial,sans-serif\"><rect x=\"15\" y=\"15\" width=\"200\" height=\"115\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#28766f\" stroke-width=\"2\"/><text x=\"115\" y=\"55\" text-anchor=\"middle\" font-size=\"23\" fill=\"#193148\" font-weight=\"700\">Correct</text><text x=\"115\" y=\"95\" text-anchor=\"middle\" font-size=\"20\" fill=\"#193148\" font-weight=\"400\">I can explain it</text><rect x=\"235\" y=\"15\" width=\"200\" height=\"115\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#d3ad62\" stroke-width=\"2\"/><text x=\"335\" y=\"55\" text-anchor=\"middle\" font-size=\"23\" fill=\"#193148\" font-weight=\"700\">Correct</text><text x=\"335\" y=\"95\" text-anchor=\"middle\" font-size=\"20\" fill=\"#193148\" font-weight=\"400\">I guessed</text><rect x=\"15\" y=\"153\" width=\"200\" height=\"115\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"115\" y=\"193\" text-anchor=\"middle\" font-size=\"23\" fill=\"#193148\" font-weight=\"700\">Incorrect</text><text x=\"115\" y=\"233\" text-anchor=\"middle\" font-size=\"20\" fill=\"#193148\" font-weight=\"400\">I was confident</text><rect x=\"235\" y=\"153\" width=\"200\" height=\"115\" rx=\"10\" fill=\"#fcfcfa\" stroke=\"#225a83\" stroke-width=\"2\"/><text x=\"335\" y=\"193\" text-anchor=\"middle\" font-size=\"23\" fill=\"#193148\" font-weight=\"700\">Incorrect</text><text x=\"335\" y=\"233\" text-anchor=\"middle\" font-size=\"20\" fill=\"#193148\" font-weight=\"400\">I was unsure</text></svg><figcaption>Prioritize a misconception you believed confidently and a correct answer you cannot yet explain.</figcaption></figure><p>For each missed or guessed item, identify the first unsupported inference. Record the condition, trace step, numerical calculation or stated policy that decides the answer. Explain at least one tempting alternative, not just the correct letter.</p><div class=\"table-wrap\"><table><thead><tr><th>Record</th><th>Useful evidence</th></tr></thead><tbody><tr><td>Original choice and confidence</td><td>Written before feedback</td></tr><tr><td>Decisive fact</td><td>A specific condition, value, path or permission</td></tr><tr><td>Why my alternative fails</td><td>A contradiction or counterexample</td></tr><tr><td>Transfer check</td><td>A changed case with a predicted result</td></tr></tbody></table></div><aside class=\"teacher-note\" lang=\"zh-CN\"><strong>教师支持：</strong>34–60分钟按证据复盘。正确但不会解释的题仍需补；自信错误往往是概念误解。先修两类高价值问题，避免把所有时间用于抄完整解析。</aside></section><section class=\"section\" id=\"R05-repair\"><h2>3. Use ten minutes for one changed-case repair</h2><p>Choose a case that matches your error pattern. Predict before expanding; then change one condition and solve again.</p><div class=\"grid\"><article class=\"card\"><h3>Code case</h3><p>total starts at 0. In each of three repetitions, it is reset to 0 and then increased by 2. DISPLAY(total) runs after the loop. What is displayed, and what single change would make it accumulate across repetitions?</p></article><article class=\"card\"><h3>Data case</h3><p>An original file is 2,000 bytes and the compressed file is 1,500 bytes. What percentage was saved, and what percentage of the original size remains?</p></article></div><details><summary>Show answer and reasoning / 展开答案与解释</summary><div class=\"answer\"><p>Code: output 2. Keep the initial total ← 0 before the loop, but remove the reset inside it; then three additions produce 6. With zero repetitions, that repaired version displays the initialized 0. Data: 500 bytes saved; 500 / 2,000 = 25% saved, while 75% of the original size remains.</p></div></details><aside class=\"teacher-note\" lang=\"zh-CN\"><strong>教师支持：</strong>两例是新复习微例，挑与个人错因相关的一个做到底。代码修复保留循环前初始化，不能删掉全部初始化。压缩题必须区分节省率与剩余占比；再改一个大小验证。</aside></section><section class=\"section\" id=\"R05-readiness\"><h2>4. Separate exam readiness from content repair</h2><p>Use the next ten minutes to verify practical arrangements: your school’s exam details, permitted materials, access to the current official exam preview, and the status of your submitted PPR through your school. Use official sources for changes.</p><p><a href=\"https://apcentral.collegeboard.org/help-center/can-students-try-sample-ap-exam-questions-bluebook-testing-app-exam-day\" target=\"_blank\" rel=\"noopener\">Official Bluebook preview guidance</a> · <a href=\"https://apcentral.collegeboard.org/courses/ap-computer-science-principles/exam\" target=\"_blank\" rel=\"noopener\">Current exam information</a></p><p>A preview helps you learn the interface. It is not a scored practice exam. Any school registration, submission or PPR-printing issue goes to the teacher or AP coordinator; a course quiz result does not confirm those processes.</p><aside class=\"teacher-note\" lang=\"zh-CN\"><strong>教师支持：</strong>70–80分钟处理实际信息核对，不突然开一套新题。考试时间和地点以学校通知为准；本课记录不冒充官方报名或PPR收件确认。</aside></section><section class=\"section\" id=\"R05-plan\"><h2>5. Finish with an executable personal plan</h2><p>Use the final ten minutes to select two repair actions and one full-length practice opportunity. Name the source, the date, the time needed and the evidence you will check afterward. Match the action to the actual error pattern.</p><div class=\"table-wrap\"><table><thead><tr><th>Action</th><th>A specific plan</th></tr></thead><tbody><tr><td>Repair a concept</td><td>Choose one weak distinction and test it on two changed cases.</td></tr><tr><td>Repair execution</td><td>Choose one short trace and explain every state transition.</td></tr><tr><td>Practice exam conditions</td><td>Ask your teacher to assign an available authorized full paper; label any shorter public set accurately.</td></tr></tbody></table></div><p>Exit check: name one action you can complete next, and what observable result would show it worked. A higher repeat score alone is not enough if you remember the answers.</p><aside class=\"teacher-note\" lang=\"zh-CN\"><strong>教师支持：</strong>最后10分钟产出可执行计划，不写“再多练习”。可用官方公开FRQ做完整书面题组；完整选择题卷依学校教师权限安排，不能把本章20题称完整模考或把受限卷公开上传。</aside></section>",
+      "homework": [
+        "Complete the two dated repair actions in your plan and keep the changed-case evidence.",
+        "Arrange an authorized full multiple-choice paper through your teacher if available; do not relabel the 20-question set as a complete exam.",
+        "For another written-response attempt, use an unused official public paper with your own permitted personal material and its year-specific scoring guide."
+      ],
+      "teacherNotes": [
+        "20题34分钟是缩短混合练习；不等于70题120分钟完整选择题卷，不作AP等级预测。",
+        "复盘优先自信错误及猜对题；每题保留原答、自信度、决定性证据、反例与新测试。",
+        "十分钟补练只修一个具体机制，避免“看了解析”替代重新预测与验证。",
+        "Bluebook预览、学校考试安排与PPR打印均用官方/学校渠道核验；教学网站不认证报名与正式提交。"
+      ]
+    }
+  ],
+  "checked": "2026-09-13"
+}

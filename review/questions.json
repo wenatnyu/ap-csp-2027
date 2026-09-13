@@ -1,0 +1,1110 @@
+{
+  "title": "Original AP CSP Comprehensive Review",
+  "sourceType": "original",
+  "notation": "Original practice, not official College Board questions. Use AP CSP pseudocode: ← assigns a copy of a value; = compares values; list indices start at 1; / can return a noninteger; OR includes the case where both conditions are true. Select all and only the two correct options when the stem says Select TWO.",
+  "sets": [
+    {
+      "id": "diagnostic",
+      "title": "Five-Big-Idea Diagnostic",
+      "minutes": 18,
+      "questionIds": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q05",
+        "Q06",
+        "Q07",
+        "Q08",
+        "Q09",
+        "Q10"
+      ]
+    },
+    {
+      "id": "algorithms",
+      "title": "Algorithms Focus",
+      "minutes": 20,
+      "questionIds": [
+        "Q11",
+        "Q12",
+        "Q13",
+        "Q14",
+        "Q15",
+        "Q16",
+        "Q17",
+        "Q18",
+        "Q19",
+        "Q20"
+      ]
+    },
+    {
+      "id": "mixed",
+      "title": "Mixed Timed Review",
+      "minutes": 34,
+      "questionIds": [
+        "Q21",
+        "Q22",
+        "Q23",
+        "Q24",
+        "Q25",
+        "Q26",
+        "Q27",
+        "Q28",
+        "Q29",
+        "Q30",
+        "Q31",
+        "Q32",
+        "Q33",
+        "Q34",
+        "Q35",
+        "Q36",
+        "Q37",
+        "Q38",
+        "Q39",
+        "Q40"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q01",
+      "topic": "CRD",
+      "stem": "A fictional community-fridge app records food donations and shows nearby pickup locations. Which statement describes the purpose of the app rather than a specific function?",
+      "options": [
+        "Display pickup locations in distance order.",
+        "Help residents share surplus food with people who can use it.",
+        "Read a donor’s selected food category.",
+        "Store the time when a donation was entered."
+      ],
+      "answer": [
+        1
+      ],
+      "explanation": "B 正确：帮助居民分享多余食物说明开发应用要解决什么问题。A 是排序与显示功能；C 是输入功能；D 是记录数据的功能。这些功能可支持目的，但没有直接说明应用为何存在。",
+      "rationale": "Purpose describes the problem or need the innovation addresses. Sharing surplus food is the purpose; displaying, reading input and storing data are functions.",
+      "remediation": {
+        "label": "L02 · Computing Innovations, Input & Output",
+        "url": "AP_CSP_L02_Computing_Innovations.html"
+      },
+      "tags": [
+        "purpose",
+        "function",
+        "computing-innovation"
+      ]
+    },
+    {
+      "id": "Q02",
+      "topic": "CRD",
+      "stem": "A team’s fictional booking app passed its own tests, but several intended users cannot complete a booking. Which TWO actions best support an iterative response to this evidence? Select TWO.",
+      "options": [
+        "Observe intended users attempting a booking and ask where they encounter difficulty.",
+        "Add more features before investigating the failed bookings.",
+        "Revise the design based on observed barriers, then test the revised booking task.",
+        "Keep the design because the developers already completed the task successfully."
+      ],
+      "answer": [
+        0,
+        2
+      ],
+      "explanation": "A、C 正确：先收集目标用户的具体使用证据，再据此修改并复测，构成有依据的迭代。B 没有定位失败原因，增加功能也不必然消除障碍；D 把开发者的成功当作所有目标用户都能成功的证据，忽视新反馈。",
+      "rationale": "Observe the intended users, identify the barriers, revise and retest. Extra features and the developers’ earlier success do not resolve the reported usability problem.",
+      "remediation": {
+        "label": "L04 · Collaborate, Test & Improve",
+        "url": "AP_CSP_L04_Test_and_Improve.html"
+      },
+      "tags": [
+        "iteration",
+        "user-feedback",
+        "testing",
+        "select-two"
+      ]
+    },
+    {
+      "id": "Q03",
+      "topic": "DAT",
+      "stem": "A sensor system needs a different fixed-length binary ID for each of 19 devices. What is the smallest number of bits per ID that provides enough distinct patterns?",
+      "options": [
+        "4 bits",
+        "19 bits",
+        "6 bits",
+        "5 bits"
+      ],
+      "answer": [
+        3
+      ],
+      "explanation": "D 正确：4 位只有 2⁴=16 种模式，不足以区分 19 台；5 位有 2⁵=32 种，首次满足要求。A 容量不足；B、C 均能提供足够模式，但不是最少位数。",
+      "rationale": "Four bits provide 16 patterns, which is too few. Five bits provide 32 patterns and are sufficient; six or nineteen bits are not minimal.",
+      "remediation": {
+        "label": "L01 · Bits & Binary",
+        "url": "AP_CSP_L01_Bits_and_Binary.html"
+      },
+      "tags": [
+        "bits",
+        "representation",
+        "capacity"
+      ]
+    },
+    {
+      "id": "Q04",
+      "topic": "DAT",
+      "stem": "A laboratory must be able to reconstruct every original recorded sensor value exactly after archiving the data. Which approach satisfies this requirement?",
+      "options": [
+        "Use a lossless method that reduces size while preserving exact reconstruction.",
+        "Use a lossy method whenever its graph looks unchanged.",
+        "Round every value to the nearest whole number before compression.",
+        "Keep only the average of each group of ten readings."
+      ],
+      "answer": [
+        0
+      ],
+      "explanation": "A 正确：无损压缩以能够完整还原原数据为前提。B 的图像外观相似不能证明各值完全相同；C 会丢弃原来的小数信息；D 只保留平均值，通常不能恢复十个原始读数。",
+      "rationale": "Lossless compression allows exact recovery. A similar-looking graph, rounded values or group averages can hide irreversible changes to the original readings.",
+      "remediation": {
+        "label": "L06 · Compression & Trade-offs",
+        "url": "AP_CSP_L06_Compression.html"
+      },
+      "tags": [
+        "lossless",
+        "data-preservation"
+      ]
+    },
+    {
+      "id": "Q05",
+      "topic": "AAP",
+      "stem": "What value is displayed by this code?",
+      "options": [
+        "16",
+        "22",
+        "19",
+        "11"
+      ],
+      "answer": [
+        2
+      ],
+      "explanation": "C 正确：b 复制赋值时 a 的值 8；之后 a 变成 11，b 仍为 8，因此显示 11+8=19。A 忽略了 a 的更新；B 把 b 当成会随 a 自动变化的链接；D 只计算了 a，遗漏 b。",
+      "rationale": "The assignment to b copies 8. Updating a to 11 leaves b at 8, so the displayed sum is 19.",
+      "remediation": {
+        "label": "L03 · Algorithms, Variables & Sequence",
+        "url": "AP_CSP_L03_Variables_and_Sequence.html"
+      },
+      "tags": [
+        "assignment",
+        "copy",
+        "trace"
+      ],
+      "code": "a ← 8\nb ← a\na ← a + 3\nDISPLAY(a + b)"
+    },
+    {
+      "id": "Q06",
+      "topic": "AAP",
+      "stem": "A program records an unknown number of daily temperatures. Why does storing them in a list help manage the program’s complexity?",
+      "options": [
+        "It guarantees that every recorded temperature is accurate.",
+        "One traversal can process a changing number of values without adding a separately named variable for each day.",
+        "It makes every search take exactly one operation.",
+        "It removes the need to decide how missing readings should be handled."
+      ],
+      "answer": [
+        1
+      ],
+      "explanation": "B 正确：列表把同类数据组织为一个集合，同一遍历算法可处理不同长度，减少对逐个变量和重复语句的依赖。A 把存储结构误当成质量保证；C 列表不保证一步完成搜索；D 缺失数据仍需明确处理规则。",
+      "rationale": "A list lets one algorithm process a variable number of related values. It does not guarantee accurate data, constant-time searching or a missing-data policy.",
+      "remediation": {
+        "label": "L17 · Lists & Data Abstraction",
+        "url": "AP_CSP_L17_Lists_and_Abstraction.html"
+      },
+      "tags": [
+        "list-abstraction",
+        "managing-complexity"
+      ]
+    },
+    {
+      "id": "Q07",
+      "topic": "CSN",
+      "stem": "A network has links A–B, B–D, A–C and C–D. After link A–B fails, which statement best explains why A can still send data to D?",
+      "options": [
+        "The network automatically encrypts the failed link.",
+        "Every packet must still travel through B.",
+        "D can receive data without any remaining connection to A.",
+        "The remaining route A–C–D provides redundancy."
+      ],
+      "answer": [
+        3
+      ],
+      "explanation": "D 正确：A–C 与 C–D 仍可用，形成备用路径，体现冗余带来的容错能力。A 加密不能修复断开的链路；B 错在声称必须经过 B；C 错在暗示不需要连通路径。",
+      "rationale": "A–C–D remains connected when A–B fails. Redundant paths can preserve communication; encryption does not replace a route.",
+      "remediation": {
+        "label": "L25 · Redundancy & Fault Tolerance",
+        "url": "AP_CSP_L25_Fault_Tolerance.html"
+      },
+      "tags": [
+        "redundancy",
+        "fault-tolerance",
+        "network-path"
+      ]
+    },
+    {
+      "id": "Q08",
+      "topic": "CSN",
+      "stem": "Three independent tasks take 2, 6 and 7 seconds on one processor. Two identical processors can each run one task at a time; tasks cannot be split, and there is no overhead. What is the shortest time to finish all three?",
+      "options": [
+        "7 seconds",
+        "8 seconds",
+        "7.5 seconds",
+        "15 seconds"
+      ],
+      "answer": [
+        1
+      ],
+      "explanation": "B 正确：让一台处理器依次运行 6 秒和 2 秒任务，另一台运行 7 秒任务，总耗时 max(8,7)=8 秒。A 无法同时容纳剩余的 6+2 秒工作；C 把总时间 15 直接除以 2，忽略任务不能拆分；D 是单处理器串行总时间。",
+      "rationale": "Schedule the 6- and 2-second tasks on one processor and the 7-second task on the other. The finish time is 8 seconds; indivisible tasks prevent reaching 7.5 seconds.",
+      "remediation": {
+        "label": "L26 · Parallel & Distributed Computing",
+        "url": "AP_CSP_L26_Parallel_and_Distributed.html"
+      },
+      "tags": [
+        "parallel-computing",
+        "scheduling",
+        "independent-tasks"
+      ]
+    },
+    {
+      "id": "Q09",
+      "topic": "IOC",
+      "stem": "A fictional town makes a service available only through a smartphone app. It then adds staffed public kiosks where residents can use the service without a personal device or internet subscription. Which conclusion is best supported?",
+      "options": [
+        "The kiosks can reduce device and connection barriers, but opening hours and travel may still limit access.",
+        "The kiosks eliminate every cause of the digital divide.",
+        "Every resident will now choose to use the service.",
+        "A resident without a smartphone must still buy one to use the kiosk."
+      ],
+      "answer": [
+        0
+      ],
+      "explanation": "A 正确：公共设备和接入可以缓解部分数字鸿沟，但地点、时间、技能与可访问性等障碍仍可能存在。B 把一种干预夸大成消除全部差异；C 把能够访问等同于实际参与；D 与无需个人设备即可使用的题设矛盾。",
+      "rationale": "Shared kiosks address some device and connectivity barriers. They do not guarantee universal access or participation, and residents need not own a smartphone to use them.",
+      "remediation": {
+        "label": "L27 · Impacts & the Digital Divide",
+        "url": "AP_CSP_L27_Impacts_and_Digital_Divide.html"
+      },
+      "tags": [
+        "digital-divide",
+        "access",
+        "intervention-limits"
+      ]
+    },
+    {
+      "id": "Q10",
+      "topic": "IOC",
+      "stem": "A fictional speech-recognition system was trained mostly on recordings from one accent group and makes more errors for another group. Which response most directly investigates and reduces this problem?",
+      "options": [
+        "Add many more recordings from only the already well-represented group.",
+        "Stop measuring errors separately for different accent groups.",
+        "Collect relevant recordings from underrepresented speakers and evaluate error rates across groups after revision.",
+        "Remove accent-group labels from the evaluation and assume that bias is gone."
+      ],
+      "answer": [
+        2
+      ],
+      "explanation": "C 正确：补充相关且代表性更好的数据，再比较各组错误率，可调查并减少已观察到的差异，但不能保证彻底消除偏差。A 可能延续原有代表性不足；B 隐藏差异而非解决问题；D 删除标签不等于消除语音数据、设计或使用中的偏差。",
+      "rationale": "Improve the relevant data coverage and evaluate the revised system across groups. More data from the same group or hiding group labels does not establish that the bias is reduced.",
+      "remediation": {
+        "label": "L28 · Computing Bias & Crowdsourcing",
+        "url": "AP_CSP_L28_Bias_and_Crowdsourcing.html"
+      },
+      "tags": [
+        "computing-bias",
+        "representation",
+        "evaluation"
+      ]
+    },
+    {
+      "id": "Q11",
+      "topic": "AAP",
+      "stem": "What value is assigned to result?",
+      "options": [
+        "8",
+        "8.75",
+        "6.75",
+        "5"
+      ],
+      "answer": [
+        1
+      ],
+      "explanation": "B 正确：23 MOD 6 的余数为 5，15 / 4 为 3.75，因此结果是 8.75。A 把除法错误地截断成整数 3；C 把 MOD 的余数错换成整数商 3，得到 3+3.75=6.75；D 错误地先加再除，按 (5+15)/4 得到 5。MOD 与乘除同优先级，先于加法；/ 不是整数除法。",
+      "rationale": "Evaluate MOD and division before addition: 23 MOD 6 = 5 and 15 / 4 = 3.75. Their sum is 8.75; division is not truncated to an integer.",
+      "remediation": {
+        "label": "L09 · Expressions & Strings",
+        "url": "AP_CSP_L09_Expressions_and_Strings.html"
+      },
+      "tags": [
+        "arithmetic",
+        "precedence",
+        "MOD",
+        "division"
+      ],
+      "code": "result ← (23 MOD 6) + 15 / 4"
+    },
+    {
+      "id": "Q12",
+      "topic": "AAP",
+      "stem": "The code is intended to exchange the original values of left and right. Which statement should replace MISSING?",
+      "options": [
+        "left ← saved",
+        "right ← left",
+        "saved ← right",
+        "right ← saved"
+      ],
+      "answer": [
+        3
+      ],
+      "explanation": "D 正确：saved 先保存原 left=4；left 随后变为原 right=9；最后必须把 saved 的 4 赋给 right 才完成交换。A 会把 left 改回 4，右侧仍为 9；B 会让两个变量都等于 9；C 只改临时变量，right 仍为 9。",
+      "rationale": "saved preserves the original left value. After left receives the original right value, assigning saved to right completes the swap.",
+      "remediation": {
+        "label": "L03 · Algorithms, Variables & Sequence",
+        "url": "AP_CSP_L03_Variables_and_Sequence.html"
+      },
+      "tags": [
+        "assignment",
+        "swap",
+        "temporary-variable"
+      ],
+      "code": "left ← 4\nright ← 9\nsaved ← left\nleft ← right\nMISSING"
+    },
+    {
+      "id": "Q13",
+      "topic": "AAP",
+      "stem": "For numeric x, which expression is true exactly when x is outside the inclusive range from 10 to 20?",
+      "options": [
+        "NOT ((x ≥ 10) AND (x ≤ 20))",
+        "(x < 10) AND (x > 20)",
+        "(x ≤ 10) OR (x ≥ 20)",
+        "NOT ((x < 10) OR (x > 20))"
+      ],
+      "answer": [
+        0
+      ],
+      "explanation": "A 正确：先用 AND 表示闭区间内，再取 NOT，等价于 x<10 OR x>20。B 要求 x 同时小于 10 又大于 20，不可能成立；C 把边界 10 和 20 也算到区间外；D 恰好表示区间内。",
+      "rationale": "Negating the inclusive inside-range condition gives exactly the outside range. AND cannot join the two outside cases, and the endpoints must remain inside.",
+      "remediation": {
+        "label": "L10 · Boolean Logic",
+        "url": "AP_CSP_L10_Boolean_Logic.html"
+      },
+      "tags": [
+        "Boolean",
+        "range",
+        "De-Morgan",
+        "boundary"
+      ]
+    },
+    {
+      "id": "Q14",
+      "topic": "AAP",
+      "stem": "What value is displayed after the loop?",
+      "options": [
+        "8",
+        "12",
+        "20",
+        "30"
+      ],
+      "answer": [
+        2
+      ],
+      "explanation": "C 正确：四次加入的 value 依次为 2、4、6、8，合计 20；每次先累加，再增加 value。A 只是最后一次加入的数；B 只加入前 3 项而漏掉第 4 次；D 相当于误执行第 5 轮，再多加 10 得到 30。",
+      "rationale": "The loop adds 2, 4, 6 and 8, producing 20. value is increased only after its current value is added.",
+      "remediation": {
+        "label": "L13 · Counted Loops",
+        "url": "AP_CSP_L13_Counted_Loops.html"
+      },
+      "tags": [
+        "counted-loop",
+        "accumulator",
+        "trace"
+      ],
+      "code": "total ← 0\nvalue ← 2\nREPEAT 4 TIMES\n{\n  total ← total + value\n  value ← value + 2\n}\nDISPLAY(total)"
+    },
+    {
+      "id": "Q15",
+      "topic": "AAP",
+      "stem": "What value is displayed after the loop terminates?",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "10"
+      ],
+      "answer": [
+        1
+      ],
+      "explanation": "B 正确：x 的更新为 1→2→4→8→16，执行四次后首次满足 x≥10，因此 steps=4。A 在 x=8 时提前停止；C 多执行了一次；D 把条件中的门槛值 10 当成了迭代次数。",
+      "rationale": "Four doublings change x from 1 to 2, 4, 8 and 16. At 16 the stopping condition is true, so steps is 4.",
+      "remediation": {
+        "label": "L14 · Conditional Loops",
+        "url": "AP_CSP_L14_Conditional_Loops.html"
+      },
+      "tags": [
+        "conditional-loop",
+        "REPEAT-UNTIL",
+        "trace"
+      ],
+      "code": "x ← 1\nsteps ← 0\nREPEAT UNTIL (x ≥ 10)\n{\n  x ← x * 2\n  steps ← steps + 1\n}\nDISPLAY(steps)"
+    },
+    {
+      "id": "Q16",
+      "topic": "AAP",
+      "stem": "What is the final value of values? List indices start at 1.",
+      "options": [
+        "[4, 6, 8, 4]",
+        "[4, 8, 12, 4]",
+        "[6, 8, 12, 6]",
+        "[4, 6, 12, 4]"
+      ],
+      "answer": [
+        3
+      ],
+      "explanation": "D 正确：INSERT 后为 [4,6,8,12]；REMOVE 的索引 3 指向 8，删除后为 [4,6,12]；末尾追加当前 values[1]=4，得到 [4,6,12,4]。A 把删除对象当成原索引 3 的 12；B 忽略插入或误删 6；C 没有按从 1 开始的索引在位置 2 插入。",
+      "rationale": "Insertion gives [4, 6, 8, 12]. Removing the current third item removes 8; appending the first item then gives [4, 6, 12, 4].",
+      "remediation": {
+        "label": "L17 · Lists & Data Abstraction",
+        "url": "AP_CSP_L17_Lists_and_Abstraction.html"
+      },
+      "tags": [
+        "list",
+        "one-based-index",
+        "INSERT",
+        "REMOVE",
+        "APPEND"
+      ],
+      "code": "values ← [4, 8, 12]\nINSERT(values, 2, 6)\nREMOVE(values, 3)\nAPPEND(values, values[1])"
+    },
+    {
+      "id": "Q17",
+      "topic": "AAP",
+      "stem": "What value is displayed by the calls to combine?",
+      "options": [
+        "23",
+        "12",
+        "11",
+        "13"
+      ],
+      "answer": [
+        0
+      ],
+      "explanation": "A 正确：combine(3,5)=2×3+5=11，所以 x=11；combine(x,1)=2×11+1=23。B 把第二次调用误算成 x+1；C 只给出了第一次返回值；D 把第二次实参顺序颠倒为 combine(1,11)，才会得到 13。",
+      "rationale": "The first call returns 11. The second call receives 11 and 1, so it returns 2 × 11 + 1 = 23. Each call binds its own arguments to a and b.",
+      "remediation": {
+        "label": "L19 · Procedures, Parameters & Libraries",
+        "url": "AP_CSP_L19_Procedures_and_Libraries.html"
+      },
+      "tags": [
+        "procedure",
+        "parameters",
+        "arguments",
+        "RETURN"
+      ],
+      "code": "PROCEDURE combine(a, b)\n{\n  RETURN(2 * a + b)\n}\nx ← combine(3, 5)\nDISPLAY(combine(x, 1))"
+    },
+    {
+      "id": "Q18",
+      "topic": "AAP",
+      "stem": "Binary search looks for 21 in the sorted list [3, 8, 12, 15, 21, 28, 34]. It checks the middle item of the remaining range, discards the checked item when it does not match, and stops at a match. Which sequence of item values is checked?",
+      "options": [
+        "3, 8, 12, 15, 21",
+        "15, 21",
+        "15, 28, 21",
+        "34, 28, 21"
+      ],
+      "answer": [
+        2
+      ],
+      "explanation": "C 正确：先检查全表中间的 15；21 较大，剩余范围为 [21,28,34]，中间是 28；21 较小，只剩 [21]，第三次找到目标。A 是从左到右线性搜索；B 在第一步后直接取左端而非新范围的中间项；D 是从右端逐个搜索。",
+      "rationale": "The middle item is 15. Searching the higher half next checks 28, then its lower remaining range contains only 21.",
+      "remediation": {
+        "label": "L20 · Searching & Comparing Algorithms",
+        "url": "AP_CSP_L20_Searching_Algorithms.html"
+      },
+      "tags": [
+        "binary-search",
+        "sorted-data",
+        "search-trace"
+      ]
+    },
+    {
+      "id": "Q19",
+      "topic": "AAP",
+      "stem": "For input size n, algorithm P takes 3n + 2 steps and algorithm Q takes n² steps. Both solve the same problem correctly. Which statement follows from the AP CSP growth-rate notion of reasonable time?",
+      "options": [
+        "Only P is reasonable because Q contains an exponent.",
+        "Both have polynomial step counts and are considered reasonable, although Q grows faster.",
+        "Q is exponential because its formula is n².",
+        "Both must finish within one second for every input size."
+      ],
+      "answer": [
+        1
+      ],
+      "explanation": "B 正确：3n+2 是线性多项式，n² 是二次多项式，在 AP CSP 的增长级别分类中都属于合理时间，且 Q 的增长更快。A、C 混淆 n² 与 2ⁿ；D 把增长级别判断误当作固定真实时间保证，忽略 n、硬件和常数等条件。",
+      "rationale": "Both formulas are polynomial, so both fit the AP CSP reasonable-time classification. n² is not exponential, and the classification does not promise a fixed elapsed-time limit.",
+      "remediation": {
+        "label": "L22 · Efficiency, Limits & Chapter Project",
+        "url": "AP_CSP_L22_Algorithm_Limits_and_Project.html"
+      },
+      "tags": [
+        "efficiency",
+        "polynomial",
+        "reasonable-time"
+      ]
+    },
+    {
+      "id": "Q20",
+      "topic": "AAP",
+      "stem": "A robot starts at row 3, column 2, facing north on a 4-by-4 grid. Rows increase southward and columns increase eastward. Only cell (2, 2) is blocked. What is the final position and direction after this code?",
+      "options": [
+        "Row 3, column 3, facing east",
+        "Row 2, column 2, facing north",
+        "Row 2, column 3, facing east",
+        "Row 2, column 3, facing north"
+      ],
+      "answer": [
+        3
+      ],
+      "explanation": "D 正确：前方 (2,2) 被挡，CAN_MOVE(forward) 为 false，且检测本身不转向也不移动。ELSE 先右转朝东，前进一步至 (3,3)；随后左转朝北，再前进至 (2,3)，最终朝北。A 漏掉 ELSE 后的两条命令；B 错把被挡的北方格当作可达；C 漏记最后的左转。",
+      "rationale": "The forward square is blocked, so the robot turns east and moves to (3, 3). The last two commands turn it north and move it to (2, 3), still facing north.",
+      "remediation": {
+        "label": "L21 · Robot Algorithms & Problem Solving",
+        "url": "AP_CSP_L21_Robot_Algorithms.html"
+      },
+      "tags": [
+        "robot",
+        "CAN_MOVE",
+        "selection",
+        "orientation"
+      ],
+      "code": "IF (CAN_MOVE(forward))\n{\n  MOVE_FORWARD()\n}\nELSE\n{\n  ROTATE_RIGHT()\n  MOVE_FORWARD()\n}\nROTATE_LEFT()\nMOVE_FORWARD()"
+    },
+    {
+      "id": "Q21",
+      "topic": "CRD",
+      "stem": "Fictional scenario: RepairLink aims to help residents arrange successful repairs with volunteer fixers. Residents enter an item category and available times; the app suggests volunteers. Its first user study included only people using desktop computers on weekdays. Which additional evidence would most directly help evaluate whether the app is fulfilling its stated purpose?",
+      "options": [
+        "The number of lines in the app’s source code.",
+        "The number of different colors used in the interface.",
+        "The proportion of repair requests that result in an agreed appointment and a completed repair.",
+        "The alphabetical order of the volunteers’ names."
+      ],
+      "answer": [
+        2
+      ],
+      "explanation": "C 正确：预约达成和维修完成直接关联“帮助居民安排成功维修”的目的，可提供成效证据；仅凭比例本身仍不能断定应用是唯一原因。A 的代码行数、B 的界面颜色数、D 的姓名顺序都不直接衡量这个目的是否实现。",
+      "rationale": "Completed arrangements and repairs are directly related to the stated purpose. Code length, color count and alphabetical order do not measure successful repairs.",
+      "remediation": {
+        "label": "L02 · Computing Innovations, Input & Output",
+        "url": "AP_CSP_L02_Computing_Innovations.html"
+      },
+      "tags": [
+        "shared-context",
+        "RepairLink",
+        "purpose",
+        "evaluation"
+      ]
+    },
+    {
+      "id": "Q22",
+      "topic": "CRD",
+      "stem": "Fictional scenario: RepairLink aims to help residents arrange successful repairs with volunteer fixers. Residents enter an item category and available times; the app suggests volunteers. Its first user study included only people using desktop computers on weekdays. Which TWO actions would best broaden evidence for the next design iteration? Select TWO.",
+      "options": [
+        "Assume the first study represents every intended user because it used real people.",
+        "Observe intended users completing repair requests on smartphones and at other times.",
+        "Collect more responses only from the same weekday desktop users, then claim all access barriers are resolved.",
+        "Include intended users with relevant accessibility needs, identify task barriers, and retest revisions."
+      ],
+      "answer": [
+        1,
+        3
+      ],
+      "explanation": "B、D 正确：扩大设备、时间与可访问性需求的覆盖，并观察实际任务与复测修改，能补充首轮研究没有提供的证据。A 以“真人参与”错误推出样本代表所有目标用户；C 即使增加相似样本数量，也不能因此确认其他群体的障碍已经消除。",
+      "rationale": "Broaden the study to relevant devices, times and accessibility needs, then retest changes. More evidence from the original narrow group cannot establish usability for every intended user.",
+      "remediation": {
+        "label": "L04 · Collaborate, Test & Improve",
+        "url": "AP_CSP_L04_Test_and_Improve.html"
+      },
+      "tags": [
+        "shared-context",
+        "RepairLink",
+        "user-feedback",
+        "inclusion",
+        "select-two"
+      ]
+    },
+    {
+      "id": "Q23",
+      "topic": "DAT",
+      "stem": "An uncompressed image has 8 columns and 6 rows of pixels. Each pixel uses 3 bits. Ignoring all headers, metadata and padding, how many bits are needed for the pixel data?",
+      "options": [
+        "18 bits",
+        "48 bits",
+        "384 bits",
+        "144 bits"
+      ],
+      "answer": [
+        3
+      ],
+      "explanation": "D 正确：像素数为 8×6=48，每像素 3 位，所以总共 48×3=144 位。A 的 18 是换成字节后的数值，但选项单位仍是 bits；B 只数了像素，没有乘每像素位数；C 相当于把每像素当作 8 位，与题设 3 位不符。",
+      "rationale": "There are 48 pixels, each requiring 3 bits, so the payload is 144 bits. That is 18 bytes, not 18 bits; headers and metadata are excluded.",
+      "remediation": {
+        "label": "L05 · Sampling & Digital Representation",
+        "url": "AP_CSP_L05_Sampling_and_Representation.html"
+      },
+      "tags": [
+        "image",
+        "pixel",
+        "storage",
+        "units"
+      ]
+    },
+    {
+      "id": "Q24",
+      "topic": "DAT",
+      "stem": "A 240 KB dataset is compressed by method A to 60 KB with some information discarded, or by method B to 90 KB with exact reconstruction possible. An archive requires every original value. Which choice meets the requirement, and why?",
+      "options": [
+        "Choose A because the smallest file must preserve the most information.",
+        "Choose B because it preserves exact reconstruction even though its compressed file is larger.",
+        "Choose either because every compression method is reversible.",
+        "Reject B because a compressed file can never be restored exactly."
+      ],
+      "answer": [
+        1
+      ],
+      "explanation": "B 正确：题设 B 可精确重建原始数据，符合档案要求，即使文件比 A 大。A 把更小误当成保留更多信息，且 A 明确丢弃信息；C 把所有压缩当作可逆；D 否认了无损压缩能够完整恢复的性质。",
+      "rationale": "Method B meets the exact-recovery requirement. Method A is smaller but discards information; compression does not have to be lossy.",
+      "remediation": {
+        "label": "L06 · Compression & Trade-offs",
+        "url": "AP_CSP_L06_Compression.html"
+      },
+      "tags": [
+        "compression",
+        "lossless",
+        "trade-off"
+      ]
+    },
+    {
+      "id": "Q25",
+      "topic": "DAT",
+      "stem": "Five synthetic travel times are 12, 15, 18, 20 and 95 minutes. The 95-minute record has not been verified as an error. Which TWO statements are supported? Select TWO.",
+      "options": [
+        "The mean of all five values is 32 minutes.",
+        "The median of all five values is 20 minutes.",
+        "Removing 95 solely because it raises the mean proves that the remaining sample is unbiased.",
+        "An analyst can report results with and without 95 as a labeled sensitivity check while investigating the record."
+      ],
+      "answer": [
+        0,
+        3
+      ],
+      "explanation": "A、D 正确：总和为 160，平均值 160/5=32；尚未证实异常记录有误时，可以保留主分析并明确标注排除后的敏感性比较，调查来源。B 错：排序后中间值是 18；C 错：因为数值影响结论而删除，不构成无偏证明。排除 95 后均值为 65/4=16.25，也须说明删除选择。",
+      "rationale": "The full mean is 160 / 5 = 32 and the median is 18. A labeled sensitivity analysis can compare results with and without 95, but deletion alone does not prove a sample is unbiased.",
+      "remediation": {
+        "label": "L08 · Data Analysis, Visualisation & Evidence",
+        "url": "AP_CSP_L08_Data_Analysis.html"
+      },
+      "tags": [
+        "mean",
+        "median",
+        "outlier",
+        "sensitivity",
+        "select-two"
+      ]
+    },
+    {
+      "id": "Q26",
+      "topic": "DAT",
+      "stem": "Two sensors record the same temperature as 20 and 68. Their metadata identifies the units as Celsius and Fahrenheit respectively. Before computing a combined mean, what should an analyst do?",
+      "options": [
+        "Discard 68 because its numerical value is larger.",
+        "Average the raw values to obtain 44 and omit the units.",
+        "Convert the values to a common temperature unit using the metadata.",
+        "Convert both records to binary so that their units no longer matter."
+      ],
+      "answer": [
+        2
+      ],
+      "explanation": "C 正确：先根据元数据统一单位，才能有意义地合并数值；这里 20°C 与 68°F 表示同一温度。A 把单位差异误判为异常；B 把不一致的单位混算；D 二进制表示不会消除数据含义与单位的差异。",
+      "rationale": "Metadata reveals that the values use different units. Convert to one unit before aggregation; binary encoding does not make Celsius and Fahrenheit numerically interchangeable.",
+      "remediation": {
+        "label": "L07 · Metadata, Data Quality & Cleaning",
+        "url": "AP_CSP_L07_Data_Quality.html"
+      },
+      "tags": [
+        "metadata",
+        "units",
+        "data-cleaning"
+      ]
+    },
+    {
+      "id": "Q27",
+      "topic": "AAP",
+      "stem": "With score initially equal to 80, what is displayed, in order?",
+      "options": [
+        "Silver, then Ready",
+        "Gold, then Ready",
+        "Silver only",
+        "Ready only"
+      ],
+      "answer": [
+        0
+      ],
+      "explanation": "A 正确：80≥70，进入外层 IF；80≥90 为 false，所以内层 ELSE 显示 Silver。后面的另一个 IF 独立判断 80≥70，再显示 Ready。B 把 80 错当成至少 90；C 漏执行第二个 IF；D 漏执行内层 ELSE。",
+      "rationale": "The nested decision displays Silver because 80 is at least 70 but below 90. The separate final IF also runs and displays Ready.",
+      "remediation": {
+        "label": "L12 · Nested Decisions & Boundary Tests",
+        "url": "AP_CSP_L12_Nested_Decisions.html"
+      },
+      "tags": [
+        "nested-selection",
+        "independent-IF",
+        "trace"
+      ],
+      "code": "IF (score ≥ 70)\n{\n  IF (score ≥ 90)\n  {\n    DISPLAY(\"Gold\")\n  }\n  ELSE\n  {\n    DISPLAY(\"Silver\")\n  }\n}\nIF (score ≥ 70)\n{\n  DISPLAY(\"Ready\")\n}"
+    },
+    {
+      "id": "Q28",
+      "topic": "AAP",
+      "stem": "What is the final value of totals?",
+      "options": [
+        "[4, 2, 5]",
+        "[11, 11, 11]",
+        "[0, 4, 6]",
+        "[4, 6, 11]"
+      ],
+      "answer": [
+        3
+      ],
+      "explanation": "D 正确：依次处理 4、2、5，total 依次成为 4、6、11；每次 APPEND 保存当时数值，结果为 [4,6,11]。A 只是原数据；B 错把早先追加的数值当成会随 total 后续变化；C 对应“先追加再累加”，与实际语句顺序相反。",
+      "rationale": "Each iteration updates total before appending its current value. The running totals are 4, 6 and 11; earlier appended numbers do not change later.",
+      "remediation": {
+        "label": "L18 · Traversing Lists",
+        "url": "AP_CSP_L18_Traversing_Lists.html"
+      },
+      "tags": [
+        "traversal",
+        "accumulator",
+        "APPEND",
+        "sequence"
+      ],
+      "code": "readings ← [4, 2, 5]\ntotals ← []\ntotal ← 0\nFOR EACH reading IN readings\n{\n  total ← total + reading\n  APPEND(totals, total)\n}"
+    },
+    {
+      "id": "Q29",
+      "topic": "AAP",
+      "stem": "Consider hasAbove. Which TWO statements about its returned values are correct? Select TWO.",
+      "options": [
+        "hasAbove([9, 10], 9) returns false.",
+        "hasAbove([4, 9], 9) returns false.",
+        "hasAbove([], 9) terminates with an invalid-index error.",
+        "hasAbove([9, 10], 9) returns true."
+      ],
+      "answer": [
+        1,
+        3
+      ],
+      "explanation": "B、D 正确：条件是严格大于 limit，[4,9] 中没有数大于 9，最终返回 false；[9,10] 的 10 大于 9，立即返回 true，所以 A 错。C 错：空列表的 FOR EACH 执行零次，直接到循环后的 RETURN(false)，并没有索引访问错误。",
+      "rationale": "The comparison is strictly greater than the limit. [4, 9] contains no value above 9, while [9, 10] does. An empty list skips the loop and returns false without an index error.",
+      "remediation": {
+        "label": "L19 · Procedures, Parameters & Libraries",
+        "url": "AP_CSP_L19_Procedures_and_Libraries.html"
+      },
+      "tags": [
+        "procedure",
+        "early-return",
+        "empty-list",
+        "boundary",
+        "select-two"
+      ],
+      "code": "PROCEDURE hasAbove(values, limit)\n{\n  FOR EACH value IN values\n  {\n    IF (value > limit)\n    {\n      RETURN(true)\n    }\n  }\n  RETURN(false)\n}"
+    },
+    {
+      "id": "Q30",
+      "topic": "AAP",
+      "stem": "A simulation independently generates RANDOM(1, 8) once per trial and records a success when the result is at most 3. Which statement is most accurate for 10,000 trials?",
+      "options": [
+        "Exactly 3,750 successes are guaranteed.",
+        "About 3,750 successes are expected, but the observed count can differ.",
+        "Each trial has probability 3/7 of success because there are seven gaps between 1 and 8.",
+        "Exactly three successes must occur in every block of eight trials."
+      ],
+      "answer": [
+        1
+      ],
+      "explanation": "B 正确：RANDOM(1,8) 等概率返回含两端的 8 个整数，成功值为 1、2、3，概率 3/8，10,000 次的期望次数为 3,750，实际可波动。A、D 把概率或期望误当成每次实验必须满足的固定配额；C 数了间隔而不是可能结果。",
+      "rationale": "There are three successful integers among eight equally likely results, so the expected count is 10,000 × 3/8 = 3,750. Random trials need not produce that exact count or a fixed quota per block.",
+      "remediation": {
+        "label": "L15 · Randomness & Simulation",
+        "url": "AP_CSP_L15_Randomness_and_Simulation.html"
+      },
+      "tags": [
+        "RANDOM",
+        "probability",
+        "simulation",
+        "expected-value"
+      ]
+    },
+    {
+      "id": "Q31",
+      "topic": "AAP",
+      "stem": "The code should set found to true exactly when target appears anywhere in items. It can fail when a matching item is followed by a nonmatching item. Which change fixes this for every list, including an empty list?",
+      "options": [
+        "Set found to true before the loop instead.",
+        "Traverse the list in reverse order without changing the loop body.",
+        "Remove the ELSE block, keeping the initial found ← false.",
+        "Replace item = target with item > target."
+      ],
+      "answer": [
+        2
+      ],
+      "explanation": "C 正确：初始 false 表示尚未发现；遇到目标时改 true，之后不能因其他项不匹配而重置。这样空列表也保持 false。A 会让某些无目标情形错误为 true，且原重置问题仍在；B 只是改变哪项最后执行，不能保证正确；D 将“相等”改成“较大”，改变了问题要求。",
+      "rationale": "Keep found false initially and change it to true when a match occurs, without resetting it for later items. Reversing the traversal or changing the comparison does not fix the general problem.",
+      "remediation": {
+        "label": "L20 · Searching & Comparing Algorithms",
+        "url": "AP_CSP_L20_Searching_Algorithms.html"
+      },
+      "tags": [
+        "linear-search",
+        "debugging",
+        "Boolean-flag",
+        "empty-list"
+      ],
+      "code": "found ← false\nFOR EACH item IN items\n{\n  IF (item = target)\n  {\n    found ← true\n  }\n  ELSE\n  {\n    found ← false\n  }\n}"
+    },
+    {
+      "id": "Q32",
+      "topic": "AAP",
+      "stem": "Researchers prove that no algorithm can always give the correct yes-or-no answer to a certain question for every possible program and input. Which conclusion follows?",
+      "options": [
+        "The general problem is undecidable, although some individual cases may still be solved.",
+        "The problem only needs a faster processor to become decidable.",
+        "No individual case of the problem can ever be answered.",
+        "A solution must exist because all answers are either yes or no."
+      ],
+      "answer": [
+        0
+      ],
+      "explanation": "A 正确：不存在对全部合法输入都能正确给出答案的算法，说明一般问题不可判定；这不排除解决某些特定实例。B 将不存在一般算法误解为硬件速度不足；C 把一般不可判定夸大成任何实例都不可解；D 二值答案的形式不保证可计算性。",
+      "rationale": "Undecidability rules out an algorithm that correctly resolves every instance. It does not rule out solving particular cases, and additional processing speed does not remove the proven limitation.",
+      "remediation": {
+        "label": "L22 · Efficiency, Limits & Chapter Project",
+        "url": "AP_CSP_L22_Algorithm_Limits_and_Project.html"
+      },
+      "tags": [
+        "undecidable",
+        "limits-of-computing"
+      ]
+    },
+    {
+      "id": "Q33",
+      "topic": "AAP",
+      "stem": "Under a stated comparison-count model, method A uses 100 comparisons per search. Method B first sorts once using 500 comparisons, then uses 7 comparisons per search. For 10 searches of the unchanged dataset, which method uses fewer comparisons?",
+      "options": [
+        "A, by 430 comparisons.",
+        "B, by 930 comparisons.",
+        "A, because B must sort again before every search.",
+        "B, by 430 comparisons."
+      ],
+      "answer": [
+        3
+      ],
+      "explanation": "D 正确：A 共用 100×10=1,000 次；B 只排序一次，总共 500+7×10=570 次，因此 B 少 430 次。A 颠倒较优方法；B 忽略了 B 的初始排序成本，错误用 1,000−70；C 与“数据不变、只排序一次”的模型矛盾。",
+      "rationale": "A costs 1,000 comparisons. B costs 500 + 70 = 570, including its one-time sorting cost, so B saves 430 comparisons under this model.",
+      "remediation": {
+        "label": "L20 · Searching & Comparing Algorithms",
+        "url": "AP_CSP_L20_Searching_Algorithms.html"
+      },
+      "tags": [
+        "efficiency",
+        "repeated-search",
+        "setup-cost",
+        "model"
+      ]
+    },
+    {
+      "id": "Q34",
+      "topic": "CSN",
+      "stem": "A file is sent using TCP over the Internet. Packets arrive out of order and one packet is missing. Assuming communication can continue, which mechanism supports complete, correctly ordered delivery?",
+      "options": [
+        "Require every packet to have followed exactly the same route.",
+        "Use sequence information to order the data and acknowledgments/retransmission to recover missing data.",
+        "Replace the missing packet with a random packet of the same length.",
+        "Use DNS to infer the contents of the missing packet."
+      ],
+      "answer": [
+        1
+      ],
+      "explanation": "B 正确：TCP 的序号信息支持按序重组，确认与重传机制支持恢复缺失数据；并不意味着永久断网时仍保证最终成功。A 包可能经过不同路径，统一路径不是必要条件；C 任意替代无法恢复原内容；D DNS 用于名称与地址解析，不推断丢失文件内容。",
+      "rationale": "TCP uses sequence information and reliability mechanisms such as acknowledgments and retransmission. Packets need not share a route, and neither random replacement nor DNS can reconstruct missing content.",
+      "remediation": {
+        "label": "L24 · Packets, Routing & Protocols",
+        "url": "AP_CSP_L24_Packets_and_Routing.html"
+      },
+      "tags": [
+        "TCP",
+        "packets",
+        "ordering",
+        "retransmission"
+      ]
+    },
+    {
+      "id": "Q35",
+      "topic": "CSN",
+      "stem": "A diagnostic request to a server’s known IP address succeeds, but a DNS lookup for its domain name fails. Which function is most directly failing in this observation?",
+      "options": [
+        "Encrypting all traffic between the client and server.",
+        "Storing every web page in the Internet’s routers.",
+        "Resolving the domain name to an IP address.",
+        "Creating a physical connection between every pair of computers."
+      ],
+      "answer": [
+        2
+      ],
+      "explanation": "C 正确：DNS 查询的目标是把域名解析为相应 IP 地址；题设直接指向这一功能失败，同时已知 IP 的诊断请求可达。A 把 DNS 当作加密服务；B 路由器不是保存所有网页的统一仓库；D 互联网不要求每两台计算机之间都有直接物理连接。该观察不证明服务器的所有其他服务都正常。",
+      "rationale": "DNS resolves domain names to IP addresses. A failed lookup most directly concerns that resolution function; it does not imply a need for direct physical links or that DNS provides encryption.",
+      "remediation": {
+        "label": "L23 · Systems, Networks & the Internet",
+        "url": "AP_CSP_L23_Systems_and_Networks.html"
+      },
+      "tags": [
+        "DNS",
+        "Internet",
+        "abstraction",
+        "diagnosis"
+      ]
+    },
+    {
+      "id": "Q36",
+      "topic": "IOC",
+      "stem": "A synthetic training-app model has two groups: Group A is 40% of the intended population and Group B is 60%. Positive-rating rates are fixed at 90% for A and 30% for B. A constructed sample contains 50 people from each group. Which TWO statements follow from this model? Select TWO.",
+      "options": [
+        "The constructed sample’s overall positive-rating rate is 60%.",
+        "The intended population’s rate must be 60% because the sample has equal group sizes.",
+        "Applying the stated population proportions to the fixed group rates gives 54%.",
+        "Reweighting the two groups guarantees that all self-selection and measurement bias has been removed."
+      ],
+      "answer": [
+        0,
+        2
+      ],
+      "explanation": "A、C 正确：样本中 50×90%+50×30%=60 个正面评价，共 100 人，混合率为 60%；按人口构成加权为 0.4×90%+0.6×30%=54%。这些都是给定合成模型的结果。B 错把样本比例当成人口比例；D 错：组间重加权不能保证消除组内自选、非响应或测量偏差。",
+      "rationale": "The equal-size sample gives (90% + 30%)/2 = 60%. Population-proportion weighting gives 0.4 × 90% + 0.6 × 30% = 54% under the model; weighting does not guarantee the removal of other biases.",
+      "remediation": {
+        "label": "L28 · Computing Bias & Crowdsourcing",
+        "url": "AP_CSP_L28_Bias_and_Crowdsourcing.html"
+      },
+      "tags": [
+        "bias",
+        "weighting",
+        "synthetic-data",
+        "representation",
+        "select-two"
+      ]
+    },
+    {
+      "id": "Q37",
+      "topic": "IOC",
+      "stem": "Mira wants to send Lee a confidential message using public-key encryption. She has obtained an authentic copy of Lee’s public key. Which pair of actions is appropriate?",
+      "options": [
+        "Mira encrypts with Lee’s public key; Lee decrypts with Lee’s private key.",
+        "Mira encrypts with Lee’s private key; every reader decrypts with Lee’s public key.",
+        "Mira encrypts with Mira’s public key; Lee decrypts with Lee’s unrelated private key.",
+        "Mira publishes Lee’s private key so that Lee can verify it."
+      ],
+      "answer": [
+        0
+      ],
+      "explanation": "A 正确：发给 Lee 的保密消息使用 Lee 的公钥加密，由 Lee 的配对私钥解密；私钥应保密。B 颠倒保密方向且要求 Mira 使用他人私钥；C 两个不配对的密钥不能按此方式解密；D 公开私钥会破坏保密性。题干已明确公钥真实来源，不能忽略密钥真实性。",
+      "rationale": "Encrypt for the recipient using the recipient’s authentic public key; the matching private key decrypts the message. Unrelated keys do not form a pair, and the private key must remain secret.",
+      "remediation": {
+        "label": "L29 · Privacy & Security",
+        "url": "AP_CSP_L29_Privacy_and_Security.html"
+      },
+      "tags": [
+        "public-key",
+        "encryption",
+        "confidentiality"
+      ]
+    },
+    {
+      "id": "Q38",
+      "topic": "IOC",
+      "stem": "A fictional citizen-science project invites volunteers to submit wildlife observations over the Internet. Most early reports come from a few easily reached parks. Which response best improves the usefulness of the growing dataset?",
+      "options": [
+        "Assume that a large total number of submissions guarantees geographic representativeness.",
+        "Reject all location metadata to make the reports easier to compare.",
+        "Treat every volunteer report as correct without verification.",
+        "Validate submissions and recruit observers from less-covered areas while documenting remaining coverage limits."
+      ],
+      "answer": [
+        3
+      ],
+      "explanation": "D 正确：核查记录质量、扩大覆盖并披露限制，可以同时改善众包数据的可信度与代表性。A 把数量等同于覆盖；B 删除地点信息会妨碍判断地理覆盖与生态背景；C 忽视误识别、重复和虚假提交等可能。公民科学允许非专业人士贡献，但不自动保证数据正确。",
+      "rationale": "Crowdsourcing can increase scale, but useful evidence still needs validation and attention to geographic coverage. More submissions alone do not guarantee accurate or representative data.",
+      "remediation": {
+        "label": "L28 · Computing Bias & Crowdsourcing",
+        "url": "AP_CSP_L28_Bias_and_Crowdsourcing.html"
+      },
+      "tags": [
+        "crowdsourcing",
+        "citizen-science",
+        "data-quality",
+        "coverage"
+      ]
+    },
+    {
+      "id": "Q39",
+      "topic": "IOC",
+      "stem": "An icon’s stated license permits sharing and adaptation only for noncommercial uses and requires attribution. A club plans to sell an app containing a recolored version of the icon. Which action would meet the stated permissions for the planned use?",
+      "options": [
+        "Use the recolored icon without attribution because its colors changed.",
+        "Choose a different icon whose license permits this commercial use, and satisfy that license’s conditions.",
+        "Use the original icon in the sold app because attribution alone cancels the noncommercial restriction.",
+        "Use the icon because anything downloadable from the Web is public domain."
+      ],
+      "answer": [
+        1
+      ],
+      "explanation": "B 正确：选择明确允许拟议商业用途的替代素材，并遵守其许可条件，才能让该用途符合授权。A 修改颜色不自动消除原许可与署名要求；C 署名不取消“仅非商业”限制；D 可下载不代表进入公有领域。也可另行取得权利人对商业用途的授权，但题目选项中未提供该方案。",
+      "rationale": "The proposed sale requires permission for commercial use. Recoloring, attribution alone and online availability do not remove the stated restriction; an appropriately licensed alternative can be used under its conditions.",
+      "remediation": {
+        "label": "L30 · Responsible Computing",
+        "url": "AP_CSP_L30_Responsible_Computing.html"
+      },
+      "tags": [
+        "license",
+        "attribution",
+        "intellectual-property",
+        "commercial-use"
+      ]
+    },
+    {
+      "id": "Q40",
+      "topic": "IOC",
+      "stem": "A fictional fitness app publishes individual route histories after removing users’ names. Many routes repeatedly start and end at the same private residences. Which privacy concern remains?",
+      "options": [
+        "Removing names guarantees that no published information can be linked to a person.",
+        "Converting the coordinates to a different file format guarantees anonymity.",
+        "Route patterns may be combined with other information to infer a person’s home or identity.",
+        "The only possible risk is that the published files occupy too much storage."
+      ],
+      "answer": [
+        2
+      ],
+      "explanation": "C 正确：反复出现的起终点和时间、外部资料等结合，可能推断住所或身份；去掉姓名不等于无法重新识别。A 将移除直接标识符夸大为匿名保证；B 更换文件格式一般不改变位置含义；D 忽略真实的隐私推断风险，存储大小不是唯一问题。",
+      "rationale": "Repeated location patterns can be linked with other information to infer a home or identity. Removing names or changing formats does not guarantee anonymity.",
+      "remediation": {
+        "label": "L29 · Privacy & Security",
+        "url": "AP_CSP_L29_Privacy_and_Security.html"
+      },
+      "tags": [
+        "privacy",
+        "reidentification",
+        "location-data",
+        "data-combination"
+      ]
+    }
+  ]
+}

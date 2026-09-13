@@ -17,6 +17,7 @@ run('build_programming_lab.py')
 run('build_advanced_labs.py')
 run('build_impact_lab.py')
 run('build_create.py')
+run('build_review.py')
 if not args.skip_pdfs:
     run('build_homework_pdf.py')
     for folder in sorted((ROOT/'lessons').glob('L*')):
@@ -27,10 +28,11 @@ if not args.skip_pdfs:
     run('build_advanced_sheets.py')
     run('build_impact_sheet.py')
     run('build_create_pdfs.py')
+    run('build_review_pdfs.py')
 paths=list(ROOT.glob('*.html'))+[ROOT/'README.md',ROOT/'COURSE_PLAN.md',ROOT/'lesson-exercises.json']
-for folder in ['lessons','scripts','output/pdf','resources','data','create']:
+for folder in ['lessons','scripts','output/pdf','resources','data','create','review']:
     paths.extend(p for p in (ROOT/folder).rglob('*') if p.is_file() and '__pycache__' not in p.parts and p.suffix!='.pyc')
-with ZipFile(ROOT/'AP_CSP_Chapters_1_2_3_4_5_6_7_Teaching_Pack.zip','w',ZIP_DEFLATED,compresslevel=6) as archive:
+with ZipFile(ROOT/'AP_CSP_Chapters_1_2_3_4_5_6_7_8_Teaching_Pack.zip','w',ZIP_DEFLATED,compresslevel=6) as archive:
     for path in sorted(set(paths)):
-        archive.write(path,'AP_CSP_Chapters_1_2_3_4_5_6_7/'+path.relative_to(ROOT).as_posix())
-print('Built complete Chapters 1–7 teaching pack')
+        archive.write(path,'AP_CSP_Chapters_1_2_3_4_5_6_7_8/'+path.relative_to(ROOT).as_posix())
+print('Built complete Chapters 1–8 teaching pack')
