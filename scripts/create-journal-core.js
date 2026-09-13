@@ -1,0 +1,12 @@
+/* A private planning record, not an assessment or an official submission system. */
+(function(root){'use strict';
+const IDS=['C01','C02','C03','C04','C05','C06'];
+const STATUSES=['not-started','working','paused','recorded'];
+const FORMAT='apcsp-create-journal-v1';
+function empty(){return {format:FORMAT,extraClassMinutes:0,extraNote:'',sessions:IDS.map(id=>({id,date:'',classMinutes:0,outsideMinutes:0,status:'not-started',work:'',evidence:'',next:''}))};}
+function minutes(value){if(typeof value!=='number'||!Number.isInteger(value)||value<0||value>1440)throw Error('Minutes must be a whole number from 0 to 1440.');return value;}
+function words(value){if(typeof value!=='string'||value.length>20000)throw Error('A note must be text with at most 20,000 characters.');return value;}
+function validate(value){if(!value||typeof value!=='object'||value.format!==FORMAT||!Array.isArray(value.sessions)||value.sessions.length!==6)throw Error('Choose a journal exported by this Create workspace.');const seen=new Set();const sessions=value.sessions.map(s=>{if(!s||!IDS.includes(s.id)||seen.has(s.id))throw Error('The journal must contain each of C01–C06 once.');seen.add(s.id);if(typeof s.date!=='string'||(s.date!==''&&!/^\d{4}-\d{2}-\d{2}$/.test(s.date)))throw Error('Use an empty date or YYYY-MM-DD.');if(s.date&&(s.date.startsWith('0000-')||!Number.isFinite(Date.parse(s.date))||new Date(s.date+'T00:00:00Z').toISOString().slice(0,10)!==s.date))throw Error('A journal date is invalid.');if(!STATUSES.includes(s.status))throw Error('A session status is invalid.');return {id:s.id,date:s.date,classMinutes:minutes(s.classMinutes),outsideMinutes:minutes(s.outsideMinutes),status:s.status,work:words(s.work),evidence:words(s.evidence),next:words(s.next)};});sessions.sort((a,b)=>IDS.indexOf(a.id)-IDS.indexOf(b.id));return {format:FORMAT,extraClassMinutes:minutes(value.extraClassMinutes),extraNote:words(value.extraNote),sessions};}
+function totals(value){const s=validate(value);return {plannedClassMinutes:540,recordedClassMinutes:s.sessions.reduce((n,x)=>n+x.classMinutes,0)+s.extraClassMinutes,outsideMinutes:s.sessions.reduce((n,x)=>n+x.outsideMinutes,0),sessionsWithRecords:s.sessions.filter(x=>x.status!=='not-started'||x.date||x.classMinutes||x.outsideMinutes||x.work||x.evidence||x.next).length};}
+const api={IDS,STATUSES,FORMAT,empty,validate,totals};if(typeof module!=='undefined'&&module.exports)module.exports=api;else root.CSPCreateJournal=api;
+})(typeof window!=='undefined'?window:this);

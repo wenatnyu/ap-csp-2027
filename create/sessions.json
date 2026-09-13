@@ -1,0 +1,315 @@
+{
+  "schemaVersion": 1,
+  "chapter": 7,
+  "title": "Create Performance Task · Protected Work Sessions",
+  "chineseTitle": "正式Create专用工作课",
+  "sessionType": "formal-create-work",
+  "totalMinutes": 540,
+  "minimumClassroomHours": 9,
+  "checked": "2026-09-13",
+  "description": "Six flexible 90-minute allocations for students to complete their own official Create task. These are work-session guides, not ordinary slide lessons, project solutions or scoring feedback.",
+  "preparation": {
+    "countedInFormalMinutes": false,
+    "timing": "Schedule rule instruction and skill practice before the official task begins. Schedule later exam-response teaching separately and follow the official feedback restrictions during the task.",
+    "activities": [
+      "Review the current Student Handouts, submission process, collaboration and acknowledgment rules.",
+      "Practice the programming, capture, PDF-export and video-recording skills in separate practice work.",
+      "Learn the distinction between full program-code PDF comments and a comment-free PPR.",
+      "Check accounts, familiar programming tools, storage, backups and submission access before C01.",
+      "Schedule exam written-response practice outside these nine hours; after the official task starts, teacher feedback on task components or practice written responses waits until all three components are final."
+    ]
+  },
+  "globalRules": [
+    "All 540 scheduled minutes are available for students’ own formal task work, including their planning, development, testing, artifact preparation and submission. Whole-class instruction and separate practice do not use this allocation.",
+    "The blocks and self-check milestones are flexible planning aids, not teacher approval gates or an official scoring rubric. Students may move between stages or need additional time.",
+    "Students choose their own project. This material provides no assigned topic, specific code, PPR segments, sample submission or guaranteed score.",
+    "Follow the official collaboration boundaries: program development may be independent or collaborative; video and PPR creation are individual.",
+    "Follow the current acceptable generative-AI and acknowledgment rules for program development. Such permission does not turn video or PPR creation into a collaborative task.",
+    "Keep development journals and these course materials outside the PPR. Full program-code submissions retain code comments and acknowledgments; the PPR must contain neither comments nor course content.",
+    "Teachers may clarify unclear directions, manage permitted collaboration and resolve technical access or file problems. They do not design, debug, test, revise or score-feedback students’ ongoing official task work.",
+    "Students personally inspect and finalize all three components in the AP Digital Portfolio. A local file, an uploaded draft or this course’s private progress record is not a final College Board submission."
+  ],
+  "sources": [
+    {
+      "id": "student-handouts",
+      "title": "College Board · AP CSP Student Handouts · Effective Fall 2023",
+      "url": "https://apcentral.collegeboard.org/media/pdf/ap-csp-student-task-directions.pdf",
+      "pages": "PDF pp.3–13 / printed pp.1–11",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "teacher-guidelines",
+      "title": "College Board · CED · Preparing for and Administering the Create Performance Task",
+      "url": "https://apcentral.collegeboard.org/media/pdf/ap-computer-science-principles-course-and-exam-description.pdf#page=178",
+      "pages": "PDF pp.178–181 / printed pp.171–174",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "collaboration",
+      "title": "College Board · Collaboration during Create program development",
+      "url": "https://apcentral.collegeboard.org/courses/ap-computer-science-principles/course/faq/collaboration-limits-performance-tasks",
+      "pages": "Current official FAQ",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "portfolio",
+      "title": "College Board · Submit AP CSP Work in the AP Digital Portfolio",
+      "url": "https://apstudents.collegeboard.org/digital-portfolios/submit-ap-csp-work",
+      "pages": "Current submission instructions",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "portfolio-student-guide",
+      "title": "College Board · AP Digital Portfolio Student User Guide · Summer 2026",
+      "url": "https://apcentral.collegeboard.org/media/pdf/ap-digital-portfolio-student-user-guide.pdf",
+      "pages": "PDF pp.10–16: PPR entries, final submission, private work and exam registration",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "portfolio-teacher-guide",
+      "title": "College Board · AP Digital Portfolio Teacher User Guide · Summer 2026",
+      "url": "https://apcentral.collegeboard.org/media/pdf/ap-digital-portfolio-teacher-user-guide.pdf#page=20",
+      "pages": "PDF pp.20–21: limited returns and final resubmission",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "ai-policy",
+      "title": "College Board · AI Guidance for the 2026–27 Academic Year · AP CSP section",
+      "url": "https://apcentral.collegeboard.org/exam-administration-ordering-scores/administering-exams/exam-policies/artificial-intelligence-tools",
+      "pages": "AP Computer Science Principles Policy",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "ppr-tips",
+      "title": "College Board · Personalized Project Reference Tip Sheet",
+      "url": "https://apcentral.collegeboard.org/media/pdf/ap-csp-personalized-project-reference-tip-sheet.pdf",
+      "pages": "1–7",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "exam-dates",
+      "title": "College Board · AP CSP Exam · 2027 dates",
+      "url": "https://apcentral.collegeboard.org/courses/ap-computer-science-principles/exam",
+      "pages": "Exam Dates",
+      "checked": "2026-09-13"
+    }
+  ],
+  "sessions": [
+    {
+      "id": "C01",
+      "title": "Choose & Begin",
+      "chineseTitle": "自主定题与开工",
+      "minutes": 90,
+      "purpose": "Choose your own program purpose and begin developing your official task in a familiar programming environment.",
+      "blocks": [
+        {
+          "start": 0,
+          "end": 20,
+          "title": "Choose your focus",
+          "task": "Independently decide what you want your program to do. Record its purpose, intended user or audience, and a manageable starting scope. If you choose permitted program-code collaboration, agree how you will participate in development. Consult the official directions yourself when needed."
+        },
+        {
+          "start": 20,
+          "end": 65,
+          "title": "Start your own program",
+          "task": "Create your official project and begin implementing a part you choose. Use your familiar environment. Record the source of any material or code you use and distinguish it from your own contributions. Keep the project under your own control."
+        },
+        {
+          "start": 65,
+          "end": 90,
+          "title": "Run, inspect and save",
+          "task": "Run what you have built, inspect its behavior and decide your next development step. Save a dated version that you can reopen. Use the remaining time for your own implementation or development journal; this is student task time."
+        }
+      ],
+      "milestones": [
+        "I chose the program purpose and scope myself; I am not submitting a practice task or a sample project.",
+        "I have started my official program and can locate and reopen the saved version.",
+        "I can distinguish my own work, collaborative program work and externally sourced material.",
+        "I have recorded an unfinished task to continue, without asking a teacher to design its solution."
+      ],
+      "recordPrompt": "Privately record the date, program purpose, saved version or path, work you contributed, sources used and next action. 中文提示：保留开发记录，记录事实与自己的决定；它不是额外官方提交组件。",
+      "teacherReminder": "保留完整90分钟供学生正式任务使用。通用提醒可包括剩余时间、保存位置、官方说明入口以及设备/网络问题的求助方式。可管理协作分组和澄清学生不理解的要求；不要指定题目、程序、功能或语言，不评价其具体方案能否得分。",
+      "progressNote": "The time blocks are adjustable work suggestions. Choose and develop your own project; the teacher does not approve a topic or supply a solution. All 90 minutes remain available for formal task work."
+    },
+    {
+      "id": "C02",
+      "title": "Build Data & Functionality",
+      "chineseTitle": "开发数据与程序功能",
+      "minutes": 90,
+      "purpose": "Continue your own implementation, developing the data and behavior needed for the purpose you chose.",
+      "blocks": [
+        {
+          "start": 0,
+          "end": 15,
+          "title": "Resume from your evidence",
+          "task": "Open your saved project and inspect your development notes. Select the next piece of work yourself. Revisit your purpose and any known unfinished behavior before making changes."
+        },
+        {
+          "start": 15,
+          "end": 65,
+          "title": "Develop and connect",
+          "task": "Work on the program functionality and collection of data needed by your design. Implement and connect the parts in an order you choose. Run your own checks as you work; if collaborating on program code, remain actively involved and keep contribution and source records."
+        },
+        {
+          "start": 65,
+          "end": 90,
+          "title": "Review your own progress",
+          "task": "Check the current version against the official program requirements yourself. Inspect how stored data are used toward your program’s purpose and how the collection helps manage complexity. Continue any unfinished work, then preserve a version and update your development journal."
+        }
+      ],
+      "milestones": [
+        "I can identify the input and output of my current program in relation to its purpose.",
+        "My selected list or other collection stores data and is used by my program; I have considered how it manages complexity.",
+        "I recorded behavior I checked and anything still unfinished.",
+        "My saved project and source acknowledgments reflect the work completed so far."
+      ],
+      "recordPrompt": "Record the version, functionality developed, data used, your observed results and next action. Keep any attribution notes with your development records and acknowledge relevant sources in the program code. 中文提示：自查不是请教师判断某个列表是否满足评分要求。",
+      "teacherReminder": "只提醒学生持续保存、记录来源并自行查阅官方要求。帮助处理设备故障、登录或文件保存问题；不要替学生选择数据结构、添加功能、运行测试或判定其列表是否管理复杂度。协作问题可按官方允许范围处理。",
+      "progressNote": "If your development order differs, use these blocks on the formal task component you currently need. This schedule does not prescribe a data model or a feature set."
+    },
+    {
+      "id": "C03",
+      "title": "Develop & Integrate",
+      "chineseTitle": "过程算法开发与集成",
+      "minutes": 90,
+      "purpose": "Develop and integrate your own procedure and algorithm while checking their connection to your program’s purpose.",
+      "blocks": [
+        {
+          "start": 0,
+          "end": 20,
+          "title": "Inspect your design",
+          "task": "Review the current program and identify your next implementation need. Consult the official procedure and algorithm requirements yourself. Make your own decisions about structure, parameters and how the parts interact."
+        },
+        {
+          "start": 20,
+          "end": 65,
+          "title": "Implement and integrate",
+          "task": "Develop the procedure and algorithm you choose, connect their calls to the rest of your program, and continue running your own checks. Resolve implementation issues independently or through collaboration permitted for program-code development."
+        },
+        {
+          "start": 65,
+          "end": 90,
+          "title": "Self-check the running version",
+          "task": "Compare your current implementation with the official requirements without seeking a teacher’s assessment of the code. Inspect the effects of your own changes, continue unfinished work and save a dated version with your development and attribution records."
+        }
+      ],
+      "milestones": [
+        "I have checked the official requirements for a student-developed procedure, its name, parameter use and return type when necessary.",
+        "I have independently checked that the selected procedure’s body includes sequencing, selection and iteration, and that my program calls the procedure.",
+        "I can distinguish code I actively helped develop from code I did not develop and must acknowledge.",
+        "I saved an integrated version and recorded unresolved behavior for further work."
+      ],
+      "recordPrompt": "Record the version, work you personally contributed, changes you decided to make and their observed effect on the program. Record unresolved issues without turning the journal into PPR content. 中文提示：开发日志可以保留解释；PPR不得包含课程内容或注释。",
+      "teacherReminder": "可澄清官方要求的字面含义，不能针对学生的具体代码建议过程、参数、条件、循环或调用，也不能评判某段代码是否符合评分点。学生遇到算法问题时自行处理或使用正式任务允许的程序开发协作；教师仅处理通用管理和技术障碍。",
+      "progressNote": "Integration is iterative. You may return to data or functionality work as needed; the schedule does not require a particular algorithm or a teacher-approved code segment."
+    },
+    {
+      "id": "C04",
+      "title": "Test & Refine",
+      "chineseTitle": "自主测试与改进",
+      "minutes": 90,
+      "purpose": "Use your own testing and observations to refine your program and preserve the version you intend to demonstrate.",
+      "blocks": [
+        {
+          "start": 0,
+          "end": 20,
+          "title": "Choose your own checks",
+          "task": "Inspect your purpose, intended behavior and unresolved issues. Decide which inputs and situations you need to test and record the outcomes you expect. These test choices are yours, not supplied by a teacher."
+        },
+        {
+          "start": 20,
+          "end": 65,
+          "title": "Test, revise and retest",
+          "task": "Run your chosen checks, compare actual behavior with your expectations, and make the revisions you judge necessary. Retest after changes. Program-code partners may collaborate within the official rules; do not request teacher debugging or test feedback."
+        },
+        {
+          "start": 65,
+          "end": 90,
+          "title": "Preserve a checked version",
+          "task": "Run your own final checks for this work period, review source acknowledgments and save a version you can reproduce. Record remaining issues and decide whether you are ready to prepare the independent video and reference components or need more development time."
+        }
+      ],
+      "milestones": [
+        "I chose tests and recorded expected and actual behavior myself or with permitted program-code collaborators.",
+        "I recorded my own revisions and the results of retesting.",
+        "I can reopen and run the version I intend to use for the next components.",
+        "I have identified remaining work myself; no teacher has certified the program or predicted its task score."
+      ],
+      "recordPrompt": "Privately record the tested version, input or situation, expected result, observed result, your revision and retest outcome. Preserve sources and a backup. 中文提示：这些是自己的开发证据，不是交给教师批改的正式任务测试答案。",
+      "teacherReminder": "提醒时间、保存和程序开发协作边界即可。不要建议测试输入、指出某一分支错误、测试学生程序或替其判断已完成。若学生因设备、网络或文件故障无法工作，可排除技术障碍并记录实际可用工作时间。",
+      "progressNote": "If important work remains, continue development during later allocated time and revise your personal plan. Nine classroom hours are a minimum opportunity, not a promise that every program is finished at the same checkpoint."
+    },
+    {
+      "id": "C05",
+      "title": "Create Your Video & PPR",
+      "chineseTitle": "独立制作视频与PPR",
+      "minutes": 90,
+      "purpose": "Individually create the video and Personalized Project Reference from the program developed during your official task.",
+      "blocks": [
+        {
+          "start": 0,
+          "end": 30,
+          "title": "Record your own demonstration",
+          "task": "Individually choose and record your program demonstration. Check the video against the official requirements for input, functionality, output, identity, narration, format, length and size. Do not collaborate on the video’s creation or have someone choose its content."
+        },
+        {
+          "start": 30,
+          "end": 65,
+          "title": "Create your own reference",
+          "task": "Individually choose and capture the code segments requested for the PPR from code you actively developed during this official task. Complete the procedure, procedure-call, list-storage and list-use entries yourself. Check legibility and exclude comments and course content from every part of the PPR."
+        },
+        {
+          "start": 65,
+          "end": 90,
+          "title": "Inspect and save your own artifacts",
+          "task": "Individually replay your video and inspect your PPR captures. Correct your own file or capture problems before final submission. Preserve the full program code with its comments and acknowledgments separately from the comment-free PPR, and save the current artifacts."
+        }
+      ],
+      "milestones": [
+        "I created my video individually and checked it against the current official specifications.",
+        "I selected and prepared the PPR entries individually from code I actively developed during the official task.",
+        "My PPR has readable code captures and contains no comments or course content.",
+        "My full program-code PDF retains all program code, including comments and required acknowledgments; the PPR is a separate artifact."
+      ],
+      "recordPrompt": "Record only your private file inventory: program version, video filename and properties, PPR capture filenames, and checks still to complete. Keep notes and journals outside the PPR. 中文提示：程序可以按规则协作；视频与PPR的选择、制作及内容检查独立完成。",
+      "teacherReminder": "保持视频与PPR独立制作。可协助解决录制工具、保存、设备或网络故障，并澄清提交规格；不要选择演示输入或镜头、替学生录制、选择PPR片段、写说明、润色内容或给出评分反馈。程序PDF保留注释与来源，PPR移除注释和课程内容，两者不要混淆。",
+      "progressNote": "If program work is unfinished, use the allocated time for that work and move individual artifact creation later. Do not replace independent work with peer review of the video or PPR."
+    },
+    {
+      "id": "C06",
+      "title": "Check & Submit",
+      "chineseTitle": "自主检查三个组件并提交",
+      "minutes": 90,
+      "purpose": "Individually inspect the three submission components, complete the official submission steps and preserve a record of their status.",
+      "blocks": [
+        {
+          "start": 0,
+          "end": 30,
+          "title": "Inspect the three components",
+          "task": "Use the current official directions to review your complete program-code PDF, video and PPR. Reopen the actual files you plan to submit and check that each matches your intended version. Resolve your own outstanding task work before marking a component final."
+        },
+        {
+          "start": 30,
+          "end": 60,
+          "title": "Upload and review the entries",
+          "task": "Access the AP Digital Portfolio yourself. Upload the program-code PDF and video, and insert the requested PPR code images in the correct entries. Open the uploaded files or generated view to check that the intended content is present and readable."
+        },
+        {
+          "start": 60,
+          "end": 90,
+          "title": "Submit final and confirm status",
+          "task": "When ready, personally complete the required attestations and submit each of the three components as final. Confirm the displayed status for Program Code, Video and PPR, and keep a private record. The entire block remains available for unfinished task work and submission; report technical barriers promptly."
+        }
+      ],
+      "milestones": [
+        "I checked the actual uploaded program-code PDF, video and PPR rather than relying only on local filenames.",
+        "I completed the required attestations myself and checked the final status of all three components.",
+        "I understand that an uploaded draft is not a final submission and that I cannot freely revise a component after submitting it as final.",
+        "I preserved my files and submission-status record, or promptly reported an unresolved technical submission problem."
+      ],
+      "recordPrompt": "Privately record the submitted filenames or versions, the three component statuses and the confirmation date/time. Do not record passwords. If a technical problem remains, record the error and notify the teacher or AP coordinator. 中文提示：三个组件分别确认Final；本地保存或上传草稿都不等于完成提交。",
+      "teacherReminder": "监控到课、工作时间、技术障碍和三个组件的提交状态，不替学生点击真实性声明或提交。提醒按官方截止时间完成。已提交文件若是错文件、损坏、不可读，或PPR含课程内容/注释，按官方规定处理返回；不能因作品质量或得分判断要求修改。",
+      "progressNote": "Students may adjust the sequence and submit when ready; do not delay a prepared submission simply to fill a block. Keep the scheduled task time available to students who still need it. Any later teaching or exam practice is scheduled separately and is not counted toward the protected nine hours."
+    }
+  ]
+}

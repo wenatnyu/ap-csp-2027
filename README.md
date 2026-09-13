@@ -1,8 +1,10 @@
-# AP CSP 2026–27 · Chapters 1–6
+# AP CSP 2026–27 · Chapters 1–7
 
-第一至第六章资料已完成：**30 节课，每节90分钟，共45小时、690页课堂 Slides、360题作业**，面向2027年5月AP CSP考试。本次新增第六章4课：6小时、92页Slides、48题。剩余正式Create专用课堂6课（9小时）与综合复习4–5课（6–7.5小时），共 **10–11课、15–16.5小时**；全课程计划40–41课、60–61.5小时。
+第一至第六知识章资料已完成：**30 节普通课、45小时、690页课堂 Slides、360题作业**。第七章正式 Create 模块现已补齐：**6次90分钟专用工作课，共9小时**，另附课前准备、本机日志、教师指南与3份打印PDF。现已安排 **36次课、54小时**；Create课前讲解与工具练习另排，不计入正式九小时。
 
-**[在线课程目录](https://wenatnyu.github.io/ap-csp-2027/)** · [总体课程规划](COURSE_PLAN.md) · [下载六章离线包](https://github.com/wenatnyu/ap-csp-2027/archive/refs/heads/main.zip)
+面向2027年5月AP CSP考试，尚余 **综合复习4–5课、6–7.5小时**，全课程资料尚未完成。全部计划为40–41次课、60–61.5小时，以上课时不包含另行安排的Create课前准备。
+
+**[在线课程目录](https://wenatnyu.github.io/ap-csp-2027/)** · [总体课程规划](COURSE_PLAN.md) · [下载七章离线包](https://github.com/wenatnyu/ap-csp-2027/archive/refs/heads/main.zip)
 
 ## 官方真题与样题
 
@@ -10,7 +12,7 @@
 
 选择题公开部分为当前CED中的18道官方样题（PDF页182–192，答案页194），不称为历年实考卷。完整官方练习卷与已释放题库通过AP Classroom或Course Audit教师权限获取；目前未取得这些完整卷。现有360道课后题仍为原创练习。
 
-本资源页不代表正式Create专题和综合复习已经完成。题源核查：2026-09-12；资源页源码为 `Official_Exam_Resources.html`，首页入口在 `scripts/course.template.html`。
+官方资源页提供题源导航；正式Create工作模块另见[第七章](Chapter_7.html)，综合复习资料仍待制作。题源核查：2026-09-12；资源页源码为 `Official_Exam_Resources.html`，首页入口在 `scripts/course.template.html`。
 
 ## 第1章 · 计算思维与信息表示
 
@@ -84,13 +86,28 @@
 
 [打开第 6 章](Chapter_6.html)
 
+## 第7章 · 正式 Create 模块
+
+[打开第 7 章](Chapter_7.html) · [课前准备与图解](Chapter_7_Create_Preparation.html) · [本机工作日志](Chapter_7_Create_Workspace.html) · [教师指南](Chapter_7_Teacher_Guide.html)
+
+C01–C06 是6次90分钟的专用工作课，共9小时，供学生自主开发、测试并准备和提交程序代码、视频及PPR。它们与L01–L30普通课分别组织，不增加690页Slides或360道作业的计数。规则讲解、工具练习与后续书面题教学另行安排，不占用正式九小时。
+
+| 材料 | 用途 | 打印版 |
+|---|---|---|
+| [课前准备](Chapter_7_Create_Preparation.html) | 三组件关系、一般要求、工具演练、协作与帮助边界 | 网页图解与6道原创规则自查 |
+| [C01–C06工作日志](Chapter_7_Create_Workspace.html) | 在本机记录实际工作、版本、测试与下一步，可导出/导入JSON备份 | [Create Journal](output/pdf/AP_CSP_Chapter_7_Create_Journal.pdf) |
+| 提交自查 | 区分代码PDF、独立视频与独立PPR，逐项核对官方平台最终提交 | [Submission Checklist](output/pdf/AP_CSP_Chapter_7_Submission_Checklist.pdf) |
+| [教师指南](Chapter_7_Teacher_Guide.html) | 专用时间安排、允许帮助、协作、AI与技术问题处理边界 | [Teacher Guide](output/pdf/AP_CSP_Chapter_7_Teacher_Guide.pdf) |
+
+学生自行决定正式项目；这些资料不含可提交的标准程序或PPR片段。日志不是额外官方组件，记录或勾选不代表学校课时认证、作品获批或College Board收件。正式作品保持私密，不上传公开课程GitHub仓库；在AP Digital Portfolio完成三项各自的最终提交。
+
 ## 课堂使用
 
-从在线目录进入各课，或下载GitHub ZIP，解压后打开 `ap-csp-2027-main/index.html`。在线ZIP由GitHub按当前main分支自动打包，包含六章资料；保持文件夹结构以使用PDF链接。课件、内联图解和实验室可离线运行；官方来源和GitHub链接需要联网。构建脚本另生成 `AP_CSP_Chapters_1_2_3_4_5_6_Teaching_Pack.zip`。
+从在线目录进入各课，或下载GitHub ZIP，解压后打开 `ap-csp-2027-main/index.html`。在线ZIP由GitHub按当前main分支自动打包，包含第一至第七章资料；保持文件夹结构以使用PDF链接。课件、内联图解和实验室可离线运行；官方来源和GitHub链接需要联网。构建脚本另生成 `AP_CSP_Chapters_1_2_3_4_5_6_7_Teaching_Pack.zip`，包内使用同名目录。
 
-- **Slides**：每课23页、90分钟。英文课堂正文配中文术语和教师备注；方向键/Page Up/Page Down翻页，N打开备注，答案逐题展开。Fullscreen适合投影，Reading view适合小屏。
+- **Slides**：L01–L30普通课每课23页、90分钟。英文课堂正文配中文术语和教师备注；方向键/Page Up/Page Down翻页，N打开备注，答案逐题展开。Fullscreen适合投影，Reading view适合小屏。
 - **教学图解**：用位值、状态、采样、流程、列表访问、过程调用、路径、时间轴、利益相关者与样本构成解释具体问题；内联矢量图可离线使用，小屏支持横向查看。
-- **Homework**：每课12题、30教师分，约35–45分钟。Q5恰选两项，书面题有独立评分点。章末综合检查在L04、L08、L16、L22、L26、L30。
+- **Homework**：L01–L30普通课每课12题、30教师分，约35–45分钟。Q5恰选两项，书面题有独立评分点。章末综合检查在L04、L08、L16、L22、L26、L30。
 - **Teacher Guide**：目标、准确考纲对应、节奏、常见误区、活动与测试参考、分层支持和资料来源。
 - **打印版**：学生卷与答案卷分开，保留代码和推理作答空间。页数随题目长度而定；L27、L28各为3页学生卷和2页答案。项目与调查另附记录单。
 
@@ -113,13 +130,13 @@ CONCAT与SUBSTRING在相应实验室中是明确给定的教学过程；SUBSTRIN
 
 第四章项目由学生开发 `countGoals(sessions, goal)`：遍历有效分钟列表并返回达到阈值的次数，调用者显示计数与反馈。基础测试含 `[20,30,45,10]` 配goal30/50、`[29,30,31]` 配30和 `[0,0]` 配30；空列表为延伸。学生保存代码、抽象解释、预期/实际和修订记录。
 
-第五章的路径图、数据包编号和处理时间均为声明过假设的课堂模型，不是实测网络。调查要求记录基准、改变条件、结果和局限；更多处理器、替代路径和重传分别解决不同问题。所有章节项目都是正式Create之前的教学练习，不能替代正式任务的专用课堂时间。
+第五章的路径图、数据包编号和处理时间均为声明过假设的课堂模型，不是实测网络。调查要求记录基准、改变条件、结果和局限；更多处理器、替代路径和重传分别解决不同问题。第一至第六章项目都是正式Create之前的教学练习，不能替代第七章正式任务的专用课堂时间。
 
 第六章使用原创虚构的Community Shade Map。100名潜在参与者的障碍分组、干预预算、North/South构成和报告率均为合成假设。调查区分可接入、实际参与与代表性；人口构成加权不能自动消除组内偏差。后续使用简化的数据、安全和权限情境；不收集真实密码或个人资料，不把教学权限卡当作所有地区法律的替代。
 
 ## 覆盖与题源
 
-六章采用自定教学顺序，涉及五大官方主题的所选内容；章节编号不是官方单元编号。第六章对应Topics 5.1–5.6的所选IOC内容，先隐私安全再负责使用，详细条目与边界见各课Teacher Guide。完成章节不等于已掌握所有官方知识点；正式Create和综合复习继续按 [总体计划](COURSE_PLAN.md) 推进。
+六个知识章采用自定教学顺序，涉及五大官方主题的所选内容；章节编号不是官方单元编号。第六章对应Topics 5.1–5.6的所选IOC内容，先隐私安全再负责使用，详细条目与边界见各课Teacher Guide。完成章节资料不等于学生已掌握所有官方知识点。第七章正式Create工作模块已提供，综合复习继续按 [总体计划](COURSE_PLAN.md) 制作。
 
 L02–L30的题目均为原创AP风格选择练习与课堂书面题，不是官方真题或官方Create written-response题。L01第20页另标College Board CED公开样题Q2（正文p.175 / PDFp.182；答案正文p.187 / PDFp.194）。教师分数不对应AP最终分数。
 
@@ -127,15 +144,15 @@ L02–L30的题目均为原创AP风格选择练习与课堂书面题，不是官
 
 ## 修改、构建与发布
 
-L01源在 `scripts/slides.json`、`scripts/teacher-guide.html` 和 `lesson-exercises.json`；L02–L30源在对应 `lessons/Lxx/` 的meta、slides、exercises和guide中；预览由课堂图解或独立preview文件提供。门户模板、公共样式和实验逻辑位于 `scripts/`。
+L01源在 `scripts/slides.json`、`scripts/teacher-guide.html` 和 `lesson-exercises.json`；L02–L30源在对应 `lessons/Lxx/` 的meta、slides、exercises和guide中；预览由课堂图解或独立preview文件提供。第七章的课前准备、六次工作安排和教师指南源在 `create/`；专用工作日志的界面与本机存储逻辑在 `scripts/create-*`。门户模板、公共样式和实验逻辑位于 `scripts/`。
 
-生成课件、PDF与六章离线包（Python需reportlab）：
+统一生成普通课件、Create模块、PDF与七章离线包（Python需reportlab）：
 
 ```sh
 python3 scripts/build_chapter.py
 ```
 
-仅修改课堂图文时，可用 `python3 scripts/build_chapter.py --skip-pdfs` 复用既有PDF。修改题目或评分点后应重建相应PDF，并重新检查页面。验证实验核心：
+仅修改网页图文且PDF内容未变时，可用 `python3 scripts/build_chapter.py --skip-pdfs` 复用既有PDF。修改题目或评分点后应重建相应PDF，并重新检查页面。验证实验核心：
 
 ```sh
 node scripts/verify_lab.cjs
@@ -146,4 +163,4 @@ node scripts/verify_network.cjs
 node scripts/verify_impact.cjs
 ```
 
-`main`保存课程源；GitHub Pages发布源为 `gh-pages` 根目录。生成并检查后同步发布提交，再通过GitHub Desktop推送。首页按顺序列出六章，旧课链接继续保留。
+`main`保存课程源；GitHub Pages发布源为 `gh-pages` 根目录。生成并检查后同步发布提交，再通过GitHub Desktop推送。首页列出六个知识章和第七章正式Create模块，旧课链接继续保留。主下载仍为GitHub当前main分支ZIP。
